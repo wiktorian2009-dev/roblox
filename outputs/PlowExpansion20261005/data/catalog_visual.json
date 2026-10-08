@@ -1,0 +1,1802 @@
+[
+ {
+  "id": "blade_basic",
+  "name": "Basic Blade",
+  "slot": "Blade",
+  "band": 1,
+  "stage": "Starter",
+  "theme": "Snowy Starter",
+  "palette": [
+   "F4F8FF",
+   "9FD8FF",
+   "E2483D",
+   "4A5568"
+  ],
+  "role": "S",
+  "rarity": "Starter",
+  "model": "BladeBasic",
+  "archetype": "straight",
+  "visualWidth": 7.5,
+  "brief": "plain red-and-steel straight utility blade, bolted ribs"
+ },
+ {
+  "id": "blade_wide",
+  "name": "Wide Clearing Blade",
+  "slot": "Blade",
+  "band": 1,
+  "stage": "Starter",
+  "theme": "Snowy Starter",
+  "palette": [
+   "F4F8FF",
+   "9FD8FF",
+   "E2483D",
+   "4A5568"
+  ],
+  "role": "A",
+  "rarity": "Common",
+  "model": "BladeWide",
+  "archetype": "sweeper",
+  "visualWidth": 12.5,
+  "brief": "very wide low curved sweeper with yellow hazard stripes and end skids"
+ },
+ {
+  "id": "blade_frost_scoop",
+  "name": "Frosty Scoop",
+  "slot": "Blade",
+  "band": 1,
+  "stage": "Starter",
+  "theme": "Snowy Starter",
+  "palette": [
+   "F4F8FF",
+   "9FD8FF",
+   "E2483D",
+   "4A5568"
+  ],
+  "role": "C",
+  "rarity": "Uncommon",
+  "model": "BladeFrostScoop",
+  "archetype": "scoop",
+  "visualWidth": 9.0,
+  "brief": "deep curved scoop, icy blue with white snow-cap rim and side wings"
+ },
+ {
+  "id": "blade_ice",
+  "name": "Reinforced Icebreaker",
+  "slot": "Blade",
+  "band": 2,
+  "stage": "Desert",
+  "theme": "Desert",
+  "palette": [
+   "E8C27A",
+   "2EC4B6",
+   "F2B33D",
+   "8A4B2A"
+  ],
+  "role": "B",
+  "rarity": "Rare",
+  "model": "BladeIce",
+  "archetype": "icebreaker",
+  "visualWidth": 9.0,
+  "brief": "thick armoured plate with riveted rails and a hardened lower edge"
+ },
+ {
+  "id": "blade_dune",
+  "name": "Dune Sweeper",
+  "slot": "Blade",
+  "band": 2,
+  "stage": "Desert",
+  "theme": "Desert",
+  "palette": [
+   "E8C27A",
+   "2EC4B6",
+   "F2B33D",
+   "8A4B2A"
+  ],
+  "role": "A",
+  "rarity": "Common",
+  "model": "BladeDune",
+  "archetype": "sweeper",
+  "visualWidth": 11.5,
+  "brief": "broad sand-coloured sweeper with turquoise trim, rolled top lip, sun emblem"
+ },
+ {
+  "id": "blade_grave",
+  "name": "Grave Digger",
+  "slot": "Blade",
+  "band": 3,
+  "stage": "Cursed",
+  "theme": "Cursed",
+  "palette": [
+   "3B2A55",
+   "8E4DE0",
+   "EDE3C8",
+   "7CFFB2"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "BladeGrave",
+  "archetype": "toothed",
+  "visualWidth": 9.5,
+  "brief": "bone-white toothed blade with tombstone-shaped teeth on a violet frame"
+ },
+ {
+  "id": "blade_hex",
+  "name": "Hex Breaker",
+  "slot": "Blade",
+  "band": 3,
+  "stage": "Cursed",
+  "theme": "Cursed",
+  "palette": [
+   "3B2A55",
+   "8E4DE0",
+   "EDE3C8",
+   "7CFFB2"
+  ],
+  "role": "B",
+  "rarity": "Rare",
+  "model": "BladeHex",
+  "archetype": "vshape",
+  "visualWidth": 10.0,
+  "brief": "V-shaped dark violet wedge with glowing green rune lines and spiky tips"
+ },
+ {
+  "id": "blade_quartz",
+  "name": "Quartz Edge",
+  "slot": "Blade",
+  "band": 4,
+  "stage": "Crystal",
+  "theme": "Crystal Caves",
+  "palette": [
+   "57D8FF",
+   "E07BFF",
+   "F4FBFF",
+   "3D4766"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "BladeQuartz",
+  "archetype": "segmented",
+  "visualWidth": 10.5,
+  "brief": "segmented blade made of faceted cyan crystal panels on a slate frame"
+ },
+ {
+  "id": "blade_prism",
+  "name": "Prism Cleaver",
+  "slot": "Blade",
+  "band": 4,
+  "stage": "Crystal",
+  "theme": "Crystal Caves",
+  "palette": [
+   "57D8FF",
+   "E07BFF",
+   "F4FBFF",
+   "3D4766"
+  ],
+  "role": "B",
+  "rarity": "Rare",
+  "model": "BladePrism",
+  "archetype": "crystal",
+  "visualWidth": 9.0,
+  "brief": "sharp crystal V-cleaver with magenta core gems and prism fins"
+ },
+ {
+  "id": "blade_pixel",
+  "name": "Pixel Pusher",
+  "slot": "Blade",
+  "band": 5,
+  "stage": "Retro",
+  "theme": "Retro World",
+  "palette": [
+   "FF4FB6",
+   "3FF0FF",
+   "FFE14F",
+   "1E1E2E"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "BladePixel",
+  "archetype": "pixel",
+  "visualWidth": 11.5,
+  "brief": "stair-stepped blocky voxel blade in hot pink and cyan pixels"
+ },
+ {
+  "id": "blade_arcade",
+  "name": "Arcade Plow",
+  "slot": "Blade",
+  "band": 5,
+  "stage": "Retro",
+  "theme": "Retro World",
+  "palette": [
+   "FF4FB6",
+   "3FF0FF",
+   "FFE14F",
+   "1E1E2E"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "BladeArcade",
+  "archetype": "segmented",
+  "visualWidth": 10.0,
+  "brief": "arcade-cabinet styled segmented blade with yellow joystick knobs and neon strips"
+ },
+ {
+  "id": "blade_vine",
+  "name": "Vine Sweeper",
+  "slot": "Blade",
+  "band": 6,
+  "stage": "Jungle",
+  "theme": "Jungle",
+  "palette": [
+   "3FBF4F",
+   "8A5A33",
+   "FF9A2E",
+   "2E5E2A"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "BladeVine",
+  "archetype": "sweeper",
+  "visualWidth": 12.5,
+  "brief": "wide curved wooden sweeper wrapped in green vines and leaves"
+ },
+ {
+  "id": "blade_tusk",
+  "name": "Tusk Breaker",
+  "slot": "Blade",
+  "band": 6,
+  "stage": "Jungle",
+  "theme": "Jungle",
+  "palette": [
+   "3FBF4F",
+   "8A5A33",
+   "FF9A2E",
+   "2E5E2A"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "BladeTusk",
+  "archetype": "toothed",
+  "visualWidth": 9.0,
+  "brief": "carved tiki wood blade with big ivory tusk teeth and orange paint"
+ },
+ {
+  "id": "blade_glacier",
+  "name": "Glacier Plow",
+  "slot": "Blade",
+  "band": 7,
+  "stage": "AbsoluteZero",
+  "theme": "Absolute Zero",
+  "palette": [
+   "D8F3FF",
+   "2E6BD8",
+   "C9D6E6",
+   "B79CFF"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "BladeGlacier",
+  "archetype": "scoop",
+  "visualWidth": 11.0,
+  "brief": "pale ice scoop with frosted ridges and silver rim"
+ },
+ {
+  "id": "blade_zero",
+  "name": "Absolute Edge",
+  "slot": "Blade",
+  "band": 7,
+  "stage": "AbsoluteZero",
+  "theme": "Absolute Zero",
+  "palette": [
+   "D8F3FF",
+   "2E6BD8",
+   "C9D6E6",
+   "B79CFF"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "BladeZero",
+  "archetype": "icebreaker",
+  "visualWidth": 9.0,
+  "brief": "deep-blue reinforced icebreaker with silver ribs and a frost-white cutting edge"
+ },
+ {
+  "id": "blade_singularity",
+  "name": "Zero Point Blade",
+  "slot": "Blade",
+  "band": 7,
+  "stage": "AbsoluteZero",
+  "theme": "Absolute Zero",
+  "palette": [
+   "D8F3FF",
+   "2E6BD8",
+   "C9D6E6",
+   "B79CFF"
+  ],
+  "role": "C",
+  "rarity": "Legendary",
+  "model": "BladeSingularity",
+  "archetype": "vshape",
+  "visualWidth": 11.0,
+  "brief": "elegant swept V-blade of lilac ice with a glowing cold core ring"
+ },
+ {
+  "id": "blade_petal",
+  "name": "Petal Sweeper",
+  "slot": "Blade",
+  "band": 8,
+  "stage": "Sakura",
+  "theme": "Sakura Garden",
+  "palette": [
+   "FFA7C8",
+   "FFF6FA",
+   "D6363C",
+   "5A3A2E"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "BladePetal",
+  "archetype": "sweeper",
+  "visualWidth": 13.0,
+  "brief": "wide pink lacquer sweeper shaped like overlapping blossom petals"
+ },
+ {
+  "id": "blade_katana",
+  "name": "Katana Blade",
+  "slot": "Blade",
+  "band": 8,
+  "stage": "Sakura",
+  "theme": "Sakura Garden",
+  "palette": [
+   "FFA7C8",
+   "FFF6FA",
+   "D6363C",
+   "5A3A2E"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "BladeKatana",
+  "archetype": "straight",
+  "visualWidth": 9.5,
+  "brief": "sleek straight blade with a curved katana edge, red lacquer and gold guard"
+ },
+ {
+  "id": "blade_lollipop",
+  "name": "Lollipop Scoop",
+  "slot": "Blade",
+  "band": 9,
+  "stage": "Candy",
+  "theme": "Candy Kingdom",
+  "palette": [
+   "FF6FA8",
+   "7FE8C3",
+   "FFE36E",
+   "6B3E2E"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "BladeLollipop",
+  "archetype": "scoop",
+  "visualWidth": 11.0,
+  "brief": "round-edged candy scoop with lollipop swirl discs on each end"
+ },
+ {
+  "id": "blade_canecrusher",
+  "name": "Candy Cane Crusher",
+  "slot": "Blade",
+  "band": 9,
+  "stage": "Candy",
+  "theme": "Candy Kingdom",
+  "palette": [
+   "FF6FA8",
+   "7FE8C3",
+   "FFE36E",
+   "6B3E2E"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "BladeCaneCrusher",
+  "archetype": "toothed",
+  "visualWidth": 10.0,
+  "brief": "toothed blade made of striped candy-cane hooks on a chocolate bar frame"
+ },
+ {
+  "id": "blade_coral",
+  "name": "Coral Scoop",
+  "slot": "Blade",
+  "band": 10,
+  "stage": "Atlantis",
+  "theme": "Sunken Atlantis",
+  "palette": [
+   "1FB7A6",
+   "155E8C",
+   "FF7A5C",
+   "FFF4E6"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "BladeCoral",
+  "archetype": "scoop",
+  "visualWidth": 11.5,
+  "brief": "teal shell-shaped scoop with coral branches and pearl studs"
+ },
+ {
+  "id": "blade_trident",
+  "name": "Trident Breaker",
+  "slot": "Blade",
+  "band": 10,
+  "stage": "Atlantis",
+  "theme": "Sunken Atlantis",
+  "palette": [
+   "1FB7A6",
+   "155E8C",
+   "FF7A5C",
+   "FFF4E6"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "BladeTrident",
+  "archetype": "vshape",
+  "visualWidth": 9.5,
+  "brief": "gold trident-pronged V-breaker with sea-glass panels"
+ },
+ {
+  "id": "blade_brick",
+  "name": "Building Block Blade",
+  "slot": "Blade",
+  "band": 11,
+  "stage": "Toybox",
+  "theme": "Giant Toybox",
+  "palette": [
+   "E8443A",
+   "3A7BE8",
+   "FFD23A",
+   "4CC35A"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "BladeBrick",
+  "archetype": "segmented",
+  "visualWidth": 12.0,
+  "brief": "segmented blade of stacked toy bricks with studs in primary colours"
+ },
+ {
+  "id": "blade_bulldozer",
+  "name": "Toy Bulldozer",
+  "slot": "Blade",
+  "band": 11,
+  "stage": "Toybox",
+  "theme": "Giant Toybox",
+  "palette": [
+   "E8443A",
+   "3A7BE8",
+   "FFD23A",
+   "4CC35A"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "BladeBulldozer",
+  "archetype": "straight",
+  "visualWidth": 10.5,
+  "brief": "chunky yellow toy-bulldozer blade with big bolts and a red trim"
+ },
+ {
+  "id": "blade_cog",
+  "name": "Cog Sweeper",
+  "slot": "Blade",
+  "band": 12,
+  "stage": "Clockwork",
+  "theme": "Clockwork City",
+  "palette": [
+   "D9A441",
+   "C46A3A",
+   "3FBFB4",
+   "3B3F4A"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "BladeCog",
+  "archetype": "sweeper",
+  "visualWidth": 12.5,
+  "brief": "brass sweeper with half-cog end plates and riveted copper bands"
+ },
+ {
+  "id": "blade_gearbreaker",
+  "name": "Gearbreaker",
+  "slot": "Blade",
+  "band": 12,
+  "stage": "Clockwork",
+  "theme": "Clockwork City",
+  "palette": [
+   "D9A441",
+   "C46A3A",
+   "3FBFB4",
+   "3B3F4A"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "BladeGearbreaker",
+  "archetype": "mechanical",
+  "visualWidth": 10.0,
+  "brief": "mechanical blade with a row of interlocking teal-and-brass gears as teeth"
+ },
+ {
+  "id": "blade_cumulus",
+  "name": "Cumulus Sweeper",
+  "slot": "Blade",
+  "band": 13,
+  "stage": "Cloud",
+  "theme": "Cloud Kingdom",
+  "palette": [
+   "F7F9FF",
+   "8FD0FF",
+   "FFE08A",
+   "FFF06E"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "BladeCumulus",
+  "archetype": "sweeper",
+  "visualWidth": 13.5,
+  "brief": "puffy cloud-shaped wide sweeper, white with gold trim"
+ },
+ {
+  "id": "blade_thunder",
+  "name": "Thunder Wedge",
+  "slot": "Blade",
+  "band": 13,
+  "stage": "Cloud",
+  "theme": "Cloud Kingdom",
+  "palette": [
+   "F7F9FF",
+   "8FD0FF",
+   "FFE08A",
+   "FFF06E"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "BladeThunder",
+  "archetype": "vshape",
+  "visualWidth": 10.0,
+  "brief": "V-wedge with lightning-bolt fins and glowing yellow seams"
+ },
+ {
+  "id": "blade_comet",
+  "name": "Comet Scoop",
+  "slot": "Blade",
+  "band": 14,
+  "stage": "Cosmic",
+  "theme": "Cosmic Sanctuary",
+  "palette": [
+   "3C2E8F",
+   "9B6BFF",
+   "FFF6C8",
+   "6FE7FF"
+  ],
+  "role": "A",
+  "rarity": "Epic",
+  "model": "BladeComet",
+  "archetype": "scoop",
+  "visualWidth": 12.0,
+  "brief": "indigo scoop with a comet-tail sweep and star studs"
+ },
+ {
+  "id": "blade_galaxy",
+  "name": "Galaxy Breaker",
+  "slot": "Blade",
+  "band": 14,
+  "stage": "Cosmic",
+  "theme": "Cosmic Sanctuary",
+  "palette": [
+   "3C2E8F",
+   "9B6BFF",
+   "FFF6C8",
+   "6FE7FF"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "BladeGalaxy",
+  "archetype": "cosmic",
+  "visualWidth": 11.0,
+  "brief": "cosmic breaker with a swirling galaxy disc, orbit ring and violet crystal teeth"
+ },
+ {
+  "id": "engine_starter",
+  "name": "Starter Engine",
+  "slot": "Engine",
+  "band": 1,
+  "stage": "Starter",
+  "theme": "Snowy Starter",
+  "palette": [
+   "F4F8FF",
+   "9FD8FF",
+   "E2483D",
+   "4A5568"
+  ],
+  "role": "S",
+  "rarity": "Starter",
+  "model": "EngineStarter",
+  "archetype": "compact",
+  "visualWidth": null,
+  "brief": "small red compact motor with one exhaust pipe"
+ },
+ {
+  "id": "engine_snowball",
+  "name": "Snowball Motor",
+  "slot": "Engine",
+  "band": 1,
+  "stage": "Starter",
+  "theme": "Snowy Starter",
+  "palette": [
+   "F4F8FF",
+   "9FD8FF",
+   "E2483D",
+   "4A5568"
+  ],
+  "role": "A",
+  "rarity": "Common",
+  "model": "EngineSnowball",
+  "archetype": "compact",
+  "visualWidth": null,
+  "brief": "round snowball-shaped motor with a blue cap and stubby pipe"
+ },
+ {
+  "id": "engine_balanced",
+  "name": "Balanced Engine",
+  "slot": "Engine",
+  "band": 1,
+  "stage": "Starter",
+  "theme": "Snowy Starter",
+  "palette": [
+   "F4F8FF",
+   "9FD8FF",
+   "E2483D",
+   "4A5568"
+  ],
+  "role": "C",
+  "rarity": "Uncommon",
+  "model": "EngineBalanced",
+  "archetype": "twin",
+  "visualWidth": null,
+  "brief": "twin-cylinder engine with two chrome exhausts and a blue tank"
+ },
+ {
+  "id": "engine_sandrunner",
+  "name": "Sand Runner",
+  "slot": "Engine",
+  "band": 2,
+  "stage": "Desert",
+  "theme": "Desert",
+  "palette": [
+   "E8C27A",
+   "2EC4B6",
+   "F2B33D",
+   "8A4B2A"
+  ],
+  "role": "A",
+  "rarity": "Common",
+  "model": "EngineSandRunner",
+  "archetype": "turbine",
+  "visualWidth": null,
+  "brief": "sand-coloured air-cooled engine with turquoise intake fan"
+ },
+ {
+  "id": "engine_power",
+  "name": "Powerful Engine",
+  "slot": "Engine",
+  "band": 2,
+  "stage": "Desert",
+  "theme": "Desert",
+  "palette": [
+   "E8C27A",
+   "2EC4B6",
+   "F2B33D",
+   "8A4B2A"
+  ],
+  "role": "B",
+  "rarity": "Rare",
+  "model": "EnginePower",
+  "archetype": "industrial",
+  "visualWidth": null,
+  "brief": "reinforced industrial block with tall twin stacks and hazard plates"
+ },
+ {
+  "id": "engine_lantern",
+  "name": "Lantern Motor",
+  "slot": "Engine",
+  "band": 3,
+  "stage": "Cursed",
+  "theme": "Cursed",
+  "palette": [
+   "3B2A55",
+   "8E4DE0",
+   "EDE3C8",
+   "7CFFB2"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "EngineLantern",
+  "archetype": "compact",
+  "visualWidth": null,
+  "brief": "pumpkin-lantern motor with glowing green eyes and crooked chimney"
+ },
+ {
+  "id": "engine_phantom",
+  "name": "Phantom V-Twin",
+  "slot": "Engine",
+  "band": 3,
+  "stage": "Cursed",
+  "theme": "Cursed",
+  "palette": [
+   "3B2A55",
+   "8E4DE0",
+   "EDE3C8",
+   "7CFFB2"
+  ],
+  "role": "B",
+  "rarity": "Rare",
+  "model": "EnginePhantom",
+  "archetype": "twin",
+  "visualWidth": null,
+  "brief": "dark violet V-twin with bone exhaust horns and ghostly green glow"
+ },
+ {
+  "id": "engine_geode",
+  "name": "Geode Core",
+  "slot": "Engine",
+  "band": 4,
+  "stage": "Crystal",
+  "theme": "Crystal Caves",
+  "palette": [
+   "57D8FF",
+   "E07BFF",
+   "F4FBFF",
+   "3D4766"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "EngineGeode",
+  "archetype": "crystal",
+  "visualWidth": null,
+  "brief": "cracked geode housing with a cyan crystal core poking out"
+ },
+ {
+  "id": "engine_reactor",
+  "name": "Crystal Reactor",
+  "slot": "Engine",
+  "band": 4,
+  "stage": "Crystal",
+  "theme": "Crystal Caves",
+  "palette": [
+   "57D8FF",
+   "E07BFF",
+   "F4FBFF",
+   "3D4766"
+  ],
+  "role": "B",
+  "rarity": "Rare",
+  "model": "EngineReactor",
+  "archetype": "crystal",
+  "visualWidth": null,
+  "brief": "cylindrical reactor with magenta crystal rods in a slate cage"
+ },
+ {
+  "id": "engine_8bit",
+  "name": "8-Bit Engine",
+  "slot": "Engine",
+  "band": 5,
+  "stage": "Retro",
+  "theme": "Retro World",
+  "palette": [
+   "FF4FB6",
+   "3FF0FF",
+   "FFE14F",
+   "1E1E2E"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "Engine8Bit",
+  "archetype": "pixel",
+  "visualWidth": null,
+  "brief": "blocky voxel engine with stepped pixel pipes in pink and cyan"
+ },
+ {
+  "id": "engine_arcade",
+  "name": "Arcade Turbo",
+  "slot": "Engine",
+  "band": 5,
+  "stage": "Retro",
+  "theme": "Retro World",
+  "palette": [
+   "FF4FB6",
+   "3FF0FF",
+   "FFE14F",
+   "1E1E2E"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "EngineArcade",
+  "archetype": "turbine",
+  "visualWidth": null,
+  "brief": "retro turbo with a big spinning fan face and neon trim"
+ },
+ {
+  "id": "engine_tiki",
+  "name": "Tiki Thumper",
+  "slot": "Engine",
+  "band": 6,
+  "stage": "Jungle",
+  "theme": "Jungle",
+  "palette": [
+   "3FBF4F",
+   "8A5A33",
+   "FF9A2E",
+   "2E5E2A"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "EngineTiki",
+  "archetype": "industrial",
+  "visualWidth": null,
+  "brief": "carved tiki-face engine block with bamboo exhausts"
+ },
+ {
+  "id": "engine_jturbine",
+  "name": "Jungle Turbine",
+  "slot": "Engine",
+  "band": 6,
+  "stage": "Jungle",
+  "theme": "Jungle",
+  "palette": [
+   "3FBF4F",
+   "8A5A33",
+   "FF9A2E",
+   "2E5E2A"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "EngineJungleTurbine",
+  "archetype": "turbine",
+  "visualWidth": null,
+  "brief": "leafy turbine with an orange intake and vine-wrapped casing"
+ },
+ {
+  "id": "engine_cryo",
+  "name": "Cryo Compressor",
+  "slot": "Engine",
+  "band": 7,
+  "stage": "AbsoluteZero",
+  "theme": "Absolute Zero",
+  "palette": [
+   "D8F3FF",
+   "2E6BD8",
+   "C9D6E6",
+   "B79CFF"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "EngineCryo",
+  "archetype": "industrial",
+  "visualWidth": null,
+  "brief": "frosted compressor with ice-blue coils and silver tanks"
+ },
+ {
+  "id": "engine_polar",
+  "name": "Polar Turbine",
+  "slot": "Engine",
+  "band": 7,
+  "stage": "AbsoluteZero",
+  "theme": "Absolute Zero",
+  "palette": [
+   "D8F3FF",
+   "2E6BD8",
+   "C9D6E6",
+   "B79CFF"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "EnginePolar",
+  "archetype": "turbine",
+  "visualWidth": null,
+  "brief": "sleek white-and-blue jet turbine with frost vents"
+ },
+ {
+  "id": "engine_zerocore",
+  "name": "Absolute Zero Core",
+  "slot": "Engine",
+  "band": 7,
+  "stage": "AbsoluteZero",
+  "theme": "Absolute Zero",
+  "palette": [
+   "D8F3FF",
+   "2E6BD8",
+   "C9D6E6",
+   "B79CFF"
+  ],
+  "role": "C",
+  "rarity": "Legendary",
+  "model": "EngineZeroCore",
+  "archetype": "core",
+  "visualWidth": null,
+  "brief": "floating lilac cold-core sphere held by silver arcs"
+ },
+ {
+  "id": "engine_lanterntwin",
+  "name": "Lantern Twin",
+  "slot": "Engine",
+  "band": 8,
+  "stage": "Sakura",
+  "theme": "Sakura Garden",
+  "palette": [
+   "FFA7C8",
+   "FFF6FA",
+   "D6363C",
+   "5A3A2E"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "EngineLanternTwin",
+  "archetype": "twin",
+  "visualWidth": null,
+  "brief": "twin cylinders shaped like paper lanterns on a dark wood base"
+ },
+ {
+  "id": "engine_blossom",
+  "name": "Blossom Turbine",
+  "slot": "Engine",
+  "band": 8,
+  "stage": "Sakura",
+  "theme": "Sakura Garden",
+  "palette": [
+   "FFA7C8",
+   "FFF6FA",
+   "D6363C",
+   "5A3A2E"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "EngineBlossom",
+  "archetype": "turbine",
+  "visualWidth": null,
+  "brief": "turbine with a pink blossom-petal fan and gold hub"
+ },
+ {
+  "id": "engine_gumdrop",
+  "name": "Gumdrop Motor",
+  "slot": "Engine",
+  "band": 9,
+  "stage": "Candy",
+  "theme": "Candy Kingdom",
+  "palette": [
+   "FF6FA8",
+   "7FE8C3",
+   "FFE36E",
+   "6B3E2E"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "EngineGumdrop",
+  "archetype": "compact",
+  "visualWidth": null,
+  "brief": "squishy gumdrop domes on a wafer block with a candy-stripe pipe"
+ },
+ {
+  "id": "engine_sugarv8",
+  "name": "Sugar Rush V8",
+  "slot": "Engine",
+  "band": 9,
+  "stage": "Candy",
+  "theme": "Candy Kingdom",
+  "palette": [
+   "FF6FA8",
+   "7FE8C3",
+   "FFE36E",
+   "6B3E2E"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "EngineSugarV8",
+  "archetype": "twin",
+  "visualWidth": null,
+  "brief": "V8 with eight lollipop exhaust stacks and a pink blower"
+ },
+ {
+  "id": "engine_bubble",
+  "name": "Bubble Pump",
+  "slot": "Engine",
+  "band": 10,
+  "stage": "Atlantis",
+  "theme": "Sunken Atlantis",
+  "palette": [
+   "1FB7A6",
+   "155E8C",
+   "FF7A5C",
+   "FFF4E6"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "EngineBubble",
+  "archetype": "compact",
+  "visualWidth": null,
+  "brief": "brass diving-helmet pump with glass porthole and bubble pipe"
+ },
+ {
+  "id": "engine_leviathan",
+  "name": "Leviathan Turbine",
+  "slot": "Engine",
+  "band": 10,
+  "stage": "Atlantis",
+  "theme": "Sunken Atlantis",
+  "palette": [
+   "1FB7A6",
+   "155E8C",
+   "FF7A5C",
+   "FFF4E6"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "EngineLeviathan",
+  "archetype": "turbine",
+  "visualWidth": null,
+  "brief": "teal turbine with fin-shaped vanes and a coral-red intake"
+ },
+ {
+  "id": "engine_windup",
+  "name": "Wind-up Motor",
+  "slot": "Engine",
+  "band": 11,
+  "stage": "Toybox",
+  "theme": "Giant Toybox",
+  "palette": [
+   "E8443A",
+   "3A7BE8",
+   "FFD23A",
+   "4CC35A"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "EngineWindup",
+  "archetype": "clockwork",
+  "visualWidth": null,
+  "brief": "toy motor with a giant wind-up key on top, primary colours"
+ },
+ {
+  "id": "engine_jackbox",
+  "name": "Jack-in-the-Box Engine",
+  "slot": "Engine",
+  "band": 11,
+  "stage": "Toybox",
+  "theme": "Giant Toybox",
+  "palette": [
+   "E8443A",
+   "3A7BE8",
+   "FFD23A",
+   "4CC35A"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "EngineJackbox",
+  "archetype": "industrial",
+  "visualWidth": null,
+  "brief": "toy box engine with a spring piston and star decals"
+ },
+ {
+  "id": "engine_pocketwatch",
+  "name": "Pocketwatch Engine",
+  "slot": "Engine",
+  "band": 12,
+  "stage": "Clockwork",
+  "theme": "Clockwork City",
+  "palette": [
+   "D9A441",
+   "C46A3A",
+   "3FBFB4",
+   "3B3F4A"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "EnginePocketwatch",
+  "archetype": "clockwork",
+  "visualWidth": null,
+  "brief": "upright brass pocketwatch housing with visible ticking gears"
+ },
+ {
+  "id": "engine_grandclock",
+  "name": "Grand Clockwork Core",
+  "slot": "Engine",
+  "band": 12,
+  "stage": "Clockwork",
+  "theme": "Clockwork City",
+  "palette": [
+   "D9A441",
+   "C46A3A",
+   "3FBFB4",
+   "3B3F4A"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "EngineGrandClock",
+  "archetype": "clockwork",
+  "visualWidth": null,
+  "brief": "tall clock-tower engine with layered teal and brass gears"
+ },
+ {
+  "id": "engine_breeze",
+  "name": "Breeze Turbine",
+  "slot": "Engine",
+  "band": 13,
+  "stage": "Cloud",
+  "theme": "Cloud Kingdom",
+  "palette": [
+   "F7F9FF",
+   "8FD0FF",
+   "FFE08A",
+   "FFF06E"
+  ],
+  "role": "A",
+  "rarity": "Epic",
+  "model": "EngineBreeze",
+  "archetype": "turbine",
+  "visualWidth": null,
+  "brief": "white cloud-puff housing with a sky-blue fan"
+ },
+ {
+  "id": "engine_storm",
+  "name": "Storm Engine",
+  "slot": "Engine",
+  "band": 13,
+  "stage": "Cloud",
+  "theme": "Cloud Kingdom",
+  "palette": [
+   "F7F9FF",
+   "8FD0FF",
+   "FFE08A",
+   "FFF06E"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "EngineStorm",
+  "archetype": "core",
+  "visualWidth": null,
+  "brief": "dark storm-cloud engine with a glowing lightning core"
+ },
+ {
+  "id": "engine_stardrive",
+  "name": "Star Drive",
+  "slot": "Engine",
+  "band": 14,
+  "stage": "Cosmic",
+  "theme": "Cosmic Sanctuary",
+  "palette": [
+   "3C2E8F",
+   "9B6BFF",
+   "FFF6C8",
+   "6FE7FF"
+  ],
+  "role": "A",
+  "rarity": "Epic",
+  "model": "EngineStarDrive",
+  "archetype": "core",
+  "visualWidth": null,
+  "brief": "indigo star-shaped drive with a glowing cyan nozzle"
+ },
+ {
+  "id": "engine_nebula",
+  "name": "Nebula Reactor",
+  "slot": "Engine",
+  "band": 14,
+  "stage": "Cosmic",
+  "theme": "Cosmic Sanctuary",
+  "palette": [
+   "3C2E8F",
+   "9B6BFF",
+   "FFF6C8",
+   "6FE7FF"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "EngineNebula",
+  "archetype": "core",
+  "visualWidth": null,
+  "brief": "violet reactor sphere with orbiting rings and a star core"
+ },
+ {
+  "id": "gear_wheels",
+  "name": "Snow Wheels",
+  "slot": "Gear",
+  "band": 1,
+  "stage": "Starter",
+  "theme": "Snowy Starter",
+  "palette": [
+   "F4F8FF",
+   "9FD8FF",
+   "E2483D",
+   "4A5568"
+  ],
+  "role": "S",
+  "rarity": "Starter",
+  "model": "GearWheels",
+  "archetype": "smalltires",
+  "visualWidth": null,
+  "brief": "four small black snow tires with red hubs"
+ },
+ {
+  "id": "gear_chunky",
+  "name": "Chunky Snow Tires",
+  "slot": "Gear",
+  "band": 1,
+  "stage": "Starter",
+  "theme": "Snowy Starter",
+  "palette": [
+   "F4F8FF",
+   "9FD8FF",
+   "E2483D",
+   "4A5568"
+  ],
+  "role": "A",
+  "rarity": "Common",
+  "model": "GearChunky",
+  "archetype": "bigtires",
+  "visualWidth": null,
+  "brief": "four big chunky knobby tires with white hubs"
+ },
+ {
+  "id": "gear_tracks",
+  "name": "Tracked Treads",
+  "slot": "Gear",
+  "band": 1,
+  "stage": "Starter",
+  "theme": "Snowy Starter",
+  "palette": [
+   "F4F8FF",
+   "9FD8FF",
+   "E2483D",
+   "4A5568"
+  ],
+  "role": "C",
+  "rarity": "Uncommon",
+  "model": "GearTracks",
+  "archetype": "tracks",
+  "visualWidth": null,
+  "brief": "two steel caterpillar tracks with road wheels"
+ },
+ {
+  "id": "gear_balloon",
+  "name": "Dune Balloon Tires",
+  "slot": "Gear",
+  "band": 2,
+  "stage": "Desert",
+  "theme": "Desert",
+  "palette": [
+   "E8C27A",
+   "2EC4B6",
+   "F2B33D",
+   "8A4B2A"
+  ],
+  "role": "A",
+  "rarity": "Common",
+  "model": "GearBalloon",
+  "archetype": "flotation",
+  "visualWidth": null,
+  "brief": "fat sand balloon tires with turquoise rims"
+ },
+ {
+  "id": "gear_sandcrawler",
+  "name": "Sandcrawler Tracks",
+  "slot": "Gear",
+  "band": 2,
+  "stage": "Desert",
+  "theme": "Desert",
+  "palette": [
+   "E8C27A",
+   "2EC4B6",
+   "F2B33D",
+   "8A4B2A"
+  ],
+  "role": "B",
+  "rarity": "Rare",
+  "model": "GearSandcrawler",
+  "archetype": "widetracks",
+  "visualWidth": null,
+  "brief": "wide flotation tracks with gold sprockets"
+ },
+ {
+  "id": "gear_bonewheels",
+  "name": "Spiked Bone Wheels",
+  "slot": "Gear",
+  "band": 3,
+  "stage": "Cursed",
+  "theme": "Cursed",
+  "palette": [
+   "3B2A55",
+   "8E4DE0",
+   "EDE3C8",
+   "7CFFB2"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "GearBoneWheels",
+  "archetype": "studded",
+  "visualWidth": null,
+  "brief": "violet wheels with bone spikes around the tread"
+ },
+ {
+  "id": "gear_haunted",
+  "name": "Haunted Treads",
+  "slot": "Gear",
+  "band": 3,
+  "stage": "Cursed",
+  "theme": "Cursed",
+  "palette": [
+   "3B2A55",
+   "8E4DE0",
+   "EDE3C8",
+   "7CFFB2"
+  ],
+  "role": "B",
+  "rarity": "Rare",
+  "model": "GearHaunted",
+  "archetype": "tracks",
+  "visualWidth": null,
+  "brief": "dark tracks with ghost-green glowing road wheels"
+ },
+ {
+  "id": "gear_crystalstud",
+  "name": "Crystal Studded Tires",
+  "slot": "Gear",
+  "band": 4,
+  "stage": "Crystal",
+  "theme": "Crystal Caves",
+  "palette": [
+   "57D8FF",
+   "E07BFF",
+   "F4FBFF",
+   "3D4766"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "GearCrystalStud",
+  "archetype": "studded",
+  "visualWidth": null,
+  "brief": "slate tires studded with cyan crystal spikes"
+ },
+ {
+  "id": "gear_geodetracks",
+  "name": "Geode Tracks",
+  "slot": "Gear",
+  "band": 4,
+  "stage": "Crystal",
+  "theme": "Crystal Caves",
+  "palette": [
+   "57D8FF",
+   "E07BFF",
+   "F4FBFF",
+   "3D4766"
+  ],
+  "role": "B",
+  "rarity": "Rare",
+  "model": "GearGeodeTracks",
+  "archetype": "compacttracks",
+  "visualWidth": null,
+  "brief": "short compact track pods with magenta crystal guards"
+ },
+ {
+  "id": "gear_pixelwheels",
+  "name": "Pixel Wheels",
+  "slot": "Gear",
+  "band": 5,
+  "stage": "Retro",
+  "theme": "Retro World",
+  "palette": [
+   "FF4FB6",
+   "3FF0FF",
+   "FFE14F",
+   "1E1E2E"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "GearPixelWheels",
+  "archetype": "pixel",
+  "visualWidth": null,
+  "brief": "octagonal blocky voxel wheels in pink and cyan"
+ },
+ {
+  "id": "gear_hoverpods",
+  "name": "Arcade Hover Pods",
+  "slot": "Gear",
+  "band": 5,
+  "stage": "Retro",
+  "theme": "Retro World",
+  "palette": [
+   "FF4FB6",
+   "3FF0FF",
+   "FFE14F",
+   "1E1E2E"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "GearHoverPods",
+  "archetype": "hover",
+  "visualWidth": null,
+  "brief": "four disc hover pods with neon underglow rings"
+ },
+ {
+  "id": "gear_mudder",
+  "name": "Mudder Tires",
+  "slot": "Gear",
+  "band": 6,
+  "stage": "Jungle",
+  "theme": "Jungle",
+  "palette": [
+   "3FBF4F",
+   "8A5A33",
+   "FF9A2E",
+   "2E5E2A"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "GearMudder",
+  "archetype": "bigtires",
+  "visualWidth": null,
+  "brief": "huge chunky mud tires with wooden hubs"
+ },
+ {
+  "id": "gear_vinecrawler",
+  "name": "Vine Crawler Tracks",
+  "slot": "Gear",
+  "band": 6,
+  "stage": "Jungle",
+  "theme": "Jungle",
+  "palette": [
+   "3FBF4F",
+   "8A5A33",
+   "FF9A2E",
+   "2E5E2A"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "GearVineCrawler",
+  "archetype": "widetracks",
+  "visualWidth": null,
+  "brief": "wide tracks wrapped with vines and leaf guards"
+ },
+ {
+  "id": "gear_skis",
+  "name": "Frost Runners",
+  "slot": "Gear",
+  "band": 7,
+  "stage": "AbsoluteZero",
+  "theme": "Absolute Zero",
+  "palette": [
+   "D8F3FF",
+   "2E6BD8",
+   "C9D6E6",
+   "B79CFF"
+  ],
+  "role": "A",
+  "rarity": "Uncommon",
+  "model": "GearSkis",
+  "archetype": "skis",
+  "visualWidth": null,
+  "brief": "four ice ski runners on silver struts"
+ },
+ {
+  "id": "gear_glaciertracks",
+  "name": "Glacier Tracks",
+  "slot": "Gear",
+  "band": 7,
+  "stage": "AbsoluteZero",
+  "theme": "Absolute Zero",
+  "palette": [
+   "D8F3FF",
+   "2E6BD8",
+   "C9D6E6",
+   "B79CFF"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "GearGlacierTracks",
+  "archetype": "widetracks",
+  "visualWidth": null,
+  "brief": "broad ice-blue flotation tracks with frosted guards"
+ },
+ {
+  "id": "gear_zerog",
+  "name": "Zero-G Hover Rig",
+  "slot": "Gear",
+  "band": 7,
+  "stage": "AbsoluteZero",
+  "theme": "Absolute Zero",
+  "palette": [
+   "D8F3FF",
+   "2E6BD8",
+   "C9D6E6",
+   "B79CFF"
+  ],
+  "role": "C",
+  "rarity": "Legendary",
+  "model": "GearZeroG",
+  "archetype": "hover",
+  "visualWidth": null,
+  "brief": "lilac anti-gravity hover rings with silver frames"
+ },
+ {
+  "id": "gear_bamboo",
+  "name": "Bamboo Wheels",
+  "slot": "Gear",
+  "band": 8,
+  "stage": "Sakura",
+  "theme": "Sakura Garden",
+  "palette": [
+   "FFA7C8",
+   "FFF6FA",
+   "D6363C",
+   "5A3A2E"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "GearBamboo",
+  "archetype": "smalltires",
+  "visualWidth": null,
+  "brief": "bamboo-spoked wheels with pink rims"
+ },
+ {
+  "id": "gear_petalglide",
+  "name": "Petal Glide Runners",
+  "slot": "Gear",
+  "band": 8,
+  "stage": "Sakura",
+  "theme": "Sakura Garden",
+  "palette": [
+   "FFA7C8",
+   "FFF6FA",
+   "D6363C",
+   "5A3A2E"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "GearPetalGlide",
+  "archetype": "skis",
+  "visualWidth": null,
+  "brief": "curved lacquer runners shaped like petals with gold tips"
+ },
+ {
+  "id": "gear_donut",
+  "name": "Donut Tires",
+  "slot": "Gear",
+  "band": 9,
+  "stage": "Candy",
+  "theme": "Candy Kingdom",
+  "palette": [
+   "FF6FA8",
+   "7FE8C3",
+   "FFE36E",
+   "6B3E2E"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "GearDonut",
+  "archetype": "bigtires",
+  "visualWidth": null,
+  "brief": "frosted donut tires with sprinkles"
+ },
+ {
+  "id": "gear_gummytreads",
+  "name": "Gummy Treads",
+  "slot": "Gear",
+  "band": 9,
+  "stage": "Candy",
+  "theme": "Candy Kingdom",
+  "palette": [
+   "FF6FA8",
+   "7FE8C3",
+   "FFE36E",
+   "6B3E2E"
+  ],
+  "role": "B",
+  "rarity": "Epic",
+  "model": "GearGummyTreads",
+  "archetype": "tracks",
+  "visualWidth": null,
+  "brief": "translucent-looking gummy-bear coloured tracks"
+ },
+ {
+  "id": "gear_shell",
+  "name": "Shell Wheels",
+  "slot": "Gear",
+  "band": 10,
+  "stage": "Atlantis",
+  "theme": "Sunken Atlantis",
+  "palette": [
+   "1FB7A6",
+   "155E8C",
+   "FF7A5C",
+   "FFF4E6"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "GearShell",
+  "archetype": "studded",
+  "visualWidth": null,
+  "brief": "spiral seashell wheels with pearl studs"
+ },
+ {
+  "id": "gear_paddle",
+  "name": "Paddle Tracks",
+  "slot": "Gear",
+  "band": 10,
+  "stage": "Atlantis",
+  "theme": "Sunken Atlantis",
+  "palette": [
+   "1FB7A6",
+   "155E8C",
+   "FF7A5C",
+   "FFF4E6"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "GearPaddle",
+  "archetype": "widetracks",
+  "visualWidth": null,
+  "brief": "teal tracks with paddle-wheel fins"
+ },
+ {
+  "id": "gear_toybrick",
+  "name": "Toy Brick Wheels",
+  "slot": "Gear",
+  "band": 11,
+  "stage": "Toybox",
+  "theme": "Giant Toybox",
+  "palette": [
+   "E8443A",
+   "3A7BE8",
+   "FFD23A",
+   "4CC35A"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "GearToyBrick",
+  "archetype": "smalltires",
+  "visualWidth": null,
+  "brief": "chunky toy wheels with brick hubs and studs"
+ },
+ {
+  "id": "gear_toytank",
+  "name": "Toy Tank Tracks",
+  "slot": "Gear",
+  "band": 11,
+  "stage": "Toybox",
+  "theme": "Giant Toybox",
+  "palette": [
+   "E8443A",
+   "3A7BE8",
+   "FFD23A",
+   "4CC35A"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "GearToyTank",
+  "archetype": "compacttracks",
+  "visualWidth": null,
+  "brief": "bright toy-tank tracks with big round road wheels"
+ },
+ {
+  "id": "gear_cogwheels",
+  "name": "Cog Wheels",
+  "slot": "Gear",
+  "band": 12,
+  "stage": "Clockwork",
+  "theme": "Clockwork City",
+  "palette": [
+   "D9A441",
+   "C46A3A",
+   "3FBFB4",
+   "3B3F4A"
+  ],
+  "role": "A",
+  "rarity": "Rare",
+  "model": "GearCogWheels",
+  "archetype": "studded",
+  "visualWidth": null,
+  "brief": "brass cog-tooth wheels with copper hubs"
+ },
+ {
+  "id": "gear_brasstracks",
+  "name": "Brass Tracks",
+  "slot": "Gear",
+  "band": 12,
+  "stage": "Clockwork",
+  "theme": "Clockwork City",
+  "palette": [
+   "D9A441",
+   "C46A3A",
+   "3FBFB4",
+   "3B3F4A"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "GearBrassTracks",
+  "archetype": "compacttracks",
+  "visualWidth": null,
+  "brief": "compact brass track units with teal gear guards"
+ },
+ {
+  "id": "gear_cloudpuff",
+  "name": "Cloud Puff Wheels",
+  "slot": "Gear",
+  "band": 13,
+  "stage": "Cloud",
+  "theme": "Cloud Kingdom",
+  "palette": [
+   "F7F9FF",
+   "8FD0FF",
+   "FFE08A",
+   "FFF06E"
+  ],
+  "role": "A",
+  "rarity": "Epic",
+  "model": "GearCloudPuff",
+  "archetype": "flotation",
+  "visualWidth": null,
+  "brief": "soft cloud-puff tires with gold hubs"
+ },
+ {
+  "id": "gear_stormpods",
+  "name": "Storm Hover Pods",
+  "slot": "Gear",
+  "band": 13,
+  "stage": "Cloud",
+  "theme": "Cloud Kingdom",
+  "palette": [
+   "F7F9FF",
+   "8FD0FF",
+   "FFE08A",
+   "FFF06E"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "GearStormPods",
+  "archetype": "hover",
+  "visualWidth": null,
+  "brief": "storm-cloud hover pods with lightning rings"
+ },
+ {
+  "id": "gear_orbit",
+  "name": "Orbit Rings",
+  "slot": "Gear",
+  "band": 14,
+  "stage": "Cosmic",
+  "theme": "Cosmic Sanctuary",
+  "palette": [
+   "3C2E8F",
+   "9B6BFF",
+   "FFF6C8",
+   "6FE7FF"
+  ],
+  "role": "A",
+  "rarity": "Epic",
+  "model": "GearOrbit",
+  "archetype": "rings",
+  "visualWidth": null,
+  "brief": "ring wheels like planetary orbits with star spokes"
+ },
+ {
+  "id": "gear_meteor",
+  "name": "Meteor Treads",
+  "slot": "Gear",
+  "band": 14,
+  "stage": "Cosmic",
+  "theme": "Cosmic Sanctuary",
+  "palette": [
+   "3C2E8F",
+   "9B6BFF",
+   "FFF6C8",
+   "6FE7FF"
+  ],
+  "role": "B",
+  "rarity": "Legendary",
+  "model": "GearMeteor",
+  "archetype": "widetracks",
+  "visualWidth": null,
+  "brief": "dark indigo tracks with glowing meteor-rock road wheels"
+ }
+]

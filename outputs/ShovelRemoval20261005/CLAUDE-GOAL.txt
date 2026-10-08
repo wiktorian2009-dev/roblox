@@ -1,0 +1,38 @@
+Help me build and maintain my Roblox snowplow/RNG game for kids and teens. Implement requested work, preserve unrelated features, and give concise progress updates.
+
+PROJECT AND ACCESS
+Canonical folder: C:\Users\wikto\Desktop\Roblox Gra.
+Live Roblox Studio place: money, ID 94130990350526.
+
+Start each task by reading AGENTS.md, PROJECT.md and the current handoff at the top of STATUS.md. Then inspect only relevant scripts, assets and notes. My latest request takes precedence over older notes.
+
+Verify which tools and files you can actually access. Uploaded files, GitHub and the local Windows folder do not automatically synchronize. Refresh the Studio session ID and verify the correct place before editing. If access is missing, explain the exact missing connection.
+
+ACCEPTED GAME
+Roll a vehicle-part OFFER in the personal garage -> buy it with earned Snow or reserve it -> equip a blade, engine and running gear -> drive through snow fields -> earn Snow and treasures -> improve the vehicle, unlock stages and rebirth.
+
+Rolling creates an offer; it never grants the part. Show prices clearly, independently of the player's wallet. Preserve the three personal pedestals, reserve shelf, workbench and current E/R interaction flow.
+
+Snowplows are the active equipment. Old shovel gameplay is archived. Preserve recovery archives and historical ownership; a Legacy mode flag cannot restore the removed system.
+
+Preserve pets, eggs, treasures, rewards and the approved snowy style. Keep gameplay varied, readable and rewarding. World 1's eventual target is more than three hours without paid boosts; current snowplow pacing needs measured testing and more progression parts. Upgrades are paced by price, without stage locks. Preserve the upgrade screen's visual design unless I request a redesign.
+
+Use attractive, simple Blender models when suitable tools and import access are available. Keep effects brief, readable and suitable for mobile devices.
+
+WORKFLOW
+Use Graphify queries to locate relevant code when local CLI access is available. Uploaded graph files are navigation aids; verify current Studio behavior.
+
+Studio contains the actual game. game/src is a partial Rojo mirror; game/studio-snapshots contains reference copies. Never let stale disk files overwrite current Studio work. Verify the served folder and proposed changes before connecting Rojo.
+
+Codex and Claude must not write the same script or asset simultaneously. Re-read immediately before patching and reconcile newer changes. Delegate independent tasks when useful.
+
+Implement routine reversible work directly and back up replaced assets. Do not publish or reset real player data without my instruction.
+
+Test meaningful behavior. For isolated progression tests, set ServerStorage.BalanceTestMode=true in Edit before starting your own Play session, then stop it and remove the attribute. This isolates the main DataService only.
+
+After meaningful work, update STATUS.md with implemented changes, actual checks, unresolved issues and the next action. Update PROJECT.md for lasting decisions. Refresh affected live source mirrors before rebuilding Graphify:
+graphify extract game --code-only --out . --max-workers 2
+graphify cluster-only . --no-label
+
+Do not claim access, synchronization, saving, persistence testing or publishing unless verified.
+

@@ -1,0 +1,1623 @@
+{
+ "date": "2026-10-05",
+ "parts": {
+  "packs": [
+   {
+    "pack": "Blades_A",
+    "file": "fbx/Blades_A.fbx",
+    "assetId": "113886673574521",
+    "models": 16,
+    "tris": 27524
+   },
+   {
+    "pack": "Blades_B",
+    "file": "fbx/Blades_B.fbx",
+    "assetId": "76191038681438",
+    "models": 14,
+    "tris": 26316
+   },
+   {
+    "pack": "Engines_A",
+    "file": "fbx/Engines_A.fbx",
+    "assetId": "113757628902695",
+    "models": 16,
+    "tris": 21762
+   },
+   {
+    "pack": "Engines_B",
+    "file": "fbx/Engines_B.fbx",
+    "assetId": "102682517293372",
+    "models": 14,
+    "tris": 19964
+   },
+   {
+    "pack": "Gears_A",
+    "file": "fbx/Gears_A.fbx",
+    "assetId": "80361867210661",
+    "models": 16,
+    "tris": 45804
+   },
+   {
+    "pack": "Gears_B",
+    "file": "fbx/Gears_B.fbx",
+    "assetId": "88481009438593",
+    "models": 14,
+    "tris": 44540
+   }
+  ],
+  "models": [
+   {
+    "id": "blade_basic",
+    "model": "BladeBasic",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 1424,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeBasic"
+   },
+   {
+    "id": "blade_wide",
+    "model": "BladeWide",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 2408,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeWide"
+   },
+   {
+    "id": "blade_frost_scoop",
+    "model": "BladeFrostScoop",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 2284,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeFrostScoop"
+   },
+   {
+    "id": "blade_ice",
+    "model": "BladeIce",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 1648,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeIce"
+   },
+   {
+    "id": "blade_dune",
+    "model": "BladeDune",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 1976,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeDune"
+   },
+   {
+    "id": "blade_grave",
+    "model": "BladeGrave",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 1296,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeGrave"
+   },
+   {
+    "id": "blade_hex",
+    "model": "BladeHex",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 796,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeHex"
+   },
+   {
+    "id": "blade_quartz",
+    "model": "BladeQuartz",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 1304,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeQuartz"
+   },
+   {
+    "id": "blade_prism",
+    "model": "BladePrism",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 696,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladePrism"
+   },
+   {
+    "id": "blade_pixel",
+    "model": "BladePixel",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 2220,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladePixel"
+   },
+   {
+    "id": "blade_arcade",
+    "model": "BladeArcade",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 1400,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeArcade"
+   },
+   {
+    "id": "blade_vine",
+    "model": "BladeVine",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 2320,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeVine"
+   },
+   {
+    "id": "blade_tusk",
+    "model": "BladeTusk",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 2268,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeTusk"
+   },
+   {
+    "id": "blade_glacier",
+    "model": "BladeGlacier",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 2448,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeGlacier"
+   },
+   {
+    "id": "blade_zero",
+    "model": "BladeZero",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 1340,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeZero"
+   },
+   {
+    "id": "blade_singularity",
+    "model": "BladeSingularity",
+    "slot": "Blade",
+    "assetId": "113886673574521",
+    "pack": "Blades_A",
+    "tris": 1696,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeSingularity"
+   },
+   {
+    "id": "blade_petal",
+    "model": "BladePetal",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 1716,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladePetal"
+   },
+   {
+    "id": "blade_katana",
+    "model": "BladeKatana",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 1384,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeKatana"
+   },
+   {
+    "id": "blade_lollipop",
+    "model": "BladeLollipop",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 2484,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeLollipop"
+   },
+   {
+    "id": "blade_canecrusher",
+    "model": "BladeCaneCrusher",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 2088,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeCaneCrusher"
+   },
+   {
+    "id": "blade_coral",
+    "model": "BladeCoral",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 2488,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeCoral"
+   },
+   {
+    "id": "blade_trident",
+    "model": "BladeTrident",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 1084,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeTrident"
+   },
+   {
+    "id": "blade_brick",
+    "model": "BladeBrick",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 1928,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeBrick"
+   },
+   {
+    "id": "blade_bulldozer",
+    "model": "BladeBulldozer",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 1502,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeBulldozer"
+   },
+   {
+    "id": "blade_cog",
+    "model": "BladeCog",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 2420,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeCog"
+   },
+   {
+    "id": "blade_gearbreaker",
+    "model": "BladeGearbreaker",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 1596,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeGearbreaker"
+   },
+   {
+    "id": "blade_cumulus",
+    "model": "BladeCumulus",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 2370,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeCumulus"
+   },
+   {
+    "id": "blade_thunder",
+    "model": "BladeThunder",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 952,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeThunder"
+   },
+   {
+    "id": "blade_comet",
+    "model": "BladeComet",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 2184,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeComet"
+   },
+   {
+    "id": "blade_galaxy",
+    "model": "BladeGalaxy",
+    "slot": "Blade",
+    "assetId": "76191038681438",
+    "pack": "Blades_B",
+    "tris": 2120,
+    "studioTemplate": "ReplicatedStorage.PlowParts.BladeGalaxy"
+   },
+   {
+    "id": "engine_starter",
+    "model": "EngineStarter",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1040,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineStarter"
+   },
+   {
+    "id": "engine_snowball",
+    "model": "EngineSnowball",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1386,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineSnowball"
+   },
+   {
+    "id": "engine_balanced",
+    "model": "EngineBalanced",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1696,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineBalanced"
+   },
+   {
+    "id": "engine_sandrunner",
+    "model": "EngineSandRunner",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1372,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineSandRunner"
+   },
+   {
+    "id": "engine_power",
+    "model": "EnginePower",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1356,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EnginePower"
+   },
+   {
+    "id": "engine_lantern",
+    "model": "EngineLantern",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 744,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineLantern"
+   },
+   {
+    "id": "engine_phantom",
+    "model": "EnginePhantom",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1456,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EnginePhantom"
+   },
+   {
+    "id": "engine_geode",
+    "model": "EngineGeode",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 330,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineGeode"
+   },
+   {
+    "id": "engine_reactor",
+    "model": "EngineReactor",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1300,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineReactor"
+   },
+   {
+    "id": "engine_8bit",
+    "model": "Engine8Bit",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1604,
+    "studioTemplate": "ReplicatedStorage.PlowParts.Engine8Bit"
+   },
+   {
+    "id": "engine_arcade",
+    "model": "EngineArcade",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1280,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineArcade"
+   },
+   {
+    "id": "engine_tiki",
+    "model": "EngineTiki",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1788,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineTiki"
+   },
+   {
+    "id": "engine_jturbine",
+    "model": "EngineJungleTurbine",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1380,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineJungleTurbine"
+   },
+   {
+    "id": "engine_cryo",
+    "model": "EngineCryo",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1906,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineCryo"
+   },
+   {
+    "id": "engine_polar",
+    "model": "EnginePolar",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1496,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EnginePolar"
+   },
+   {
+    "id": "engine_zerocore",
+    "model": "EngineZeroCore",
+    "slot": "Engine",
+    "assetId": "113757628902695",
+    "pack": "Engines_A",
+    "tris": 1628,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineZeroCore"
+   },
+   {
+    "id": "engine_lanterntwin",
+    "model": "EngineLanternTwin",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1504,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineLanternTwin"
+   },
+   {
+    "id": "engine_blossom",
+    "model": "EngineBlossom",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1186,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineBlossom"
+   },
+   {
+    "id": "engine_gumdrop",
+    "model": "EngineGumdrop",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1462,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineGumdrop"
+   },
+   {
+    "id": "engine_sugarv8",
+    "model": "EngineSugarV8",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1764,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineSugarV8"
+   },
+   {
+    "id": "engine_bubble",
+    "model": "EngineBubble",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1414,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineBubble"
+   },
+   {
+    "id": "engine_leviathan",
+    "model": "EngineLeviathan",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 936,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineLeviathan"
+   },
+   {
+    "id": "engine_windup",
+    "model": "EngineWindup",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 724,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineWindup"
+   },
+   {
+    "id": "engine_jackbox",
+    "model": "EngineJackbox",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1716,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineJackbox"
+   },
+   {
+    "id": "engine_pocketwatch",
+    "model": "EnginePocketwatch",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1292,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EnginePocketwatch"
+   },
+   {
+    "id": "engine_grandclock",
+    "model": "EngineGrandClock",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1816,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineGrandClock"
+   },
+   {
+    "id": "engine_breeze",
+    "model": "EngineBreeze",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1968,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineBreeze"
+   },
+   {
+    "id": "engine_storm",
+    "model": "EngineStorm",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1756,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineStorm"
+   },
+   {
+    "id": "engine_stardrive",
+    "model": "EngineStarDrive",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 720,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineStarDrive"
+   },
+   {
+    "id": "engine_nebula",
+    "model": "EngineNebula",
+    "slot": "Engine",
+    "assetId": "102682517293372",
+    "pack": "Engines_B",
+    "tris": 1706,
+    "studioTemplate": "ReplicatedStorage.PlowParts.EngineNebula"
+   },
+   {
+    "id": "gear_wheels",
+    "model": "GearWheels",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 2304,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearWheels"
+   },
+   {
+    "id": "gear_chunky",
+    "model": "GearChunky",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 3984,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearChunky"
+   },
+   {
+    "id": "gear_tracks",
+    "model": "GearTracks",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 3184,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearTracks"
+   },
+   {
+    "id": "gear_balloon",
+    "model": "GearBalloon",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 3712,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearBalloon"
+   },
+   {
+    "id": "gear_sandcrawler",
+    "model": "GearSandcrawler",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 3228,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearSandcrawler"
+   },
+   {
+    "id": "gear_bonewheels",
+    "model": "GearBoneWheels",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 2400,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearBoneWheels"
+   },
+   {
+    "id": "gear_haunted",
+    "model": "GearHaunted",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 3048,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearHaunted"
+   },
+   {
+    "id": "gear_crystalstud",
+    "model": "GearCrystalStud",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 2928,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearCrystalStud"
+   },
+   {
+    "id": "gear_geodetracks",
+    "model": "GearGeodeTracks",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 2544,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearGeodeTracks"
+   },
+   {
+    "id": "gear_pixelwheels",
+    "model": "GearPixelWheels",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 1984,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearPixelWheels"
+   },
+   {
+    "id": "gear_hoverpods",
+    "model": "GearHoverPods",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 1888,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearHoverPods"
+   },
+   {
+    "id": "gear_mudder",
+    "model": "GearMudder",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 3504,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearMudder"
+   },
+   {
+    "id": "gear_vinecrawler",
+    "model": "GearVineCrawler",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 3216,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearVineCrawler"
+   },
+   {
+    "id": "gear_skis",
+    "model": "GearSkis",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 1440,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearSkis"
+   },
+   {
+    "id": "gear_glaciertracks",
+    "model": "GearGlacierTracks",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 3152,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearGlacierTracks"
+   },
+   {
+    "id": "gear_zerog",
+    "model": "GearZeroG",
+    "slot": "Gear",
+    "assetId": "80361867210661",
+    "pack": "Gears_A",
+    "tris": 3288,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearZeroG"
+   },
+   {
+    "id": "gear_bamboo",
+    "model": "GearBamboo",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 4144,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearBamboo"
+   },
+   {
+    "id": "gear_petalglide",
+    "model": "GearPetalGlide",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 1832,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearPetalGlide"
+   },
+   {
+    "id": "gear_donut",
+    "model": "GearDonut",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 3744,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearDonut"
+   },
+   {
+    "id": "gear_gummytreads",
+    "model": "GearGummyTreads",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 2928,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearGummyTreads"
+   },
+   {
+    "id": "gear_shell",
+    "model": "GearShell",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 4008,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearShell"
+   },
+   {
+    "id": "gear_paddle",
+    "model": "GearPaddle",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 3744,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearPaddle"
+   },
+   {
+    "id": "gear_toybrick",
+    "model": "GearToyBrick",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 1744,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearToyBrick"
+   },
+   {
+    "id": "gear_toytank",
+    "model": "GearToyTank",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 3576,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearToyTank"
+   },
+   {
+    "id": "gear_cogwheels",
+    "model": "GearCogWheels",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 2928,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearCogWheels"
+   },
+   {
+    "id": "gear_brasstracks",
+    "model": "GearBrassTracks",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 3696,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearBrassTracks"
+   },
+   {
+    "id": "gear_cloudpuff",
+    "model": "GearCloudPuff",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 3664,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearCloudPuff"
+   },
+   {
+    "id": "gear_stormpods",
+    "model": "GearStormPods",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 3440,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearStormPods"
+   },
+   {
+    "id": "gear_orbit",
+    "model": "GearOrbit",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 2896,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearOrbit"
+   },
+   {
+    "id": "gear_meteor",
+    "model": "GearMeteor",
+    "slot": "Gear",
+    "assetId": "88481009438593",
+    "pack": "Gears_B",
+    "tris": 2196,
+    "studioTemplate": "ReplicatedStorage.PlowParts.GearMeteor"
+   }
+  ]
+ },
+ "pets": {
+  "packs": [
+   {
+    "egg": "SnowyEgg",
+    "pack": "Pets SnowyEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\SnowyEgg_Pets.fbx",
+    "assetId": "72896385049601",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Snow Bunny",
+     "Penguin",
+     "Arctic Fox",
+     "Polar Bear",
+     "Yeti"
+    ]
+   },
+   {
+    "egg": "DesertEgg",
+    "pack": "Pets DesertEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\DesertEgg_Pets.fbx",
+    "assetId": "108642483231678",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Fennec Fox",
+     "Camel",
+     "Sand Lizard",
+     "Scarab",
+     "Sphinx Cat"
+    ]
+   },
+   {
+    "egg": "CursedEgg",
+    "pack": "Pets CursedEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\CursedEgg_Pets.fbx",
+    "assetId": "133076257142856",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Shadow Bat",
+     "Ghost",
+     "Imp",
+     "Shadow Wolf",
+     "Void Demon"
+    ]
+   },
+   {
+    "egg": "CrystalEgg",
+    "pack": "Pets CrystalEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\CrystalEgg_Pets.fbx",
+    "assetId": "82955266460049",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Gem Slime",
+     "Crystal Bunny",
+     "Prism Bird",
+     "Crystal Golem",
+     "Diamond Dragon"
+    ]
+   },
+   {
+    "egg": "RetroEgg",
+    "pack": "Pets RetroEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\RetroEgg_Pets.fbx",
+    "assetId": "74949829376188",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Pixel Cat",
+     "Arcade Bot",
+     "Neon Frog",
+     "Synth Fox",
+     "Glitch Dragon"
+    ]
+   },
+   {
+    "egg": "JungleEgg",
+    "pack": "Pets JungleEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\JungleEgg_Pets.fbx",
+    "assetId": "97099306132342",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Tree Frog",
+     "Monkey",
+     "Toucan",
+     "Jaguar",
+     "Tiki Guardian"
+    ]
+   },
+   {
+    "egg": "AbsoluteZeroEgg",
+    "pack": "Pets AbsoluteZeroEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\AbsoluteZeroEgg_Pets.fbx",
+    "assetId": "81129343932213",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Frost Sprite",
+     "Ice Seal",
+     "Snow Owl",
+     "Glacier Mammoth",
+     "Absolute Phoenix"
+    ]
+   },
+   {
+    "egg": "BlossomEgg",
+    "pack": "Pets BlossomEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\BlossomEgg_Pets.fbx",
+    "assetId": "131801273184158",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Koi",
+     "Blossom Bunny",
+     "Red Panda",
+     "Crane",
+     "Blossom Dragon"
+    ]
+   },
+   {
+    "egg": "CandyEgg",
+    "pack": "Pets CandyEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\CandyEgg_Pets.fbx",
+    "assetId": "129457469997966",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Gummy Bear",
+     "Marshmallow Bunny",
+     "Cupcake Cat",
+     "Candy Fox",
+     "Sugar Dragon"
+    ]
+   },
+   {
+    "egg": "PearlEgg",
+    "pack": "Pets PearlEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\PearlEgg_Pets.fbx",
+    "assetId": "96615302680441",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Crab",
+     "Seahorse",
+     "Turtle",
+     "Manta Ray",
+     "Ancient Sea Serpent"
+    ]
+   },
+   {
+    "egg": "ToyCapsuleEgg",
+    "pack": "Pets ToyCapsuleEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\ToyCapsuleEgg_Pets.fbx",
+    "assetId": "75292382371106",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Teddy Bear",
+     "Toy Duck",
+     "Wind-up Mouse",
+     "Toy Robot",
+     "Plush Dinosaur"
+    ]
+   },
+   {
+    "egg": "GearEgg",
+    "pack": "Pets GearEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\GearEgg_Pets.fbx",
+    "assetId": "84035752246571",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Brass Beetle",
+     "Clockwork Bird",
+     "Steam Pup",
+     "Gear Fox",
+     "Clockwork Dragon"
+    ]
+   },
+   {
+    "egg": "CloudEgg",
+    "pack": "Pets CloudEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\CloudEgg_Pets.fbx",
+    "assetId": "106087890776138",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Cloud Lamb",
+     "Cloud Kitten",
+     "Thunder Owl",
+     "Rainbow Pegasus",
+     "Sky Whale"
+    ]
+   },
+   {
+    "egg": "StarEgg",
+    "pack": "Pets StarEgg 2026-10-05",
+    "file": "outputs\\PlowExpansion20261005\\pets\\packs\\StarEgg_Pets.fbx",
+    "assetId": "81890738983246",
+    "marker": "Ref__Origin__FF00FFNE at (0,0,0)",
+    "pets": [
+     "Comet Pup",
+     "Moon Bunny",
+     "Astro Cat",
+     "Nebula Fox",
+     "Galaxy Dragon"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "name": "Snow Bunny",
+    "key": "SnowBunny",
+    "egg": "SnowyEgg",
+    "assetId": "72896385049601",
+    "tris": 2130,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Snow Bunny"
+   },
+   {
+    "name": "Penguin",
+    "key": "Penguin",
+    "egg": "SnowyEgg",
+    "assetId": "72896385049601",
+    "tris": 1934,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Penguin"
+   },
+   {
+    "name": "Arctic Fox",
+    "key": "ArcticFox",
+    "egg": "SnowyEgg",
+    "assetId": "72896385049601",
+    "tris": 1988,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Arctic Fox"
+   },
+   {
+    "name": "Polar Bear",
+    "key": "PolarBear",
+    "egg": "SnowyEgg",
+    "assetId": "72896385049601",
+    "tris": 2280,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Polar Bear"
+   },
+   {
+    "name": "Yeti",
+    "key": "Yeti",
+    "egg": "SnowyEgg",
+    "assetId": "72896385049601",
+    "tris": 1944,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Yeti"
+   },
+   {
+    "name": "Fennec Fox",
+    "key": "FennecFox",
+    "egg": "DesertEgg",
+    "assetId": "108642483231678",
+    "tris": 2290,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Fennec Fox"
+   },
+   {
+    "name": "Camel",
+    "key": "Camel",
+    "egg": "DesertEgg",
+    "assetId": "108642483231678",
+    "tris": 2376,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Camel"
+   },
+   {
+    "name": "Sand Lizard",
+    "key": "SandLizard",
+    "egg": "DesertEgg",
+    "assetId": "108642483231678",
+    "tris": 2114,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Sand Lizard"
+   },
+   {
+    "name": "Scarab",
+    "key": "Scarab",
+    "egg": "DesertEgg",
+    "assetId": "108642483231678",
+    "tris": 2090,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Scarab"
+   },
+   {
+    "name": "Sphinx Cat",
+    "key": "SphinxCat",
+    "egg": "DesertEgg",
+    "assetId": "108642483231678",
+    "tris": 2198,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Sphinx Cat"
+   },
+   {
+    "name": "Shadow Bat",
+    "key": "ShadowBat",
+    "egg": "CursedEgg",
+    "assetId": "133076257142856",
+    "tris": 1340,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Shadow Bat"
+   },
+   {
+    "name": "Ghost",
+    "key": "Ghost",
+    "egg": "CursedEgg",
+    "assetId": "133076257142856",
+    "tris": 1664,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Ghost"
+   },
+   {
+    "name": "Imp",
+    "key": "Imp",
+    "egg": "CursedEgg",
+    "assetId": "133076257142856",
+    "tris": 1750,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Imp"
+   },
+   {
+    "name": "Shadow Wolf",
+    "key": "ShadowWolf",
+    "egg": "CursedEgg",
+    "assetId": "133076257142856",
+    "tris": 2322,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Shadow Wolf"
+   },
+   {
+    "name": "Void Demon",
+    "key": "VoidDemon",
+    "egg": "CursedEgg",
+    "assetId": "133076257142856",
+    "tris": 2056,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Void Demon"
+   },
+   {
+    "name": "Gem Slime",
+    "key": "GemSlime",
+    "egg": "CrystalEgg",
+    "assetId": "82955266460049",
+    "tris": 1098,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Gem Slime"
+   },
+   {
+    "name": "Crystal Bunny",
+    "key": "CrystalBunny",
+    "egg": "CrystalEgg",
+    "assetId": "82955266460049",
+    "tris": 1460,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Crystal Bunny"
+   },
+   {
+    "name": "Prism Bird",
+    "key": "PrismBird",
+    "egg": "CrystalEgg",
+    "assetId": "82955266460049",
+    "tris": 964,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Prism Bird"
+   },
+   {
+    "name": "Crystal Golem",
+    "key": "CrystalGolem",
+    "egg": "CrystalEgg",
+    "assetId": "82955266460049",
+    "tris": 1258,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Crystal Golem"
+   },
+   {
+    "name": "Diamond Dragon",
+    "key": "DiamondDragon",
+    "egg": "CrystalEgg",
+    "assetId": "82955266460049",
+    "tris": 1954,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Diamond Dragon"
+   },
+   {
+    "name": "Pixel Cat",
+    "key": "PixelCat",
+    "egg": "RetroEgg",
+    "assetId": "74949829376188",
+    "tris": 468,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Pixel Cat"
+   },
+   {
+    "name": "Arcade Bot",
+    "key": "ArcadeBot",
+    "egg": "RetroEgg",
+    "assetId": "74949829376188",
+    "tris": 696,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Arcade Bot"
+   },
+   {
+    "name": "Neon Frog",
+    "key": "NeonFrog",
+    "egg": "RetroEgg",
+    "assetId": "74949829376188",
+    "tris": 312,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Neon Frog"
+   },
+   {
+    "name": "Synth Fox",
+    "key": "SynthFox",
+    "egg": "RetroEgg",
+    "assetId": "74949829376188",
+    "tris": 1040,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Synth Fox"
+   },
+   {
+    "name": "Glitch Dragon",
+    "key": "GlitchDragon",
+    "egg": "RetroEgg",
+    "assetId": "74949829376188",
+    "tris": 660,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Glitch Dragon"
+   },
+   {
+    "name": "Tree Frog",
+    "key": "TreeFrog",
+    "egg": "JungleEgg",
+    "assetId": "97099306132342",
+    "tris": 2020,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Tree Frog"
+   },
+   {
+    "name": "Monkey",
+    "key": "Monkey",
+    "egg": "JungleEgg",
+    "assetId": "97099306132342",
+    "tris": 2442,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Monkey"
+   },
+   {
+    "name": "Toucan",
+    "key": "Toucan",
+    "egg": "JungleEgg",
+    "assetId": "97099306132342",
+    "tris": 1790,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Toucan"
+   },
+   {
+    "name": "Jaguar",
+    "key": "Jaguar",
+    "egg": "JungleEgg",
+    "assetId": "97099306132342",
+    "tris": 2100,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Jaguar"
+   },
+   {
+    "name": "Tiki Guardian",
+    "key": "TikiGuardian",
+    "egg": "JungleEgg",
+    "assetId": "97099306132342",
+    "tris": 2154,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Tiki Guardian"
+   },
+   {
+    "name": "Frost Sprite",
+    "key": "FrostSprite",
+    "egg": "AbsoluteZeroEgg",
+    "assetId": "81129343932213",
+    "tris": 1698,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Frost Sprite"
+   },
+   {
+    "name": "Ice Seal",
+    "key": "IceSeal",
+    "egg": "AbsoluteZeroEgg",
+    "assetId": "81129343932213",
+    "tris": 1740,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Ice Seal"
+   },
+   {
+    "name": "Snow Owl",
+    "key": "SnowOwl",
+    "egg": "AbsoluteZeroEgg",
+    "assetId": "81129343932213",
+    "tris": 1838,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Snow Owl"
+   },
+   {
+    "name": "Glacier Mammoth",
+    "key": "GlacierMammoth",
+    "egg": "AbsoluteZeroEgg",
+    "assetId": "81129343932213",
+    "tris": 2028,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Glacier Mammoth"
+   },
+   {
+    "name": "Absolute Phoenix",
+    "key": "AbsolutePhoenix",
+    "egg": "AbsoluteZeroEgg",
+    "assetId": "81129343932213",
+    "tris": 2242,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Absolute Phoenix"
+   },
+   {
+    "name": "Koi",
+    "key": "Koi",
+    "egg": "BlossomEgg",
+    "assetId": "131801273184158",
+    "tris": 1788,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Koi"
+   },
+   {
+    "name": "Blossom Bunny",
+    "key": "BlossomBunny",
+    "egg": "BlossomEgg",
+    "assetId": "131801273184158",
+    "tris": 2182,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Blossom Bunny"
+   },
+   {
+    "name": "Red Panda",
+    "key": "RedPanda",
+    "egg": "BlossomEgg",
+    "assetId": "131801273184158",
+    "tris": 1898,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Red Panda"
+   },
+   {
+    "name": "Crane",
+    "key": "Crane",
+    "egg": "BlossomEgg",
+    "assetId": "131801273184158",
+    "tris": 1612,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Crane"
+   },
+   {
+    "name": "Blossom Dragon",
+    "key": "BlossomDragon",
+    "egg": "BlossomEgg",
+    "assetId": "131801273184158",
+    "tris": 1992,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Blossom Dragon"
+   },
+   {
+    "name": "Gummy Bear",
+    "key": "GummyBear",
+    "egg": "CandyEgg",
+    "assetId": "129457469997966",
+    "tris": 1968,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Gummy Bear"
+   },
+   {
+    "name": "Marshmallow Bunny",
+    "key": "MarshmallowBunny",
+    "egg": "CandyEgg",
+    "assetId": "129457469997966",
+    "tris": 1788,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Marshmallow Bunny"
+   },
+   {
+    "name": "Cupcake Cat",
+    "key": "CupcakeCat",
+    "egg": "CandyEgg",
+    "assetId": "129457469997966",
+    "tris": 2244,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Cupcake Cat"
+   },
+   {
+    "name": "Candy Fox",
+    "key": "CandyFox",
+    "egg": "CandyEgg",
+    "assetId": "129457469997966",
+    "tris": 2166,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Candy Fox"
+   },
+   {
+    "name": "Sugar Dragon",
+    "key": "SugarDragon",
+    "egg": "CandyEgg",
+    "assetId": "129457469997966",
+    "tris": 2224,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Sugar Dragon"
+   },
+   {
+    "name": "Crab",
+    "key": "Crab",
+    "egg": "PearlEgg",
+    "assetId": "96615302680441",
+    "tris": 2440,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Crab"
+   },
+   {
+    "name": "Seahorse",
+    "key": "Seahorse",
+    "egg": "PearlEgg",
+    "assetId": "96615302680441",
+    "tris": 1556,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Seahorse"
+   },
+   {
+    "name": "Turtle",
+    "key": "Turtle",
+    "egg": "PearlEgg",
+    "assetId": "96615302680441",
+    "tris": 1790,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Turtle"
+   },
+   {
+    "name": "Manta Ray",
+    "key": "MantaRay",
+    "egg": "PearlEgg",
+    "assetId": "96615302680441",
+    "tris": 1138,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Manta Ray"
+   },
+   {
+    "name": "Ancient Sea Serpent",
+    "key": "AncientSeaSerpent",
+    "egg": "PearlEgg",
+    "assetId": "96615302680441",
+    "tris": 2316,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Ancient Sea Serpent"
+   },
+   {
+    "name": "Teddy Bear",
+    "key": "TeddyBear",
+    "egg": "ToyCapsuleEgg",
+    "assetId": "75292382371106",
+    "tris": 2218,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Teddy Bear"
+   },
+   {
+    "name": "Toy Duck",
+    "key": "ToyDuck",
+    "egg": "ToyCapsuleEgg",
+    "assetId": "75292382371106",
+    "tris": 2158,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Toy Duck"
+   },
+   {
+    "name": "Wind-up Mouse",
+    "key": "WindupMouse",
+    "egg": "ToyCapsuleEgg",
+    "assetId": "75292382371106",
+    "tris": 2002,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Wind-up Mouse"
+   },
+   {
+    "name": "Toy Robot",
+    "key": "ToyRobot",
+    "egg": "ToyCapsuleEgg",
+    "assetId": "75292382371106",
+    "tris": 1800,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Toy Robot"
+   },
+   {
+    "name": "Plush Dinosaur",
+    "key": "PlushDinosaur",
+    "egg": "ToyCapsuleEgg",
+    "assetId": "75292382371106",
+    "tris": 2104,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Plush Dinosaur"
+   },
+   {
+    "name": "Brass Beetle",
+    "key": "BrassBeetle",
+    "egg": "GearEgg",
+    "assetId": "84035752246571",
+    "tris": 2176,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Brass Beetle"
+   },
+   {
+    "name": "Clockwork Bird",
+    "key": "ClockworkBird",
+    "egg": "GearEgg",
+    "assetId": "84035752246571",
+    "tris": 1492,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Clockwork Bird"
+   },
+   {
+    "name": "Steam Pup",
+    "key": "SteamPup",
+    "egg": "GearEgg",
+    "assetId": "84035752246571",
+    "tris": 2348,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Steam Pup"
+   },
+   {
+    "name": "Gear Fox",
+    "key": "GearFox",
+    "egg": "GearEgg",
+    "assetId": "84035752246571",
+    "tris": 2278,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Gear Fox"
+   },
+   {
+    "name": "Clockwork Dragon",
+    "key": "ClockworkDragon",
+    "egg": "GearEgg",
+    "assetId": "84035752246571",
+    "tris": 2438,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Clockwork Dragon"
+   },
+   {
+    "name": "Cloud Lamb",
+    "key": "CloudLamb",
+    "egg": "CloudEgg",
+    "assetId": "106087890776138",
+    "tris": 1770,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Cloud Lamb"
+   },
+   {
+    "name": "Cloud Kitten",
+    "key": "CloudKitten",
+    "egg": "CloudEgg",
+    "assetId": "106087890776138",
+    "tris": 2240,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Cloud Kitten"
+   },
+   {
+    "name": "Thunder Owl",
+    "key": "ThunderOwl",
+    "egg": "CloudEgg",
+    "assetId": "106087890776138",
+    "tris": 1584,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Thunder Owl"
+   },
+   {
+    "name": "Rainbow Pegasus",
+    "key": "RainbowPegasus",
+    "egg": "CloudEgg",
+    "assetId": "106087890776138",
+    "tris": 2170,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Rainbow Pegasus"
+   },
+   {
+    "name": "Sky Whale",
+    "key": "SkyWhale",
+    "egg": "CloudEgg",
+    "assetId": "106087890776138",
+    "tris": 1940,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Sky Whale"
+   },
+   {
+    "name": "Comet Pup",
+    "key": "CometPup",
+    "egg": "StarEgg",
+    "assetId": "81890738983246",
+    "tris": 2054,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Comet Pup"
+   },
+   {
+    "name": "Moon Bunny",
+    "key": "MoonBunny",
+    "egg": "StarEgg",
+    "assetId": "81890738983246",
+    "tris": 1966,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Moon Bunny"
+   },
+   {
+    "name": "Astro Cat",
+    "key": "AstroCat",
+    "egg": "StarEgg",
+    "assetId": "81890738983246",
+    "tris": 2132,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Astro Cat"
+   },
+   {
+    "name": "Nebula Fox",
+    "key": "NebulaFox",
+    "egg": "StarEgg",
+    "assetId": "81890738983246",
+    "tris": 2272,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Nebula Fox"
+   },
+   {
+    "name": "Galaxy Dragon",
+    "key": "GalaxyDragon",
+    "egg": "StarEgg",
+    "assetId": "81890738983246",
+    "tris": 2184,
+    "studioModel": "ReplicatedStorage.PetModelOverrides.Galaxy Dragon"
+   }
+  ]
+ }
+}

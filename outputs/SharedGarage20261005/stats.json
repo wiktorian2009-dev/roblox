@@ -1,0 +1,561 @@
+{
+ "GarageBay": {
+  "min": [
+   -16.0,
+   -15.3,
+   -1.2
+  ],
+  "max": [
+   16.0,
+   15.1,
+   12.15
+  ],
+  "tris": 5736,
+  "parts": [
+   "Floor__CCD5E0SP",
+   "Ice__9FD8FFSP",
+   "Yellow__FFD23ASP",
+   "Ice2__57D8FFSP",
+   "Red__E2483DSP",
+   "Steel__3B3F4ASP",
+   "Orange__F2A23DSP",
+   "Snow__F6FAFFSP",
+   "Sign__FFF3D6SP",
+   "Wood__E09A5ASP",
+   "Trim__F2F4F7SP",
+   "Glass__BFE8FFGL",
+   "LampBulb__FFE3A0NE",
+   "Silver__C9D2DESP",
+   "Wood2__A9622FSP"
+  ],
+  "origin": [
+   30.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   32.0,
+   30.4,
+   13.35
+  ],
+  "pack": "Pack_Bay",
+  "at": [
+   30,
+   0,
+   0
+  ],
+  "objects": 15,
+  "neon": [
+   "LampBulb"
+  ]
+ },
+ "GarageStreet": {
+  "min": [
+   -16.0,
+   -15.0,
+   -1.2
+  ],
+  "max": [
+   16.0,
+   15.0,
+   7.06
+  ],
+  "tris": 1624,
+  "parts": [
+   "Slab__A9C2DASP",
+   "PaverA__9FD8FFSP",
+   "PaverB__D3ECFBSP",
+   "Snow__F6FAFFSP",
+   "Steel__3B3F4ASP",
+   "Red__E2483DSP",
+   "Orange__F2A23DSP",
+   "LampBulb__FFE3A0NE"
+  ],
+  "origin": [
+   76.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   32.0,
+   30.0,
+   8.26
+  ],
+  "pack": "Pack_Bay",
+  "at": [
+   76,
+   0,
+   0
+  ],
+  "objects": 8,
+  "neon": [
+   "LampBulb"
+  ]
+ },
+ "GarageIsland": {
+  "min": [
+   -77.87,
+   -52.18,
+   -45.0
+  ],
+  "max": [
+   78.16,
+   52.12,
+   0.4
+  ],
+  "tris": 6088,
+  "parts": [
+   "Snow__F6FAFFSP",
+   "IceBand__A9CBE8SP",
+   "Rock__7F92ACSP",
+   "Icicles__CFEFFFSP",
+   "Crystal__57D8FFSP"
+  ],
+  "origin": [
+   90.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   156.04,
+   104.3,
+   45.4
+  ],
+  "pack": "Pack_Island",
+  "at": [
+   90,
+   0,
+   0
+  ],
+  "objects": 5,
+  "neon": []
+ },
+ "GarageAnnexSlab": {
+  "min": [
+   -16.0,
+   -30.0,
+   -18.0
+  ],
+  "max": [
+   16.0,
+   30.0,
+   -0.05
+  ],
+  "tris": 1384,
+  "parts": [
+   "Snow__F6FAFFSP",
+   "IceBand__A9CBE8SP",
+   "Rock__7F92ACSP",
+   "Icicles__CFEFFFSP"
+  ],
+  "origin": [
+   200.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   32.0,
+   60.0,
+   17.95
+  ],
+  "pack": "Pack_Island",
+  "at": [
+   200,
+   0,
+   0
+  ],
+  "objects": 4,
+  "neon": []
+ },
+ "PlazaLandmark": {
+  "min": [
+   -7.12,
+   -7.12,
+   0.0
+  ],
+  "max": [
+   7.12,
+   7.12,
+   15.9
+  ],
+  "tris": 5194,
+  "parts": [
+   "Plinth__9FD8FFSP",
+   "Snow__F6FAFFSP",
+   "Steel__3B3F4ASP",
+   "Stove__3B3F4ASP",
+   "Orange__F2A23DSP",
+   "Glow__FF9A3DNE",
+   "Gear__FFD23ASP",
+   "Face__FFF3D6SP",
+   "Red__E2483DSP",
+   "LampBulb__FFE3A0NE",
+   "Wood__E09A5ASP",
+   "Wood2__A9622FSP"
+  ],
+  "origin": [
+   20.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   14.25,
+   14.25,
+   15.9
+  ],
+  "pack": "Pack_Landmarks",
+  "at": [
+   20,
+   0,
+   0
+  ],
+  "objects": 12,
+  "neon": [
+   "Glow",
+   "LampBulb"
+  ]
+ },
+ "ReturnPortal": {
+  "min": [
+   -5.43,
+   -2.07,
+   0.0
+  ],
+  "max": [
+   5.43,
+   2.07,
+   11.45
+  ],
+  "tris": 2626,
+  "parts": [
+   "Base__BFE6FFSP",
+   "Ice__9FD8FFSP",
+   "Ice2__57D8FFSP",
+   "Snow__F6FAFFSP",
+   "Swirl__57D8FFNET15",
+   "SwirlLine__EAFBFFNE"
+  ],
+  "origin": [
+   45.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   10.85,
+   4.14,
+   11.45
+  ],
+  "pack": "Pack_Landmarks",
+  "at": [
+   45,
+   0,
+   0
+  ],
+  "objects": 6,
+  "neon": [
+   "Swirl",
+   "SwirlLine"
+  ]
+ },
+ "GaragePineTree": {
+  "min": [
+   -2.85,
+   -3.0,
+   0.0
+  ],
+  "max": [
+   2.85,
+   3.0,
+   9.08
+  ],
+  "tris": 1300,
+  "parts": [
+   "Bark__8A5530SP",
+   "Snow__F6FAFFSP",
+   "Needles__2F9E62SP"
+  ],
+  "origin": [
+   16.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   5.71,
+   6.0,
+   9.08
+  ],
+  "pack": "Pack_Props",
+  "at": [
+   16,
+   0,
+   0
+  ],
+  "objects": 3,
+  "neon": []
+ },
+ "GarageCrateStack": {
+  "min": [
+   -2.62,
+   -2.98,
+   0.0
+  ],
+  "max": [
+   2.69,
+   1.69,
+   5.18
+  ],
+  "tris": 1112,
+  "parts": [
+   "Wood__E09A5ASP",
+   "Wood2__A9622FSP",
+   "Blue__57D8FFSP",
+   "BlueBand__F2F4F7SP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   32.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   5.31,
+   4.67,
+   5.18
+  ],
+  "pack": "Pack_Props",
+  "at": [
+   32,
+   0,
+   0
+  ],
+  "objects": 5,
+  "neon": []
+ },
+ "GarageOilDrums": {
+  "min": [
+   -1.94,
+   -1.47,
+   0.0
+  ],
+  "max": [
+   2.06,
+   2.07,
+   2.88
+  ],
+  "tris": 1948,
+  "parts": [
+   "DrumE2483D__E2483DSP",
+   "Steel__3B3F4ASP",
+   "Snow__F6FAFFSP",
+   "DrumFFD23A__FFD23ASP",
+   "Drum57D8FF__57D8FFSP"
+  ],
+  "origin": [
+   48.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   4.0,
+   3.53,
+   2.88
+  ],
+  "pack": "Pack_Props",
+  "at": [
+   48,
+   0,
+   0
+  ],
+  "objects": 5,
+  "neon": []
+ },
+ "GarageToolCart": {
+  "min": [
+   -1.42,
+   -0.82,
+   0.0
+  ],
+  "max": [
+   1.9,
+   0.82,
+   3.39
+  ],
+  "tris": 1032,
+  "parts": [
+   "Red__E2483DSP",
+   "Steel__3B3F4ASP",
+   "Silver__C9D2DESP",
+   "Yellow__FFD23ASP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   64.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   3.32,
+   1.64,
+   3.39
+  ],
+  "pack": "Pack_Props",
+  "at": [
+   64,
+   0,
+   0
+  ],
+  "objects": 5,
+  "neon": []
+ },
+ "GarageLampPost": {
+  "min": [
+   -0.9,
+   -0.95,
+   0.0
+  ],
+  "max": [
+   0.9,
+   0.95,
+   7.06
+  ],
+  "tris": 556,
+  "parts": [
+   "Steel__3B3F4ASP",
+   "Red__E2483DSP",
+   "Orange__F2A23DSP",
+   "LampBulb__FFE3A0NE",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   80.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   1.81,
+   1.9,
+   7.06
+  ],
+  "pack": "Pack_Props",
+  "at": [
+   80,
+   0,
+   0
+  ],
+  "objects": 5,
+  "neon": [
+   "LampBulb"
+  ]
+ },
+ "GarageSnowPile": {
+  "min": [
+   -2.8,
+   -2.75,
+   0.0
+  ],
+  "max": [
+   2.92,
+   2.24,
+   3.42
+  ],
+  "tris": 722,
+  "parts": [
+   "Snow__F6FAFFSP",
+   "Wood__E09A5ASP",
+   "Steel__3B3F4ASP",
+   "Red__E2483DSP",
+   "Ice__9FD8FFSP"
+  ],
+  "origin": [
+   96.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   5.72,
+   4.99,
+   3.42
+  ],
+  "pack": "Pack_Props",
+  "at": [
+   96,
+   0,
+   0
+  ],
+  "objects": 5,
+  "neon": []
+ },
+ "GarageBench": {
+  "min": [
+   -2.85,
+   -1.15,
+   0.0
+  ],
+  "max": [
+   2.85,
+   0.9,
+   2.5
+  ],
+  "tris": 712,
+  "parts": [
+   "Wood__E09A5ASP",
+   "Steel__3B3F4ASP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   112.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   5.71,
+   2.05,
+   2.5
+  ],
+  "pack": "Pack_Props",
+  "at": [
+   112,
+   0,
+   0
+  ],
+  "objects": 3,
+  "neon": []
+ },
+ "GarageHoistCrane": {
+  "min": [
+   -2.95,
+   -1.5,
+   0.0
+  ],
+  "max": [
+   2.95,
+   1.5,
+   8.05
+  ],
+  "tris": 1122,
+  "parts": [
+   "Steel__3B3F4ASP",
+   "Yellow__FFD23ASP",
+   "Red__E2483DSP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   128.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   5.9,
+   3.0,
+   8.05
+  ],
+  "pack": "Pack_Props",
+  "at": [
+   128,
+   0,
+   0
+  ],
+  "objects": 4,
+  "neon": []
+ }
+}

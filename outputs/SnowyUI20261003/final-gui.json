@@ -1,0 +1,2690 @@
+{
+  "objects": [
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu",
+      "backgroundTransparency": 1,
+      "z": 2,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.IndexButton",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Fit",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://78375881579823"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.InventoryButton",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Fit",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://116598031706932"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.ShopButton",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Fit",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://80999352023575"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.ShopButton.SaleBadge",
+      "backgroundTransparency": 1,
+      "z": 5,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.ShopButton.SaleBadge.Burst1",
+      "backgroundTransparency": 0,
+      "z": 5,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.ShopButton.SaleBadge.Burst2",
+      "backgroundTransparency": 0,
+      "z": 5,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.ShopButton.SaleBadge.Ring",
+      "backgroundTransparency": 0,
+      "z": 6,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.ShopButton.SaleBadge.Percent",
+      "backgroundTransparency": 1,
+      "z": 7,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "30%"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.ShopButton.SaleBadge.Off",
+      "backgroundTransparency": 1,
+      "z": 7,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "OFF"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.ShopButton.SaleBadge.Shine",
+      "backgroundTransparency": 0.3499999940395355,
+      "z": 7,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.RebirthButton",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Fit",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://88092085513174"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.Treasures",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Fit",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.Treasures.Label",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "TREASURES"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.Rewards",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Fit",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://77298391197868"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.LeftMenu.Rewards.Label",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "REWARDS"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.LeftMenu.Rewards.GiftIcon",
+      "backgroundTransparency": 1,
+      "z": 2,
+      "class": "ViewportFrame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.Panels.Index",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.Content",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "ScrollingFrame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.NormalTab",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.23529411852359772,
+        0.5882353186607361,
+        1
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.NormalTab.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "NORMAL"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.NormalTab.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://100281398843170"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.GiantTab",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.5882353186607361,
+        0.6470588445663452,
+        0.7450980544090271
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.GiantTab.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "GIANT"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.GiantTab.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://100281398843170"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.ShinyTab",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.5882353186607361,
+        0.6470588445663452,
+        0.7450980544090271
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.ShinyTab.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "SHINY"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.ShinyTab.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://100281398843170"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.ShinyGiantTab",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.5882353186607361,
+        0.6470588445663452,
+        0.7450980544090271
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.ShinyGiantTab.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "SHINY GIANT"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Inner.TabBar.ShinyGiantTab.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://100281398843170"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Banner",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Banner.Icon",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://78375881579823"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Banner.Title",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "INDEX"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Banner.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Close",
+      "backgroundTransparency": 0,
+      "z": 5,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.9019607901573181,
+        0.24705882370471954,
+        0.38823530077934265
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Close.SnowCloseText",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "X"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Close.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Index.Background",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://73131475669125"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.Panels.Inventory",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner.Content",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "ScrollingFrame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner.TabBar",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner.TabBar.ShovelsTab",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.23529411852359772,
+        0.5882353186607361,
+        1
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner.TabBar.ShovelsTab.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "SHOVELS"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner.TabBar.ShovelsTab.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://100281398843170"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner.TabBar.PetsTab",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.5882353186607361,
+        0.6470588445663452,
+        0.7450980544090271
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner.TabBar.PetsTab.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "PETS"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner.TabBar.PetsTab.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://100281398843170"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Inner.PetContent",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "ScrollingFrame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Banner",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Banner.Icon",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://116598031706932"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Banner.Title",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "INVENTORY"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Banner.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Close",
+      "backgroundTransparency": 0,
+      "z": 5,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.9019607901573181,
+        0.24705882370471954,
+        0.38823530077934265
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Close.SnowCloseText",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "X"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Close.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Inventory.Background",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://73131475669125"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.Panels.Shop",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Inner",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Inner.Content",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "ScrollingFrame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Inner.Content.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "⛄"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Inner.Content.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "Shop opening soon!"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Inner.Content.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "New shovels and lucky boosts are on the way!"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Banner",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Banner.Icon",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://80999352023575"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Banner.Title",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "SHOP"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Banner.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Close",
+      "backgroundTransparency": 0,
+      "z": 5,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.9019607901573181,
+        0.24705882370471954,
+        0.38823530077934265
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Close.SnowCloseText",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "X"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Close.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Shop.Background",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://73131475669125"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.Panels.Rebirth",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Inner",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Inner.Content",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "ScrollingFrame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Inner.Content.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "🌟"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Inner.Content.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "Rebirth coming soon!"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Inner.Content.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "Start over stronger and luckier than before!"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Banner",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Banner.Icon",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://88092085513174"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Banner.Title",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "REBIRTH"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Banner.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Close",
+      "backgroundTransparency": 0,
+      "z": 5,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.9019607901573181,
+        0.24705882370471954,
+        0.38823530077934265
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Close.SnowCloseText",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "X"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Close.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rebirth.Background",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://73131475669125"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.Panels.Settings",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "ScrollingFrame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.SkipRow",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.SkipRow.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "⚡ Fast rolls (skip animation)"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.SkipRow.SkipAnim",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.7450980544090271,
+        0.7686274647712708,
+        0.8313725590705872
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.SkipRow.SkipAnim.Knob",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.SkipRow.SkipAnim.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://100281398843170"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.SkipRow.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.MusicRow",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.MusicRow.TextLabel",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "🎵 Music"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.MusicRow.MusicToggle",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.7450980544090271,
+        0.7686274647712708,
+        0.8313725590705872
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.MusicRow.MusicToggle.Knob",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.MusicRow.MusicToggle.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://100281398843170"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Inner.Content.MusicRow.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Banner",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Banner.Icon",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://84529368376979"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Banner.Title",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "SETTINGS"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Banner.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Close",
+      "backgroundTransparency": 0,
+      "z": 5,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.9019607901573181,
+        0.24705882370471954,
+        0.38823530077934265
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Close.SnowCloseText",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "X"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Close.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Settings.Background",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://73131475669125"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.Panels.Treasures",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Inner",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Inner.Content",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "ScrollingFrame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Banner",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Banner.Icon",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Banner.Title",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "TREASURES"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Banner.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Close",
+      "backgroundTransparency": 0,
+      "z": 5,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.9019607901573181,
+        0.24705882370471954,
+        0.38823530077934265
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Close.SnowCloseText",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "X"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Close.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Treasures.Background",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://73131475669125"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.Panels.Rewards",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Inner",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Inner.Content",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "ScrollingFrame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Banner",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Banner.Icon",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Banner.Title",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "REWARDS"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Banner.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Close",
+      "backgroundTransparency": 0,
+      "z": 5,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.9019607901573181,
+        0.24705882370471954,
+        0.38823530077934265
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Close.SnowCloseText",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "X"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Close.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.Panels.Rewards.Background",
+      "backgroundTransparency": 1,
+      "z": 0,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://73131475669125"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollDim",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.RollStage",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Rays",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "CanvasGroup",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Rays.Frame",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Rays.Frame",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Rays.Frame",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Rays.Frame",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Rays.Frame",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Rays.Frame",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Rays.Frame",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Rays.Frame",
+      "backgroundTransparency": 0,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Glow",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Glow.Frame",
+      "backgroundTransparency": 0.824999988079071,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Glow.Frame",
+      "backgroundTransparency": 0.8500000238418579,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Glow.Frame",
+      "backgroundTransparency": 0.875,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Glow.Frame",
+      "backgroundTransparency": 0.8999999761581421,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Glow.Frame",
+      "backgroundTransparency": 0.925000011920929,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Glow.Frame",
+      "backgroundTransparency": 0.949999988079071,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.Slots",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.PointerL",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": ">"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.RollStage.PointerR",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "<"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.AutoButton",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.03921568766236305,
+        0.03921568766236305,
+        0.0470588244497776
+      ],
+      "image": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.AutoButton.Icon",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "scaleType": "Fit",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://104677299179592"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.AutoButton.Label",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "AUTO-ROLL OFF"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.BottomBar.AutoButton.Circle",
+      "backgroundTransparency": 0.10000000149011612,
+      "z": 2,
+      "class": "Frame",
+      "backgroundColor": [
+        0.03921568766236305,
+        0.03921568766236305,
+        0.0470588244497776
+      ]
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.BottomBar.AutoButton.Aura",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.AutoButton.Aura.Ring1",
+      "backgroundTransparency": 0.7799999713897705,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.AutoButton.Aura.Ring2",
+      "backgroundTransparency": 0.8700000047683716,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.AutoButton.Aura.Ring3",
+      "backgroundTransparency": 0.9300000071525574,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.AutoButton.Sparks",
+      "backgroundTransparency": 1,
+      "z": 5,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.RollButton",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Fit",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://82230206975104"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.RollButton.Dice",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "scaleType": "Fit",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://82230206975104"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.RollButton.Aura",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.RollButton.Aura.Ring1",
+      "backgroundTransparency": 0.800000011920929,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.RollButton.Aura.Ring2",
+      "backgroundTransparency": 0.8799999952316284,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.RollButton.Aura.Ring3",
+      "backgroundTransparency": 0.9399999976158142,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.RollButton.Sparks",
+      "backgroundTransparency": 1,
+      "z": 5,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.BottomBar.HideButton",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.03921568766236305,
+        0.03921568766236305,
+        0.0470588244497776
+      ],
+      "image": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.HideButton.Icon",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "scaleType": "Fit",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://90940256777265"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.HideButton.Label",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "HIDE ROLL"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.BottomBar.HideButton.Circle",
+      "backgroundTransparency": 0.10000000149011612,
+      "z": 2,
+      "class": "Frame",
+      "backgroundColor": [
+        0.03921568766236305,
+        0.03921568766236305,
+        0.0470588244497776
+      ]
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.BottomBar.HideButton.Aura",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.HideButton.Aura.Ring1",
+      "backgroundTransparency": 0.7799999713897705,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.HideButton.Aura.Ring2",
+      "backgroundTransparency": 0.8700000047683716,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.HideButton.Aura.Ring3",
+      "backgroundTransparency": 0.9300000071525574,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.HideButton.Sparks",
+      "backgroundTransparency": 1,
+      "z": 5,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.03921568766236305,
+        0.03921568766236305,
+        0.0470588244497776
+      ],
+      "image": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton.Icon",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "scaleType": "Fit",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://87279285340022"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton.Icon.PlaceholderIcon",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "⬆"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton.Label",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "UPGRADES"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton.Circle",
+      "backgroundTransparency": 0.10000000149011612,
+      "z": 2,
+      "class": "Frame",
+      "backgroundColor": [
+        0.03921568766236305,
+        0.03921568766236305,
+        0.0470588244497776
+      ]
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton.Aura",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton.Aura.Ring1",
+      "backgroundTransparency": 0.7799999713897705,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton.Aura.Ring2",
+      "backgroundTransparency": 0.8700000047683716,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton.Aura.Ring3",
+      "backgroundTransparency": 0.9300000071525574,
+      "z": 1,
+      "class": "Frame",
+      "backgroundColor": [
+        0.47058823704719543,
+        0.7843137383460999,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.BottomBar.UpgradesButton.Sparks",
+      "backgroundTransparency": 1,
+      "z": 5,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.SnowCounter",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "class": "Frame",
+      "backgroundColor": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.SnowCounter.Amount",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "0"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.SnowCounter.Background",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Stretch",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://100365277247084"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.SnowCounter.Icon",
+      "backgroundTransparency": 1,
+      "z": 3,
+      "scaleType": "Fit",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://83244601927288"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.SettingsCorner",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.SettingsCorner.SettingsButton",
+      "backgroundTransparency": 1,
+      "z": 1,
+      "scaleType": "Fit",
+      "class": "ImageButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://84529368376979"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Luck",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Luck.Icon",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "scaleType": "Fit",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://74613534440214"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Luck.Value",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "1x"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Luck.Hit",
+      "backgroundTransparency": 1,
+      "z": 8,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": ""
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Damage",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "class": "Frame",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Damage.Icon",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "scaleType": "Fit",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://78096846367053"
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.StatIcons.Damage.Icon.PlaceholderIcon",
+      "backgroundTransparency": 1,
+      "z": 4,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "🗡"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Damage.Value",
+      "backgroundTransparency": 1,
+      "z": 6,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "1x"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Damage.Hit",
+      "backgroundTransparency": 1,
+      "z": 8,
+      "class": "TextButton",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": ""
+    },
+    {
+      "visible": false,
+      "path": "StarterGui.RNGGui.StatIcons.Info",
+      "backgroundTransparency": 0.10000000149011612,
+      "z": 9,
+      "class": "Frame",
+      "backgroundColor": [
+        0.07058823853731155,
+        0.10196078568696976,
+        0.14901961386203766
+      ]
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Info.Text",
+      "backgroundTransparency": 1,
+      "z": 10,
+      "class": "TextLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "text": "Label"
+    },
+    {
+      "visible": true,
+      "path": "StarterGui.RNGGui.StatIcons.Info.SnowArt",
+      "backgroundTransparency": 1,
+      "z": 8,
+      "scaleType": "Slice",
+      "class": "ImageLabel",
+      "backgroundColor": [
+        0.6392157077789307,
+        0.6352941393852234,
+        0.6470588445663452
+      ],
+      "image": "rbxassetid://108488334852650"
+    }
+  ],
+  "upgradeExcluded": true,
+  "staticArtCount": 25
+}

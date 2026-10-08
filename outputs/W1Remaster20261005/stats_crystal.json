@@ -1,0 +1,547 @@
+{
+ "X_WallSeg": {
+  "min": [
+   -14.96,
+   -9.34,
+   -0.24
+  ],
+  "max": [
+   15.82,
+   7.23,
+   30.3
+  ],
+  "tris": 2828,
+  "parts": [
+   "Rock0__5D6F8CSP",
+   "Snow__F6FAFFSP",
+   "Rock1__4A5A74SP",
+   "Rock2__7487A6SP",
+   "Crystal54E3F0__54E3F0GLT08",
+   "CrystalE35BD6__E35BD6GLT08",
+   "Crystal9A6BFF__9A6BFFGLT08",
+   "CrystalBFF3FF__BFF3FFGLT08"
+  ],
+  "origin": [
+   120.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   30.78,
+   16.57,
+   30.54
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   120,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Rock0": 908,
+   "Snow": 648,
+   "Rock1": 432,
+   "Rock2": 432,
+   "Crystal54E3F0": 102,
+   "CrystalE35BD6": 102,
+   "Crystal9A6BFF": 102,
+   "CrystalBFF3FF": 102
+  }
+ },
+ "X_WallSegB": {
+  "min": [
+   -15.18,
+   -12.0,
+   -0.23
+  ],
+  "max": [
+   14.8,
+   7.2,
+   30.3
+  ],
+  "tris": 3120,
+  "parts": [
+   "Rock0__4A5A74SP",
+   "Snow__F6FAFFSP",
+   "Rock1__5D6F8CSP",
+   "Rock2__7487A6SP",
+   "Tunnel__161B26SP",
+   "Timber__8A5530SP",
+   "Rail__5B5F6ASP",
+   "Sleeper__6B4024SP",
+   "Steel__3B3F4ASP",
+   "Lamp__FFD27ANE",
+   "Crystal54E3F0__54E3F0GLT08",
+   "CrystalE35BD6__E35BD6GLT08",
+   "Crystal9A6BFF__9A6BFFGLT08",
+   "CrystalBFF3FF__BFF3FFGLT08"
+  ],
+  "origin": [
+   240.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   29.98,
+   19.2,
+   30.53
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   240,
+   0,
+   0
+  ],
+  "objects": 14,
+  "perObject": {
+   "Rock0": 908,
+   "Snow": 648,
+   "Rock1": 432,
+   "Rock2": 432,
+   "Tunnel": 40,
+   "Timber": 132,
+   "Rail": 88,
+   "Sleeper": 220,
+   "Steel": 56,
+   "Lamp": 28,
+   "Crystal54E3F0": 34,
+   "CrystalE35BD6": 34,
+   "Crystal9A6BFF": 34,
+   "CrystalBFF3FF": 34
+  }
+ },
+ "X_Heart": {
+  "min": [
+   -22.0,
+   -13.67,
+   -1.37
+  ],
+  "max": [
+   13.02,
+   11.63,
+   46.0
+  ],
+  "tris": 2730,
+  "parts": [
+   "Base__4A5A74SP",
+   "Base__5D6F8CSP",
+   "Base__7487A6SP",
+   "Heart__54E3F0GLT08",
+   "HeartCore__BFF3FFNE",
+   "CrystalE35BD6__E35BD6GLT08",
+   "Crystal9A6BFF__9A6BFFGLT08",
+   "CrystalBFF3FF__BFF3FFGLT08",
+   "Crystal54E3F0__54E3F0GLT08",
+   "Timber__8A5530SP",
+   "Timber__6B4024SP",
+   "Weight__4A4F5CSP",
+   "Rope__C9C2A8SP",
+   "CrystalHook__E35BD6GLT08",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   360.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   35.02,
+   25.3,
+   47.37
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   360,
+   0,
+   0
+  ],
+  "objects": 15,
+  "perObject": {
+   "Base": 20,
+   "Heart": 34,
+   "HeartCore": 34,
+   "CrystalE35BD6": 136,
+   "Crystal9A6BFF": 136,
+   "CrystalBFF3FF": 102,
+   "Crystal54E3F0": 170,
+   "Timber": 352,
+   "Weight": 44,
+   "Rope": 16,
+   "CrystalHook": 34,
+   "Snow": 1404
+  }
+ },
+ "X_Headframe": {
+  "min": [
+   -4.39,
+   -3.45,
+   -0.05
+  ],
+  "max": [
+   4.39,
+   3.45,
+   24.6
+  ],
+  "tris": 1320,
+  "parts": [
+   "Timber__8A5530SP",
+   "Timber__6B4024SP",
+   "Deck__6B4024SP",
+   "Wheel__5B5F6ASP",
+   "Rope__C9C2A8SP",
+   "Cage__6E7480SP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   480.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   8.78,
+   6.9,
+   24.65
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   480,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "Timber": 528,
+   "Deck": 44,
+   "Wheel": 504,
+   "Rope": 12,
+   "Cage": 44,
+   "Snow": 108
+  }
+ },
+ "X_Trestle": {
+  "min": [
+   -12.15,
+   -2.76,
+   0.0
+  ],
+  "max": [
+   12.15,
+   2.35,
+   11.06
+  ],
+  "tris": 828,
+  "parts": [
+   "Timber__8A5530SP",
+   "Timber__6B4024SP",
+   "Deck__6B4024SP",
+   "Snow__F6FAFFSP",
+   "Steel__3B3F4ASP",
+   "Lamp__FFD27ANE"
+  ],
+  "origin": [
+   600.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   24.3,
+   5.11,
+   11.06
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   600,
+   0,
+   0
+  ],
+  "objects": 6,
+  "perObject": {
+   "Timber": 176,
+   "Deck": 44,
+   "Snow": 108,
+   "Steel": 56,
+   "Lamp": 28
+  }
+ },
+ "X_Cart": {
+  "min": [
+   -4.0,
+   -1.78,
+   0.0
+  ],
+  "max": [
+   4.0,
+   1.78,
+   4.56
+  ],
+  "tris": 686,
+  "parts": [
+   "Rail__5B5F6ASP",
+   "Sleeper__6B4024SP",
+   "Cart__6E7480SP",
+   "Wheels__262A33SP",
+   "Crystal__54E3F0GLT08",
+   "Crystal__E35BD6GLT08",
+   "Crystal__9A6BFFGLT08"
+  ],
+  "origin": [
+   720.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   8.0,
+   3.56,
+   4.56
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   720,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "Rail": 88,
+   "Sleeper": 264,
+   "Cart": 20,
+   "Wheels": 144,
+   "Crystal": 34
+  }
+ },
+ "X_Cluster": {
+  "min": [
+   -3.39,
+   -3.53,
+   -0.63
+  ],
+  "max": [
+   4.29,
+   3.53,
+   11.66
+  ],
+  "tris": 440,
+  "parts": [
+   "Base__4A5A74SP",
+   "Crystal54E3F0__54E3F0GLT08",
+   "CrystalE35BD6__E35BD6GLT08",
+   "Crystal9A6BFF__9A6BFFGLT08",
+   "CrystalBFF3FF__BFF3FFGLT08",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   840.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   7.68,
+   7.06,
+   12.29
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   840,
+   0,
+   0
+  ],
+  "objects": 6,
+  "perObject": {
+   "Base": 20,
+   "Crystal54E3F0": 68,
+   "CrystalE35BD6": 68,
+   "Crystal9A6BFF": 34,
+   "CrystalBFF3FF": 34,
+   "Snow": 216
+  }
+ },
+ "X_BigCrystal": {
+  "min": [
+   -5.5,
+   -5.06,
+   -1.09
+  ],
+  "max": [
+   5.71,
+   3.66,
+   17.0
+  ],
+  "tris": 156,
+  "parts": [
+   "Base__5D6F8CSP",
+   "CrystalA__BFF3FFGLT08",
+   "CrystalB__9A6BFFGLT08",
+   "CrystalC__54E3F0GLT08",
+   "CrystalD__E35BD6GLT08"
+  ],
+  "origin": [
+   960.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   11.21,
+   8.73,
+   18.09
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   960,
+   0,
+   0
+  ],
+  "objects": 5,
+  "perObject": {
+   "Base": 20,
+   "CrystalA": 34,
+   "CrystalB": 34,
+   "CrystalC": 34,
+   "CrystalD": 34
+  }
+ },
+ "X_Cave": {
+  "min": [
+   -30.91,
+   -16.49,
+   -0.45
+  ],
+  "max": [
+   31.49,
+   13.59,
+   39.9
+  ],
+  "tris": 5688,
+  "parts": [
+   "Rock0__4A5A74SP",
+   "Snow__F6FAFFSP",
+   "Rock1__5D6F8CSP",
+   "Rock2__3E4C64SP",
+   "Cave__10141ESP",
+   "CaveGlow__54E3F0NE",
+   "CaveGlow__E35BD6NE",
+   "CaveGlow__9A6BFFNE",
+   "Crystal54E3F0__54E3F0GLT08",
+   "CrystalE35BD6__E35BD6GLT08",
+   "Crystal9A6BFF__9A6BFFGLT08",
+   "CrystalBFF3FF__BFF3FFGLT08"
+  ],
+  "origin": [
+   1080.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   62.41,
+   30.08,
+   40.35
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   1080,
+   0,
+   0
+  ],
+  "objects": 12,
+  "perObject": {
+   "Rock0": 1772,
+   "Snow": 1536,
+   "Rock1": 864,
+   "Rock2": 864,
+   "Cave": 40,
+   "CaveGlow": 68,
+   "Crystal54E3F0": 102,
+   "CrystalE35BD6": 102,
+   "Crystal9A6BFF": 102,
+   "CrystalBFF3FF": 102
+  }
+ },
+ "X_Lamp": {
+  "min": [
+   -0.19,
+   -0.4,
+   -0.11
+  ],
+  "max": [
+   2.0,
+   0.96,
+   6.0
+  ],
+  "tris": 182,
+  "parts": [
+   "Timber__8A5530SP",
+   "Steel__3B3F4ASP",
+   "Lamp__FFD27ANE",
+   "Crystal__54E3F0GLT08"
+  ],
+  "origin": [
+   1200.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   2.19,
+   1.35,
+   6.11
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   1200,
+   0,
+   0
+  ],
+  "objects": 4,
+  "perObject": {
+   "Timber": 64,
+   "Steel": 56,
+   "Lamp": 28,
+   "Crystal": 34
+  }
+ },
+ "X_Crates": {
+  "min": [
+   -3.23,
+   -2.22,
+   -0.02
+  ],
+  "max": [
+   3.93,
+   2.82,
+   3.4
+  ],
+  "tris": 1422,
+  "parts": [
+   "Crate__8A5530SP",
+   "CrateBand__8A5530SP",
+   "Barrel__5B6E84SP",
+   "Steel__3B3F4ASP",
+   "Crystal__54E3F0GLT08",
+   "Crystal__E35BD6GLT08",
+   "Crystal__9A6BFFGLT08"
+  ],
+  "origin": [
+   1320.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   7.16,
+   5.04,
+   3.42
+  ],
+  "pack": "W1_Crystal",
+  "at": [
+   1320,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "Crate": 324,
+   "CrateBand": 648,
+   "Barrel": 68,
+   "Steel": 280,
+   "Crystal": 34
+  }
+ }
+}

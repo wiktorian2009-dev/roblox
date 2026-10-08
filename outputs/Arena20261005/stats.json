@@ -1,0 +1,762 @@
+{
+ "ArenaFloor": {
+  "min": [
+   -63.8,
+   -63.8,
+   -2.6
+  ],
+  "max": [
+   63.8,
+   63.8,
+   0.08
+  ],
+  "tris": 6768,
+  "parts": [
+   "Ice__CDEBFFIC",
+   "Rim__A9D8FFSP",
+   "Inlay__F2F6FBSP",
+   "InlayBlue__3D7BE2SP",
+   "Hazard__FFC81ESP",
+   "HazardRed__E8483DSP",
+   "Pad__1F3F7ASP",
+   "PadGlow__2FC6C0NE"
+  ],
+  "origin": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   127.6,
+   127.6,
+   2.68
+  ],
+  "pack": "AR_Arena",
+  "at": [
+   0,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Ice": 284,
+   "Rim": 284,
+   "Inlay": 876,
+   "InlayBlue": 1244,
+   "Hazard": 1920,
+   "HazardRed": 432,
+   "Pad": 864,
+   "PadGlow": 864
+  },
+  "neon": [
+   "PadGlow"
+  ]
+ },
+ "WallRing": {
+  "min": [
+   -61.22,
+   -61.22,
+   0.0
+  ],
+  "max": [
+   61.22,
+   61.22,
+   7.4
+  ],
+  "tris": 8512,
+  "parts": [
+   "Ice__8FC8F5IC",
+   "Snow__F6FAFFSP",
+   "Cushion__E8483DSP",
+   "CushionW__F2F6FBSP",
+   "Post__E8483DSP",
+   "PostY__FFC81ESP",
+   "WarnLamp__E8483DNE"
+  ],
+  "origin": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   122.45,
+   122.45,
+   7.4
+  ],
+  "pack": "AR_Arena",
+  "at": [
+   0,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "Ice": 1760,
+   "Snow": 2240,
+   "Cushion": 880,
+   "CushionW": 880,
+   "Post": 1440,
+   "PostY": 960,
+   "WarnLamp": 352
+  },
+  "neon": [
+   "WarnLamp"
+  ]
+ },
+ "ExitGates": {
+  "min": [
+   -55.88,
+   -55.88,
+   -3.5
+  ],
+  "max": [
+   55.88,
+   55.88,
+   16.3
+  ],
+  "tris": 4160,
+  "parts": [
+   "Steel__3B3F4ASP",
+   "Arch__E8483DSP",
+   "Sign__FFC81ESP",
+   "SignFaceIn__262A33SP",
+   "SignFaceOut__262A33SP",
+   "WarnLamp__E8483DNE",
+   "Snow__F6FAFFSP",
+   "HazardRed__E8483DSP"
+  ],
+  "origin": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   111.76,
+   111.76,
+   19.8
+  ],
+  "pack": "AR_Arena",
+  "at": [
+   0,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Steel": 864,
+   "Arch": 176,
+   "Sign": 432,
+   "SignFaceIn": 48,
+   "SignFaceOut": 48,
+   "WarnLamp": 800,
+   "Snow": 1728,
+   "HazardRed": 64
+  },
+  "neon": [
+   "WarnLamp"
+  ]
+ },
+ "Stands": {
+  "min": [
+   -87.82,
+   -87.62,
+   -3.5
+  ],
+  "max": [
+   87.82,
+   87.82,
+   19.65
+  ],
+  "tris": 35904,
+  "parts": [
+   "Deck__EAF2FCSP",
+   "Base__5B8ED9SP",
+   "Glass__BFE8FFGLT55",
+   "Snow__F6FAFFSP",
+   "BackWall__4A78C8SP",
+   "BenchFFC81E__FFC81ESP",
+   "Steel__3B3F4ASP",
+   "BenchFF9640__FF9640SP",
+   "Bench3D7BE2__3D7BE2SP",
+   "BenchFF7FAE__FF7FAESP",
+   "Bench2FC6C0__2FC6C0SP",
+   "Gold__F2C14EME",
+   "FlagE8483D__E8483DFA",
+   "Flag3D7BE2__3D7BE2FA",
+   "FlagFFC81E__FFC81EFA",
+   "Flag2FC6C0__2FC6C0FA",
+   "FlagFF7FAE__FF7FAEFA"
+  ],
+  "origin": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   175.63,
+   175.43,
+   23.15
+  ],
+  "pack": "AR_Arena",
+  "at": [
+   0,
+   0,
+   0
+  ],
+  "objects": 17,
+  "perObject": {
+   "Deck": 1408,
+   "Base": 1408,
+   "Glass": 1408,
+   "Snow": 2728,
+   "BackWall": 1320,
+   "BenchFFC81E": 6696,
+   "Steel": 1792,
+   "BenchFF9640": 4536,
+   "Bench3D7BE2": 5184,
+   "BenchFF7FAE": 3888,
+   "Bench2FC6C0": 3888,
+   "Gold": 1600,
+   "FlagE8483D": 12,
+   "Flag3D7BE2": 9,
+   "FlagFFC81E": 9,
+   "Flag2FC6C0": 9,
+   "FlagFF7FAE": 9
+  },
+  "neon": []
+ },
+ "Jumbotron": {
+  "min": [
+   -7.75,
+   -7.75,
+   28.8
+  ],
+  "max": [
+   7.75,
+   7.75,
+   53.5
+  ],
+  "tris": 2066,
+  "parts": [
+   "Body__1F3F7ASP",
+   "Screen0__0E1B33SP",
+   "Gold__F2C14EME",
+   "Screen1__0E1B33SP",
+   "Screen2__0E1B33SP",
+   "Screen3__0E1B33SP",
+   "Crown__A9D8FFGLT15",
+   "Crown__E7F6FFGLT10",
+   "Star__F6FAFFNE",
+   "Glow__2FC6C0NE"
+  ],
+  "origin": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   15.5,
+   15.5,
+   24.7
+  ],
+  "pack": "AR_Arena",
+  "at": [
+   0,
+   0,
+   0
+  ],
+  "objects": 10,
+  "perObject": {
+   "Body": 200,
+   "Screen0": 12,
+   "Gold": 956,
+   "Screen1": 12,
+   "Screen2": 12,
+   "Screen3": 12,
+   "Crown": 34,
+   "Star": 44,
+   "Glow": 512
+  },
+  "neon": [
+   "Star",
+   "Glow"
+  ]
+ },
+ "LightTowers": {
+  "min": [
+   -97.3,
+   -97.3,
+   -4.01
+  ],
+  "max": [
+   97.3,
+   97.3,
+   34.4
+  ],
+  "tris": 2432,
+  "parts": [
+   "Steel__3B3F4ASP",
+   "Head__262A33SP",
+   "Lamp__FFE3A0NE",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   194.6,
+   194.6,
+   38.41
+  ],
+  "pack": "AR_Arena",
+  "at": [
+   0,
+   0,
+   0
+  ],
+  "objects": 4,
+  "perObject": {
+   "Steel": 960,
+   "Head": 432,
+   "Lamp": 864,
+   "Snow": 176
+  },
+  "neon": [
+   "Lamp"
+  ]
+ },
+ "Island": {
+  "min": [
+   -110.96,
+   -247.57,
+   -71.4
+  ],
+  "max": [
+   119.76,
+   107.14,
+   3.45
+  ],
+  "tris": 9018,
+  "parts": [
+   "Rock__7F92ACSP",
+   "Snow__F6FAFFSP",
+   "IceRock__A9D8FFIC"
+  ],
+  "origin": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   230.72,
+   354.72,
+   74.85
+  ],
+  "pack": "AR_Island",
+  "at": [
+   0,
+   0,
+   0
+  ],
+  "objects": 3,
+  "perObject": {
+   "Rock": 1006,
+   "Snow": 7772,
+   "IceRock": 240
+  },
+  "neon": []
+ },
+ "PracticeRing": {
+  "min": [
+   -29.7,
+   -29.7,
+   -2.4
+  ],
+  "max": [
+   29.7,
+   29.7,
+   10.7
+  ],
+  "tris": 5612,
+  "parts": [
+   "Ice__CDEBFFIC",
+   "Rim__A9D8FFSP",
+   "TargetE8483D__E8483DSP",
+   "TargetF2F6FB__F2F6FBSP",
+   "Ice__8FC8F5IC",
+   "Snow__F6FAFFSP",
+   "Cushion__FFC81ESP",
+   "CushionW__F2F6FBSP",
+   "Post__E8483DSP",
+   "PostY__FFC81ESP",
+   "Steel__3B3F4ASP",
+   "Sign__2FC6C0SP",
+   "SignFaceIn__262A33SP"
+  ],
+  "origin": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   59.4,
+   59.4,
+   13.1
+  ],
+  "pack": "AR_Island",
+  "at": [
+   0,
+   0,
+   0
+  ],
+  "objects": 13,
+  "perObject": {
+   "Ice": 1408,
+   "Rim": 188,
+   "TargetE8483D": 280,
+   "TargetF2F6FB": 140,
+   "Snow": 1408,
+   "Cushion": 704,
+   "CushionW": 704,
+   "Post": 208,
+   "PostY": 208,
+   "Steel": 56,
+   "Sign": 108,
+   "SignFaceIn": 12
+  },
+  "neon": []
+ },
+ "Target": {
+  "min": [
+   -3.55,
+   -3.55,
+   0.4
+  ],
+  "max": [
+   3.55,
+   3.55,
+   7.7
+  ],
+  "tris": 2348,
+  "parts": [
+   "Cushion__E8483DSP",
+   "Ring__F2F6FBSP",
+   "CushionY__FFC81ESP",
+   "Snow__F6FAFFSP",
+   "Nose__FF9640SP",
+   "Eyes__262A33SP",
+   "Hat__262A33SP",
+   "Band__E8483DSP"
+  ],
+  "origin": [
+   24.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   7.1,
+   7.1,
+   7.3
+  ],
+  "pack": "AR_Props",
+  "at": [
+   24,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Cushion": 780,
+   "Ring": 540,
+   "CushionY": 332,
+   "Snow": 392,
+   "Nose": 28,
+   "Eyes": 96,
+   "Hat": 120,
+   "Band": 60
+  },
+  "neon": []
+ },
+ "Bumper": {
+  "min": [
+   -4.29,
+   -7.0,
+   0.9
+  ],
+  "max": [
+   4.29,
+   6.68,
+   2.7
+  ],
+  "tris": 1912,
+  "parts": [
+   "TintBumper__E8483DSP",
+   "Rubber__262A33SP",
+   "Chevron__F2F6FBSP",
+   "Light__E8483DNE"
+  ],
+  "origin": [
+   48.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   8.57,
+   13.68,
+   1.8
+  ],
+  "pack": "AR_Props",
+  "at": [
+   48,
+   0,
+   0
+  ],
+  "objects": 4,
+  "perObject": {
+   "TintBumper": 908,
+   "Rubber": 748,
+   "Chevron": 40,
+   "Light": 216
+  },
+  "neon": [
+   "Light"
+  ]
+ },
+ "Portal": {
+  "min": [
+   -8.8,
+   -3.5,
+   0.0
+  ],
+  "max": [
+   8.8,
+   3.5,
+   19.0
+  ],
+  "tris": 1800,
+  "parts": [
+   "Base__5B8ED9SP",
+   "Snow__F6FAFFSP",
+   "Ice__8FC8F5IC",
+   "Swirl__2FC6C0NET15",
+   "Rings__8FF5EENE",
+   "Rings__F2F6FBNE",
+   "Sign__F2C14ESP",
+   "SignFaceIn__262A33SP",
+   "Lamp__FFE3A0NE",
+   "PortalPad__F2F6FBSPT100"
+  ],
+  "origin": [
+   72.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   17.6,
+   7.0,
+   19.0
+  ],
+  "pack": "AR_Props",
+  "at": [
+   72,
+   0,
+   0
+  ],
+  "objects": 10,
+  "perObject": {
+   "Base": 108,
+   "Snow": 196,
+   "Ice": 108,
+   "Swirl": 48,
+   "Rings": 336,
+   "Sign": 108,
+   "SignFaceIn": 12,
+   "Lamp": 200,
+   "PortalPad": 12
+  },
+  "neon": [
+   "Swirl",
+   "Rings",
+   "Rings",
+   "Lamp"
+  ]
+ },
+ "Trophy": {
+  "min": [
+   -4.75,
+   -3.45,
+   0.0
+  ],
+  "max": [
+   4.75,
+   3.45,
+   13.0
+  ],
+  "tris": 1510,
+  "parts": [
+   "Plinth__5B8ED9SP",
+   "Snow__F6FAFFSP",
+   "SignFaceIn__262A33SP",
+   "Gold__F2C14EME",
+   "Plow__E8483DSP",
+   "Cab__3D7BE2SP",
+   "Blade__C9D2DEME",
+   "Wheels__262A33SP"
+  ],
+  "origin": [
+   96.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   9.5,
+   6.9,
+   13.0
+  ],
+  "pack": "AR_Props",
+  "at": [
+   96,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Plinth": 108,
+   "Snow": 108,
+   "SignFaceIn": 12,
+   "Gold": 814,
+   "Plow": 108,
+   "Cab": 108,
+   "Blade": 108,
+   "Wheels": 144
+  },
+  "neon": []
+ },
+ "Lamp": {
+  "min": [
+   -0.6,
+   -0.62,
+   0.0
+  ],
+  "max": [
+   0.6,
+   0.62,
+   9.05
+  ],
+  "tris": 280,
+  "parts": [
+   "Steel__3B3F4ASP",
+   "Glow__FFE3A0NE",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   120.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   1.2,
+   1.24,
+   9.05
+  ],
+  "pack": "AR_Props",
+  "at": [
+   120,
+   0,
+   0
+  ],
+  "objects": 3,
+  "perObject": {
+   "Steel": 208,
+   "Glow": 36,
+   "Snow": 36
+  },
+  "neon": [
+   "Glow"
+  ]
+ },
+ "Banner": {
+  "min": [
+   -0.7,
+   -0.7,
+   0.0
+  ],
+  "max": [
+   2.8,
+   0.7,
+   11.1
+  ],
+  "tris": 259,
+  "parts": [
+   "Steel__3B3F4ASP",
+   "Gold__F2C14EME",
+   "TintBanner__E8483DFA",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   144.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   3.5,
+   1.4,
+   11.1
+  ],
+  "pack": "AR_Props",
+  "at": [
+   144,
+   0,
+   0
+  ],
+  "objects": 4,
+  "perObject": {
+   "Steel": 48,
+   "Gold": 100,
+   "TintBanner": 3,
+   "Snow": 108
+  },
+  "neon": []
+ },
+ "SnowBank": {
+  "min": [
+   -4.12,
+   -3.69,
+   -1.65
+  ],
+  "max": [
+   3.41,
+   4.02,
+   1.77
+  ],
+  "tris": 468,
+  "parts": [
+   "Snow__F6FAFFSP",
+   "Ice__A9D8FFIC"
+  ],
+  "origin": [
+   168.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   7.53,
+   7.72,
+   3.42
+  ],
+  "pack": "AR_Props",
+  "at": [
+   168,
+   0,
+   0
+  ],
+  "objects": 2,
+  "perObject": {
+   "Snow": 340,
+   "Ice": 128
+  },
+  "neon": []
+ }
+}

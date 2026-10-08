@@ -1,0 +1,833 @@
+{
+ "CloudIsland": {
+  "min": [
+   -131.94,
+   -69.66,
+   -60.84
+  ],
+  "max": [
+   129.68,
+   67.77,
+   9.54
+  ],
+  "tris": 12144,
+  "parts": [
+   "Top__F7F9FFSP",
+   "Rim__FFD25AME",
+   "Side0__F7F9FFSP",
+   "Side1__EEF2FFSP",
+   "Side2__E2DBFFSP",
+   "Under1__E2DBFFSP",
+   "Under2__FFE3F1SP",
+   "Under3__DDEEFFSP",
+   "Under0__F7F9FFSP"
+  ],
+  "origin": [
+   130.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   261.62,
+   137.43,
+   70.38
+  ]
+ },
+ "CloudWall": {
+  "min": [
+   -21.28,
+   -4.82,
+   -1.53
+  ],
+  "max": [
+   20.85,
+   5.12,
+   16.71
+  ],
+  "tris": 2040,
+  "parts": [
+   "Puff1__F7F9FFSP",
+   "Puff2__DDEEFFSP",
+   "Puff2__FFE3F1SP",
+   "Puff3__EEF2FFSP"
+  ],
+  "origin": [
+   292.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   42.12,
+   9.94,
+   18.25
+  ]
+ },
+ "CloudPad": {
+  "min": [
+   -3.2,
+   -3.2,
+   0.0
+  ],
+  "max": [
+   3.2,
+   3.2,
+   0.5
+  ],
+  "tris": 236,
+  "parts": [
+   "Pad__F7F9FFSP",
+   "Ring__BFE3FFSP"
+  ],
+  "origin": [
+   328.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   6.4,
+   6.4,
+   0.5
+  ]
+ },
+ "StarLamp": {
+  "min": [
+   -0.95,
+   -0.6,
+   -0.05
+  ],
+  "max": [
+   0.95,
+   0.65,
+   9.4
+  ],
+  "tris": 340,
+  "parts": [
+   "Post__F7F9FFSP",
+   "Base__FFD25AME",
+   "Rings__FFD25AME",
+   "Star__FFE680NE",
+   "Fluff__EEF2FFSP"
+  ],
+  "origin": [
+   346.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   1.9,
+   1.25,
+   9.45
+  ]
+ },
+ "CloudTree": {
+  "min": [
+   -3.6,
+   -2.9,
+   -0.07
+  ],
+  "max": [
+   3.6,
+   2.6,
+   9.5
+  ],
+  "tris": 780,
+  "parts": [
+   "Trunk__C8A27ASP",
+   "Puffs__FFE3F1SP"
+  ],
+  "origin": [
+   365.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   7.2,
+   5.5,
+   9.57
+  ]
+ },
+ "SunFlowers": {
+  "min": [
+   -2.01,
+   -0.34,
+   0.0
+  ],
+  "max": [
+   2.11,
+   0.8,
+   3.97
+  ],
+  "tris": 1356,
+  "parts": [
+   "Stems__6CCB6ASP",
+   "Petals__FFD43BSP",
+   "Centers__B5651DSP",
+   "Leaves__6CCB6ASP"
+  ],
+  "origin": [
+   385.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   4.12,
+   1.14,
+   3.97
+  ]
+ },
+ "HotAirBalloon": {
+  "min": [
+   -6.34,
+   -6.34,
+   0.0
+  ],
+  "max": [
+   6.34,
+   6.34,
+   20.0
+  ],
+  "tris": 1376,
+  "parts": [
+   "StripeA__FF8FB1SP",
+   "Envelope__FF8FB1SP",
+   "Bands__FFE066SP",
+   "Bands__8FD0FFSP",
+   "Basket__B07A4ASP",
+   "Ropes__8A6A4ASP"
+  ],
+  "origin": [
+   407.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   12.68,
+   12.68,
+   20.0
+  ]
+ },
+ "Windmill": {
+  "min": [
+   -3.0,
+   -2.92,
+   0.0
+  ],
+  "max": [
+   3.0,
+   2.92,
+   17.6
+  ],
+  "tris": 358,
+  "parts": [
+   "Tower__F7F9FFSP",
+   "Cap__3E5BA8SP",
+   "Door__8FD0FFSP",
+   "Windows__BFE3FFGLT15"
+  ],
+  "origin": [
+   431.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   6.0,
+   5.85,
+   17.6
+  ]
+ },
+ "WindmillBlades": {
+  "min": [
+   -6.0,
+   -0.7,
+   -6.0
+  ],
+  "max": [
+   6.0,
+   0.3,
+   6.0
+  ],
+  "tris": 684,
+  "parts": [
+   "Spokes__EEF2FFSP",
+   "Sails0__FFE3F1SP",
+   "Sails1__DDEEFFSP",
+   "Sails0__FFF3BFSP",
+   "Sails1__D3F9D8SP",
+   "Hub__FFD25AME"
+  ],
+  "origin": [
+   455.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   12.0,
+   1.0,
+   12.0
+  ]
+ },
+ "CloudSheep": {
+  "min": [
+   -1.54,
+   -1.7,
+   0.0
+  ],
+  "max": [
+   1.54,
+   1.68,
+   3.0
+  ],
+  "tris": 980,
+  "parts": [
+   "Wool__F7F9FFSP",
+   "Head__6E6A80SP",
+   "Ears__6E6A80SP",
+   "Legs__6E6A80SP",
+   "Eyes__FFFFFFSP"
+  ],
+  "origin": [
+   476.5,
+   0.0,
+   0.0
+  ],
+  "size": [
+   3.08,
+   3.38,
+   3.0
+  ]
+ },
+ "CloudFountain": {
+  "min": [
+   -4.6,
+   -4.6,
+   0.0
+  ],
+  "max": [
+   4.6,
+   4.6,
+   6.55
+  ],
+  "tris": 962,
+  "parts": [
+   "Basin__F7F9FFSP",
+   "Rim__FFD25AME",
+   "Water__8FD0FFGLT25",
+   "Column__EEF2FFSP",
+   "Bowl__F7F9FFSP",
+   "Cloud__FFFFFFSPT10"
+  ],
+  "origin": [
+   497.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   9.2,
+   9.2,
+   6.55
+  ]
+ },
+ "SkyFall": {
+  "min": [
+   -6.28,
+   -6.9,
+   -48.4
+  ],
+  "max": [
+   6.28,
+   0.8,
+   -0.0
+  ],
+  "tris": 624,
+  "parts": [
+   "Water__A8DCFFGLT35",
+   "Mist__FFFFFFSPT40",
+   "Lip__A8DCFFGLT30"
+  ],
+  "origin": [
+   521.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   12.57,
+   7.7,
+   48.4
+  ]
+ },
+ "SkyCastle": {
+  "min": [
+   -18.0,
+   -12.94,
+   0.0
+  ],
+  "max": [
+   18.0,
+   12.94,
+   46.6
+  ],
+  "tris": 3306,
+  "parts": [
+   "Walls__F7F9FFSP",
+   "Trim__FFD25AME",
+   "Crenels__EEF2FFSP",
+   "Door__8FD0FFSP",
+   "Towers__F7F9FFSP",
+   "Roofs__3E5BA8SP",
+   "Poles__FFD25AME",
+   "Flags__FF8FB1SP",
+   "Keep__EEF2FFSP",
+   "Spire__F7F9FFSP",
+   "Dome__FFD25AME",
+   "TopStar__FFD25AME",
+   "Windows__BFE3FFGLT15"
+  ],
+  "origin": [
+   559.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   36.0,
+   25.88,
+   46.6
+  ]
+ },
+ "Rainbow": {
+  "min": [
+   -75.5,
+   -7.76,
+   -5.5
+  ],
+  "max": [
+   75.0,
+   7.41,
+   70.62
+  ],
+  "tris": 6776,
+  "parts": [
+   "Band0__FF6B6BSP",
+   "Band1__FFA94DSP",
+   "Band2__FFE066SP",
+   "Band3__69DB7CSP",
+   "Band4__4DABF7SP",
+   "Band5__748FFCSP",
+   "Band6__B197FCSP",
+   "Feet0__F7F9FFSP",
+   "Feet1__EEF2FFSP",
+   "Feet0__FFE3F1SP",
+   "Feet1__DDEEFFSP"
+  ],
+  "origin": [
+   671.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   150.5,
+   15.17,
+   76.12
+  ]
+ },
+ "CloudStairs": {
+  "min": [
+   -19.52,
+   -6.2,
+   0.0
+  ],
+  "max": [
+   0.02,
+   6.2,
+   9.6
+  ],
+  "tris": 1864,
+  "parts": [
+   "Steps__EEF2FFSP",
+   "Steps__F7F9FFSP",
+   "Puffs__FFE3F1SP",
+   "Puffs__DDEEFFSP"
+  ],
+  "origin": [
+   774.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   19.55,
+   12.4,
+   9.6
+  ]
+ },
+ "SkyBellTower": {
+  "min": [
+   -5.35,
+   -5.35,
+   0.0
+  ],
+  "max": [
+   5.35,
+   5.35,
+   41.1
+  ],
+  "tris": 1422,
+  "parts": [
+   "Pillar__F7F9FFSP",
+   "Rings__FFD25AME",
+   "Top__EEF2FFSP",
+   "TopRim__FFD25AME",
+   "Arch__E0A830ME",
+   "Dome__FFD25AME",
+   "Bell__FFD25AME",
+   "Bell__E0A830ME",
+   "Star__FFE680NE"
+  ],
+  "origin": [
+   804.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   10.7,
+   10.7,
+   41.1
+  ]
+ },
+ "CloudPlatform": {
+  "min": [
+   -4.24,
+   -3.9,
+   -3.04
+  ],
+  "max": [
+   4.24,
+   3.9,
+   0.5
+  ],
+  "tris": 812,
+  "parts": [
+   "Pad__F7F9FFSP",
+   "Puffs__EEF2FFSP",
+   "Puffs__FFE3F1SP",
+   "Puffs__DDEEFFSP"
+  ],
+  "origin": [
+   827.5,
+   0.0,
+   0.0
+  ],
+  "size": [
+   8.47,
+   7.8,
+   3.54
+  ]
+ },
+ "CloudGate": {
+  "min": [
+   -11.0,
+   -2.2,
+   -0.4
+  ],
+  "max": [
+   11.0,
+   2.5,
+   26.0
+  ],
+  "tris": 2176,
+  "parts": [
+   "Pillars__F7F9FFSP",
+   "Pillars__EEF2FFSP",
+   "Arch__FFD25AME",
+   "Sun__FFD25AME",
+   "Rays__E0A830ME",
+   "Cloud__F7F9FFSP"
+  ],
+  "origin": [
+   856.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   22.0,
+   4.7,
+   26.4
+  ]
+ },
+ "BridgeClockworkCloud": {
+  "min": [
+   -86.14,
+   -6.04,
+   -0.8
+  ],
+  "max": [
+   1.14,
+   66.04,
+   18.75
+  ],
+  "tris": 6268,
+  "parts": [
+   "Stripe0__FF6B6BSP",
+   "Stripe1__FFA94DSP",
+   "Stripe2__FFE066SP",
+   "Stripe3__69DB7CSP",
+   "Stripe4__4DABF7SP",
+   "Stripe5__748FFCSP",
+   "Stripe6__B197FCSP",
+   "Rails__F7F9FFSP",
+   "Puffs__F7F9FFSP"
+  ],
+  "origin": [
+   945.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   87.28,
+   72.09,
+   19.55
+  ]
+ },
+ "CloudRange": {
+  "min": [
+   -393.22,
+   -114.9,
+   -20.0
+  ],
+  "max": [
+   412.04,
+   120.45,
+   257.45
+  ],
+  "tris": 7392,
+  "parts": [
+   "Tower0__F7F9FFSP",
+   "Tower1__E2DBFFSP",
+   "Tower2__FFE3F1SP",
+   "Tower3__EEF2FFSP",
+   "Base__EEF2FFSP"
+  ],
+  "origin": [
+   1432.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   805.26,
+   235.35,
+   277.45
+  ]
+ },
+ "CloudEgg": {
+  "min": [
+   -3.2,
+   -3.0,
+   -0.28
+  ],
+  "max": [
+   3.2,
+   3.0,
+   8.05
+  ],
+  "tris": 3428,
+  "parts": [
+   "Pedestal__F7F9FFSP",
+   "Pedestal__EEF2FFSP",
+   "Plinth__FFD25AME",
+   "Shell__FDFBFFSP",
+   "RainbowBand__FF6B6BSP",
+   "RainbowBand__FFA94DSP",
+   "RainbowBand__FFE066SP",
+   "RainbowBand__69DB7CSP",
+   "RainbowBand__4DABF7SP",
+   "Wings__FFD25AME",
+   "Stars__FFD25AME"
+  ],
+  "origin": [
+   1858.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   6.4,
+   6.0,
+   8.33
+  ]
+ },
+ "Pet_CloudLamb": {
+  "min": [
+   -1.1,
+   -1.3,
+   0.0
+  ],
+  "max": [
+   1.1,
+   1.25,
+   2.1
+  ],
+  "tris": 1540,
+  "parts": [
+   "Wool__F7F9FFSP",
+   "Head__8A86A0SP",
+   "Ears__8A86A0SP",
+   "Legs__8A86A0SP",
+   "Eyes__2A2433SP",
+   "Shine__FFFFFFSP",
+   "Blush__FF9BB5SP"
+  ],
+  "origin": [
+   1876.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   2.2,
+   2.55,
+   2.1
+  ]
+ },
+ "Pet_CloudKitten": {
+  "min": [
+   -0.81,
+   -1.22,
+   -0.01
+  ],
+  "max": [
+   0.81,
+   2.07,
+   2.6
+  ],
+  "tris": 726,
+  "parts": [
+   "Body__CFE4FFSP",
+   "Head__CFE4FFSP",
+   "Ears__CFE4FFSP",
+   "Paws__F7F9FFSP",
+   "Fluff__F7F9FFSP",
+   "Tail__CFE4FFSP",
+   "Eyes__2A2433SP",
+   "Shine__FFFFFFSP",
+   "Blush__FF9BB5SP",
+   "Nose__FF9BB5SP"
+  ],
+  "origin": [
+   1892.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   1.62,
+   3.29,
+   2.61
+  ]
+ },
+ "Pet_ThunderOwl": {
+  "min": [
+   -1.09,
+   -1.2,
+   0.01
+  ],
+  "max": [
+   1.09,
+   0.9,
+   2.42
+  ],
+  "tris": 452,
+  "parts": [
+   "Body__6F7FD0SP",
+   "Belly__D9DEFFSP",
+   "EyeRings__F7F9FFSP",
+   "Eyes__2A2433SP",
+   "Tufts__6F7FD0SP",
+   "Wings__5A68B8SP",
+   "Feet__FFC94ASP",
+   "Beak__FFC94ASP",
+   "Bolt__FFE066NE"
+  ],
+  "origin": [
+   1908.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   2.17,
+   2.1,
+   2.41
+  ]
+ },
+ "Pet_RainbowPegasus": {
+  "min": [
+   -0.72,
+   -1.45,
+   -0.06
+  ],
+  "max": [
+   0.72,
+   2.15,
+   2.55
+  ],
+  "tris": 932,
+  "parts": [
+   "Body__F7F9FFSP",
+   "Head__F7F9FFSP",
+   "Muzzle__FFE3F1SP",
+   "Legs__F7F9FFSP",
+   "Hooves__FFD25AME",
+   "Wings__EEF2FFSP",
+   "Ears__F7F9FFSP",
+   "Mane0__FF6B6BSP",
+   "Mane1__FFA94DSP",
+   "Mane2__FFE066SP",
+   "Mane0__69DB7CSP",
+   "Mane1__4DABF7SP",
+   "Mane2__748FFCSP",
+   "Tail__4DABF7SP",
+   "Eyes__2A2433SP",
+   "Shine__FFFFFFSP",
+   "Blush__FF9BB5SP"
+  ],
+  "origin": [
+   1924.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   1.44,
+   3.6,
+   2.61
+  ]
+ },
+ "Pet_SkyWhale": {
+  "min": [
+   -1.44,
+   -1.51,
+   0.26
+  ],
+  "max": [
+   1.44,
+   2.45,
+   2.87
+  ],
+  "tris": 680,
+  "parts": [
+   "Body__8FD0FFSP",
+   "Belly__F7F9FFSP",
+   "Fins__8FD0FFSP",
+   "Tail__8FD0FFSP",
+   "Fluke__8FD0FFSP",
+   "Spout__F7F9FFSP",
+   "Eyes__2A2433SP",
+   "Shine__FFFFFFSP",
+   "Blush__FF9BB5SP",
+   "Glow__FFF2A8NE"
+  ],
+  "origin": [
+   1940.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   2.88,
+   3.96,
+   2.61
+  ]
+ }
+}

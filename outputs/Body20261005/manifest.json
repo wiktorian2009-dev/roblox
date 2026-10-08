@@ -1,0 +1,222 @@
+{
+ "date": "2026-10-05",
+ "task": "7 - Body as the fourth part",
+ "pack": {
+  "assetId": "113098509806776",
+  "operationId": "7391090a-741d-499d-91c9-12d8fe36317c"
+ },
+ "starter": "BodyStarter = the original PlowParts.Chassis shell (split in Studio; Chassis keeps Root, seat, steering wheel, Attach_* incl. Attach_Body)",
+ "bodies": [
+  {
+   "id": "body_frosthauler",
+   "name": "Frost Hauler",
+   "model": "BodyFrostHauler",
+   "band": 1,
+   "role": "A",
+   "rarity": "Common",
+   "price": 150,
+   "stats": {
+    "Snow": 0.02,
+    "Stability": 0.11
+   },
+   "tris": 1668
+  },
+  {
+   "id": "body_starter",
+   "name": "Classic Plow Cab",
+   "model": "BodyStarter",
+   "band": 1,
+   "role": "S",
+   "rarity": "Starter",
+   "price": 0,
+   "stats": {
+    "Snow": 0.0
+   },
+   "tris": null
+  },
+  {
+   "id": "body_dunerunner",
+   "name": "Dune Runner",
+   "model": "BodyDuneRunner",
+   "band": 2,
+   "role": "A",
+   "rarity": "Common",
+   "price": 380,
+   "stats": {
+    "Snow": 0.04,
+    "Turn": 0.036
+   },
+   "tris": 1340
+  },
+  {
+   "id": "body_gravehauler",
+   "name": "Grave Hauler",
+   "model": "BodyGraveHauler",
+   "band": 3,
+   "role": "A",
+   "rarity": "Uncommon",
+   "price": 230000,
+   "stats": {
+    "Snow": 0.06,
+    "Grip": 0.029
+   },
+   "tris": 1212
+  },
+  {
+   "id": "body_geodecrawler",
+   "name": "Geode Crawler",
+   "model": "BodyGeodeCrawler",
+   "band": 4,
+   "role": "A",
+   "rarity": "Uncommon",
+   "price": 85000000,
+   "stats": {
+    "Snow": 0.08,
+    "Stability": 0.14
+   },
+   "tris": 1500
+  },
+  {
+   "id": "body_arcadekart",
+   "name": "Arcade Kart",
+   "model": "BodyArcadeKart",
+   "band": 5,
+   "role": "A",
+   "rarity": "Rare",
+   "price": 14000000000,
+   "stats": {
+    "Snow": 0.1,
+    "Turn": 0.045
+   },
+   "tris": 899
+  },
+  {
+   "id": "body_safari",
+   "name": "Safari Cruiser",
+   "model": "BodySafari",
+   "band": 6,
+   "role": "A",
+   "rarity": "Rare",
+   "price": 180000000000,
+   "stats": {
+    "Snow": 0.12,
+    "Grip": 0.038
+   },
+   "tris": 1332
+  },
+  {
+   "id": "body_polartitan",
+   "name": "Polar Titan",
+   "model": "BodyPolarTitan",
+   "band": 7,
+   "role": "B",
+   "rarity": "Epic",
+   "price": 68000000000000,
+   "stats": {
+    "Snow": 0.17,
+    "Grip": 0.05,
+    "Stability": 0.25
+   },
+   "tris": 1234
+  },
+  {
+   "id": "body_pagoda",
+   "name": "Pagoda Wagon",
+   "model": "BodyPagoda",
+   "band": 8,
+   "role": "A",
+   "rarity": "Rare",
+   "price": 60000000000000,
+   "stats": {
+    "Snow": 0.16,
+    "Turn": 0.054
+   },
+   "tris": 1236
+  },
+  {
+   "id": "body_sweettruck",
+   "name": "Sweet Truck",
+   "model": "BodySweetTruck",
+   "band": 9,
+   "role": "A",
+   "rarity": "Epic",
+   "price": 5200000000000000,
+   "stats": {
+    "Snow": 0.18,
+    "Grip": 0.047
+   },
+   "tris": 1896
+  },
+  {
+   "id": "body_reefdiver",
+   "name": "Reef Diver",
+   "model": "BodyReefDiver",
+   "band": 10,
+   "role": "A",
+   "rarity": "Epic",
+   "price": 32000000000000000,
+   "stats": {
+    "Snow": 0.2,
+    "Stability": 0.2
+   },
+   "tris": 1564
+  },
+  {
+   "id": "body_toytruck",
+   "name": "Toy Truck",
+   "model": "BodyToyTruck",
+   "band": 11,
+   "role": "A",
+   "rarity": "Epic",
+   "price": 98000000000000000,
+   "stats": {
+    "Snow": 0.22,
+    "Turn": 0.063
+   },
+   "tris": 1524
+  },
+  {
+   "id": "body_brasscarriage",
+   "name": "Brass Carriage",
+   "model": "BodyBrassCarriage",
+   "band": 12,
+   "role": "A",
+   "rarity": "Epic",
+   "price": 450000000000000000,
+   "stats": {
+    "Snow": 0.24,
+    "Grip": 0.056
+   },
+   "tris": 1424
+  },
+  {
+   "id": "body_skycruiser",
+   "name": "Sky Cruiser",
+   "model": "BodySkyCruiser",
+   "band": 13,
+   "role": "A",
+   "rarity": "Epic",
+   "price": 4200000000000000000,
+   "stats": {
+    "Snow": 0.26,
+    "Turn": 0.069
+   },
+   "tris": 1832
+  },
+  {
+   "id": "body_starcruiser",
+   "name": "Star Cruiser",
+   "model": "BodyStarCruiser",
+   "band": 14,
+   "role": "B",
+   "rarity": "Legendary",
+   "price": 92000000000000000000,
+   "stats": {
+    "Snow": 0.31,
+    "Grip": 0.06,
+    "Turn": 0.06
+   },
+   "tris": 1300
+  }
+ ]
+}

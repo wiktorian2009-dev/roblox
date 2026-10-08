@@ -1,0 +1,1624 @@
+{
+ "parts": {
+  "blade_basic": {
+   "slot": "Blade",
+   "name": "Basic Blade",
+   "model": "BladeBasic",
+   "rarity": "Starter",
+   "band": 1,
+   "role": "S",
+   "theme": "Snowy Starter",
+   "kind": "straight",
+   "price": 0.0,
+   "desc": "A sturdy steel blade. Free and always yours.",
+   "stats": {
+    "Width": 7.0,
+    "Soft": 1.0,
+    "Hard": 1.0
+   }
+  },
+  "blade_wide": {
+   "slot": "Blade",
+   "name": "Wide Clearing Blade",
+   "model": "BladeWide",
+   "rarity": "Common",
+   "band": 1,
+   "role": "A",
+   "theme": "Snowy Starter",
+   "kind": "sweeper",
+   "price": 120.0,
+   "desc": "Extra-wide sweep for soft snow; weaker on hard ice.",
+   "stats": {
+    "Width": 12.0,
+    "Soft": 1.25,
+    "Hard": 0.6
+   }
+  },
+  "blade_frost_scoop": {
+   "slot": "Blade",
+   "name": "Frosty Scoop",
+   "model": "BladeFrostScoop",
+   "rarity": "Uncommon",
+   "band": 1,
+   "role": "C",
+   "theme": "Snowy Starter",
+   "kind": "scoop",
+   "price": 650.0,
+   "desc": "Curved scoop: wide and good in soft snow.",
+   "stats": {
+    "Width": 8.5,
+    "Soft": 1.12,
+    "Hard": 0.85
+   }
+  },
+  "blade_dune": {
+   "slot": "Blade",
+   "name": "Dune Sweeper",
+   "model": "BladeDune",
+   "rarity": "Common",
+   "band": 2,
+   "role": "A",
+   "theme": "Desert",
+   "kind": "sweeper",
+   "price": 1500.0,
+   "desc": "Extra-wide sweep for soft snow; weaker on hard ice.",
+   "stats": {
+    "Width": 11.0,
+    "Soft": 1.44,
+    "Hard": 0.69
+   }
+  },
+  "blade_ice": {
+   "slot": "Blade",
+   "name": "Reinforced Icebreaker",
+   "model": "BladeIce",
+   "rarity": "Rare",
+   "band": 2,
+   "role": "B",
+   "theme": "Desert",
+   "kind": "icebreaker",
+   "price": 660000.0,
+   "desc": "Narrow armoured edge that smashes hard ice. Premium part for its world.",
+   "stats": {
+    "Width": 8.5,
+    "Soft": 1.17,
+    "Hard": 2.4
+   }
+  },
+  "blade_grave": {
+   "slot": "Blade",
+   "name": "Grave Digger",
+   "model": "BladeGrave",
+   "rarity": "Uncommon",
+   "band": 3,
+   "role": "A",
+   "theme": "Cursed",
+   "kind": "toothed",
+   "price": 900000.0,
+   "desc": "Teeth bite into hard ice; weaker in soft powder.",
+   "stats": {
+    "Width": 9.0,
+    "Soft": 1.12,
+    "Hard": 1.92
+   }
+  },
+  "blade_hex": {
+   "slot": "Blade",
+   "name": "Hex Breaker",
+   "model": "BladeHex",
+   "rarity": "Rare",
+   "band": 3,
+   "role": "B",
+   "theme": "Cursed",
+   "kind": "vshape",
+   "price": 240000000.0,
+   "desc": "V-wedge that splits tough snow - great on hard fields. Premium part for its world.",
+   "stats": {
+    "Width": 9.5,
+    "Soft": 1.55,
+    "Hard": 2.33
+   }
+  },
+  "blade_quartz": {
+   "slot": "Blade",
+   "name": "Quartz Edge",
+   "model": "BladeQuartz",
+   "rarity": "Uncommon",
+   "band": 4,
+   "role": "A",
+   "theme": "Crystal Caves",
+   "kind": "segmented",
+   "price": 330000000.0,
+   "desc": "Segmented plates: steady all-rounder with a hard-ice edge.",
+   "stats": {
+    "Width": 10.0,
+    "Soft": 1.52,
+    "Hard": 1.75
+   }
+  },
+  "blade_prism": {
+   "slot": "Blade",
+   "name": "Prism Cleaver",
+   "model": "BladePrism",
+   "rarity": "Rare",
+   "band": 4,
+   "role": "B",
+   "theme": "Crystal Caves",
+   "kind": "crystal",
+   "price": 57000000000.0,
+   "desc": "Crystal edge: excellent on hard ice. Premium part for its world.",
+   "stats": {
+    "Width": 8.5,
+    "Soft": 1.69,
+    "Hard": 3.07
+   }
+  },
+  "blade_pixel": {
+   "slot": "Blade",
+   "name": "Pixel Pusher",
+   "model": "BladePixel",
+   "rarity": "Uncommon",
+   "band": 5,
+   "role": "A",
+   "theme": "Retro World",
+   "kind": "pixel",
+   "price": 78000000000.0,
+   "desc": "Blocky and wide: strong in soft snow.",
+   "stats": {
+    "Width": 11.0,
+    "Soft": 1.96,
+    "Hard": 1.61
+   }
+  },
+  "blade_arcade": {
+   "slot": "Blade",
+   "name": "Arcade Plow",
+   "model": "BladeArcade",
+   "rarity": "Epic",
+   "band": 5,
+   "role": "B",
+   "theme": "Retro World",
+   "kind": "segmented",
+   "price": 350000000000.0,
+   "desc": "Segmented plates: steady all-rounder with a hard-ice edge. Premium part for its world.",
+   "stats": {
+    "Width": 9.5,
+    "Soft": 2.28,
+    "Hard": 2.62
+   }
+  },
+  "blade_vine": {
+   "slot": "Blade",
+   "name": "Vine Sweeper",
+   "model": "BladeVine",
+   "rarity": "Uncommon",
+   "band": 6,
+   "role": "A",
+   "theme": "Jungle",
+   "kind": "sweeper",
+   "price": 480000000000.0,
+   "desc": "Extra-wide sweep for soft snow; weaker on hard ice.",
+   "stats": {
+    "Width": 12.0,
+    "Soft": 2.51,
+    "Hard": 1.21
+   }
+  },
+  "blade_tusk": {
+   "slot": "Blade",
+   "name": "Tusk Breaker",
+   "model": "BladeTusk",
+   "rarity": "Epic",
+   "band": 6,
+   "role": "B",
+   "theme": "Jungle",
+   "kind": "toothed",
+   "price": 3700000000000.0,
+   "desc": "Teeth bite into hard ice; weaker in soft powder. Premium part for its world.",
+   "stats": {
+    "Width": 8.5,
+    "Soft": 2.23,
+    "Hard": 3.8
+   }
+  },
+  "blade_glacier": {
+   "slot": "Blade",
+   "name": "Glacier Plow",
+   "model": "BladeGlacier",
+   "rarity": "Uncommon",
+   "band": 7,
+   "role": "A",
+   "theme": "Absolute Zero",
+   "kind": "scoop",
+   "price": 5100000000000.0,
+   "desc": "Curved scoop: wide and good in soft snow.",
+   "stats": {
+    "Width": 10.5,
+    "Soft": 2.59,
+    "Hard": 1.97
+   }
+  },
+  "blade_zero": {
+   "slot": "Blade",
+   "name": "Absolute Edge",
+   "model": "BladeZero",
+   "rarity": "Epic",
+   "band": 7,
+   "role": "B",
+   "theme": "Absolute Zero",
+   "kind": "icebreaker",
+   "price": 130000000000000.0,
+   "desc": "Narrow armoured edge that smashes hard ice. Premium part for its world.",
+   "stats": {
+    "Width": 8.5,
+    "Soft": 2.35,
+    "Hard": 4.83
+   }
+  },
+  "blade_singularity": {
+   "slot": "Blade",
+   "name": "Zero Point Blade",
+   "model": "BladeSingularity",
+   "rarity": "Legendary",
+   "band": 7,
+   "role": "C",
+   "theme": "Absolute Zero",
+   "kind": "vshape",
+   "price": 2e+16,
+   "desc": "V-wedge that splits tough snow - great on hard fields. A legendary saving goal!",
+   "stats": {
+    "Width": 10.5,
+    "Soft": 3.33,
+    "Hard": 5.0
+   }
+  },
+  "blade_petal": {
+   "slot": "Blade",
+   "name": "Petal Sweeper",
+   "model": "BladePetal",
+   "rarity": "Rare",
+   "band": 8,
+   "role": "A",
+   "theme": "Sakura Garden",
+   "kind": "sweeper",
+   "price": 180000000000000.0,
+   "desc": "Extra-wide sweep for soft snow; weaker on hard ice.",
+   "stats": {
+    "Width": 12.5,
+    "Soft": 3.33,
+    "Hard": 1.6
+   }
+  },
+  "blade_katana": {
+   "slot": "Blade",
+   "name": "Katana Blade",
+   "model": "BladeKatana",
+   "rarity": "Epic",
+   "band": 8,
+   "role": "B",
+   "theme": "Sakura Garden",
+   "kind": "straight",
+   "price": 8100000000000000.0,
+   "desc": "Dependable all-rounder: the same on soft powder and hard ice. Premium part for its world.",
+   "stats": {
+    "Width": 9.0,
+    "Soft": 3.47,
+    "Hard": 3.47
+   }
+  },
+  "blade_lollipop": {
+   "slot": "Blade",
+   "name": "Lollipop Scoop",
+   "model": "BladeLollipop",
+   "rarity": "Rare",
+   "band": 9,
+   "role": "A",
+   "theme": "Candy Kingdom",
+   "kind": "scoop",
+   "price": 1.1e+16,
+   "desc": "Curved scoop: wide and good in soft snow.",
+   "stats": {
+    "Width": 10.5,
+    "Soft": 3.43,
+    "Hard": 2.6
+   }
+  },
+  "blade_canecrusher": {
+   "slot": "Blade",
+   "name": "Candy Cane Crusher",
+   "model": "BladeCaneCrusher",
+   "rarity": "Epic",
+   "band": 9,
+   "role": "B",
+   "theme": "Candy Kingdom",
+   "kind": "toothed",
+   "price": 5.1e+16,
+   "desc": "Teeth bite into hard ice; weaker in soft powder. Premium part for its world.",
+   "stats": {
+    "Width": 9.5,
+    "Soft": 3.39,
+    "Hard": 5.78
+   }
+  },
+  "blade_coral": {
+   "slot": "Blade",
+   "name": "Coral Scoop",
+   "model": "BladeCoral",
+   "rarity": "Rare",
+   "band": 10,
+   "role": "A",
+   "theme": "Sunken Atlantis",
+   "kind": "scoop",
+   "price": 6.9e+16,
+   "desc": "Curved scoop: wide and good in soft snow.",
+   "stats": {
+    "Width": 11.0,
+    "Soft": 3.94,
+    "Hard": 2.99
+   }
+  },
+  "blade_trident": {
+   "slot": "Blade",
+   "name": "Trident Breaker",
+   "model": "BladeTrident",
+   "rarity": "Legendary",
+   "band": 10,
+   "role": "B",
+   "theme": "Sunken Atlantis",
+   "kind": "vshape",
+   "price": 1.5e+17,
+   "desc": "V-wedge that splits tough snow - great on hard fields. A legendary saving goal!",
+   "stats": {
+    "Width": 9.0,
+    "Soft": 4.13,
+    "Hard": 6.19
+   }
+  },
+  "blade_brick": {
+   "slot": "Blade",
+   "name": "Building Block Blade",
+   "model": "BladeBrick",
+   "rarity": "Rare",
+   "band": 11,
+   "role": "A",
+   "theme": "Giant Toybox",
+   "kind": "segmented",
+   "price": 2e+17,
+   "desc": "Segmented plates: steady all-rounder with a hard-ice edge.",
+   "stats": {
+    "Width": 11.5,
+    "Soft": 4.05,
+    "Hard": 4.65
+   }
+  },
+  "blade_bulldozer": {
+   "slot": "Blade",
+   "name": "Toy Bulldozer",
+   "model": "BladeBulldozer",
+   "rarity": "Legendary",
+   "band": 11,
+   "role": "B",
+   "theme": "Giant Toybox",
+   "kind": "straight",
+   "price": 6.8e+17,
+   "desc": "Dependable all-rounder: the same on soft powder and hard ice. A legendary saving goal!",
+   "stats": {
+    "Width": 10.0,
+    "Soft": 5.27,
+    "Hard": 5.27
+   }
+  },
+  "blade_cog": {
+   "slot": "Blade",
+   "name": "Cog Sweeper",
+   "model": "BladeCog",
+   "rarity": "Rare",
+   "band": 12,
+   "role": "A",
+   "theme": "Clockwork City",
+   "kind": "sweeper",
+   "price": 9.3e+17,
+   "desc": "Extra-wide sweep for soft snow; weaker on hard ice.",
+   "stats": {
+    "Width": 12.0,
+    "Soft": 5.82,
+    "Hard": 2.79
+   }
+  },
+  "blade_gearbreaker": {
+   "slot": "Blade",
+   "name": "Gearbreaker",
+   "model": "BladeGearbreaker",
+   "rarity": "Legendary",
+   "band": 12,
+   "role": "B",
+   "theme": "Clockwork City",
+   "kind": "mechanical",
+   "price": 6.4e+18,
+   "desc": "Grinding gears chew through hard ice. A legendary saving goal!",
+   "stats": {
+    "Width": 9.5,
+    "Soft": 5.46,
+    "Hard": 9.1
+   }
+  },
+  "blade_cumulus": {
+   "slot": "Blade",
+   "name": "Cumulus Sweeper",
+   "model": "BladeCumulus",
+   "rarity": "Rare",
+   "band": 13,
+   "role": "A",
+   "theme": "Cloud Kingdom",
+   "kind": "sweeper",
+   "price": 8.7e+18,
+   "desc": "Extra-wide sweep for soft snow; weaker on hard ice.",
+   "stats": {
+    "Width": 13.0,
+    "Soft": 6.69,
+    "Hard": 3.21
+   }
+  },
+  "blade_thunder": {
+   "slot": "Blade",
+   "name": "Thunder Wedge",
+   "model": "BladeThunder",
+   "rarity": "Legendary",
+   "band": 13,
+   "role": "B",
+   "theme": "Cloud Kingdom",
+   "kind": "vshape",
+   "price": 5.7e+19,
+   "desc": "V-wedge that splits tough snow - great on hard fields. A legendary saving goal!",
+   "stats": {
+    "Width": 9.5,
+    "Soft": 6.28,
+    "Hard": 9.42
+   }
+  },
+  "blade_comet": {
+   "slot": "Blade",
+   "name": "Comet Scoop",
+   "model": "BladeComet",
+   "rarity": "Epic",
+   "band": 14,
+   "role": "A",
+   "theme": "Cosmic Sanctuary",
+   "kind": "scoop",
+   "price": 7.8e+19,
+   "desc": "Curved scoop: wide and good in soft snow.",
+   "stats": {
+    "Width": 11.5,
+    "Soft": 6.89,
+    "Hard": 5.23
+   }
+  },
+  "blade_galaxy": {
+   "slot": "Blade",
+   "name": "Galaxy Breaker",
+   "model": "BladeGalaxy",
+   "rarity": "Legendary",
+   "band": 14,
+   "role": "B",
+   "theme": "Cosmic Sanctuary",
+   "kind": "cosmic",
+   "price": 1.1e+20,
+   "desc": "Cosmic edge: strong on every kind of snow. A legendary saving goal!",
+   "stats": {
+    "Width": 10.5,
+    "Soft": 9.23,
+    "Hard": 10.8
+   }
+  },
+  "engine_starter": {
+   "slot": "Engine",
+   "name": "Starter Engine",
+   "model": "EngineStarter",
+   "rarity": "Starter",
+   "band": 1,
+   "role": "S",
+   "theme": "Snowy Starter",
+   "kind": "compact",
+   "price": 0.0,
+   "desc": "Small but reliable. Free and always yours.",
+   "stats": {
+    "Speed": 24.0,
+    "Power": 1.0,
+    "AccelTime": 1.6
+   }
+  },
+  "engine_snowball": {
+   "slot": "Engine",
+   "name": "Snowball Motor",
+   "model": "EngineSnowball",
+   "rarity": "Common",
+   "band": 1,
+   "role": "A",
+   "theme": "Snowy Starter",
+   "kind": "compact",
+   "price": 300.0,
+   "desc": "Light motor that speeds up quickly.",
+   "stats": {
+    "Speed": 25.0,
+    "Power": 2.02,
+    "AccelTime": 1.2
+   }
+  },
+  "engine_balanced": {
+   "slot": "Engine",
+   "name": "Balanced Engine",
+   "model": "EngineBalanced",
+   "rarity": "Uncommon",
+   "band": 1,
+   "role": "C",
+   "theme": "Snowy Starter",
+   "kind": "twin",
+   "price": 450.0,
+   "desc": "Twin cylinders: balanced power and speed.",
+   "stats": {
+    "Speed": 30.0,
+    "Power": 4.5,
+    "AccelTime": 1.5
+   }
+  },
+  "engine_sandrunner": {
+   "slot": "Engine",
+   "name": "Sand Runner",
+   "model": "EngineSandRunner",
+   "rarity": "Common",
+   "band": 2,
+   "role": "A",
+   "theme": "Desert",
+   "kind": "turbine",
+   "price": 1500.0,
+   "desc": "High top speed and instant spin-up, a little less power.",
+   "stats": {
+    "Speed": 34.5,
+    "Power": 2.58,
+    "AccelTime": 1.0
+   }
+  },
+  "engine_power": {
+   "slot": "Engine",
+   "name": "Powerful Engine",
+   "model": "EnginePower",
+   "rarity": "Rare",
+   "band": 2,
+   "role": "B",
+   "theme": "Desert",
+   "kind": "industrial",
+   "price": 660000.0,
+   "desc": "Heavy torque and big clearing power, slower to speed up. Premium part for its world.",
+   "stats": {
+    "Speed": 28.4,
+    "Power": 6.02,
+    "AccelTime": 2.1
+   }
+  },
+  "engine_lantern": {
+   "slot": "Engine",
+   "name": "Lantern Motor",
+   "model": "EngineLantern",
+   "rarity": "Uncommon",
+   "band": 3,
+   "role": "A",
+   "theme": "Cursed",
+   "kind": "compact",
+   "price": 900000.0,
+   "desc": "Light motor that speeds up quickly.",
+   "stats": {
+    "Speed": 25.9,
+    "Power": 7.73,
+    "AccelTime": 1.2
+   }
+  },
+  "engine_phantom": {
+   "slot": "Engine",
+   "name": "Phantom V-Twin",
+   "model": "EnginePhantom",
+   "rarity": "Rare",
+   "band": 3,
+   "role": "B",
+   "theme": "Cursed",
+   "kind": "twin",
+   "price": 240000000.0,
+   "desc": "Twin cylinders: balanced power and speed. Premium part for its world.",
+   "stats": {
+    "Speed": 31.9,
+    "Power": 14.3,
+    "AccelTime": 1.5
+   }
+  },
+  "engine_geode": {
+   "slot": "Engine",
+   "name": "Geode Core",
+   "model": "EngineGeode",
+   "rarity": "Uncommon",
+   "band": 4,
+   "role": "A",
+   "theme": "Crystal Caves",
+   "kind": "crystal",
+   "price": 330000000.0,
+   "desc": "Crystal core: solid power at a steady speed.",
+   "stats": {
+    "Speed": 30.4,
+    "Power": 23.2,
+    "AccelTime": 1.6
+   }
+  },
+  "engine_reactor": {
+   "slot": "Engine",
+   "name": "Crystal Reactor",
+   "model": "EngineReactor",
+   "rarity": "Rare",
+   "band": 4,
+   "role": "B",
+   "theme": "Crystal Caves",
+   "kind": "crystal",
+   "price": 57000000000.0,
+   "desc": "Crystal core: solid power at a steady speed. Premium part for its world.",
+   "stats": {
+    "Speed": 32.4,
+    "Power": 39.4,
+    "AccelTime": 1.6
+   }
+  },
+  "engine_8bit": {
+   "slot": "Engine",
+   "name": "8-Bit Engine",
+   "model": "Engine8Bit",
+   "rarity": "Uncommon",
+   "band": 5,
+   "role": "A",
+   "theme": "Retro World",
+   "kind": "pixel",
+   "price": 78000000000.0,
+   "desc": "Arcade motor: balanced and peppy.",
+   "stats": {
+    "Speed": 31.8,
+    "Power": 54.6,
+    "AccelTime": 1.3
+   }
+  },
+  "engine_arcade": {
+   "slot": "Engine",
+   "name": "Arcade Turbo",
+   "model": "EngineArcade",
+   "rarity": "Epic",
+   "band": 5,
+   "role": "B",
+   "theme": "Retro World",
+   "kind": "turbine",
+   "price": 350000000000.0,
+   "desc": "High top speed and instant spin-up, a little less power. Premium part for its world.",
+   "stats": {
+    "Speed": 37.8,
+    "Power": 79.8,
+    "AccelTime": 1.0
+   }
+  },
+  "engine_tiki": {
+   "slot": "Engine",
+   "name": "Tiki Thumper",
+   "model": "EngineTiki",
+   "rarity": "Uncommon",
+   "band": 6,
+   "role": "A",
+   "theme": "Jungle",
+   "kind": "industrial",
+   "price": 480000000000.0,
+   "desc": "Heavy torque and big clearing power, slower to speed up.",
+   "stats": {
+    "Speed": 28.2,
+    "Power": 155.0,
+    "AccelTime": 2.1
+   }
+  },
+  "engine_jturbine": {
+   "slot": "Engine",
+   "name": "Jungle Turbine",
+   "model": "EngineJungleTurbine",
+   "rarity": "Epic",
+   "band": 6,
+   "role": "B",
+   "theme": "Jungle",
+   "kind": "turbine",
+   "price": 3700000000000.0,
+   "desc": "High top speed and instant spin-up, a little less power. Premium part for its world.",
+   "stats": {
+    "Speed": 38.2,
+    "Power": 192.0,
+    "AccelTime": 1.0
+   }
+  },
+  "engine_cryo": {
+   "slot": "Engine",
+   "name": "Cryo Compressor",
+   "model": "EngineCryo",
+   "rarity": "Uncommon",
+   "band": 7,
+   "role": "A",
+   "theme": "Absolute Zero",
+   "kind": "industrial",
+   "price": 5100000000000.0,
+   "desc": "Heavy torque and big clearing power, slower to speed up.",
+   "stats": {
+    "Speed": 28.7,
+    "Power": 356.0,
+    "AccelTime": 2.1
+   }
+  },
+  "engine_polar": {
+   "slot": "Engine",
+   "name": "Polar Turbine",
+   "model": "EnginePolar",
+   "rarity": "Epic",
+   "band": 7,
+   "role": "B",
+   "theme": "Absolute Zero",
+   "kind": "turbine",
+   "price": 130000000000000.0,
+   "desc": "High top speed and instant spin-up, a little less power. Premium part for its world.",
+   "stats": {
+    "Speed": 38.7,
+    "Power": 441.0,
+    "AccelTime": 1.0
+   }
+  },
+  "engine_zerocore": {
+   "slot": "Engine",
+   "name": "Absolute Zero Core",
+   "model": "EngineZeroCore",
+   "rarity": "Legendary",
+   "band": 7,
+   "role": "C",
+   "theme": "Absolute Zero",
+   "kind": "core",
+   "price": 2e+16,
+   "desc": "Energy core: high power and high speed. A legendary saving goal!",
+   "stats": {
+    "Speed": 37.7,
+    "Power": 862.0,
+    "AccelTime": 1.25
+   }
+  },
+  "engine_lanterntwin": {
+   "slot": "Engine",
+   "name": "Lantern Twin",
+   "model": "EngineLanternTwin",
+   "rarity": "Rare",
+   "band": 8,
+   "role": "A",
+   "theme": "Sakura Garden",
+   "kind": "twin",
+   "price": 180000000000000.0,
+   "desc": "Twin cylinders: balanced power and speed.",
+   "stats": {
+    "Speed": 32.1,
+    "Power": 573.0,
+    "AccelTime": 1.5
+   }
+  },
+  "engine_blossom": {
+   "slot": "Engine",
+   "name": "Blossom Turbine",
+   "model": "EngineBlossom",
+   "rarity": "Epic",
+   "band": 8,
+   "role": "B",
+   "theme": "Sakura Garden",
+   "kind": "turbine",
+   "price": 8100000000000000.0,
+   "desc": "High top speed and instant spin-up, a little less power. Premium part for its world.",
+   "stats": {
+    "Speed": 39.1,
+    "Power": 837.0,
+    "AccelTime": 1.0
+   }
+  },
+  "engine_gumdrop": {
+   "slot": "Engine",
+   "name": "Gumdrop Motor",
+   "model": "EngineGumdrop",
+   "rarity": "Rare",
+   "band": 9,
+   "role": "A",
+   "theme": "Candy Kingdom",
+   "kind": "compact",
+   "price": 1.1e+16,
+   "desc": "Light motor that speeds up quickly.",
+   "stats": {
+    "Speed": 28.6,
+    "Power": 948.0,
+    "AccelTime": 1.2
+   }
+  },
+  "engine_sugarv8": {
+   "slot": "Engine",
+   "name": "Sugar Rush V8",
+   "model": "EngineSugarV8",
+   "rarity": "Epic",
+   "band": 9,
+   "role": "B",
+   "theme": "Candy Kingdom",
+   "kind": "twin",
+   "price": 5.1e+16,
+   "desc": "Twin cylinders: balanced power and speed. Premium part for its world.",
+   "stats": {
+    "Speed": 34.6,
+    "Power": 1750.0,
+    "AccelTime": 1.5
+   }
+  },
+  "engine_bubble": {
+   "slot": "Engine",
+   "name": "Bubble Pump",
+   "model": "EngineBubble",
+   "rarity": "Rare",
+   "band": 10,
+   "role": "A",
+   "theme": "Sunken Atlantis",
+   "kind": "compact",
+   "price": 6.9e+16,
+   "desc": "Light motor that speeds up quickly.",
+   "stats": {
+    "Speed": 29.1,
+    "Power": 1660.0,
+    "AccelTime": 1.2
+   }
+  },
+  "engine_leviathan": {
+   "slot": "Engine",
+   "name": "Leviathan Turbine",
+   "model": "EngineLeviathan",
+   "rarity": "Legendary",
+   "band": 10,
+   "role": "B",
+   "theme": "Sunken Atlantis",
+   "kind": "turbine",
+   "price": 1.5e+17,
+   "desc": "High top speed and instant spin-up, a little less power. A legendary saving goal!",
+   "stats": {
+    "Speed": 40.0,
+    "Power": 2640.0,
+    "AccelTime": 1.0
+   }
+  },
+  "engine_windup": {
+   "slot": "Engine",
+   "name": "Wind-up Motor",
+   "model": "EngineWindup",
+   "rarity": "Rare",
+   "band": 11,
+   "role": "A",
+   "theme": "Giant Toybox",
+   "kind": "clockwork",
+   "price": 2e+17,
+   "desc": "Wind-up power with smooth acceleration.",
+   "stats": {
+    "Speed": 32.5,
+    "Power": 3190.0,
+    "AccelTime": 1.4
+   }
+  },
+  "engine_jackbox": {
+   "slot": "Engine",
+   "name": "Jack-in-the-Box Engine",
+   "model": "EngineJackbox",
+   "rarity": "Legendary",
+   "band": 11,
+   "role": "B",
+   "theme": "Giant Toybox",
+   "kind": "industrial",
+   "price": 6.8e+17,
+   "desc": "Heavy torque and big clearing power, slower to speed up. A legendary saving goal!",
+   "stats": {
+    "Speed": 32.5,
+    "Power": 6150.0,
+    "AccelTime": 2.1
+   }
+  },
+  "engine_pocketwatch": {
+   "slot": "Engine",
+   "name": "Pocketwatch Engine",
+   "model": "EnginePocketwatch",
+   "rarity": "Rare",
+   "band": 12,
+   "role": "A",
+   "theme": "Clockwork City",
+   "kind": "clockwork",
+   "price": 9.3e+17,
+   "desc": "Wind-up power with smooth acceleration.",
+   "stats": {
+    "Speed": 33.0,
+    "Power": 5420.0,
+    "AccelTime": 1.4
+   }
+  },
+  "engine_grandclock": {
+   "slot": "Engine",
+   "name": "Grand Clockwork Core",
+   "model": "EngineGrandClock",
+   "rarity": "Legendary",
+   "band": 12,
+   "role": "B",
+   "theme": "Clockwork City",
+   "kind": "clockwork",
+   "price": 6.4e+18,
+   "desc": "Wind-up power with smooth acceleration. A legendary saving goal!",
+   "stats": {
+    "Speed": 35.0,
+    "Power": 9220.0,
+    "AccelTime": 1.4
+   }
+  },
+  "engine_breeze": {
+   "slot": "Engine",
+   "name": "Breeze Turbine",
+   "model": "EngineBreeze",
+   "rarity": "Epic",
+   "band": 13,
+   "role": "A",
+   "theme": "Cloud Kingdom",
+   "kind": "turbine",
+   "price": 8.7e+18,
+   "desc": "High top speed and instant spin-up, a little less power.",
+   "stats": {
+    "Speed": 39.4,
+    "Power": 7400.0,
+    "AccelTime": 1.0
+   }
+  },
+  "engine_storm": {
+   "slot": "Engine",
+   "name": "Storm Engine",
+   "model": "EngineStorm",
+   "rarity": "Legendary",
+   "band": 13,
+   "role": "B",
+   "theme": "Cloud Kingdom",
+   "kind": "core",
+   "price": 5.7e+19,
+   "desc": "Energy core: high power and high speed. A legendary saving goal!",
+   "stats": {
+    "Speed": 39.4,
+    "Power": 16000.0,
+    "AccelTime": 1.25
+   }
+  },
+  "engine_stardrive": {
+   "slot": "Engine",
+   "name": "Star Drive",
+   "model": "EngineStarDrive",
+   "rarity": "Epic",
+   "band": 14,
+   "role": "A",
+   "theme": "Cosmic Sanctuary",
+   "kind": "core",
+   "price": 7.8e+19,
+   "desc": "Energy core: high power and high speed.",
+   "stats": {
+    "Speed": 37.9,
+    "Power": 15000.0,
+    "AccelTime": 1.25
+   }
+  },
+  "engine_nebula": {
+   "slot": "Engine",
+   "name": "Nebula Reactor",
+   "model": "EngineNebula",
+   "rarity": "Legendary",
+   "band": 14,
+   "role": "B",
+   "theme": "Cosmic Sanctuary",
+   "kind": "core",
+   "price": 1.1e+20,
+   "desc": "Energy core: high power and high speed. A legendary saving goal!",
+   "stats": {
+    "Speed": 39.9,
+    "Power": 26000.0,
+    "AccelTime": 1.25
+   }
+  },
+  "gear_wheels": {
+   "slot": "Gear",
+   "name": "Snow Wheels",
+   "model": "GearWheels",
+   "rarity": "Starter",
+   "band": 1,
+   "role": "S",
+   "theme": "Snowy Starter",
+   "kind": "smalltires",
+   "price": 0.0,
+   "desc": "Fast and nimble, but they slide. Free and always yours.",
+   "stats": {
+    "SpeedMult": 1.0,
+    "Traction": 0.55,
+    "Turn": 1.0,
+    "Pivot": 0.15,
+    "Stability": 1.0,
+    "PowerMult": 1.0
+   }
+  },
+  "gear_chunky": {
+   "slot": "Gear",
+   "name": "Chunky Snow Tires",
+   "model": "GearChunky",
+   "rarity": "Common",
+   "band": 1,
+   "role": "A",
+   "theme": "Snowy Starter",
+   "kind": "bigtires",
+   "price": 220.0,
+   "desc": "Chunky grip and stability with a small push bonus.",
+   "stats": {
+    "SpeedMult": 0.95,
+    "Traction": 0.72,
+    "Turn": 0.9,
+    "Pivot": 0.2,
+    "Stability": 1.35,
+    "PowerMult": 1.05
+   }
+  },
+  "gear_tracks": {
+   "slot": "Gear",
+   "name": "Tracked Treads",
+   "model": "GearTracks",
+   "rarity": "Uncommon",
+   "band": 1,
+   "role": "C",
+   "theme": "Snowy Starter",
+   "kind": "tracks",
+   "price": 650.0,
+   "desc": "Grippy tracks that turn on the spot and push harder.",
+   "stats": {
+    "SpeedMult": 0.85,
+    "Traction": 0.95,
+    "Turn": 0.9,
+    "Pivot": 0.75,
+    "Stability": 1.7,
+    "PowerMult": 1.15
+   }
+  },
+  "gear_balloon": {
+   "slot": "Gear",
+   "name": "Dune Balloon Tires",
+   "model": "GearBalloon",
+   "rarity": "Common",
+   "band": 2,
+   "role": "A",
+   "theme": "Desert",
+   "kind": "flotation",
+   "price": 1500.0,
+   "desc": "Balloon tires float on soft snow: stable with extra push.",
+   "stats": {
+    "SpeedMult": 0.95,
+    "Traction": 0.66,
+    "Turn": 0.95,
+    "Pivot": 0.25,
+    "Stability": 1.6,
+    "PowerMult": 1.2
+   }
+  },
+  "gear_sandcrawler": {
+   "slot": "Gear",
+   "name": "Sandcrawler Tracks",
+   "model": "GearSandcrawler",
+   "rarity": "Rare",
+   "band": 2,
+   "role": "B",
+   "theme": "Desert",
+   "kind": "widetracks",
+   "price": 660000.0,
+   "desc": "Wide flotation tracks: the strongest push, slower but rock-steady. Premium part for its world.",
+   "stats": {
+    "SpeedMult": 0.8,
+    "Traction": 0.92,
+    "Turn": 0.8,
+    "Pivot": 0.6,
+    "Stability": 2.0,
+    "PowerMult": 1.49
+   }
+  },
+  "gear_bonewheels": {
+   "slot": "Gear",
+   "name": "Spiked Bone Wheels",
+   "model": "GearBoneWheels",
+   "rarity": "Uncommon",
+   "band": 3,
+   "role": "A",
+   "theme": "Cursed",
+   "kind": "studded",
+   "price": 900000.0,
+   "desc": "Studs grip hard snow: great traction and extra push.",
+   "stats": {
+    "SpeedMult": 0.95,
+    "Traction": 0.9,
+    "Turn": 0.95,
+    "Pivot": 0.22,
+    "Stability": 1.2,
+    "PowerMult": 1.2
+   }
+  },
+  "gear_haunted": {
+   "slot": "Gear",
+   "name": "Haunted Treads",
+   "model": "GearHaunted",
+   "rarity": "Rare",
+   "band": 3,
+   "role": "B",
+   "theme": "Cursed",
+   "kind": "tracks",
+   "price": 240000000.0,
+   "desc": "Grippy tracks that turn on the spot and push harder. Premium part for its world.",
+   "stats": {
+    "SpeedMult": 0.85,
+    "Traction": 0.95,
+    "Turn": 0.9,
+    "Pivot": 0.75,
+    "Stability": 1.7,
+    "PowerMult": 1.48
+   }
+  },
+  "gear_crystalstud": {
+   "slot": "Gear",
+   "name": "Crystal Studded Tires",
+   "model": "GearCrystalStud",
+   "rarity": "Uncommon",
+   "band": 4,
+   "role": "A",
+   "theme": "Crystal Caves",
+   "kind": "studded",
+   "price": 330000000.0,
+   "desc": "Studs grip hard snow: great traction and extra push.",
+   "stats": {
+    "SpeedMult": 0.95,
+    "Traction": 0.9,
+    "Turn": 0.95,
+    "Pivot": 0.22,
+    "Stability": 1.2,
+    "PowerMult": 1.29
+   }
+  },
+  "gear_geodetracks": {
+   "slot": "Gear",
+   "name": "Geode Tracks",
+   "model": "GearGeodeTracks",
+   "rarity": "Rare",
+   "band": 4,
+   "role": "B",
+   "theme": "Crystal Caves",
+   "kind": "compacttracks",
+   "price": 57000000000.0,
+   "desc": "Compact tracks: spin on the spot, very agile. Premium part for its world.",
+   "stats": {
+    "SpeedMult": 0.9,
+    "Traction": 0.95,
+    "Turn": 1.15,
+    "Pivot": 1.0,
+    "Stability": 1.5,
+    "PowerMult": 1.51
+   }
+  },
+  "gear_pixelwheels": {
+   "slot": "Gear",
+   "name": "Pixel Wheels",
+   "model": "GearPixelWheels",
+   "rarity": "Uncommon",
+   "band": 5,
+   "role": "A",
+   "theme": "Retro World",
+   "kind": "pixel",
+   "price": 78000000000.0,
+   "desc": "Blocky wheels: light and nimble.",
+   "stats": {
+    "SpeedMult": 1.0,
+    "Traction": 0.7,
+    "Turn": 1.05,
+    "Pivot": 0.35,
+    "Stability": 1.1,
+    "PowerMult": 1.31
+   }
+  },
+  "gear_hoverpods": {
+   "slot": "Gear",
+   "name": "Arcade Hover Pods",
+   "model": "GearHoverPods",
+   "rarity": "Epic",
+   "band": 5,
+   "role": "B",
+   "theme": "Retro World",
+   "kind": "hover",
+   "price": 350000000000.0,
+   "desc": "Hover pods: fast and spin on the spot, but little grip. Premium part for its world.",
+   "stats": {
+    "SpeedMult": 1.1,
+    "Traction": 0.62,
+    "Turn": 1.2,
+    "Pivot": 0.9,
+    "Stability": 1.0,
+    "PowerMult": 1.44
+   }
+  },
+  "gear_mudder": {
+   "slot": "Gear",
+   "name": "Mudder Tires",
+   "model": "GearMudder",
+   "rarity": "Uncommon",
+   "band": 6,
+   "role": "A",
+   "theme": "Jungle",
+   "kind": "bigtires",
+   "price": 480000000000.0,
+   "desc": "Chunky grip and stability with a small push bonus.",
+   "stats": {
+    "SpeedMult": 0.95,
+    "Traction": 0.72,
+    "Turn": 0.9,
+    "Pivot": 0.2,
+    "Stability": 1.35,
+    "PowerMult": 1.47
+   }
+  },
+  "gear_vinecrawler": {
+   "slot": "Gear",
+   "name": "Vine Crawler Tracks",
+   "model": "GearVineCrawler",
+   "rarity": "Epic",
+   "band": 6,
+   "role": "B",
+   "theme": "Jungle",
+   "kind": "widetracks",
+   "price": 3700000000000.0,
+   "desc": "Wide flotation tracks: the strongest push, slower but rock-steady. Premium part for its world.",
+   "stats": {
+    "SpeedMult": 0.8,
+    "Traction": 0.92,
+    "Turn": 0.8,
+    "Pivot": 0.6,
+    "Stability": 2.0,
+    "PowerMult": 1.95
+   }
+  },
+  "gear_skis": {
+   "slot": "Gear",
+   "name": "Frost Runners",
+   "model": "GearSkis",
+   "rarity": "Uncommon",
+   "band": 7,
+   "role": "A",
+   "theme": "Absolute Zero",
+   "kind": "skis",
+   "price": 5100000000000.0,
+   "desc": "Ski runners: the fastest glide, very slippery.",
+   "stats": {
+    "SpeedMult": 1.15,
+    "Traction": 0.42,
+    "Turn": 1.1,
+    "Pivot": 0.1,
+    "Stability": 1.1,
+    "PowerMult": 1.46
+   }
+  },
+  "gear_glaciertracks": {
+   "slot": "Gear",
+   "name": "Glacier Tracks",
+   "model": "GearGlacierTracks",
+   "rarity": "Epic",
+   "band": 7,
+   "role": "B",
+   "theme": "Absolute Zero",
+   "kind": "widetracks",
+   "price": 130000000000000.0,
+   "desc": "Wide flotation tracks: the strongest push, slower but rock-steady. Premium part for its world.",
+   "stats": {
+    "SpeedMult": 0.8,
+    "Traction": 0.92,
+    "Turn": 0.8,
+    "Pivot": 0.6,
+    "Stability": 2.0,
+    "PowerMult": 2.08
+   }
+  },
+  "gear_zerog": {
+   "slot": "Gear",
+   "name": "Zero-G Hover Rig",
+   "model": "GearZeroG",
+   "rarity": "Legendary",
+   "band": 7,
+   "role": "C",
+   "theme": "Absolute Zero",
+   "kind": "hover",
+   "price": 2e+16,
+   "desc": "Hover pods: fast and spin on the spot, but little grip. A legendary saving goal!",
+   "stats": {
+    "SpeedMult": 1.1,
+    "Traction": 0.62,
+    "Turn": 1.2,
+    "Pivot": 0.9,
+    "Stability": 1.0,
+    "PowerMult": 1.69
+   }
+  },
+  "gear_bamboo": {
+   "slot": "Gear",
+   "name": "Bamboo Wheels",
+   "model": "GearBamboo",
+   "rarity": "Rare",
+   "band": 8,
+   "role": "A",
+   "theme": "Sakura Garden",
+   "kind": "smalltires",
+   "price": 180000000000000.0,
+   "desc": "Nimble and fast, but slides in turns.",
+   "stats": {
+    "SpeedMult": 1.0,
+    "Traction": 0.55,
+    "Turn": 1.0,
+    "Pivot": 0.15,
+    "Stability": 1.0,
+    "PowerMult": 1.54
+   }
+  },
+  "gear_petalglide": {
+   "slot": "Gear",
+   "name": "Petal Glide Runners",
+   "model": "GearPetalGlide",
+   "rarity": "Epic",
+   "band": 8,
+   "role": "B",
+   "theme": "Sakura Garden",
+   "kind": "skis",
+   "price": 8100000000000000.0,
+   "desc": "Ski runners: the fastest glide, very slippery. Premium part for its world.",
+   "stats": {
+    "SpeedMult": 1.15,
+    "Traction": 0.42,
+    "Turn": 1.1,
+    "Pivot": 0.1,
+    "Stability": 1.1,
+    "PowerMult": 1.75
+   }
+  },
+  "gear_donut": {
+   "slot": "Gear",
+   "name": "Donut Tires",
+   "model": "GearDonut",
+   "rarity": "Rare",
+   "band": 9,
+   "role": "A",
+   "theme": "Candy Kingdom",
+   "kind": "bigtires",
+   "price": 1.1e+16,
+   "desc": "Chunky grip and stability with a small push bonus.",
+   "stats": {
+    "SpeedMult": 0.95,
+    "Traction": 0.72,
+    "Turn": 0.9,
+    "Pivot": 0.2,
+    "Stability": 1.35,
+    "PowerMult": 1.8
+   }
+  },
+  "gear_gummytreads": {
+   "slot": "Gear",
+   "name": "Gummy Treads",
+   "model": "GearGummyTreads",
+   "rarity": "Epic",
+   "band": 9,
+   "role": "B",
+   "theme": "Candy Kingdom",
+   "kind": "tracks",
+   "price": 5.1e+16,
+   "desc": "Grippy tracks that turn on the spot and push harder. Premium part for its world.",
+   "stats": {
+    "SpeedMult": 0.85,
+    "Traction": 0.95,
+    "Turn": 0.9,
+    "Pivot": 0.75,
+    "Stability": 1.7,
+    "PowerMult": 2.21
+   }
+  },
+  "gear_shell": {
+   "slot": "Gear",
+   "name": "Shell Wheels",
+   "model": "GearShell",
+   "rarity": "Rare",
+   "band": 10,
+   "role": "A",
+   "theme": "Sunken Atlantis",
+   "kind": "studded",
+   "price": 6.9e+16,
+   "desc": "Studs grip hard snow: great traction and extra push.",
+   "stats": {
+    "SpeedMult": 0.95,
+    "Traction": 0.9,
+    "Turn": 0.95,
+    "Pivot": 0.22,
+    "Stability": 1.2,
+    "PowerMult": 1.93
+   }
+  },
+  "gear_paddle": {
+   "slot": "Gear",
+   "name": "Paddle Tracks",
+   "model": "GearPaddle",
+   "rarity": "Legendary",
+   "band": 10,
+   "role": "B",
+   "theme": "Sunken Atlantis",
+   "kind": "widetracks",
+   "price": 1.5e+17,
+   "desc": "Wide flotation tracks: the strongest push, slower but rock-steady. A legendary saving goal!",
+   "stats": {
+    "SpeedMult": 0.8,
+    "Traction": 0.92,
+    "Turn": 0.8,
+    "Pivot": 0.6,
+    "Stability": 2.0,
+    "PowerMult": 2.55
+   }
+  },
+  "gear_toybrick": {
+   "slot": "Gear",
+   "name": "Toy Brick Wheels",
+   "model": "GearToyBrick",
+   "rarity": "Rare",
+   "band": 11,
+   "role": "A",
+   "theme": "Giant Toybox",
+   "kind": "smalltires",
+   "price": 2e+17,
+   "desc": "Nimble and fast, but slides in turns.",
+   "stats": {
+    "SpeedMult": 1.0,
+    "Traction": 0.55,
+    "Turn": 1.0,
+    "Pivot": 0.15,
+    "Stability": 1.0,
+    "PowerMult": 1.89
+   }
+  },
+  "gear_toytank": {
+   "slot": "Gear",
+   "name": "Toy Tank Tracks",
+   "model": "GearToyTank",
+   "rarity": "Legendary",
+   "band": 11,
+   "role": "B",
+   "theme": "Giant Toybox",
+   "kind": "compacttracks",
+   "price": 6.8e+17,
+   "desc": "Compact tracks: spin on the spot, very agile. A legendary saving goal!",
+   "stats": {
+    "SpeedMult": 0.9,
+    "Traction": 0.95,
+    "Turn": 1.15,
+    "Pivot": 1.0,
+    "Stability": 1.5,
+    "PowerMult": 2.42
+   }
+  },
+  "gear_cogwheels": {
+   "slot": "Gear",
+   "name": "Cog Wheels",
+   "model": "GearCogWheels",
+   "rarity": "Rare",
+   "band": 12,
+   "role": "A",
+   "theme": "Clockwork City",
+   "kind": "studded",
+   "price": 9.3e+17,
+   "desc": "Studs grip hard snow: great traction and extra push.",
+   "stats": {
+    "SpeedMult": 0.95,
+    "Traction": 0.9,
+    "Turn": 0.95,
+    "Pivot": 0.22,
+    "Stability": 1.2,
+    "PowerMult": 2.21
+   }
+  },
+  "gear_brasstracks": {
+   "slot": "Gear",
+   "name": "Brass Tracks",
+   "model": "GearBrassTracks",
+   "rarity": "Legendary",
+   "band": 12,
+   "role": "B",
+   "theme": "Clockwork City",
+   "kind": "compacttracks",
+   "price": 6.4e+18,
+   "desc": "Compact tracks: spin on the spot, very agile. A legendary saving goal!",
+   "stats": {
+    "SpeedMult": 0.9,
+    "Traction": 0.95,
+    "Turn": 1.15,
+    "Pivot": 1.0,
+    "Stability": 1.5,
+    "PowerMult": 2.59
+   }
+  },
+  "gear_cloudpuff": {
+   "slot": "Gear",
+   "name": "Cloud Puff Wheels",
+   "model": "GearCloudPuff",
+   "rarity": "Epic",
+   "band": 13,
+   "role": "A",
+   "theme": "Cloud Kingdom",
+   "kind": "flotation",
+   "price": 8.7e+18,
+   "desc": "Balloon tires float on soft snow: stable with extra push.",
+   "stats": {
+    "SpeedMult": 0.95,
+    "Traction": 0.66,
+    "Turn": 0.95,
+    "Pivot": 0.25,
+    "Stability": 1.6,
+    "PowerMult": 2.52
+   }
+  },
+  "gear_stormpods": {
+   "slot": "Gear",
+   "name": "Storm Hover Pods",
+   "model": "GearStormPods",
+   "rarity": "Legendary",
+   "band": 13,
+   "role": "B",
+   "theme": "Cloud Kingdom",
+   "kind": "hover",
+   "price": 5.7e+19,
+   "desc": "Hover pods: fast and spin on the spot, but little grip. A legendary saving goal!",
+   "stats": {
+    "SpeedMult": 1.1,
+    "Traction": 0.62,
+    "Turn": 1.2,
+    "Pivot": 0.9,
+    "Stability": 1.0,
+    "PowerMult": 2.47
+   }
+  },
+  "gear_orbit": {
+   "slot": "Gear",
+   "name": "Orbit Rings",
+   "model": "GearOrbit",
+   "rarity": "Epic",
+   "band": 14,
+   "role": "A",
+   "theme": "Cosmic Sanctuary",
+   "kind": "rings",
+   "price": 7.8e+19,
+   "desc": "Orbit rings: fast, agile and grippy.",
+   "stats": {
+    "SpeedMult": 1.05,
+    "Traction": 0.8,
+    "Turn": 1.1,
+    "Pivot": 0.6,
+    "Stability": 1.3,
+    "PowerMult": 2.55
+   }
+  },
+  "gear_meteor": {
+   "slot": "Gear",
+   "name": "Meteor Treads",
+   "model": "GearMeteor",
+   "rarity": "Legendary",
+   "band": 14,
+   "role": "B",
+   "theme": "Cosmic Sanctuary",
+   "kind": "widetracks",
+   "price": 1.1e+20,
+   "desc": "Wide flotation tracks: the strongest push, slower but rock-steady. A legendary saving goal!",
+   "stats": {
+    "SpeedMult": 0.8,
+    "Traction": 0.92,
+    "Turn": 0.8,
+    "Pivot": 0.6,
+    "Stability": 2.0,
+    "PowerMult": 3.35
+   }
+  }
+ }
+}

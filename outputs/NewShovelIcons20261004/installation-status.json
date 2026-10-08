@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-04",
+  "placeId": 94130990350526,
+  "studioId": "f765f9ae-69f1-4bbd-bcda-9462a0f440bb",
+  "generationMode": "built-in imagegen; individual model-render edits",
+  "count": 14,
+  "format": "512x512 RGBA PNG",
+  "installed": true,
+  "liveEdit": true,
+  "saved": false,
+  "published": false,
+  "only14ImageIdsChanged": true,
+  "existingItemIconSourceUnchanged": true,
+  "test": {
+    "kind": "isolated Play; production ItemIcon renderer",
+    "baseItems": 49,
+    "loadedIcons": 14,
+    "mutationVariants": 42,
+    "allLoaded": true,
+    "allVariantsInherit": true,
+    "console": "Hello world! only; no application errors in this test",
+    "persistenceTested": false,
+    "allRollAndMenuFlowsTested": false
+  },
+  "cleanup": {
+    "ownPlayStopped": true,
+    "studioMode": "Edit",
+    "BalanceTestModeRemoved": true,
+    "testLocalScriptRemoved": true,
+    "uploadServerStopped": true,
+    "port47827NoListener": true
+  },
+  "backup": "ServerStorage.NewShovelIconBackup20261004.RNGConfigBefore",
+  "mirror": "game/src/ReplicatedStorage/RNGConfig.luau",
+  "graph": {
+    "nodes": 562,
+    "edges": 1083,
+    "communities": 49
+  }
+}

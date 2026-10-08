@@ -1,0 +1,580 @@
+{
+ "R_WallSeg": {
+  "min": [
+   -12.0,
+   -8.03,
+   -0.58
+  ],
+  "max": [
+   12.0,
+   5.0,
+   21.36
+  ],
+  "tris": 2576,
+  "parts": [
+   "BrickFF5A6E__FF5A6ESP",
+   "BrickFFC93C__FFC93CSP",
+   "Brick4CC9F0__4CC9F0SP",
+   "Brick7B61FF__7B61FFSP",
+   "Brick3DDC97__3DDC97SP",
+   "BrickFF8C42__FF8C42SP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   120.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   24.0,
+   13.03,
+   21.94
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   120,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "BrickFF5A6E": 388,
+   "BrickFFC93C": 388,
+   "Brick4CC9F0": 300,
+   "Brick7B61FF": 388,
+   "Brick3DDC97": 88,
+   "BrickFF8C42": 88,
+   "Snow": 936
+  }
+ },
+ "R_ArcadeTower": {
+  "min": [
+   -8.55,
+   -11.45,
+   0.0
+  ],
+  "max": [
+   8.55,
+   7.55,
+   36.0
+  ],
+  "tris": 2044,
+  "parts": [
+   "Cabinet__7B61FFSP",
+   "Trim__FF5A6ESP",
+   "Bezel__1B1E33SP",
+   "PixelFFC93C__FFC93CNE",
+   "PixelFF5A6E__FF5A6ENE",
+   "Pixel3DDC97__3DDC97NE",
+   "Pixel3CF2FF__3CF2FFNE",
+   "Deck__2B2D42SP",
+   "Stick__2B2D42SP",
+   "StickBall__FF5A6ESP",
+   "ButtonFFC93C__FFC93CNE",
+   "Button4CC9F0__4CC9F0NE",
+   "Button3DDC97__3DDC97NE",
+   "Marquee__FFC93CSP",
+   "MarqueeFace__1B1E33SP",
+   "Door__2B2D42SP",
+   "Coin__FFC93CNE",
+   "StripeFF5A6E__FF5A6ESP",
+   "StripeFFC93C__FFC93CSP",
+   "Stripe4CC9F0__4CC9F0SP",
+   "Snow__F6FAFFSP",
+   "BigCoin__FFC93CME"
+  ],
+  "origin": [
+   240.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   17.1,
+   19.0,
+   36.0
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   240,
+   0,
+   0
+  ],
+  "objects": 22,
+  "perObject": {
+   "Cabinet": 108,
+   "Trim": 44,
+   "Bezel": 44,
+   "PixelFFC93C": 176,
+   "PixelFF5A6E": 264,
+   "Pixel3DDC97": 308,
+   "Pixel3CF2FF": 132,
+   "Deck": 108,
+   "Stick": 28,
+   "StickBall": 100,
+   "ButtonFFC93C": 36,
+   "Button4CC9F0": 36,
+   "Button3DDC97": 36,
+   "Marquee": 44,
+   "MarqueeFace": 44,
+   "Door": 44,
+   "Coin": 44,
+   "StripeFF5A6E": 88,
+   "StripeFFC93C": 88,
+   "Stripe4CC9F0": 88,
+   "Snow": 108,
+   "BigCoin": 76
+  }
+ },
+ "R_BlockA": {
+  "min": [
+   -7.15,
+   -6.2,
+   0.0
+  ],
+  "max": [
+   7.15,
+   6.15,
+   24.4
+  ],
+  "tris": 1320,
+  "parts": [
+   "Block4CC9F0__4CC9F0SP",
+   "Window__FFE9A8NE",
+   "Window__3CF2FFNE",
+   "Snow__F6FAFFSP",
+   "Block7B61FF__7B61FFSP",
+   "BlockFF5A6E__FF5A6ESP",
+   "Ball__FFC93CSP",
+   "Door__2B2D42SP"
+  ],
+  "origin": [
+   360.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   14.3,
+   12.35,
+   24.4
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   360,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Block4CC9F0": 108,
+   "Window": 132,
+   "Snow": 324,
+   "Block7B61FF": 108,
+   "BlockFF5A6E": 108,
+   "Ball": 144,
+   "Door": 44
+  }
+ },
+ "R_BlockB": {
+  "min": [
+   -6.15,
+   -7.35,
+   0.0
+  ],
+  "max": [
+   6.15,
+   6.15,
+   24.0
+  ],
+  "tris": 1016,
+  "parts": [
+   "Block3DDC97__3DDC97SP",
+   "Window__FFE9A8NE",
+   "Window__3CF2FFNE",
+   "Snow__F6FAFFSP",
+   "BlockFF8C42__FF8C42SP",
+   "Pyramid__FF5A6ESP",
+   "Door__2B2D42SP",
+   "Sign__FFC93CSP",
+   "SignFace__1B1E33SP"
+  ],
+  "origin": [
+   480.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   12.3,
+   13.5,
+   24.0
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   480,
+   0,
+   0
+  ],
+  "objects": 9,
+  "perObject": {
+   "Block3DDC97": 108,
+   "Window": 176,
+   "Snow": 216,
+   "BlockFF8C42": 108,
+   "Pyramid": 12,
+   "Door": 44,
+   "Sign": 44,
+   "SignFace": 44
+  }
+ },
+ "R_BlockC": {
+  "min": [
+   -6.52,
+   -14.05,
+   0.0
+  ],
+  "max": [
+   6.52,
+   6.52,
+   26.5
+  ],
+  "tris": 1368,
+  "parts": [
+   "BlockFF5A6E__FF5A6ESP",
+   "Window__FFE9A8NE",
+   "Window__3CF2FFNE",
+   "Snow__F6FAFFSP",
+   "BlockFFC93C__FFC93CSP",
+   "Block4CC9F0__4CC9F0SP",
+   "Ring__7B61FFSP",
+   "Dish__E8EEF6SP"
+  ],
+  "origin": [
+   600.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   13.04,
+   20.57,
+   26.5
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   600,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "BlockFF5A6E": 108,
+   "Window": 220,
+   "Snow": 324,
+   "BlockFFC93C": 108,
+   "Block4CC9F0": 108,
+   "Ring": 288,
+   "Dish": 80
+  }
+ },
+ "R_VoxelTree": {
+  "min": [
+   -3.3,
+   -2.7,
+   0.0
+  ],
+  "max": [
+   3.6,
+   2.7,
+   12.5
+  ],
+  "tris": 396,
+  "parts": [
+   "Trunk__8A5530SP",
+   "Leaves__2FBF71SP",
+   "Snow__F6FAFFSP",
+   "Leaves__25A35FSP"
+  ],
+  "origin": [
+   720.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   6.9,
+   5.4,
+   12.5
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   720,
+   0,
+   0
+  ],
+  "objects": 4,
+  "perObject": {
+   "Trunk": 44,
+   "Leaves": 132,
+   "Snow": 176
+  }
+ },
+ "R_PixelHeart": {
+  "min": [
+   -4.2,
+   -2.5,
+   0.0
+  ],
+  "max": [
+   4.2,
+   2.5,
+   12.4
+  ],
+  "tris": 1348,
+  "parts": [
+   "Voxel__FF5A6ESP",
+   "Voxel__FF8FA0SP",
+   "Stand__2B2D42SP",
+   "Base__7B61FFSP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   840.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   8.4,
+   5.0,
+   12.4
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   840,
+   0,
+   0
+  ],
+  "objects": 5,
+  "perObject": {
+   "Voxel": 264,
+   "Stand": 44,
+   "Base": 44,
+   "Snow": 108
+  }
+ },
+ "R_PixelGhost": {
+  "min": [
+   -3.85,
+   -0.75,
+   2.1
+  ],
+  "max": [
+   3.85,
+   0.75,
+   10.1
+  ],
+  "tris": 1758,
+  "parts": [
+   "Voxel__4CC9F0SP",
+   "Eye__FFFFFFSP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   960.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   7.7,
+   1.5,
+   8.0
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   960,
+   0,
+   0
+  ],
+  "objects": 3,
+  "perObject": {
+   "Voxel": 1562,
+   "Eye": 88,
+   "Snow": 108
+  }
+ },
+ "R_Arcades": {
+  "min": [
+   -5.95,
+   -2.59,
+   0.0
+  ],
+  "max": [
+   5.95,
+   1.55,
+   6.75
+  ],
+  "tris": 1056,
+  "parts": [
+   "CabFF5A6E__FF5A6ESP",
+   "Scr__3CF2FFNE",
+   "Deck__2B2D42SP",
+   "Stick__FFC93CSP",
+   "Snow__F6FAFFSP",
+   "Cab4CC9F0__4CC9F0SP",
+   "Cab3DDC97__3DDC97SP"
+  ],
+  "origin": [
+   1080.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   11.9,
+   4.14,
+   6.75
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   1080,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "CabFF5A6E": 44,
+   "Scr": 132,
+   "Deck": 324,
+   "Stick": 144,
+   "Snow": 324,
+   "Cab4CC9F0": 44,
+   "Cab3DDC97": 44
+  }
+ },
+ "R_Sign": {
+  "min": [
+   -4.65,
+   -0.55,
+   0.0
+  ],
+  "max": [
+   5.0,
+   0.55,
+   9.9
+  ],
+  "tris": 212,
+  "parts": [
+   "Post__2B2D42SP",
+   "Arrow__FFC93CSP",
+   "SignFace__1B1E33SP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   1200.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   9.65,
+   1.1,
+   9.9
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   1200,
+   0,
+   0
+  ],
+  "objects": 4,
+  "perObject": {
+   "Post": 44,
+   "Arrow": 16,
+   "SignFace": 44,
+   "Snow": 108
+  }
+ },
+ "R_GiantBlocks": {
+  "min": [
+   -8.04,
+   -8.85,
+   0.0
+  ],
+  "max": [
+   8.42,
+   7.8,
+   43.9
+  ],
+  "tris": 1008,
+  "parts": [
+   "Block4CC9F0__4CC9F0SP",
+   "Letter__FFFFFFSP",
+   "Snow__F6FAFFSP",
+   "BlockFF5A6E__FF5A6ESP",
+   "BlockFFC93C__FFC93CSP",
+   "Block3DDC97__3DDC97SP"
+  ],
+  "origin": [
+   1320.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   16.46,
+   16.64,
+   43.9
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   1320,
+   0,
+   0
+  ],
+  "objects": 6,
+  "perObject": {
+   "Block4CC9F0": 108,
+   "Letter": 144,
+   "Snow": 432,
+   "BlockFF5A6E": 108,
+   "BlockFFC93C": 108,
+   "Block3DDC97": 108
+  }
+ },
+ "R_SpinTop": {
+  "min": [
+   -6.4,
+   -6.4,
+   0.0
+  ],
+  "max": [
+   6.4,
+   6.4,
+   13.5
+  ],
+  "tris": 1016,
+  "parts": [
+   "Top__7B61FFSP",
+   "Band__FF5A6ESP",
+   "Band__FFC93CSP",
+   "Band__4CC9F0SP",
+   "Band__3DDC97SP",
+   "Handle__2B2D42SP"
+  ],
+  "origin": [
+   1440.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   12.8,
+   12.8,
+   13.5
+  ],
+  "pack": "W1_Retro",
+  "at": [
+   1440,
+   0,
+   0
+  ],
+  "objects": 6,
+  "perObject": {
+   "Top": 188,
+   "Band": 200,
+   "Handle": 28
+  }
+ }
+}

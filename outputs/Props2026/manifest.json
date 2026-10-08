@@ -1,0 +1,544 @@
+{
+ "units": "1 Blender unit = 1 stud (verified in Studio 2026-09-30; FBX exported with global_scale=0.01)",
+ "atlas": "PropAtlas.png",
+ "front": "props face -Z in Roblox (-Y in Blender)",
+ "sets": {
+  "SnowProps": [
+   {
+    "name": "SnowPine",
+    "tris": 2480,
+    "size_studs": [
+     8.7,
+     9.2,
+     14.5
+    ]
+   },
+   {
+    "name": "Snowman",
+    "tris": 2026,
+    "size_studs": [
+     8.6,
+     5.0,
+     10.3
+    ]
+   },
+   {
+    "name": "SnowMound",
+    "tris": 2308,
+    "size_studs": [
+     12.8,
+     9.8,
+     10.4
+    ]
+   },
+   {
+    "name": "IceRock",
+    "tris": 430,
+    "size_studs": [
+     10.0,
+     6.1,
+     5.2
+    ]
+   },
+   {
+    "name": "Present",
+    "tris": 1172,
+    "size_studs": [
+     4.9,
+     4.7,
+     5.5
+    ]
+   },
+   {
+    "name": "Penguin",
+    "tris": 2398,
+    "size_studs": [
+     5.4,
+     3.9,
+     6.5
+    ]
+   }
+  ],
+  "DesertProps": [
+   {
+    "name": "Saguaro",
+    "tris": 1342,
+    "size_studs": [
+     8.5,
+     5.4,
+     12.1
+    ]
+   },
+   {
+    "name": "BarrelCactus",
+    "tris": 1474,
+    "size_studs": [
+     6.0,
+     5.9,
+     8.7
+    ]
+   },
+   {
+    "name": "PalmTree",
+    "tris": 2260,
+    "size_studs": [
+     13.9,
+     13.8,
+     15.5
+    ]
+   },
+   {
+    "name": "RockStack",
+    "tris": 440,
+    "size_studs": [
+     10.8,
+     6.1,
+     9.7
+    ]
+   },
+   {
+    "name": "SandstoneArch",
+    "tris": 780,
+    "size_studs": [
+     15.5,
+     5.0,
+     13.5
+    ]
+   },
+   {
+    "name": "StepPyramid",
+    "tris": 486,
+    "size_studs": [
+     14.0,
+     14.0,
+     12.4
+    ]
+   },
+   {
+    "name": "ClayVase",
+    "tris": 836,
+    "size_studs": [
+     7.2,
+     6.3,
+     8.6
+    ]
+   },
+   {
+    "name": "Tumbleweed",
+    "tris": 2760,
+    "size_studs": [
+     5.0,
+     5.0,
+     4.9
+    ]
+   },
+   {
+    "name": "Agave",
+    "tris": 1364,
+    "size_studs": [
+     13.1,
+     12.9,
+     2.9
+    ]
+   }
+  ],
+  "CursedProps": [
+   {
+    "name": "DeadTree",
+    "tris": 788,
+    "size_studs": [
+     9.2,
+     6.0,
+     14.6
+    ]
+   },
+   {
+    "name": "TombstoneRound",
+    "tris": 744,
+    "size_studs": [
+     5.4,
+     3.1,
+     6.6
+    ]
+   },
+   {
+    "name": "TombstoneCross",
+    "tris": 844,
+    "size_studs": [
+     4.7,
+     3.4,
+     6.3
+    ]
+   },
+   {
+    "name": "Pumpkin",
+    "tris": 704,
+    "size_studs": [
+     7.6,
+     7.9,
+     6.2
+    ]
+   },
+   {
+    "name": "Cauldron",
+    "tris": 2146,
+    "size_studs": [
+     10.1,
+     7.6,
+     6.7
+    ]
+   },
+   {
+    "name": "Ghost",
+    "tris": 1292,
+    "size_studs": [
+     7.7,
+     5.7,
+     6.3
+    ]
+   },
+   {
+    "name": "IronFence",
+    "tris": 570,
+    "size_studs": [
+     13.6,
+     1.2,
+     7.8
+    ]
+   },
+   {
+    "name": "Candles",
+    "tris": 620,
+    "size_studs": [
+     6.5,
+     6.6,
+     5.6
+    ]
+   }
+  ],
+  "CrystalProps": [
+   {
+    "name": "CrystalClusterCyan",
+    "tris": 230,
+    "size_studs": [
+     10.1,
+     8.6,
+     12.2
+    ]
+   },
+   {
+    "name": "CrystalClusterPurple",
+    "tris": 230,
+    "size_studs": [
+     10.1,
+     8.6,
+     12.5
+    ]
+   },
+   {
+    "name": "CrystalClusterPink",
+    "tris": 230,
+    "size_studs": [
+     10.1,
+     8.6,
+     12.6
+    ]
+   },
+   {
+    "name": "CrystalSpire",
+    "tris": 140,
+    "size_studs": [
+     11.3,
+     8.5,
+     18.5
+    ]
+   },
+   {
+    "name": "GlowMushrooms",
+    "tris": 1920,
+    "size_studs": [
+     12.0,
+     6.3,
+     5.6
+    ]
+   },
+   {
+    "name": "Stalagmites",
+    "tris": 420,
+    "size_studs": [
+     9.6,
+     8.3,
+     11.9
+    ]
+   },
+   {
+    "name": "GemBoulder",
+    "tris": 310,
+    "size_studs": [
+     9.6,
+     7.1,
+     9.0
+    ]
+   },
+   {
+    "name": "CrystalArch",
+    "tris": 160,
+    "size_studs": [
+     16.4,
+     5.4,
+     13.1
+    ]
+   },
+   {
+    "name": "FloatingCrystal",
+    "tris": 412,
+    "size_studs": [
+     8.8,
+     6.2,
+     12.8
+    ]
+   }
+  ],
+  "JungleProps": [
+   {
+    "name": "BananaPlant",
+    "tris": 1712,
+    "size_studs": [
+     17.3,
+     17.3,
+     12.0
+    ]
+   },
+   {
+    "name": "GiantLeafPlant",
+    "tris": 812,
+    "size_studs": [
+     13.2,
+     14.5,
+     3.1
+    ]
+   },
+   {
+    "name": "Fern",
+    "tris": 2140,
+    "size_studs": [
+     13.0,
+     12.9,
+     6.4
+    ]
+   },
+   {
+    "name": "Toadstools",
+    "tris": 1974,
+    "size_studs": [
+     12.2,
+     6.8,
+     5.6
+    ]
+   },
+   {
+    "name": "HibiscusBush",
+    "tris": 3048,
+    "size_studs": [
+     9.4,
+     8.1,
+     6.4
+    ]
+   },
+   {
+    "name": "TikiTotem",
+    "tris": 1376,
+    "size_studs": [
+     5.8,
+     6.0,
+     12.6
+    ]
+   },
+   {
+    "name": "MossyBoulder",
+    "tris": 780,
+    "size_studs": [
+     10.1,
+     6.8,
+     5.8
+    ]
+   },
+   {
+    "name": "Bamboo",
+    "tris": 4572,
+    "size_studs": [
+     9.0,
+     8.3,
+     12.5
+    ]
+   },
+   {
+    "name": "LilyPad",
+    "tris": 1780,
+    "size_studs": [
+     9.2,
+     9.1,
+     2.0
+    ]
+   }
+  ],
+  "RetroProps": [
+   {
+    "name": "PixelHeart",
+    "tris": 2392,
+    "size_studs": [
+     12.0,
+     2.0,
+     11.5
+    ]
+   },
+   {
+    "name": "PixelStar",
+    "tris": 1624,
+    "size_studs": [
+     11.0,
+     2.0,
+     10.0
+    ]
+   },
+   {
+    "name": "PixelCoin",
+    "tris": 2208,
+    "size_studs": [
+     12.0,
+     1.5,
+     12.0
+    ]
+   },
+   {
+    "name": "PixelCloud",
+    "tris": 1928,
+    "size_studs": [
+     11.5,
+     2.0,
+     8.5
+    ]
+   },
+   {
+    "name": "PixelTree",
+    "tris": 2136,
+    "size_studs": [
+     11.0,
+     2.0,
+     12.0
+    ]
+   },
+   {
+    "name": "PixelAlien",
+    "tris": 2304,
+    "size_studs": [
+     10.0,
+     2.0,
+     12.0
+    ]
+   },
+   {
+    "name": "PixelGem",
+    "tris": 1728,
+    "size_studs": [
+     11.0,
+     2.0,
+     11.0
+    ]
+   },
+   {
+    "name": "PixelSun",
+    "tris": 2272,
+    "size_studs": [
+     12.0,
+     1.5,
+     11.0
+    ]
+   },
+   {
+    "name": "ArcadeCabinet",
+    "tris": 732,
+    "size_studs": [
+     6.4,
+     6.4,
+     12.6
+    ]
+   }
+  ],
+  "AbsoluteZeroProps": [
+   {
+    "name": "IceSpikes",
+    "tris": 378,
+    "size_studs": [
+     11.8,
+     9.6,
+     13.2
+    ]
+   },
+   {
+    "name": "FrozenPine",
+    "tris": 676,
+    "size_studs": [
+     9.3,
+     9.2,
+     15.1
+    ]
+   },
+   {
+    "name": "IceBoulder",
+    "tris": 100,
+    "size_studs": [
+     10.9,
+     7.1,
+     5.8
+    ]
+   },
+   {
+    "name": "RuneObelisk",
+    "tris": 398,
+    "size_studs": [
+     7.4,
+     7.4,
+     19.2
+    ]
+   },
+   {
+    "name": "IceArch",
+    "tris": 560,
+    "size_studs": [
+     17.5,
+     4.5,
+     9.8
+    ]
+   },
+   {
+    "name": "FrostBush",
+    "tris": 376,
+    "size_studs": [
+     10.1,
+     7.9,
+     6.2
+    ]
+   },
+   {
+    "name": "FloatingShards",
+    "tris": 116,
+    "size_studs": [
+     10.0,
+     8.1,
+     14.0
+    ]
+   },
+   {
+    "name": "IceCube",
+    "tris": 836,
+    "size_studs": [
+     6.1,
+     5.9,
+     7.4
+    ]
+   }
+  ]
+ },
+ "studio": "Workspace.PropsLibrary2026 (7 anchored Models, MeshParts named like the props)"
+}

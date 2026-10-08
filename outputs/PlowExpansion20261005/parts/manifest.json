@@ -1,0 +1,6014 @@
+{
+ "date": "2026-10-05",
+ "units": "1 Blender unit = 1 stud; front = -Y (Roblox -Z); up = +Z (Roblox +Y)",
+ "origin": "every object origin = its model's mount point (Blade: bracket back-centre; Engine: bottom-centre; Gear: chassis ground centre)",
+ "refMarker": "Ref__Origin__FF00FFNE (0.2 cube) at pack world origin; model mount point = Ref position + at (at is in Blender coords; Roblox offset = (at.x, at.z, at.y) since Roblox X = Blender X, Roblox Y = Blender Z, Roblox Z = Blender Y)",
+ "packs": [
+  {
+   "pack": "Blades_A",
+   "file": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "models": 16,
+   "tris": 27524
+  },
+  {
+   "pack": "Blades_B",
+   "file": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "models": 14,
+   "tris": 26316
+  },
+  {
+   "pack": "Engines_A",
+   "file": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "models": 16,
+   "tris": 21762
+  },
+  {
+   "pack": "Engines_B",
+   "file": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "models": 14,
+   "tris": 19964
+  },
+  {
+   "pack": "Gears_A",
+   "file": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "models": 16,
+   "tris": 45804
+  },
+  {
+   "pack": "Gears_B",
+   "file": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "models": 14,
+   "tris": 44540
+  }
+ ],
+ "models": [
+  {
+   "id": "blade_basic",
+   "model": "BladeBasic",
+   "slot": "Blade",
+   "band": 1,
+   "rarity": "Starter",
+   "archetype": "straight",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    10.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1424,
+   "objectCount": 9,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "E2483DSP"
+    },
+    {
+     "part": "Edge",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Lip",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Ribs",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Bolts",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Ends",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Mount",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Arms",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -3.84,
+    -3.01,
+    -1.1
+   ],
+   "bboxMax": [
+    3.84,
+    0.0,
+    1.43
+   ],
+   "size": [
+    7.68,
+    3.01,
+    2.53
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_wide",
+   "model": "BladeWide",
+   "slot": "Blade",
+   "band": 1,
+   "rarity": "Common",
+   "archetype": "sweeper",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    30.0,
+    0.0,
+    0.0
+   ],
+   "tris": 2408,
+   "objectCount": 11,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "E2483DSP"
+    },
+    {
+     "part": "Hazard",
+     "code": "FFC81ESP"
+    },
+    {
+     "part": "Stripes",
+     "code": "23252BSP"
+    },
+    {
+     "part": "Edge",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Lip",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Ends",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Skids",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Ribs",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Mount",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Arms",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -6.35,
+    -3.64,
+    -1.1
+   ],
+   "bboxMax": [
+    6.35,
+    0.0,
+    1.02
+   ],
+   "size": [
+    12.7,
+    3.64,
+    2.12
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_frost_scoop",
+   "model": "BladeFrostScoop",
+   "slot": "Blade",
+   "band": 1,
+   "rarity": "Uncommon",
+   "archetype": "scoop",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    50.0,
+    0.0,
+    0.0
+   ],
+   "tris": 2284,
+   "objectCount": 8,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "7EC8F5SP"
+    },
+    {
+     "part": "Snow",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Edge",
+     "code": "DDF3FFIC"
+    },
+    {
+     "part": "Wings",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Ribs",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Mount",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Arms",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -4.79,
+    -4.65,
+    -1.1
+   ],
+   "bboxMax": [
+    4.79,
+    0.0,
+    1.78
+   ],
+   "size": [
+    9.57,
+    4.65,
+    2.88
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_ice",
+   "model": "BladeIce",
+   "slot": "Blade",
+   "band": 2,
+   "rarity": "Rare",
+   "archetype": "icebreaker",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    70.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1648,
+   "objectCount": 10,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "E8C27ASP"
+    },
+    {
+     "part": "Rails",
+     "code": "2EC4B6SP"
+    },
+    {
+     "part": "Rivets",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Edge",
+     "code": "5C5F6BME"
+    },
+    {
+     "part": "Armor",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Rivets2",
+     "code": "F2B33DME"
+    },
+    {
+     "part": "Ribs",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Mount",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Arms",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -4.79,
+    -3.45,
+    -1.1
+   ],
+   "bboxMax": [
+    4.79,
+    0.0,
+    1.42
+   ],
+   "size": [
+    9.58,
+    3.45,
+    2.52
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_dune",
+   "model": "BladeDune",
+   "slot": "Blade",
+   "band": 2,
+   "rarity": "Common",
+   "archetype": "sweeper",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    10.0,
+    -12.0,
+    0.0
+   ],
+   "tris": 1976,
+   "objectCount": 9,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "E8C27ASP"
+    },
+    {
+     "part": "Lip",
+     "code": "2EC4B6SP"
+    },
+    {
+     "part": "Sun",
+     "code": "F2B33DSP"
+    },
+    {
+     "part": "SunCore",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Ends",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Ribs",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Mount",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Arms",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.85,
+    -3.34,
+    -1.1
+   ],
+   "bboxMax": [
+    5.85,
+    0.0,
+    1.17
+   ],
+   "size": [
+    11.7,
+    3.34,
+    2.27
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_grave",
+   "model": "BladeGrave",
+   "slot": "Blade",
+   "band": 3,
+   "rarity": "Uncommon",
+   "archetype": "toothed",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    30.0,
+    -12.0,
+    0.0
+   ],
+   "tris": 1296,
+   "objectCount": 8,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "3B2A55SP"
+    },
+    {
+     "part": "Frame",
+     "code": "8E4DE0SP"
+    },
+    {
+     "part": "Teeth",
+     "code": "EDE3C8SP"
+    },
+    {
+     "part": "Marks",
+     "code": "B9AE95SP"
+    },
+    {
+     "part": "Ribs",
+     "code": "2A1F3DSP"
+    },
+    {
+     "part": "Mount",
+     "code": "2A1F3DSP"
+    },
+    {
+     "part": "Arms",
+     "code": "2A1F3DSP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -4.96,
+    -3.1,
+    -1.08
+   ],
+   "bboxMax": [
+    4.96,
+    0.0,
+    1.42
+   ],
+   "size": [
+    9.92,
+    3.1,
+    2.5
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_hex",
+   "model": "BladeHex",
+   "slot": "Blade",
+   "band": 3,
+   "rarity": "Rare",
+   "archetype": "vshape",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    50.0,
+    -12.0,
+    0.0
+   ],
+   "tris": 796,
+   "objectCount": 8,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "3B2A55SP"
+    },
+    {
+     "part": "Runes",
+     "code": "7CFFB2NE"
+    },
+    {
+     "part": "Keel",
+     "code": "8E4DE0SP"
+    },
+    {
+     "part": "Spikes",
+     "code": "EDE3C8SP"
+    },
+    {
+     "part": "Ends",
+     "code": "8E4DE0SP"
+    },
+    {
+     "part": "Mount",
+     "code": "2A1F3DSP"
+    },
+    {
+     "part": "Arms",
+     "code": "2A1F3DSP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.7,
+    -3.75,
+    -1.08
+   ],
+   "bboxMax": [
+    5.7,
+    0.0,
+    2.05
+   ],
+   "size": [
+    11.4,
+    3.75,
+    3.13
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_quartz",
+   "model": "BladeQuartz",
+   "slot": "Blade",
+   "band": 4,
+   "rarity": "Uncommon",
+   "archetype": "segmented",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    70.0,
+    -12.0,
+    0.0
+   ],
+   "tris": 1304,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Crystal",
+     "code": "57D8FFGL"
+    },
+    {
+     "part": "Shine",
+     "code": "F4FBFFSP"
+    },
+    {
+     "part": "Frame",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Studs",
+     "code": "E07BFFSP"
+    },
+    {
+     "part": "Mount",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Arms",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.35,
+    -3.32,
+    -1.06
+   ],
+   "bboxMax": [
+    5.35,
+    0.0,
+    1.35
+   ],
+   "size": [
+    10.7,
+    3.32,
+    2.41
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_prism",
+   "model": "BladePrism",
+   "slot": "Blade",
+   "band": 4,
+   "rarity": "Rare",
+   "archetype": "crystal",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    10.0,
+    -24.0,
+    0.0
+   ],
+   "tris": 696,
+   "objectCount": 8,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Crystal",
+     "code": "57D8FFGL"
+    },
+    {
+     "part": "EdgeIce",
+     "code": "F4FBFFGL"
+    },
+    {
+     "part": "Gems",
+     "code": "E07BFFNE"
+    },
+    {
+     "part": "Fins",
+     "code": "F4FBFFGL"
+    },
+    {
+     "part": "Ends",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Mount",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Arms",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -4.6,
+    -3.8,
+    -1.06
+   ],
+   "bboxMax": [
+    4.6,
+    0.0,
+    2.12
+   ],
+   "size": [
+    9.2,
+    3.8,
+    3.18
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_pixel",
+   "model": "BladePixel",
+   "slot": "Blade",
+   "band": 5,
+   "rarity": "Uncommon",
+   "archetype": "pixel",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    30.0,
+    -24.0,
+    0.0
+   ],
+   "tris": 2220,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Voxels",
+     "code": "FF4FB6SP"
+    },
+    {
+     "part": "Voxels",
+     "code": "3FF0FFSP"
+    },
+    {
+     "part": "Voxels",
+     "code": "FFE14FSP"
+    },
+    {
+     "part": "Ends",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Mount",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Arms",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.86,
+    -3.4,
+    -1.05
+   ],
+   "bboxMax": [
+    5.86,
+    0.0,
+    2.19
+   ],
+   "size": [
+    11.72,
+    3.4,
+    3.24
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_arcade",
+   "model": "BladeArcade",
+   "slot": "Blade",
+   "band": 5,
+   "rarity": "Epic",
+   "archetype": "segmented",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    50.0,
+    -24.0,
+    0.0
+   ],
+   "tris": 1400,
+   "objectCount": 11,
+   "neonObjects": 2,
+   "objects": [
+    {
+     "part": "Cabinet",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "SideA",
+     "code": "FF4FB6SP"
+    },
+    {
+     "part": "Screen",
+     "code": "4A3E8CSP"
+    },
+    {
+     "part": "Sticks",
+     "code": "2A2D34SP"
+    },
+    {
+     "part": "Knobs",
+     "code": "FFE14FSP"
+    },
+    {
+     "part": "SideB",
+     "code": "3FF0FFSP"
+    },
+    {
+     "part": "Neon",
+     "code": "3FF0FFNE"
+    },
+    {
+     "part": "Neon2",
+     "code": "FF4FB6NE"
+    },
+    {
+     "part": "Mount",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Arms",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -4.81,
+    -3.18,
+    -1.05
+   ],
+   "bboxMax": [
+    4.81,
+    0.0,
+    1.64
+   ],
+   "size": [
+    9.62,
+    3.18,
+    2.69
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_vine",
+   "model": "BladeVine",
+   "slot": "Blade",
+   "band": 6,
+   "rarity": "Uncommon",
+   "archetype": "sweeper",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    70.0,
+    -24.0,
+    0.0
+   ],
+   "tris": 2320,
+   "objectCount": 11,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "8A5A33WO"
+    },
+    {
+     "part": "Seams",
+     "code": "6E4426WO"
+    },
+    {
+     "part": "Vines",
+     "code": "3FBF4FSP"
+    },
+    {
+     "part": "Leaves",
+     "code": "2E5E2ASP"
+    },
+    {
+     "part": "Vines",
+     "code": "2E5E2ASP"
+    },
+    {
+     "part": "Leaves",
+     "code": "3FBF4FSP"
+    },
+    {
+     "part": "Flowers",
+     "code": "FF9A2ESP"
+    },
+    {
+     "part": "Ends",
+     "code": "2E5E2ASP"
+    },
+    {
+     "part": "Mount",
+     "code": "5A3A22WO"
+    },
+    {
+     "part": "Arms",
+     "code": "5A3A22WO"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -6.35,
+    -3.34,
+    -1.1
+   ],
+   "bboxMax": [
+    6.35,
+    0.0,
+    1.05
+   ],
+   "size": [
+    12.7,
+    3.34,
+    2.15
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_tusk",
+   "model": "BladeTusk",
+   "slot": "Blade",
+   "band": 6,
+   "rarity": "Epic",
+   "archetype": "toothed",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    10.0,
+    -36.0,
+    0.0
+   ],
+   "tris": 2268,
+   "objectCount": 11,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "8A5A33WO"
+    },
+    {
+     "part": "Paint",
+     "code": "FF9A2ESP"
+    },
+    {
+     "part": "Eyes",
+     "code": "2E1E12SP"
+    },
+    {
+     "part": "Glow",
+     "code": "FF9A2ENE"
+    },
+    {
+     "part": "Ivory",
+     "code": "FFF4E0SP"
+    },
+    {
+     "part": "Grooves",
+     "code": "6E4426WO"
+    },
+    {
+     "part": "Cap",
+     "code": "2E5E2ASP"
+    },
+    {
+     "part": "Leaves",
+     "code": "3FBF4FSP"
+    },
+    {
+     "part": "Mount",
+     "code": "5A3A22WO"
+    },
+    {
+     "part": "Arms",
+     "code": "5A3A22WO"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -4.65,
+    -3.99,
+    -1.1
+   ],
+   "bboxMax": [
+    4.65,
+    0.0,
+    1.43
+   ],
+   "size": [
+    9.3,
+    3.99,
+    2.53
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_glacier",
+   "model": "BladeGlacier",
+   "slot": "Blade",
+   "band": 7,
+   "rarity": "Uncommon",
+   "archetype": "scoop",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    30.0,
+    -36.0,
+    0.0
+   ],
+   "tris": 2448,
+   "objectCount": 8,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "D8F3FFIC"
+    },
+    {
+     "part": "Ridges",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Rim",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Edge",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Ribs",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Mount",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Arms",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.63,
+    -3.85,
+    -1.1
+   ],
+   "bboxMax": [
+    5.63,
+    0.0,
+    1.65
+   ],
+   "size": [
+    11.26,
+    3.85,
+    2.75
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_zero",
+   "model": "BladeZero",
+   "slot": "Blade",
+   "band": 7,
+   "rarity": "Epic",
+   "archetype": "icebreaker",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    50.0,
+    -36.0,
+    0.0
+   ],
+   "tris": 1340,
+   "objectCount": 9,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Ribs",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Edge",
+     "code": "F6F8FCIC"
+    },
+    {
+     "part": "Cap",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Glow",
+     "code": "B79CFFNE"
+    },
+    {
+     "part": "Frost",
+     "code": "D8F3FFIC"
+    },
+    {
+     "part": "Mount",
+     "code": "1F3F86SP"
+    },
+    {
+     "part": "Arms",
+     "code": "1F3F86SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -4.94,
+    -3.65,
+    -1.1
+   ],
+   "bboxMax": [
+    4.97,
+    0.0,
+    2.1
+   ],
+   "size": [
+    9.91,
+    3.65,
+    3.2
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_singularity",
+   "model": "BladeSingularity",
+   "slot": "Blade",
+   "band": 7,
+   "rarity": "Legendary",
+   "archetype": "vshape",
+   "pack": "Blades_A",
+   "packFile": "fbx/Blades_A.fbx",
+   "assetId": "113886673574521",
+   "at": [
+    70.0,
+    -36.0,
+    0.0
+   ],
+   "tris": 1696,
+   "objectCount": 7,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "B79CFFIC"
+    },
+    {
+     "part": "Silver",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Edge",
+     "code": "D8F3FFIC"
+    },
+    {
+     "part": "Core",
+     "code": "D8F3FFNE"
+    },
+    {
+     "part": "Mount",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Arms",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.91,
+    -4.28,
+    -1.08
+   ],
+   "bboxMax": [
+    5.9,
+    0.0,
+    2.35
+   ],
+   "size": [
+    11.81,
+    4.28,
+    3.43
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_petal",
+   "model": "BladePetal",
+   "slot": "Blade",
+   "band": 8,
+   "rarity": "Rare",
+   "archetype": "sweeper",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    110.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1716,
+   "objectCount": 9,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Frame",
+     "code": "5A3A2EWO"
+    },
+    {
+     "part": "Petals",
+     "code": "FFA7C8SP"
+    },
+    {
+     "part": "Tips",
+     "code": "FFF6FASP"
+    },
+    {
+     "part": "Bloom",
+     "code": "FFF6FASP"
+    },
+    {
+     "part": "Centers",
+     "code": "D6363CSP"
+    },
+    {
+     "part": "Edge",
+     "code": "D6363CSP"
+    },
+    {
+     "part": "Mount",
+     "code": "5A3A2EWO"
+    },
+    {
+     "part": "Arms",
+     "code": "5A3A2EWO"
+    },
+    {
+     "part": "Piston",
+     "code": "E8B84AME"
+    }
+   ],
+   "bboxMin": [
+    -6.91,
+    -3.13,
+    -1.1
+   ],
+   "bboxMax": [
+    6.91,
+    0.0,
+    1.27
+   ],
+   "size": [
+    13.82,
+    3.13,
+    2.37
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_katana",
+   "model": "BladeKatana",
+   "slot": "Blade",
+   "band": 8,
+   "rarity": "Epic",
+   "archetype": "straight",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    130.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1384,
+   "objectCount": 10,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "D6363CSP"
+    },
+    {
+     "part": "Steel",
+     "code": "E9EEF5ME"
+    },
+    {
+     "part": "Hamon",
+     "code": "FFE6F0NE"
+    },
+    {
+     "part": "Gold",
+     "code": "E8B84AME"
+    },
+    {
+     "part": "Wrap",
+     "code": "5A3A2ESP"
+    },
+    {
+     "part": "Wrap2",
+     "code": "FFF6FASP"
+    },
+    {
+     "part": "Spine",
+     "code": "2B1E1ESP"
+    },
+    {
+     "part": "Mount",
+     "code": "2B1E1ESP"
+    },
+    {
+     "part": "Arms",
+     "code": "2B1E1ESP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.3,
+    -3.2,
+    -1.05
+   ],
+   "bboxMax": [
+    5.3,
+    0.0,
+    1.52
+   ],
+   "size": [
+    10.6,
+    3.2,
+    2.57
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_lollipop",
+   "model": "BladeLollipop",
+   "slot": "Blade",
+   "band": 9,
+   "rarity": "Rare",
+   "archetype": "scoop",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    150.0,
+    0.0,
+    0.0
+   ],
+   "tris": 2484,
+   "objectCount": 8,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "FF6FA8SP"
+    },
+    {
+     "part": "Rim",
+     "code": "7FE8C3SP"
+    },
+    {
+     "part": "Drops",
+     "code": "FFE36ESP"
+    },
+    {
+     "part": "Candy",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Swirl",
+     "code": "FF6FA8SP"
+    },
+    {
+     "part": "Mount",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "Arms",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.24,
+    -3.8,
+    -1.1
+   ],
+   "bboxMax": [
+    5.26,
+    0.0,
+    1.6
+   ],
+   "size": [
+    10.5,
+    3.8,
+    2.7
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_canecrusher",
+   "model": "BladeCaneCrusher",
+   "slot": "Blade",
+   "band": 9,
+   "rarity": "Epic",
+   "archetype": "toothed",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    170.0,
+    0.0,
+    0.0
+   ],
+   "tris": 2088,
+   "objectCount": 8,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Choc",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "ChocTop",
+     "code": "834F3BSP"
+    },
+    {
+     "part": "Cane0",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Cane1",
+     "code": "FF6FA8SP"
+    },
+    {
+     "part": "Mint",
+     "code": "7FE8C3SP"
+    },
+    {
+     "part": "Mount",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "Arms",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.06,
+    -3.62,
+    -1.1
+   ],
+   "bboxMax": [
+    5.06,
+    0.0,
+    1.8
+   ],
+   "size": [
+    10.12,
+    3.62,
+    2.9
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_coral",
+   "model": "BladeCoral",
+   "slot": "Blade",
+   "band": 10,
+   "rarity": "Rare",
+   "archetype": "scoop",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    110.0,
+    -12.0,
+    0.0
+   ],
+   "tris": 2488,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Shell",
+     "code": "1FB7A6SP"
+    },
+    {
+     "part": "Ribs",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Pearls",
+     "code": "FFF4E6SP"
+    },
+    {
+     "part": "Coral",
+     "code": "FF7A5CSP"
+    },
+    {
+     "part": "Mount",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Arms",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -6.61,
+    -3.8,
+    -1.1
+   ],
+   "bboxMax": [
+    6.61,
+    0.0,
+    2.02
+   ],
+   "size": [
+    13.22,
+    3.8,
+    3.12
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_trident",
+   "model": "BladeTrident",
+   "slot": "Blade",
+   "band": 10,
+   "rarity": "Legendary",
+   "archetype": "vshape",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    130.0,
+    -12.0,
+    0.0
+   ],
+   "tris": 1084,
+   "objectCount": 7,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Glass",
+     "code": "1FB7A6GL"
+    },
+    {
+     "part": "Gold",
+     "code": "E8B84AME"
+    },
+    {
+     "part": "Pearl",
+     "code": "FF7A5CNE"
+    },
+    {
+     "part": "Pearls",
+     "code": "FFF4E6SP"
+    },
+    {
+     "part": "Mount",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Arms",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Piston",
+     "code": "E8B84AME"
+    }
+   ],
+   "bboxMin": [
+    -5.02,
+    -3.84,
+    -1.08
+   ],
+   "bboxMax": [
+    5.02,
+    0.0,
+    2.65
+   ],
+   "size": [
+    10.04,
+    3.84,
+    3.73
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_brick",
+   "model": "BladeBrick",
+   "slot": "Blade",
+   "band": 11,
+   "rarity": "Rare",
+   "archetype": "segmented",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    150.0,
+    -12.0,
+    0.0
+   ],
+   "tris": 1928,
+   "objectCount": 12,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Bricks",
+     "code": "E8443ASP"
+    },
+    {
+     "part": "Bricks",
+     "code": "4CC35ASP"
+    },
+    {
+     "part": "Bricks",
+     "code": "FFD23ASP"
+    },
+    {
+     "part": "Bricks",
+     "code": "3A7BE8SP"
+    },
+    {
+     "part": "Studs",
+     "code": "FFD23ASP"
+    },
+    {
+     "part": "Studs",
+     "code": "3A7BE8SP"
+    },
+    {
+     "part": "Studs",
+     "code": "E8443ASP"
+    },
+    {
+     "part": "Studs",
+     "code": "4CC35ASP"
+    },
+    {
+     "part": "Back",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Mount",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Arms",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.97,
+    -3.05,
+    -1.04
+   ],
+   "bboxMax": [
+    5.97,
+    0.0,
+    1.4
+   ],
+   "size": [
+    11.94,
+    3.05,
+    2.44
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_bulldozer",
+   "model": "BladeBulldozer",
+   "slot": "Blade",
+   "band": 11,
+   "rarity": "Legendary",
+   "archetype": "straight",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    170.0,
+    -12.0,
+    0.0
+   ],
+   "tris": 1502,
+   "objectCount": 9,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "FFD23ASP"
+    },
+    {
+     "part": "Trim",
+     "code": "E8443ASP"
+    },
+    {
+     "part": "Ends",
+     "code": "E8443ASP"
+    },
+    {
+     "part": "Edge",
+     "code": "3B3F4AME"
+    },
+    {
+     "part": "Bolts",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Mount",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Arms",
+     "code": "FFD23ASP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Beacon",
+     "code": "FF9A2ENE"
+    }
+   ],
+   "bboxMin": [
+    -5.39,
+    -3.19,
+    -1.1
+   ],
+   "bboxMax": [
+    5.39,
+    0.0,
+    2.21
+   ],
+   "size": [
+    10.78,
+    3.19,
+    3.31
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_cog",
+   "model": "BladeCog",
+   "slot": "Blade",
+   "band": 12,
+   "rarity": "Rare",
+   "archetype": "sweeper",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    110.0,
+    -24.0,
+    0.0
+   ],
+   "tris": 2420,
+   "objectCount": 8,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "D9A441ME"
+    },
+    {
+     "part": "Bands",
+     "code": "C46A3AME"
+    },
+    {
+     "part": "Rivets",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Cogs",
+     "code": "C46A3AME"
+    },
+    {
+     "part": "Hubs",
+     "code": "3FBFB4SP"
+    },
+    {
+     "part": "Mount",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Arms",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.98,
+    -3.74,
+    -1.1
+   ],
+   "bboxMax": [
+    5.98,
+    0.0,
+    1.31
+   ],
+   "size": [
+    11.96,
+    3.74,
+    2.41
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_gearbreaker",
+   "model": "BladeGearbreaker",
+   "slot": "Blade",
+   "band": 12,
+   "rarity": "Legendary",
+   "archetype": "mechanical",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    130.0,
+    -24.0,
+    0.0
+   ],
+   "tris": 1596,
+   "objectCount": 10,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Frame",
+     "code": "3B3F4AME"
+    },
+    {
+     "part": "Brass",
+     "code": "D9A441ME"
+    },
+    {
+     "part": "Gears",
+     "code": "D9A441ME"
+    },
+    {
+     "part": "Hubs",
+     "code": "C46A3AME"
+    },
+    {
+     "part": "Axles",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Gears",
+     "code": "3FBFB4SP"
+    },
+    {
+     "part": "Glow",
+     "code": "3FBFB4NE"
+    },
+    {
+     "part": "Mount",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Arms",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.1,
+    -3.13,
+    -1.04
+   ],
+   "bboxMax": [
+    5.1,
+    0.0,
+    1.57
+   ],
+   "size": [
+    10.2,
+    3.13,
+    2.61
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_cumulus",
+   "model": "BladeCumulus",
+   "slot": "Blade",
+   "band": 13,
+   "rarity": "Rare",
+   "archetype": "sweeper",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    150.0,
+    -24.0,
+    0.0
+   ],
+   "tris": 2370,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Cloud",
+     "code": "F7F9FFSP"
+    },
+    {
+     "part": "Shade",
+     "code": "8FD0FFSP"
+    },
+    {
+     "part": "Gold",
+     "code": "FFE08AME"
+    },
+    {
+     "part": "Mount",
+     "code": "8FD0FFSP"
+    },
+    {
+     "part": "Arms",
+     "code": "8FD0FFSP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -7.16,
+    -3.5,
+    -1.1
+   ],
+   "bboxMax": [
+    7.16,
+    0.0,
+    1.93
+   ],
+   "size": [
+    14.33,
+    3.5,
+    3.03
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_thunder",
+   "model": "BladeThunder",
+   "slot": "Blade",
+   "band": 13,
+   "rarity": "Legendary",
+   "archetype": "vshape",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    170.0,
+    -24.0,
+    0.0
+   ],
+   "tris": 952,
+   "objectCount": 8,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "8FD0FFSP"
+    },
+    {
+     "part": "Top",
+     "code": "F7F9FFSP"
+    },
+    {
+     "part": "Seam",
+     "code": "FFF06ENE"
+    },
+    {
+     "part": "Bolts",
+     "code": "FFE08AME"
+    },
+    {
+     "part": "Ends",
+     "code": "F7F9FFSP"
+    },
+    {
+     "part": "Mount",
+     "code": "5E7FA3SP"
+    },
+    {
+     "part": "Arms",
+     "code": "5E7FA3SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.1,
+    -3.61,
+    -1.08
+   ],
+   "bboxMax": [
+    5.1,
+    0.0,
+    2.55
+   ],
+   "size": [
+    10.2,
+    3.61,
+    3.63
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_comet",
+   "model": "BladeComet",
+   "slot": "Blade",
+   "band": 14,
+   "rarity": "Epic",
+   "archetype": "scoop",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    110.0,
+    -36.0,
+    0.0
+   ],
+   "tris": 2184,
+   "objectCount": 10,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "3C2E8FSP"
+    },
+    {
+     "part": "Tail",
+     "code": "FFF6C8SP"
+    },
+    {
+     "part": "Tail2",
+     "code": "9B6BFFSP"
+    },
+    {
+     "part": "Head",
+     "code": "6FE7FFNE"
+    },
+    {
+     "part": "Stars",
+     "code": "FFF6C8SP"
+    },
+    {
+     "part": "Edge",
+     "code": "9B6BFFSP"
+    },
+    {
+     "part": "Ends",
+     "code": "9B6BFFSP"
+    },
+    {
+     "part": "Mount",
+     "code": "2A2160SP"
+    },
+    {
+     "part": "Arms",
+     "code": "2A2160SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -6.21,
+    -4.25,
+    -1.1
+   ],
+   "bboxMax": [
+    6.09,
+    0.0,
+    2.27
+   ],
+   "size": [
+    12.3,
+    4.25,
+    3.37
+   ],
+   "notes": ""
+  },
+  {
+   "id": "blade_galaxy",
+   "model": "BladeGalaxy",
+   "slot": "Blade",
+   "band": 14,
+   "rarity": "Legendary",
+   "archetype": "cosmic",
+   "pack": "Blades_B",
+   "packFile": "fbx/Blades_B.fbx",
+   "assetId": "76191038681438",
+   "at": [
+    130.0,
+    -36.0,
+    0.0
+   ],
+   "tris": 2120,
+   "objectCount": 11,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Plate",
+     "code": "3C2E8FSP"
+    },
+    {
+     "part": "Disc",
+     "code": "2A2160SP"
+    },
+    {
+     "part": "Swirl",
+     "code": "9B6BFFSP"
+    },
+    {
+     "part": "Core",
+     "code": "FFF6C8NE"
+    },
+    {
+     "part": "Orbit",
+     "code": "6FE7FFME"
+    },
+    {
+     "part": "Teeth",
+     "code": "9B6BFFGL"
+    },
+    {
+     "part": "Stars",
+     "code": "FFF6C8SP"
+    },
+    {
+     "part": "Ends",
+     "code": "6FE7FFME"
+    },
+    {
+     "part": "Mount",
+     "code": "2A2160SP"
+    },
+    {
+     "part": "Arms",
+     "code": "2A2160SP"
+    },
+    {
+     "part": "Piston",
+     "code": "C3CAD6ME"
+    }
+   ],
+   "bboxMin": [
+    -5.59,
+    -3.54,
+    -1.1
+   ],
+   "bboxMax": [
+    5.59,
+    0.0,
+    2.23
+   ],
+   "size": [
+    11.18,
+    3.54,
+    3.33
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_starter",
+   "model": "EngineStarter",
+   "slot": "Engine",
+   "band": 1,
+   "rarity": "Starter",
+   "archetype": "compact",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    210.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1040,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Block",
+     "code": "E2483DSP"
+    },
+    {
+     "part": "Head",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Fins",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Tip",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Filter",
+     "code": "9FD8FFSP"
+    },
+    {
+     "part": "Trim",
+     "code": "F4F8FFSP"
+    }
+   ],
+   "bboxMin": [
+    -1.32,
+    -0.35,
+    0.05
+   ],
+   "bboxMax": [
+    1.3,
+    1.25,
+    2.49
+   ],
+   "size": [
+    2.62,
+    1.6,
+    2.44
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_snowball",
+   "model": "EngineSnowball",
+   "slot": "Engine",
+   "band": 1,
+   "rarity": "Common",
+   "archetype": "compact",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    220.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1386,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Ball",
+     "code": "F4F8FFSP"
+    },
+    {
+     "part": "Band",
+     "code": "E2483DSP"
+    },
+    {
+     "part": "Cap",
+     "code": "9FD8FFSP"
+    },
+    {
+     "part": "Ball",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Pipe",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Coal",
+     "code": "23252BSP"
+    }
+   ],
+   "bboxMin": [
+    -1.13,
+    -0.62,
+    0.05
+   ],
+   "bboxMax": [
+    1.13,
+    1.6,
+    2.88
+   ],
+   "size": [
+    2.27,
+    2.22,
+    2.83
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_balanced",
+   "model": "EngineBalanced",
+   "slot": "Engine",
+   "band": 1,
+   "rarity": "Uncommon",
+   "archetype": "twin",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    230.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1696,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Case",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Cyl",
+     "code": "F4F8FFSP"
+    },
+    {
+     "part": "Fins",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Heads",
+     "code": "E2483DSP"
+    },
+    {
+     "part": "Chrome",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Tank",
+     "code": "9FD8FFSP"
+    }
+   ],
+   "bboxMin": [
+    -1.45,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.45,
+    1.8,
+    2.88
+   ],
+   "size": [
+    2.9,
+    2.2,
+    2.83
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_sandrunner",
+   "model": "EngineSandRunner",
+   "slot": "Engine",
+   "band": 2,
+   "rarity": "Common",
+   "archetype": "turbine",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    240.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1372,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Body",
+     "code": "E8C27ASP"
+    },
+    {
+     "part": "Fins",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Caps",
+     "code": "F2B33DSP"
+    },
+    {
+     "part": "Shroud",
+     "code": "2EC4B6SP"
+    },
+    {
+     "part": "SpinFan",
+     "code": "2EC4B6SP"
+    }
+   ],
+   "bboxMin": [
+    -1.66,
+    -0.35,
+    0.05
+   ],
+   "bboxMax": [
+    1.66,
+    1.64,
+    2.82
+   ],
+   "size": [
+    3.32,
+    1.99,
+    2.77
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_power",
+   "model": "EnginePower",
+   "slot": "Engine",
+   "band": 2,
+   "rarity": "Rare",
+   "archetype": "industrial",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    250.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1356,
+   "objectCount": 8,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3A3F4CSP"
+    },
+    {
+     "part": "Block",
+     "code": "3A3F4CME"
+    },
+    {
+     "part": "Armor",
+     "code": "E8C27ASP"
+    },
+    {
+     "part": "Hazard",
+     "code": "F2B33DSP"
+    },
+    {
+     "part": "Stripes",
+     "code": "23252BSP"
+    },
+    {
+     "part": "Scoop",
+     "code": "2EC4B6SP"
+    },
+    {
+     "part": "Stacks",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Caps",
+     "code": "8A4B2ASP"
+    }
+   ],
+   "bboxMin": [
+    -1.6,
+    -0.46,
+    0.05
+   ],
+   "bboxMax": [
+    1.6,
+    1.36,
+    3.4
+   ],
+   "size": [
+    3.2,
+    1.82,
+    3.35
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_lantern",
+   "model": "EngineLantern",
+   "slot": "Engine",
+   "band": 3,
+   "rarity": "Uncommon",
+   "archetype": "compact",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    210.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 744,
+   "objectCount": 6,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3B2A55SP"
+    },
+    {
+     "part": "Pumpkin",
+     "code": "8E4DE0SP"
+    },
+    {
+     "part": "Glow",
+     "code": "7CFFB2NE"
+    },
+    {
+     "part": "Stem",
+     "code": "4F8A3ASP"
+    },
+    {
+     "part": "Chimney",
+     "code": "2A1F3DSP"
+    },
+    {
+     "part": "Bone",
+     "code": "EDE3C8SP"
+    }
+   ],
+   "bboxMin": [
+    -1.48,
+    -0.44,
+    0.05
+   ],
+   "bboxMax": [
+    1.48,
+    1.54,
+    3.26
+   ],
+   "size": [
+    2.96,
+    1.97,
+    3.21
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_phantom",
+   "model": "EnginePhantom",
+   "slot": "Engine",
+   "band": 3,
+   "rarity": "Rare",
+   "archetype": "twin",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    220.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 1456,
+   "objectCount": 6,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3B2A55SP"
+    },
+    {
+     "part": "Case",
+     "code": "3B2A55SP"
+    },
+    {
+     "part": "Cyl",
+     "code": "8E4DE0SP"
+    },
+    {
+     "part": "Fins",
+     "code": "2A1F3DSP"
+    },
+    {
+     "part": "Horns",
+     "code": "EDE3C8SP"
+    },
+    {
+     "part": "Glow",
+     "code": "7CFFB2NE"
+    }
+   ],
+   "bboxMin": [
+    -1.5,
+    -0.41,
+    0.05
+   ],
+   "bboxMax": [
+    1.5,
+    1.69,
+    2.75
+   ],
+   "size": [
+    3.0,
+    2.09,
+    2.7
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_geode",
+   "model": "EngineGeode",
+   "slot": "Engine",
+   "band": 4,
+   "rarity": "Uncommon",
+   "archetype": "crystal",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    230.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 330,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Rock",
+     "code": "5A6585SP"
+    },
+    {
+     "part": "Lining",
+     "code": "E07BFFSP"
+    },
+    {
+     "part": "Crystals",
+     "code": "57D8FFGL"
+    },
+    {
+     "part": "Shards",
+     "code": "F4FBFFGL"
+    }
+   ],
+   "bboxMin": [
+    -1.5,
+    -0.35,
+    0.05
+   ],
+   "bboxMax": [
+    1.42,
+    1.45,
+    2.75
+   ],
+   "size": [
+    2.92,
+    1.8,
+    2.7
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_reactor",
+   "model": "EngineReactor",
+   "slot": "Engine",
+   "band": 4,
+   "rarity": "Rare",
+   "archetype": "crystal",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    240.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 1300,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Cage",
+     "code": "F4FBFFME"
+    },
+    {
+     "part": "Bars",
+     "code": "2C3350SP"
+    },
+    {
+     "part": "Rods",
+     "code": "E07BFFGL"
+    },
+    {
+     "part": "Tip",
+     "code": "57D8FFSP"
+    }
+   ],
+   "bboxMin": [
+    -1.0,
+    -0.45,
+    0.05
+   ],
+   "bboxMax": [
+    1.0,
+    1.51,
+    3.35
+   ],
+   "size": [
+    2.0,
+    1.96,
+    3.3
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_8bit",
+   "model": "Engine8Bit",
+   "slot": "Engine",
+   "band": 5,
+   "rarity": "Uncommon",
+   "archetype": "pixel",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    250.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 1604,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Block",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "PxA",
+     "code": "FF4FB6SP"
+    },
+    {
+     "part": "PxB",
+     "code": "3FF0FFSP"
+    },
+    {
+     "part": "Sink",
+     "code": "FFE14FSP"
+    },
+    {
+     "part": "PipesA",
+     "code": "FF4FB6SP"
+    },
+    {
+     "part": "PipesB",
+     "code": "3FF0FFSP"
+    }
+   ],
+   "bboxMin": [
+    -1.5,
+    -0.35,
+    0.05
+   ],
+   "bboxMax": [
+    1.5,
+    1.35,
+    3.07
+   ],
+   "size": [
+    3.0,
+    1.7,
+    3.02
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_arcade",
+   "model": "EngineArcade",
+   "slot": "Engine",
+   "band": 5,
+   "rarity": "Epic",
+   "archetype": "turbine",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    210.0,
+    -20.0,
+    0.0
+   ],
+   "tris": 1280,
+   "objectCount": 7,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Body",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Sides",
+     "code": "FF4FB6SP"
+    },
+    {
+     "part": "Shroud",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Neon",
+     "code": "FF4FB6NE"
+    },
+    {
+     "part": "SpinFan",
+     "code": "3FF0FFSP"
+    },
+    {
+     "part": "Hub",
+     "code": "FFE14FSP"
+    }
+   ],
+   "bboxMin": [
+    -1.6,
+    -0.48,
+    0.05
+   ],
+   "bboxMax": [
+    1.6,
+    1.3,
+    3.12
+   ],
+   "size": [
+    3.2,
+    1.78,
+    3.07
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_tiki",
+   "model": "EngineTiki",
+   "slot": "Engine",
+   "band": 6,
+   "rarity": "Uncommon",
+   "archetype": "industrial",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    220.0,
+    -20.0,
+    0.0
+   ],
+   "tris": 1788,
+   "objectCount": 10,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "2E5E2ASP"
+    },
+    {
+     "part": "Totem",
+     "code": "8A5A33WO"
+    },
+    {
+     "part": "Paint",
+     "code": "FF9A2ESP"
+    },
+    {
+     "part": "Dark",
+     "code": "2E1E12SP"
+    },
+    {
+     "part": "Nose",
+     "code": "6E4426WO"
+    },
+    {
+     "part": "Teeth",
+     "code": "FFF4E0SP"
+    },
+    {
+     "part": "Leaves",
+     "code": "2E5E2ASP"
+    },
+    {
+     "part": "Leaves",
+     "code": "3FBF4FSP"
+    },
+    {
+     "part": "Bamboo",
+     "code": "8FC24ASP"
+    },
+    {
+     "part": "Joints",
+     "code": "5E8F2CSP"
+    }
+   ],
+   "bboxMin": [
+    -1.5,
+    -0.49,
+    0.05
+   ],
+   "bboxMax": [
+    1.5,
+    1.39,
+    3.06
+   ],
+   "size": [
+    3.0,
+    1.88,
+    3.01
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_jturbine",
+   "model": "EngineJungleTurbine",
+   "slot": "Engine",
+   "band": 6,
+   "rarity": "Epic",
+   "archetype": "turbine",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    230.0,
+    -20.0,
+    0.0
+   ],
+   "tris": 1380,
+   "objectCount": 9,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "8A5A33WO"
+    },
+    {
+     "part": "Pylon",
+     "code": "8A5A33WO"
+    },
+    {
+     "part": "Nacelle",
+     "code": "3FBF4FSP"
+    },
+    {
+     "part": "Intake",
+     "code": "FF9A2ESP"
+    },
+    {
+     "part": "Glow",
+     "code": "FF9A2ENE"
+    },
+    {
+     "part": "SpinFan",
+     "code": "2E5E2ASP"
+    },
+    {
+     "part": "Vine",
+     "code": "2E5E2ASP"
+    },
+    {
+     "part": "Leaves",
+     "code": "3FBF4FSP"
+    },
+    {
+     "part": "Leaves2",
+     "code": "2E5E2ASP"
+    }
+   ],
+   "bboxMin": [
+    -1.63,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.63,
+    1.51,
+    3.3
+   ],
+   "size": [
+    3.26,
+    1.91,
+    3.25
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_cryo",
+   "model": "EngineCryo",
+   "slot": "Engine",
+   "band": 7,
+   "rarity": "Uncommon",
+   "archetype": "industrial",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    240.0,
+    -20.0,
+    0.0
+   ],
+   "tris": 1906,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Box",
+     "code": "D8F3FFSP"
+    },
+    {
+     "part": "Vents",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Silver",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Coil",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Tanks",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Frost",
+     "code": "F6F8FCIC"
+    }
+   ],
+   "bboxMin": [
+    -1.55,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.55,
+    1.46,
+    2.64
+   ],
+   "size": [
+    3.1,
+    1.86,
+    2.59
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_polar",
+   "model": "EnginePolar",
+   "slot": "Engine",
+   "band": 7,
+   "rarity": "Epic",
+   "archetype": "turbine",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    250.0,
+    -20.0,
+    0.0
+   ],
+   "tris": 1496,
+   "objectCount": 6,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Pylon",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Jets",
+     "code": "D8F3FFSP"
+    },
+    {
+     "part": "Bands",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Glow",
+     "code": "B79CFFNE"
+    },
+    {
+     "part": "Nozzle",
+     "code": "C9D6E6ME"
+    }
+   ],
+   "bboxMin": [
+    -1.64,
+    -0.51,
+    0.05
+   ],
+   "bboxMax": [
+    1.64,
+    1.4,
+    2.35
+   ],
+   "size": [
+    3.28,
+    1.91,
+    2.3
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_zerocore",
+   "model": "EngineZeroCore",
+   "slot": "Engine",
+   "band": 7,
+   "rarity": "Legendary",
+   "archetype": "core",
+   "pack": "Engines_A",
+   "packFile": "fbx/Engines_A.fbx",
+   "assetId": "113757628902695",
+   "at": [
+    210.0,
+    -30.0,
+    0.0
+   ],
+   "tris": 1628,
+   "objectCount": 5,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Silver",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Arcs",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Core",
+     "code": "B79CFFIC"
+    },
+    {
+     "part": "Glow",
+     "code": "D8F3FFNE"
+    },
+    {
+     "part": "Spikes",
+     "code": "D8F3FFIC"
+    }
+   ],
+   "bboxMin": [
+    -1.3,
+    -0.45,
+    0.05
+   ],
+   "bboxMax": [
+    1.3,
+    1.35,
+    3.95
+   ],
+   "size": [
+    2.6,
+    1.79,
+    3.9
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_lanterntwin",
+   "model": "EngineLanternTwin",
+   "slot": "Engine",
+   "band": 8,
+   "rarity": "Rare",
+   "archetype": "twin",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    310.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1504,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "5A3A2EWO"
+    },
+    {
+     "part": "Paper",
+     "code": "D6363CSP"
+    },
+    {
+     "part": "Caps",
+     "code": "5A3A2EWO"
+    },
+    {
+     "part": "Bands",
+     "code": "FFA7C8SP"
+    },
+    {
+     "part": "Gold",
+     "code": "E8B84AME"
+    }
+   ],
+   "bboxMin": [
+    -1.55,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.55,
+    1.31,
+    2.99
+   ],
+   "size": [
+    3.1,
+    1.71,
+    2.94
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_blossom",
+   "model": "EngineBlossom",
+   "slot": "Engine",
+   "band": 8,
+   "rarity": "Epic",
+   "archetype": "turbine",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    320.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1186,
+   "objectCount": 7,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "5A3A2EWO"
+    },
+    {
+     "part": "Stand",
+     "code": "5A3A2EWO"
+    },
+    {
+     "part": "Shroud",
+     "code": "FFF6FASP"
+    },
+    {
+     "part": "Trim",
+     "code": "D6363CSP"
+    },
+    {
+     "part": "SpinFan",
+     "code": "FFA7C8SP"
+    },
+    {
+     "part": "Hub",
+     "code": "E8B84AME"
+    },
+    {
+     "part": "Glow",
+     "code": "D6363CNE"
+    }
+   ],
+   "bboxMin": [
+    -1.5,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.5,
+    1.3,
+    3.36
+   ],
+   "size": [
+    3.0,
+    1.7,
+    3.31
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_gumdrop",
+   "model": "EngineGumdrop",
+   "slot": "Engine",
+   "band": 9,
+   "rarity": "Rare",
+   "archetype": "compact",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    330.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1462,
+   "objectCount": 9,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "Wafer",
+     "code": "F2C98ASP"
+    },
+    {
+     "part": "Grid",
+     "code": "C9935ASP"
+    },
+    {
+     "part": "Gum10",
+     "code": "FF6FA8SP"
+    },
+    {
+     "part": "Gum11",
+     "code": "7FE8C3SP"
+    },
+    {
+     "part": "Gum9",
+     "code": "FFE36ESP"
+    },
+    {
+     "part": "Sugar",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Pipe0",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Pipe1",
+     "code": "FF6FA8SP"
+    }
+   ],
+   "bboxMin": [
+    -1.5,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.55,
+    1.6,
+    2.54
+   ],
+   "size": [
+    3.05,
+    2.0,
+    2.49
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_sugarv8",
+   "model": "EngineSugarV8",
+   "slot": "Engine",
+   "band": 9,
+   "rarity": "Epic",
+   "archetype": "twin",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    340.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1764,
+   "objectCount": 10,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "Block",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "Banks",
+     "code": "7FE8C3SP"
+    },
+    {
+     "part": "Sticks",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "PopsA",
+     "code": "FF6FA8SP"
+    },
+    {
+     "part": "PopsB",
+     "code": "FFE36ESP"
+    },
+    {
+     "part": "Blower",
+     "code": "FF6FA8SP"
+    },
+    {
+     "part": "Scoop",
+     "code": "7FE8C3SP"
+    },
+    {
+     "part": "Glow",
+     "code": "FFE36ENE"
+    },
+    {
+     "part": "Banks",
+     "code": "FFE36ESP"
+    }
+   ],
+   "bboxMin": [
+    -1.62,
+    -0.43,
+    0.05
+   ],
+   "bboxMax": [
+    1.62,
+    1.33,
+    2.88
+   ],
+   "size": [
+    3.24,
+    1.75,
+    2.83
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_bubble",
+   "model": "EngineBubble",
+   "slot": "Engine",
+   "band": 10,
+   "rarity": "Rare",
+   "archetype": "compact",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    350.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1414,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Helmet",
+     "code": "C9963AME"
+    },
+    {
+     "part": "Glass",
+     "code": "1FB7A6GL"
+    },
+    {
+     "part": "Ring",
+     "code": "FFF4E6SP"
+    },
+    {
+     "part": "Bolts",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Pipe",
+     "code": "FF7A5CSP"
+    },
+    {
+     "part": "Bubbles",
+     "code": "FFF4E6SP"
+    }
+   ],
+   "bboxMin": [
+    -1.4,
+    -0.49,
+    0.05
+   ],
+   "bboxMax": [
+    1.4,
+    1.51,
+    3.42
+   ],
+   "size": [
+    2.8,
+    2.0,
+    3.37
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_leviathan",
+   "model": "EngineLeviathan",
+   "slot": "Engine",
+   "band": 10,
+   "rarity": "Legendary",
+   "archetype": "turbine",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    310.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 936,
+   "objectCount": 8,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Pylon",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Body",
+     "code": "1FB7A6SP"
+    },
+    {
+     "part": "Intake",
+     "code": "FF7A5CSP"
+    },
+    {
+     "part": "Glow",
+     "code": "FFF4E6NE"
+    },
+    {
+     "part": "SpinFan",
+     "code": "FF7A5CSP"
+    },
+    {
+     "part": "Fins",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Stripes",
+     "code": "FFF4E6SP"
+    }
+   ],
+   "bboxMin": [
+    -1.5,
+    -0.45,
+    0.05
+   ],
+   "bboxMax": [
+    1.5,
+    1.4,
+    3.5
+   ],
+   "size": [
+    3.0,
+    1.85,
+    3.45
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_windup",
+   "model": "EngineWindup",
+   "slot": "Engine",
+   "band": 11,
+   "rarity": "Rare",
+   "archetype": "clockwork",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    320.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 724,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3A7BE8SP"
+    },
+    {
+     "part": "Body",
+     "code": "E8443ASP"
+    },
+    {
+     "part": "Lid",
+     "code": "3A7BE8SP"
+    },
+    {
+     "part": "Trim",
+     "code": "FFD23ASP"
+    },
+    {
+     "part": "Dots",
+     "code": "4CC35ASP"
+    },
+    {
+     "part": "SpinKey",
+     "code": "FFD23AME"
+    }
+   ],
+   "bboxMin": [
+    -1.45,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.45,
+    1.3,
+    3.36
+   ],
+   "size": [
+    2.9,
+    1.7,
+    3.31
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_jackbox",
+   "model": "EngineJackbox",
+   "slot": "Engine",
+   "band": 11,
+   "rarity": "Legendary",
+   "archetype": "industrial",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    330.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 1716,
+   "objectCount": 10,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "4CC35ASP"
+    },
+    {
+     "part": "Box",
+     "code": "3A7BE8SP"
+    },
+    {
+     "part": "Stars",
+     "code": "FFD23ASP"
+    },
+    {
+     "part": "Bands",
+     "code": "E8443ASP"
+    },
+    {
+     "part": "Spring",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Cap",
+     "code": "FFD23ASP"
+    },
+    {
+     "part": "Ball",
+     "code": "E8443ASP"
+    },
+    {
+     "part": "Glow",
+     "code": "FFD23ANE"
+    },
+    {
+     "part": "Cap",
+     "code": "4CC35ASP"
+    },
+    {
+     "part": "Cap",
+     "code": "E8B84AME"
+    }
+   ],
+   "bboxMin": [
+    -1.45,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.45,
+    1.57,
+    4.52
+   ],
+   "size": [
+    2.9,
+    1.97,
+    4.47
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_pocketwatch",
+   "model": "EnginePocketwatch",
+   "slot": "Engine",
+   "band": 12,
+   "rarity": "Rare",
+   "archetype": "clockwork",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    340.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 1292,
+   "objectCount": 11,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Stand",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Case",
+     "code": "D9A441ME"
+    },
+    {
+     "part": "Face",
+     "code": "FFF4E6SP"
+    },
+    {
+     "part": "Marks",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Gears3F",
+     "code": "3FBFB4SP"
+    },
+    {
+     "part": "GearsC4",
+     "code": "C46A3ASP"
+    },
+    {
+     "part": "GearsD9",
+     "code": "D9A441ME"
+    },
+    {
+     "part": "Hands",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Hands",
+     "code": "C46A3AME"
+    },
+    {
+     "part": "Crown",
+     "code": "C46A3AME"
+    }
+   ],
+   "bboxMin": [
+    -1.4,
+    -0.35,
+    0.05
+   ],
+   "bboxMax": [
+    1.4,
+    1.25,
+    3.42
+   ],
+   "size": [
+    2.8,
+    1.6,
+    3.37
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_grandclock",
+   "model": "EngineGrandClock",
+   "slot": "Engine",
+   "band": 12,
+   "rarity": "Legendary",
+   "archetype": "clockwork",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    350.0,
+    -10.0,
+    0.0
+   ],
+   "tris": 1816,
+   "objectCount": 10,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Plinth",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Tower",
+     "code": "C46A3AME"
+    },
+    {
+     "part": "Brass",
+     "code": "D9A441ME"
+    },
+    {
+     "part": "Roof",
+     "code": "3FBFB4SP"
+    },
+    {
+     "part": "Face",
+     "code": "FFF4E6SP"
+    },
+    {
+     "part": "Hands",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Glow",
+     "code": "3FBFB4NE"
+    },
+    {
+     "part": "GearsT",
+     "code": "3FBFB4SP"
+    },
+    {
+     "part": "GearsB",
+     "code": "D9A441ME"
+    }
+   ],
+   "bboxMin": [
+    -1.55,
+    -0.43,
+    0.05
+   ],
+   "bboxMax": [
+    1.55,
+    1.35,
+    4.6
+   ],
+   "size": [
+    3.1,
+    1.77,
+    4.55
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_breeze",
+   "model": "EngineBreeze",
+   "slot": "Engine",
+   "band": 13,
+   "rarity": "Epic",
+   "archetype": "turbine",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    310.0,
+    -20.0,
+    0.0
+   ],
+   "tris": 1968,
+   "objectCount": 6,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "8FD0FFSP"
+    },
+    {
+     "part": "Shroud",
+     "code": "F7F9FFSP"
+    },
+    {
+     "part": "Puffs",
+     "code": "F7F9FFSP"
+    },
+    {
+     "part": "SpinFan",
+     "code": "8FD0FFSP"
+    },
+    {
+     "part": "Hub",
+     "code": "FFF06ENE"
+    },
+    {
+     "part": "Gold",
+     "code": "FFE08AME"
+    }
+   ],
+   "bboxMin": [
+    -1.66,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.56,
+    1.3,
+    3.25
+   ],
+   "size": [
+    3.22,
+    1.7,
+    3.2
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_storm",
+   "model": "EngineStorm",
+   "slot": "Engine",
+   "band": 13,
+   "rarity": "Legendary",
+   "archetype": "core",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    320.0,
+    -20.0,
+    0.0
+   ],
+   "tris": 1756,
+   "objectCount": 5,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3E4760SP"
+    },
+    {
+     "part": "Cloud",
+     "code": "5D6A86SP"
+    },
+    {
+     "part": "Shade",
+     "code": "47526BSP"
+    },
+    {
+     "part": "Bolt",
+     "code": "FFF06ENE"
+    },
+    {
+     "part": "Rods",
+     "code": "FFE08AME"
+    }
+   ],
+   "bboxMin": [
+    -1.64,
+    -0.43,
+    0.05
+   ],
+   "bboxMax": [
+    1.64,
+    1.45,
+    3.49
+   ],
+   "size": [
+    3.27,
+    1.87,
+    3.44
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_stardrive",
+   "model": "EngineStarDrive",
+   "slot": "Engine",
+   "band": 14,
+   "rarity": "Epic",
+   "archetype": "core",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    330.0,
+    -20.0,
+    0.0
+   ],
+   "tris": 720,
+   "objectCount": 7,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3C2E8FSP"
+    },
+    {
+     "part": "Pylon",
+     "code": "9B6BFFSP"
+    },
+    {
+     "part": "Star",
+     "code": "3C2E8FSP"
+    },
+    {
+     "part": "Inlay",
+     "code": "9B6BFFSP"
+    },
+    {
+     "part": "Nozzle",
+     "code": "FFF6C8ME"
+    },
+    {
+     "part": "Glow",
+     "code": "6FE7FFNE"
+    },
+    {
+     "part": "Tips",
+     "code": "FFF6C8SP"
+    }
+   ],
+   "bboxMin": [
+    -1.5,
+    -0.4,
+    0.05
+   ],
+   "bboxMax": [
+    1.5,
+    1.45,
+    3.39
+   ],
+   "size": [
+    3.0,
+    1.85,
+    3.34
+   ],
+   "notes": ""
+  },
+  {
+   "id": "engine_nebula",
+   "model": "EngineNebula",
+   "slot": "Engine",
+   "band": 14,
+   "rarity": "Legendary",
+   "archetype": "core",
+   "pack": "Engines_B",
+   "packFile": "fbx/Engines_B.fbx",
+   "assetId": "102682517293372",
+   "at": [
+    340.0,
+    -20.0,
+    0.0
+   ],
+   "tris": 1706,
+   "objectCount": 7,
+   "neonObjects": 2,
+   "objects": [
+    {
+     "part": "Base",
+     "code": "3C2E8FSP"
+    },
+    {
+     "part": "Sphere",
+     "code": "9B6BFFSP"
+    },
+    {
+     "part": "Swirl",
+     "code": "3C2E8FSP"
+    },
+    {
+     "part": "Rings",
+     "code": "FFF6C8SP"
+    },
+    {
+     "part": "Rings2",
+     "code": "6FE7FFSP"
+    },
+    {
+     "part": "Star",
+     "code": "FFF6C8NE"
+    },
+    {
+     "part": "Core",
+     "code": "6FE7FFNE"
+    }
+   ],
+   "bboxMin": [
+    -1.49,
+    -0.49,
+    0.05
+   ],
+   "bboxMax": [
+    1.57,
+    1.5,
+    3.55
+   ],
+   "size": [
+    3.06,
+    1.99,
+    3.5
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_wheels",
+   "model": "GearWheels",
+   "slot": "Gear",
+   "band": 1,
+   "rarity": "Starter",
+   "archetype": "smalltires",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    410.0,
+    0.0,
+    0.0
+   ],
+   "tris": 2304,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Tire",
+     "code": "30333CSP"
+    },
+    {
+     "part": "Tread",
+     "code": "24262DSP"
+    },
+    {
+     "part": "Hub",
+     "code": "E2483DSP"
+    },
+    {
+     "part": "Cap",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Axle",
+     "code": "2A2D34SP"
+    }
+   ],
+   "bboxMin": [
+    -3.39,
+    -3.15,
+    0.0
+   ],
+   "bboxMax": [
+    3.39,
+    3.36,
+    1.67
+   ],
+   "size": [
+    6.78,
+    6.51,
+    1.67
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_chunky",
+   "model": "GearChunky",
+   "slot": "Gear",
+   "band": 1,
+   "rarity": "Common",
+   "archetype": "bigtires",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    424.0,
+    0.0,
+    0.0
+   ],
+   "tris": 3984,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Tire",
+     "code": "30333CSP"
+    },
+    {
+     "part": "Knobs",
+     "code": "24262DSP"
+    },
+    {
+     "part": "Hub",
+     "code": "F4F8FFSP"
+    },
+    {
+     "part": "Nuts",
+     "code": "4A5568SP"
+    },
+    {
+     "part": "Cap",
+     "code": "E2483DSP"
+    },
+    {
+     "part": "Axle",
+     "code": "2A2D34SP"
+    }
+   ],
+   "bboxMin": [
+    -3.63,
+    -3.28,
+    0.0
+   ],
+   "bboxMax": [
+    3.63,
+    3.48,
+    1.85
+   ],
+   "size": [
+    7.26,
+    6.76,
+    1.85
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_tracks",
+   "model": "GearTracks",
+   "slot": "Gear",
+   "band": 1,
+   "rarity": "Uncommon",
+   "archetype": "tracks",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    438.0,
+    0.0,
+    0.0
+   ],
+   "tris": 3184,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "4A5060ME"
+    },
+    {
+     "part": "Cleats",
+     "code": "2A2D34SP"
+    },
+    {
+     "part": "Wheels",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Hubs",
+     "code": "E2483DSP"
+    },
+    {
+     "part": "Axle",
+     "code": "2A2D34SP"
+    },
+    {
+     "part": "Axle",
+     "code": "4A5568SP"
+    }
+   ],
+   "bboxMin": [
+    -3.55,
+    -3.83,
+    0.0
+   ],
+   "bboxMax": [
+    3.55,
+    3.88,
+    1.63
+   ],
+   "size": [
+    7.1,
+    7.71,
+    1.63
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_balloon",
+   "model": "GearBalloon",
+   "slot": "Gear",
+   "band": 2,
+   "rarity": "Common",
+   "archetype": "flotation",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    452.0,
+    0.0,
+    0.0
+   ],
+   "tris": 3712,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Tire",
+     "code": "E8C27ASP"
+    },
+    {
+     "part": "Grooves",
+     "code": "C9A35ESP"
+    },
+    {
+     "part": "Rim",
+     "code": "2EC4B6SP"
+    },
+    {
+     "part": "Cap",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Axle",
+     "code": "8A4B2ASP"
+    }
+   ],
+   "bboxMin": [
+    -3.63,
+    -3.26,
+    0.0
+   ],
+   "bboxMax": [
+    3.63,
+    3.46,
+    1.92
+   ],
+   "size": [
+    7.26,
+    6.72,
+    1.92
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_sandcrawler",
+   "model": "GearSandcrawler",
+   "slot": "Gear",
+   "band": 2,
+   "rarity": "Rare",
+   "archetype": "widetracks",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    410.0,
+    -16.0,
+    0.0
+   ],
+   "tris": 3228,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "8A4B2ASP"
+    },
+    {
+     "part": "Cleats",
+     "code": "5E3320SP"
+    },
+    {
+     "part": "Wheels",
+     "code": "E8C27ASP"
+    },
+    {
+     "part": "Sprockets",
+     "code": "F2B33DME"
+    },
+    {
+     "part": "Hubs",
+     "code": "2EC4B6SP"
+    },
+    {
+     "part": "Guard",
+     "code": "2EC4B6SP"
+    },
+    {
+     "part": "Axle",
+     "code": "8A4B2ASP"
+    }
+   ],
+   "bboxMin": [
+    -3.6,
+    -3.82,
+    0.0
+   ],
+   "bboxMax": [
+    3.6,
+    3.83,
+    1.79
+   ],
+   "size": [
+    7.2,
+    7.65,
+    1.79
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_bonewheels",
+   "model": "GearBoneWheels",
+   "slot": "Gear",
+   "band": 3,
+   "rarity": "Uncommon",
+   "archetype": "studded",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    424.0,
+    -16.0,
+    0.0
+   ],
+   "tris": 2400,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Tire",
+     "code": "8E4DE0SP"
+    },
+    {
+     "part": "Spikes",
+     "code": "EDE3C8SP"
+    },
+    {
+     "part": "Bone",
+     "code": "EDE3C8SP"
+    },
+    {
+     "part": "Cap",
+     "code": "3B2A55SP"
+    },
+    {
+     "part": "Axle",
+     "code": "3B2A55SP"
+    }
+   ],
+   "bboxMin": [
+    -3.46,
+    -3.24,
+    0.05
+   ],
+   "bboxMax": [
+    3.46,
+    3.44,
+    1.83
+   ],
+   "size": [
+    6.92,
+    6.68,
+    1.79
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_haunted",
+   "model": "GearHaunted",
+   "slot": "Gear",
+   "band": 3,
+   "rarity": "Rare",
+   "archetype": "tracks",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    438.0,
+    -16.0,
+    0.0
+   ],
+   "tris": 3048,
+   "objectCount": 6,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "3B2A55SP"
+    },
+    {
+     "part": "Cleats",
+     "code": "221A30SP"
+    },
+    {
+     "part": "Wheels",
+     "code": "2A1F3DSP"
+    },
+    {
+     "part": "Glow",
+     "code": "7CFFB2NE"
+    },
+    {
+     "part": "Guard",
+     "code": "8E4DE0SP"
+    },
+    {
+     "part": "Axle",
+     "code": "221A30SP"
+    }
+   ],
+   "bboxMin": [
+    -3.59,
+    -3.87,
+    0.0
+   ],
+   "bboxMax": [
+    3.59,
+    3.97,
+    1.83
+   ],
+   "size": [
+    7.18,
+    7.84,
+    1.83
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_crystalstud",
+   "model": "GearCrystalStud",
+   "slot": "Gear",
+   "band": 4,
+   "rarity": "Uncommon",
+   "archetype": "studded",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    452.0,
+    -16.0,
+    0.0
+   ],
+   "tris": 2928,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Tire",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Crystals",
+     "code": "57D8FFGL"
+    },
+    {
+     "part": "Gem",
+     "code": "E07BFFSP"
+    },
+    {
+     "part": "Cap",
+     "code": "F4FBFFSP"
+    },
+    {
+     "part": "Axle",
+     "code": "3D4766SP"
+    }
+   ],
+   "bboxMin": [
+    -3.48,
+    -3.2,
+    0.06
+   ],
+   "bboxMax": [
+    3.48,
+    3.47,
+    1.91
+   ],
+   "size": [
+    6.96,
+    6.67,
+    1.85
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_geodetracks",
+   "model": "GearGeodeTracks",
+   "slot": "Gear",
+   "band": 4,
+   "rarity": "Rare",
+   "archetype": "compacttracks",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    410.0,
+    -32.0,
+    0.0
+   ],
+   "tris": 2544,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "3D4766SP"
+    },
+    {
+     "part": "Cleats",
+     "code": "252A3DSP"
+    },
+    {
+     "part": "Wheels",
+     "code": "C3CAD6ME"
+    },
+    {
+     "part": "Guards",
+     "code": "E07BFFGL"
+    },
+    {
+     "part": "Tips",
+     "code": "57D8FFGL"
+    },
+    {
+     "part": "Axle",
+     "code": "3D4766SP"
+    }
+   ],
+   "bboxMin": [
+    -3.61,
+    -3.61,
+    0.0
+   ],
+   "bboxMax": [
+    3.6,
+    3.8,
+    1.95
+   ],
+   "size": [
+    7.21,
+    7.41,
+    1.95
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_pixelwheels",
+   "model": "GearPixelWheels",
+   "slot": "Gear",
+   "band": 5,
+   "rarity": "Uncommon",
+   "archetype": "pixel",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    424.0,
+    -32.0,
+    0.0
+   ],
+   "tris": 1984,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Tire",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "PxA",
+     "code": "FF4FB6SP"
+    },
+    {
+     "part": "Center",
+     "code": "FFE14FSP"
+    },
+    {
+     "part": "Axle",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "PxB",
+     "code": "3FF0FFSP"
+    }
+   ],
+   "bboxMin": [
+    -3.47,
+    -3.21,
+    0.0
+   ],
+   "bboxMax": [
+    3.47,
+    3.41,
+    1.77
+   ],
+   "size": [
+    6.94,
+    6.62,
+    1.77
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_hoverpods",
+   "model": "GearHoverPods",
+   "slot": "Gear",
+   "band": 5,
+   "rarity": "Epic",
+   "archetype": "hover",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    438.0,
+    -32.0,
+    0.0
+   ],
+   "tris": 1888,
+   "objectCount": 5,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Pods",
+     "code": "1E1E2ESP"
+    },
+    {
+     "part": "Shell0",
+     "code": "FF4FB6SP"
+    },
+    {
+     "part": "Glow",
+     "code": "3FF0FFNE"
+    },
+    {
+     "part": "Struts",
+     "code": "FFE14FSP"
+    },
+    {
+     "part": "Shell1",
+     "code": "3FF0FFSP"
+    }
+   ],
+   "bboxMin": [
+    -3.59,
+    -3.33,
+    0.23
+   ],
+   "bboxMax": [
+    3.59,
+    3.53,
+    0.87
+   ],
+   "size": [
+    7.18,
+    6.85,
+    0.64
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_mudder",
+   "model": "GearMudder",
+   "slot": "Gear",
+   "band": 6,
+   "rarity": "Uncommon",
+   "archetype": "bigtires",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    452.0,
+    -32.0,
+    0.0
+   ],
+   "tris": 3504,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Tire",
+     "code": "2B2620SP"
+    },
+    {
+     "part": "Chevrons",
+     "code": "221E19SP"
+    },
+    {
+     "part": "WoodHub",
+     "code": "8A5A33WO"
+    },
+    {
+     "part": "Pegs",
+     "code": "6E4426WO"
+    },
+    {
+     "part": "Cap",
+     "code": "FF9A2ESP"
+    },
+    {
+     "part": "Mud",
+     "code": "6B4A2ESP"
+    },
+    {
+     "part": "Axle",
+     "code": "2E5E2ASP"
+    }
+   ],
+   "bboxMin": [
+    -3.65,
+    -3.3,
+    0.0
+   ],
+   "bboxMax": [
+    3.65,
+    3.5,
+    1.91
+   ],
+   "size": [
+    7.3,
+    6.79,
+    1.91
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_vinecrawler",
+   "model": "GearVineCrawler",
+   "slot": "Gear",
+   "band": 6,
+   "rarity": "Epic",
+   "archetype": "widetracks",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    410.0,
+    -48.0,
+    0.0
+   ],
+   "tris": 3216,
+   "objectCount": 8,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "2E5E2ASP"
+    },
+    {
+     "part": "Cleats",
+     "code": "1F421CSP"
+    },
+    {
+     "part": "Wheels",
+     "code": "8A5A33WO"
+    },
+    {
+     "part": "Vine",
+     "code": "3FBF4FSP"
+    },
+    {
+     "part": "Leaves",
+     "code": "4CC35ASP"
+    },
+    {
+     "part": "Leaves",
+     "code": "3FBF4FSP"
+    },
+    {
+     "part": "Axle",
+     "code": "8A5A33WO"
+    },
+    {
+     "part": "Flower",
+     "code": "FF9A2ESP"
+    }
+   ],
+   "bboxMin": [
+    -3.6,
+    -3.84,
+    0.0
+   ],
+   "bboxMax": [
+    3.6,
+    3.87,
+    1.78
+   ],
+   "size": [
+    7.19,
+    7.71,
+    1.78
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_skis",
+   "model": "GearSkis",
+   "slot": "Gear",
+   "band": 7,
+   "rarity": "Uncommon",
+   "archetype": "skis",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    424.0,
+    -48.0,
+    0.0
+   ],
+   "tris": 1440,
+   "objectCount": 4,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Skis",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Ice",
+     "code": "D8F3FFIC"
+    },
+    {
+     "part": "Silver",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Tip",
+     "code": "B79CFFSP"
+    }
+   ],
+   "bboxMin": [
+    -3.37,
+    -3.72,
+    0.0
+   ],
+   "bboxMax": [
+    3.37,
+    3.75,
+    1.05
+   ],
+   "size": [
+    6.74,
+    7.47,
+    1.05
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_glaciertracks",
+   "model": "GearGlacierTracks",
+   "slot": "Gear",
+   "band": 7,
+   "rarity": "Epic",
+   "archetype": "widetracks",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    438.0,
+    -48.0,
+    0.0
+   ],
+   "tris": 3152,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "2E6BD8SP"
+    },
+    {
+     "part": "Cleats",
+     "code": "1D4BA0SP"
+    },
+    {
+     "part": "Wheels",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Guard",
+     "code": "D8F3FFIC"
+    },
+    {
+     "part": "Icicles",
+     "code": "F6F8FCIC"
+    },
+    {
+     "part": "Frost",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Axle",
+     "code": "2E6BD8SP"
+    }
+   ],
+   "bboxMin": [
+    -3.58,
+    -3.82,
+    0.0
+   ],
+   "bboxMax": [
+    3.58,
+    3.87,
+    1.84
+   ],
+   "size": [
+    7.17,
+    7.69,
+    1.84
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_zerog",
+   "model": "GearZeroG",
+   "slot": "Gear",
+   "band": 7,
+   "rarity": "Legendary",
+   "archetype": "hover",
+   "pack": "Gears_A",
+   "packFile": "fbx/Gears_A.fbx",
+   "assetId": "80361867210661",
+   "at": [
+    452.0,
+    -48.0,
+    0.0
+   ],
+   "tris": 3288,
+   "objectCount": 5,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Frame",
+     "code": "C9D6E6ME"
+    },
+    {
+     "part": "Ring",
+     "code": "B79CFFIC"
+    },
+    {
+     "part": "Glow",
+     "code": "D8F3FFNE"
+    },
+    {
+     "part": "Core",
+     "code": "D8F3FFIC"
+    },
+    {
+     "part": "Struts",
+     "code": "C9D6E6ME"
+    }
+   ],
+   "bboxMin": [
+    -3.6,
+    -2.88,
+    0.12
+   ],
+   "bboxMax": [
+    3.6,
+    3.08,
+    1.0
+   ],
+   "size": [
+    7.2,
+    5.96,
+    0.88
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_bamboo",
+   "model": "GearBamboo",
+   "slot": "Gear",
+   "band": 8,
+   "rarity": "Rare",
+   "archetype": "smalltires",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    510.0,
+    0.0,
+    0.0
+   ],
+   "tris": 4144,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Rim",
+     "code": "FFA7C8SP"
+    },
+    {
+     "part": "Tire",
+     "code": "5A3A2ESP"
+    },
+    {
+     "part": "Bamboo",
+     "code": "8FC24ASP"
+    },
+    {
+     "part": "Joints",
+     "code": "5E8F2CSP"
+    },
+    {
+     "part": "Hub",
+     "code": "D6363CSP"
+    },
+    {
+     "part": "Flower",
+     "code": "FFF6FASP"
+    },
+    {
+     "part": "Axle",
+     "code": "5A3A2ESP"
+    }
+   ],
+   "bboxMin": [
+    -3.11,
+    -3.17,
+    0.0
+   ],
+   "bboxMax": [
+    3.11,
+    3.37,
+    1.72
+   ],
+   "size": [
+    6.22,
+    6.54,
+    1.72
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_petalglide",
+   "model": "GearPetalGlide",
+   "slot": "Gear",
+   "band": 8,
+   "rarity": "Epic",
+   "archetype": "skis",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    524.0,
+    0.0,
+    0.0
+   ],
+   "tris": 1832,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Runner",
+     "code": "FFA7C8SP"
+    },
+    {
+     "part": "Stripe",
+     "code": "FFF6FASP"
+    },
+    {
+     "part": "Gold",
+     "code": "E8B84AME"
+    },
+    {
+     "part": "Struts",
+     "code": "5A3A2EWO"
+    },
+    {
+     "part": "Bloom",
+     "code": "FFF6FASP"
+    },
+    {
+     "part": "Centers",
+     "code": "D6363CSP"
+    }
+   ],
+   "bboxMin": [
+    -3.64,
+    -3.81,
+    0.0
+   ],
+   "bboxMax": [
+    3.64,
+    3.72,
+    1.05
+   ],
+   "size": [
+    7.28,
+    7.53,
+    1.05
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_donut",
+   "model": "GearDonut",
+   "slot": "Gear",
+   "band": 9,
+   "rarity": "Rare",
+   "archetype": "bigtires",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    538.0,
+    0.0,
+    0.0
+   ],
+   "tris": 3744,
+   "objectCount": 8,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Dough",
+     "code": "D9A066SP"
+    },
+    {
+     "part": "Icing0",
+     "code": "FF6FA8SP"
+    },
+    {
+     "part": "Sprinkles",
+     "code": "FFE36ESP"
+    },
+    {
+     "part": "Sprinkles",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Sprinkles",
+     "code": "6FC3FFSP"
+    },
+    {
+     "part": "Axle",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "Axle",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Icing1",
+     "code": "7FE8C3SP"
+    }
+   ],
+   "bboxMin": [
+    -3.51,
+    -3.21,
+    0.0
+   ],
+   "bboxMax": [
+    3.51,
+    3.41,
+    1.84
+   ],
+   "size": [
+    7.01,
+    6.61,
+    1.84
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_gummytreads",
+   "model": "GearGummyTreads",
+   "slot": "Gear",
+   "band": 9,
+   "rarity": "Epic",
+   "archetype": "tracks",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    552.0,
+    0.0,
+    0.0
+   ],
+   "tris": 2928,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "FF6FA8GL"
+    },
+    {
+     "part": "Wheels",
+     "code": "6B3E2ESP"
+    },
+    {
+     "part": "Gummy0",
+     "code": "7FE8C3GL"
+    },
+    {
+     "part": "Gummy1",
+     "code": "FFE36EGL"
+    },
+    {
+     "part": "Gummy1",
+     "code": "FFE36ESP"
+    },
+    {
+     "part": "Axle",
+     "code": "6B3E2ESP"
+    }
+   ],
+   "bboxMin": [
+    -3.59,
+    -3.9,
+    0.0
+   ],
+   "bboxMax": [
+    3.59,
+    3.95,
+    1.71
+   ],
+   "size": [
+    7.17,
+    7.84,
+    1.71
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_shell",
+   "model": "GearShell",
+   "slot": "Gear",
+   "band": 10,
+   "rarity": "Rare",
+   "archetype": "studded",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    510.0,
+    -16.0,
+    0.0
+   ],
+   "tris": 4008,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Tire",
+     "code": "FFF4E6SP"
+    },
+    {
+     "part": "Shell",
+     "code": "FF7A5CSP"
+    },
+    {
+     "part": "Spiral",
+     "code": "E5584ASP"
+    },
+    {
+     "part": "Pearls",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Axle",
+     "code": "155E8CSP"
+    }
+   ],
+   "bboxMin": [
+    -3.63,
+    -3.26,
+    0.0
+   ],
+   "bboxMax": [
+    3.63,
+    3.46,
+    1.78
+   ],
+   "size": [
+    7.26,
+    6.72,
+    1.78
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_paddle",
+   "model": "GearPaddle",
+   "slot": "Gear",
+   "band": 10,
+   "rarity": "Legendary",
+   "archetype": "widetracks",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    524.0,
+    -16.0,
+    0.0
+   ],
+   "tris": 3744,
+   "objectCount": 8,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "1FB7A6SP"
+    },
+    {
+     "part": "Wheels",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Paddles",
+     "code": "FFF4E6SP"
+    },
+    {
+     "part": "Spokes",
+     "code": "FF7A5CSP"
+    },
+    {
+     "part": "Gold",
+     "code": "E8B84AME"
+    },
+    {
+     "part": "Guard",
+     "code": "155E8CSP"
+    },
+    {
+     "part": "Glow",
+     "code": "FF7A5CNE"
+    },
+    {
+     "part": "Axle",
+     "code": "155E8CSP"
+    }
+   ],
+   "bboxMin": [
+    -3.64,
+    -3.88,
+    0.0
+   ],
+   "bboxMax": [
+    3.64,
+    3.81,
+    1.74
+   ],
+   "size": [
+    7.29,
+    7.69,
+    1.74
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_toybrick",
+   "model": "GearToyBrick",
+   "slot": "Gear",
+   "band": 11,
+   "rarity": "Rare",
+   "archetype": "smalltires",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    538.0,
+    -16.0,
+    0.0
+   ],
+   "tris": 1744,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Tire",
+     "code": "2B2D33SP"
+    },
+    {
+     "part": "Bricks",
+     "code": "E8443ASP"
+    },
+    {
+     "part": "Axle",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Bricks",
+     "code": "3A7BE8SP"
+    },
+    {
+     "part": "Bricks",
+     "code": "FFD23ASP"
+    },
+    {
+     "part": "Bricks",
+     "code": "4CC35ASP"
+    }
+   ],
+   "bboxMin": [
+    -3.54,
+    -3.16,
+    0.0
+   ],
+   "bboxMax": [
+    3.54,
+    3.36,
+    1.72
+   ],
+   "size": [
+    7.08,
+    6.52,
+    1.72
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_toytank",
+   "model": "GearToyTank",
+   "slot": "Gear",
+   "band": 11,
+   "rarity": "Legendary",
+   "archetype": "compacttracks",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    552.0,
+    -16.0,
+    0.0
+   ],
+   "tris": 3576,
+   "objectCount": 7,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "E8443ASP"
+    },
+    {
+     "part": "Cleats",
+     "code": "A8302ASP"
+    },
+    {
+     "part": "Wheels",
+     "code": "FFD23ASP"
+    },
+    {
+     "part": "Hubs",
+     "code": "3A7BE8SP"
+    },
+    {
+     "part": "Caps",
+     "code": "F6F8FCSP"
+    },
+    {
+     "part": "Guard",
+     "code": "4CC35ASP"
+    },
+    {
+     "part": "Axle",
+     "code": "3B3F4ASP"
+    }
+   ],
+   "bboxMin": [
+    -3.61,
+    -3.82,
+    0.0
+   ],
+   "bboxMax": [
+    3.61,
+    3.73,
+    1.82
+   ],
+   "size": [
+    7.22,
+    7.55,
+    1.82
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_cogwheels",
+   "model": "GearCogWheels",
+   "slot": "Gear",
+   "band": 12,
+   "rarity": "Rare",
+   "archetype": "studded",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    510.0,
+    -32.0,
+    0.0
+   ],
+   "tris": 2928,
+   "objectCount": 5,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Cog",
+     "code": "D9A441ME"
+    },
+    {
+     "part": "Copper",
+     "code": "C46A3AME"
+    },
+    {
+     "part": "Rivets",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Cap",
+     "code": "3FBFB4SP"
+    },
+    {
+     "part": "Axle",
+     "code": "3B3F4ASP"
+    }
+   ],
+   "bboxMin": [
+    -3.42,
+    -3.19,
+    0.03
+   ],
+   "bboxMax": [
+    3.42,
+    3.39,
+    1.81
+   ],
+   "size": [
+    6.84,
+    6.59,
+    1.79
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_brasstracks",
+   "model": "GearBrassTracks",
+   "slot": "Gear",
+   "band": 12,
+   "rarity": "Legendary",
+   "archetype": "compacttracks",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    524.0,
+    -32.0,
+    0.0
+   ],
+   "tris": 3696,
+   "objectCount": 6,
+   "neonObjects": 0,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "D9A441ME"
+    },
+    {
+     "part": "Cleats",
+     "code": "C46A3AME"
+    },
+    {
+     "part": "Wheels",
+     "code": "3B3F4ASP"
+    },
+    {
+     "part": "Guards",
+     "code": "3FBFB4SP"
+    },
+    {
+     "part": "BrassHub",
+     "code": "D9A441ME"
+    },
+    {
+     "part": "Axle",
+     "code": "3B3F4ASP"
+    }
+   ],
+   "bboxMin": [
+    -3.59,
+    -3.71,
+    0.0
+   ],
+   "bboxMax": [
+    3.59,
+    3.85,
+    1.65
+   ],
+   "size": [
+    7.18,
+    7.56,
+    1.65
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_cloudpuff",
+   "model": "GearCloudPuff",
+   "slot": "Gear",
+   "band": 13,
+   "rarity": "Epic",
+   "archetype": "flotation",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    538.0,
+    -32.0,
+    0.0
+   ],
+   "tris": 3664,
+   "objectCount": 5,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Puffs",
+     "code": "F7F9FFSP"
+    },
+    {
+     "part": "Inner",
+     "code": "8FD0FFSP"
+    },
+    {
+     "part": "Gold",
+     "code": "FFE08AME"
+    },
+    {
+     "part": "Glow",
+     "code": "FFF06ENE"
+    },
+    {
+     "part": "Axle",
+     "code": "FFE08AME"
+    }
+   ],
+   "bboxMin": [
+    -3.55,
+    -3.32,
+    0.0
+   ],
+   "bboxMax": [
+    3.55,
+    3.52,
+    1.97
+   ],
+   "size": [
+    7.1,
+    6.84,
+    1.97
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_stormpods",
+   "model": "GearStormPods",
+   "slot": "Gear",
+   "band": 13,
+   "rarity": "Legendary",
+   "archetype": "hover",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    552.0,
+    -32.0,
+    0.0
+   ],
+   "tris": 3440,
+   "objectCount": 4,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Cloud",
+     "code": "5D6A86SP"
+    },
+    {
+     "part": "Glow",
+     "code": "FFF06ENE"
+    },
+    {
+     "part": "Bolts",
+     "code": "FFE08AME"
+    },
+    {
+     "part": "Struts",
+     "code": "FFE08AME"
+    }
+   ],
+   "bboxMin": [
+    -3.52,
+    -3.49,
+    0.08
+   ],
+   "bboxMax": [
+    3.52,
+    3.69,
+    1.24
+   ],
+   "size": [
+    7.04,
+    7.18,
+    1.16
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_orbit",
+   "model": "GearOrbit",
+   "slot": "Gear",
+   "band": 14,
+   "rarity": "Epic",
+   "archetype": "rings",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    510.0,
+    -48.0,
+    0.0
+   ],
+   "tris": 2896,
+   "objectCount": 5,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Ring",
+     "code": "9B6BFFSP"
+    },
+    {
+     "part": "Orbit",
+     "code": "6FE7FFSP"
+    },
+    {
+     "part": "Star",
+     "code": "FFF6C8NE"
+    },
+    {
+     "part": "Hub",
+     "code": "3C2E8FSP"
+    },
+    {
+     "part": "Axle",
+     "code": "3C2E8FSP"
+    }
+   ],
+   "bboxMin": [
+    -3.46,
+    -3.21,
+    0.02
+   ],
+   "bboxMax": [
+    3.46,
+    3.41,
+    1.86
+   ],
+   "size": [
+    6.92,
+    6.62,
+    1.84
+   ],
+   "notes": ""
+  },
+  {
+   "id": "gear_meteor",
+   "model": "GearMeteor",
+   "slot": "Gear",
+   "band": 14,
+   "rarity": "Legendary",
+   "archetype": "widetracks",
+   "pack": "Gears_B",
+   "packFile": "fbx/Gears_B.fbx",
+   "assetId": "88481009438593",
+   "at": [
+    524.0,
+    -48.0,
+    0.0
+   ],
+   "tris": 2196,
+   "objectCount": 7,
+   "neonObjects": 1,
+   "objects": [
+    {
+     "part": "Track",
+     "code": "3C2E8FSP"
+    },
+    {
+     "part": "Cleats",
+     "code": "221A5CSP"
+    },
+    {
+     "part": "Rocks",
+     "code": "4A3F7ASP"
+    },
+    {
+     "part": "Glow",
+     "code": "6FE7FFNE"
+    },
+    {
+     "part": "Guard",
+     "code": "9B6BFFSP"
+    },
+    {
+     "part": "Stars",
+     "code": "FFF6C8SP"
+    },
+    {
+     "part": "Axle",
+     "code": "221A5CSP"
+    }
+   ],
+   "bboxMin": [
+    -3.58,
+    -3.84,
+    0.0
+   ],
+   "bboxMax": [
+    3.58,
+    3.89,
+    1.82
+   ],
+   "size": [
+    7.16,
+    7.73,
+    1.82
+   ],
+   "notes": ""
+  }
+ ]
+}

@@ -1,0 +1,2079 @@
+{
+ "items": [
+  {
+   "Name": "Tin Shovel",
+   "Chance": 2.0,
+   "Power": null
+  },
+  {
+   "Name": "Copper Shovel",
+   "Chance": 4.0,
+   "Power": null
+  },
+  {
+   "Name": "Bronze Shovel",
+   "Chance": 9.0,
+   "Power": null
+  },
+  {
+   "Name": "Aluminum Shovel",
+   "Chance": 18.0,
+   "Power": null
+  },
+  {
+   "Name": "Zinc Shovel",
+   "Chance": 36.0,
+   "Power": null
+  },
+  {
+   "Name": "Nickel Shovel",
+   "Chance": 75.0,
+   "Power": null
+  },
+  {
+   "Name": "Reinforced Shovel",
+   "Chance": 150.0,
+   "Power": null
+  },
+  {
+   "Name": "Heavy Shovel",
+   "Chance": 320.0,
+   "Power": null
+  },
+  {
+   "Name": "Broad Shovel",
+   "Chance": 660.0,
+   "Power": null
+  },
+  {
+   "Name": "Pointed Shovel",
+   "Chance": 1400.0,
+   "Power": null
+  },
+  {
+   "Name": "Trench Shovel",
+   "Chance": 2800.0,
+   "Power": null
+  },
+  {
+   "Name": "Square Shovel",
+   "Chance": 5800.0,
+   "Power": null
+  },
+  {
+   "Name": "Serrated Shovel",
+   "Chance": 12000.0,
+   "Power": null
+  },
+  {
+   "Name": "Double Edge Shovel",
+   "Chance": 25000.0,
+   "Power": null
+  },
+  {
+   "Name": "Spiked Shovel",
+   "Chance": 51000.0,
+   "Power": null
+  },
+  {
+   "Name": "Military Shovel",
+   "Chance": 100000.0,
+   "Power": null
+  },
+  {
+   "Name": "Industrial Shovel",
+   "Chance": 220000.0,
+   "Power": null
+  },
+  {
+   "Name": "Carbon Shovel",
+   "Chance": 450000.0,
+   "Power": null
+  },
+  {
+   "Name": "Titanium Shovel",
+   "Chance": 920000.0,
+   "Power": null
+  },
+  {
+   "Name": "Tungsten Shovel",
+   "Chance": 1900000.0,
+   "Power": null
+  },
+  {
+   "Name": "Gold Shovel",
+   "Chance": 3900000.0,
+   "Power": null
+  },
+  {
+   "Name": "Diamond Shovel",
+   "Chance": 8100000.0,
+   "Power": null
+  },
+  {
+   "Name": "Emerald Shovel",
+   "Chance": 17000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Ruby Shovel",
+   "Chance": 35000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Sapphire Shovel",
+   "Chance": 71000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Crystal Shovel",
+   "Chance": 150000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Frozen Shovel",
+   "Chance": 300000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Molten Shovel",
+   "Chance": 630000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Radioactive Shovel",
+   "Chance": 1300000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Cursed Shovel",
+   "Chance": 2700000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Absolute Zero Shovel",
+   "Chance": 5500000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Rainbow Shovel",
+   "Chance": 11000000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Meteor Shovel",
+   "Chance": 23000000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Angelic Shovel",
+   "Chance": 48000000000.0,
+   "Power": null
+  },
+  {
+   "Name": "Void Shovel",
+   "Chance": 100000000000.0,
+   "Power": null
+  }
+ ],
+ "trees": [
+  {
+   "Id": "Snow",
+   "BaseCost": 50.0,
+   "Growth": 7.0,
+   "Nodes": [
+    {
+     "Id": "S_Center",
+     "Q": 0,
+     "R": 0,
+     "Effect": [
+      "SnowMult",
+      0.1,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": true
+    },
+    {
+     "Id": "S_Gain1",
+     "Q": 1,
+     "R": 0,
+     "Effect": [
+      "SnowMult",
+      0.1,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Gain2",
+     "Q": 2,
+     "R": 0,
+     "Effect": [
+      "SnowMult",
+      0.15,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Gain3",
+     "Q": 3,
+     "R": 0,
+     "Effect": [
+      "SnowMult",
+      0.25,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Deep",
+     "Q": 4,
+     "R": 0,
+     "Effect": [
+      "SnowMult",
+      0.25,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Storm",
+     "Q": 4,
+     "R": -1,
+     "Effect": [
+      "SnowMult",
+      0.5,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Blizzard",
+     "Q": 5,
+     "R": -1,
+     "Effect": [
+      "SnowMult",
+      1.0,
+      "Mul"
+     ],
+     "CostMult": 4.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Fresh",
+     "Q": 0,
+     "R": 1,
+     "Effect": [
+      "SnowMult",
+      0.1,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Rush",
+     "Q": 1,
+     "R": 1,
+     "Effect": [
+      "SnowMult",
+      0.25,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Sharp",
+     "Q": 0,
+     "R": -1,
+     "Effect": [
+      "PowerMult",
+      0.25,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Heavy",
+     "Q": 0,
+     "R": -2,
+     "Effect": [
+      "PowerMult",
+      0.25,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Swing",
+     "Q": -1,
+     "R": -2,
+     "Effect": [
+      "PowerMult",
+      0.5,
+      "Mul"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Crush",
+     "Q": 1,
+     "R": -3,
+     "Effect": [
+      "PowerMult",
+      1.0,
+      "Mul"
+     ],
+     "CostMult": 3.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Quick",
+     "Q": 0,
+     "R": 2,
+     "Effect": [
+      "SpinMult",
+      0.15,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Turbo",
+     "Q": 0,
+     "R": 3,
+     "Effect": [
+      "SpinMult",
+      0.15,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Third",
+     "Q": -1,
+     "R": 3,
+     "Effect": [
+      "ShovelSlots",
+      1.0,
+      "Add"
+     ],
+     "CostMult": 20.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size1",
+     "Q": -1,
+     "R": 1,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size2",
+     "Q": -1,
+     "R": 2,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size3",
+     "Q": -2,
+     "R": 2,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size4",
+     "Q": -2,
+     "R": 3,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size5",
+     "Q": -3,
+     "R": 3,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size6",
+     "Q": -3,
+     "R": 4,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size7",
+     "Q": -4,
+     "R": 4,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size8",
+     "Q": -4,
+     "R": 5,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size9",
+     "Q": -5,
+     "R": 5,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Size10",
+     "Q": -5,
+     "R": 6,
+     "Effect": [
+      "SizeMult",
+      0.06,
+      "Add"
+     ],
+     "CostMult": 3.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "S_Avalanche",
+     "Q": 6,
+     "R": -1,
+     "Effect": [
+      "SnowMult",
+      1.0,
+      "Mul"
+     ],
+     "Cost": 2200000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "S_Glacier",
+     "Q": 7,
+     "R": -1,
+     "Effect": [
+      "SnowMult",
+      1.5,
+      "Mul"
+     ],
+     "Cost": 250000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "S_FrostCore",
+     "Q": 8,
+     "R": -1,
+     "Effect": [
+      "SnowMult",
+      2.0,
+      "Mul"
+     ],
+     "Cost": 620000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "W2_BlossomBreeze",
+     "Q": 9,
+     "R": -1,
+     "Effect": [
+      "SnowMult",
+      0.5,
+      "Mul"
+     ],
+     "Cost": 900000000000000.0,
+     "RequiredStage": "Sakura",
+     "Center": false
+    },
+    {
+     "Id": "W2_SugarRush",
+     "Q": 10,
+     "R": -1,
+     "Effect": [
+      "SnowMult",
+      0.75,
+      "Mul"
+     ],
+     "Cost": 3000000000000000.0,
+     "RequiredStage": "Candy",
+     "Center": false
+    },
+    {
+     "Id": "S_Titan",
+     "Q": 2,
+     "R": -4,
+     "Effect": [
+      "PowerMult",
+      1.0,
+      "Mul"
+     ],
+     "Cost": 1800000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "S_Meteor",
+     "Q": 3,
+     "R": -5,
+     "Effect": [
+      "PowerMult",
+      1.5,
+      "Mul"
+     ],
+     "Cost": 190000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "S_Glacial",
+     "Q": 4,
+     "R": -6,
+     "Effect": [
+      "PowerMult",
+      2.0,
+      "Mul"
+     ],
+     "Cost": 500000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "W2_PetalStrike",
+     "Q": 5,
+     "R": -6,
+     "Effect": [
+      "PowerMult",
+      0.5,
+      "Mul"
+     ],
+     "Cost": 700000000000000.0,
+     "RequiredStage": "Sakura",
+     "Center": false
+    },
+    {
+     "Id": "W2_CandyCrush",
+     "Q": 6,
+     "R": -7,
+     "Effect": [
+      "PowerMult",
+      0.75,
+      "Mul"
+     ],
+     "Cost": 2400000000000000.0,
+     "RequiredStage": "Candy",
+     "Center": false
+    }
+   ]
+  },
+  {
+   "Id": "Rolls",
+   "BaseCost": 75.0,
+   "Growth": 4.5,
+   "Nodes": [
+    {
+     "Id": "R_Luck1",
+     "Q": 0,
+     "R": 0,
+     "Effect": [
+      "LuckMult",
+      0.1,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": true
+    },
+    {
+     "Id": "R_Luck2",
+     "Q": 1,
+     "R": 0,
+     "Effect": [
+      "LuckMult",
+      0.1,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck3",
+     "Q": 1,
+     "R": -1,
+     "Effect": [
+      "LuckMult",
+      0.1,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck4",
+     "Q": 2,
+     "R": -1,
+     "Effect": [
+      "LuckMult",
+      0.1,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck5",
+     "Q": 2,
+     "R": 0,
+     "Effect": [
+      "LuckMult",
+      0.1,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck6",
+     "Q": 3,
+     "R": -1,
+     "Effect": [
+      "LuckMult",
+      0.25,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck7",
+     "Q": 3,
+     "R": -2,
+     "Effect": [
+      "LuckMult",
+      0.25,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck8",
+     "Q": 4,
+     "R": -2,
+     "Effect": [
+      "LuckMult",
+      0.25,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck9",
+     "Q": 4,
+     "R": -1,
+     "Effect": [
+      "LuckMult",
+      0.25,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck10",
+     "Q": 5,
+     "R": -2,
+     "Effect": [
+      "LuckMult",
+      0.25,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck11",
+     "Q": 5,
+     "R": -3,
+     "Effect": [
+      "LuckMult",
+      0.5,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck12",
+     "Q": 6,
+     "R": -3,
+     "Effect": [
+      "LuckMult",
+      0.5,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck13",
+     "Q": 6,
+     "R": -2,
+     "Effect": [
+      "LuckMult",
+      0.5,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck14",
+     "Q": 7,
+     "R": -3,
+     "Effect": [
+      "LuckMult",
+      0.5,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck15",
+     "Q": 7,
+     "R": -4,
+     "Effect": [
+      "LuckMult",
+      0.5,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck16",
+     "Q": 8,
+     "R": -4,
+     "Effect": [
+      "LuckMult",
+      1.0,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck17",
+     "Q": 8,
+     "R": -3,
+     "Effect": [
+      "LuckMult",
+      1.0,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck18",
+     "Q": 9,
+     "R": -4,
+     "Effect": [
+      "LuckMult",
+      1.0,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck19",
+     "Q": 9,
+     "R": -5,
+     "Effect": [
+      "LuckMult",
+      1.0,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck20",
+     "Q": 10,
+     "R": -5,
+     "Effect": [
+      "LuckMult",
+      3.0,
+      "Add"
+     ],
+     "CostMult": 5.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Dice1",
+     "Q": -1,
+     "R": 0,
+     "Effect": [
+      "RollAnimScale",
+      -0.1,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Dice2",
+     "Q": -2,
+     "R": 0,
+     "Effect": [
+      "RollAnimScale",
+      -0.1,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Dice3",
+     "Q": -3,
+     "R": 1,
+     "Effect": [
+      "RollAnimScale",
+      -0.1,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Dice4",
+     "Q": -2,
+     "R": 1,
+     "Effect": [
+      "DoubleRollChance",
+      0.1,
+      "Add"
+     ],
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Dice5",
+     "Q": -3,
+     "R": 2,
+     "Effect": [
+      "DoubleRollChance",
+      0.15,
+      "Add"
+     ],
+     "CostMult": 4.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "R_Triple",
+     "Q": -1,
+     "R": 1,
+     "Effect": [
+      "DoubleRollChance",
+      0.1,
+      "Add"
+     ],
+     "Cost": 45000000000.0,
+     "RequiredStage": "Jungle",
+     "Center": false
+    },
+    {
+     "Id": "R_Gold1",
+     "Q": -4,
+     "R": 2,
+     "Effect": [
+      "GoldenEvery",
+      10.0,
+      "Add"
+     ],
+     "Cost": 27000000000.0,
+     "RequiredStage": "Jungle",
+     "Center": false
+    },
+    {
+     "Id": "R_Gold2",
+     "Q": -5,
+     "R": 3,
+     "Effect": [
+      "GoldenEvery",
+      -1.0,
+      "Add"
+     ],
+     "Cost": 54000000000.0,
+     "RequiredStage": "Jungle",
+     "Center": false
+    },
+    {
+     "Id": "R_Gold3",
+     "Q": -6,
+     "R": 4,
+     "Effect": [
+      "GoldenEvery",
+      -1.0,
+      "Add"
+     ],
+     "Cost": 110000000000.0,
+     "RequiredStage": "Jungle",
+     "Center": false
+    },
+    {
+     "Id": "R_Gold4",
+     "Q": -7,
+     "R": 5,
+     "Effect": [
+      "GoldenEvery",
+      -1.0,
+      "Add"
+     ],
+     "Cost": 880000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "R_Gold5",
+     "Q": -8,
+     "R": 6,
+     "Effect": [
+      "GoldenEvery",
+      -1.0,
+      "Add"
+     ],
+     "Cost": 1800000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "R_Gold6",
+     "Q": -9,
+     "R": 7,
+     "Effect": [
+      "GoldenEvery",
+      -1.0,
+      "Add"
+     ],
+     "Cost": 75000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "R_Rain1",
+     "Q": -3,
+     "R": 3,
+     "Effect": [
+      "RainbowEvery",
+      100.0,
+      "Add"
+     ],
+     "Cost": 1200000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "R_Rain2",
+     "Q": -3,
+     "R": 4,
+     "Effect": [
+      "RainbowEvery",
+      -10.0,
+      "Add"
+     ],
+     "Cost": 2200000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "R_Rain3",
+     "Q": -3,
+     "R": 5,
+     "Effect": [
+      "RainbowEvery",
+      -10.0,
+      "Add"
+     ],
+     "Cost": 4000000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "R_Rain4",
+     "Q": -3,
+     "R": 6,
+     "Effect": [
+      "RainbowEvery",
+      -10.0,
+      "Add"
+     ],
+     "Cost": 100000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "R_Rain5",
+     "Q": -3,
+     "R": 7,
+     "Effect": [
+      "RainbowEvery",
+      -10.0,
+      "Add"
+     ],
+     "Cost": 190000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "R_Rain6",
+     "Q": -3,
+     "R": 8,
+     "Effect": [
+      "RainbowEvery",
+      -10.0,
+      "Add"
+     ],
+     "Cost": 380000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "R_Hyper",
+     "Q": -4,
+     "R": 1,
+     "Effect": [
+      "RollAnimScale",
+      -0.1,
+      "Add"
+     ],
+     "Cost": 1000000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck21",
+     "Q": 11,
+     "R": -5,
+     "Effect": [
+      "LuckMult",
+      5.0,
+      "Add"
+     ],
+     "Cost": 2000000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "R_Luck22",
+     "Q": 12,
+     "R": -6,
+     "Effect": [
+      "LuckMult",
+      7.5,
+      "Add"
+     ],
+     "Cost": 120000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "W2_KoiFortune",
+     "Q": 13,
+     "R": -6,
+     "Effect": [
+      "LuckMult",
+      4.0,
+      "Add"
+     ],
+     "Cost": 500000000000000.0,
+     "RequiredStage": "Sakura",
+     "Center": false
+    },
+    {
+     "Id": "W2_LuckyLollipop",
+     "Q": 14,
+     "R": -7,
+     "Effect": [
+      "LuckMult",
+      6.0,
+      "Add"
+     ],
+     "Cost": 1800000000000000.0,
+     "RequiredStage": "Candy",
+     "Center": false
+    }
+   ]
+  },
+  {
+   "Id": "Misc",
+   "BaseCost": null,
+   "Growth": null,
+   "Nodes": [
+    {
+     "Id": "M_Center",
+     "Q": 0,
+     "R": 0,
+     "Effect": [
+      "WalkSpeed",
+      1.0,
+      "Add"
+     ],
+     "Cost": 38.0,
+     "RequiredStage": "Starter",
+     "Center": true
+    },
+    {
+     "Id": "M_Walk1",
+     "Q": 1,
+     "R": 0,
+     "Effect": [
+      "WalkSpeed",
+      2.0,
+      "Add"
+     ],
+     "Cost": 143.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "M_Walk2",
+     "Q": 2,
+     "R": 0,
+     "Effect": [
+      "WalkSpeed",
+      2.0,
+      "Add"
+     ],
+     "Cost": 1000.0,
+     "RequiredStage": "Desert",
+     "Center": false
+    },
+    {
+     "Id": "M_Sprint",
+     "Q": 3,
+     "R": -1,
+     "Effect": [
+      "WalkSpeed",
+      3.0,
+      "Add"
+     ],
+     "Cost": 19000.0,
+     "RequiredStage": "Cursed",
+     "Center": false
+    },
+    {
+     "Id": "M_Friend1",
+     "Q": 0,
+     "R": -1,
+     "Effect": [
+      "FriendBoost",
+      0.05,
+      "Add"
+     ],
+     "Cost": 98.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "M_Friend2",
+     "Q": 0,
+     "R": -2,
+     "Effect": [
+      "FriendBoost",
+      0.05,
+      "Add"
+     ],
+     "Cost": 1000.0,
+     "RequiredStage": "Desert",
+     "Center": false
+    },
+    {
+     "Id": "M_Squad",
+     "Q": 1,
+     "R": -3,
+     "Effect": [
+      "FriendBoost",
+      0.05,
+      "Add"
+     ],
+     "Cost": 19000.0,
+     "RequiredStage": "Cursed",
+     "Center": false
+    },
+    {
+     "Id": "M_Egg1",
+     "Q": -1,
+     "R": 1,
+     "Effect": [
+      "EggDiscount",
+      0.05,
+      "Add"
+     ],
+     "Cost": 120.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "M_Egg2",
+     "Q": -2,
+     "R": 1,
+     "Effect": [
+      "EggDiscount",
+      0.05,
+      "Add"
+     ],
+     "Cost": 810.0,
+     "RequiredStage": "Desert",
+     "Center": false
+    },
+    {
+     "Id": "M_Egg3",
+     "Q": -2,
+     "R": 2,
+     "Effect": [
+      "EggDiscount",
+      0.1,
+      "Add"
+     ],
+     "Cost": 620.0,
+     "RequiredStage": "Desert",
+     "Center": false
+    },
+    {
+     "Id": "M_Egg4",
+     "Q": -3,
+     "R": 2,
+     "Effect": [
+      "EggDiscount",
+      0.1,
+      "Add"
+     ],
+     "Cost": 36000.0,
+     "RequiredStage": "Cursed",
+     "Center": false
+    },
+    {
+     "Id": "M_Pet1",
+     "Q": 0,
+     "R": 1,
+     "Effect": [
+      "WalkSpeed",
+      1.0,
+      "Add"
+     ],
+     "Cost": 98.0,
+     "RequiredStage": "Starter",
+     "Center": false
+    },
+    {
+     "Id": "M_Equip1",
+     "Q": 0,
+     "R": 2,
+     "Effect": [
+      "PetSlots",
+      1.0,
+      "Add"
+     ],
+     "Cost": 24000000.0,
+     "RequiredStage": "Crystal",
+     "Center": false
+    },
+    {
+     "Id": "M_Equip2",
+     "Q": 1,
+     "R": 2,
+     "Effect": [
+      "PetSlots",
+      1.0,
+      "Add"
+     ],
+     "Cost": 1600000000.0,
+     "RequiredStage": "Retro",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion1",
+     "Q": 1,
+     "R": -1,
+     "Effect": [
+      "PetBoostMult",
+      0.1,
+      "Add"
+     ],
+     "Cost": 500.0,
+     "RequiredStage": "Desert",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion2",
+     "Q": -1,
+     "R": 0,
+     "Effect": [
+      "WalkSpeed",
+      1.0,
+      "Add"
+     ],
+     "Cost": 720.0,
+     "RequiredStage": "Desert",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion3",
+     "Q": 1,
+     "R": -2,
+     "Effect": [
+      "EggDiscount",
+      0.025,
+      "Add"
+     ],
+     "Cost": 940.0,
+     "RequiredStage": "Desert",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion4",
+     "Q": 2,
+     "R": -2,
+     "Effect": [
+      "PetBoostMult",
+      0.1,
+      "Add"
+     ],
+     "Cost": 1200.0,
+     "RequiredStage": "Desert",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion5",
+     "Q": -1,
+     "R": -1,
+     "Effect": [
+      "WalkSpeed",
+      1.0,
+      "Add"
+     ],
+     "Cost": 15000.0,
+     "RequiredStage": "Cursed",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion6",
+     "Q": 2,
+     "R": -1,
+     "Effect": [
+      "EggDiscount",
+      0.025,
+      "Add"
+     ],
+     "Cost": 22000.0,
+     "RequiredStage": "Cursed",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion7",
+     "Q": -2,
+     "R": 0,
+     "Effect": [
+      "PetBoostMult",
+      0.1,
+      "Add"
+     ],
+     "Cost": 28000.0,
+     "RequiredStage": "Cursed",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion8",
+     "Q": 1,
+     "R": 1,
+     "Effect": [
+      "WalkSpeed",
+      1.0,
+      "Add"
+     ],
+     "Cost": 9300000.0,
+     "RequiredStage": "Crystal",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion9",
+     "Q": -1,
+     "R": 2,
+     "Effect": [
+      "FriendBoost",
+      0.025,
+      "Add"
+     ],
+     "Cost": 4000000.0,
+     "RequiredStage": "Crystal",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion10",
+     "Q": 0,
+     "R": -3,
+     "Effect": [
+      "PetBoostMult",
+      0.1,
+      "Add"
+     ],
+     "Cost": 5800000.0,
+     "RequiredStage": "Crystal",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion11",
+     "Q": 2,
+     "R": -3,
+     "Effect": [
+      "WalkSpeed",
+      1.0,
+      "Add"
+     ],
+     "Cost": 7600000.0,
+     "RequiredStage": "Crystal",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion12",
+     "Q": 3,
+     "R": -3,
+     "Effect": [
+      "EggDiscount",
+      0.025,
+      "Add"
+     ],
+     "Cost": 740000000.0,
+     "RequiredStage": "Retro",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion13",
+     "Q": -1,
+     "R": -2,
+     "Effect": [
+      "PetBoostMult",
+      0.1,
+      "Add"
+     ],
+     "Cost": 320000000.0,
+     "RequiredStage": "Retro",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion14",
+     "Q": 3,
+     "R": -2,
+     "Effect": [
+      "WalkSpeed",
+      1.0,
+      "Add"
+     ],
+     "Cost": 460000000.0,
+     "RequiredStage": "Retro",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion15",
+     "Q": -2,
+     "R": -1,
+     "Effect": [
+      "EggDiscount",
+      0.025,
+      "Add"
+     ],
+     "Cost": 43000000000.0,
+     "RequiredStage": "Jungle",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion16",
+     "Q": -3,
+     "R": 0,
+     "Effect": [
+      "PetBoostMult",
+      0.1,
+      "Add"
+     ],
+     "Cost": 53000000000.0,
+     "RequiredStage": "Jungle",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion17",
+     "Q": 3,
+     "R": 0,
+     "Effect": [
+      "WalkSpeed",
+      1.0,
+      "Add"
+     ],
+     "Cost": 23000000000.0,
+     "RequiredStage": "Jungle",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion18",
+     "Q": -3,
+     "R": 1,
+     "Effect": [
+      "FriendBoost",
+      0.025,
+      "Add"
+     ],
+     "Cost": 33000000000.0,
+     "RequiredStage": "Jungle",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion19",
+     "Q": 2,
+     "R": 1,
+     "Effect": [
+      "PetBoostMult",
+      0.1,
+      "Add"
+     ],
+     "Cost": 2200000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion20",
+     "Q": -3,
+     "R": 3,
+     "Effect": [
+      "WalkSpeed",
+      1.0,
+      "Add"
+     ],
+     "Cost": 2800000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "M_Expansion21",
+     "Q": -2,
+     "R": 3,
+     "Effect": [
+      "PetBoostMult",
+      0.1,
+      "Add"
+     ],
+     "Cost": 1200000000000.0,
+     "RequiredStage": "AbsoluteZero",
+     "Center": false
+    },
+    {
+     "Id": "M_Feast",
+     "Q": -1,
+     "R": 3,
+     "Effect": [
+      "PetBoostMult",
+      0.2,
+      "Add"
+     ],
+     "Cost": 110000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    },
+    {
+     "Id": "W2_KoiCompanions",
+     "Q": 0,
+     "R": 3,
+     "Effect": [
+      "PetBoostMult",
+      0.15,
+      "Add"
+     ],
+     "Cost": 600000000000000.0,
+     "RequiredStage": "Sakura",
+     "Center": false
+    },
+    {
+     "Id": "W2_SweetFriends",
+     "Q": -1,
+     "R": 4,
+     "Effect": [
+      "PetBoostMult",
+      0.2,
+      "Add"
+     ],
+     "Cost": 2000000000000000.0,
+     "RequiredStage": "Candy",
+     "Center": false
+    },
+    {
+     "Id": "M_PortalBoots",
+     "Q": 4,
+     "R": -1,
+     "Effect": [
+      "WalkSpeed",
+      2.0,
+      "Add"
+     ],
+     "Cost": 88000000000000.0,
+     "RequiredStage": "Portal",
+     "Center": false
+    }
+   ]
+  }
+ ],
+ "base": {
+  "SizeMult": 1.0,
+  "SpinMult": 1.0,
+  "WalkSpeed": 16.0,
+  "ShovelSlots": 2.0,
+  "PetSlots": 3.0,
+  "PowerBonus": 0.0,
+  "EggDiscount": 0.0,
+  "LuckMult": 1.0,
+  "FriendBoost": 0.0,
+  "RollAnimScale": 1.0,
+  "ReachMult": 1.0,
+  "DoubleRollChance": 0.0,
+  "SnowMult": 1.0,
+  "PowerMult": 1.0,
+  "PetBoostMult": 1.0,
+  "GoldenEvery": 0.0,
+  "RainbowEvery": 0.0,
+  "GoldenLuck": 3.0,
+  "RainbowLuck": 10.0
+ },
+ "limits": {
+  "EggDiscount": [
+   0.0,
+   0.5
+  ],
+  "DoubleRollChance": [
+   0.0,
+   0.5
+  ],
+  "RollAnimScale": [
+   0.6,
+   1.0
+  ],
+  "ReachMult": [
+   1.0,
+   1.5
+  ],
+  "SpinMult": [
+   1.0,
+   1.6
+  ],
+  "WalkSpeed": [
+   16.0,
+   40.0
+  ],
+  "PetBoostMult": [
+   1.0,
+   2.0
+  ],
+  "FriendBoost": [
+   0.0,
+   0.2
+  ],
+  "GoldenEvery": [
+   0.0,
+   10.0
+  ],
+  "RainbowEvery": [
+   0.0,
+   100.0
+  ]
+ },
+ "eggs": [
+  {
+   "Id": "SnowyEgg",
+   "Cost": 450.0,
+   "RequiredStage": "Starter",
+   "Pets": [
+    {
+     "Chance": 45.0,
+     "Boost": 0.05
+    },
+    {
+     "Chance": 30.0,
+     "Boost": 0.08
+    },
+    {
+     "Chance": 15.0,
+     "Boost": 0.12
+    },
+    {
+     "Chance": 8.0,
+     "Boost": 0.2
+    },
+    {
+     "Chance": 2.0,
+     "Boost": 0.4
+    }
+   ]
+  },
+  {
+   "Id": "DesertEgg",
+   "Cost": 1500.0,
+   "RequiredStage": "Desert",
+   "Pets": [
+    {
+     "Chance": 45.0,
+     "Boost": 0.1
+    },
+    {
+     "Chance": 30.0,
+     "Boost": 0.15
+    },
+    {
+     "Chance": 15.0,
+     "Boost": 0.22
+    },
+    {
+     "Chance": 8.0,
+     "Boost": 0.35
+    },
+    {
+     "Chance": 2.0,
+     "Boost": 0.7
+    }
+   ]
+  },
+  {
+   "Id": "CrystalEgg",
+   "Cost": 5800000.0,
+   "RequiredStage": "Crystal",
+   "Pets": [
+    {
+     "Chance": 45.0,
+     "Boost": 0.3
+    },
+    {
+     "Chance": 30.0,
+     "Boost": 0.42
+    },
+    {
+     "Chance": 15.0,
+     "Boost": 0.95
+    },
+    {
+     "Chance": 8.0,
+     "Boost": 0.6
+    },
+    {
+     "Chance": 2.0,
+     "Boost": 1.8
+    }
+   ]
+  },
+  {
+   "Id": "CursedEgg",
+   "Cost": 38000.0,
+   "RequiredStage": "Cursed",
+   "Pets": [
+    {
+     "Chance": 45.0,
+     "Boost": 0.18
+    },
+    {
+     "Chance": 30.0,
+     "Boost": 0.25
+    },
+    {
+     "Chance": 15.0,
+     "Boost": 0.38
+    },
+    {
+     "Chance": 8.0,
+     "Boost": 0.6
+    },
+    {
+     "Chance": 2.0,
+     "Boost": 1.2
+    }
+   ]
+  },
+  {
+   "Id": "RetroEgg",
+   "Cost": 400000000.0,
+   "RequiredStage": "Retro",
+   "Pets": [
+    {
+     "Chance": 45.0,
+     "Boost": 0.5
+    },
+    {
+     "Chance": 30.0,
+     "Boost": 0.7
+    },
+    {
+     "Chance": 15.0,
+     "Boost": 1.0
+    },
+    {
+     "Chance": 8.0,
+     "Boost": 1.6
+    },
+    {
+     "Chance": 2.0,
+     "Boost": 3.0
+    }
+   ]
+  },
+  {
+   "Id": "JungleEgg",
+   "Cost": 14000000000.0,
+   "RequiredStage": "Jungle",
+   "Pets": [
+    {
+     "Chance": 45.0,
+     "Boost": 0.8
+    },
+    {
+     "Chance": 30.0,
+     "Boost": 1.1
+    },
+    {
+     "Chance": 15.0,
+     "Boost": 1.6
+    },
+    {
+     "Chance": 8.0,
+     "Boost": 2.6
+    },
+    {
+     "Chance": 2.0,
+     "Boost": 5.0
+    }
+   ]
+  },
+  {
+   "Id": "AbsoluteZeroEgg",
+   "Cost": 300000000000.0,
+   "RequiredStage": "AbsoluteZero",
+   "Pets": [
+    {
+     "Chance": 45.0,
+     "Boost": 1.3
+    },
+    {
+     "Chance": 30.0,
+     "Boost": 1.8
+    },
+    {
+     "Chance": 15.0,
+     "Boost": 2.6
+    },
+    {
+     "Chance": 8.0,
+     "Boost": 4.2
+    },
+    {
+     "Chance": 2.0,
+     "Boost": 8.0
+    }
+   ]
+  },
+  {
+   "Id": "BlossomEgg",
+   "Cost": 15000000000000.0,
+   "RequiredStage": "Sakura",
+   "Pets": [
+    {
+     "Chance": 45.0,
+     "Boost": 2.0
+    },
+    {
+     "Chance": 30.0,
+     "Boost": 2.7
+    },
+    {
+     "Chance": 15.0,
+     "Boost": 3.9
+    },
+    {
+     "Chance": 8.0,
+     "Boost": 6.3
+    },
+    {
+     "Chance": 2.0,
+     "Boost": 12.0
+    }
+   ]
+  },
+  {
+   "Id": "CandyEgg",
+   "Cost": 45000000000000.0,
+   "RequiredStage": "Candy",
+   "Pets": [
+    {
+     "Chance": 45.0,
+     "Boost": 3.0
+    },
+    {
+     "Chance": 30.0,
+     "Boost": 4.0
+    },
+    {
+     "Chance": 15.0,
+     "Boost": 5.9
+    },
+    {
+     "Chance": 8.0,
+     "Boost": 9.5
+    },
+    {
+     "Chance": 2.0,
+     "Boost": 18.0
+    }
+   ]
+  }
+ ],
+ "stages": [
+  {
+   "Id": "Starter",
+   "Cost": 0.0
+  },
+  {
+   "Id": "Desert",
+   "Cost": 2500.0
+  },
+  {
+   "Id": "Cursed",
+   "Cost": 250000.0
+  },
+  {
+   "Id": "Crystal",
+   "Cost": 54000000.0
+  },
+  {
+   "Id": "Retro",
+   "Cost": 4000000000.0
+  },
+  {
+   "Id": "Jungle",
+   "Cost": 135000000000.0
+  },
+  {
+   "Id": "AbsoluteZero",
+   "Cost": 2500000000000.0
+  },
+  {
+   "Id": "Portal",
+   "Cost": 150000000000000.0
+  },
+  {
+   "Id": "Sakura",
+   "Cost": 0.0
+  },
+  {
+   "Id": "Candy",
+   "Cost": 450000000000000.0
+  }
+ ],
+ "fields": {
+  "AbsoluteZero": {
+   "TileHP": 30000.0,
+   "SPP": 150000.0
+  },
+  "Crystal": {
+   "TileHP": 100.0,
+   "SPP": 400.0
+  },
+  "Cursed": {
+   "TileHP": 15.0,
+   "SPP": 60.0
+  },
+  "Desert": {
+   "TileHP": 5.0,
+   "SPP": 10.0
+  },
+  "Jungle": {
+   "TileHP": 5000.0,
+   "SPP": 20000.0
+  },
+  "Retro": {
+   "TileHP": 700.0,
+   "SPP": 3000.0
+  },
+  "Starter": {
+   "TileHP": 1.0,
+   "SPP": 1.0
+  },
+  "Sakura": {
+   "TileHP": 60000,
+   "SPP": 400000
+  },
+  "Candy": {
+   "TileHP": 150000,
+   "SPP": 1200000
+  }
+ }
+}

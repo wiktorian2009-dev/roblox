@@ -1,0 +1,92 @@
+{
+  "assetId": "107813106546276",
+  "models": {
+    "PlowChassis": {
+      "tris": 3008,
+      "size": [
+        6.0,
+        8.38,
+        5.8
+      ]
+    },
+    "BladeBasic": {
+      "tris": 924,
+      "size": [
+        7.52,
+        2.48,
+        2.72
+      ]
+    },
+    "BladeWide": {
+      "tris": 1788,
+      "size": [
+        13.06,
+        2.99,
+        2.78
+      ]
+    },
+    "BladeIce": {
+      "tris": 2004,
+      "size": [
+        9.49,
+        3.53,
+        3.24
+      ]
+    },
+    "EngineStarter": {
+      "tris": 492,
+      "size": [
+        2.5,
+        2.37,
+        3.33
+      ]
+    },
+    "EngineBalanced": {
+      "tris": 936,
+      "size": [
+        3.1,
+        2.97,
+        4.03
+      ]
+    },
+    "EnginePower": {
+      "tris": 1476,
+      "size": [
+        3.46,
+        3.08,
+        5.43
+      ]
+    },
+    "GearWheels": {
+      "tris": 852,
+      "size": [
+        7.75,
+        7.1,
+        2.42
+      ]
+    },
+    "GearTracks": {
+      "tris": 5068,
+      "size": [
+        7.13,
+        7.25,
+        2.03
+      ]
+    }
+  },
+  "markers": {
+    "PlowChassis": [
+      "Mount",
+      "AttachBlade",
+      "AttachEngine",
+      "AttachGear",
+      "SeatPos"
+    ],
+    "parts": [
+      "Mount"
+    ]
+  },
+  "forward": "-Y in Blender (blade side); up = +Z",
+  "date": "2026-10-04",
+  "previousAssetId": "109040330621853 (v1: cylinders were not centred)"
+}

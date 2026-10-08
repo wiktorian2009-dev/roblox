@@ -1,0 +1,1 @@
+[{"old_string": "\tlocal ok, res = pcall(function() return remote:InvokeServer(action, a, b, c) end)", "new_string": "\t-- 2026-10-05: every request carries the current garage-bay lease, so a request made for an earlier bay visit is refused\n\tlocal ok, res = pcall(function() return remote:InvokeServer(action, a, b, c, player:GetAttribute(\"GarageLease\")) end)"}]

@@ -1,0 +1,694 @@
+{
+  "flags": [],
+  "rewardsButton": true,
+  "backupNames": [
+    "UpgradeTreeClient_Backup20261001",
+    "UpgradeTreeClient_v2_Backup",
+    "PetArtBackup_20260929",
+    "OldLobbyBackup",
+    "EggArt2026Backup",
+    "IntroBackup_20260930",
+    "StageDecor20260930_ArtBackupV1",
+    "StageDecor20260930_ArtBackupV3",
+    "StageDecor20260930_ArtBackup",
+    "DesertCanyon20261001_Rejected",
+    "LightingBackup_20261001",
+    "UpgradeIconBackup20261001",
+    "LobbyUpgradeBackup20261001",
+    "LuckRebalanceBackup20261001",
+    "LateGameDiceBackup20261001",
+    "EggFinishBackup20261001",
+    "MutationsBackup20261001",
+    "TreasuresBackup20261001",
+    "BottomBarBackup20261002",
+    "IndexCategoriesBackup20261002",
+    "World2Backup20261002",
+    "BalanceBackups"
+  ],
+  "fieldZones": [
+    {
+      "attributes": {
+        "Stage": "Jungle"
+      },
+      "name": "Jungle_1",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Retro"
+      },
+      "name": "Retro_2",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Sakura"
+      },
+      "name": "Sakura_1",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Sakura"
+      },
+      "name": "Sakura_2",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Cursed"
+      },
+      "name": "Cursed_1",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Starter",
+        "DisplayName": "Frostfall Snow Yard"
+      },
+      "name": "FrostfallSnowYard",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Retro"
+      },
+      "name": "Retro_1",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Crystal"
+      },
+      "name": "Crystal_2",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Cursed"
+      },
+      "name": "Cursed_2",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Desert"
+      },
+      "name": "Desert_2",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Desert"
+      },
+      "name": "Desert_1",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Crystal"
+      },
+      "name": "Crystal_1",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Starter"
+      },
+      "name": "Starter",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "AbsoluteZero"
+      },
+      "name": "AbsoluteZero_1",
+      "className": "Part"
+    },
+    {
+      "attributes": {
+        "Stage": "Jungle"
+      },
+      "name": "Jungle_2",
+      "className": "Part"
+    }
+  ],
+  "rewardsPanel": true,
+  "world2": {
+    "hiddenUntilFix": [
+      "Workspace.World2.Props.Bridge.Bridge_Red"
+    ],
+    "exists": true,
+    "parts": 129
+  },
+  "snowStages": [
+    {
+      "children": [
+        {
+          "descendants": 0,
+          "name": "Phase3",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase2",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase1",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Floor",
+          "className": "Part"
+        },
+        {
+          "descendants": 2,
+          "name": "Puff",
+          "className": "Part"
+        }
+      ],
+      "attributes": {
+        "SnowPerPhase": 1,
+        "RegrowSeconds": 8,
+        "DisplayName": "Snow",
+        "TileHP": 1,
+        "Gap": 0.04,
+        "HeightJitter": 0.18
+      },
+      "name": "Starter",
+      "className": "Folder"
+    },
+    {
+      "children": [
+        {
+          "descendants": 0,
+          "name": "Phase3",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase2",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase1",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Floor",
+          "className": "Part"
+        },
+        {
+          "descendants": 2,
+          "name": "Puff",
+          "className": "Part"
+        }
+      ],
+      "attributes": {
+        "SnowPerPhase": 10,
+        "RegrowSeconds": 8,
+        "DisplayName": "Desert Dust",
+        "TileHP": 5,
+        "Gap": 0.04,
+        "HeightJitter": 0.18
+      },
+      "name": "Desert",
+      "className": "Folder"
+    },
+    {
+      "children": [
+        {
+          "descendants": 0,
+          "name": "Phase3",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase2",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase1",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Floor",
+          "className": "Part"
+        },
+        {
+          "descendants": 2,
+          "name": "Puff",
+          "className": "Part"
+        }
+      ],
+      "attributes": {
+        "SnowPerPhase": 20000,
+        "RegrowSeconds": 7,
+        "DisplayName": "Jungle Moss",
+        "TileHP": 5000,
+        "Gap": 0.04,
+        "HeightJitter": 0.22
+      },
+      "name": "Jungle",
+      "className": "Folder"
+    },
+    {
+      "children": [
+        {
+          "descendants": 0,
+          "name": "Phase3",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase2",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase1",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Floor",
+          "className": "Part"
+        },
+        {
+          "descendants": 2,
+          "name": "Puff",
+          "className": "Part"
+        }
+      ],
+      "attributes": {
+        "SnowPerPhase": 400,
+        "RegrowSeconds": 6,
+        "DisplayName": "Crystal Shards",
+        "TileHP": 100,
+        "Gap": 0.06,
+        "HeightJitter": 0.15
+      },
+      "name": "Crystal",
+      "className": "Folder"
+    },
+    {
+      "children": [
+        {
+          "descendants": 0,
+          "name": "Phase3",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase2",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase1",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Floor",
+          "className": "Part"
+        },
+        {
+          "descendants": 2,
+          "name": "Puff",
+          "className": "Part"
+        }
+      ],
+      "attributes": {
+        "SnowPerPhase": 60,
+        "RegrowSeconds": 6,
+        "DisplayName": "Cursed Ash",
+        "TileHP": 15,
+        "Gap": 0.04,
+        "HeightJitter": 0.25
+      },
+      "name": "Cursed",
+      "className": "Folder"
+    },
+    {
+      "children": [
+        {
+          "descendants": 0,
+          "name": "Phase3",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase2",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase1",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Floor",
+          "className": "Part"
+        },
+        {
+          "descendants": 2,
+          "name": "Puff",
+          "className": "Part"
+        }
+      ],
+      "attributes": {
+        "SnowPerPhase": 3000,
+        "RegrowSeconds": 5,
+        "DisplayName": "Retro Bricks",
+        "TileHP": 700,
+        "Gap": 0.12,
+        "HeightJitter": 0
+      },
+      "name": "Retro",
+      "className": "Folder"
+    },
+    {
+      "children": [
+        {
+          "descendants": 0,
+          "name": "Phase3",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase2",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase1",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Floor",
+          "className": "Part"
+        },
+        {
+          "descendants": 2,
+          "name": "Puff",
+          "className": "Part"
+        }
+      ],
+      "attributes": {
+        "SnowPerPhase": 150000,
+        "RegrowSeconds": 5,
+        "DisplayName": "Frozen Snow",
+        "TileHP": 30000,
+        "Gap": 0.04,
+        "HeightJitter": 0.2
+      },
+      "name": "AbsoluteZero",
+      "className": "Folder"
+    },
+    {
+      "children": [
+        {
+          "descendants": 0,
+          "name": "Phase3",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase2",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Phase1",
+          "className": "Part"
+        },
+        {
+          "descendants": 0,
+          "name": "Floor",
+          "className": "Part"
+        },
+        {
+          "descendants": 2,
+          "name": "Puff",
+          "className": "Part"
+        }
+      ],
+      "attributes": {
+        "SnowPerPhase": 400000,
+        "RegrowSeconds": 5,
+        "DisplayName": "Sakura Petals",
+        "TileHP": 60000,
+        "Gap": 0.04,
+        "HeightJitter": 0.2
+      },
+      "name": "Sakura",
+      "className": "Folder"
+    }
+  ],
+  "rsChildren": [
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "StageConfig",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "RNGConfig",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "ItemIcon",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "SnowFields",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "PetConfig",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "PetModels",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "NumberFormat",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "MusicConfig",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "UpgradeConfig",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "Balance",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "RebirthConfig",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "EggModels",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "SnowIntroArt",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "SnowIntroController",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "SnowIntroRig",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "TreasureConfig",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "TreasureModels",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "TreasureIcon",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "ActivityConfig",
+      "className": "ModuleScript"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "RollRNG",
+      "className": "RemoteEvent"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "GetInventory",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "EquipShovel",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 36,
+      "name": "ShovelModels",
+      "className": "Folder"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "SnowFieldUpdate",
+      "className": "RemoteEvent"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "SnowFieldSync",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "SnowCollected",
+      "className": "RemoteEvent"
+    },
+    {
+      "attributes": [],
+      "children": 8,
+      "name": "SnowStages",
+      "className": "Folder"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "PetHatched",
+      "className": "RemoteEvent"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "EquipPet",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "GetPets",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "SetSetting",
+      "className": "RemoteEvent"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "BuyUpgrade",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "AdminCommand",
+      "className": "RemoteEvent"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "DataRefresh",
+      "className": "RemoteEvent"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "UnlockStage",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "RequestRebirth",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "SnowIntroRequest",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "TreasureRemote",
+      "className": "RemoteFunction"
+    },
+    {
+      "attributes": [],
+      "children": 0,
+      "name": "TreasureFound",
+      "className": "RemoteEvent"
+    }
+  ]
+}

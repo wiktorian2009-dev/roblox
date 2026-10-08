@@ -1,0 +1,1 @@
+[{"old_string": "(\"Top speed: %d\"):format(math.floor(st.MaxSpeed + 0.5)),", "new_string": "(\"Top speed: %d   In snow: %d\"):format(math.floor(st.MaxSpeed + 0.5), math.floor(st.MaxSpeed * (C.Drive.PlowingSpeedFactor or 1) + 0.5)),"}]

@@ -1,0 +1,130 @@
+{
+  "textures": [
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "ring"
+    },
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "flame"
+    },
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "glow"
+    },
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "shockwave"
+    },
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "smoke"
+    },
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "streak"
+    },
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "lightning"
+    },
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "star"
+    },
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "rune-circle"
+    },
+    {
+      "status": "Success",
+      "isLoaded": true,
+      "name": "slash"
+    }
+  ],
+  "runtime": {
+    "textures": {
+      "rbxassetid://108330441363617": "Failure",
+      "rbxassetid://92442025398753": "Failure",
+      "rbxassetid://119975616479598": "Failure",
+      "rbxassetid://104432270633368": "Failure",
+      "rbxassetid://92215847798194": "Failure",
+      "rbxassetid://124795961067557": "Failure",
+      "rbxassetid://71765990400754": "Failure",
+      "rbxassetid://96092628040706": "Failure",
+      "rbxassetid://129489718653508": "Failure",
+      "rbxassetid://112922560288804": "Failure"
+    },
+    "cleanup": true,
+    "presets": [
+      {
+        "hasValidTextures": true,
+        "emitters": 2,
+        "name": "Fire",
+        "totalRate": 17
+      },
+      {
+        "hasValidTextures": true,
+        "emitters": 1,
+        "name": "Steam",
+        "totalRate": 3
+      },
+      {
+        "hasValidTextures": true,
+        "emitters": 1,
+        "name": "Embers",
+        "totalRate": 6
+      },
+      {
+        "hasValidTextures": true,
+        "emitters": 2,
+        "name": "IceAura",
+        "totalRate": 5.5
+      },
+      {
+        "hasValidTextures": true,
+        "emitters": 2,
+        "name": "MagicAura",
+        "totalRate": 5.5
+      },
+      {
+        "hasValidTextures": true,
+        "emitters": 2,
+        "name": "ElectricAura",
+        "totalRate": 7
+      },
+      {
+        "hasValidTextures": true,
+        "emitters": 2,
+        "name": "Impact",
+        "totalRate": 0
+      },
+      {
+        "hasValidTextures": true,
+        "emitters": 2,
+        "name": "PowerUp",
+        "totalRate": 0
+      },
+      {
+        "hasValidTextures": true,
+        "emitters": 1,
+        "name": "Slash",
+        "totalRate": 0
+      }
+    ],
+    "tint": true,
+    "scale": true,
+    "destroy": true,
+    "disabled": true,
+    "enabled": true
+  }
+}

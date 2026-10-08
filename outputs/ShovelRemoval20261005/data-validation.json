@@ -1,0 +1,52 @@
+{
+  "kind": "static_and_arithmetic_checks_not_runtime",
+  "prepared_count": 8,
+  "upgrade_nodes_preserved": 138,
+  "protected_fields": [
+    "Q",
+    "R",
+    "RequiredStage",
+    "Cost",
+    "CostMult",
+    "Icon",
+    "IconTint",
+    "IconRainbow",
+    "Center"
+  ],
+  "converted_effects": {
+    "S_Third": "SnowMult",
+    "R_Dice1": "RollCooldownMult",
+    "R_Dice2": "RollCooldownMult",
+    "R_Dice3": "RollCooldownMult",
+    "R_Hyper": "RollCooldownMult",
+    "R_Dice4": "SnowMult",
+    "R_Dice5": "SnowMult",
+    "R_Triple": "SnowMult",
+    "R_Gold1": "LuckMult",
+    "R_Gold2": "LuckMult",
+    "R_Gold3": "LuckMult",
+    "R_Gold4": "LuckMult",
+    "R_Gold5": "LuckMult",
+    "R_Gold6": "LuckMult",
+    "R_Rain1": "LuckMult",
+    "R_Rain2": "LuckMult",
+    "R_Rain3": "LuckMult",
+    "R_Rain4": "LuckMult",
+    "R_Rain5": "LuckMult",
+    "R_Rain6": "LuckMult"
+  },
+  "retired_stats_absent": true,
+  "quest_migration_preserves_progress": true,
+  "all_17_width_purchases_increase_width_or_power": true,
+  "prepared_sha256": {
+    "ReplicatedStorage.ActivityConfig.luau": "52c1ee8e8c4f902b393d7db58a8fd292dcbc0f0e4b5146994b427d7f799642fd",
+    "ReplicatedStorage.UpgradeConfig.luau": "71a1b4f9c3eb5a3ffdf97b3dc7393dcafd30cb1578cd87819565b371b437246c",
+    "ReplicatedStorage.PlowConfig.luau": "976deb7cc873bae1497d0983677865698deddbdce9ee0e0c76560f41644b08f7",
+    "ServerScriptService.ActivityService.luau": "d5b7b6b0a6d632811f816bc34367befc0a867c2f37aeed399958751923f93044",
+    "ServerScriptService.DataService.luau": "6e705d01d7dc28fb1b73c9c4dbfa19b34acd2e2443798fd77f70f3ae14ae1c0c",
+    "ServerScriptService.RebirthRules.luau": "2ade4df4db780061b54207bf34c66166a9c9520603e6cae3b51dd89dbd7b0003",
+    "ServerScriptService.RebirthService.luau": "67f055452e17d536353117c904ef332a429c6390fd9e8326198d13e9ef820b8a",
+    "ServerScriptService.UpgradeService.luau": "5241084882a04237bef09e88d3a3d8d541cf1be58fd6fa2589fd86ac476908f1"
+  },
+  "quest_migration_runs_on_profile_ready": true
+}

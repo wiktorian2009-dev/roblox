@@ -1,0 +1,573 @@
+{
+ "date": "2026-10-05",
+ "units": "1 Blender unit = 1 stud; front = -Y (Roblox -Z); up = +Z (Roblox +Y)",
+ "origin": "each model's origin = its placement point (floor-top centre for GarageBay/GarageStreet; floor-level centre for others; island/annex top surface at z=-0.05)",
+ "refMarker": "Ref__Origin__FF00FFNE (0.2 cube) at each pack's world origin; model origin = Ref position + at (Blender coords). Studio maps Blender (x,y,z) -> Roblox local (-x, z, y) relative to the Ref frame.",
+ "packs": [
+  {
+   "pack": "Pack_Bay",
+   "file": "fbx/Pack_Bay.fbx",
+   "assetId": "84967579506297",
+   "models": [
+    "GarageBay",
+    "GarageStreet"
+   ],
+   "tris": 7360
+  },
+  {
+   "pack": "Pack_Island",
+   "file": "fbx/Pack_Island.fbx",
+   "assetId": "75601364045847",
+   "models": [
+    "GarageIsland",
+    "GarageAnnexSlab"
+   ],
+   "tris": 7472
+  },
+  {
+   "pack": "Pack_Landmarks",
+   "file": "fbx/Pack_Landmarks.fbx",
+   "assetId": "125402282474017",
+   "models": [
+    "PlazaLandmark",
+    "ReturnPortal"
+   ],
+   "tris": 7820
+  },
+  {
+   "pack": "Pack_Props",
+   "file": "fbx/Pack_Props.fbx",
+   "assetId": "89063711027475",
+   "models": [
+    "GaragePineTree",
+    "GarageCrateStack",
+    "GarageOilDrums",
+    "GarageToolCart",
+    "GarageLampPost",
+    "GarageSnowPile",
+    "GarageBench",
+    "GarageHoistCrane"
+   ],
+   "tris": 8504
+  }
+ ],
+ "models": {
+  "GarageBay": {
+   "pack": "Pack_Bay",
+   "packFile": "fbx/Pack_Bay.fbx",
+   "assetId": "84967579506297",
+   "at": [
+    30,
+    0,
+    0
+   ],
+   "tris": 5736,
+   "objects": 15,
+   "neonParts": [
+    "LampBulb"
+   ],
+   "parts": [
+    "Floor:CCD5E0SP",
+    "Ice:9FD8FFSP",
+    "Yellow:FFD23ASP",
+    "Ice2:57D8FFSP",
+    "Red:E2483DSP",
+    "Steel:3B3F4ASP",
+    "Orange:F2A23DSP",
+    "Snow:F6FAFFSP",
+    "Sign:FFF3D6SP",
+    "Wood:E09A5ASP",
+    "Trim:F2F4F7SP",
+    "Glass:BFE8FFGL",
+    "LampBulb:FFE3A0NE",
+    "Silver:C9D2DESP",
+    "Wood2:A9622FSP"
+   ],
+   "bboxMin": [
+    -16.0,
+    -15.3,
+    -1.2
+   ],
+   "bboxMax": [
+    16.0,
+    15.1,
+    12.15
+   ],
+   "size": [
+    32.0,
+    30.4,
+    13.35
+   ]
+  },
+  "GarageStreet": {
+   "pack": "Pack_Bay",
+   "packFile": "fbx/Pack_Bay.fbx",
+   "assetId": "84967579506297",
+   "at": [
+    76,
+    0,
+    0
+   ],
+   "tris": 1624,
+   "objects": 8,
+   "neonParts": [
+    "LampBulb"
+   ],
+   "parts": [
+    "Slab:A9C2DASP",
+    "PaverA:9FD8FFSP",
+    "PaverB:D3ECFBSP",
+    "Snow:F6FAFFSP",
+    "Steel:3B3F4ASP",
+    "Red:E2483DSP",
+    "Orange:F2A23DSP",
+    "LampBulb:FFE3A0NE"
+   ],
+   "bboxMin": [
+    -16.0,
+    -15.0,
+    -1.2
+   ],
+   "bboxMax": [
+    16.0,
+    15.0,
+    7.06
+   ],
+   "size": [
+    32.0,
+    30.0,
+    8.26
+   ]
+  },
+  "GarageIsland": {
+   "pack": "Pack_Island",
+   "packFile": "fbx/Pack_Island.fbx",
+   "assetId": "75601364045847",
+   "at": [
+    90,
+    0,
+    0
+   ],
+   "tris": 6088,
+   "objects": 5,
+   "neonParts": [],
+   "parts": [
+    "Snow:F6FAFFSP",
+    "IceBand:A9CBE8SP",
+    "Rock:7F92ACSP",
+    "Icicles:CFEFFFSP",
+    "Crystal:57D8FFSP"
+   ],
+   "bboxMin": [
+    -77.87,
+    -52.18,
+    -45.0
+   ],
+   "bboxMax": [
+    78.16,
+    52.12,
+    0.4
+   ],
+   "size": [
+    156.04,
+    104.3,
+    45.4
+   ]
+  },
+  "GarageAnnexSlab": {
+   "pack": "Pack_Island",
+   "packFile": "fbx/Pack_Island.fbx",
+   "assetId": "75601364045847",
+   "at": [
+    200,
+    0,
+    0
+   ],
+   "tris": 1384,
+   "objects": 4,
+   "neonParts": [],
+   "parts": [
+    "Snow:F6FAFFSP",
+    "IceBand:A9CBE8SP",
+    "Rock:7F92ACSP",
+    "Icicles:CFEFFFSP"
+   ],
+   "bboxMin": [
+    -16.0,
+    -30.0,
+    -18.0
+   ],
+   "bboxMax": [
+    16.0,
+    30.0,
+    -0.05
+   ],
+   "size": [
+    32.0,
+    60.0,
+    17.95
+   ]
+  },
+  "PlazaLandmark": {
+   "pack": "Pack_Landmarks",
+   "packFile": "fbx/Pack_Landmarks.fbx",
+   "assetId": "125402282474017",
+   "at": [
+    20,
+    0,
+    0
+   ],
+   "tris": 5194,
+   "objects": 12,
+   "neonParts": [
+    "Glow",
+    "LampBulb"
+   ],
+   "parts": [
+    "Plinth:9FD8FFSP",
+    "Snow:F6FAFFSP",
+    "Steel:3B3F4ASP",
+    "Stove:3B3F4ASP",
+    "Orange:F2A23DSP",
+    "Glow:FF9A3DNE",
+    "Gear:FFD23ASP",
+    "Face:FFF3D6SP",
+    "Red:E2483DSP",
+    "LampBulb:FFE3A0NE",
+    "Wood:E09A5ASP",
+    "Wood2:A9622FSP"
+   ],
+   "bboxMin": [
+    -7.12,
+    -7.12,
+    0.0
+   ],
+   "bboxMax": [
+    7.12,
+    7.12,
+    15.9
+   ],
+   "size": [
+    14.25,
+    14.25,
+    15.9
+   ]
+  },
+  "ReturnPortal": {
+   "pack": "Pack_Landmarks",
+   "packFile": "fbx/Pack_Landmarks.fbx",
+   "assetId": "125402282474017",
+   "at": [
+    45,
+    0,
+    0
+   ],
+   "tris": 2626,
+   "objects": 6,
+   "neonParts": [
+    "Swirl",
+    "SwirlLine"
+   ],
+   "parts": [
+    "Base:BFE6FFSP",
+    "Ice:9FD8FFSP",
+    "Ice2:57D8FFSP",
+    "Snow:F6FAFFSP",
+    "Swirl:57D8FFNET15",
+    "SwirlLine:EAFBFFNE"
+   ],
+   "bboxMin": [
+    -5.43,
+    -2.07,
+    0.0
+   ],
+   "bboxMax": [
+    5.43,
+    2.07,
+    11.45
+   ],
+   "size": [
+    10.85,
+    4.14,
+    11.45
+   ]
+  },
+  "GaragePineTree": {
+   "pack": "Pack_Props",
+   "packFile": "fbx/Pack_Props.fbx",
+   "assetId": "89063711027475",
+   "at": [
+    16,
+    0,
+    0
+   ],
+   "tris": 1300,
+   "objects": 3,
+   "neonParts": [],
+   "parts": [
+    "Bark:8A5530SP",
+    "Snow:F6FAFFSP",
+    "Needles:2F9E62SP"
+   ],
+   "bboxMin": [
+    -2.85,
+    -3.0,
+    0.0
+   ],
+   "bboxMax": [
+    2.85,
+    3.0,
+    9.08
+   ],
+   "size": [
+    5.71,
+    6.0,
+    9.08
+   ]
+  },
+  "GarageCrateStack": {
+   "pack": "Pack_Props",
+   "packFile": "fbx/Pack_Props.fbx",
+   "assetId": "89063711027475",
+   "at": [
+    32,
+    0,
+    0
+   ],
+   "tris": 1112,
+   "objects": 5,
+   "neonParts": [],
+   "parts": [
+    "Wood:E09A5ASP",
+    "Wood2:A9622FSP",
+    "Blue:57D8FFSP",
+    "BlueBand:F2F4F7SP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -2.62,
+    -2.98,
+    0.0
+   ],
+   "bboxMax": [
+    2.69,
+    1.69,
+    5.18
+   ],
+   "size": [
+    5.31,
+    4.67,
+    5.18
+   ]
+  },
+  "GarageOilDrums": {
+   "pack": "Pack_Props",
+   "packFile": "fbx/Pack_Props.fbx",
+   "assetId": "89063711027475",
+   "at": [
+    48,
+    0,
+    0
+   ],
+   "tris": 1948,
+   "objects": 5,
+   "neonParts": [],
+   "parts": [
+    "DrumE2483D:E2483DSP",
+    "Steel:3B3F4ASP",
+    "Snow:F6FAFFSP",
+    "DrumFFD23A:FFD23ASP",
+    "Drum57D8FF:57D8FFSP"
+   ],
+   "bboxMin": [
+    -1.94,
+    -1.47,
+    0.0
+   ],
+   "bboxMax": [
+    2.06,
+    2.07,
+    2.88
+   ],
+   "size": [
+    4.0,
+    3.53,
+    2.88
+   ]
+  },
+  "GarageToolCart": {
+   "pack": "Pack_Props",
+   "packFile": "fbx/Pack_Props.fbx",
+   "assetId": "89063711027475",
+   "at": [
+    64,
+    0,
+    0
+   ],
+   "tris": 1032,
+   "objects": 5,
+   "neonParts": [],
+   "parts": [
+    "Red:E2483DSP",
+    "Steel:3B3F4ASP",
+    "Silver:C9D2DESP",
+    "Yellow:FFD23ASP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -1.42,
+    -0.82,
+    0.0
+   ],
+   "bboxMax": [
+    1.9,
+    0.82,
+    3.39
+   ],
+   "size": [
+    3.32,
+    1.64,
+    3.39
+   ]
+  },
+  "GarageLampPost": {
+   "pack": "Pack_Props",
+   "packFile": "fbx/Pack_Props.fbx",
+   "assetId": "89063711027475",
+   "at": [
+    80,
+    0,
+    0
+   ],
+   "tris": 556,
+   "objects": 5,
+   "neonParts": [
+    "LampBulb"
+   ],
+   "parts": [
+    "Steel:3B3F4ASP",
+    "Red:E2483DSP",
+    "Orange:F2A23DSP",
+    "LampBulb:FFE3A0NE",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -0.9,
+    -0.95,
+    0.0
+   ],
+   "bboxMax": [
+    0.9,
+    0.95,
+    7.06
+   ],
+   "size": [
+    1.81,
+    1.9,
+    7.06
+   ]
+  },
+  "GarageSnowPile": {
+   "pack": "Pack_Props",
+   "packFile": "fbx/Pack_Props.fbx",
+   "assetId": "89063711027475",
+   "at": [
+    96,
+    0,
+    0
+   ],
+   "tris": 722,
+   "objects": 5,
+   "neonParts": [],
+   "parts": [
+    "Snow:F6FAFFSP",
+    "Wood:E09A5ASP",
+    "Steel:3B3F4ASP",
+    "Red:E2483DSP",
+    "Ice:9FD8FFSP"
+   ],
+   "bboxMin": [
+    -2.8,
+    -2.75,
+    0.0
+   ],
+   "bboxMax": [
+    2.92,
+    2.24,
+    3.42
+   ],
+   "size": [
+    5.72,
+    4.99,
+    3.42
+   ]
+  },
+  "GarageBench": {
+   "pack": "Pack_Props",
+   "packFile": "fbx/Pack_Props.fbx",
+   "assetId": "89063711027475",
+   "at": [
+    112,
+    0,
+    0
+   ],
+   "tris": 712,
+   "objects": 3,
+   "neonParts": [],
+   "parts": [
+    "Wood:E09A5ASP",
+    "Steel:3B3F4ASP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -2.85,
+    -1.15,
+    0.0
+   ],
+   "bboxMax": [
+    2.85,
+    0.9,
+    2.5
+   ],
+   "size": [
+    5.71,
+    2.05,
+    2.5
+   ]
+  },
+  "GarageHoistCrane": {
+   "pack": "Pack_Props",
+   "packFile": "fbx/Pack_Props.fbx",
+   "assetId": "89063711027475",
+   "at": [
+    128,
+    0,
+    0
+   ],
+   "tris": 1122,
+   "objects": 4,
+   "neonParts": [],
+   "parts": [
+    "Steel:3B3F4ASP",
+    "Yellow:FFD23ASP",
+    "Red:E2483DSP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -2.95,
+    -1.5,
+    0.0
+   ],
+   "bboxMax": [
+    2.95,
+    1.5,
+    8.05
+   ],
+   "size": [
+    5.9,
+    3.0,
+    8.05
+   ]
+  }
+ }
+}

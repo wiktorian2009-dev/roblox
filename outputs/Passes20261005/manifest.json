@@ -1,0 +1,39 @@
+{
+ "date": "2026-10-05",
+ "units": "1 Blender unit = 1 stud; up = +Z; Studio maps Blender (x,y,z) -> Roblox local (-x, z, y); front = Blender -Y = Roblox -Z (LookVector)",
+ "origin": "floor-level centre of each model; packs place models at (120*(i+1), 0, 0)",
+ "packs": {
+  "Gears_P": {
+   "assetId": "87199415786727",
+   "operationId": "1b30ede2-f12f-4a35-a577-446a64fb544d"
+  }
+ },
+ "models": {
+  "GearAuroraWheels": {
+   "pack": "Gears_P",
+   "assetId": "87199415786727",
+   "at": [
+    30,
+    0,
+    0
+   ],
+   "tris": 6392,
+   "objects": 9,
+   "bboxMin": [
+    -3.74,
+    -3.25,
+    -0.05
+   ],
+   "bboxMax": [
+    3.74,
+    3.45,
+    1.85
+   ],
+   "size": [
+    7.48,
+    6.71,
+    1.91
+   ]
+  }
+ }
+}

@@ -1,0 +1,156 @@
+-- PlowDriveClient (2026-10-04, Claude): driving controls + DRIVE / RECOVER buttons for the snowplow.
+-- PC: WASD / arrows / gamepad stick, F = drive / exit, R = recover. Mobile: the normal thumbstick steers, the on-screen buttons do the rest.
+-- The server owns spawning, seating, digging and rewards; this script only moves the plow we have network ownership of, and draws the powder spray.
+local Players = game:GetService("Players")
+local RS = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local UIS = game:GetService("UserInputService")
+local CAS = game:GetService("ContextActionService")
+local TweenService = game:GetService("TweenService")
+local player = Players.LocalPlayer
+local C = require(RS:WaitForChild("PlowConfig"))
+if C.Mode ~= "Snowplow" then return end
+local TX = require(RS:WaitForChild("UniversalVFX")).Textures
+local remote = RS:WaitForChild("PlowRemote")
+local touch = UIS.TouchEnabled and not UIS.KeyboardEnabled
+local FONT, NAVY, WHITE = Enum.Font.FredokaOne, Color3.fromRGB(20, 40, 85), Color3.new(1, 1, 1)
+
+local gui = Instance.new("ScreenGui")
+gui.Name, gui.ResetOnSpawn, gui.IgnoreGuiInset, gui.DisplayOrder = "PlowDriveGui", false, true, 51
+gui.Parent = player:WaitForChild("PlayerGui")
+local function makeButton(name, label, color, pos, size)
+	local b = Instance.new("TextButton")
+	b.Name, b.Text, b.AnchorPoint, b.Position, b.Size = name, "", Vector2.new(1, 0.5), pos, size
+	b.BackgroundColor3, b.BorderSizePixel, b.AutoButtonColor = color, 0, true
+	b:SetAttribute("SnowUIDecor", true)
+	local cr = Instance.new("UICorner"); cr.CornerRadius = UDim.new(0.3, 0); cr.Parent = b
+	local s = Instance.new("UIStroke"); s.Thickness = 3; s.Color = NAVY; s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border; s.Parent = b
+	local g = Instance.new("UIGradient"); g.Rotation = 90; g.Color = ColorSequence.new(WHITE, Color3.fromRGB(200, 215, 235)); g.Parent = b
+	local l = Instance.new("TextLabel")
+	l.Name, l.BackgroundTransparency, l.Font, l.TextScaled, l.Text = "Label", 1, FONT, true, label
+	l.TextColor3, l.Position, l.Size = WHITE, UDim2.fromScale(0.06, 0.12), UDim2.fromScale(0.88, 0.76)
+	l.Parent = b
+	local ls = Instance.new("UIStroke"); ls.Thickness = 2.2; ls.Color = NAVY; ls.Parent = l
+	local sc = Instance.new("UISizeConstraint"); sc.MinSize = Vector2.new(touch and 130 or 118, touch and 54 or 44); sc.Parent = b
+	b.Parent = gui
+	return b, l
+end
+local drive, driveLabel = makeButton("Drive", "DRIVE", Color3.fromRGB(70, 200, 105), UDim2.fromScale(0.992, 0.8), UDim2.fromScale(touch and 0.17 or 0.115, touch and 0.12 or 0.066))
+local recover = makeButton("Recover", touch and "RECOVER" or "RECOVER [R]", Color3.fromRGB(250, 150, 50), UDim2.fromScale(0.992, touch and 0.93 or 0.885), UDim2.fromScale(touch and 0.14 or 0.1, touch and 0.09 or 0.05))
+recover.Visible = false
+local msg = Instance.new("TextLabel")
+msg.Name, msg.BackgroundTransparency, msg.Font, msg.TextScaled, msg.Text = "Msg", 1, FONT, true, ""
+msg.AnchorPoint, msg.Position, msg.Size, msg.TextColor3, msg.TextTransparency = Vector2.new(0.5, 0.5), UDim2.fromScale(0.5, 0.68), UDim2.fromScale(0.5, 0.06), Color3.fromRGB(255, 225, 140), 1
+msg.Parent = gui
+local msgStroke = Instance.new("UIStroke"); msgStroke.Thickness = 2.5; msgStroke.Color = NAVY; msgStroke.Transparency = 1; msgStroke.Parent = msg
+local msgToken = 0
+local function say(text)
+	msgToken += 1
+	local my = msgToken
+	msg.Text, msg.TextTransparency, msgStroke.Transparency = text, 0, 0
+	task.delay(2.6, function()
+		if msgToken ~= my then return end
+		TweenService:Create(msg, TweenInfo.new(0.5), {TextTransparency = 1}):Play()
+		TweenService:Create(msgStroke, TweenInfo.new(0.5), {Transparency = 1}):Play()
+	end)
+end
+local function refreshButtons()
+	local driving = player:GetAttribute("PlowDriving") == true
+	driveLabel.Text = driving and (touch and "EXIT" or "EXIT [F]") or (touch and "DRIVE" or "DRIVE [F]")
+	drive.BackgroundColor3 = driving and Color3.fromRGB(235, 90, 100) or Color3.fromRGB(70, 200, 105)
+	recover.Visible = driving
+	player.CameraMinZoomDistance = driving and 24 or 0.5 -- the camera pulls back so you can see your plow
+end
+player:GetAttributeChangedSignal("PlowDriving"):Connect(refreshButtons)
+refreshButtons()
+local busy = false
+local function ask(action)
+	if busy then return end
+	busy = true
+	local ok, res = pcall(function() return remote:InvokeServer(action) end)
+	busy = false
+	if ok and type(res) == "table" and res.ok == false and res.msg then say(res.msg) end
+end
+drive.Activated:Connect(function() ask("Drive") end)
+recover.Activated:Connect(function() ask("Recover") end)
+CAS:BindAction("PlowDrive", function(_, state) if state == Enum.UserInputState.Begin then task.spawn(ask, "Drive") end return Enum.ContextActionResult.Pass end, false, Enum.KeyCode.F)
+CAS:BindAction("PlowRecover", function(_, state) if state == Enum.UserInputState.Begin then task.spawn(ask, "Recover") end return Enum.ContextActionResult.Pass end, false, Enum.KeyCode.R)
+
+-- input: the standard PlayerModule move vector (keyboard, thumbstick, gamepad); Studio tests may inject PlowTestMove
+local controls
+task.spawn(function()
+	local pm = player:WaitForChild("PlayerScripts"):WaitForChild("PlayerModule", 30)
+	if pm then local ok, m = pcall(require, pm); if ok then controls = m:GetControls() end end
+end)
+local function moveVector()
+	if RS:GetAttribute("PlowTestHooks") then
+		local t = player:GetAttribute("PlowTestMove")
+		if typeof(t) == "Vector3" then return t end
+	end
+	if controls then
+		local ok, v = pcall(function() return controls:GetMoveVector() end)
+		if ok and v then return v end
+	end
+	return Vector3.zero
+end
+
+-- powder spray
+local function emitter(parent, props)
+	local e = Instance.new("ParticleEmitter")
+	e.Texture, e.Rate, e.LightEmission, e.LightInfluence, e.Drag = TX.smoke, 0, 0.2, 0.3, 2
+	e.Color = ColorSequence.new(WHITE, Color3.fromRGB(200, 232, 255))
+	for k, v in pairs(props) do e[k] = v end
+	e.Parent = parent
+	return e
+end
+local function attachFx(model)
+	local out = {}
+	local blade = model:FindFirstChild("Blade")
+	local bladeRoot = blade and blade:FindFirstChild("Root")
+	if bladeRoot then
+		local a = Instance.new("Attachment"); a.Position = Vector3.new(0, -0.7, -2.4); a.Parent = bladeRoot
+		out.blade = emitter(a, {Lifetime = NumberRange.new(0.5, 0.9), Speed = NumberRange.new(6, 12), SpreadAngle = Vector2.new(55, 25), Acceleration = Vector3.new(0, 4, 0),
+			Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 1.2), NumberSequenceKeypoint.new(1, 3.4)}),
+			Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.2), NumberSequenceKeypoint.new(1, 1)})})
+	end
+	local b = Instance.new("Attachment"); b.Position = Vector3.new(0, -0.3, 4.2); b.Parent = model.PrimaryPart
+	out.rear = emitter(b, {Lifetime = NumberRange.new(0.6, 1.1), Speed = NumberRange.new(2, 5), SpreadAngle = Vector2.new(30, 20), Acceleration = Vector3.new(0, 2, 0),
+		Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.8), NumberSequenceKeypoint.new(1, 2.4)}),
+		Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.45), NumberSequenceKeypoint.new(1, 1)})})
+	return out
+end
+
+local folder = workspace:WaitForChild("Snowplows")
+local fx, fxFor
+RunService.Heartbeat:Connect(function(dt)
+	local model = folder:FindFirstChild("Snowplow_" .. player.UserId)
+	local hull = model and model.PrimaryPart
+	local hum = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+	if not (hull and hum and hum.SeatPart and hum.SeatPart.Parent == model) then fxFor, fx = nil, nil return end
+	if fxFor ~= model then fxFor = model; fx = attachFx(model) end
+	local mv = moveVector()
+	local throttle, steer = -mv.Z, mv.X
+	local maxSpeed, accel = hull:GetAttribute("MaxSpeed") or 20, hull:GetAttribute("Accel") or 12
+	local traction, turnRate = hull:GetAttribute("Traction") or 0.6, hull:GetAttribute("TurnRate") or 2
+	local pivot, stability = hull:GetAttribute("Pivot") or 0.2, hull:GetAttribute("Stability") or 1
+	local cf = hull.CFrame
+	local look = Vector3.new(cf.LookVector.X, 0, cf.LookVector.Z)
+	look = look.Magnitude > 0.05 and look.Unit or Vector3.new(0, 0, -1)
+	local right = Vector3.new(-look.Z, 0, look.X)
+	local vel = hull.AssemblyLinearVelocity
+	local fwd, lat = vel:Dot(look), vel:Dot(right)
+	local target = throttle * maxSpeed * (throttle < 0 and C.Drive.ReverseFactor or 1)
+	local rate = accel * (((target * fwd < 0) or math.abs(target) < math.abs(fwd)) and C.Drive.BrakeFactor or 1)
+	fwd += math.clamp(target - fwd, -rate * dt, rate * dt)
+	lat *= math.max(0, 1 - traction * C.Drive.LateralGrip * dt)
+	local planar = look * fwd + right * lat
+	hull.AssemblyLinearVelocity = Vector3.new(planar.X, vel.Y, planar.Z)
+	local speedFactor = math.clamp(math.abs(fwd) / (maxSpeed * 0.35), math.max(C.Drive.MinTurn, pivot), 1)
+	local yaw = -steer * turnRate * speedFactor * (fwd < -0.5 and -1 or 1)
+	hull.AssemblyAngularVelocity = Vector3.new(0, yaw, 0) + cf.UpVector:Cross(Vector3.yAxis) * (C.Drive.UprightAssist * stability)
+	if fx then
+		local speed = Vector3.new(vel.X, 0, vel.Z).Magnitude
+		if fx.blade then fx.blade.Rate = math.clamp(speed * 2.2, 0, 42) end
+		if fx.rear then fx.rear.Rate = math.clamp(speed * 1.1, 0, 22) end
+	end
+end)

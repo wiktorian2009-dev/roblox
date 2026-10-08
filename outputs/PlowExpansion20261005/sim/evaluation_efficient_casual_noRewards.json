@@ -1,0 +1,360 @@
+{
+ "efficient": {
+  "behaviour": "efficient",
+  "seeds": 40,
+  "stages": {
+   "Starter": {
+    "p10": 0.0,
+    "median": 0.0,
+    "p90": 0.0,
+    "reached": 40,
+    "incomeOnArrival": "86.1"
+   },
+   "Desert": {
+    "p10": 2.5,
+    "median": 2.6,
+    "p90": 2.6,
+    "reached": 40,
+    "incomeOnArrival": "1.19e+03"
+   },
+   "Cursed": {
+    "p10": 10.5,
+    "median": 11.3,
+    "p90": 12.6,
+    "reached": 40,
+    "incomeOnArrival": "1.98e+05"
+   },
+   "Crystal": {
+    "p10": 25.9,
+    "median": 30.7,
+    "p90": 34.7,
+    "reached": 40,
+    "incomeOnArrival": "4.81e+07"
+   },
+   "Retro": {
+    "p10": 50.5,
+    "median": 56.2,
+    "p90": 61.5,
+    "reached": 40,
+    "incomeOnArrival": "8.6e+08"
+   },
+   "Jungle": {
+    "p10": 79.1,
+    "median": 88.5,
+    "p90": 98.9,
+    "reached": 40,
+    "incomeOnArrival": "2.87e+09"
+   },
+   "AbsoluteZero": {
+    "p10": 118.5,
+    "median": 131.9,
+    "p90": 146.5,
+    "reached": 40,
+    "incomeOnArrival": "2.63e+10"
+   },
+   "Portal": {
+    "p10": 197.1,
+    "median": 225.7,
+    "p90": 267.7,
+    "reached": 40,
+    "incomeOnArrival": "4.94e+12"
+   },
+   "Sakura": {
+    "p10": 197.1,
+    "median": 225.7,
+    "p90": 267.7,
+    "reached": 40,
+    "incomeOnArrival": "4.94e+12"
+   },
+   "Candy": {
+    "p10": 220.1,
+    "median": 255.6,
+    "p90": 291.0,
+    "reached": 40,
+    "incomeOnArrival": "1.42e+14"
+   },
+   "Atlantis": {
+    "p10": 265.8,
+    "median": 299.8,
+    "p90": 340.8,
+    "reached": 40,
+    "incomeOnArrival": "3.25e+14"
+   },
+   "Toybox": {
+    "p10": 299.2,
+    "median": 335.9,
+    "p90": 374.0,
+    "reached": 40,
+    "incomeOnArrival": "4.88e+14"
+   },
+   "Clockwork": {
+    "p10": 369.7,
+    "median": 398.1,
+    "p90": 443.7,
+    "reached": 40,
+    "incomeOnArrival": "4.26e+15"
+   },
+   "Cloud": {
+    "p10": 425.4,
+    "median": 458.3,
+    "p90": 506.6,
+    "reached": 40,
+    "incomeOnArrival": "4.35e+16"
+   },
+   "Cosmic": {
+    "p10": 479.7,
+    "median": 513.3,
+    "p90": 575.5,
+    "reached": 40,
+    "incomeOnArrival": "8.2e+17"
+   }
+  },
+  "world1_minutes": {
+   "p10": 197,
+   "median": 226,
+   "p90": 268
+  },
+  "world2_minutes": {
+   "p10": 267,
+   "median": 292,
+   "p90": 316
+  },
+  "partsBoughtWorld1": {
+   "median": 23.0,
+   "p10": 20,
+   "p90": 26
+  },
+  "rolls": {
+   "median": 1127.5
+  },
+  "rollsBetweenUsefulOffers": {
+   "median": 2,
+   "p90": 6,
+   "max": 51
+  },
+  "minutesBetweenUsefulOffers": {
+   "median": 0.3,
+   "p90": 4.0
+  },
+  "minutesBetweenMeaningfulUpgrades_W1": {
+   "median": 2.1,
+   "p90": 16.6,
+   "max": 46.9
+  },
+  "firstPartPurchaseMinute": {
+   "median": 4.7,
+   "p90": 8.8
+  },
+  "reservations": {
+   "median": 18.0
+  }
+ },
+ "casual": {
+  "behaviour": "casual",
+  "seeds": 40,
+  "stages": {
+   "Starter": {
+    "p10": 0.0,
+    "median": 0.0,
+    "p90": 0.0,
+    "reached": 40,
+    "incomeOnArrival": "44.2"
+   },
+   "Desert": {
+    "p10": 2.6,
+    "median": 2.6,
+    "p90": 2.7,
+    "reached": 40,
+    "incomeOnArrival": "555"
+   },
+   "Cursed": {
+    "p10": 12.3,
+    "median": 16.7,
+    "p90": 23.3,
+    "reached": 40,
+    "incomeOnArrival": "1.4e+05"
+   },
+   "Crystal": {
+    "p10": 32.0,
+    "median": 38.9,
+    "p90": 52.0,
+    "reached": 40,
+    "incomeOnArrival": "1.21e+07"
+   },
+   "Retro": {
+    "p10": 68.9,
+    "median": 78.9,
+    "p90": 103.3,
+    "reached": 40,
+    "incomeOnArrival": "4.77e+08"
+   },
+   "Jungle": {
+    "p10": 114.1,
+    "median": 130.5,
+    "p90": 151.0,
+    "reached": 40,
+    "incomeOnArrival": "1.8e+09"
+   },
+   "AbsoluteZero": {
+    "p10": 174.5,
+    "median": 195.6,
+    "p90": 219.0,
+    "reached": 40,
+    "incomeOnArrival": "1.69e+10"
+   },
+   "Portal": {
+    "p10": 333.5,
+    "median": 388.6,
+    "p90": 457.4,
+    "reached": 40,
+    "incomeOnArrival": "3.4e+12"
+   },
+   "Sakura": {
+    "p10": 333.5,
+    "median": 388.6,
+    "p90": 457.4,
+    "reached": 40,
+    "incomeOnArrival": "3.4e+12"
+   }
+  },
+  "world1_minutes": {
+   "p10": 334,
+   "median": 389,
+   "p90": 457
+  },
+  "world2_minutes": null,
+  "partsBoughtWorld1": {
+   "median": 20.0,
+   "p10": 17,
+   "p90": 23
+  },
+  "rolls": {
+   "median": 310.5
+  },
+  "rollsBetweenUsefulOffers": {
+   "median": 1.0,
+   "p90": 6,
+   "max": 6
+  },
+  "minutesBetweenUsefulOffers": {
+   "median": 0.2,
+   "p90": 7.1
+  },
+  "minutesBetweenMeaningfulUpgrades_W1": {
+   "median": 2.7,
+   "p90": 26.2,
+   "max": 126.9
+  },
+  "firstPartPurchaseMinute": {
+   "median": 7.8,
+   "p90": 15.0
+  },
+  "reservations": {
+   "median": 10.0
+  }
+ },
+ "noRewards": {
+  "behaviour": "noRewards",
+  "seeds": 40,
+  "stages": {
+   "Starter": {
+    "p10": 0.0,
+    "median": 0.0,
+    "p90": 0.0,
+    "reached": 40,
+    "incomeOnArrival": "54.3"
+   },
+   "Desert": {
+    "p10": 2.3,
+    "median": 2.4,
+    "p90": 2.4,
+    "reached": 40,
+    "incomeOnArrival": "869"
+   },
+   "Cursed": {
+    "p10": 10.7,
+    "median": 13.0,
+    "p90": 14.0,
+    "reached": 40,
+    "incomeOnArrival": "1.67e+05"
+   },
+   "Crystal": {
+    "p10": 27.4,
+    "median": 36.1,
+    "p90": 45.8,
+    "reached": 40,
+    "incomeOnArrival": "2.73e+07"
+   },
+   "Retro": {
+    "p10": 59.6,
+    "median": 67.0,
+    "p90": 79.4,
+    "reached": 40,
+    "incomeOnArrival": "6.78e+08"
+   },
+   "Jungle": {
+    "p10": 92.6,
+    "median": 107.9,
+    "p90": 118.0,
+    "reached": 40,
+    "incomeOnArrival": "2.12e+09"
+   },
+   "AbsoluteZero": {
+    "p10": 145.8,
+    "median": 162.5,
+    "p90": 185.1,
+    "reached": 40,
+    "incomeOnArrival": "2.09e+10"
+   },
+   "Portal": {
+    "p10": 248.3,
+    "median": 287.4,
+    "p90": 321.2,
+    "reached": 40,
+    "incomeOnArrival": "3.7e+12"
+   },
+   "Sakura": {
+    "p10": 248.3,
+    "median": 287.4,
+    "p90": 321.2,
+    "reached": 40,
+    "incomeOnArrival": "3.7e+12"
+   }
+  },
+  "world1_minutes": {
+   "p10": 248,
+   "median": 287,
+   "p90": 321
+  },
+  "world2_minutes": null,
+  "partsBoughtWorld1": {
+   "median": 23.0,
+   "p10": 21,
+   "p90": 25
+  },
+  "rolls": {
+   "median": 420.5
+  },
+  "rollsBetweenUsefulOffers": {
+   "median": 1.0,
+   "p90": 6,
+   "max": 6
+  },
+  "minutesBetweenUsefulOffers": {
+   "median": 0.2,
+   "p90": 5.0
+  },
+  "minutesBetweenMeaningfulUpgrades_W1": {
+   "median": 2.5,
+   "p90": 17.8,
+   "max": 85.9
+  },
+  "firstPartPurchaseMinute": {
+   "median": 5.7,
+   "p90": 6.0
+  },
+  "reservations": {
+   "median": 11.0
+  }
+ }
+}

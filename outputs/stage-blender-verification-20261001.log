@@ -1,0 +1,14 @@
+C:\Users\wikto\Desktop\Roblox Gra\work\verify-stage-blender-20261001.py:22: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  nodes=[n for m in o.data.materials if m and m.use_nodes for n in m.node_tree.nodes if n.type=='TEX_IMAGE']
+FBX version: 7400
+FBX_ROUNDTRIP_PASS {"mesh_count": 44, "triangles": 75818, "size_errors": {}, "missing_uv": [], "untextured": [], "missing_images": [], "zero_scale": [], "coordinate_basis": "FBX Y-up; 0.01 exported units per authored stud; Studio import still requires verification", "passed": true}
+00:01.750  blend            | Read blend: "C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\AllStages.blend"
+C:\Users\wikto\Desktop\Roblox Gra\work\verify-stage-blender-20261001.py:41: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.use_nodes=True;bg=scene.world.node_tree.nodes.get('Background');bg.inputs['Color'].default_value=(.5,.63,.80,1);bg.inputs['Strength'].default_value=.65
+C:\Users\wikto\Desktop\Roblox Gra\work\verify-stage-blender-20261001.py:43: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('WarmPreviewFloor');mat.use_nodes=True;mat.node_tree.nodes.get('Principled BSDF').inputs['Base Color'].default_value=(.67,.39,.17,1);floor.data.materials.append(mat)
+00:10.422  render           | Saved: 'C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\Desert-landmarks-preview.png'
+DETAIL_RENDER_COMPLETE
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

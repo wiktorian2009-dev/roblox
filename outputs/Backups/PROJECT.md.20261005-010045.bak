@@ -1,0 +1,84 @@
+# Roblox game — shared project brief
+
+## Identity and working location
+
+- Studio place: **money**, ID **94130990350526**.
+- Canonical folder: **C:\Users\wikto\Desktop\Roblox Gra**. The Documents ca folder is historical.
+- The actual game lives in Studio. Local files are a source mirror, notes, builders and selected assets; they are **not a complete place export**.
+- Read the current handoff at the top of STATUS.md, then only the sources relevant to the task. Verify the connected place and current scripts before editing. Chat histories and uploaded project files do not synchronize automatically.
+
+## Accepted direction
+
+- 2026-10-04: ACCEPTED CORE LOOP - roll PART OFFERS (the roll never grants a part) -> buy with Snow or reserve -> build a SNOWPLOW (blade / engine / running gear) -> drive through the fields -> earn Snow and treasures -> improve the vehicle. Snowplows replace the orbiting shovels as the digging mechanic; the shovel game is kept and restorable with ReplicatedStorage.PlowConfig.Mode = "Legacy" (archive: ServerStorage.LegacyArchive_2026-10-04). Odds, prices, cooldowns and vehicle balance are all in PlowConfig. Pacing still needs a tuning pass (see STATUS.md).
+- 2026-10-03: never lock upgrades behind stages; pace them with price (UpgradeConfig U.StageBudgetShare).
+- 2026-10-03: the lobby huts are replaced by machines (Shovel Forge, Hot Cocoa Machine, Pet Fuser). Build their models in Blender (World2Blender pipeline), not from Studio parts.
+A bright, cartoony snow-digging/RNG simulator for kids and teens: roll shovels, dig Snow, buy upgrades, collect pets and treasures, unlock biomes and rebirth. Keep progression varied, with readable silhouettes, colorful landmarks and playful feedback.
+
+- **Latest pacing target (2026-10-02):** fast start, slower later; World 1, ending at the Absolute Zero Portal, should take **more than 3 hours without paid boosts**. Claude's latest model includes events, daily rewards, quests and achievements: about 4 hours for an efficient engaged solo player, about 5 hours casual, about 6 hours ignoring rewards. These are model estimates, not measured human playthroughs.
+- Art: simple attractive, chunky rounded 3D models; snowy ground, icy blue shadows, warm hut lighting. User requested Blender scenery across all eight World 1 stages. The AllStages pack remains prepared; consult STATUS.md before importing or replacing scenery.
+- **Frostfall Village is the approved active lobby.** Preserve the archived original in ServerStorage.OldLobbyBackup.
+- **Snowy GUI approved (2026-10-03):** use the generated snowy panel/card/button treatment across existing menus, HUD, Rewards, tutorial, prompts and loading, while preserving gameplay callbacks, real pet/egg viewports and existing collection art. **User explicitly excluded the upgrade screen; leave UpgradeTreeGui/UpgradeTreeClient unchanged.** Only the floating egg/chances outer background stays fully transparent. Art, prompts, source/property backups and verification: outputs/SnowyUI20261003/README.md.
+- The earlier egg redesign was rejected. Seven later Blender biome eggs form the current hatchable lobby display; do not reinstall rejected designs.
+- User wants requested work implemented in the game, unless they explicitly request only a prompt.
+- Preserve unrelated work, ownership IDs, player progress, and recoverable replacements. Do not publish or reset real player data without explicit instruction.
+
+- **World 2 layout (user feedback 2026-10-03: not one straight line; bigger distant mountains):** winding chain of floating islands. Each stage = 260 x 100 island, then a 60-stud themed S-curve bridge (stride 320 along +X). Island west edges / centre Z / ground Y: Sakura 1565 / 0 / 0, Candy 1885 / +55 / +4, Atlantis 2205 / -15 / -10, planned Toybox 2525 / +45 / -2, Clockwork 2845 / -35 / +6, Cloud 3165 / +25 / +22, Neon 3485 / -40 / +10, Cosmic 3805 / +10 / +34. Each gate sits at the previous island's exit; the bridge lands in an opening of the next island's west wall. Background = big themed mountain ranges (~690 long, 150-320 tall, base ~120-170 below the islands) in two layers each side (Workspace.World2.Horizon), not single peaks.
+
+- **Fog between maps (user request 2026-10-03):** each crossing has a CloudCurtain (opaque puffy cloud bank, ~32 x 311 x 431 studs, Workspace.World2.CloudCurtains) at the bridge middle so the next island is hidden, plus a 'Mist' lighting zone over the bridge (Atmosphere density 0.62, near-white). Mountains: natural massifs (rounded summits, ridges, conforming snow, foothills; Horizon v2 asset 119627339956378): themed near layer at z +/-440 centred on each stage, neutral hazy 'DistantRange' far layer at +/-680; never thin cone peaks.
+
+- **Natural, asymmetric planting (user feedback 2026-10-03: stages looked too symmetrical, trees one size in perfect rows):** place trees/bushes/coral in groves of 1-3 with gaps, sizes ~0.7-1.6x, random rotation, different density per side, staggered (not mirrored) lamp rows, and at least one one-sided focal cluster per stage. Landmarks/gates may stay symmetric.
+
+- **Every stage gets its own layout + dense detail (user feedback 2026-10-03: 'more detail, different layout, it's getting boring'):** do NOT reuse the template of two long fields on both sides of a straight central path. Vary field shapes/positions (any axis-aligned boxes, e.g. diagonal corners, different sizes), give each stage districts or levels (terraces + stairs, canals, plazas), a central or off-centre set piece, moving life (vehicles/creatures on Loop/Orbit, spinning parts, particles such as chimney steam) and street-level props (benches, barrels, signs, planters, bunting). Edges: themed walls ~3 players high. Clockwork City v2 is the reference.
+
+- **No coplanar surfaces (z-fighting fix 2026-10-03):** island bodies/rims must top out >= 0.1 stud BELOW the stage floor; layered flat pieces (rugs, inlays, water vs basin, knobs) need >= 0.05 stud height steps; overlapping wall segments alternate a 0.18 stud depth + 0.04 stud height offset. Check with the coplanar-surface scan (see STATUS batch 15).
+
+- **Stage size (user request 2026-10-03: a little shorter and wider):** islands are now 234 x 110 (were 260 x 100); island centres unchanged; bridges 86 studs. Built island x-ranges / centre z / floor y: Sakura 1565-1812 (247 long, west end kept for the arrival plaza) / 0 / 0, Candy 1898-2132 / 55 / 4, Atlantis 2218-2452 / -15 / -10, Toybox 2538-2772 / 45 / -2, Clockwork 2858-3092 / -35 / 6; planned Cloud 3178-3412 / 25 / 22, Neon 3498-3732 / -40 / 10, Cosmic 3818-4052 / 10 / 34. Standard fields 120 x 33 at centre z +/-25; invisible side walls at +/-55.5.
+
+
+- **World 2 = 7 stages (user decision 2026-10-03: skip Neon):** Sakura, Candy, Atlantis, Toybox, Clockwork, Cloud, Cosmic Sanctuary (final). Neon Dream City is dropped; Cosmic was moved into its slot: x 3498-3732, centre z 10, floor y 34, gate (crescent MoonArch x0.55 + violet paywall) at the Cloud exit (3412, 22, 25), 86-stud starry bridge, fog bank at (3455.5, 28, 17.5). Cosmic uses the stage-15 pacing step: stage 13Qi, Star Egg 1.3Qi (pets 18.7-111.7), tiles 26/20.8/13/16.9Qi, fields TileHP 4.8M / SnowPerPhase 142.6M. The Coming Soon gateway at Cosmic's east end is the end of World 2.
+
+## Current systems — verified from Studio on 2026-10-02
+
+| Area | Current behavior and source |
+|---|---|
+| World 1 balance | Stage costs: Desert 2.5K, Cursed 250K, Crystal 54M, Retro 4B, Jungle 135B, Absolute Zero 2.5T, Portal 150T Snow. Stage eggs, rebirth milestones and stage-locked upgrades were scaled with the balance pass. StageConfig / PetConfig / RebirthConfig / UpgradeConfig. |
+| Upgrades | **110 tiles**, across Snow, Rolls and Misc. Explicit costs/stage locks; IDs preserve purchases. Luck tiles add percentages; shovels contribute neutral x1 luck. Balance.PowerExponent=0.63. Golden Dice starts every 10 rolls, improves to 5 (x3 luck); Rainbow starts every 100, improves to 50 (x10). |
+| Rebirth | +0.50 Snow and +0.25 luck per rebirth, additive, cap 50. Resets Snow/stages/upgrades while retaining pets, shovels and discoveries. First milestone: Cursed + 62K Snow. RebirthConfig / RebirthService / RebirthRules. |
+| Pets and eggs | **7 hatchable eggs, 35 pets**, including Retro/Jungle/AbsoluteZero. PetConfig / PetModels / PetService / StarterGui.RNGGui.PetClient. FrostfallVillage.EggDisplay contains the world eggs; EggFloat animates them. PetClient shows nearest odds and clones the Shell for hatching. |
+| Shovel mutations | Giant: 1 in 5, x2 size/reach. Shiny: 1 in 10, x3 power. Shiny Giant combines them. RNGConfig / RNGHandler / ShovelOrbit / SnowFieldService. Index has Normal/Giant/Shiny/Shiny Giant tabs. |
+| Snow fields | Workspace.SnowFieldZones defines Edit-time boxes; SnowFieldData and tiles are built during Play. SnowFields / SnowFieldService / SnowFieldClient. Sakura has its own template and two zones. |
+| Buried Treasures | Fully dug tiles roll 1/100; first treasure guaranteed on the third tile. 7 biome sets, 5 rarities, 35 collection items; average Snow bonus about 6% of digging income. Collection survives rebirth. **36 PNG slots are populated** (35 treasures + menu chest). TreasureConfig / TreasureIcon / TreasureModels chest fallback / TreasureService / TreasureBook / TreasureReveal. Luck does not change these odds. Art: outputs/TreasureIcons20261001/generated-20261002/. |
+| Rewards / Activities | New REWARDS left-menu button and panel with Daily, Quests, Achievements and Codes. 7-day rewards, 3 quests with a 30-minute refresh after all claims, **19 permanent-bonus achievements**, server events Snowstorm/Lucky Wind/Aurora about every 10–15 minutes. ActivityConfig / ActivityService / BoostService / ActivityClient. Codes live server-side in ActivityService. Profile fields d.Activity and d.SnowEarned; UpgradeService applies Snow/luck boosts. |
+| World 2 | **Approved lineup (2026-10-02): 8 stages = global 9-16:** Sakura Garden, Candy Kingdom, Sunken Atlantis, Giant Toybox, Clockwork City, Cloud Kingdom, Neon Dream City, Cosmic Sanctuary; ~260 x 100 studs each along +X from x=1565, connected by themed paid gates; each with 2 fields, egg + 5 Blender pets, 5 treasures, stage upgrades and one small activity. Sakura opens with Portal (Cost 0). StageService streams/teleports; World 2 respawn returns to the Sakura plaza. **Blender import route:** w2lib.py -> FBX -> Open Cloud upload (env ROBLOX_API_KEY) -> insert_asset -> ServerStorage.World2Templates (see STATUS.md). Blender pets live in ReplicatedStorage.PetModelOverrides. |
+| Intro / starter shovel | About 7.9-second lobby storyboard: sky fall, landing, shovel discovery/grab, two-handed victory, close-up, gameplay handoff. Existing **Tin Shovel**, the least rare base shovel; StarterShovelRules grants it once per eligible profile and preserves better equipment. SnowIntroController / SnowIntroRig / SnowIntroArt / SnowIntroService / SnowIntro bootstrap. Skip and Studio I replay retained. ReplicatedFirst.LoadingScreen covers joining. |
+| Tutorial / lobby | TutorialClient: roll, collect 10 Snow, open upgrades; prefers FrostfallSnowYard. Lobby origin (−105, 0.24, −282), spawn near (−167, 0.32, −282). FrostfallClient / FrostfallTravel / VillageOpenMenu. Cabins have repaired rear gables; paths join; snow globe uses existing Gold and Absolute Zero shovel models. |
+| Upgrade UI | **UpgradeTreeClient v3**: Snow/Rolls share the main branch, Misc link/back switches pages. Owned + attached frontier + mystery ring; one-tap buying, green affordable/red unaffordable/blue owned. Larger PNG icons; preserves UpgradeTreeGui name for tutorial. Studio-only. |
+| Sound | RollController has crisp prize-wheel ticks, speed-based pitch, landing click, quieter mini mode. RNGGui attributes RollTickVolume / RollTickOff control them. Studio-only; consult sound handoffs before changing asset IDs. |
+| Lighting / scenery | ReplicatedFirst.BiomeLighting + Profiles grade areas, including Sakura; Lighting.BiomeGrade. FrostfallLobbyDecor / CursedStageDecor / StageDecor20260930 contain current scenery. StageDecorClient animates nearby bob/Water/Sway/Orbit/Roll props and culls distant particles. Earlier scene counts are historical; inspect current objects. |
+
+## Source mirroring, Rojo and Graphify
+
+The 2026-10-02 refresh captured current Edit sources: **45 scripts in game/src** for ReplicatedStorage, ServerScriptService and StarterPlayerScripts, plus **23 read-only scripts in game/studio-snapshots** for StarterGui, ReplicatedFirst, Workspace and active ServerStorage helpers. Two generic Workspace.Script copies are archive-only. The source manifest records actual classes, RunContext, paths and hashes.
+
+- default.project.json maps only ReplicatedStorage, ServerScriptService and StarterPlayerScripts. StarterGui, Workspace, ServerStorage and ReplicatedFirst remain Studio-managed.
+- A Workspace Script may use RunContext=Client; check the snapshot manifest rather than inferring execution from its filename.
+- The SnowStages folder now preserves unknown Studio children so an unmapped Sakura template is retained. Existing stage economic attributes matched disk.
+- Existing binary .rbxm models were not re-exported or verified. Sakura geometry/template, GUI hierarchy, lighting instances and map models remain in Studio. This folder cannot rebuild the full place.
+- No active Rojo server/plugin connection was verified during this refresh. Before connecting, verify the server serves this canonical folder and review its proposed changes. Never connect the historical ca/game server or let old disk sources overwrite newer Studio work.
+- **Laptop Claude chat:** its uploaded files are static copies. After a refresh, re-upload the latest PROJECT.md, STATUS.md, graphify-out/GRAPH_REPORT.md and graph.json, or use the handoff ZIP. No automatic memory sharing.
+- Graphify scans game/ only. For code questions, query the scoped graph first; then verify live sources. Refresh snapshots after Studio edits, then run Refresh-Graph.ps1. A disk-only rebuild cannot capture live changes.
+- Latest graph (2026-10-04 after new shovel icon/source mirroring): **562 nodes, 1,083 edges, 49 communities**. Earlier extraction warned about partial parsing in UpgradeTreeClient and PortalAnimator around Luau compound assignments. Graphify is navigation aid, not a Roblox compiler or runtime test.
+
+## Tests, recovery and current limits
+
+Shovel icon artwork: 49 base shovels now include 14 new Blender shovels with generated transparent 512px PNG icons. RNGConfig ImageId is shared by ItemIcon across rolls/index/inventory and inherited by all Giant/Shiny variants. Artwork, prompts, comparison gallery and recovery: outputs/NewShovelIcons20261004/README.md.
+
+Reusable VFX: ReplicatedStorage.UniversalVFX has 10 small tintable PNG textures and 9 presets; user requested simple low-poly-inspired effects with 256px particles / 512px rings. The forge uses the new flame/smoke/streak bindings; its existing timings/colors/lights stay in their original system. ServerStorage.UniversalVFX_Showcase previews the library; backup emitters are in UniversalVFXBackup20261004. Art, prompts, usage and verification: outputs/UniversalVFX20261003/README.md.
+
+Prefer Studio tools for live changes and re-read affected sources before applying prepared patches because Claude and Codex can share the place. Workspace contains duplicate names; a dot path may be ambiguous.
+
+For isolated progression tests, set ServerStorage.BalanceTestMode=true in **Edit before Play**, stop only your own Play session afterward, and remove the attribute in Edit. It isolates the main DataService, not every third-party system. Direct MCP module requires/test hooks can be blocked by Studio command capabilities; do not weaken those capabilities.
+
+Latest recovery/export evidence: outputs/StudioRefresh20261002/ (live source archive, per-source hashes, before copies and sync report). Claude balance backups: ServerStorage.BalanceBackups.Before_20261002_FastStart / Before_20261002_Activities / Before_20261002_Balance_v2. Older art, lobby and intro backups remain recoverable; never blindly rerun historical builders.
+
+Open issues and the next checks are at the top of STATUS.md. Implemented, tested, saved and published states must be stated separately.

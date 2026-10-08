@@ -1,0 +1,19 @@
+{
+  "version": "rev2 2026-10-07",
+  "objects": [
+    {"file": "TrailerBootstrap.server.luau", "studioPath": "ServerScriptService.TrailerBootstrap", "className": "Script", "properties": {"Enabled": true}},
+    {"file": null, "studioPath": "ServerStorage.TrailerKit", "className": "Folder", "properties": {}},
+    {"file": "TrailerServer.luau", "studioPath": "ServerStorage.TrailerKit.TrailerServer", "className": "ModuleScript", "properties": {}},
+    {"file": null, "studioPath": "ServerStorage.TrailerKit.TrailerDirectorGui", "className": "ScreenGui",
+     "properties": {"ResetOnSpawn": false, "IgnoreGuiInset": true, "ScreenInsets": "None", "DisplayOrder": 1000, "ZIndexBehavior": "Sibling", "Enabled": true}},
+    {"file": "TrailerDirector.client.luau", "studioPath": "ServerStorage.TrailerKit.TrailerDirectorGui.TrailerDirector", "className": "LocalScript", "properties": {}},
+    {"file": "TrailerClient.luau", "studioPath": "ServerStorage.TrailerKit.TrailerDirectorGui.TrailerClient", "className": "ModuleScript", "properties": {}},
+    {"file": "TrailerText.luau", "studioPath": "ServerStorage.TrailerKit.TrailerDirectorGui.TrailerText", "className": "ModuleScript", "properties": {}},
+    {"file": "TrailerPuppets.luau", "studioPath": "ServerStorage.TrailerKit.TrailerDirectorGui.TrailerPuppets", "className": "ModuleScript", "properties": {}},
+    {"file": "TrailerMath.luau", "studioPath": "ServerStorage.TrailerKit.TrailerDirectorGui.TrailerMath", "className": "ModuleScript", "properties": {}},
+    {"file": "TrailerShots.luau", "studioPath": "ServerStorage.TrailerKit.TrailerDirectorGui.TrailerShots", "className": "ModuleScript", "properties": {}},
+    {"file": "TrailerRefs.luau", "studioPath": "ServerStorage.TrailerKit.TrailerDirectorGui.TrailerRefs", "className": "ModuleScript", "properties": {}}
+  ],
+  "editSnippets": ["install_edit.luau", "check_edit.luau", "arm_edit.luau", "disarm_edit.luau", "park_edit.luau", "uninstall_edit.luau"],
+  "powershell": ["obs_trailer_setup.ps1", "record_take.ps1", "cut_takes.ps1"]
+}

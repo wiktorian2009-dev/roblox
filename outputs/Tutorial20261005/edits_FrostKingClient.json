@@ -1,0 +1,1 @@
+[{"old_string": "local function showAnnouncement()\n\tif not ev or dismissed then return end", "new_string": "local function showAnnouncement()\n\tif not ev or dismissed then return end\n\tif player:GetAttribute(\"SuppressEvents\") == true then return end -- 2026-10-05: an essential tutorial step is showing (the pill still offers JOIN)"}]

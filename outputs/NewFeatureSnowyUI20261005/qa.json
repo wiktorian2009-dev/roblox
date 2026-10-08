@@ -1,0 +1,54 @@
+{
+  "placeId": 94130990350526,
+  "installedInEdit": true,
+  "published": false,
+  "assets": {
+    "feature": {
+      "count": 10,
+      "fetchStatus": "all Success",
+      "temporaryPreloadLabelsDestroyed": true
+    },
+    "upgrade": {
+      "count": 20,
+      "mappedUpgradeIds": 138,
+      "missingConfigMappings": 0,
+      "renderedMappingMismatches": 0,
+      "fetchStatus": "all Success"
+    }
+  },
+  "runtime": {
+    "travel": "Real TravelButton opens panel, new portal art loads, current/locked rows are visible, real close button works.",
+    "passes": "Real StarterPack card opens details, close works, SalesEnabled=false and COMING SOON preserved; no real purchase.",
+    "spin": "Real SPIN button opens wheel panel, new menu/banner images load, close works; no reward spin performed.",
+    "driving": "Real Drive button seats test player; Exit icon/label switch, Drift press/release and Recover buttons accept pointer actions, Exit returns to Drive. No new handling or physics balance work.",
+    "upgrades": "Real UPGRADES opens/closes the existing board; actual 138 IDs mapped with no mismatched images. No purchase/economy test in this art task.",
+    "contracts": "Mock Offer/Accepted/Ended payloads rendered through existing client event handlers; 6 objectives, real user thumbnail retrieval, timer, reward/progress, and card suppression visually checked. Test payload did not create a server job or grant rewards. Actual job completion not tested."
+  },
+  "compile": {
+    "scripts": 9,
+    "passed": 9
+  },
+  "console": {
+    "applicationGuiErrorsObserved": 0,
+    "toolOnlyIssues": "Virtual mouse crossings logged CoreGUI warnings. One read-only QA snippet indexed a nil test field; corrected snippet passed. These were tooling checks, not installed GUI runtime failures."
+  },
+  "cleanup": {
+    "ownPlayStopped": true,
+    "finalMode": "Edit",
+    "BalanceTestModeRemoved": true,
+    "NewFeatureUITestOwnerRemoved": true
+  },
+  "graphify": {
+    "nodes": 977,
+    "edges": 2059,
+    "communities": 69,
+    "mode": "code-only, no-label",
+    "limitation": "UpgradeTreeClient Luau syntax partially extracted at line344; live loadstring compile passed."
+  },
+  "limitations": [
+    "No publishing or real DataStore persistence test",
+    "No actual game pass purchase",
+    "No physical touch/gamepad device test",
+    "Only relevant source mirrors refreshed; folder is not a full place export"
+  ]
+}

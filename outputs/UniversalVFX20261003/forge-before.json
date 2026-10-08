@@ -1,0 +1,59 @@
+{
+  "place": 94130990350526,
+  "libraries": [
+    "SnowIntroArt"
+  ],
+  "existingPack": false,
+  "particles": [
+    {
+      "enabled": true,
+      "path": "Workspace.FrostfallVillage.ShovelForge.ForgeFX.Embers.Embers",
+      "name": "Embers",
+      "lifetime": "1.2 2.2 ",
+      "size": "0 0.16 0 1 0.04 0 ",
+      "class": "ParticleEmitter",
+      "rate": 5,
+      "texture": "rbxasset://textures/particles/sparkles_main.dds"
+    },
+    {
+      "enabled": true,
+      "path": "Workspace.FrostfallVillage.ShovelForge.ForgeFX.Fire.Flames",
+      "name": "Flames",
+      "lifetime": "0.5 0.9 ",
+      "size": "0 1.2 0 1 0 0 ",
+      "class": "ParticleEmitter",
+      "rate": 22,
+      "texture": "rbxasset://textures/particles/sparkles_main.dds"
+    },
+    {
+      "enabled": true,
+      "path": "Workspace.FrostfallVillage.ShovelForge.ForgeFX.Smoke.Smoke",
+      "name": "Smoke",
+      "lifetime": "3 4 ",
+      "size": "0 1 0 1 3.2 0 ",
+      "class": "ParticleEmitter",
+      "rate": 3,
+      "texture": "rbxasset://textures/particles/sparkles_main.dds"
+    },
+    {
+      "enabled": true,
+      "path": "Workspace.FrostfallVillage.ShovelForge.ForgeFX.Sparks.Sparks",
+      "name": "Sparks",
+      "lifetime": "0.3 0.5 ",
+      "size": "0 0.13 0 1 0 0 ",
+      "class": "ParticleEmitter",
+      "rate": 6,
+      "texture": "rbxasset://textures/particles/sparkles_main.dds"
+    },
+    {
+      "enabled": true,
+      "path": "Workspace.FrostfallVillage.ShovelForge.ForgeFX.Steam.Steam",
+      "name": "Steam",
+      "lifetime": "2 3 ",
+      "size": "0 0.6 0 1 2.2 0 ",
+      "class": "ParticleEmitter",
+      "rate": 3,
+      "texture": "rbxasset://textures/particles/sparkles_main.dds"
+    }
+  ]
+}

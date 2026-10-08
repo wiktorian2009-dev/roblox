@@ -1,0 +1,922 @@
+[
+  {
+    "id": "UpgradesButton",
+    "filename": "upgrades-button.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      132,
+      65,
+      1126,
+      1143
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Center",
+    "filename": "snow-start.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      105,
+      163,
+      1151,
+      1126
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Gain1",
+    "filename": "snow-gain.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      165,
+      168,
+      1141,
+      1124
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Gain2",
+    "filename": "more-snow.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      123,
+      201,
+      1136,
+      1098
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Deep",
+    "filename": "deep-snow.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      64,
+      97,
+      1198,
+      1169
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Storm",
+    "filename": "snowstorm.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      75,
+      71,
+      1204,
+      1178
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Sharp",
+    "filename": "sharp-edges.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      49,
+      49,
+      1207,
+      1230
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Heavy",
+    "filename": "heavy-hits.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      74,
+      44,
+      1193,
+      1227
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Swing",
+    "filename": "power-swing.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      51,
+      72,
+      1218,
+      1204
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Crush",
+    "filename": "crushing-blow.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      97,
+      63,
+      1166,
+      1196
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "S_Turbo",
+    "filename": "turbo-spin.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      72,
+      59,
+      1205,
+      1219
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Center",
+    "filename": "misc-start.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      111,
+      131,
+      1180,
+      1124
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Walk1",
+    "filename": "walk-speed.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      71,
+      157,
+      1190,
+      1117
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Walk2",
+    "filename": "fast-feet.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      88,
+      190,
+      1187,
+      1121
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Sprint",
+    "filename": "sprinter.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      94,
+      88,
+      1178,
+      1182
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Friend1",
+    "filename": "friend-boost.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      87,
+      222,
+      1168,
+      1022
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Friend2",
+    "filename": "best-friends.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      34,
+      172,
+      1225,
+      1071
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Squad",
+    "filename": "squad-goals.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      51,
+      105,
+      1203,
+      1132
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Egg1",
+    "filename": "egg-discount.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      104,
+      167,
+      1148,
+      1116
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Egg2",
+    "filename": "egg-deals.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      109,
+      106,
+      1148,
+      1155
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Egg3",
+    "filename": "egg-sale.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      131,
+      162,
+      1203,
+      1121
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Egg4",
+    "filename": "egg-bargain.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      88,
+      70,
+      1187,
+      1159
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Pet1",
+    "filename": "pet-care.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      61,
+      150,
+      1193,
+      1108
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Equip1",
+    "filename": "pet-equip-crystal.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      88,
+      75,
+      1171,
+      1185
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Equip2",
+    "filename": "pet-equip-retro.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      94,
+      118,
+      1176,
+      1149
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion1",
+    "filename": "pet-treats.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      80,
+      153,
+      1186,
+      1117
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion2",
+    "filename": "warm-boots.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      90,
+      112,
+      1202,
+      1171
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion3",
+    "filename": "egg-coupons.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      89,
+      121,
+      1192,
+      1158
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion4",
+    "filename": "pet-training.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      73,
+      138,
+      1194,
+      1169
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion5",
+    "filename": "sandy-steps.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      55,
+      114,
+      1193,
+      1175
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion6",
+    "filename": "egg-savings.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      124,
+      74,
+      1149,
+      1187
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion7",
+    "filename": "pet-bond.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      116,
+      76,
+      1182,
+      1198
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion8",
+    "filename": "trail-boots.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      56,
+      140,
+      1205,
+      1140
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion9",
+    "filename": "team-spirit.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      58,
+      149,
+      1198,
+      1070
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion10",
+    "filename": "gem-treats.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      117,
+      144,
+      1143,
+      1128
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion11",
+    "filename": "crystal-steps.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      124,
+      88,
+      1205,
+      1180
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion12",
+    "filename": "egg-vouchers.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      85,
+      207,
+      1205,
+      1107
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion13",
+    "filename": "pixel-treats.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      159,
+      86,
+      1105,
+      1173
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion14",
+    "filename": "retro-steps.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      73,
+      161,
+      1175,
+      1126
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion15",
+    "filename": "egg-club.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      190,
+      76,
+      1108,
+      1195
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion16",
+    "filename": "jungle-treats.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      96,
+      160,
+      1183,
+      1109
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion17",
+    "filename": "explorer-boots.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      77,
+      80,
+      1181,
+      1189
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion18",
+    "filename": "teamwork.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      81,
+      80,
+      1175,
+      1157
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion19",
+    "filename": "frost-treats.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      74,
+      82,
+      1183,
+      1176
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion20",
+    "filename": "arctic-boots.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      91,
+      69,
+      1189,
+      1194
+    ],
+    "clearEdges": true
+  },
+  {
+    "id": "M_Expansion21",
+    "filename": "pet-mastery.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      131,
+      72,
+      1154,
+      1175
+    ],
+    "clearEdges": true
+  }
+]

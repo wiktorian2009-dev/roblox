@@ -1,0 +1,115 @@
+{
+ "EFF": 1.3757,
+ "costs": {
+  "Sakura": 0,
+  "Candy": 74000000000000,
+  "Atlantis": 96000000000000,
+  "Toybox": 110000000000000,
+  "Clockwork": 140000000000000,
+  "Cloud": 140000000000000,
+  "Neon": 140000000000000,
+  "Cosmic": 160000000000000
+ },
+ "HP": {
+  "Sakura": 60000,
+  "Candy": 150000,
+  "Atlantis": 330000,
+  "Toybox": 726000,
+  "Clockwork": 1597200,
+  "Cloud": 3513840,
+  "Neon": 7730448,
+  "Cosmic": 17006986
+ },
+ "SPP": {
+  "Sakura": 400000,
+  "Candy": 1200000,
+  "Atlantis": 2640000,
+  "Toybox": 5808000,
+  "Clockwork": 12777600,
+  "Cloud": 28110720,
+  "Neon": 61843584,
+  "Cosmic": 136055885
+ },
+ "petGrowth": 1.45,
+ "eggCostFactor": 0.1,
+ "luck": [
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  12
+ ],
+ "upgradeCostFactors": {
+  "snow": 3,
+  "power": 2.5,
+  "luck": 1.5,
+  "size": 2
+ },
+ "gapsTarget": [
+  22,
+  20,
+  22,
+  24,
+  26,
+  29,
+  32
+ ],
+ "report": {
+  "engaged+rewards": {
+   "Portal_min": 246,
+   "W2_gaps_min": [
+    18,
+    20,
+    23,
+    27,
+    27,
+    29,
+    38
+   ],
+   "W2_total_h": 3.03
+  },
+  "engaged-rewards": {
+   "Portal_min": 382,
+   "W2_gaps_min": [
+    30,
+    31,
+    33,
+    49,
+    30,
+    26,
+    24
+   ],
+   "W2_total_h": 3.72
+  },
+  "casual+rewards": {
+   "Portal_min": 395,
+   "W2_gaps_min": [
+    24,
+    18,
+    23,
+    28,
+    25,
+    25,
+    25
+   ],
+   "W2_total_h": 2.82
+  },
+  "casual-rewards": {
+   "Portal_min": 340,
+   "W2_gaps_min": [
+    26,
+    21,
+    26,
+    31,
+    30,
+    28,
+    29
+   ],
+   "W2_total_h": 3.18
+  }
+ },
+ "done": "2026-10-02T18:38:15.148Z"
+}

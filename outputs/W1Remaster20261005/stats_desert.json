@@ -1,0 +1,587 @@
+{
+ "D_CliffSeg": {
+  "min": [
+   -16.05,
+   -8.64,
+   -0.24
+  ],
+  "max": [
+   15.78,
+   8.24,
+   35.98
+  ],
+  "tris": 2588,
+  "parts": [
+   "Strata0__C98B52SP",
+   "Snow__F6FAFFSP",
+   "Strata1__D9A066SP",
+   "Strata2__B8764ASP",
+   "Strata3__F0D3A2SP",
+   "Icicle__BFE6FFIC"
+  ],
+  "origin": [
+   120.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   31.82,
+   16.88,
+   36.22
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   120,
+   0,
+   0
+  ],
+  "objects": 6,
+  "perObject": {
+   "Strata0": 476,
+   "Snow": 696,
+   "Strata1": 432,
+   "Strata2": 432,
+   "Strata3": 432,
+   "Icicle": 120
+  }
+ },
+ "D_CliffSegB": {
+  "min": [
+   -14.82,
+   -9.56,
+   -0.25
+  ],
+  "max": [
+   15.11,
+   8.42,
+   30.23
+  ],
+  "tris": 2180,
+  "parts": [
+   "Strata0__D9A066SP",
+   "Snow__F6FAFFSP",
+   "Strata1__B8764ASP",
+   "Strata2__F0D3A2SP",
+   "Glyph__7A4A2ASP",
+   "Statue__F0D3A2SP"
+  ],
+  "origin": [
+   240.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   29.94,
+   17.98,
+   30.48
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   240,
+   0,
+   0
+  ],
+  "objects": 6,
+  "perObject": {
+   "Strata0": 476,
+   "Snow": 696,
+   "Strata1": 432,
+   "Strata2": 432,
+   "Glyph": 44,
+   "Statue": 100
+  }
+ },
+ "D_SunGate": {
+  "min": [
+   -34.75,
+   -15.62,
+   -1.69
+  ],
+  "max": [
+   26.79,
+   9.96,
+   39.8
+  ],
+  "tris": 3946,
+  "parts": [
+   "Stone0__D9A066SP",
+   "Glyph__7A4A2ASP",
+   "Stone1__C98B52SP",
+   "Snow__F6FAFFSP",
+   "Sun__F2C14EME",
+   "SunRays__FFD25ENE",
+   "Chain__3B3F4ASP",
+   "Scaffold__8A5530SP",
+   "Plank__B9763FSP",
+   "Rope__D9C8A0SP",
+   "Bucket__B9763FSP",
+   "SandPile__F0D3A2SP",
+   "Cart__B9763FSP",
+   "Wheel__262A33SP"
+  ],
+  "origin": [
+   360.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   61.54,
+   25.58,
+   41.49
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   360,
+   0,
+   0
+  ],
+  "objects": 14,
+  "perObject": {
+   "Stone0": 540,
+   "Glyph": 428,
+   "Stone1": 540,
+   "Snow": 576,
+   "Sun": 108,
+   "SunRays": 92,
+   "Chain": 40,
+   "Scaffold": 420,
+   "Plank": 660,
+   "Rope": 16,
+   "Bucket": 38,
+   "SandPile": 300,
+   "Cart": 44,
+   "Wheel": 144
+  }
+ },
+ "D_Ziggurat": {
+  "min": [
+   -24.77,
+   -21.6,
+   -4.62
+  ],
+  "max": [
+   24.77,
+   23.35,
+   30.5
+  ],
+  "tris": 4004,
+  "parts": [
+   "Step0__D9A066SP",
+   "Snow__F6FAFFSP",
+   "Glyph__7A4A2ASP",
+   "Step1__C98B52SP",
+   "Door__3A2416SP",
+   "Idol__F2C14EME",
+   "Stair__F0D3A2SP",
+   "Drift__F0D3A2SP"
+  ],
+  "origin": [
+   480.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   49.55,
+   44.95,
+   35.12
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   480,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Step0": 216,
+   "Snow": 756,
+   "Glyph": 704,
+   "Step1": 260,
+   "Door": 44,
+   "Idol": 144,
+   "Stair": 440,
+   "Drift": 1440
+  }
+ },
+ "D_Camp": {
+  "min": [
+   -16.25,
+   -12.72,
+   -0.89
+  ],
+  "max": [
+   17.66,
+   10.77,
+   6.0
+  ],
+  "tris": 4000,
+  "parts": [
+   "Canvas__F4E6CBSP",
+   "Stripe__D9573FSP",
+   "Pole__8A5530SP",
+   "Snow__F6FAFFSP",
+   "Stones__8D8A86SP",
+   "Logs__8A5530SP",
+   "FireGlow__FF8A2ANE",
+   "Crate__B9763FSP",
+   "CrateBand__8A5530SP",
+   "Barrel__9C5A2ESP",
+   "Steel__3B3F4ASP",
+   "Sack__C9A877SP",
+   "Bedroll__D9573FSP",
+   "Sign__B9763FSP"
+  ],
+  "origin": [
+   600.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   33.91,
+   23.49,
+   6.89
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   600,
+   0,
+   0
+  ],
+  "objects": 14,
+  "perObject": {
+   "Canvas": 16,
+   "Stripe": 24,
+   "Pole": 52,
+   "Snow": 744,
+   "Stones": 160,
+   "Logs": 132,
+   "FireGlow": 28,
+   "Crate": 540,
+   "CrateBand": 1080,
+   "Barrel": 136,
+   "Steel": 560,
+   "Sack": 96,
+   "Bedroll": 216,
+   "Sign": 216
+  }
+ },
+ "D_Oasis": {
+  "min": [
+   -15.2,
+   -10.48,
+   -0.73
+  ],
+  "max": [
+   14.88,
+   10.0,
+   3.27
+  ],
+  "tris": 2012,
+  "parts": [
+   "Ice__A9DDF5IC",
+   "IceShine__D6F1FFIC",
+   "Rim__F6FAFFSP",
+   "Rim__F0D3A2SP",
+   "Reeds__9CC9B0SP",
+   "ReedFrost__F2F6FBSP",
+   "Rock__B8764ASP"
+  ],
+  "origin": [
+   720.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   30.07,
+   20.48,
+   4.0
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   720,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "Ice": 108,
+   "IceShine": 60,
+   "Rim": 672,
+   "Reeds": 224,
+   "ReedFrost": 504,
+   "Rock": 60
+  }
+ },
+ "D_FrozenPalm": {
+  "min": [
+   -6.03,
+   -10.14,
+   -0.77
+  ],
+  "max": [
+   16.02,
+   12.2,
+   20.41
+  ],
+  "tris": 3088,
+  "parts": [
+   "Trunk__A8743FSP",
+   "Rings__8C5F33SP",
+   "Frond__3E8F7BSP",
+   "FrostTip__F2F6FBSP",
+   "Frond__5FB39ASP",
+   "Coconut__7A4E2ASP",
+   "Snow__F6FAFFSP",
+   "Mound__F0D3A2SP"
+  ],
+  "origin": [
+   840.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   22.05,
+   22.33,
+   21.18
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   840,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Trunk": 336,
+   "Rings": 1248,
+   "Frond": 464,
+   "FrostTip": 288,
+   "Coconut": 144,
+   "Snow": 72,
+   "Mound": 72
+  }
+ },
+ "D_Dune": {
+  "min": [
+   -21.35,
+   -7.31,
+   -6.39
+  ],
+  "max": [
+   22.12,
+   7.31,
+   6.39
+  ],
+  "tris": 1296,
+  "parts": [
+   "Sand__F0D3A2SP",
+   "Sand__E6C08ASP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   960.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   43.47,
+   14.62,
+   12.77
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   960,
+   0,
+   0
+  ],
+  "objects": 3,
+  "perObject": {
+   "Sand": 432,
+   "Snow": 288
+  }
+ },
+ "D_Mesa": {
+  "min": [
+   -43.71,
+   -26.6,
+   -1.39
+  ],
+  "max": [
+   44.7,
+   27.69,
+   45.7
+  ],
+  "tris": 480,
+  "parts": [
+   "Mesa0__C98B52SP",
+   "Mesa1__D9A066SP",
+   "Mesa2__B8764ASP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   1080.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   88.4,
+   54.3,
+   47.09
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   1080,
+   0,
+   0
+  ],
+  "objects": 4,
+  "perObject": {
+   "Mesa0": 120,
+   "Mesa1": 120,
+   "Mesa2": 120,
+   "Snow": 120
+  }
+ },
+ "D_Ruins": {
+  "min": [
+   -13.87,
+   -7.0,
+   -1.7
+  ],
+  "max": [
+   12.21,
+   9.32,
+   15.06
+  ],
+  "tris": 3072,
+  "parts": [
+   "Column__D9A066SP",
+   "Flute__C98B52SP",
+   "Capital__F0D3A2SP",
+   "Snow__F6FAFFSP",
+   "Statue__F0D3A2SP",
+   "Ear__D9A066SP",
+   "Eye__2B6E8FNE",
+   "Glyph__F2C14EME",
+   "SandPile__E6C08ASP",
+   "Block__C98B52SP"
+  ],
+  "origin": [
+   1200.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   26.07,
+   16.32,
+   16.76
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   1200,
+   0,
+   0
+  ],
+  "objects": 10,
+  "perObject": {
+   "Column": 264,
+   "Flute": 1008,
+   "Capital": 132,
+   "Snow": 216,
+   "Statue": 324,
+   "Ear": 16,
+   "Eye": 96,
+   "Glyph": 44,
+   "SandPile": 432,
+   "Block": 540
+  }
+ },
+ "D_Obelisk": {
+  "min": [
+   -3.15,
+   -3.15,
+   0.0
+  ],
+  "max": [
+   3.15,
+   3.15,
+   16.6
+  ],
+  "tris": 360,
+  "parts": [
+   "Base__C98B52SP",
+   "Shaft__D9A066SP",
+   "Tip__F2C14EME",
+   "Glyph__7A4A2ASP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   1320.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   6.3,
+   6.3,
+   16.6
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   1320,
+   0,
+   0
+  ],
+  "objects": 5,
+  "perObject": {
+   "Base": 44,
+   "Shaft": 20,
+   "Tip": 12,
+   "Glyph": 176,
+   "Snow": 108
+  }
+ },
+ "D_Hawk": {
+  "min": [
+   -3.2,
+   -1.63,
+   -0.56
+  ],
+  "max": [
+   3.2,
+   2.4,
+   0.68
+  ],
+  "tris": 162,
+  "parts": [
+   "Body__8A5A36SP",
+   "Head__F0E2C8SP",
+   "Beak__F2C14ESP",
+   "Wing__6E452ASP",
+   "Tail__6E452ASP"
+  ],
+  "origin": [
+   1440.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   6.4,
+   4.03,
+   1.24
+  ],
+  "pack": "W1_Desert",
+  "at": [
+   1440,
+   0,
+   0
+  ],
+  "objects": 5,
+  "perObject": {
+   "Body": 100,
+   "Head": 48,
+   "Beak": 8,
+   "Wing": 4,
+   "Tail": 2
+  }
+ }
+}

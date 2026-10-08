@@ -1,0 +1,1305 @@
+{
+ "date": "2026-10-05",
+ "units": "1 Blender unit = 1 stud; front = -Y (Roblox -Z); up = +Z (Roblox +Y)",
+ "origin": "each model's origin = its placement point (floor-top centre for GarageBay/GarageStreet; floor-level centre for others; island/annex top surface at z=-0.05)",
+ "refMarker": "Ref__Origin__FF00FFNE (0.2 cube) at each pack's world origin; model origin = Ref position + at (Blender coords). Studio maps Blender (x,y,z) -> Roblox local (-x, z, y) relative to the Ref frame.",
+ "packs": [
+  {
+   "pack": "CT_Yard",
+   "file": "fbx/CT_Yard.fbx",
+   "assetId": "122282524538022",
+   "models": [
+    "YardPad",
+    "YardGate",
+    "YardBridge"
+   ],
+   "tris": 13306
+  },
+  {
+   "pack": "CT_Homes",
+   "file": "fbx/CT_Homes.fbx",
+   "assetId": "105300883906248",
+   "models": [
+    "Cottage",
+    "Mailbox",
+    "PicketFence",
+    "RoadSign",
+    "RoadClosed",
+    "Snowman"
+   ],
+   "tris": 5730
+  },
+  {
+   "pack": "CT_Market",
+   "file": "fbx/CT_Market.fbx",
+   "assetId": "86490396688103",
+   "models": [
+    "MarketStall",
+    "StallShutter",
+    "StallGoods",
+    "MarketArch",
+    "ShopFront"
+   ],
+   "tris": 8880
+  },
+  {
+   "pack": "CT_Vehicles",
+   "file": "fbx/CT_Vehicles.fbx",
+   "assetId": "129190579088480",
+   "models": [
+    "Car",
+    "BarrierArm",
+    "BarrierBoom",
+    "BusShelter",
+    "BusStopSign",
+    "Bus",
+    "DeliveryVan"
+   ],
+   "tris": 9488
+  },
+  {
+   "pack": "CT_Work",
+   "file": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "models": [
+    "SupplyTent",
+    "SupplyCrate",
+    "Campfire",
+    "PumpHouse",
+    "PumpMachine",
+    "PumpWheel",
+    "Warehouse",
+    "WarehouseDoor",
+    "PalletStack",
+    "WinterHat",
+    "Scarf"
+   ],
+   "tris": 7894
+  }
+ ],
+ "models": {
+  "YardPad": {
+   "pack": "CT_Yard",
+   "packFile": "fbx/CT_Yard.fbx",
+   "assetId": "122282524538022",
+   "at": [
+    90,
+    0,
+    0
+   ],
+   "tris": 10006,
+   "objects": 4,
+   "neonParts": [],
+   "parts": [
+    "TintGround:F2F7FFSP",
+    "TintRock:7F92ACSP",
+    "Snow:F6FAFFSP",
+    "TintCurb:7F92ACSP"
+   ],
+   "bboxMin": [
+    -37.22,
+    -31.16,
+    -24.9
+   ],
+   "bboxMax": [
+    37.22,
+    31.22,
+    1.41
+   ],
+   "size": [
+    74.44,
+    62.38,
+    26.31
+   ]
+  },
+  "YardGate": {
+   "pack": "CT_Yard",
+   "packFile": "fbx/CT_Yard.fbx",
+   "assetId": "122282524538022",
+   "at": [
+    180,
+    0,
+    0
+   ],
+   "tris": 2716,
+   "objects": 11,
+   "neonParts": [
+    "Lamp",
+    "Bulbs",
+    "Bulbs",
+    "Bulbs",
+    "Bulbs"
+   ],
+   "parts": [
+    "TintRock:7F92ACSP",
+    "TintAccent:E2483DSP",
+    "TintTrim:FFD23ASP",
+    "Snow:F6FAFFSP",
+    "Steel:3B3F4ASP",
+    "Lamp:FFC86BNE",
+    "Sign:FFF3D6SP",
+    "Bulbs:FF7FAENE",
+    "Bulbs:2FC6C0NE",
+    "Bulbs:F2A23DNE",
+    "Bulbs:FFD23ANE"
+   ],
+   "bboxMin": [
+    -18.0,
+    -1.56,
+    0.0
+   ],
+   "bboxMax": [
+    18.0,
+    1.5,
+    15.65
+   ],
+   "size": [
+    36.0,
+    3.06,
+    15.65
+   ]
+  },
+  "YardBridge": {
+   "pack": "CT_Yard",
+   "packFile": "fbx/CT_Yard.fbx",
+   "assetId": "122282524538022",
+   "at": [
+    270,
+    0,
+    0
+   ],
+   "tris": 584,
+   "objects": 3,
+   "neonParts": [],
+   "parts": [
+    "TintGround:F2F7FFSP",
+    "TintRock:7F92ACSP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -16.0,
+    -6.0,
+    -3.2
+   ],
+   "bboxMax": [
+    16.0,
+    6.0,
+    1.25
+   ],
+   "size": [
+    32.0,
+    12.0,
+    4.45
+   ]
+  },
+  "Cottage": {
+   "pack": "CT_Homes",
+   "packFile": "fbx/CT_Homes.fbx",
+   "assetId": "105300883906248",
+   "at": [
+    90,
+    0,
+    0
+   ],
+   "tris": 2256,
+   "objects": 12,
+   "neonParts": [
+    "PorchLamp",
+    "Window"
+   ],
+   "parts": [
+    "TintRock:7F92ACSP",
+    "TintBody:E2483DSP",
+    "Trim:F2F4F7SP",
+    "Roof:9E3B33SP",
+    "Snow:F6FAFFSP",
+    "Brick:B5523CBR",
+    "Door:7A4A2AWO",
+    "Knob:FFD23AME",
+    "Wood:E09A5AWO",
+    "PorchLamp:FFC86BNE",
+    "Steel:3B3F4ASP",
+    "Window:FFE3A0NE"
+   ],
+   "bboxMin": [
+    -8.97,
+    -8.1,
+    0.0
+   ],
+   "bboxMax": [
+    8.97,
+    6.97,
+    11.4
+   ],
+   "size": [
+    17.94,
+    15.07,
+    11.4
+   ]
+  },
+  "Mailbox": {
+   "pack": "CT_Homes",
+   "packFile": "fbx/CT_Homes.fbx",
+   "assetId": "105300883906248",
+   "at": [
+    180,
+    0,
+    0
+   ],
+   "tris": 392,
+   "objects": 4,
+   "neonParts": [],
+   "parts": [
+    "Wood:A9622FWO",
+    "TintBody:E2483DSP",
+    "Flag:E2483DSP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -0.72,
+    -1.07,
+    0.0
+   ],
+   "bboxMax": [
+    0.72,
+    1.07,
+    4.9
+   ],
+   "size": [
+    1.44,
+    2.14,
+    4.9
+   ]
+  },
+  "PicketFence": {
+   "pack": "CT_Homes",
+   "packFile": "fbx/CT_Homes.fbx",
+   "assetId": "105300883906248",
+   "at": [
+    270,
+    0,
+    0
+   ],
+   "tris": 1032,
+   "objects": 2,
+   "neonParts": [],
+   "parts": [
+    "Fence:F2F4F7SP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -3.25,
+    -0.17,
+    0.0
+   ],
+   "bboxMax": [
+    3.25,
+    0.3,
+    2.37
+   ],
+   "size": [
+    6.5,
+    0.47,
+    2.37
+   ]
+  },
+  "RoadSign": {
+   "pack": "CT_Homes",
+   "packFile": "fbx/CT_Homes.fbx",
+   "assetId": "105300883906248",
+   "at": [
+    360,
+    0,
+    0
+   ],
+   "tris": 416,
+   "objects": 5,
+   "neonParts": [],
+   "parts": [
+    "Pole:C9D2DEME",
+    "Sign:FFD23ASP",
+    "Edge:2A2E38SP",
+    "Arrow:2A2E38SP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -1.61,
+    -0.38,
+    0.0
+   ],
+   "bboxMax": [
+    1.61,
+    0.18,
+    6.21
+   ],
+   "size": [
+    3.21,
+    0.56,
+    6.21
+   ]
+  },
+  "RoadClosed": {
+   "pack": "CT_Homes",
+   "packFile": "fbx/CT_Homes.fbx",
+   "assetId": "105300883906248",
+   "at": [
+    450,
+    0,
+    0
+   ],
+   "tris": 592,
+   "objects": 7,
+   "neonParts": [
+    "Blink"
+   ],
+   "parts": [
+    "Legs:A9622FSP",
+    "Stripes:E2483DSP",
+    "Stripes:F2F4F7SP",
+    "StripesB:E2483DSP",
+    "StripesB:F2F4F7SP",
+    "Blink:F2A23DNE",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -2.72,
+    -0.82,
+    0.0
+   ],
+   "bboxMax": [
+    2.72,
+    0.82,
+    3.35
+   ],
+   "size": [
+    5.44,
+    1.63,
+    3.35
+   ]
+  },
+  "Snowman": {
+   "pack": "CT_Homes",
+   "packFile": "fbx/CT_Homes.fbx",
+   "assetId": "105300883906248",
+   "at": [
+    540,
+    0,
+    0
+   ],
+   "tris": 1042,
+   "objects": 6,
+   "neonParts": [],
+   "parts": [
+    "Snow:F6FAFFSP",
+    "Nose:F2A23DSP",
+    "Coal:2A2E38SP",
+    "Arms:8A5530SP",
+    "Scarf:E2483DSP",
+    "Hat:2A2E38SP"
+   ],
+   "bboxMin": [
+    -2.13,
+    -1.48,
+    0.0
+   ],
+   "bboxMax": [
+    2.13,
+    1.48,
+    6.45
+   ],
+   "size": [
+    4.27,
+    2.95,
+    6.45
+   ]
+  },
+  "MarketStall": {
+   "pack": "CT_Market",
+   "packFile": "fbx/CT_Market.fbx",
+   "assetId": "86490396688103",
+   "at": [
+    90,
+    0,
+    0
+   ],
+   "tris": 1968,
+   "objects": 10,
+   "neonParts": [
+    "StallLamp"
+   ],
+   "parts": [
+    "Wood:E09A5AWO",
+    "Counter:A9622FWO",
+    "TintTrim:FFD23ASP",
+    "Wood:A9622FWO",
+    "Posts:A9622FWO",
+    "TintAccent:E2483DFA",
+    "Awning:F2F4F7FA",
+    "Snow:F6FAFFSP",
+    "Sign:FFF3D6SP",
+    "StallLamp:FFC86BNE"
+   ],
+   "bboxMin": [
+    -6.4,
+    -5.78,
+    0.0
+   ],
+   "bboxMax": [
+    6.4,
+    4.07,
+    10.5
+   ],
+   "size": [
+    12.8,
+    9.85,
+    10.5
+   ]
+  },
+  "StallShutter": {
+   "pack": "CT_Market",
+   "packFile": "fbx/CT_Market.fbx",
+   "assetId": "86490396688103",
+   "at": [
+    180,
+    0,
+    0
+   ],
+   "tris": 460,
+   "objects": 4,
+   "neonParts": [],
+   "parts": [
+    "Shutter:8FA3B8ME",
+    "Ribs:6F8399ME",
+    "Handle:2A2E38SP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -5.72,
+    -0.32,
+    0.0
+   ],
+   "bboxMax": [
+    5.72,
+    0.32,
+    3.75
+   ],
+   "size": [
+    11.44,
+    0.64,
+    3.75
+   ]
+  },
+  "StallGoods": {
+   "pack": "CT_Market",
+   "packFile": "fbx/CT_Market.fbx",
+   "assetId": "86490396688103",
+   "at": [
+    270,
+    0,
+    0
+   ],
+   "tris": 1820,
+   "objects": 8,
+   "neonParts": [],
+   "parts": [
+    "Crates:E09A5AWO",
+    "Goods0:E2483DSP",
+    "Goods1:F2A23DSP",
+    "Goods2:2F9E62SP",
+    "Goods3:FF7FAESP",
+    "Mugs:2FC6C0SP",
+    "Mugs:FFD23ASP",
+    "Mugs:3D7BE2SP"
+   ],
+   "bboxMin": [
+    -5.1,
+    -0.8,
+    0.0
+   ],
+   "bboxMax": [
+    5.1,
+    0.8,
+    1.7
+   ],
+   "size": [
+    10.2,
+    1.6,
+    1.7
+   ]
+  },
+  "MarketArch": {
+   "pack": "CT_Market",
+   "packFile": "fbx/CT_Market.fbx",
+   "assetId": "86490396688103",
+   "at": [
+    360,
+    0,
+    0
+   ],
+   "tris": 2244,
+   "objects": 11,
+   "neonParts": [
+    "Bulbs",
+    "Bulbs",
+    "Bulbs",
+    "Bulbs"
+   ],
+   "parts": [
+    "TintRock:7F92ACSP",
+    "TintAccent:E2483DSP",
+    "Stripes:F2F4F7SP",
+    "TintTrim:FFD23ASP",
+    "Snow:F6FAFFSP",
+    "Sign:FFF3D6SP",
+    "Garland:2F9E62SP",
+    "Bulbs:FFD23ANE",
+    "Bulbs:2FC6C0NE",
+    "Bulbs:FF7FAENE",
+    "Bulbs:E2483DNE"
+   ],
+   "bboxMin": [
+    -11.5,
+    -1.0,
+    0.0
+   ],
+   "bboxMax": [
+    11.5,
+    1.0,
+    11.75
+   ],
+   "size": [
+    23.0,
+    2.0,
+    11.75
+   ]
+  },
+  "ShopFront": {
+   "pack": "CT_Market",
+   "packFile": "fbx/CT_Market.fbx",
+   "assetId": "86490396688103",
+   "at": [
+    450,
+    0,
+    0
+   ],
+   "tris": 2388,
+   "objects": 12,
+   "neonParts": [
+    "Shelves",
+    "OpenSign"
+   ],
+   "parts": [
+    "TintRock:7F92ACSP",
+    "Walls:F3E2C8SP",
+    "TintAccent:E2483DSP",
+    "Snow:F6FAFFSP",
+    "Glass:BFE8FFGL",
+    "Trim:F2F4F7SP",
+    "Shelves:FFC86BNE",
+    "Door:3E6FB8SP",
+    "TintAccent:E2483DFA",
+    "Awning:F2F4F7FA",
+    "Sign:FFF3D6SP",
+    "OpenSign:FF4F6ENE"
+   ],
+   "bboxMin": [
+    -13.92,
+    -8.64,
+    0.0
+   ],
+   "bboxMax": [
+    13.92,
+    6.42,
+    10.8
+   ],
+   "size": [
+    27.84,
+    15.06,
+    10.8
+   ]
+  },
+  "Car": {
+   "pack": "CT_Vehicles",
+   "packFile": "fbx/CT_Vehicles.fbx",
+   "assetId": "129190579088480",
+   "at": [
+    90,
+    0,
+    0
+   ],
+   "tris": 2620,
+   "objects": 8,
+   "neonParts": [
+    "Headlights",
+    "Taillights"
+   ],
+   "parts": [
+    "TintBody:E2483DSP",
+    "Glass:BFE8FFGL",
+    "Tires:2A2E38SP",
+    "Hubs:C9D2DEME",
+    "Headlights:FFE3A0NE",
+    "Taillights:FF3A3ANE",
+    "Bumper:C9D2DEME",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -2.35,
+    -4.25,
+    0.0
+   ],
+   "bboxMax": [
+    2.35,
+    4.25,
+    3.84
+   ],
+   "size": [
+    4.7,
+    8.5,
+    3.84
+   ]
+  },
+  "BarrierArm": {
+   "pack": "CT_Vehicles",
+   "packFile": "fbx/CT_Vehicles.fbx",
+   "assetId": "129190579088480",
+   "at": [
+    180,
+    0,
+    0
+   ],
+   "tris": 188,
+   "objects": 3,
+   "neonParts": [
+    "Light"
+   ],
+   "parts": [
+    "Box:FFD23ASP",
+    "Snow:F6FAFFSP",
+    "Light:FF3A3ANE"
+   ],
+   "bboxMin": [
+    -0.82,
+    -0.97,
+    0.0
+   ],
+   "bboxMax": [
+    0.82,
+    0.82,
+    3.3
+   ],
+   "size": [
+    1.64,
+    1.79,
+    3.3
+   ]
+  },
+  "BarrierBoom": {
+   "pack": "CT_Vehicles",
+   "packFile": "fbx/CT_Vehicles.fbx",
+   "assetId": "129190579088480",
+   "at": [
+    270,
+    0,
+    0
+   ],
+   "tris": 384,
+   "objects": 3,
+   "neonParts": [],
+   "parts": [
+    "BoomA:E2483DSP",
+    "BoomB:F2F4F7SP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    0.0,
+    -0.3,
+    -0.2
+   ],
+   "bboxMax": [
+    8.8,
+    0.3,
+    0.4
+   ],
+   "size": [
+    8.8,
+    0.61,
+    0.6
+   ]
+  },
+  "BusShelter": {
+   "pack": "CT_Vehicles",
+   "packFile": "fbx/CT_Vehicles.fbx",
+   "assetId": "129190579088480",
+   "at": [
+    360,
+    0,
+    0
+   ],
+   "tris": 728,
+   "objects": 8,
+   "neonParts": [
+    "Poster",
+    "Lamp"
+   ],
+   "parts": [
+    "Base:C9D2DESP",
+    "TintAccent:E2483DSP",
+    "Glass:BFE8FFGL",
+    "Snow:F6FAFFSP",
+    "Bench:E09A5AWO",
+    "Steel:3B3F4ASP",
+    "Poster:4FA3FFNE",
+    "Lamp:FFC86BNE"
+   ],
+   "bboxMin": [
+    -9.5,
+    -3.5,
+    0.0
+   ],
+   "bboxMax": [
+    9.5,
+    3.3,
+    8.27
+   ],
+   "size": [
+    19.0,
+    6.8,
+    8.27
+   ]
+  },
+  "BusStopSign": {
+   "pack": "CT_Vehicles",
+   "packFile": "fbx/CT_Vehicles.fbx",
+   "assetId": "129190579088480",
+   "at": [
+    450,
+    0,
+    0
+   ],
+   "tris": 228,
+   "objects": 4,
+   "neonParts": [],
+   "parts": [
+    "Pole:C9D2DEME",
+    "Sign:F2F4F7SP",
+    "SignFace:3D7BE2SP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -1.15,
+    -0.35,
+    0.0
+   ],
+   "bboxMax": [
+    1.15,
+    0.35,
+    7.78
+   ],
+   "size": [
+    2.3,
+    0.7,
+    7.78
+   ]
+  },
+  "Bus": {
+   "pack": "CT_Vehicles",
+   "packFile": "fbx/CT_Vehicles.fbx",
+   "assetId": "129190579088480",
+   "at": [
+    540,
+    0,
+    0
+   ],
+   "tris": 2896,
+   "objects": 12,
+   "neonParts": [
+    "Headlights",
+    "Taillights",
+    "DestSign"
+   ],
+   "parts": [
+    "TintBody:E2483DSP",
+    "Stripe:F2F4F7SP",
+    "Roof:F2F4F7SP",
+    "Snow:F6FAFFSP",
+    "Glass:BFE8FFGL",
+    "Tires:2A2E38SP",
+    "Hubs:C9D2DEME",
+    "Headlights:FFE3A0NE",
+    "Taillights:FF3A3ANE",
+    "DestSign:FFB000NE",
+    "Bumper:2A2E38SP",
+    "Door:1F2937SP"
+   ],
+   "bboxMin": [
+    -3.2,
+    -9.8,
+    0.0
+   ],
+   "bboxMax": [
+    3.2,
+    9.67,
+    7.65
+   ],
+   "size": [
+    6.4,
+    19.47,
+    7.65
+   ]
+  },
+  "DeliveryVan": {
+   "pack": "CT_Vehicles",
+   "packFile": "fbx/CT_Vehicles.fbx",
+   "assetId": "129190579088480",
+   "at": [
+    630,
+    0,
+    0
+   ],
+   "tris": 2444,
+   "objects": 8,
+   "neonParts": [
+    "Headlights"
+   ],
+   "parts": [
+    "TintBody:E2483DSP",
+    "Glass:BFE8FFGL",
+    "Tires:2A2E38SP",
+    "Hubs:C9D2DEME",
+    "Headlights:FFE3A0NE",
+    "Logo:F2F4F7SP",
+    "Bumper:2A2E38SP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -2.9,
+    -5.8,
+    0.0
+   ],
+   "bboxMax": [
+    2.9,
+    5.5,
+    6.62
+   ],
+   "size": [
+    5.8,
+    11.3,
+    6.62
+   ]
+  },
+  "SupplyTent": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    90,
+    0,
+    0
+   ],
+   "tris": 640,
+   "objects": 8,
+   "neonParts": [
+    "Lamp"
+   ],
+   "parts": [
+    "TintAccent:E2483DFA",
+    "Canvas:FFF3D6FA",
+    "Pole:A9622FSP",
+    "Opening:6E4630SP",
+    "Snow:F6FAFFSP",
+    "Ropes:D9D2C0SP",
+    "Steel:3B3F4ASP",
+    "Lamp:FFC86BNE"
+   ],
+   "bboxMin": [
+    -8.03,
+    -5.96,
+    0.0
+   ],
+   "bboxMax": [
+    8.03,
+    5.56,
+    6.89
+   ],
+   "size": [
+    16.06,
+    11.52,
+    6.89
+   ]
+  },
+  "SupplyCrate": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    180,
+    0,
+    0
+   ],
+   "tris": 552,
+   "objects": 5,
+   "neonParts": [],
+   "parts": [
+    "Crate:E09A5AWO",
+    "Bands:3B3F4AME",
+    "TintAccent:E2483DSP",
+    "Star:F2F4F7SP",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -2.06,
+    -2.19,
+    0.0
+   ],
+   "bboxMax": [
+    2.06,
+    2.08,
+    3.72
+   ],
+   "size": [
+    4.12,
+    4.27,
+    3.72
+   ]
+  },
+  "Campfire": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    270,
+    0,
+    0
+   ],
+   "tris": 308,
+   "objects": 4,
+   "neonParts": [
+    "Flame",
+    "Flame"
+   ],
+   "parts": [
+    "Stones:7F92ACSP",
+    "Logs:8A5530SP",
+    "Flame:F2A23DNE",
+    "Flame:FFD23ANE"
+   ],
+   "bboxMin": [
+    -1.83,
+    -1.78,
+    0.0
+   ],
+   "bboxMax": [
+    1.91,
+    1.8,
+    2.1
+   ],
+   "size": [
+    3.73,
+    3.58,
+    2.1
+   ]
+  },
+  "PumpHouse": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    360,
+    0,
+    0
+   ],
+   "tris": 1076,
+   "objects": 10,
+   "neonParts": [
+    "Window",
+    "Lamp"
+   ],
+   "parts": [
+    "TintRock:7F92ACSP",
+    "Walls:D9A07ABR",
+    "Roof:3D6E9ESP",
+    "Snow:F6FAFFSP",
+    "Door:3D6E9ESP",
+    "Trim:F2F4F7SP",
+    "Window:FFE3A0NE",
+    "Sign:FFF3D6SP",
+    "Pipe:5D6F82ME",
+    "Lamp:FFC86BNE"
+   ],
+   "bboxMin": [
+    -12.0,
+    -9.0,
+    0.0
+   ],
+   "bboxMax": [
+    12.0,
+    6.96,
+    10.63
+   ],
+   "size": [
+    24.0,
+    15.96,
+    10.63
+   ]
+  },
+  "PumpMachine": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    450,
+    0,
+    0
+   ],
+   "tris": 1096,
+   "objects": 11,
+   "neonParts": [
+    "StatusLight"
+   ],
+   "parts": [
+    "TintRock:7F92ACSP",
+    "Body:3D7BE2SP",
+    "Cap:C9D2DEME",
+    "Knob:FFD23ASP",
+    "Bands:C9D2DEME",
+    "Axle:C9D2DEME",
+    "Spout:C9D2DEME",
+    "Trough:E09A5AWO",
+    "Water:4FC3FFGL",
+    "Gauge:F2F4F7SP",
+    "StatusLight:6CFF9ANE"
+   ],
+   "bboxMin": [
+    -2.6,
+    -4.6,
+    0.0
+   ],
+   "bboxMax": [
+    2.6,
+    1.6,
+    5.45
+   ],
+   "size": [
+    5.2,
+    6.2,
+    5.45
+   ]
+  },
+  "PumpWheel": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    540,
+    0,
+    0
+   ],
+   "tris": 508,
+   "objects": 4,
+   "neonParts": [],
+   "parts": [
+    "Rim:E2483DSP",
+    "Spokes:E2483DSP",
+    "Hub:C9D2DEME",
+    "Handle:FFD23ASP"
+   ],
+   "bboxMin": [
+    -0.25,
+    -2.2,
+    -2.2
+   ],
+   "bboxMax": [
+    0.9,
+    2.2,
+    2.2
+   ],
+   "size": [
+    1.15,
+    4.4,
+    4.4
+   ]
+  },
+  "Warehouse": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    630,
+    0,
+    0
+   ],
+   "tris": 1916,
+   "objects": 13,
+   "neonParts": [
+    "BayLamp",
+    "Window"
+   ],
+   "parts": [
+    "TintRock:7F92ACSP",
+    "Walls:B7C4D4SP",
+    "Floor:8E9AABSP",
+    "TintAccent:E2483DSP",
+    "BayLamp:FFC86BNE",
+    "Inside:3A4150SP",
+    "Boxes:E09A5AWO",
+    "Trim:8E9AABSP",
+    "Roof:6D7F95SP",
+    "Snow:F6FAFFSP",
+    "Sign:FFF3D6SP",
+    "Trim:F2F4F7SP",
+    "Window:FFE3A0NE"
+   ],
+   "bboxMin": [
+    -33.6,
+    -7.0,
+    0.0
+   ],
+   "bboxMax": [
+    33.6,
+    6.6,
+    12.65
+   ],
+   "size": [
+    67.2,
+    13.6,
+    12.65
+   ]
+  },
+  "WarehouseDoor": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    720,
+    0,
+    0
+   ],
+   "tris": 572,
+   "objects": 3,
+   "neonParts": [],
+   "parts": [
+    "Door:D59A3AME",
+    "Ribs:B57E2AME",
+    "Handle:2A2E38SP"
+   ],
+   "bboxMin": [
+    -5.0,
+    -0.3,
+    0.0
+   ],
+   "bboxMax": [
+    5.0,
+    0.12,
+    8.6
+   ],
+   "size": [
+    10.0,
+    0.42,
+    8.6
+   ]
+  },
+  "PalletStack": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    810,
+    0,
+    0
+   ],
+   "tris": 372,
+   "objects": 7,
+   "neonParts": [],
+   "parts": [
+    "Pallet:A9622FWO",
+    "Boxes:C9A26BSP",
+    "Boxes:B98D55SP",
+    "Boxes:D8B47ASP",
+    "Boxes:C29A60SP",
+    "Wrap:E8F4FFGL",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -1.8,
+    -1.8,
+    0.0
+   ],
+   "bboxMax": [
+    1.8,
+    1.8,
+    2.45
+   ],
+   "size": [
+    3.6,
+    3.6,
+    2.45
+   ]
+  },
+  "WinterHat": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    900,
+    0,
+    0
+   ],
+   "tris": 442,
+   "objects": 3,
+   "neonParts": [],
+   "parts": [
+    "Hat:E2483DFA",
+    "Brim:F2F4F7FA",
+    "Pom:F2F4F7FA"
+   ],
+   "bboxMin": [
+    -0.78,
+    -0.77,
+    -0.04
+   ],
+   "bboxMax": [
+    0.78,
+    0.77,
+    1.32
+   ],
+   "size": [
+    1.56,
+    1.53,
+    1.36
+   ]
+  },
+  "Scarf": {
+   "pack": "CT_Work",
+   "packFile": "fbx/CT_Work.fbx",
+   "assetId": "121407982158014",
+   "at": [
+    990,
+    0,
+    0
+   ],
+   "tris": 412,
+   "objects": 2,
+   "neonParts": [],
+   "parts": [
+    "Scarf:FFD23AFA",
+    "Stripes:E2483DSP"
+   ],
+   "bboxMin": [
+    -0.79,
+    -0.78,
+    -0.97
+   ],
+   "bboxMax": [
+    0.79,
+    0.78,
+    0.2
+   ],
+   "size": [
+    1.59,
+    1.56,
+    1.17
+   ]
+  }
+ }
+}

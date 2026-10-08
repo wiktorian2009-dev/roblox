@@ -1,0 +1,7326 @@
+{
+ "efficient": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 129,
+    "median": 141,
+    "p90": 158
+   },
+   "minutesBetweenMeaningful": {
+    "median": 0.9,
+    "p90": 5.9,
+    "max": 22.4
+   },
+   "longestGapPerPlayer": {
+    "median": 13.0,
+    "p90": 19.1,
+    "max": 22.4
+   },
+   "trace15": {
+    "median": 2.5,
+    "p90": 7.9,
+    "max": 22.5
+   },
+   "firstPartMinute": {
+    "median": 2.2,
+    "p90": 8.2
+   },
+   "partsBoughtW1": {
+    "median": 31.0
+   },
+   "longestUnavailable": {
+    "median": 2.5,
+    "p90": 2.9,
+    "max": 3.3
+   },
+   "jobs": {
+    "median": 17.0,
+    "shareOfSnow": 0.664,
+    "shareOfTime": 0.177,
+    "payVsCollecting": 2.0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 1.0,
+    "p90": 4,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 4.2,
+     "p90": 7.2
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 20160.048536690738,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Snowball Motor/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 29.024101212263606,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.65,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.7
+     },
+     "rollsForAffordableUseful": 2.5,
+     "rollsForUseful": 1.5,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.2,
+     "jobBonus": 51370.66980431043,
+     "jobVsCollecting": 1.98
+    },
+    "longestGapInStage": {
+     "median": 1.6,
+     "p90": 3.8
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 4.7,
+     "p90": 7.6
+    },
+    "leaveMin": {
+     "median": 13.0,
+     "p90": 14.9
+    },
+    "entry": {
+     "income_per_min": 210084.97000002774,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Wide Clearing Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 4.909634437368317,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_snowball",
+      "name": "Snowball Motor",
+      "price": 300,
+      "gain": 2.13,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 1.8,
+     "rollsForUseful": 1.2,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 14.6,
+     "jobBonus": 532215.2573334036,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 6132453.065528498,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Powerful Engine/Tracked Treads/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 43.21483444869158,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_sandcrawler",
+      "name": "Sandcrawler Tracks",
+      "price": 670000,
+      "gain": 1.17,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 5.6,
+     "rollsForUseful": 2.7,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.5,
+     "jobBonus": 15535547.766005527,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.4,
+     "p90": 3.3
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 13.4,
+     "p90": 15.3
+    },
+    "leaveMin": {
+     "median": 28.1,
+     "p90": 32.6
+    },
+    "entry": {
+     "income_per_min": 4191423.87239342,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Dune Sweeper/Powerful Engine/Dune Balloon Tires/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 40.18285150091391,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_ice",
+      "name": "Reinforced Icebreaker",
+      "price": 670000,
+      "gain": 1.27,
+      "minutes": 0.2
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 3.3,
+     "rollsForUseful": 1.4,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 272.0,
+     "jobBonus": 10618273.81006333,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 318371764.1324055,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Bonechill Scoop/Cauldron Burner/Sandcrawler Tracks/Dune Runner",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 54.34284899721863,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_phantom",
+      "name": "Phantom V-Twin",
+      "price": 250000000,
+      "gain": 1.17,
+      "minutes": 0.8
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip1",
+      "price": 12906076.035757653,
+      "gain": 1.19,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 4.4,
+     "rollsForUseful": 2.4,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 3.6,
+     "jobBonus": 806541802.4687606,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 3.6,
+     "p90": 5.3
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 28.5,
+     "p90": 33.0
+    },
+    "leaveMin": {
+     "median": 55.5,
+     "p90": 63.1
+    },
+    "entry": {
+     "income_per_min": 2835993447.7204666,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Hex Breaker/Geode Core/Spiked Bone Wheels/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 17.05765190425,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_graverollers",
+      "name": "Grave Rollers",
+      "price": 15000000,
+      "gain": 1.14,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.18,
+      "minutes": 0.2
+     },
+     "rollsForAffordableUseful": 4.1,
+     "rollsForUseful": 1.8,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 67.3,
+     "jobBonus": 7184516734.225182,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 58528865149.314384,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Amethyst Wedge/8-Bit Engine/Geode Tracks/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 67.70569663760277,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.13,
+      "minutes": 0.7
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.42,
+      "minutes": 19.2
+     },
+     "rollsForAffordableUseful": 7.6,
+     "rollsForUseful": 4.8,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 3.3,
+     "jobBonus": 148273125044.92978,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 8.0,
+     "p90": 10.9
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 55.9,
+     "p90": 63.6
+    },
+    "leaveMin": {
+     "median": 87.6,
+     "p90": 98.5
+    },
+    "entry": {
+     "income_per_min": 59955489571.533905,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Prism Cleaver/8-Bit Engine/Haunted Treads/Geode Crawler",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 10.782369118820206,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_geodetracks",
+      "name": "Geode Tracks",
+      "price": 42000000000,
+      "gain": 1.16,
+      "minutes": 0.7
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.5,
+      "minutes": 18.8
+     },
+     "rollsForAffordableUseful": 4.7,
+     "rollsForUseful": 2.2,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 39.7,
+     "jobBonus": 151887240247.8859,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 489873356956.4677,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Arcade Plow/Tiki Thumper/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 80.24642331120005,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_totem",
+      "name": "Totem Torque",
+      "price": 1900000000000,
+      "gain": 1.17,
+      "minutes": 3.9
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 5.3
+     },
+     "rollsForAffordableUseful": 28.6,
+     "rollsForUseful": 5.6,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 4.9,
+     "jobBonus": 1241012504289.7183,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 8.2,
+     "p90": 10.8
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 88.0,
+     "p90": 99.0
+    },
+    "leaveMin": {
+     "median": 115.4,
+     "p90": 129.9
+    },
+    "entry": {
+     "income_per_min": 400890237884.13763,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Prism Cleaver/Tiki Thumper/Arcade Hover Pods/Geode Crawler",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 68.10227383185087,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_arcade",
+      "name": "Arcade Plow",
+      "price": 520000000000,
+      "gain": 1.17,
+      "minutes": 1.3
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 6.4
+     },
+     "rollsForAffordableUseful": 6.8,
+     "rollsForUseful": 2.0,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 60.4,
+     "jobBonus": 1015588602639.8153,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 3421962002114.901,
+     "stage": "Jungle",
+     "band": 6,
+     "build": "Tusk Breaker/Jungle Turbine/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 35.85142064748556,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.28,
+      "minutes": 1.5
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 3.2
+     },
+     "rollsForAffordableUseful": 5.8,
+     "rollsForUseful": 2.4,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 7.1,
+     "jobBonus": 8668970405357.748,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 8.1,
+     "p90": 10.7
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 115.8,
+     "p90": 130.3
+    },
+    "leaveMin": {
+     "median": 141.2,
+     "p90": 158.2
+    },
+    "entry": {
+     "income_per_min": 4633002501864.629,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Canopy Scoop/Jungle Turbine/Vine Crawler Tracks/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 48.53932377172684,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_cryo",
+      "name": "Cryo Compressor",
+      "price": 7300000000000,
+      "gain": 1.21,
+      "minutes": 1.6
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 2.3
+     },
+     "rollsForAffordableUseful": 14.6,
+     "rollsForUseful": 1.8,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 169.2,
+     "jobBonus": 11736939671390.393,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 282223375859570.1,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Canopy Scoop/Jungle Turbine/Vine Crawler Tracks/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 99.16315276654116,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_frostbite",
+      "name": "Frostbite Cleaver",
+      "price": 21000000000000,
+      "gain": 1.19,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "W2_BlossomBreeze",
+      "price": 1568000000000000.0,
+      "gain": 1.5,
+      "minutes": 5.6
+     },
+     "rollsForAffordableUseful": 2.7,
+     "rollsForUseful": 1.9,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 2.8,
+     "jobBonus": 714965885510911.0,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 6.1,
+     "p90": 8.0
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 141.6,
+     "p90": 158.6
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 296057855068372.6,
+     "stage": "Jungle",
+     "band": 8,
+     "build": "Canopy Scoop/Jungle Turbine/Vine Crawler Tracks/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 99.16315276654116,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_cryo",
+      "name": "Cryo Compressor",
+      "price": 7300000000000,
+      "gain": 1.12,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.33,
+      "minutes": 4.2
+     },
+     "rollsForAffordableUseful": 2.2,
+     "rollsForUseful": 1.2,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 231.0,
+     "jobBonus": 750013232839877.2,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.5,
+     "p90": 0.8
+    }
+   }
+  },
+  "offers": {
+   "rolls": 10444,
+   "usefulShare": 0.429,
+   "affordableUsefulShare": 0.22,
+   "duplicateShare": 0.253,
+   "slotShare": {
+    "Engine": 0.3,
+    "Gear": 0.291,
+    "Blade": 0.291,
+    "Body": 0.119
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "casual": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 191,
+    "median": 217,
+    "p90": 242
+   },
+   "minutesBetweenMeaningful": {
+    "median": 1.3,
+    "p90": 8.5,
+    "max": 36.4
+   },
+   "longestGapPerPlayer": {
+    "median": 21.1,
+    "p90": 29.2,
+    "max": 36.4
+   },
+   "trace15": {
+    "median": 3.0,
+    "p90": 11.5,
+    "max": 32.4
+   },
+   "firstPartMinute": {
+    "median": 9.1,
+    "p90": 9.5
+   },
+   "partsBoughtW1": {
+    "median": 27.0
+   },
+   "longestUnavailable": {
+    "median": 2.5,
+    "p90": 6.7,
+    "max": 7.3
+   },
+   "jobs": {
+    "median": 16.0,
+    "shareOfSnow": 0.444,
+    "shareOfTime": 0.112,
+    "payVsCollecting": 2.0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 0.0,
+    "p90": 3,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 6.7,
+     "p90": 8.6
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 13270.395353209535,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 16.966175093416208,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.87,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 1.1
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.4,
+     "jobBonus": 34370.59237760656,
+     "jobVsCollecting": 1.98
+    },
+    "longestGapInStage": {
+     "median": 3.1,
+     "p90": 4.5
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 7.2,
+     "p90": 9.0
+    },
+    "leaveMin": {
+     "median": 18.2,
+     "p90": 20.7
+    },
+    "entry": {
+     "income_per_min": 130017.08531168173,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 2.779874547009234,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.77,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 1.6,
+     "rollsForUseful": 1.1,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 23.5,
+     "jobBonus": 336746.8807394279,
+     "jobVsCollecting": 1.98
+    },
+    "developed": {
+     "income_per_min": 5429721.549773491,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Powerful Engine/Snow Wheels/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 40.30540134698319,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_tracks",
+      "name": "Tracked Treads",
+      "price": 650,
+      "gain": 1.14,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 3.9,
+     "rollsForUseful": 2.2,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.6,
+     "jobBonus": 13755294.59275951,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 4.1,
+     "p90": 6.3
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 18.7,
+     "p90": 21.1
+    },
+    "leaveMin": {
+     "median": 39.4,
+     "p90": 48.0
+    },
+    "entry": {
+     "income_per_min": 5429721.549773491,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Dune Sweeper/Powerful Engine/Snow Wheels/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 40.30540134698319,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_tracks",
+      "name": "Tracked Treads",
+      "price": 650,
+      "gain": 1.14,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 2.9,
+     "rollsForUseful": 1.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 210.0,
+     "jobBonus": 13755294.59275951,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 1864204958.4248934,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Hex Breaker/Phantom V-Twin/Spiked Bone Wheels/Dune Runner",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 77.6259342914627,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_shardspinner",
+      "name": "Shard Spinner",
+      "price": 1700000000,
+      "gain": 1.2,
+      "minutes": 0.9
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.18,
+      "minutes": 0.4
+     },
+     "rollsForAffordableUseful": 6.1,
+     "rollsForUseful": 3.7,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 0.6,
+     "jobBonus": 4722652561.343063,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 5.1,
+     "p90": 7.8
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 39.8,
+     "p90": 48.5
+    },
+    "leaveMin": {
+     "median": 86.1,
+     "p90": 122.0
+    },
+    "entry": {
+     "income_per_min": 2421885276.441022,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Quartz Edge/Phantom V-Twin/Haunted Treads/Dune Runner",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 15.127181146110505,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_hex",
+      "name": "Hex Breaker",
+      "price": 250000000,
+      "gain": 1.18,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.18,
+      "minutes": 0.3
+     },
+     "rollsForAffordableUseful": 4.0,
+     "rollsForUseful": 1.8,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 78.9,
+     "jobBonus": 6135442700.317255,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 50422297611.73985,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Amethyst Wedge/Crystal Reactor/Haunted Treads/Arcade Kart",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 49.36860096803731,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.18,
+      "minutes": 0.8
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.75,
+      "minutes": 22.3
+     },
+     "rollsForAffordableUseful": 8.0,
+     "rollsForUseful": 3.8,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 3.8,
+     "jobBonus": 127736487283.0743,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 14.3,
+     "p90": 23.0
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 86.6,
+     "p90": 122.4
+    },
+    "leaveMin": {
+     "median": 131.0,
+     "p90": 158.7
+    },
+    "entry": {
+     "income_per_min": 71605284105.97125,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Prism Cleaver/Crystal Reactor/Haunted Treads/Grave Hauler",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 8.725411835378011,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_geodetracks",
+      "name": "Geode Tracks",
+      "price": 42000000000,
+      "gain": 1.16,
+      "minutes": 0.6
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.5,
+      "minutes": 15.7
+     },
+     "rollsForAffordableUseful": 3.1,
+     "rollsForUseful": 1.8,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 33.2,
+     "jobBonus": 181400053068.4605,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 421616501419.44946,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Prism Cleaver/Arcade Turbo/Joypad Treads/Grave Hauler",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 48.470724202812846,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_arcade",
+      "name": "Arcade Plow",
+      "price": 520000000000,
+      "gain": 1.2,
+      "minutes": 1.2
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 6.1
+     },
+     "rollsForAffordableUseful": 4.6,
+     "rollsForUseful": 2.5,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 5.6,
+     "jobBonus": 1068095136929.272,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 12.1,
+     "p90": 16.7
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 131.4,
+     "p90": 159.1
+    },
+    "leaveMin": {
+     "median": 172.9,
+     "p90": 197.5
+    },
+    "entry": {
+     "income_per_min": 530952926621.2275,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Arcade Plow/Tiki Thumper/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 79.93440461358848,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_totem",
+      "name": "Totem Torque",
+      "price": 1900000000000,
+      "gain": 1.17,
+      "minutes": 3.6
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 4.8
+     },
+     "rollsForAffordableUseful": 7.8,
+     "rollsForUseful": 2.5,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 45.6,
+     "jobBonus": 1345080747440.4429,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 4094383868934.958,
+     "stage": "Jungle",
+     "band": 6,
+     "build": "Canopy Scoop/Jungle Turbine/Root Crawlers/Arcade Kart",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 41.60734997002571,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.17,
+      "minutes": 1.3
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.11,
+      "minutes": 2.7
+     },
+     "rollsForAffordableUseful": 13.1,
+     "rollsForUseful": 3.1,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 5.9,
+     "jobBonus": 10372439134635.227,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 11.9,
+     "p90": 20.4
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 173.3,
+     "p90": 197.9
+    },
+    "leaveMin": {
+     "median": 216.9,
+     "p90": 242.1
+    },
+    "entry": {
+     "income_per_min": 3545179677759.284,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Canopy Scoop/Jungle Turbine/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 37.817670670185585,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_rootcrawler",
+      "name": "Root Crawlers",
+      "price": 1900000000000,
+      "gain": 1.1,
+      "minutes": 0.5
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 3.1
+     },
+     "rollsForAffordableUseful": 6.3,
+     "rollsForUseful": 1.4,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 221.1,
+     "jobBonus": 8981121850323.52,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 378214521414855.44,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Canopy Scoop/Jungle Turbine/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 97.4060176188963,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_zero",
+      "name": "Absolute Edge",
+      "price": 170000000000000,
+      "gain": 1.2,
+      "minutes": 0.4
+     },
+     "cheapUpgrade": {
+      "id": "W2_BlossomBreeze",
+      "price": 1568000000000000.0,
+      "gain": 1.5,
+      "minutes": 4.1
+     },
+     "rollsForAffordableUseful": 3.2,
+     "rollsForUseful": 2.1,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 2.1,
+     "jobBonus": 958143454250967.0,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 10.2,
+     "p90": 17.7
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 217.3,
+     "p90": 242.5
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 393513427049913.56,
+     "stage": "Jungle",
+     "band": 8,
+     "build": "Canopy Scoop/Jungle Turbine/Root Crawlers/Polar Titan",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 98.56045042930631,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_polar",
+      "name": "Polar Sweeper",
+      "price": 60000000000000,
+      "gain": 1.26,
+      "minutes": 0.2
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.14,
+      "minutes": 3.2
+     },
+     "rollsForAffordableUseful": 2.8,
+     "rollsForUseful": 1.4,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 173.8,
+     "jobBonus": 996900681859781.0,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.3,
+     "p90": 0.8
+    }
+   }
+  },
+  "offers": {
+   "rolls": 6742,
+   "usefulShare": 0.487,
+   "affordableUsefulShare": 0.248,
+   "duplicateShare": 0.208,
+   "slotShare": {
+    "Blade": 0.29,
+    "Gear": 0.292,
+    "Engine": 0.303,
+    "Body": 0.115
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "noRewards": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 204,
+    "median": 224,
+    "p90": 248
+   },
+   "minutesBetweenMeaningful": {
+    "median": 1.3,
+    "p90": 9.5,
+    "max": 38.5
+   },
+   "longestGapPerPlayer": {
+    "median": 19.4,
+    "p90": 33.8,
+    "max": 38.5
+   },
+   "trace15": {
+    "median": 3.1,
+    "p90": 10.3,
+    "max": 38.8
+   },
+   "firstPartMinute": {
+    "median": 2.0,
+    "p90": 7.2
+   },
+   "partsBoughtW1": {
+    "median": 32.0
+   },
+   "longestUnavailable": {
+    "median": 1.4,
+    "p90": 1.9,
+    "max": 12.6
+   },
+   "jobs": {
+    "median": 0.0,
+    "shareOfSnow": 0.0,
+    "shareOfTime": 0.0,
+    "payVsCollecting": 0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 1.0,
+    "p90": 4,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 5.6,
+     "p90": 8.8
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 27112.64157990038,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Wide Clearing Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 31.680790584087354,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_snowball",
+      "name": "Snowball Motor",
+      "price": 300,
+      "gain": 1.51,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.5
+     },
+     "rollsForAffordableUseful": 2.6,
+     "rollsForUseful": 1.6,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.2,
+     "jobBonus": 68685.35866908096,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.4,
+     "p90": 4.1
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 6.0,
+     "p90": 9.2
+    },
+    "leaveMin": {
+     "median": 16.0,
+     "p90": 20.0
+    },
+    "entry": {
+     "income_per_min": 210084.97000002774,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Wide Clearing Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 4.909634437368317,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_snowball",
+      "name": "Snowball Motor",
+      "price": 300,
+      "gain": 2.13,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 1.8,
+     "rollsForUseful": 1.2,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 14.6,
+     "jobBonus": 532215.2573334036,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 5509859.376837147,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Powerful Engine/Sandcrawler Tracks/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 50.57879774457942,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_phantom",
+      "name": "Phantom V-Twin",
+      "price": 250000000,
+      "gain": 1.23,
+      "minutes": 45.4
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 41.5,
+     "rollsForUseful": 6.1,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.6,
+     "jobBonus": 13958310.421320772,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 3.4,
+     "p90": 5.1
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 16.5,
+     "p90": 20.5
+    },
+    "leaveMin": {
+     "median": 41.9,
+     "p90": 46.6
+    },
+    "entry": {
+     "income_per_min": 24551266.11377637,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Dune Sweeper/Powerful Engine/Dune Balloon Tires/Classic Plow Cab",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 7.162067257455254,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_ice",
+      "name": "Reinforced Icebreaker",
+      "price": 670000,
+      "gain": 1.59,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Crush",
+      "price": 4052182.970109849,
+      "gain": 2.5,
+      "minutes": 0.2
+     },
+     "rollsForAffordableUseful": 2.9,
+     "rollsForUseful": 1.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 46.4,
+     "jobBonus": 62196540.82156681,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 957970436.8583062,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Hex Breaker/Geode Core/Haunted Treads/Dune Runner",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 80.14192794427034,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_shardspinner",
+      "name": "Shard Spinner",
+      "price": 1700000000,
+      "gain": 1.18,
+      "minutes": 1.8
+     },
+     "cheapUpgrade": {
+      "id": "S_Storm",
+      "price": 120492038.45032781,
+      "gain": 1.65,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 16.4,
+     "rollsForUseful": 6.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 1.2,
+     "jobBonus": 2426858440.0410423,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 5.3,
+     "p90": 8.5
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 42.3,
+     "p90": 47.0
+    },
+    "leaveMin": {
+     "median": 116.8,
+     "p90": 149.2
+    },
+    "entry": {
+     "income_per_min": 3676325601.2695227,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Hex Breaker/Geode Core/Haunted Treads/Dune Runner",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 22.962459809083352,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_amethyst",
+      "name": "Amethyst Wedge",
+      "price": 8500000000,
+      "gain": 1.14,
+      "minutes": 2.3
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.18,
+      "minutes": 0.2
+     },
+     "rollsForAffordableUseful": 5.9,
+     "rollsForUseful": 2.1,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 52.0,
+     "jobBonus": 9313358189.882792,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 75498272536.71938,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Prism Cleaver/Quartz Piston/Haunted Treads/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 49.822415540618536,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_reactor",
+      "name": "Crystal Reactor",
+      "price": 42000000000,
+      "gain": 1.22,
+      "minutes": 0.6
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.54,
+      "minutes": 14.9
+     },
+     "rollsForAffordableUseful": 5.4,
+     "rollsForUseful": 3.9,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 2.5,
+     "jobBonus": 191262290426.35574,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 17.0,
+     "p90": 33.8
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 117.2,
+     "p90": 149.6
+    },
+    "leaveMin": {
+     "median": 147.1,
+     "p90": 178.9
+    },
+    "entry": {
+     "income_per_min": 59829139772.30742,
+     "stage": "Crystal",
+     "band": 5,
+     "build": "Prism Cleaver/Geode Core/Shard Treads/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 39.48212539199342,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_quartzpiston",
+      "name": "Quartz Piston",
+      "price": 8500000000,
+      "gain": 1.25,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.43,
+      "minutes": 18.8
+     },
+     "rollsForAffordableUseful": 3.2,
+     "rollsForUseful": 1.8,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 39.8,
+     "jobBonus": 151567154089.84546,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 711855522887.3011,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Arcade Plow/Arcade Turbo/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 63.28645439971069,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_tiki",
+      "name": "Tiki Thumper",
+      "price": 710000000000,
+      "gain": 1.26,
+      "minutes": 1.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 3.6
+     },
+     "rollsForAffordableUseful": 8.1,
+     "rollsForUseful": 4.1,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 3.3,
+     "jobBonus": 1803367324647.8296,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 8.4,
+     "p90": 15.3
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 147.5,
+     "p90": 179.3
+    },
+    "leaveMin": {
+     "median": 180.6,
+     "p90": 203.4
+    },
+    "entry": {
+     "income_per_min": 981389913184.8862,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Arcade Plow/Totem Torque/Joypad Treads/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 87.24900768796057,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_jturbine",
+      "name": "Jungle Turbine",
+      "price": 5300000000000,
+      "gain": 1.16,
+      "minutes": 5.4
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 2.6
+     },
+     "rollsForAffordableUseful": 7.2,
+     "rollsForUseful": 2.5,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 24.7,
+     "jobBonus": 2486187780068.3784,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 7149047780872.518,
+     "stage": "Jungle",
+     "band": 6,
+     "build": "Glacier Plow/Jungle Turbine/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 40.589293747092626,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.28,
+      "minutes": 0.7
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.11,
+      "minutes": 1.5
+     },
+     "rollsForAffordableUseful": 4.8,
+     "rollsForUseful": 2.8,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 3.4,
+     "jobBonus": 18110921044877.043,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 9.6,
+     "p90": 17.8
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 181.0,
+     "p90": 203.8
+    },
+    "leaveMin": {
+     "median": 224.3,
+     "p90": 248.0
+    },
+    "entry": {
+     "income_per_min": 3421962002114.901,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Tusk Breaker/Jungle Turbine/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 35.85142064748556,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.28,
+      "minutes": 1.5
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 3.2
+     },
+     "rollsForAffordableUseful": 5.4,
+     "rollsForUseful": 1.3,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 229.1,
+     "jobBonus": 8668970405357.748,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 1003723836730769.0,
+     "stage": "AbsoluteZero",
+     "band": 7,
+     "build": "Frostbite Cleaver/Polar Turbine/Vine Crawler Tracks/Pagoda Wagon",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 29.84668786308664,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_zero",
+      "name": "Absolute Edge",
+      "price": 170000000000000,
+      "gain": 1.28,
+      "minutes": 0.2
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.49,
+      "minutes": 1.2
+     },
+     "rollsForAffordableUseful": 10.8,
+     "rollsForUseful": 3.9,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 0.8,
+     "jobBonus": 2542767053051281.5,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 10.2,
+     "p90": 15.2
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 224.7,
+     "p90": 248.4
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 743448002879910.0,
+     "stage": "AbsoluteZero",
+     "band": 8,
+     "build": "Tusk Breaker/Cryo Compressor/Vine Crawler Tracks/Safari Cruiser",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 18.31338104170241,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_frostbite",
+      "name": "Frostbite Cleaver",
+      "price": 21000000000000,
+      "gain": 1.16,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.5,
+      "minutes": 1.7
+     },
+     "rollsForAffordableUseful": 2.2,
+     "rollsForUseful": 1.2,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 92.0,
+     "jobBonus": 1883401607295772.0,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.2,
+     "p90": 0.3
+    }
+   }
+  },
+  "offers": {
+   "rolls": 12080,
+   "usefulShare": 0.436,
+   "affordableUsefulShare": 0.238,
+   "duplicateShare": 0.26,
+   "slotShare": {
+    "Blade": 0.292,
+    "Gear": 0.289,
+    "Engine": 0.294,
+    "Body": 0.124
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "jobs": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 125,
+    "median": 140,
+    "p90": 151
+   },
+   "minutesBetweenMeaningful": {
+    "median": 0.8,
+    "p90": 5.7,
+    "max": 22.7
+   },
+   "longestGapPerPlayer": {
+    "median": 13.0,
+    "p90": 19.8,
+    "max": 22.7
+   },
+   "trace15": {
+    "median": 2.5,
+    "p90": 7.9,
+    "max": 22.7
+   },
+   "firstPartMinute": {
+    "median": 2.2,
+    "p90": 8.0
+   },
+   "partsBoughtW1": {
+    "median": 30.0
+   },
+   "longestUnavailable": {
+    "median": 2.5,
+    "p90": 3.0,
+    "max": 3.3
+   },
+   "jobs": {
+    "median": 19.0,
+    "shareOfSnow": 0.689,
+    "shareOfTime": 0.204,
+    "payVsCollecting": 2.0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 1,
+    "p90": 4,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 4.2,
+     "p90": 7.2
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 20160.048536690738,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Snowball Motor/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 29.024101212263606,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.65,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.7
+     },
+     "rollsForAffordableUseful": 2.5,
+     "rollsForUseful": 1.5,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.2,
+     "jobBonus": 51370.66980431043,
+     "jobVsCollecting": 1.98
+    },
+    "longestGapInStage": {
+     "median": 1.6,
+     "p90": 3.8
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 4.7,
+     "p90": 7.6
+    },
+    "leaveMin": {
+     "median": 12.9,
+     "p90": 14.9
+    },
+    "entry": {
+     "income_per_min": 210084.97000002774,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Wide Clearing Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 4.909634437368317,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_snowball",
+      "name": "Snowball Motor",
+      "price": 300,
+      "gain": 2.13,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 1.8,
+     "rollsForUseful": 1.2,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 14.6,
+     "jobBonus": 532215.2573334036,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 6132453.065528498,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Powerful Engine/Tracked Treads/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 43.21483444869158,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_sandcrawler",
+      "name": "Sandcrawler Tracks",
+      "price": 670000,
+      "gain": 1.17,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 5.6,
+     "rollsForUseful": 2.7,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.5,
+     "jobBonus": 15535547.766005527,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.4,
+     "p90": 3.3
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 13.3,
+     "p90": 15.3
+    },
+    "leaveMin": {
+     "median": 27.9,
+     "p90": 30.7
+    },
+    "entry": {
+     "income_per_min": 3291209.8174600005,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Dune Sweeper/Balanced Engine/Snow Wheels/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 32.452358171850946,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_tracks",
+      "name": "Tracked Treads",
+      "price": 650,
+      "gain": 1.14,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 2.7,
+     "rollsForUseful": 1.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 346.4,
+     "jobBonus": 8337731.537565335,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 811601580.7679639,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Grave Digger/Phantom V-Twin/Grave Rollers/Dune Runner",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 63.705008876461555,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_hex",
+      "name": "Hex Breaker",
+      "price": 250000000,
+      "gain": 1.17,
+      "minutes": 0.3
+     },
+     "cheapUpgrade": {
+      "id": "S_Storm",
+      "price": 120492038.45032781,
+      "gain": 1.65,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 4.3,
+     "rollsForUseful": 2.4,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 1.4,
+     "jobBonus": 2056057337.9455085,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 3.7,
+     "p90": 5.3
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 28.3,
+     "p90": 31.1
+    },
+    "leaveMin": {
+     "median": 53.7,
+     "p90": 59.8
+    },
+    "entry": {
+     "income_per_min": 565159103.9146568,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Bonechill Scoop/Geode Core/Grave Rollers/Grave Hauler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 10.87558476422405,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_ice",
+      "name": "Reinforced Icebreaker",
+      "price": 670000,
+      "gain": 1.4,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Deep",
+      "price": 52498384.25475976,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 4.9,
+     "rollsForUseful": 1.5,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 338.0,
+     "jobBonus": 1431736396.583797,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 47557723551.12929,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Amethyst Wedge/8-Bit Engine/Shard Treads/Arcade Kart",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 56.68147494695614,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.16,
+      "minutes": 0.9
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.56,
+      "minutes": 23.7
+     },
+     "rollsForAffordableUseful": 9.3,
+     "rollsForUseful": 4.1,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 4.0,
+     "jobBonus": 120479566329.52754,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 7.5,
+     "p90": 8.9
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 54.2,
+     "p90": 60.2
+    },
+    "leaveMin": {
+     "median": 86.5,
+     "p90": 93.3
+    },
+    "entry": {
+     "income_per_min": 47981355091.52058,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Amethyst Wedge/8-Bit Engine/Haunted Treads/Geode Crawler",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 8.62894599168765,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.19,
+      "minutes": 0.9
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.5,
+      "minutes": 23.5
+     },
+     "rollsForAffordableUseful": 6.1,
+     "rollsForUseful": 1.9,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 49.6,
+     "jobBonus": 121552766231.85213,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 489873356956.4677,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Arcade Plow/Tiki Thumper/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 80.24642331120005,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_totem",
+      "name": "Totem Torque",
+      "price": 1900000000000,
+      "gain": 1.17,
+      "minutes": 3.9
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 5.3
+     },
+     "rollsForAffordableUseful": 28.6,
+     "rollsForUseful": 5.6,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 4.9,
+     "jobBonus": 1241012504289.7183,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 8.2,
+     "p90": 10.8
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 86.9,
+     "p90": 93.7
+    },
+    "leaveMin": {
+     "median": 112.4,
+     "p90": 120.2
+    },
+    "entry": {
+     "income_per_min": 479254878502.8447,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Arcade Plow/Tiki Thumper/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 79.93440461358848,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_totem",
+      "name": "Totem Torque",
+      "price": 1900000000000,
+      "gain": 1.17,
+      "minutes": 4.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 5.4
+     },
+     "rollsForAffordableUseful": 14.2,
+     "rollsForUseful": 2.5,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 50.5,
+     "jobBonus": 1214112358873.8733,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 4862127642125.3,
+     "stage": "Jungle",
+     "band": 6,
+     "build": "Glacier Plow/Jungle Turbine/Vine Crawler Tracks/Arcade Kart",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 51.86601488207716,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_cryo",
+      "name": "Cryo Compressor",
+      "price": 7300000000000,
+      "gain": 1.18,
+      "minutes": 1.5
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 2.2
+     },
+     "rollsForAffordableUseful": 42.2,
+     "rollsForUseful": 4.1,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 5.0,
+     "jobBonus": 12317390026717.426,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 7.9,
+     "p90": 12.2
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 112.9,
+     "p90": 120.6
+    },
+    "leaveMin": {
+     "median": 139.9,
+     "p90": 150.7
+    },
+    "entry": {
+     "income_per_min": 3972119888820.2974,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Canopy Scoop/Jungle Turbine/Root Crawlers/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 41.61534841951129,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.17,
+      "minutes": 1.3
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 2.7
+     },
+     "rollsForAffordableUseful": 8.6,
+     "rollsForUseful": 1.5,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 197.4,
+     "jobBonus": 10062703718344.754,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 854555266418618.8,
+     "stage": "AbsoluteZero",
+     "band": 7,
+     "build": "Absolute Edge/Glacier V6/Aurora Glide/Safari Cruiser",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 34.18952363834725,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_polar",
+      "name": "Polar Turbine",
+      "price": 170000000000000,
+      "gain": 1.1,
+      "minutes": 0.2
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.49,
+      "minutes": 1.5
+     },
+     "rollsForAffordableUseful": 5.7,
+     "rollsForUseful": 3.0,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 0.9,
+     "jobBonus": 2164873341593834.2,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 6.5,
+     "p90": 8.8
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 140.3,
+     "p90": 151.2
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 237974310699914.9,
+     "stage": "AbsoluteZero",
+     "band": 8,
+     "build": "Tusk Breaker/Frost Piston/Vine Crawler Tracks/Arcade Kart",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 19.388236362360832,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_frostbite",
+      "name": "Frostbite Cleaver",
+      "price": 21000000000000,
+      "gain": 1.16,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.49,
+      "minutes": 5.3
+     },
+     "rollsForAffordableUseful": 2.5,
+     "rollsForUseful": 1.3,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 287.4,
+     "jobBonus": 602868253773117.8,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.4,
+     "p90": 0.8
+    }
+   }
+  },
+  "offers": {
+   "rolls": 10201,
+   "usefulShare": 0.431,
+   "affordableUsefulShare": 0.216,
+   "duplicateShare": 0.253,
+   "slotShare": {
+    "Engine": 0.292,
+    "Gear": 0.297,
+    "Blade": 0.294,
+    "Body": 0.117
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "unlucky": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 171,
+    "median": 191,
+    "p90": 209
+   },
+   "minutesBetweenMeaningful": {
+    "median": 1.4,
+    "p90": 8.0,
+    "max": 39.7
+   },
+   "longestGapPerPlayer": {
+    "median": 17.0,
+    "p90": 25.6,
+    "max": 39.7
+   },
+   "trace15": {
+    "median": 3.1,
+    "p90": 8.5,
+    "max": 25.6
+   },
+   "firstPartMinute": {
+    "median": 2.1,
+    "p90": 7.8
+   },
+   "partsBoughtW1": {
+    "median": 38.0
+   },
+   "longestUnavailable": {
+    "median": 3.0,
+    "p90": 8.2,
+    "max": 14.4
+   },
+   "jobs": {
+    "median": 22.0,
+    "shareOfSnow": 0.638,
+    "shareOfTime": 0.178,
+    "payVsCollecting": 2.0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 2.0,
+    "p90": 6,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 7.2,
+     "p90": 9.7
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 22005.37653810519,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Wide Clearing Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 31.680790584087354,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_snowball",
+      "name": "Snowball Motor",
+      "price": 300,
+      "gain": 1.51,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.6
+     },
+     "rollsForAffordableUseful": 2.6,
+     "rollsForUseful": 1.6,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.2,
+     "jobBonus": 55746.953896533145,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 3.6,
+     "p90": 6.2
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 7.6,
+     "p90": 10.2
+    },
+    "leaveMin": {
+     "median": 14.9,
+     "p90": 18.1
+    },
+    "entry": {
+     "income_per_min": 156342.30325583456,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Wide Clearing Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 4.909634437368317,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_snowball",
+      "name": "Snowball Motor",
+      "price": 300,
+      "gain": 2.13,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 1.8,
+     "rollsForUseful": 1.2,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 19.6,
+     "jobBonus": 396067.16824811423,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 4434266.559298068,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Balanced Engine/Sandcrawler Tracks/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 47.22470679800454,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_phantom",
+      "name": "Phantom V-Twin",
+      "price": 250000000,
+      "gain": 1.26,
+      "minutes": 56.4
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 16.6,
+     "rollsForUseful": 4.2,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.7,
+     "jobBonus": 11233475.283555105,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.8,
+     "p90": 4.3
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 15.3,
+     "p90": 18.5
+    },
+    "leaveMin": {
+     "median": 38.2,
+     "p90": 44.6
+    },
+    "entry": {
+     "income_per_min": 2842847.0957288938,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Dune Sweeper/Lantern Motor/Dune Balloon Tires/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 44.43095938374587,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_ice",
+      "name": "Reinforced Icebreaker",
+      "price": 670000,
+      "gain": 1.51,
+      "minutes": 0.2
+     },
+     "cheapUpgrade": {
+      "id": "S_Rush",
+      "price": 32817.04500369228,
+      "gain": 1.35,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 4.0,
+     "rollsForUseful": 1.5,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 401.0,
+     "jobBonus": 7201879.309179864,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 229851273.19887555,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Hex Breaker/Cauldron Burner/Crystal Studded Tires/Dune Runner",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 69.13587571387589,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_phantom",
+      "name": "Phantom V-Twin",
+      "price": 250000000,
+      "gain": 1.16,
+      "minutes": 1.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Third",
+      "price": 5459998.549805911,
+      "gain": 1.2,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 11.2,
+     "rollsForUseful": 4.5,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 5.0,
+     "jobBonus": 582289892.103818,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 6.7,
+     "p90": 10.6
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 38.6,
+     "p90": 45.0
+    },
+    "leaveMin": {
+     "median": 78.3,
+     "p90": 92.8
+    },
+    "entry": {
+     "income_per_min": 326805016.29201895,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Quartz Edge/Geode Core/Spiked Bone Wheels/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 14.44965548165473,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_sandcrawler",
+      "name": "Sandcrawler Tracks",
+      "price": 670000,
+      "gain": 1.18,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Third",
+      "price": 5459998.549805911,
+      "gain": 1.2,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 5.5,
+     "rollsForUseful": 1.6,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 584.4,
+     "jobBonus": 827906041.2731147,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 36691583310.398315,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Prism Cleaver/Crystal Reactor/Haunted Treads/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 58.19005887274715,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_geodetracks",
+      "name": "Geode Tracks",
+      "price": 42000000000,
+      "gain": 1.14,
+      "minutes": 1.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.46,
+      "minutes": 30.7
+     },
+     "rollsForAffordableUseful": 11.0,
+     "rollsForUseful": 4.4,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 5.2,
+     "jobBonus": 92952011053.00908,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 8.4,
+     "p90": 12.2
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 78.7,
+     "p90": 93.2
+    },
+    "leaveMin": {
+     "median": 117.5,
+     "p90": 130.6
+    },
+    "entry": {
+     "income_per_min": 69508873254.04753,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Prism Cleaver/8-Bit Engine/Geode Tracks/Geode Crawler",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 12.500445477377417,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_cartridge",
+      "name": "Cartridge Cruncher",
+      "price": 170000000000,
+      "gain": 1.27,
+      "minutes": 2.4
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.5,
+      "minutes": 16.2
+     },
+     "rollsForAffordableUseful": 5.1,
+     "rollsForUseful": 2.3,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 34.2,
+     "jobBonus": 176089145576.9204,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 489873356956.4677,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Arcade Plow/Tiki Thumper/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 80.24642331120005,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_totem",
+      "name": "Totem Torque",
+      "price": 1900000000000,
+      "gain": 1.17,
+      "minutes": 3.9
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 5.3
+     },
+     "rollsForAffordableUseful": 28.6,
+     "rollsForUseful": 5.6,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 4.9,
+     "jobBonus": 1241012504289.7183,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 8.9,
+     "p90": 13.8
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 118.0,
+     "p90": 131.0
+    },
+    "leaveMin": {
+     "median": 157.7,
+     "p90": 180.5
+    },
+    "entry": {
+     "income_per_min": 500662740937.4265,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Canopy Scoop/Totem Torque/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 101.04434809355602,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_jturbine",
+      "name": "Jungle Turbine",
+      "price": 5300000000000,
+      "gain": 1.14,
+      "minutes": 10.6
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 5.1
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 3.9,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 48.3,
+     "jobBonus": 1268345610374.814,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 4010337819419.7793,
+     "stage": "Jungle",
+     "band": 6,
+     "build": "Tusk Breaker/Cryo Compressor/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 44.681851815996666,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.22,
+      "minutes": 1.3
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 2.7
+     },
+     "rollsForAffordableUseful": 8.0,
+     "rollsForUseful": 2.7,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 6.0,
+     "jobBonus": 10159522475863.441,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 14.0,
+     "p90": 20.7
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 158.2,
+     "p90": 180.9
+    },
+    "leaveMin": {
+     "median": 190.5,
+     "p90": 209.2
+    },
+    "entry": {
+     "income_per_min": 4676109038113.136,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Glacier Plow/Cryo Compressor/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 50.497500220480354,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.22,
+      "minutes": 1.1
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 2.3
+     },
+     "rollsForAffordableUseful": 8.5,
+     "rollsForUseful": 1.5,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 167.7,
+     "jobBonus": 11846142896553.277,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 289157270819609.25,
+     "stage": "AbsoluteZero",
+     "band": 7,
+     "build": "Frostbite Cleaver/Glacier V6/Vine Crawler Tracks/Safari Cruiser",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 27.106377179744094,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_zero",
+      "name": "Absolute Edge",
+      "price": 170000000000000,
+      "gain": 1.28,
+      "minutes": 0.6
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.49,
+      "minutes": 4.3
+     },
+     "rollsForAffordableUseful": 5.3,
+     "rollsForUseful": 2.7,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 2.7,
+     "jobBonus": 732531752743010.1,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 7.3,
+     "p90": 12.4
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 190.9,
+     "p90": 209.6
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 225100822959484.97,
+     "stage": "Jungle",
+     "band": 8,
+     "build": "Glacier Plow/Jungle Turbine/Root Crawlers/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 98.35981828536248,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_polar",
+      "name": "Polar Sweeper",
+      "price": 60000000000000,
+      "gain": 1.26,
+      "minutes": 0.3
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.23,
+      "minutes": 5.6
+     },
+     "rollsForAffordableUseful": 2.3,
+     "rollsForUseful": 1.2,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 303.9,
+     "jobBonus": 570255418164028.6,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.5,
+     "p90": 0.8
+    }
+   }
+  },
+  "offers": {
+   "rolls": 18507,
+   "usefulShare": 0.267,
+   "affordableUsefulShare": 0.188,
+   "duplicateShare": 0.401,
+   "slotShare": {
+    "Engine": 0.295,
+    "Gear": 0.253,
+    "Blade": 0.317,
+    "Body": 0.135
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "lucky": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 115,
+    "median": 126,
+    "p90": 138
+   },
+   "minutesBetweenMeaningful": {
+    "median": 0.7,
+    "p90": 5.2,
+    "max": 19.3
+   },
+   "longestGapPerPlayer": {
+    "median": 11.7,
+    "p90": 17.2,
+    "max": 19.3
+   },
+   "trace15": {
+    "median": 2.2,
+    "p90": 7.1,
+    "max": 18.1
+   },
+   "firstPartMinute": {
+    "median": 2.1,
+    "p90": 8.1
+   },
+   "partsBoughtW1": {
+    "median": 24.5
+   },
+   "longestUnavailable": {
+    "median": 2.2,
+    "p90": 2.6,
+    "max": 2.9
+   },
+   "jobs": {
+    "median": 15.0,
+    "shareOfSnow": 0.647,
+    "shareOfTime": 0.18,
+    "payVsCollecting": 2.0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 0,
+    "p90": 2,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 3.8,
+     "p90": 6.8
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 14519.770997150381,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 16.966175093416208,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.87,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 1.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.3,
+     "jobBonus": 37606.50056582906,
+     "jobVsCollecting": 1.98
+    },
+    "longestGapInStage": {
+     "median": 1.4,
+     "p90": 3.1
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 4.2,
+     "p90": 7.2
+    },
+    "leaveMin": {
+     "median": 11.3,
+     "p90": 15.0
+    },
+    "entry": {
+     "income_per_min": 130017.08531168173,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 2.779874547009234,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.77,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 1.6,
+     "rollsForUseful": 1.1,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 23.5,
+     "jobBonus": 336746.8807394279,
+     "jobVsCollecting": 1.98
+    },
+    "developed": {
+     "income_per_min": 6618283.301753174,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Lantern Motor/Dune Balloon Tires/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 51.09335069032772,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "gear_bonewheels",
+      "name": "Spiked Bone Wheels",
+      "price": 920000,
+      "gain": 1.11,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 5.3,
+     "rollsForUseful": 3.0,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.5,
+     "jobBonus": 16766317.697774706,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.2,
+     "p90": 3.5
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 11.7,
+     "p90": 15.4
+    },
+    "leaveMin": {
+     "median": 23.2,
+     "p90": 29.1
+    },
+    "entry": {
+     "income_per_min": 4411628.275429023,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Dune Sweeper/Balanced Engine/Tracked Treads/Grave Hauler",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 39.73327587952268,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_ice",
+      "name": "Reinforced Icebreaker",
+      "price": 670000,
+      "gain": 1.21,
+      "minutes": 0.2
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 2.7,
+     "rollsForUseful": 1.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 258.4,
+     "jobBonus": 11176124.964420194,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 625635746.9568621,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Grave Digger/Cauldron Burner/Sandcrawler Tracks/Grave Hauler",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 54.75646995450876,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_hex",
+      "name": "Hex Breaker",
+      "price": 250000000,
+      "gain": 1.17,
+      "minutes": 0.4
+     },
+     "cheapUpgrade": {
+      "id": "S_Storm",
+      "price": 120492038.45032781,
+      "gain": 1.65,
+      "minutes": 0.2
+     },
+     "rollsForAffordableUseful": 4.2,
+     "rollsForUseful": 2.2,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 1.8,
+     "jobBonus": 1584943892.2907174,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 3.0,
+     "p90": 4.5
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 23.6,
+     "p90": 29.5
+    },
+    "leaveMin": {
+     "median": 50.3,
+     "p90": 59.0
+    },
+    "entry": {
+     "income_per_min": 358607383.26053196,
+     "stage": "Cursed",
+     "band": 4,
+     "build": "Dune Sweeper/Lantern Motor/Sandcrawler Tracks/Grave Hauler",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 31.38579357474637,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_grave",
+      "name": "Grave Digger",
+      "price": 920000,
+      "gain": 1.4,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Storm",
+      "price": 120492038.45032781,
+      "gain": 1.65,
+      "minutes": 0.3
+     },
+     "rollsForAffordableUseful": 3.4,
+     "rollsForUseful": 1.3,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 532.6,
+     "jobBonus": 908472037.5933477,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 48376768296.86196,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Amethyst Wedge/Crystal Reactor/Haunted Treads/Arcade Kart",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 49.36860096803731,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.18,
+      "minutes": 0.9
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.75,
+      "minutes": 23.3
+     },
+     "rollsForAffordableUseful": 8.0,
+     "rollsForUseful": 3.8,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 3.9,
+     "jobBonus": 122554479685.38364,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 6.5,
+     "p90": 9.3
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 50.7,
+     "p90": 59.5
+    },
+    "leaveMin": {
+     "median": 77.1,
+     "p90": 86.9
+    },
+    "entry": {
+     "income_per_min": 51258968947.26874,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Prism Cleaver/Quartz Piston/Geode Tracks/Classic Plow Cab",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 8.178750640203779,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_reactor",
+      "name": "Crystal Reactor",
+      "price": 42000000000,
+      "gain": 1.24,
+      "minutes": 0.8
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.5,
+      "minutes": 22.0
+     },
+     "rollsForAffordableUseful": 4.4,
+     "rollsForUseful": 1.7,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 46.4,
+     "jobBonus": 129856054666.41414,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 538481383345.8005,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Arcade Plow/Tiki Thumper/Geode Tracks/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 72.4166186128281,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_hoverpods",
+      "name": "Arcade Hover Pods",
+      "price": 520000000000,
+      "gain": 1.11,
+      "minutes": 1.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 4.8
+     },
+     "rollsForAffordableUseful": 6.8,
+     "rollsForUseful": 3.7,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 4.4,
+     "jobBonus": 1364152837809.3613,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 7.7,
+     "p90": 10.3
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 77.5,
+     "p90": 87.4
+    },
+    "leaveMin": {
+     "median": 102.4,
+     "p90": 114.0
+    },
+    "entry": {
+     "income_per_min": 399473567877.99664,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Arcade Plow/Cartridge Cruncher/Joypad Treads/Geode Crawler",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 48.94140742167886,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_arcade",
+      "name": "Arcade Turbo",
+      "price": 520000000000,
+      "gain": 1.19,
+      "minutes": 1.3
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 6.4
+     },
+     "rollsForAffordableUseful": 4.2,
+     "rollsForUseful": 1.6,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 60.6,
+     "jobBonus": 1011999705290.9248,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 4501637617821.117,
+     "stage": "Jungle",
+     "band": 6,
+     "build": "Canopy Scoop/Totem Torque/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 33.98291725625716,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_jturbine",
+      "name": "Jungle Turbine",
+      "price": 5300000000000,
+      "gain": 1.11,
+      "minutes": 1.2
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.11,
+      "minutes": 2.4
+     },
+     "rollsForAffordableUseful": 6.6,
+     "rollsForUseful": 2.5,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 5.4,
+     "jobBonus": 11404148631813.498,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 6.9,
+     "p90": 10.3
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 102.9,
+     "p90": 114.4
+    },
+    "leaveMin": {
+     "median": 126.4,
+     "p90": 138.4
+    },
+    "entry": {
+     "income_per_min": 4664087437809.769,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Tusk Breaker/Jungle Turbine/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 35.84942116282265,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.28,
+      "minutes": 1.1
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.11,
+      "minutes": 2.3
+     },
+     "rollsForAffordableUseful": 5.4,
+     "rollsForUseful": 1.3,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 168.1,
+     "jobBonus": 11815688175784.748,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 329422141066262.06,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Tusk Breaker/Jungle Turbine/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 93.19341558329258,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_frostpiston",
+      "name": "Frost Piston",
+      "price": 21000000000000,
+      "gain": 1.13,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.27,
+      "minutes": 3.8
+     },
+     "rollsForAffordableUseful": 2.1,
+     "rollsForUseful": 1.5,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 2.4,
+     "jobBonus": 834536090701197.2,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 6.1,
+     "p90": 8.7
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 126.9,
+     "p90": 138.8
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 407832916623002.8,
+     "stage": "Jungle",
+     "band": 8,
+     "build": "Canopy Scoop/Totem Torque/Root Crawlers/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 90.24840496965467,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_frostpiston",
+      "name": "Frost Piston",
+      "price": 21000000000000,
+      "gain": 1.11,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.12,
+      "minutes": 3.1
+     },
+     "rollsForAffordableUseful": 2.5,
+     "rollsForUseful": 1.2,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 167.7,
+     "jobBonus": 1033176722111607.1,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.4,
+     "p90": 0.7
+    }
+   }
+  },
+  "offers": {
+   "rolls": 6539,
+   "usefulShare": 0.624,
+   "affordableUsefulShare": 0.266,
+   "duplicateShare": 0.172,
+   "slotShare": {
+    "Engine": 0.311,
+    "Gear": 0.326,
+    "Body": 0.097,
+    "Blade": 0.266
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "boosted": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 87,
+    "median": 95,
+    "p90": 105
+   },
+   "minutesBetweenMeaningful": {
+    "median": 0.6,
+    "p90": 4.2,
+    "max": 15.7
+   },
+   "longestGapPerPlayer": {
+    "median": 9.1,
+    "p90": 12.4,
+    "max": 15.7
+   },
+   "trace15": {
+    "median": 2.1,
+    "p90": 5.5,
+    "max": 13.1
+   },
+   "firstPartMinute": {
+    "median": 2.3,
+    "p90": 7.8
+   },
+   "partsBoughtW1": {
+    "median": 26.0
+   },
+   "longestUnavailable": {
+    "median": 2.4,
+    "p90": 2.9,
+    "max": 3.1
+   },
+   "jobs": {
+    "median": 11.0,
+    "shareOfSnow": 0.726,
+    "shareOfTime": 0.181,
+    "payVsCollecting": 2.0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 0,
+    "p90": 3,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 3.1,
+     "p90": 4.2
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 12527.523348704164,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 16.966175093416208,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.87,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 1.1
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.4,
+     "jobBonus": 32446.53886028507,
+     "jobVsCollecting": 1.98
+    },
+    "longestGapInStage": {
+     "median": 1.4,
+     "p90": 2.6
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 3.5,
+     "p90": 4.6
+    },
+    "leaveMin": {
+     "median": 8.9,
+     "p90": 11.7
+    },
+    "entry": {
+     "income_per_min": 170510.82448839457,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Wide Clearing Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 4.909634437368317,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_snowball",
+      "name": "Snowball Motor",
+      "price": 300,
+      "gain": 2.13,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 1.8,
+     "rollsForUseful": 1.2,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 17.9,
+     "jobBonus": 431960.75537059957,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 4749206.223928656,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Powerful Engine/Sandcrawler Tracks/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 50.57879774457942,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_phantom",
+      "name": "Phantom V-Twin",
+      "price": 250000000,
+      "gain": 1.23,
+      "minutes": 52.6
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 41.2,
+     "rollsForUseful": 6.1,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.6,
+     "jobBonus": 12031322.433952596,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.1,
+     "p90": 2.6
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 9.3,
+     "p90": 12.1
+    },
+    "leaveMin": {
+     "median": 22.0,
+     "p90": 25.1
+    },
+    "entry": {
+     "income_per_min": 4726790.745232752,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Dune Sweeper/Balanced Engine/Dune Balloon Tires/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 38.852006453034505,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_ice",
+      "name": "Reinforced Icebreaker",
+      "price": 670000,
+      "gain": 1.25,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 3.1,
+     "rollsForUseful": 1.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 241.2,
+     "jobBonus": 11974536.554589638,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 181585965.43941188,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Bonechill Scoop/Lantern Motor/Sandcrawler Tracks/Dune Runner",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 45.62591136118727,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_cauldron",
+      "name": "Cauldron Burner",
+      "price": 15000000,
+      "gain": 1.25,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip1",
+      "price": 12906076.035757653,
+      "gain": 1.22,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 4.2,
+     "rollsForUseful": 2.2,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 6.3,
+     "jobBonus": 460017779.11317676,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 3.0,
+     "p90": 4.9
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 22.5,
+     "p90": 25.5
+    },
+    "leaveMin": {
+     "median": 38.9,
+     "p90": 47.3
+    },
+    "entry": {
+     "income_per_min": 472237652.22583133,
+     "stage": "Cursed",
+     "band": 4,
+     "build": "Quartz Edge/Lantern Motor/Haunted Treads/Dune Runner",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 61.748124020092206,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_cauldron",
+      "name": "Cauldron Burner",
+      "price": 15000000,
+      "gain": 1.38,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Deep",
+      "price": 52498384.25475976,
+      "gain": 1.35,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 5.2,
+     "rollsForUseful": 1.7,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 404.5,
+     "jobBonus": 1196335385.6387727,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 38337087809.19572,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Amethyst Wedge/Quartz Piston/Haunted Treads/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 40.18743746896308,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.19,
+      "minutes": 1.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.87,
+      "minutes": 29.4
+     },
+     "rollsForAffordableUseful": 6.3,
+     "rollsForUseful": 3.4,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 5.0,
+     "jobBonus": 97120622449.96248,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 5.5,
+     "p90": 8.5
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 39.3,
+     "p90": 47.7
+    },
+    "leaveMin": {
+     "median": 58.8,
+     "p90": 65.1
+    },
+    "entry": {
+     "income_per_min": 27923220927.566612,
+     "stage": "Crystal",
+     "band": 5,
+     "build": "Hex Breaker/Quartz Piston/Shard Treads/Dune Runner",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 35.20018476390747,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_amethyst",
+      "name": "Amethyst Wedge",
+      "price": 8500000000,
+      "gain": 1.13,
+      "minutes": 0.3
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.47,
+      "minutes": 40.3
+     },
+     "rollsForAffordableUseful": 2.8,
+     "rollsForUseful": 1.4,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 85.2,
+     "jobBonus": 70738826349.83542,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 372082837018.302,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Arcade Plow/Arcade Turbo/Arcade Hover Pods/Geode Crawler",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 63.208541541178235,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_tiki",
+      "name": "Tiki Thumper",
+      "price": 710000000000,
+      "gain": 1.25,
+      "minutes": 1.9
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 6.9
+     },
+     "rollsForAffordableUseful": 10.8,
+     "rollsForUseful": 3.7,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 6.4,
+     "jobBonus": 942609853779.6984,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 5.2,
+     "p90": 7.1
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 59.2,
+     "p90": 65.5
+    },
+    "leaveMin": {
+     "median": 75.6,
+     "p90": 84.1
+    },
+    "entry": {
+     "income_per_min": 316586418141.2834,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Arcade Plow/Arcade Turbo/Geode Tracks/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 56.326937366547774,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_hoverpods",
+      "name": "Arcade Hover Pods",
+      "price": 520000000000,
+      "gain": 1.12,
+      "minutes": 1.6
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 8.1
+     },
+     "rollsForAffordableUseful": 4.6,
+     "rollsForUseful": 1.6,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 76.4,
+     "jobBonus": 802018925957.9178,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 3149717511338.908,
+     "stage": "Jungle",
+     "band": 6,
+     "build": "Tusk Breaker/Jungle Turbine/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 35.85142064748556,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.28,
+      "minutes": 1.7
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 3.5
+     },
+     "rollsForAffordableUseful": 7.4,
+     "rollsForUseful": 2.6,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 7.7,
+     "jobBonus": 7979284362058.567,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 5.4,
+     "p90": 7.4
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 76.0,
+     "p90": 84.5
+    },
+    "leaveMin": {
+     "median": 95.5,
+     "p90": 105.0
+    },
+    "entry": {
+     "income_per_min": 1923042849882.325,
+     "stage": "Retro",
+     "band": 7,
+     "build": "Tusk Breaker/Jungle Turbine/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 121.56308259017831,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_petal",
+      "name": "Petal Sweeper",
+      "price": 240000000000000,
+      "gain": 1.14,
+      "minutes": 124.8
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 5.7
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 2.6,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 407.7,
+     "jobBonus": 4871708553035.224,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 273036501502988.56,
+     "stage": "AbsoluteZero",
+     "band": 7,
+     "build": "Tusk Breaker/Cryo Compressor/Root Crawlers/Arcade Kart",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 15.590803323493256,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.17,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.5,
+      "minutes": 4.6
+     },
+     "rollsForAffordableUseful": 2.3,
+     "rollsForUseful": 1.6,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 2.9,
+     "jobBonus": 691692470474237.6,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 4.4,
+     "p90": 6.2
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 95.9,
+     "p90": 105.4
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 286420643733527.3,
+     "stage": "AbsoluteZero",
+     "band": 8,
+     "build": "Tusk Breaker/Cryo Compressor/Root Crawlers/Arcade Kart",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 15.590803323493256,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_vinecrawler",
+      "name": "Vine Crawler Tracks",
+      "price": 5300000000000,
+      "gain": 1.17,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.5,
+      "minutes": 4.4
+     },
+     "rollsForAffordableUseful": 2.0,
+     "rollsForUseful": 1.1,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 238.8,
+     "jobBonus": 725598964124935.8,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.5,
+     "p90": 0.8
+    }
+   }
+  },
+  "offers": {
+   "rolls": 7051,
+   "usefulShare": 0.502,
+   "affordableUsefulShare": 0.283,
+   "duplicateShare": 0.202,
+   "slotShare": {
+    "Blade": 0.294,
+    "Engine": 0.288,
+    "Gear": 0.292,
+    "Body": 0.126
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "legacy:efficient": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 200,
+    "median": 235,
+    "p90": 265
+   },
+   "minutesBetweenMeaningful": {
+    "median": 1.3,
+    "p90": 9.0,
+    "max": 57.4
+   },
+   "longestGapPerPlayer": {
+    "median": 40.0,
+    "p90": 53.0,
+    "max": 57.4
+   },
+   "trace15": {
+    "median": 3.1,
+    "p90": 12.7,
+    "max": 56.7
+   },
+   "firstPartMinute": {
+    "median": 2.0,
+    "p90": 2.0
+   },
+   "partsBoughtW1": {
+    "median": 31.5
+   },
+   "longestUnavailable": {
+    "median": 2.8,
+    "p90": 4.3,
+    "max": 5.3
+   },
+   "jobs": {
+    "median": 28.0,
+    "shareOfSnow": 0.505,
+    "shareOfTime": 0.18,
+    "payVsCollecting": 2.0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 1.0,
+    "p90": 4,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 3.1,
+     "p90": 3.1
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 23799.741032137874,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Wide Clearing Blade/Snowball Motor/Dune Balloon Tires/Dune Runner",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 44.82366358735538,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_balanced",
+      "name": "Balanced Engine",
+      "price": 450,
+      "gain": 1.21,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Pet1",
+      "price": 3000.0,
+      "gain": 1.15,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 10.2,
+     "rollsForUseful": 4.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.2,
+     "jobBonus": 60292.67728141595,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 1.0,
+     "p90": 1.4
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 3.5,
+     "p90": 3.6
+    },
+    "leaveMin": {
+     "median": 8.7,
+     "p90": 11.9
+    },
+    "entry": {
+     "income_per_min": 419700.9284209252,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Wide Clearing Blade/Balanced Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 16.033746774560445,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_tracks",
+      "name": "Tracked Treads",
+      "price": 650,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Pet1",
+      "price": 3000.0,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 2.3,
+     "rollsForUseful": 1.4,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 7.3,
+     "jobBonus": 1063242.3519996773,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 12800871.653624544,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Wide Clearing Blade/Balanced Engine/Dune Balloon Tires/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 54.848746710378954,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_sandcrawler",
+      "name": "Sandcrawler Tracks",
+      "price": 670000,
+      "gain": 1.15,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "R_Dice5",
+      "price": 2300455.61165746,
+      "gain": 1.2,
+      "minutes": 0.2
+     },
+     "rollsForAffordableUseful": 2.8,
+     "rollsForUseful": 1.8,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.2,
+     "jobBonus": 32428874.85584884,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.0,
+     "p90": 3.3
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 9.1,
+     "p90": 12.4
+    },
+    "leaveMin": {
+     "median": 24.3,
+     "p90": 30.6
+    },
+    "entry": {
+     "income_per_min": 1517143.362957724,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Wide Clearing Blade/Sand Runner/Dune Balloon Tires/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 19.025814945677045,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_dune",
+      "name": "Dune Sweeper",
+      "price": 1500,
+      "gain": 1.25,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 2.7,
+     "rollsForUseful": 1.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 751.4,
+     "jobBonus": 3843429.852826234,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 1047752685.7022586,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Dune Sweeper/Cauldron Burner/Grave Rollers/Geode Crawler",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 42.012792398651044,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_ice",
+      "name": "Reinforced Icebreaker",
+      "price": 670000,
+      "gain": 1.3,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.18,
+      "minutes": 0.7
+     },
+     "rollsForAffordableUseful": 2.6,
+     "rollsForUseful": 2.0,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 1.1,
+     "jobBonus": 2654306803.779055,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 3.5,
+     "p90": 5.4
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 24.7,
+     "p90": 31.1
+    },
+    "leaveMin": {
+     "median": 45.7,
+     "p90": 50.3
+    },
+    "entry": {
+     "income_per_min": 1766179946.2755783,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Hex Breaker/Cauldron Burner/Sandcrawler Tracks/Grave Hauler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 13.178847035291827,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_phantom",
+      "name": "Phantom V-Twin",
+      "price": 250000000,
+      "gain": 1.18,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.22,
+      "minutes": 0.4
+     },
+     "rollsForAffordableUseful": 3.7,
+     "rollsForUseful": 1.7,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 108.1,
+     "jobBonus": 4474322530.564798,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 28269079791.826637,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Prism Cleaver/Quartz Piston/Joypad Treads/Grave Hauler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 56.64134934837186,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_reactor",
+      "name": "Crystal Reactor",
+      "price": 42000000000,
+      "gain": 1.21,
+      "minutes": 1.5
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.48,
+      "minutes": 39.8
+     },
+     "rollsForAffordableUseful": 9.6,
+     "rollsForUseful": 4.0,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 6.8,
+     "jobBonus": 71615002139.29414,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 4.6,
+     "p90": 6.2
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 46.1,
+     "p90": 50.7
+    },
+    "leaveMin": {
+     "median": 106.1,
+     "p90": 124.8
+    },
+    "entry": {
+     "income_per_min": 23595639657.321835,
+     "stage": "Crystal",
+     "band": 5,
+     "build": "Amethyst Wedge/Quartz Piston/Geode Tracks/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 46.40190217436345,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.19,
+      "minutes": 1.8
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.49,
+      "minutes": 47.7
+     },
+     "rollsForAffordableUseful": 5.1,
+     "rollsForUseful": 1.7,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 100.9,
+     "jobBonus": 59775620465.21532,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 192390946503.16876,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Canopy Scoop/Totem Torque/Root Crawlers/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 50.9899698206614,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_tusk",
+      "name": "Tusk Breaker",
+      "price": 5300000000000,
+      "gain": 1.26,
+      "minutes": 27.5
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.91,
+      "minutes": 5.9
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 5.7,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 12.4,
+     "jobBonus": 487390397808.0275,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 17.7,
+     "p90": 28.6
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 106.5,
+     "p90": 125.2
+    },
+    "leaveMin": {
+     "median": 148.3,
+     "p90": 175.5
+    },
+    "entry": {
+     "income_per_min": 217600554437.24048,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Canopy Scoop/Totem Torque/Root Crawlers/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 48.827181710797106,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_tusk",
+      "name": "Tusk Breaker",
+      "price": 5300000000000,
+      "gain": 1.27,
+      "minutes": 24.4
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.96,
+      "minutes": 5.2
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 2.5,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 111.2,
+     "jobBonus": 551254737907.6759,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 1367439234775.739,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Canopy Scoop/Jungle Turbine/Root Crawlers/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 116.06092612632384,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_polar",
+      "name": "Polar Sweeper",
+      "price": 60000000000000,
+      "gain": 1.12,
+      "minutes": 43.9
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.11,
+      "minutes": 8.0
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 4.1,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 17.7,
+     "jobBonus": 3464179394765.205,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 15.9,
+     "p90": 27.5
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 148.7,
+     "p90": 176.0
+    },
+    "leaveMin": {
+     "median": 234.9,
+     "p90": 264.8
+    },
+    "entry": {
+     "income_per_min": 1276988175068.2505,
+     "stage": "Retro",
+     "band": 7,
+     "build": "Tusk Breaker/Jungle Turbine/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 120.15576658819819,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_polar",
+      "name": "Polar Sweeper",
+      "price": 60000000000000,
+      "gain": 1.1,
+      "minutes": 47.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 8.5
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 2.5,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 613.9,
+     "jobBonus": 3235036710172.9014,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 207538279603278.12,
+     "stage": "AbsoluteZero",
+     "band": 7,
+     "build": "Polar Sweeper/Cryo Compressor/Glacier Tracks/Polar Titan",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 15.65311212269358,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_frostbite",
+      "name": "Frostbite Cleaver",
+      "price": 21000000000000,
+      "gain": 1.59,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.5,
+      "minutes": 6.0
+     },
+     "rollsForAffordableUseful": 4.4,
+     "rollsForUseful": 2.5,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 3.8,
+     "jobBonus": 525763641661637.94,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 23.2,
+     "p90": 38.5
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 235.3,
+     "p90": 265.2
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 343458152697021.0,
+     "stage": "AbsoluteZero",
+     "band": 8,
+     "build": "Frostbite Cleaver/Polar Turbine/Aurora Glide/Safari Cruiser",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 29.404385889336194,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_zero",
+      "name": "Absolute Edge",
+      "price": 170000000000000,
+      "gain": 1.28,
+      "minutes": 0.5
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.5,
+      "minutes": 3.7
+     },
+     "rollsForAffordableUseful": 4.7,
+     "rollsForUseful": 1.7,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 199.2,
+     "jobBonus": 870093986832453.1,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.5,
+     "p90": 2.0
+    }
+   }
+  },
+  "offers": {
+   "rolls": 15119,
+   "usefulShare": 0.416,
+   "affordableUsefulShare": 0.153,
+   "duplicateShare": 0.271,
+   "slotShare": {
+    "Gear": 0.294,
+    "Body": 0.123,
+    "Blade": 0.291,
+    "Engine": 0.291
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "legacy:casual": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 324,
+    "median": 379,
+    "p90": 428
+   },
+   "minutesBetweenMeaningful": {
+    "median": 1.8,
+    "p90": 18.6,
+    "max": 143.7
+   },
+   "longestGapPerPlayer": {
+    "median": 56.7,
+    "p90": 77.9,
+    "max": 143.7
+   },
+   "trace15": {
+    "median": 4.0,
+    "p90": 22.4,
+    "max": 112.4
+   },
+   "firstPartMinute": {
+    "median": 2.0,
+    "p90": 2.0
+   },
+   "partsBoughtW1": {
+    "median": 28.0
+   },
+   "longestUnavailable": {
+    "median": 5.7,
+    "p90": 11.8,
+    "max": 16.9
+   },
+   "jobs": {
+    "median": 28.0,
+    "shareOfSnow": 0.288,
+    "shareOfTime": 0.116,
+    "payVsCollecting": 2.0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 0.0,
+    "p90": 3,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 3.3,
+     "p90": 3.5
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 25327.52928461689,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Wide Clearing Blade/Snowball Motor/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 47.982565035514874,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_balanced",
+      "name": "Balanced Engine",
+      "price": 450,
+      "gain": 1.23,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Pet1",
+      "price": 3000.0,
+      "gain": 1.15,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 4.9,
+     "rollsForUseful": 2.6,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.2,
+     "jobBonus": 64163.07418769612,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 1.2,
+     "p90": 1.3
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 3.7,
+     "p90": 4.0
+    },
+    "leaveMin": {
+     "median": 13.2,
+     "p90": 18.0
+    },
+    "entry": {
+     "income_per_min": 69824.18950984391,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Basic Blade/Starter Engine/Dune Balloon Tires/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 3.227649476111016,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.76,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Pet1",
+      "price": 3000.0,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 2.2,
+     "rollsForUseful": 1.2,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 43.8,
+     "jobBonus": 186793.7899068029,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 13459921.893880563,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Lantern Motor/Dune Balloon Tires/Grave Hauler",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 54.40813503448889,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "gear_bonewheels",
+      "name": "Spiked Bone Wheels",
+      "price": 920000,
+      "gain": 1.11,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "R_Dice5",
+      "price": 2300455.61165746,
+      "gain": 1.2,
+      "minutes": 0.2
+     },
+     "rollsForAffordableUseful": 8.4,
+     "rollsForUseful": 3.9,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.2,
+     "jobBonus": 34098468.79783076,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.6,
+     "p90": 4.6
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 13.6,
+     "p90": 18.4
+    },
+    "leaveMin": {
+     "median": 35.5,
+     "p90": 47.2
+    },
+    "entry": {
+     "income_per_min": 10009922.427952865,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Dune Sweeper/Sand Runner/Snow Wheels/Grave Hauler",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 40.462434733178185,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_balanced",
+      "name": "Balanced Engine",
+      "price": 450,
+      "gain": 1.33,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Turbo",
+      "price": 990430.2825013597,
+      "gain": 1.12,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 2.7,
+     "rollsForUseful": 1.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 113.9,
+     "jobBonus": 25358470.150813926,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 2481086287.0483875,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Hex Breaker/Geode Core/Sandcrawler Tracks/Grave Hauler",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 74.67233005946461,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "gear_haunted",
+      "name": "Haunted Treads",
+      "price": 250000000,
+      "gain": 1.11,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.13,
+      "minutes": 0.3
+     },
+     "rollsForAffordableUseful": 5.5,
+     "rollsForUseful": 3.6,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 0.5,
+     "jobBonus": 6285418593.855915,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 5.5,
+     "p90": 11.1
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 35.9,
+     "p90": 47.6
+    },
+    "leaveMin": {
+     "median": 64.9,
+     "p90": 81.8
+    },
+    "entry": {
+     "income_per_min": 778478810.4850625,
+     "stage": "Cursed",
+     "band": 4,
+     "build": "Dune Sweeper/Lantern Motor/Sandcrawler Tracks/Dune Runner",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 31.478387247212275,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_ice",
+      "name": "Reinforced Icebreaker",
+      "price": 670000,
+      "gain": 1.56,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.17,
+      "minutes": 0.9
+     },
+     "rollsForAffordableUseful": 3.0,
+     "rollsForUseful": 1.3,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 245.4,
+     "jobBonus": 1972146319.8954916,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 35924681320.597984,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Prism Cleaver/Crystal Reactor/Haunted Treads/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 58.38638449723307,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_geodetracks",
+      "name": "Geode Tracks",
+      "price": 42000000000,
+      "gain": 1.14,
+      "minutes": 1.2
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.48,
+      "minutes": 31.3
+     },
+     "rollsForAffordableUseful": 10.8,
+     "rollsForUseful": 4.1,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 5.3,
+     "jobBonus": 91009192678.84824,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 7.2,
+     "p90": 10.8
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 65.3,
+     "p90": 82.2
+    },
+    "leaveMin": {
+     "median": 146.0,
+     "p90": 178.7
+    },
+    "entry": {
+     "income_per_min": 39035948016.4636,
+     "stage": "Crystal",
+     "band": 5,
+     "build": "Amethyst Wedge/Crystal Reactor/Shard Treads/Arcade Kart",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 48.941706633081445,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.19,
+      "minutes": 1.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.5,
+      "minutes": 28.8
+     },
+     "rollsForAffordableUseful": 5.9,
+     "rollsForUseful": 1.8,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 61.0,
+     "jobBonus": 98891068308.37445,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 252248229723.64798,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Arcade Plow/Totem Torque/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 44.103814635483936,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_tusk",
+      "name": "Tusk Breaker",
+      "price": 5300000000000,
+      "gain": 1.39,
+      "minutes": 21.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.11,
+      "minutes": 4.5
+     },
+     "rollsForAffordableUseful": 28.6,
+     "rollsForUseful": 4.7,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 9.4,
+     "jobBonus": 639028848633.2416,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 24.1,
+     "p90": 40.3
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 146.5,
+     "p90": 179.1
+    },
+    "leaveMin": {
+     "median": 215.5,
+     "p90": 252.9
+    },
+    "entry": {
+     "income_per_min": 152982660362.267,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Arcade Plow/Tiki Thumper/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 34.95177263712362,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_totem",
+      "name": "Totem Torque",
+      "price": 1900000000000,
+      "gain": 1.26,
+      "minutes": 12.4
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.29,
+      "minutes": 7.4
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 1.9,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 158.2,
+     "jobBonus": 387556072917.74304,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 1466016029930.327,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Tusk Breaker/Jungle Turbine/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 120.15576658819819,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_polar",
+      "name": "Polar Sweeper",
+      "price": 60000000000000,
+      "gain": 1.1,
+      "minutes": 40.9
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 7.4
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 5.5,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 16.5,
+     "jobBonus": 3713907275823.495,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 25.4,
+     "p90": 38.9
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 215.9,
+     "p90": 253.3
+    },
+    "leaveMin": {
+     "median": 378.8,
+     "p90": 428.4
+    },
+    "entry": {
+     "income_per_min": 2108737623720.1418,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Canopy Scoop/Frost Piston/Vine Crawler Tracks/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 21.875405746660363,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_polar",
+      "name": "Polar Sweeper",
+      "price": 60000000000000,
+      "gain": 1.57,
+      "minutes": 28.5
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.11,
+      "minutes": 5.2
+     },
+     "rollsForAffordableUseful": 53.0,
+     "rollsForUseful": 1.9,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 371.8,
+     "jobBonus": 5342135313424.359,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 370801132699354.4,
+     "stage": "AbsoluteZero",
+     "band": 7,
+     "build": "Tusk Breaker/Glacier V6/Vine Crawler Tracks/Safari Cruiser",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 23.458645991184024,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_frostbite",
+      "name": "Frostbite Cleaver",
+      "price": 21000000000000,
+      "gain": 1.16,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.49,
+      "minutes": 3.4
+     },
+     "rollsForAffordableUseful": 4.6,
+     "rollsForUseful": 2.5,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 2.1,
+     "jobBonus": 939362869505031.1,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 40.6,
+     "p90": 62.7
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 379.3,
+     "p90": 428.8
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 255524814755096.66,
+     "stage": "AbsoluteZero",
+     "band": 8,
+     "build": "Tusk Breaker/Frost Piston/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 14.967908421214235,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_rootcrawler",
+      "name": "Root Crawlers",
+      "price": 1900000000000,
+      "gain": 1.1,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.5,
+      "minutes": 4.9
+     },
+     "rollsForAffordableUseful": 2.0,
+     "rollsForUseful": 1.1,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 267.7,
+     "jobBonus": 647329530712911.5,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.1,
+     "p90": 0.7
+    }
+   }
+  },
+  "offers": {
+   "rolls": 10194,
+   "usefulShare": 0.491,
+   "affordableUsefulShare": 0.159,
+   "duplicateShare": 0.211,
+   "slotShare": {
+    "Gear": 0.29,
+    "Engine": 0.297,
+    "Body": 0.123,
+    "Blade": 0.29
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "legacy:noRewards": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 289,
+    "median": 331,
+    "p90": 383
+   },
+   "minutesBetweenMeaningful": {
+    "median": 1.4,
+    "p90": 14.9,
+    "max": 83.4
+   },
+   "longestGapPerPlayer": {
+    "median": 58.0,
+    "p90": 78.3,
+    "max": 83.4
+   },
+   "trace15": {
+    "median": 3.0,
+    "p90": 16.1,
+    "max": 97.9
+   },
+   "firstPartMinute": {
+    "median": 2.0,
+    "p90": 2.0
+   },
+   "partsBoughtW1": {
+    "median": 32.0
+   },
+   "longestUnavailable": {
+    "median": 2.2,
+    "p90": 4.7,
+    "max": 7.1
+   },
+   "jobs": {
+    "median": 0.0,
+    "shareOfSnow": 0.0,
+    "shareOfTime": 0.0,
+    "payVsCollecting": 0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 1.0,
+    "p90": 4,
+    "max": 6
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 3.0,
+     "p90": 3.6
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 18094.091979253622,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Wide Clearing Blade/Snowball Motor/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 41.82031106090316,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_balanced",
+      "name": "Balanced Engine",
+      "price": 450,
+      "gain": 1.22,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "R_Dice4",
+      "price": 5899.103362736763,
+      "gain": 1.15,
+      "minutes": 0.3
+     },
+     "rollsForAffordableUseful": 5.2,
+     "rollsForUseful": 2.6,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.3,
+     "jobBonus": 45838.36634744251,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 1.4,
+     "p90": 1.5
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 3.4,
+     "p90": 4.1
+    },
+    "leaveMin": {
+     "median": 11.4,
+     "p90": 14.5
+    },
+    "entry": {
+     "income_per_min": 231025.34078104407,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Wide Clearing Blade/Sand Runner/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 10.679233448677268,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_tracks",
+      "name": "Tracked Treads",
+      "price": 650,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "R_Dice4",
+      "price": 5899.103362736763,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 2.3,
+     "rollsForUseful": 1.4,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 13.2,
+     "jobBonus": 585264.1966453117,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 14125022.9598684,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Sand Runner/Dune Balloon Tires/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 48.65272602379795,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_power",
+      "name": "Powerful Engine",
+      "price": 670000,
+      "gain": 1.22,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Turbo",
+      "price": 990430.2825013597,
+      "gain": 1.1,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 3.4,
+     "rollsForUseful": 2.1,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.2,
+     "jobBonus": 35783391.498333275,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 1.7,
+     "p90": 2.7
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 11.8,
+     "p90": 14.9
+    },
+    "leaveMin": {
+     "median": 35.7,
+     "p90": 45.9
+    },
+    "entry": {
+     "income_per_min": 11812821.481310636,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Dune Sweeper/Sand Runner/Dune Balloon Tires/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 48.668444595564374,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_balanced",
+      "name": "Balanced Engine",
+      "price": 450,
+      "gain": 1.22,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Turbo",
+      "price": 990430.2825013597,
+      "gain": 1.1,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 2.9,
+     "rollsForUseful": 1.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 96.5,
+     "jobBonus": 29925814.419320278,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 2252951476.864803,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Hex Breaker/Cauldron Burner/Spiked Bone Wheels/Geode Crawler",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 66.5505704902561,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_phantom",
+      "name": "Phantom V-Twin",
+      "price": 250000000,
+      "gain": 1.16,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.13,
+      "minutes": 0.3
+     },
+     "rollsForAffordableUseful": 5.4,
+     "rollsForUseful": 3.4,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 0.5,
+     "jobBonus": 5707477074.724167,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 4.9,
+     "p90": 10.6
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 36.2,
+     "p90": 46.4
+    },
+    "leaveMin": {
+     "median": 62.3,
+     "p90": 70.0
+    },
+    "entry": {
+     "income_per_min": 1600953319.3092098,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Reinforced Icebreaker/Lantern Motor/Sandcrawler Tracks/Dune Runner",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 7.366484658366779,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_cauldron",
+      "name": "Cauldron Burner",
+      "price": 15000000,
+      "gain": 1.4,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip2",
+      "price": 688417590.2884418,
+      "gain": 1.13,
+      "minutes": 0.4
+     },
+     "rollsForAffordableUseful": 2.4,
+     "rollsForUseful": 1.4,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 119.3,
+     "jobBonus": 4055748408.9166646,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 31470743723.966644,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Amethyst Wedge/Quartz Piston/Haunted Treads/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 40.18743746896308,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.19,
+      "minutes": 1.3
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.87,
+      "minutes": 35.8
+     },
+     "rollsForAffordableUseful": 6.2,
+     "rollsForUseful": 3.2,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 6.1,
+     "jobBonus": 79725884100.7155,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 5.2,
+     "p90": 9.8
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 62.7,
+     "p90": 70.4
+    },
+    "leaveMin": {
+     "median": 142.7,
+     "p90": 168.8
+    },
+    "entry": {
+     "income_per_min": 24268020559.135387,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Pixel Pusher/Quartz Piston/Haunted Treads/Geode Crawler",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 5.843179663534391,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.22,
+      "minutes": 1.7
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.5,
+      "minutes": 46.4
+     },
+     "rollsForAffordableUseful": 4.7,
+     "rollsForUseful": 1.7,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 98.1,
+     "jobBonus": 61478985416.47631,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 167827096199.72345,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Arcade Plow/Tiki Thumper/Root Crawlers/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 36.72003153927452,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_totem",
+      "name": "Totem Torque",
+      "price": 1900000000000,
+      "gain": 1.26,
+      "minutes": 11.3
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.12,
+      "minutes": 6.7
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 4.7,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 14.2,
+     "jobBonus": 425161977039.29944,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 25.3,
+     "p90": 32.5
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 143.1,
+     "p90": 169.2
+    },
+    "leaveMin": {
+     "median": 202.5,
+     "p90": 229.6
+    },
+    "entry": {
+     "income_per_min": 268744495068.3363,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Arcade Plow/Totem Torque/Root Crawlers/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 46.148997006711504,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_tusk",
+      "name": "Tusk Breaker",
+      "price": 5300000000000,
+      "gain": 1.35,
+      "minutes": 19.7
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.89,
+      "minutes": 4.2
+     },
+     "rollsForAffordableUseful": 28.2,
+     "rollsForUseful": 2.3,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 90.0,
+     "jobBonus": 680819387506.4519,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 1887975015989.465,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Canopy Scoop/Jungle Turbine/Root Crawlers/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 116.0609261263238,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_polar",
+      "name": "Polar Sweeper",
+      "price": 60000000000000,
+      "gain": 1.12,
+      "minutes": 31.8
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.11,
+      "minutes": 5.8
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 4.1,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 12.8,
+     "jobBonus": 4782870040506.645,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 21.1,
+     "p90": 38.3
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 202.9,
+     "p90": 230.0
+    },
+    "leaveMin": {
+     "median": 331.5,
+     "p90": 382.7
+    },
+    "entry": {
+     "income_per_min": 1747699179026.9167,
+     "stage": "Retro",
+     "band": 7,
+     "build": "Glacier Plow/Jungle Turbine/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 119.17233675101073,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_polar",
+      "name": "Polar Sweeper",
+      "price": 60000000000000,
+      "gain": 1.12,
+      "minutes": 34.3
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 6.2
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": 1.8,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 448.6,
+     "jobBonus": 4427504586868.189,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 376718606133395.5,
+     "stage": "AbsoluteZero",
+     "band": 7,
+     "build": "Absolute Edge/Cryo Compressor/Aurora Glide/Pagoda Wagon",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 26.692975174781395,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_glacierv6",
+      "name": "Glacier V6",
+      "price": 60000000000000,
+      "gain": 1.28,
+      "minutes": 0.2
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.49,
+      "minutes": 3.3
+     },
+     "rollsForAffordableUseful": 4.8,
+     "rollsForUseful": 2.8,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 2.1,
+     "jobBonus": 954353802204602.0,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 45.2,
+     "p90": 75.7
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 331.9,
+     "p90": 383.2
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 436981743934401.25,
+     "stage": "AbsoluteZero",
+     "band": 8,
+     "build": "Absolute Edge/Polar Turbine/Frostbite Studs/Safari Cruiser",
+     "tileHP": 1300000.0,
+     "tough": 0.95,
+     "layers_s": 35.42914465902068,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_glaciertracks",
+      "name": "Glacier Tracks",
+      "price": 170000000000000,
+      "gain": 1.27,
+      "minutes": 0.4
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.49,
+      "minutes": 2.9
+     },
+     "rollsForAffordableUseful": 3.8,
+     "rollsForUseful": 1.6,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 156.5,
+     "jobBonus": 1107020417967149.9,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.1,
+     "p90": 0.4
+    }
+   }
+  },
+  "offers": {
+   "rolls": 16382,
+   "usefulShare": 0.426,
+   "affordableUsefulShare": 0.132,
+   "duplicateShare": 0.266,
+   "slotShare": {
+    "Gear": 0.289,
+    "Engine": 0.3,
+    "Body": 0.123,
+    "Blade": 0.288
+   },
+   "longestDryStreak": {
+    "median": 6.0,
+    "max": 6
+   }
+  }
+ },
+ "world2": {
+  "summary": {
+   "world1_minutes": {
+    "p10": 133,
+    "median": 143,
+    "p90": 155
+   },
+   "world2_minutes": {
+    "p10": 264,
+    "median": 297,
+    "p90": 330
+   },
+   "minutesBetweenMeaningful": {
+    "median": 0.9,
+    "p90": 5.9,
+    "max": 19.9
+   },
+   "longestGapPerPlayer": {
+    "median": 13.2,
+    "p90": 17.8,
+    "max": 19.9
+   },
+   "trace15": {
+    "median": 2.5,
+    "p90": 7.9,
+    "max": 20.0
+   },
+   "firstPartMinute": {
+    "median": 2.3,
+    "p90": 8.0
+   },
+   "partsBoughtW1": {
+    "median": 30.0
+   },
+   "longestUnavailable": {
+    "median": 2.5,
+    "p90": 3.0,
+    "max": 3.1
+   },
+   "jobs": {
+    "median": 54.0,
+    "shareOfSnow": 0.629,
+    "shareOfTime": 0.186,
+    "payVsCollecting": 2.0
+   },
+   "rollsBetweenUsefulOffers": {
+    "median": 1.0,
+    "p90": 6,
+    "max": 38
+   }
+  },
+  "stages": {
+   "Starter": {
+    "arriveMin": {
+     "median": 0.0,
+     "p90": 0.0
+    },
+    "leaveMin": {
+     "median": 5.0,
+     "p90": 7.4
+    },
+    "entry": {
+     "income_per_min": 3405.571816127933,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Basic Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 11.971099188168608,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_wide",
+      "name": "Wide Clearing Blade",
+      "price": 120,
+      "gain": 1.89,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Center",
+      "price": 20.065363738838673,
+      "gain": 1.15,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 1.9,
+     "rollsForUseful": 1.2,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 1.5,
+     "jobBonus": 9257.843957986654,
+     "jobVsCollecting": 1.97
+    },
+    "developed": {
+     "income_per_min": 47147.41401604489,
+     "stage": "Starter",
+     "band": 1,
+     "build": "Wide Clearing Blade/Sand Runner/Snow Wheels/Classic Plow Cab",
+     "tileHP": 1.6,
+     "tough": 0.05,
+     "layers_s": 60.80934660342727,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "gear_tracks",
+      "name": "Tracked Treads",
+      "price": 650,
+      "gain": 1.11,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "M_Pet1",
+      "price": 3000.0,
+      "gain": 1.15,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 8.0,
+     "rollsForUseful": 4.3,
+     "nextGate": "Desert",
+     "gateCost": 5000.0,
+     "gateMinutes": 0.1,
+     "jobBonus": 119440.11550731372,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.2,
+     "p90": 3.8
+    }
+   },
+   "Desert": {
+    "arriveMin": {
+     "median": 5.4,
+     "p90": 7.8
+    },
+    "leaveMin": {
+     "median": 14.7,
+     "p90": 15.3
+    },
+    "entry": {
+     "income_per_min": 192007.89118607182,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Wide Clearing Blade/Starter Engine/Snow Wheels/Classic Plow Cab",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 4.909634437368317,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_snowball",
+      "name": "Snowball Motor",
+      "price": 300,
+      "gain": 2.13,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain2",
+      "price": 14081.38484799147,
+      "gain": 1.2,
+      "minutes": 0.1
+     },
+     "rollsForAffordableUseful": 1.8,
+     "rollsForUseful": 1.2,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 15.9,
+     "jobBonus": 486419.99100471527,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 6611378.652175623,
+     "stage": "Desert",
+     "band": 2,
+     "build": "Dune Sweeper/Lantern Motor/Dune Balloon Tires/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 51.17922007414884,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "gear_bonewheels",
+      "name": "Spiked Bone Wheels",
+      "price": 920000,
+      "gain": 1.11,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 8.4,
+     "rollsForUseful": 3.9,
+     "nextGate": "Cursed",
+     "gateCost": 3060000.0,
+     "gateMinutes": 0.5,
+     "jobBonus": 16748825.918844912,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 2.5,
+     "p90": 3.1
+    }
+   },
+   "Cursed": {
+    "arriveMin": {
+     "median": 15.1,
+     "p90": 15.7
+    },
+    "leaveMin": {
+     "median": 29.1,
+     "p90": 32.8
+    },
+    "entry": {
+     "income_per_min": 6611378.652175623,
+     "stage": "Desert",
+     "band": 3,
+     "build": "Dune Sweeper/Lantern Motor/Dune Balloon Tires/Dune Runner",
+     "tileHP": 10.0,
+     "tough": 0.2,
+     "layers_s": 51.17922007414884,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_ice",
+      "name": "Reinforced Icebreaker",
+      "price": 670000,
+      "gain": 1.6,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Gain3",
+      "price": 314630.6875293997,
+      "gain": 1.35,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 4.0,
+     "rollsForUseful": 1.5,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 172.4,
+     "jobBonus": 16748825.918844912,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 393346015.12744933,
+     "stage": "Cursed",
+     "band": 3,
+     "build": "Quartz Edge/Phantom V-Twin/Haunted Treads/Geode Crawler",
+     "tileHP": 130.0,
+     "tough": 0.55,
+     "layers_s": 83.3123607078916,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "engine_shardspinner",
+      "name": "Shard Spinner",
+      "price": 1700000000,
+      "gain": 1.16,
+      "minutes": 4.3
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip1",
+      "price": 12906076.035757653,
+      "gain": 1.23,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 60.3,
+     "rollsForUseful": 9.3,
+     "nextGate": "Crystal",
+     "gateCost": 1140000000.0,
+     "gateMinutes": 2.9,
+     "jobBonus": 996476571.6562049,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 3.3,
+     "p90": 5.0
+    }
+   },
+   "Crystal": {
+    "arriveMin": {
+     "median": 29.6,
+     "p90": 33.2
+    },
+    "leaveMin": {
+     "median": 55.0,
+     "p90": 61.8
+    },
+    "entry": {
+     "income_per_min": 476136367.918962,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Quartz Edge/Phantom V-Twin/Haunted Treads/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 15.127156487408538,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_hex",
+      "name": "Hex Breaker",
+      "price": 250000000,
+      "gain": 1.18,
+      "minutes": 0.5
+     },
+     "cheapUpgrade": {
+      "id": "M_Equip1",
+      "price": 12906076.035757653,
+      "gain": 1.23,
+      "minutes": 0.0
+     },
+     "rollsForAffordableUseful": 9.1,
+     "rollsForUseful": 2.1,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 401.1,
+     "jobBonus": 1206212132.0613704,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 54373717208.92393,
+     "stage": "Crystal",
+     "band": 4,
+     "build": "Prism Cleaver/8-Bit Engine/Haunted Treads/Geode Crawler",
+     "tileHP": 1100.0,
+     "tough": 0.9,
+     "layers_s": 66.00518286342904,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_geodetracks",
+      "name": "Geode Tracks",
+      "price": 42000000000,
+      "gain": 1.13,
+      "minutes": 0.8
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 1.32,
+      "minutes": 20.7
+     },
+     "rollsForAffordableUseful": 7.6,
+     "rollsForUseful": 4.7,
+     "nextGate": "Retro",
+     "gateCost": 191000000000.0,
+     "gateMinutes": 3.5,
+     "jobBonus": 137746750262.60727,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 7.9,
+     "p90": 12.8
+    }
+   },
+   "Retro": {
+    "arriveMin": {
+     "median": 55.4,
+     "p90": 62.2
+    },
+    "leaveMin": {
+     "median": 86.5,
+     "p90": 99.0
+    },
+    "entry": {
+     "income_per_min": 38711239231.56444,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Amethyst Wedge/Quartz Piston/Shard Treads/Arcade Kart",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 5.852578784415329,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_prism",
+      "name": "Prism Cleaver",
+      "price": 42000000000,
+      "gain": 1.19,
+      "minutes": 1.1
+     },
+     "cheapUpgrade": {
+      "id": "S_Titan",
+      "price": 1126076328991.06,
+      "gain": 2.5,
+      "minutes": 29.1
+     },
+     "rollsForAffordableUseful": 5.3,
+     "rollsForUseful": 1.8,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 61.5,
+     "jobBonus": 98068472719.96324,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 443484265827.8966,
+     "stage": "Retro",
+     "band": 5,
+     "build": "Arcade Plow/Arcade Turbo/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 63.30118288354498,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_tiki",
+      "name": "Tiki Thumper",
+      "price": 710000000000,
+      "gain": 1.26,
+      "minutes": 1.6
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 5.8
+     },
+     "rollsForAffordableUseful": 15.0,
+     "rollsForUseful": 4.1,
+     "nextGate": "Jungle",
+     "gateCost": 2380000000000.0,
+     "gateMinutes": 5.4,
+     "jobBonus": 1123493473430.6714,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 8.2,
+     "p90": 9.7
+    }
+   },
+   "Jungle": {
+    "arriveMin": {
+     "median": 86.9,
+     "p90": 99.4
+    },
+    "leaveMin": {
+     "median": 112.4,
+     "p90": 123.9
+    },
+    "entry": {
+     "income_per_min": 489873356956.4677,
+     "stage": "Retro",
+     "band": 6,
+     "build": "Arcade Plow/Tiki Thumper/Arcade Hover Pods/Safari Cruiser",
+     "tileHP": 7200.0,
+     "tough": 0.75,
+     "layers_s": 80.24642331120005,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_totem",
+      "name": "Totem Torque",
+      "price": 1900000000000,
+      "gain": 1.17,
+      "minutes": 3.9
+     },
+     "cheapUpgrade": {
+      "id": "S_Avalanche",
+      "price": 2572955947482.1914,
+      "gain": 2.5,
+      "minutes": 5.3
+     },
+     "rollsForAffordableUseful": 14.2,
+     "rollsForUseful": 2.4,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 49.4,
+     "jobBonus": 1241012504289.7183,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 5191194232916.525,
+     "stage": "Jungle",
+     "band": 6,
+     "build": "Tusk Breaker/Cryo Compressor/Vine Crawler Tracks/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 54.38742101521509,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_glacier",
+      "name": "Glacier Plow",
+      "price": 7300000000000,
+      "gain": 1.14,
+      "minutes": 1.4
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.1,
+      "minutes": 2.1
+     },
+     "rollsForAffordableUseful": 13.8,
+     "rollsForUseful": 3.4,
+     "nextGate": "AbsoluteZero",
+     "gateCost": 24200000000000.0,
+     "gateMinutes": 4.7,
+     "jobBonus": 13151025390055.197,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 8.4,
+     "p90": 13.2
+    }
+   },
+   "AbsoluteZero": {
+    "arriveMin": {
+     "median": 112.8,
+     "p90": 124.3
+    },
+    "leaveMin": {
+     "median": 143.3,
+     "p90": 155.0
+    },
+    "entry": {
+     "income_per_min": 6207034564014.068,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Canopy Scoop/Cryo Compressor/Frostbite Studs/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 55.62605516961039,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_polar",
+      "name": "Polar Sweeper",
+      "price": 60000000000000,
+      "gain": 1.41,
+      "minutes": 9.7
+     },
+     "cheapUpgrade": {
+      "id": "M_Feast",
+      "price": 10874434902053.75,
+      "gain": 1.11,
+      "minutes": 1.8
+     },
+     "rollsForAffordableUseful": 4.3,
+     "rollsForUseful": 1.6,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 126.3,
+     "jobBonus": 15724487562168.973,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 280402188532737.88,
+     "stage": "Jungle",
+     "band": 7,
+     "build": "Glacier Plow/Frost Piston/Frostbite Studs/Safari Cruiser",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 93.5248435161258,
+     "limit": "coverage",
+     "cheapPart": {
+      "id": "blade_tusk",
+      "name": "Tusk Breaker",
+      "price": 5300000000000,
+      "gain": 1.35,
+      "minutes": 0.0
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.39,
+      "minutes": 4.5
+     },
+     "rollsForAffordableUseful": 2.3,
+     "rollsForUseful": 1.6,
+     "nextGate": "Portal",
+     "gateCost": 784000000000000.0,
+     "gateMinutes": 2.8,
+     "jobBonus": 710352210949602.6,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 7.1,
+     "p90": 10.4
+    }
+   },
+   "Sakura": {
+    "arriveMin": {
+     "median": 143.7,
+     "p90": 155.4
+    },
+    "leaveMin": {
+     "median": 185.0,
+     "p90": 203.2
+    },
+    "entry": {
+     "income_per_min": 181823134693496.16,
+     "stage": "Jungle",
+     "band": 8,
+     "build": "Tusk Breaker/Jungle Turbine/Arcade Hover Pods/Arcade Kart",
+     "tileHP": 84000.0,
+     "tough": 0.3,
+     "layers_s": 93.19341558329258,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_frostpiston",
+      "name": "Frost Piston",
+      "price": 21000000000000,
+      "gain": 1.13,
+      "minutes": 0.1
+     },
+     "cheapUpgrade": {
+      "id": "W2_PetalStrike",
+      "price": 1254400000000000.0,
+      "gain": 1.27,
+      "minutes": 6.9
+     },
+     "rollsForAffordableUseful": 2.7,
+     "rollsForUseful": 1.1,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 376.2,
+     "jobBonus": 460618607890190.25,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 2.099285449012094e+16,
+     "stage": "Sakura",
+     "band": 8,
+     "build": "Gumdrop Sweeper/Absolute Zero Core/Petal Glide Runners/Polar Titan",
+     "tileHP": 3200000.0,
+     "tough": 0.15,
+     "layers_s": 69.3263416767574,
+     "limit": "power",
+     "cheapPart": {
+      "id": "gear_gummytreads",
+      "name": "Gummy Treads",
+      "price": 94000000000000000,
+      "gain": 1.16,
+      "minutes": 4.5
+     },
+     "cheapUpgrade": {
+      "id": "W2_CandyCrush",
+      "price": 1.0907027027027027e+17,
+      "gain": 1.24,
+      "minutes": 5.2
+     },
+     "rollsForAffordableUseful": 20.1,
+     "rollsForUseful": 12.8,
+     "nextGate": "Candy",
+     "gateCost": 6.84e+16,
+     "gateMinutes": 3.3,
+     "jobBonus": 5.318189804163971e+16,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 11.8,
+     "p90": 16.5
+    }
+   },
+   "Candy": {
+    "arriveMin": {
+     "median": 185.4,
+     "p90": 203.6
+    },
+    "leaveMin": {
+     "median": 213.5,
+     "p90": 229.1
+    },
+    "entry": {
+     "income_per_min": 1.2895204003860674e+16,
+     "stage": "Sakura",
+     "band": 9,
+     "build": "Gumdrop Sweeper/Bonsai Drive/Koi Fin Rollers/Polar Titan",
+     "tileHP": 3200000.0,
+     "tough": 0.15,
+     "layers_s": 37.61588091311304,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_blossom",
+      "name": "Blossom Turbine",
+      "price": 15000000000000000,
+      "gain": 1.22,
+      "minutes": 1.2
+     },
+     "cheapUpgrade": {
+      "id": "W2_CandyCrush",
+      "price": 1.0907027027027027e+17,
+      "gain": 1.46,
+      "minutes": 8.5
+     },
+     "rollsForAffordableUseful": 4.7,
+     "rollsForUseful": 2.3,
+     "nextGate": "Atlantis",
+     "gateCost": 4.29e+17,
+     "gateMinutes": 33.3,
+     "jobBonus": 3.2667850143113704e+16,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 4.750156853487227e+16,
+     "stage": "Sakura",
+     "band": 9,
+     "build": "Gumdrop Sweeper/Absolute Zero Core/Bubble Hover/Polar Titan",
+     "tileHP": 3200000.0,
+     "tough": 0.15,
+     "layers_s": 92.37611878332865,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_bulldozer",
+      "name": "Toy Bulldozer",
+      "price": 1300000000000000000,
+      "gain": 1.21,
+      "minutes": 27.4
+     },
+     "cheapUpgrade": {
+      "id": "W2_TideSurge",
+      "price": 8.58e+17,
+      "gain": 1.5,
+      "minutes": 18.1
+     },
+     "rollsForAffordableUseful": 65.3,
+     "rollsForUseful": 21.2,
+     "nextGate": "Atlantis",
+     "gateCost": 4.29e+17,
+     "gateMinutes": 9.0,
+     "jobBonus": 1.2033730695500976e+17,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 11.9,
+     "p90": 21.9
+    }
+   },
+   "Atlantis": {
+    "arriveMin": {
+     "median": 213.9,
+     "p90": 229.5
+    },
+    "leaveMin": {
+     "median": 262.4,
+     "p90": 284.8
+    },
+    "entry": {
+     "income_per_min": 4.2138485562110936e+16,
+     "stage": "Sakura",
+     "band": 10,
+     "build": "Gumdrop Sweeper/Absolute Zero Core/Licorice Tracks/Reef Diver",
+     "tileHP": 3200000.0,
+     "tough": 0.15,
+     "layers_s": 90.45218609868374,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_bulldozer",
+      "name": "Toy Bulldozer",
+      "price": 1300000000000000000,
+      "gain": 1.29,
+      "minutes": 30.9
+     },
+     "cheapUpgrade": {
+      "id": "W2_TideSurge",
+      "price": 8.58e+17,
+      "gain": 1.5,
+      "minutes": 20.4
+     },
+     "rollsForAffordableUseful": 79.1,
+     "rollsForUseful": 6.2,
+     "nextGate": "Toybox",
+     "gateCost": 1.3e+18,
+     "gateMinutes": 30.9,
+     "jobBonus": 1.0675083009068102e+17,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 1.415872219567947e+17,
+     "stage": "Atlantis",
+     "band": 10,
+     "build": "Building Block Blade/Absolute Zero Core/Paddle Tracks/Reef Diver",
+     "tileHP": 49000000.0,
+     "tough": 0.4,
+     "layers_s": 25.97636292296725,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_bulldozer",
+      "name": "Toy Bulldozer",
+      "price": 1300000000000000000,
+      "gain": 1.2,
+      "minutes": 9.2
+     },
+     "cheapUpgrade": {
+      "id": "W2_BlockBuster",
+      "price": 2.1343283582089554e+18,
+      "gain": 1.5,
+      "minutes": 15.1
+     },
+     "rollsForAffordableUseful": 14.2,
+     "rollsForUseful": 7.4,
+     "nextGate": "Toybox",
+     "gateCost": 1.3e+18,
+     "gateMinutes": 9.2,
+     "jobBonus": 3.5868762895721325e+17,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 15.7,
+     "p90": 23.6
+    }
+   },
+   "Toybox": {
+    "arriveMin": {
+     "median": 262.9,
+     "p90": 285.2
+    },
+    "leaveMin": {
+     "median": 316.3,
+     "p90": 347.0
+    },
+    "entry": {
+     "income_per_min": 1.439475419325672e+17,
+     "stage": "Atlantis",
+     "band": 11,
+     "build": "Building Block Blade/Absolute Zero Core/Paddle Tracks/Toy Truck",
+     "tileHP": 49000000.0,
+     "tough": 0.4,
+     "layers_s": 25.976459096726053,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_bulldozer",
+      "name": "Toy Bulldozer",
+      "price": 1300000000000000000,
+      "gain": 1.2,
+      "minutes": 9.0
+     },
+     "cheapUpgrade": {
+      "id": "W2_BlockBuster",
+      "price": 2.1343283582089554e+18,
+      "gain": 1.5,
+      "minutes": 14.8
+     },
+     "rollsForAffordableUseful": 9.2,
+     "rollsForUseful": 3.4,
+     "nextGate": "Clockwork",
+     "gateCost": 6e+18,
+     "gateMinutes": 41.7,
+     "jobBonus": 3.6466710622917024e+17,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 1.4661024987954143e+18,
+     "stage": "Atlantis",
+     "band": 11,
+     "build": "Toy Bulldozer/Jack-in-the-Box Engine/Toy Tank Tracks/Toy Truck",
+     "tileHP": 49000000.0,
+     "tough": 0.4,
+     "layers_s": 66.96689038592636,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_piston",
+      "name": "Piston Scoop",
+      "price": 3400000000000000000,
+      "gain": 1.15,
+      "minutes": 2.3
+     },
+     "cheapUpgrade": {
+      "id": "W2_GearGrinder",
+      "price": 9.67741935483871e+18,
+      "gain": 1.39,
+      "minutes": 6.6
+     },
+     "rollsForAffordableUseful": 10.6,
+     "rollsForUseful": 7.0,
+     "nextGate": "Clockwork",
+     "gateCost": 6e+18,
+     "gateMinutes": 4.1,
+     "jobBonus": 3.7141263302817157e+18,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 13.4,
+     "p90": 25.6
+    }
+   },
+   "Clockwork": {
+    "arriveMin": {
+     "median": 316.7,
+     "p90": 347.4
+    },
+    "leaveMin": {
+     "median": 358.3,
+     "p90": 404.8
+    },
+    "entry": {
+     "income_per_min": 1.41569739213773e+18,
+     "stage": "Atlantis",
+     "band": 12,
+     "build": "Piston Scoop/Jack-in-the-Box Engine/Toy Tank Tracks/Toy Truck",
+     "tileHP": 49000000.0,
+     "tough": 0.4,
+     "layers_s": 77.0752556084868,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_gearbreaker",
+      "name": "Gearbreaker",
+      "price": 12000000000000000000,
+      "gain": 1.18,
+      "minutes": 8.5
+     },
+     "cheapUpgrade": {
+      "id": "W2_GearGrinder",
+      "price": 9.67741935483871e+18,
+      "gain": 1.36,
+      "minutes": 6.8
+     },
+     "rollsForAffordableUseful": 6.0,
+     "rollsForUseful": 3.1,
+     "nextGate": "Cloud",
+     "gateCost": 5.61e+19,
+     "gateMinutes": 39.6,
+     "jobBonus": 3.5864333934155827e+18,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 8.493688491306754e+18,
+     "stage": "Clockwork",
+     "band": 12,
+     "build": "Gearbreaker/Grand Clockwork Core/Brass Tracks/Sky Cruiser",
+     "tileHP": 470000000.0,
+     "tough": 0.85,
+     "layers_s": 25.981478613138176,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_thunder",
+      "name": "Thunder Wedge",
+      "price": 110000000000000000000,
+      "gain": 1.22,
+      "minutes": 13.0
+     },
+     "cheapUpgrade": {
+      "id": "W2_ThunderStrike",
+      "price": 8.898620689655172e+19,
+      "gain": 1.48,
+      "minutes": 10.5
+     },
+     "rollsForAffordableUseful": 65.5,
+     "rollsForUseful": 9.9,
+     "nextGate": "Cloud",
+     "gateCost": 5.61e+19,
+     "gateMinutes": 6.6,
+     "jobBonus": 2.151734417797711e+19,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 16.9,
+     "p90": 32.8
+    }
+   },
+   "Cloud": {
+    "arriveMin": {
+     "median": 358.8,
+     "p90": 405.2
+    },
+    "leaveMin": {
+     "median": 434.5,
+     "p90": 479.8
+    },
+    "entry": {
+     "income_per_min": 9.348674351921558e+18,
+     "stage": "Clockwork",
+     "band": 13,
+     "build": "Gearbreaker/Grand Clockwork Core/Brass Tracks/Sky Cruiser",
+     "tileHP": 470000000.0,
+     "tough": 0.85,
+     "layers_s": 26.732695746844964,
+     "limit": "power",
+     "cheapPart": {
+      "id": "blade_cumulus",
+      "name": "Cumulus Sweeper",
+      "price": 17000000000000000000,
+      "gain": 1.3,
+      "minutes": 1.8
+     },
+     "cheapUpgrade": {
+      "id": "W2_ThunderStrike",
+      "price": 8.898620689655172e+19,
+      "gain": 1.47,
+      "minutes": 9.5
+     },
+     "rollsForAffordableUseful": 9.0,
+     "rollsForUseful": 3.0,
+     "nextGate": "Cosmic",
+     "gateCost": 5.2100000000000007e+20,
+     "gateMinutes": 55.7,
+     "jobBonus": 2.3683308358201283e+19,
+     "jobVsCollecting": 2.0
+    },
+    "developed": {
+     "income_per_min": 7.529179104583793e+19,
+     "stage": "Cloud",
+     "band": 13,
+     "build": "Galaxy Breaker/Storm Engine/Storm Hover Pods/Star Cruiser",
+     "tileHP": 980000000.0,
+     "tough": 0.1,
+     "layers_s": 43.6541196989752,
+     "limit": "power",
+     "cheapPart": {
+      "id": "engine_nebula",
+      "name": "Nebula Reactor",
+      "price": 230000000000000000000,
+      "gain": 1.15,
+      "minutes": 3.1
+     },
+     "cheapUpgrade": {
+      "id": "W2_MeteorStrike",
+      "price": 8.416153846153848e+20,
+      "gain": 1.47,
+      "minutes": 11.2
+     },
+     "rollsForAffordableUseful": 25.9,
+     "rollsForUseful": 25.9,
+     "nextGate": "Cosmic",
+     "gateCost": 5.2100000000000007e+20,
+     "gateMinutes": 6.9,
+     "jobBonus": 1.9073920398278944e+20,
+     "jobVsCollecting": 2.0
+    },
+    "longestGapInStage": {
+     "median": 14.7,
+     "p90": 24.0
+    }
+   },
+   "Cosmic": {
+    "arriveMin": {
+     "median": 434.9,
+     "p90": 480.2
+    },
+    "leaveMin": null,
+    "entry": {
+     "income_per_min": 1.4045145906208278e+20,
+     "stage": "Cosmic",
+     "band": 14,
+     "build": "Galaxy Breaker/Nebula Reactor/Meteor Treads/Star Cruiser",
+     "tileHP": 2000000000.0,
+     "tough": 0.7,
+     "layers_s": 33.328060619877675,
+     "limit": "power",
+     "cheapPart": null,
+     "cheapUpgrade": {
+      "id": "W2_MeteorStrike",
+      "price": 8.416153846153848e+20,
+      "gain": 1.34,
+      "minutes": 6.0
+     },
+     "rollsForAffordableUseful": null,
+     "rollsForUseful": null,
+     "nextGate": null,
+     "gateCost": 0,
+     "gateMinutes": null,
+     "jobBonus": 3.558103629572764e+20,
+     "jobVsCollecting": 2.0
+    },
+    "developed": null,
+    "longestGapInStage": {
+     "median": 0.1,
+     "p90": 0.9
+    }
+   }
+  },
+  "offers": {
+   "rolls": 18359,
+   "usefulShare": 0.295,
+   "affordableUsefulShare": 0.175,
+   "duplicateShare": 0.271,
+   "slotShare": {
+    "Engine": 0.284,
+    "Blade": 0.298,
+    "Gear": 0.303,
+    "Body": 0.116
+   },
+   "longestDryStreak": {
+    "median": 38.5,
+    "max": 77
+   }
+  }
+ },
+ "rebirth": {
+  "replayWorld1Minutes": {
+   "median": 5.3,
+   "p90": 5.4
+  }
+ }
+}

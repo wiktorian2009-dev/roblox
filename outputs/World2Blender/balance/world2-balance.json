@@ -1,0 +1,256 @@
+{
+ "assumptions": {
+  "W1_SNOW_UPG": 134.53,
+  "PET_BOOST_MULT": 2.0,
+  "PET_SLOTS": 5,
+  "EGG_DISCOUNT": 0.4,
+  "LAYERS_PER_S": 60.0,
+  "EFF": {
+   "engaged": 0.85,
+   "casual": 0.55
+  },
+  "REW": {
+   "with Rewards": 1.25,
+   "without Rewards": 1.0
+  },
+  "HATCHES": 6,
+  "SPEND": 0.3,
+  "UPG_SNOW": 1.5,
+  "TARGET_MIN": [
+   18,
+   20,
+   23,
+   26,
+   29,
+   32,
+   35
+  ]
+ },
+ "plan": [
+  {
+   "stage": "Sakura",
+   "name": "Sakura Garden",
+   "SPP": 400000.0,
+   "TileHP": 60000.0,
+   "petBoosts": [
+    2.0,
+    2.7,
+    3.9,
+    6.3,
+    12.0
+   ],
+   "income_start": 58181534400.0,
+   "income_end": 171202587415.20023,
+   "next_unlock_cost": 120000000000000,
+   "egg_cost": 8400000000000,
+   "upgrade_costs": [
+    14000000000000,
+    22000000000000
+   ],
+   "stage_cost": 0
+  },
+  {
+   "stage": "Candy",
+   "name": "Candy Kingdom",
+   "SPP": 1400000.0,
+   "TileHP": 150000.0,
+   "petBoosts": [
+    3.0,
+    4.1,
+    5.8,
+    9.4,
+    18.0
+   ],
+   "income_start": 521066977200.0,
+   "income_end": 1376828300529.985,
+   "next_unlock_cost": 1100000000000000,
+   "egg_cost": 77000000000000,
+   "upgrade_costs": [
+    130000000000000,
+    200000000000000
+   ],
+   "stage_cost": 120000000000000
+  },
+  {
+   "stage": "Atlantis",
+   "name": "Sunken Atlantis",
+   "SPP": 5000000.0,
+   "TileHP": 400000.0,
+   "petBoosts": [
+    4.5,
+    6.1,
+    8.8,
+    14.2,
+    27.0
+   ],
+   "income_start": 6468417648000.0,
+   "income_end": 14451412400592.777,
+   "next_unlock_cost": 13000000000000000,
+   "egg_cost": 910000000000000,
+   "upgrade_costs": [
+    1600000000000000,
+    2300000000000000
+   ],
+   "stage_cost": 1100000000000000
+  },
+  {
+   "stage": "Toybox",
+   "name": "Giant Toybox",
+   "SPP": 17000000.0,
+   "TileHP": 1000000.0,
+   "petBoosts": [
+    6.8,
+    9.1,
+    13.2,
+    21.3,
+    40.5
+   ],
+   "income_start": 38977991702100.0,
+   "income_end": 97524702502761.48,
+   "next_unlock_cost": 98000000000000000,
+   "egg_cost": 6900000000000000,
+   "upgrade_costs": [
+    12000000000000000,
+    18000000000000000
+   ],
+   "stage_cost": 13000000000000000
+  },
+  {
+   "stage": "Clockwork",
+   "name": "Clockwork City",
+   "SPP": 60000000.0,
+   "TileHP": 2500000.0,
+   "petBoosts": [
+    10.1,
+    13.7,
+    19.7,
+    31.9,
+    60.8
+   ],
+   "income_start": 412708147434000.0,
+   "income_end": 781461577707384.4,
+   "next_unlock_cost": 930000000000000000,
+   "egg_cost": 65000000000000000,
+   "upgrade_costs": [
+    110000000000000000,
+    170000000000000000
+   ],
+   "stage_cost": 98000000000000000
+  },
+  {
+   "stage": "Cloud",
+   "name": "Cloud Kingdom",
+   "SPP": 200000000.0,
+   "TileHP": 6000000.0,
+   "petBoosts": [
+    15.2,
+    20.5,
+    29.6,
+    47.8,
+    91.1
+   ],
+   "income_start": 2414394640845000.0,
+   "income_end": 5189776365886680.0,
+   "next_unlock_cost": 6600000000000000000,
+   "egg_cost": 460000000000000000,
+   "upgrade_costs": [
+    790000000000000000,
+    1200000000000000000
+   ],
+   "stage_cost": 930000000000000000
+  },
+  {
+   "stage": "Neon",
+   "name": "Neon Dream City",
+   "SPP": 700000000.0,
+   "TileHP": 15000000.0,
+   "petBoosts": [
+    22.8,
+    30.8,
+    44.4,
+    71.8,
+    136.7
+   ],
+   "income_start": 1.39444934827275e+16,
+   "income_end": 3.80750625302885e+16,
+   "next_unlock_cost": 51000000000000000000,
+   "egg_cost": 3600000000000000000,
+   "upgrade_costs": [
+    6100000000000000000,
+    9200000000000000000
+   ],
+   "stage_cost": 6600000000000000000
+  },
+  {
+   "stage": "Cosmic",
+   "name": "Cosmic Sanctuary",
+   "SPP": 2500000000.0,
+   "TileHP": 40000000.0,
+   "petBoosts": [
+    34.2,
+    46.1,
+    66.6,
+    107.6,
+    205.0
+   ],
+   "income_start": 1.1117683072701562e+17,
+   "income_end": 3.1464986497446957e+17,
+   "egg_cost": 21000000000000000000,
+   "upgrade_costs": [
+    37000000000000000000,
+    55000000000000000000
+   ],
+   "stage_cost": 51000000000000000000
+  }
+ ],
+ "results": {
+  "engaged, with Rewards": {
+   "per_stage_min": [
+    18.6,
+    20.8,
+    22.7,
+    25.9,
+    29.1,
+    31.9,
+    35.1
+   ],
+   "total_h": 3.07
+  },
+  "engaged, without Rewards": {
+   "per_stage_min": [
+    23.2,
+    26.0,
+    28.4,
+    32.4,
+    36.3,
+    39.9,
+    43.9
+   ],
+   "total_h": 3.84
+  },
+  "casual, with Rewards": {
+   "per_stage_min": [
+    28.7,
+    32.2,
+    35.1,
+    40.1,
+    44.9,
+    49.3,
+    54.2
+   ],
+   "total_h": 4.74
+  },
+  "casual, without Rewards": {
+   "per_stage_min": [
+    35.9,
+    40.2,
+    43.9,
+    50.1,
+    56.2,
+    61.6,
+    67.8
+   ],
+   "total_h": 5.93
+  }
+ }
+}

@@ -1,0 +1,553 @@
+{
+ "date": "2026-10-05",
+ "units": "1 Blender unit = 1 stud; up = +Z; Studio maps Blender (x,y,z) -> Roblox local (-x, z, y)",
+ "origin": "ring models + Island: arena centre (ArenaConfig.Center) at floor top; PracticeRing: practice centre; props: floor-level centre",
+ "packs": [
+  {
+   "pack": "AR_Arena",
+   "file": "fbx/AR_Arena.fbx",
+   "assetId": "100827441085085"
+  },
+  {
+   "pack": "AR_Island",
+   "file": "fbx/AR_Island.fbx",
+   "assetId": "136915797198812"
+  },
+  {
+   "pack": "AR_Props",
+   "file": "fbx/AR_Props.fbx",
+   "assetId": "94020218596030"
+  }
+ ],
+ "models": {
+  "ArenaFloor": {
+   "pack": "AR_Arena",
+   "assetId": "100827441085085",
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "tris": 6768,
+   "objects": 8,
+   "parts": [
+    "Ice:CDEBFFIC",
+    "Rim:A9D8FFSP",
+    "Inlay:F2F6FBSP",
+    "InlayBlue:3D7BE2SP",
+    "Hazard:FFC81ESP",
+    "HazardRed:E8483DSP",
+    "Pad:1F3F7ASP",
+    "PadGlow:2FC6C0NE"
+   ],
+   "bboxMin": [
+    -63.8,
+    -63.8,
+    -2.6
+   ],
+   "bboxMax": [
+    63.8,
+    63.8,
+    0.08
+   ],
+   "size": [
+    127.6,
+    127.6,
+    2.68
+   ]
+  },
+  "WallRing": {
+   "pack": "AR_Arena",
+   "assetId": "100827441085085",
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "tris": 8512,
+   "objects": 7,
+   "parts": [
+    "Ice:8FC8F5IC",
+    "Snow:F6FAFFSP",
+    "Cushion:E8483DSP",
+    "CushionW:F2F6FBSP",
+    "Post:E8483DSP",
+    "PostY:FFC81ESP",
+    "WarnLamp:E8483DNE"
+   ],
+   "bboxMin": [
+    -61.22,
+    -61.22,
+    0.0
+   ],
+   "bboxMax": [
+    61.22,
+    61.22,
+    7.4
+   ],
+   "size": [
+    122.45,
+    122.45,
+    7.4
+   ]
+  },
+  "ExitGates": {
+   "pack": "AR_Arena",
+   "assetId": "100827441085085",
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "tris": 4160,
+   "objects": 8,
+   "parts": [
+    "Steel:3B3F4ASP",
+    "Arch:E8483DSP",
+    "Sign:FFC81ESP",
+    "SignFaceIn:262A33SP",
+    "SignFaceOut:262A33SP",
+    "WarnLamp:E8483DNE",
+    "Snow:F6FAFFSP",
+    "HazardRed:E8483DSP"
+   ],
+   "bboxMin": [
+    -55.88,
+    -55.88,
+    -3.5
+   ],
+   "bboxMax": [
+    55.88,
+    55.88,
+    16.3
+   ],
+   "size": [
+    111.76,
+    111.76,
+    19.8
+   ]
+  },
+  "Stands": {
+   "pack": "AR_Arena",
+   "assetId": "100827441085085",
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "tris": 35904,
+   "objects": 17,
+   "parts": [
+    "Deck:EAF2FCSP",
+    "Base:5B8ED9SP",
+    "Glass:BFE8FFGLT55",
+    "Snow:F6FAFFSP",
+    "BackWall:4A78C8SP",
+    "BenchFFC81E:FFC81ESP",
+    "Steel:3B3F4ASP",
+    "BenchFF9640:FF9640SP",
+    "Bench3D7BE2:3D7BE2SP",
+    "BenchFF7FAE:FF7FAESP",
+    "Bench2FC6C0:2FC6C0SP",
+    "Gold:F2C14EME",
+    "FlagE8483D:E8483DFA",
+    "Flag3D7BE2:3D7BE2FA",
+    "FlagFFC81E:FFC81EFA",
+    "Flag2FC6C0:2FC6C0FA",
+    "FlagFF7FAE:FF7FAEFA"
+   ],
+   "bboxMin": [
+    -87.82,
+    -87.62,
+    -3.5
+   ],
+   "bboxMax": [
+    87.82,
+    87.82,
+    19.65
+   ],
+   "size": [
+    175.63,
+    175.43,
+    23.15
+   ]
+  },
+  "Jumbotron": {
+   "pack": "AR_Arena",
+   "assetId": "100827441085085",
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "tris": 2066,
+   "objects": 10,
+   "parts": [
+    "Body:1F3F7ASP",
+    "Screen0:0E1B33SP",
+    "Gold:F2C14EME",
+    "Screen1:0E1B33SP",
+    "Screen2:0E1B33SP",
+    "Screen3:0E1B33SP",
+    "Crown:A9D8FFGLT15",
+    "Crown:E7F6FFGLT10",
+    "Star:F6FAFFNE",
+    "Glow:2FC6C0NE"
+   ],
+   "bboxMin": [
+    -7.75,
+    -7.75,
+    28.8
+   ],
+   "bboxMax": [
+    7.75,
+    7.75,
+    53.5
+   ],
+   "size": [
+    15.5,
+    15.5,
+    24.7
+   ]
+  },
+  "LightTowers": {
+   "pack": "AR_Arena",
+   "assetId": "100827441085085",
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "tris": 2432,
+   "objects": 4,
+   "parts": [
+    "Steel:3B3F4ASP",
+    "Head:262A33SP",
+    "Lamp:FFE3A0NE",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -97.3,
+    -97.3,
+    -4.01
+   ],
+   "bboxMax": [
+    97.3,
+    97.3,
+    34.4
+   ],
+   "size": [
+    194.6,
+    194.6,
+    38.41
+   ]
+  },
+  "Island": {
+   "pack": "AR_Island",
+   "assetId": "136915797198812",
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "tris": 9018,
+   "objects": 3,
+   "parts": [
+    "Rock:7F92ACSP",
+    "Snow:F6FAFFSP",
+    "IceRock:A9D8FFIC"
+   ],
+   "bboxMin": [
+    -110.96,
+    -247.57,
+    -71.4
+   ],
+   "bboxMax": [
+    119.76,
+    107.14,
+    3.45
+   ],
+   "size": [
+    230.72,
+    354.72,
+    74.85
+   ]
+  },
+  "PracticeRing": {
+   "pack": "AR_Island",
+   "assetId": "136915797198812",
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "tris": 5612,
+   "objects": 13,
+   "parts": [
+    "Ice:CDEBFFIC",
+    "Rim:A9D8FFSP",
+    "TargetE8483D:E8483DSP",
+    "TargetF2F6FB:F2F6FBSP",
+    "Ice:8FC8F5IC",
+    "Snow:F6FAFFSP",
+    "Cushion:FFC81ESP",
+    "CushionW:F2F6FBSP",
+    "Post:E8483DSP",
+    "PostY:FFC81ESP",
+    "Steel:3B3F4ASP",
+    "Sign:2FC6C0SP",
+    "SignFaceIn:262A33SP"
+   ],
+   "bboxMin": [
+    -29.7,
+    -29.7,
+    -2.4
+   ],
+   "bboxMax": [
+    29.7,
+    29.7,
+    10.7
+   ],
+   "size": [
+    59.4,
+    59.4,
+    13.1
+   ]
+  },
+  "Target": {
+   "pack": "AR_Props",
+   "assetId": "94020218596030",
+   "at": [
+    24,
+    0,
+    0
+   ],
+   "tris": 2348,
+   "objects": 8,
+   "parts": [
+    "Cushion:E8483DSP",
+    "Ring:F2F6FBSP",
+    "CushionY:FFC81ESP",
+    "Snow:F6FAFFSP",
+    "Nose:FF9640SP",
+    "Eyes:262A33SP",
+    "Hat:262A33SP",
+    "Band:E8483DSP"
+   ],
+   "bboxMin": [
+    -3.55,
+    -3.55,
+    0.4
+   ],
+   "bboxMax": [
+    3.55,
+    3.55,
+    7.7
+   ],
+   "size": [
+    7.1,
+    7.1,
+    7.3
+   ]
+  },
+  "Bumper": {
+   "pack": "AR_Props",
+   "assetId": "94020218596030",
+   "at": [
+    48,
+    0,
+    0
+   ],
+   "tris": 1912,
+   "objects": 4,
+   "parts": [
+    "TintBumper:E8483DSP",
+    "Rubber:262A33SP",
+    "Chevron:F2F6FBSP",
+    "Light:E8483DNE"
+   ],
+   "bboxMin": [
+    -4.29,
+    -7.0,
+    0.9
+   ],
+   "bboxMax": [
+    4.29,
+    6.68,
+    2.7
+   ],
+   "size": [
+    8.57,
+    13.68,
+    1.8
+   ]
+  },
+  "Portal": {
+   "pack": "AR_Props",
+   "assetId": "94020218596030",
+   "at": [
+    72,
+    0,
+    0
+   ],
+   "tris": 1800,
+   "objects": 10,
+   "parts": [
+    "Base:5B8ED9SP",
+    "Snow:F6FAFFSP",
+    "Ice:8FC8F5IC",
+    "Swirl:2FC6C0NET15",
+    "Rings:8FF5EENE",
+    "Rings:F2F6FBNE",
+    "Sign:F2C14ESP",
+    "SignFaceIn:262A33SP",
+    "Lamp:FFE3A0NE",
+    "PortalPad:F2F6FBSPT100"
+   ],
+   "bboxMin": [
+    -8.8,
+    -3.5,
+    0.0
+   ],
+   "bboxMax": [
+    8.8,
+    3.5,
+    19.0
+   ],
+   "size": [
+    17.6,
+    7.0,
+    19.0
+   ]
+  },
+  "Trophy": {
+   "pack": "AR_Props",
+   "assetId": "94020218596030",
+   "at": [
+    96,
+    0,
+    0
+   ],
+   "tris": 1510,
+   "objects": 8,
+   "parts": [
+    "Plinth:5B8ED9SP",
+    "Snow:F6FAFFSP",
+    "SignFaceIn:262A33SP",
+    "Gold:F2C14EME",
+    "Plow:E8483DSP",
+    "Cab:3D7BE2SP",
+    "Blade:C9D2DEME",
+    "Wheels:262A33SP"
+   ],
+   "bboxMin": [
+    -4.75,
+    -3.45,
+    0.0
+   ],
+   "bboxMax": [
+    4.75,
+    3.45,
+    13.0
+   ],
+   "size": [
+    9.5,
+    6.9,
+    13.0
+   ]
+  },
+  "Lamp": {
+   "pack": "AR_Props",
+   "assetId": "94020218596030",
+   "at": [
+    120,
+    0,
+    0
+   ],
+   "tris": 280,
+   "objects": 3,
+   "parts": [
+    "Steel:3B3F4ASP",
+    "Glow:FFE3A0NE",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -0.6,
+    -0.62,
+    0.0
+   ],
+   "bboxMax": [
+    0.6,
+    0.62,
+    9.05
+   ],
+   "size": [
+    1.2,
+    1.24,
+    9.05
+   ]
+  },
+  "Banner": {
+   "pack": "AR_Props",
+   "assetId": "94020218596030",
+   "at": [
+    144,
+    0,
+    0
+   ],
+   "tris": 259,
+   "objects": 4,
+   "parts": [
+    "Steel:3B3F4ASP",
+    "Gold:F2C14EME",
+    "TintBanner:E8483DFA",
+    "Snow:F6FAFFSP"
+   ],
+   "bboxMin": [
+    -0.7,
+    -0.7,
+    0.0
+   ],
+   "bboxMax": [
+    2.8,
+    0.7,
+    11.1
+   ],
+   "size": [
+    3.5,
+    1.4,
+    11.1
+   ]
+  },
+  "SnowBank": {
+   "pack": "AR_Props",
+   "assetId": "94020218596030",
+   "at": [
+    168,
+    0,
+    0
+   ],
+   "tris": 468,
+   "objects": 2,
+   "parts": [
+    "Snow:F6FAFFSP",
+    "Ice:A9D8FFIC"
+   ],
+   "bboxMin": [
+    -4.12,
+    -3.69,
+    -1.65
+   ],
+   "bboxMax": [
+    3.41,
+    4.02,
+    1.77
+   ],
+   "size": [
+    7.53,
+    7.72,
+    3.42
+   ]
+  }
+ }
+}

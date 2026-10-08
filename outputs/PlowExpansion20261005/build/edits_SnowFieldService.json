@@ -1,0 +1,1 @@
+[{"old_string": "\t\t\tlocal tough = math.clamp((math.log10(maxHP) - CL.ToughLow) / CL.ToughSpan, 0, 1)", "new_string": "\t\t\tlocal tough = PlowConfig.ToughnessOf(f.Style, maxHP) -- 2026-10-05: explicit per-stage toughness (PlowConfig.Toughness)"}]

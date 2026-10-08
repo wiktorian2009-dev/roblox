@@ -1,0 +1,283 @@
+﻿{
+    "type":  "queue-operation",
+    "operation":  "enqueue",
+    "timestamp":  "2026-10-05T09:46:19.212Z",
+    "sessionId":  "27fcc6fe-b39f-4c27-ac69-b0bb512f9d76",
+    "content":  "\u003crelay from="coordinator" session="session_01Qww9bMYTbjvnRU8NiLs4wP" current-time="2026-10-05T09:46:21Z"\u003e
+  The note below was written by the coordinator session, a Claude session, not by your user.
+  \u003cnote\u003e
+      QUEUED NEXT TASK from wiktor (written in the project chat at 09:42, so you didn\u0027t receive it; their full message is quoted verbatim below): a Snowplow Bumper Arena.
+      
+      START IT ONLY AFTER the tutorial rebuild you\u0027re doing now is finished, tested and reported to me. One writer for the shared driving, garage and UI scripts at a time.
+      
+      wiktor is on their phone and away from the PC, so they can\u0027t press Ctrl+S or run hand tests until they\u0027re back. Keep working without waiting for them; I\u0027ll relay anything they answer. Because nothing has been saved for a while, keep your ServerStorage backups current, and tell me if anything looks at risk.
+      
+      As before, report real multi-client tests separately from simulated checks, and list what wiktor must check by hand.
+      
+      wiktor\u0027s message, verbatim:
+      """
+      Build a competitive SNOWPLOW BUMPER ARENA in my Roblox game.
+      
+      Players should fight using their snowplows: ram opponents, dodge attacks, time a boost and push rivals out of an icy arena.
+      
+      Implement one polished arena and one complete game mode. Build/import the models, integrate the gameplay and test it. Do not stop after creating scenery or a design document.
+      
+      PROJECT
+      Folder: C:\\Users\\wikto\\Desktop\\Roblox Gra
+      Studio place: money â€” 94130990350526
+      
+      Read AGENTS.md, PROJECT.md and the latest STATUS.md. Refresh the Studio session ID and inspect current live sources.
+      
+      Use Graphify to locate vehicle assembly, driving, physics, parking, garage leases, contracts, player data and UI.
+      
+      Preserve the 90-part catalog, rebuilt pets, shared garage, contracts, progression and player ownership.
+      
+      1. THE GAME MODE
+      Create an optional arena for 2â€“8 players.
+      Rules:
+      - Each round lasts approximately 150 seconds.
+      - Push another player through an arena exit to score a knockout.
+      - Each valid knockout earns one point.
+      - Knocked-out players return after approximately four seconds.
+      - Highest score wins.
+      - Nobody loses parts, Snow or pets.
+      - Nobody spends the whole round eliminated and watching.
+      Use a short intermission between rounds.
+      A solo visitor can practise against training targets. A competitive match requires at least two real participants.
+      Provide clear handling for late arrivals, full matches and waiting players. Let waiting players practise or watch without covering their screen with a queue panel.
+      Keep the first version simple. Do not add several modes, ranked matchmaking, trading or an elaborate battle pass.
+      
+      2. MAKE THE FIGHTING EASY TO UNDERSTAND
+      Teach the arena with:
+      "Ram rivals. Use BOOST. Push them out!"
+      Players use familiar driving controls.
+      Add two moves:
+      BOOST
+      - A short forward burst.
+      - Stronger knockback from a valid frontal impact.
+      - Visible cooldown.
+      - Requires aiming and timing.
+      - Cannot be spammed continuously.
+      BRACE
+      - Briefly reduces incoming knockback.
+      - Slows the user slightly while active.
+      - Visible cooldown.
+      - Rewards anticipating an opponent\u0027s charge.
+      - Does not provide permanent immunity.
+      Use starting values around:
+      - Boost duration: 0.5â€“0.7 seconds.
+      - Boost cooldown: 7â€“9 seconds.
+      - Brace duration: 0.7â€“1 second.
+      - Brace cooldown: 6â€“8 seconds.
+      Treat these as prototype values and tune them through actual matches.
+      Make ordinary bumps useful but modest. Boosted impacts should feel powerful without launching vehicles uncontrollably across the map.
+      
+      3. KEEP COMPETITION FAIR
+      Players may show their collected parts and chosen vehicle appearance, but arena performance must be normalized.
+      Every participant gets the same competitive:
+      - Speed.
+      - Acceleration.
+      - Weight.
+      - Collision footprint.
+      - Steering capability.
+      - Ability strength.
+      - Knockback resistance.
+      Normal clearing power, pets, rebirths, paid boosts and expensive engines must not make someone automatically stronger in this mode.
+      Use separate arena configuration. Do not modify the global part stats or overwrite the player\u0027s saved build.
+      Give every arena vehicle a consistent visible bumper and readable collision footprint. Wide cosmetic blades must not secretly provide larger hitboxes or misleading reach.
+      Normalize the display of oversized parts so they fit the arena vehicle without altering the original model templates.
+      A new player with starter equipment should be able to beat an experienced collector through positioning and timing.
+      
+      4. BUILD A READABLE ICY ARENA
+      Create a separate arena island accessible from the lobby and shared garage.
+      Use the existing Blender/import pipeline for major structures and props.
+      Art direction:
+      - Bright winter colosseum.
+      - Chunky ice and snow shapes.
+      - Colorful banners.
+      - Warm spectator lighting.
+      - Clear starting pads.
+      - A central arena landmark.
+      - Readable boundary markings.
+      - A nearby practice area.
+      - A return portal.
+      Use a broad central fighting surface with protective bumper walls and four clearly marked exit gaps.
+      Players should usually fight near the center. Being pushed toward an exit should create an understandable danger moment.
+      Make exits highly visible with warning colors and signs. Avoid hidden holes, tiny gaps or confusing boundaries.
+      Keep the surface mostly flat for the first version. Do not introduce complex ramps or hazards until the basic fighting feels good.
+      Add spectator areas with good sightlines and enough separation that spectators cannot interfere.
+      Fit all eight vehicles comfortably. Measure turning space and supported model bounds.
+      
+      5. MAKE IMPACTS FEEL SATISFYING
+      Give valid collisions:
+      - A short impact sound.
+      - A compact burst of ice/snow particles.
+      - A brief visible bumper reaction.
+      - Optional subtle camera feedback.
+      - Clear feedback when Brace blocks a strong hit.
+      Show a short knockout notification:
+      "You knocked out [player]!"
+      or
+      "Knocked out! Returningâ€¦"
+      Use restrained effects so eight players colliding does not become visual noise.
+      Differentiate normal contact from a successful boosted strike.
+      Prevent constant grinding contact from producing repeated hit sounds, excessive impulses or rapid score events.
+      
+      6. INTEGRATE KNOCKBACK WITH THE VEHICLE CONTROLLER
+      Inspect the actual driving implementation before choosing the physics solution.
+      The current controller may continually set vehicle velocity. A server impulse alone will not work if the normal drive loop immediately overwrites it.
+      Implement one coherent arena movement controller that combines:
+      - Driving input.
+      - Ability movement.
+      - Bounded knockback.
+      - Knockback decay.
+      - Upright stability.
+      - Collision response.
+      Ensure knockback remains effective while steering still feels responsive.
+      Do not run two competing controllers on the same vehicle.
+      Keep arena behavior separate from normal field driving. Arena changes must not break suspension, bridges, snow clearing or the normal speed checks.
+      Choose network ownership and synchronization deliberately. Validate the approach under latency rather than assuming single-client Studio physics proves multiplayer behavior.
+      Do not enable experimental whole-place physics settings without inspecting their effect on the existing game.
+      
+      7. VALIDATE HITS AND SCORES ON THE SERVER
+      The server owns:
+      - Match state.
+      - Participants.
+      - Ability cooldowns.
+      - Eligible collisions.
+      - Knockouts.
+      - Scores.
+      - Respawns.
+      - Results and rewards.
+      Do not trust a client saying it hit someone or scored a knockout.
+      Do not use an unvalidated Touched event as the only proof of a hit.
+      Validate relevant conditions:
+      - Both players are in the same active match.
+      - Their vehicles are valid.
+      - Their positions and movement are plausible.
+      - They are close enough for contact.
+      - Relative movement and contact direction make sense.
+      - Spawn protection is inactive.
+      - The contact is outside the pair\u0027s collision cooldown.
+      Bound knockback and velocity. Reject malformed requests, remote spam and impossible movement.
+      Credit a ring-out to the most recent valid opposing hit within a short configurable window.
+      An unforced fall gives nobody a point.
+      Do not award multiple knockouts for one departure from the ring. Reset attribution after respawn.
+      Keep score attribution independent from client-only VFX.
+      
+      8. HANDLE SPAWNING AND RECOVERY
+      Use safe spawn pads facing toward the center.
+      After a knockout:
+      - Remove the old arena vehicle safely.
+      - Show the short return countdown.
+      - Spawn and seat the player correctly.
+      - Give a brief respawn shield.
+      - Clearly show when protection ends.
+      Shielded players should not attack or score through their protection.
+      Avoid spawning two players inside each other or directly beside an unprotected opponent.
+      Define consistent behavior for leaving the seat, resetting, dying and disconnecting. Players should not escape an imminent knockout by jumping out and becoming invulnerable.
+      Provide an obvious LEAVE ARENA button.
+      Never deduct normal progression currency or remove ownership as a penalty.
+      
+      9. SAFE ENTRY AND EXIT
+      Joining must be voluntary.
+      Before entry:
+      - Park the normal plow safely.
+      - Release a garage bay where appropriate.
+      - Handle an active contract explicitly through its existing cancellation/exit rules.
+      - Preserve offers, reservations and saved equipment.
+      During matches:
+      - Prevent normal Snow clearing and contract payouts.
+      - Suppress unrelated event popups that would cover combat.
+      - Keep spectators outside combat validation.
+      - Keep arena vehicles separate from normal vehicle registry entries unless a tested adapter is required.
+      After leaving:
+      - Restore normal controls.
+      - Restore any changed character properties.
+      - Remove arena UI and temporary objects.
+      - Return the player to a safe location.
+      - Restore access to their normal plow and garage.
+      Do not destroy unrelated vehicles or change global collision settings carelessly.
+      
+      10. MAKE THE UI CLEAR ON EVERY DEVICE
+      Show:
+      - Round timer.
+      - Your score.
+      - Compact standings.
+      - BOOST and BRACE cooldowns.
+      - Respawn state.
+      - Leave button.
+      Use the existing snowy GUI style.
+      Provide keyboard/controller bindings and large touch buttons that avoid movement controls and Roblox safe areas.
+      Keep the arena introduction brief and visible. Your first-time tutorial should point directly at the relevant ability buttons and explain the exit gaps.
+      Do not redesign the upgrade screen.
+      
+      11. REWARDS
+      Start with small cosmetic achievements:
+      - First knockout.
+      - First completed match.
+      - First win.
+      - Several wins.
+      - A bumper paint or arena title.
+      Use existing cosmetic systems if available. Otherwise keep the first release to simple titles/badges and a clearly defined cosmetic unlock.
+      Do not add a large Snow payout or competitive power upgrades.
+      Make result processing idempotent. Repeated messages must not grant duplicate rewards.
+      Practice targets do not count as player knockouts or wins.
+      Define minimum legitimate participation for rewards so empty, instantly abandoned or repeatedly farmed matches do not award normal victory progress.
+      
+      12. PROTOTYPE THE FIGHTING BEFORE EXPANDING
+      First prove these things with two vehicles:
+      - Ordinary impacts move opponents predictably.
+      - Boost creates a stronger valid hit.
+      - Brace reduces knockback.
+      - Knockback is not overwritten by driving.
+      - Vehicles stay controllable.
+      - Ring-outs are detected and attributed correctly.
+      - Respawning works.
+      Only then finish the arena polish, eight-player flow and cosmetic rewards.
+      Do not compensate for broken physics with huge force values.
+      
+      13. TEST THE COMPLETE MODE
+      Verify:
+      - Two players joining and starting a round.
+      - Eight participants and full-match handling.
+      - Solo practice.
+      - Normal, boosted and braced impacts.
+      - Repeated contact cooldowns.
+      - Spawn protection.
+      - Self-falls and valid opponent ring-outs.
+      - Duplicate knockout rejection.
+      - Timer and winner calculation.
+      - Ties.
+      - Death, leaving and disconnects.
+      - A match dropping below two participants.
+      - Late requests from an earlier match.
+      - Returning to normal driving and clearing.
+      - Ownership and profile preservation.
+      - Mobile button placement.
+      - Latency and actual multiplayer physics.
+      Use real multiplayer clients where tools allow. Clearly distinguish simulated state checks from actual two-player fighting.
+      Do not claim that the arena feels good based only on static models or single-player tests.
+      Follow the project\u0027s isolated-test rules. Stop your own Play session, remove BalanceTestMode and remove temporary test scripts afterward.
+      
+      14. COMPLETE THE HANDOFF
+      Back up affected sources and assets.
+      Re-read live sources immediately before patching to preserve newer Claude/Codex work.
+      Import every generated model and finish the actual join, fight, respawn, reward and exit systems.
+      Refresh affected source mirrors/snapshots and rebuild Graphify:
+      graphify extract game --code-only --out . --max-workers 2
+      graphify cluster-only . --no-label
+      Update STATUS.md with:
+      - Implemented rules and controls.
+      - Physics/network ownership approach.
+      - Actual multiplayer evidence.
+      - Remaining limitations.
+      - Cleanup and recovery instructions.
+      - Save/publish state.
+      Update PROJECT.md with lasting decisions.
+      Work autonomously on routine choices and follow existing publishing permissions.
+      The result should be an optional, readable and competitive activity where skill matters, losses are brief, and players immediately understand how to fight.
+      """
+  \u003c/note\u003e
+\u003c/relay\u003e"
+}

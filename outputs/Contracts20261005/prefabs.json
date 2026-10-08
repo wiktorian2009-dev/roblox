@@ -1,0 +1,211 @@
+{
+ "_doc": "Scene placements in YARD-LOCAL Roblox studs (origin = pad top centre, -Z = gate). rot = degrees about +Y (0 = model front faces the gate). y = height offset. tint = per-instance colour for Tint* parts (hex). attrs = effect attributes read by ContractClient. collide = keep collision on the model's solid parts (buildings); every other prop is non-colliding. Surfaces = flat paint/paving slabs (rect x0,z0,x1,z1).",
+ "Road": {
+  "surfaces": [
+   {"rect": [-12, -30, 12, -9], "color": "4F5664", "mat": "Asphalt"},
+   {"rect": [-12, -9, 27, 3], "color": "4F5664", "mat": "Asphalt"},
+   {"rect": [15, 3, 27, 18], "color": "4F5664", "mat": "Asphalt"},
+   {"rect": [-27, 18, 27, 27], "color": "4F5664", "mat": "Asphalt"}
+  ],
+  "dashes": [
+   {"from": [0, -28], "to": [0, -10], "group": "R1"},
+   {"from": [-10, -3], "to": [25, -3], "group": "R2"},
+   {"from": [21, 4], "to": [21, 17], "group": "R3"},
+   {"from": [25, 22.5], "to": [-25, 22.5], "group": "R4"}
+  ],
+  "props": [
+   {"model": "Cottage", "x": -26, "z": 4, "rot": -90, "tint": "E2483D", "collide": true, "attrs": {"LightOnComplete": true}},
+   {"model": "Cottage", "x": -1, "z": 11.5, "rot": 0, "tint": "3D7BE2", "collide": true, "attrs": {"LightOnComplete": true}},
+   {"model": "Mailbox", "x": -18.5, "z": 9, "rot": -90, "tint": "E2483D"},
+   {"model": "Snowman", "x": -21, "z": -18, "rot": 30},
+   {"model": "RoadSign", "x": 31, "z": -6, "rot": 90},
+   {"model": "RoadSign", "x": 12.5, "z": 15, "rot": -90},
+   {"model": "RoadClosed", "x": -15.5, "z": -25, "rot": 0, "attrs": {"RemoveOnComplete": true}},
+   {"model": "GarageLampPost", "x": -15, "z": -12, "attrs": {"LightOnGroup": "R1"}},
+   {"model": "GarageLampPost", "x": 31, "z": 1, "attrs": {"LightOnGroup": "R2"}},
+   {"model": "GarageLampPost", "x": 31, "z": 14, "attrs": {"LightOnGroup": "R3"}},
+   {"model": "GarageLampPost", "x": -31, "z": 23, "attrs": {"LightOnGroup": "R4"}},
+   {"model": "GaragePineTree", "x": 32, "z": -25},
+   {"model": "GaragePineTree", "x": 10, "z": 8},
+   {"model": "GaragePineTree", "x": -33, "z": -13},
+   {"model": "PicketFence", "x": -8, "z": 4.6, "rot": 0},
+   {"model": "PicketFence", "x": 7, "z": 4.6, "rot": 0}
+  ]
+ },
+ "Cottages": {
+  "surfaces": [
+   {"rect": [-30, -9, -18, 12], "color": "8E96A3", "mat": "Asphalt"}, {"rect": [-27, 12, -21, 15], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [-6, -9, 6, 12], "color": "8E96A3", "mat": "Asphalt"}, {"rect": [-3, 12, 3, 15], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [18, -9, 30, 12], "color": "8E96A3", "mat": "Asphalt"}, {"rect": [21, 12, 27, 15], "color": "C9C1B4", "mat": "Cobblestone"}
+  ],
+  "props": [
+   {"model": "Cottage", "x": -24, "z": 22.5, "rot": 0, "tint": "E2483D", "collide": true, "attrs": {"LightOnGroup": "H1"}},
+   {"model": "Cottage", "x": 0, "z": 22.5, "rot": 0, "tint": "3D7BE2", "collide": true, "attrs": {"LightOnGroup": "H2"}},
+   {"model": "Cottage", "x": 24, "z": 22.5, "rot": 0, "tint": "2F9E62", "collide": true, "attrs": {"LightOnGroup": "H3"}},
+   {"model": "Mailbox", "x": -16.5, "z": -10, "rot": 0, "tint": "E2483D"},
+   {"model": "Mailbox", "x": 7.5, "z": -10, "rot": 0, "tint": "3D7BE2"},
+   {"model": "Mailbox", "x": 31.5, "z": -10, "rot": 0, "tint": "2F9E62"},
+   {"model": "PicketFence", "x": -12, "z": 6, "rot": 0},
+   {"model": "PicketFence", "x": 12, "z": 6, "rot": 0},
+   {"model": "PicketFence", "x": -12, "z": 13, "rot": 0},
+   {"model": "PicketFence", "x": 12, "z": 13, "rot": 0},
+   {"model": "GaragePineTree", "x": -33.5, "z": 2},
+   {"model": "GaragePineTree", "x": -12, "z": 24},
+   {"model": "GaragePineTree", "x": 12, "z": 24},
+   {"model": "Snowman", "x": 12, "z": -21, "rot": -20},
+   {"model": "GarageLampPost", "x": -12, "z": -14},
+   {"model": "GarageLampPost", "x": 12, "z": -14}
+  ]
+ },
+ "Market": {
+  "surfaces": [
+   {"rect": [-9, -30, 9, -12], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [-33, -12, 33, -3], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [-6, -3, 6, 9], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [-33, -3, -21, 9], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [21, -3, 33, 9], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [-33, 9, -21, 18], "color": "E8C9A0", "mat": "WoodPlanks"}, {"rect": [-15, 9, -3, 18], "color": "E8C9A0", "mat": "WoodPlanks"},
+   {"rect": [3, 9, 15, 18], "color": "E8C9A0", "mat": "WoodPlanks"}, {"rect": [21, 9, 33, 18], "color": "E8C9A0", "mat": "WoodPlanks"}
+  ],
+  "props": [
+   {"model": "MarketStall", "x": -27, "z": 23, "rot": 0, "tint": "8A4FFF", "collide": true, "sign": "HOT COCOA", "attrs": {"LightOnGroup": "S1"}},
+   {"model": "MarketStall", "x": -9, "z": 23, "rot": 0, "tint": "FF4F8B", "collide": true, "sign": "TOYS", "attrs": {"LightOnGroup": "S2"}},
+   {"model": "MarketStall", "x": 9, "z": 23, "rot": 0, "tint": "2FC6C0", "collide": true, "sign": "FRUIT", "attrs": {"LightOnGroup": "S3"}},
+   {"model": "MarketStall", "x": 27, "z": 23, "rot": 0, "tint": "F2A23D", "collide": true, "sign": "SCARVES", "attrs": {"LightOnGroup": "S4"}},
+   {"model": "StallShutter", "x": -27, "z": 18.7, "y": 0.4, "rot": 0, "attrs": {"SlideOnGroup": "S1", "SlideY": 3.6}},
+   {"model": "StallShutter", "x": -9, "z": 18.7, "y": 0.4, "rot": 0, "attrs": {"SlideOnGroup": "S2", "SlideY": 3.6}},
+   {"model": "StallShutter", "x": 9, "z": 18.7, "y": 0.4, "rot": 0, "attrs": {"SlideOnGroup": "S3", "SlideY": 3.6}},
+   {"model": "StallShutter", "x": 27, "z": 18.7, "y": 0.4, "rot": 0, "attrs": {"SlideOnGroup": "S4", "SlideY": 3.6}},
+   {"model": "StallGoods", "x": -27, "z": 19.9, "y": 3.55, "rot": 0, "attrs": {"ShowOnGroup": "S1"}},
+   {"model": "StallGoods", "x": -9, "z": 19.9, "y": 3.55, "rot": 0, "attrs": {"ShowOnGroup": "S2"}},
+   {"model": "StallGoods", "x": 9, "z": 19.9, "y": 3.55, "rot": 0, "attrs": {"ShowOnGroup": "S3"}},
+   {"model": "StallGoods", "x": 27, "z": 19.9, "y": 3.55, "rot": 0, "attrs": {"ShowOnGroup": "S4"}},
+   {"model": "MarketArch", "x": 0, "z": -26, "rot": 0, "sign": "MARKET", "attrs": {"LightOnGroup": "Entry"}},
+   {"model": "GarageLampPost", "x": -14, "z": -15, "attrs": {"LightOnGroup": "Lanes"}},
+   {"model": "GarageLampPost", "x": 14, "z": -15, "attrs": {"LightOnGroup": "Lanes"}},
+   {"model": "GarageBench", "x": -14, "z": 3, "rot": 0},
+   {"model": "GarageBench", "x": 14, "z": 3, "rot": 0},
+   {"model": "GaragePineTree", "x": -33, "z": -25},
+   {"model": "GaragePineTree", "x": 33, "z": -25}
+  ]
+ },
+ "Parking": {
+  "surfaces": [
+   {"rect": [-33, -15, 33, 0], "color": "4F5664", "mat": "Asphalt"},
+   {"rect": [-6, -30, 6, 15], "color": "4F5664", "mat": "Asphalt"},
+   {"rect": [6, 3, 36, 15], "color": "4F5664", "mat": "Asphalt"}
+  ],
+  "lines": [
+   {"from": [-30, -12], "to": [-30, -3]}, {"from": [-24, -12], "to": [-24, -3]}, {"from": [-18, -12], "to": [-18, -3]},
+   {"from": [-12, -12], "to": [-12, -3]}, {"from": [-6, -12], "to": [-6, -3]},
+   {"from": [6, -12], "to": [6, -3]}, {"from": [12, -12], "to": [12, -3]}, {"from": [18, -12], "to": [18, -3]},
+   {"from": [24, -12], "to": [24, -3]}, {"from": [30, -12], "to": [30, -3]},
+   {"from": [8, 9], "to": [34, 9], "dash": true, "color": "FFD23A"}
+  ],
+  "props": [
+   {"model": "ShopFront", "x": -21.5, "z": 23, "rot": 0, "collide": true, "sign": "SNOW MART", "attrs": {"LightOnComplete": true}},
+   {"model": "Car", "x": -27, "z": -7.5, "rot": 180, "tint": "3D7BE2", "collide": true},
+   {"model": "Car", "x": -15, "z": -7.5, "rot": 180, "tint": "FFD23A", "collide": true},
+   {"model": "Car", "x": 15, "z": -7.5, "rot": 180, "tint": "2F9E62", "collide": true},
+   {"model": "Car", "x": 27, "z": -7.5, "rot": 180, "tint": "FF7FAE", "collide": true},
+   {"model": "Car", "x": 9, "z": -7.5, "rot": 180, "tint": "E2483D", "attrs": {"ArriveOnComplete": true, "ArriveFrom": "0,0,-34"}},
+   {"model": "BarrierArm", "x": 33.5, "z": 16.5, "rot": 0},
+   {"model": "BarrierBoom", "x": 33.5, "z": 16.5, "y": 2.4, "rot": -90, "attrs": {"RotateOnGroup": "Exit", "RotateAxis": "Z", "RotateDeg": -80}},
+   {"model": "RoadSign", "x": 33, "z": 1, "rot": 90},
+   {"model": "GarageLampPost", "x": -8, "z": 14},
+   {"model": "GarageLampPost", "x": 32, "z": -21},
+   {"model": "GaragePineTree", "x": -33, "z": -24},
+   {"model": "GarageSnowPile", "x": 22, "z": 22}
+  ]
+ },
+ "BusStop": {
+  "surfaces": [
+   {"rect": [-3, -21, 36, -9], "color": "4F5664", "mat": "Asphalt"},
+   {"rect": [-27, -15, -3, -3], "color": "5C6473", "mat": "Asphalt"},
+   {"rect": [-21, -3, -12, 15], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [-27, 15, -9, 21], "color": "C9C1B4", "mat": "Cobblestone"}
+  ],
+  "lines": [
+   {"from": [-26, -14], "to": [-4, -14], "color": "FFD23A"},
+   {"from": [-1, -15], "to": [34, -15], "dash": true, "color": "F2F4F7"}
+  ],
+  "props": [
+   {"model": "BusShelter", "x": -18, "z": 18.5, "rot": 0, "tint": "3D7BE2", "collide": true, "attrs": {"LightOnGroup": "Path"}},
+   {"model": "BusStopSign", "x": -29.5, "z": -4, "rot": 90},
+   {"model": "Bus", "x": -15, "z": -9, "rot": 90, "tint": "FFB000", "attrs": {"ArriveOnComplete": true, "ArriveFrom": "50,0,-6"}},
+   {"model": "GarageLampPost", "x": 10, "z": -24, "attrs": {"LightOnGroup": "Approach"}},
+   {"model": "GarageLampPost", "x": 30, "z": -5, "attrs": {"LightOnGroup": "Approach"}},
+   {"model": "GarageLampPost", "x": -30, "z": -18, "attrs": {"LightOnGroup": "Bay"}},
+   {"model": "GarageBench", "x": 2, "z": 18, "rot": 0},
+   {"model": "GaragePineTree", "x": 30, "z": 20},
+   {"model": "GaragePineTree", "x": -33, "z": 26},
+   {"model": "GarageSnowPile", "x": 16, "z": 8}
+  ]
+ },
+ "Crates": {
+  "surfaces": [
+   {"rect": [-30, -18, -15, -3], "color": "D9CBB0", "mat": "Sand"},
+   {"rect": [12, -12, 27, 3], "color": "D9CBB0", "mat": "Sand"},
+   {"rect": [-12, 3, 3, 18], "color": "D9CBB0", "mat": "Sand"}
+  ],
+  "props": [
+   {"model": "SupplyTent", "x": 0, "z": 24, "rot": 0, "tint": "2F9E62", "collide": true},
+   {"model": "SupplyCrate", "x": -22.5, "z": -10.5, "rot": 12, "tint": "E2483D", "attrs": {"RiseWithGroup": "C1", "RiseFrom": -3.9}},
+   {"model": "SupplyCrate", "x": 19.5, "z": -4.5, "rot": -8, "tint": "3D7BE2", "attrs": {"RiseWithGroup": "C2", "RiseFrom": -3.9}},
+   {"model": "SupplyCrate", "x": -4.5, "z": 10.5, "rot": 20, "tint": "FFD23A", "attrs": {"RiseWithGroup": "C3", "RiseFrom": -3.9}},
+   {"model": "Campfire", "x": 14, "z": 20, "attrs": {"LightOnComplete": true}},
+   {"model": "PalletStack", "x": -28, "z": 24, "rot": 10},
+   {"model": "PalletStack", "x": -22, "z": 26, "rot": -6},
+   {"model": "GarageLampPost", "x": -31, "z": 10},
+   {"model": "GarageLampPost", "x": 31, "z": -24},
+   {"model": "GarageCrateStack", "x": 31, "z": 10, "rot": 90},
+   {"model": "GaragePineTree", "x": -33, "z": -26}
+  ]
+ },
+ "Pump": {
+  "surfaces": [
+   {"rect": [-9, -30, 9, -12], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [-24, -12, 24, 0], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [-24, 0, -9, 15], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [9, 0, 24, 15], "color": "C9C1B4", "mat": "Cobblestone"},
+   {"rect": [-9, 0, 9, 12], "color": "8FB8D8", "mat": "Slate"}
+  ],
+  "props": [
+   {"model": "PumpHouse", "x": 0, "z": 24, "rot": 0, "collide": true, "sign": "WATER PUMP", "attrs": {"LightOnComplete": true}},
+   {"model": "PumpMachine", "x": 0, "z": 15.2, "rot": -90, "collide": true, "attrs": {"WaterOnComplete": true, "LightOnComplete": true}},
+   {"model": "PumpWheel", "parent": "PumpMachine", "offset": [-2.4, 3.2, 0], "attrs": {"SpinOnComplete": true, "SpinAxis": "X"}},
+   {"model": "GarageLampPost", "x": -28, "z": -6, "attrs": {"LightOnGroup": "Access"}},
+   {"model": "GarageLampPost", "x": 28, "z": -6, "attrs": {"LightOnGroup": "Access"}},
+   {"model": "GarageOilDrums", "x": 29, "z": 12, "rot": 30},
+   {"model": "GaragePineTree", "x": -32, "z": -26},
+   {"model": "GaragePineTree", "x": 32, "z": -26},
+   {"model": "GarageSnowPile", "x": 30, "z": 24}
+  ]
+ },
+ "Workshop": {
+  "surfaces": [
+   {"rect": [-9, -30, 9, -15], "color": "4F5664", "mat": "Asphalt"},
+   {"rect": [-27, -15, 27, 3], "color": "4F5664", "mat": "Asphalt"},
+   {"rect": [-21, 3, -9, 18], "color": "5C6473", "mat": "Concrete"},
+   {"rect": [9, 3, 21, 18], "color": "5C6473", "mat": "Concrete"}
+  ],
+  "lines": [
+   {"from": [-21, 3.2], "to": [-9, 3.2], "color": "FFD23A"}, {"from": [9, 3.2], "to": [21, 3.2], "color": "FFD23A"},
+   {"from": [-21, 3], "to": [-21, 17], "color": "FFD23A"}, {"from": [-9, 3], "to": [-9, 17], "color": "FFD23A"},
+   {"from": [9, 3], "to": [9, 17], "color": "FFD23A"}, {"from": [21, 3], "to": [21, 17], "color": "FFD23A"}
+  ],
+  "props": [
+   {"model": "Warehouse", "x": 0, "z": 24, "rot": 0, "collide": true, "sign": "WORKSHOP", "attrs": {"LightOnComplete": true}},
+   {"model": "WarehouseDoor", "x": -15, "z": 17.85, "y": 0.6, "rot": 0, "attrs": {"SlideOnGroup": "L1", "SlideY": 8.2}},
+   {"model": "WarehouseDoor", "x": 15, "z": 17.85, "y": 0.6, "rot": 0, "attrs": {"SlideOnGroup": "L2", "SlideY": 8.2}},
+   {"model": "DeliveryVan", "x": -15, "z": 9, "rot": 180, "tint": "3D7BE2", "attrs": {"ArriveOnComplete": true, "ArriveFrom": "15,0,-36"}},
+   {"model": "PalletStack", "x": 30, "z": 10, "rot": 8},
+   {"model": "PalletStack", "x": -30, "z": 10, "rot": -12},
+   {"model": "GarageToolCart", "x": -30, "z": -2, "rot": 90},
+   {"model": "GarageOilDrums", "x": 30, "z": -2, "rot": 0},
+   {"model": "GarageLampPost", "x": -30, "z": -21, "attrs": {"LightOnGroup": "Access"}},
+   {"model": "GarageLampPost", "x": 30, "z": -21, "attrs": {"LightOnGroup": "Turn"}},
+   {"model": "GaragePineTree", "x": -33, "z": -27}
+  ]
+ }
+}

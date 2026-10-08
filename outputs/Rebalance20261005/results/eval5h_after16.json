@@ -1,0 +1,437 @@
+{
+ "efficient": {
+  "world1": {
+   "median": 52.9,
+   "p90": 57.2
+  },
+  "cosmic": {
+   "median": 149.6,
+   "p90": 156.9
+  },
+  "top4": {
+   "median": 164.0,
+   "p90": 176.6
+  },
+  "done": {
+   "median": 164.0,
+   "p90": 176.6
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 7.0,
+   "p90": 8.4
+  },
+  "gapEarly": {
+   "median": 0.4,
+   "p90": 2.8
+  },
+  "gapLate": {
+   "median": 2.5,
+   "p90": 6.8
+  },
+  "longestGap": {
+   "median": 13.4,
+   "p90": 15.7
+  },
+  "longestUnavailable": {
+   "median": 2.8,
+   "p90": 3.1
+  },
+  "jobs": 0.488,
+  "miniShare": 0.1
+ },
+ "casual": {
+  "world1": {
+   "median": 83.7,
+   "p90": 101.6
+  },
+  "cosmic": {
+   "median": 259.6,
+   "p90": 299.4
+  },
+  "top4": {
+   "median": 292.9,
+   "p90": 319.6
+  },
+  "done": {
+   "median": 292.9,
+   "p90": 319.6
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 2.2,
+   "p90": 16.5
+  },
+  "gapEarly": {
+   "median": 0.6,
+   "p90": 3.6
+  },
+  "gapLate": {
+   "median": 3.5,
+   "p90": 10.2
+  },
+  "longestGap": {
+   "median": 18.3,
+   "p90": 32.4
+  },
+  "longestUnavailable": {
+   "median": 2.2,
+   "p90": 3.1
+  },
+  "jobs": 0.303,
+  "miniShare": 0.253
+ },
+ "noRewards": {
+  "world1": {
+   "median": 93.3,
+   "p90": 98.5
+  },
+  "cosmic": {
+   "median": 277.4,
+   "p90": 316.0
+  },
+  "top4": {
+   "median": 296.4,
+   "p90": 333.7
+  },
+  "done": {
+   "median": 296.4,
+   "p90": 333.7
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 7.2,
+   "p90": 12.2
+  },
+  "gapEarly": {
+   "median": 0.6,
+   "p90": 3.3
+  },
+  "gapLate": {
+   "median": 4.0,
+   "p90": 9.8
+  },
+  "longestGap": {
+   "median": 20.6,
+   "p90": 28.6
+  },
+  "longestUnavailable": {
+   "median": 1.6,
+   "p90": 3.2
+  },
+  "jobs": 0.0,
+  "miniShare": 0.291
+ },
+ "jobs": {
+  "world1": {
+   "median": 50.7,
+   "p90": 58.3
+  },
+  "cosmic": {
+   "median": 146.1,
+   "p90": 152.7
+  },
+  "top4": {
+   "median": 162.4,
+   "p90": 178.5
+  },
+  "done": {
+   "median": 162.4,
+   "p90": 178.5
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 7.0,
+   "p90": 8.4
+  },
+  "gapEarly": {
+   "median": 0.4,
+   "p90": 2.9
+  },
+  "gapLate": {
+   "median": 2.3,
+   "p90": 5.6
+  },
+  "longestGap": {
+   "median": 11.6,
+   "p90": 15.7
+  },
+  "longestUnavailable": {
+   "median": 3.0,
+   "p90": 3.2
+  },
+  "jobs": 0.624,
+  "miniShare": 0.075
+ },
+ "unlucky": {
+  "world1": {
+   "median": 61.8,
+   "p90": 70.3
+  },
+  "cosmic": {
+   "median": 210.2,
+   "p90": 237.2
+  },
+  "top4": {
+   "median": 238.3,
+   "p90": 261.7
+  },
+  "done": {
+   "median": 238.3,
+   "p90": 261.7
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 7.8,
+   "p90": 10.4
+  },
+  "gapEarly": {
+   "median": 0.5,
+   "p90": 3.1
+  },
+  "gapLate": {
+   "median": 3.2,
+   "p90": 8.6
+  },
+  "longestGap": {
+   "median": 30.0,
+   "p90": 48.6
+  },
+  "longestUnavailable": {
+   "median": 3.0,
+   "p90": 3.2
+  },
+  "jobs": 0.598,
+  "miniShare": 0.08
+ },
+ "lucky": {
+  "world1": {
+   "median": 47.2,
+   "p90": 57.4
+  },
+  "cosmic": {
+   "median": 128.9,
+   "p90": 139.8
+  },
+  "top4": {
+   "median": 142.1,
+   "p90": 152.3
+  },
+  "done": {
+   "median": 142.1,
+   "p90": 152.3
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 6.1,
+   "p90": 8.3
+  },
+  "gapEarly": {
+   "median": 0.4,
+   "p90": 2.6
+  },
+  "gapLate": {
+   "median": 2.3,
+   "p90": 6.1
+  },
+  "longestGap": {
+   "median": 11.4,
+   "p90": 15.5
+  },
+  "longestUnavailable": {
+   "median": 2.5,
+   "p90": 3.0
+  },
+  "jobs": 0.494,
+  "miniShare": 0.1
+ },
+ "boosted": {
+  "world1": {
+   "median": 46.0,
+   "p90": 54.1
+  },
+  "cosmic": {
+   "median": 118.8,
+   "p90": 130.1
+  },
+  "top4": {
+   "median": 139.4,
+   "p90": 150.6
+  },
+  "done": {
+   "median": 139.4,
+   "p90": 150.6
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 2.0,
+   "p90": 2.5
+  },
+  "gapEarly": {
+   "median": 0.4,
+   "p90": 2.6
+  },
+  "gapLate": {
+   "median": 2.1,
+   "p90": 5.8
+  },
+  "longestGap": {
+   "median": 10.6,
+   "p90": 14.3
+  },
+  "longestUnavailable": {
+   "median": 2.9,
+   "p90": 3.2
+  },
+  "jobs": 0.665,
+  "miniShare": 0.092
+ },
+ "legacy:efficient": {
+  "world1": {
+   "median": 52.3,
+   "p90": 56.7
+  },
+  "cosmic": {
+   "median": 224.4,
+   "p90": 250.4
+  },
+  "top4": {
+   "median": 239.1,
+   "p90": 265.1
+  },
+  "done": {
+   "median": 239.1,
+   "p90": 265.1
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 1.9,
+   "p90": 1.9
+  },
+  "gapEarly": {
+   "median": 0.9,
+   "p90": 3.9
+  },
+  "gapLate": {
+   "median": 3.1,
+   "p90": 9.6
+  },
+  "longestGap": {
+   "median": 22.1,
+   "p90": 30.0
+  },
+  "longestUnavailable": {
+   "median": 2.7,
+   "p90": 3.0
+  },
+  "jobs": 0.457,
+  "miniShare": 0.094
+ },
+ "legacy:casual": {
+  "world1": {
+   "median": 99.7,
+   "p90": 118.7
+  },
+  "cosmic": {
+   "median": 328.3,
+   "p90": 362.6
+  },
+  "top4": {
+   "median": 401.2,
+   "p90": 436.3
+  },
+  "done": {
+   "median": 401.2,
+   "p90": 436.3
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 1.9,
+   "p90": 9.0
+  },
+  "gapEarly": {
+   "median": 0.8,
+   "p90": 4.9
+  },
+  "gapLate": {
+   "median": 3.6,
+   "p90": 8.9
+  },
+  "longestGap": {
+   "median": 31.4,
+   "p90": 40.1
+  },
+  "longestUnavailable": {
+   "median": 2.0,
+   "p90": 2.2
+  },
+  "jobs": 0.311,
+  "miniShare": 0.239
+ },
+ "legacy:noRewards": {
+  "world1": {
+   "median": 85.5,
+   "p90": 101.4
+  },
+  "cosmic": {
+   "median": 438.6,
+   "p90": 464.6
+  },
+  "top4": {
+   "median": 471.9,
+   "p90": 507.1
+  },
+  "done": {
+   "median": 471.9,
+   "p90": 507.1
+  },
+  "finished": 16,
+  "n": 16,
+  "firstPart": {
+   "median": 1.9,
+   "p90": 1.9
+  },
+  "gapEarly": {
+   "median": 0.7,
+   "p90": 4.8
+  },
+  "gapLate": {
+   "median": 3.2,
+   "p90": 11.4
+  },
+  "longestGap": {
+   "median": 49.9,
+   "p90": 62.7
+  },
+  "longestUnavailable": {
+   "median": 1.2,
+   "p90": 1.6
+  },
+  "jobs": 0.0,
+  "miniShare": 0.266
+ },
+ "levels": {
+  "Max": 10,
+  "Step": 0.05,
+  "SpeedShare": 0.25,
+  "BodyFlat": 0.008,
+  "Cost0": 0.25,
+  "Growth": 1.45,
+  "StarterBase": 60,
+  "PaidBase": 2000,
+  "LateFrom": 3,
+  "LateGrowth": 3.0,
+  "LateJump": 10.0,
+  "Cap": 990000000000000.0,
+  "Drift": 1.5
+ }
+}

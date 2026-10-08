@@ -1,0 +1,42 @@
+{
+  "stageCosts": {
+    "Starter": 0.0,
+    "Desert": 2500.0,
+    "Cursed": 250000.0,
+    "Crystal": 54000000.0,
+    "Retro": 4000000000.0,
+    "Jungle": 135000000000.0,
+    "AbsoluteZero": 2500000000000.0,
+    "Portal": 150000000000000.0,
+    "Sakura": 0.0
+  },
+  "eggs": [
+    "SnowyEgg",
+    "DesertEgg",
+    "CrystalEgg",
+    "CursedEgg",
+    "RetroEgg",
+    "JungleEgg",
+    "AbsoluteZeroEgg"
+  ],
+  "petDefinitions": 35,
+  "upgradeDefinitions": 110,
+  "activitiesPresent": true,
+  "boostWiring": true,
+  "lifetimeSnow": true,
+  "treasurePNGSlots": 36,
+  "luckExponent": 0.63,
+  "shovelLuckNeutral": true,
+  "sourceCount": 70,
+  "disabled": [],
+  "unusualRunContexts": [
+    [
+      "Workspace.AbsoluteZeroPortal.PortalAnimator",
+      "Client"
+    ],
+    [
+      "Workspace.FrostfallVillage.EggDisplay.EggFloat",
+      "Client"
+    ]
+  ]
+}

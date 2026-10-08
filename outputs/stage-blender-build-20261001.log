@@ -1,0 +1,57 @@
+STAGE_BLENDER_PROGRESS building {}
+STAGE_BLENDER_PROGRESS exporting {'models': 44}
+00:02.484  image.write      | ERROR OpenImageIO write failed: Could not open file "\.thumbnails\large\blender_38464_f91a20d9de51f92b032619a25015b604.png.png"
+C:\Users\wikto\Desktop\Roblox Gra\work\build-stage-blender-20261001.py:443: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world.color=(.38,.38,.38);scene.world.use_nodes=True
+C:\Users\wikto\Desktop\Roblox Gra\work\build-stage-blender-20261001.py:453: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('PreviewGroundMaterial');mat.diffuse_color=(.7,.8,.85,1);mat.use_nodes=True;floor.data.materials.append(mat)
+
+FBX export starting... 'C:\\Users\\wikto\\Desktop\\Roblox Gra\\outputs\\StageBlender20261001\\AllStages.fbx'
+export finished in 0.0550 sec.
+
+FBX export starting... 'C:\\Users\\wikto\\Desktop\\Roblox Gra\\outputs\\StageBlender20261001\\Starter.fbx'
+export finished in 0.0062 sec.
+
+FBX export starting... 'C:\\Users\\wikto\\Desktop\\Roblox Gra\\outputs\\StageBlender20261001\\Desert.fbx'
+export finished in 0.0215 sec.
+
+FBX export starting... 'C:\\Users\\wikto\\Desktop\\Roblox Gra\\outputs\\StageBlender20261001\\Cursed.fbx'
+export finished in 0.0054 sec.
+
+FBX export starting... 'C:\\Users\\wikto\\Desktop\\Roblox Gra\\outputs\\StageBlender20261001\\Crystal.fbx'
+export finished in 0.0047 sec.
+
+FBX export starting... 'C:\\Users\\wikto\\Desktop\\Roblox Gra\\outputs\\StageBlender20261001\\Retro.fbx'
+export finished in 0.0044 sec.
+
+FBX export starting... 'C:\\Users\\wikto\\Desktop\\Roblox Gra\\outputs\\StageBlender20261001\\Jungle.fbx'
+export finished in 0.0081 sec.
+
+FBX export starting... 'C:\\Users\\wikto\\Desktop\\Roblox Gra\\outputs\\StageBlender20261001\\AbsoluteZero.fbx'
+export finished in 0.0057 sec.
+
+FBX export starting... 'C:\\Users\\wikto\\Desktop\\Roblox Gra\\outputs\\StageBlender20261001\\Portal.fbx'
+export finished in 0.0062 sec.
+Info: Saved as "AllStages.blend"
+STAGE_BLENDER_PROGRESS rendering {'stage': 'Starter', 'index': 1, 'total': 8}
+00:11.281  render           | Saved: 'C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\Starter-preview.png'
+STAGE_BLENDER_PROGRESS rendering {'stage': 'Desert', 'index': 2, 'total': 8}
+00:20.625  render           | Saved: 'C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\Desert-preview.png'
+STAGE_BLENDER_PROGRESS rendering {'stage': 'Cursed', 'index': 3, 'total': 8}
+00:28.812  render           | Saved: 'C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\Cursed-preview.png'
+STAGE_BLENDER_PROGRESS rendering {'stage': 'Crystal', 'index': 4, 'total': 8}
+00:38.203  render           | Saved: 'C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\Crystal-preview.png'
+STAGE_BLENDER_PROGRESS rendering {'stage': 'Retro', 'index': 5, 'total': 8}
+00:46.953  render           | Saved: 'C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\Retro-preview.png'
+STAGE_BLENDER_PROGRESS rendering {'stage': 'Jungle', 'index': 6, 'total': 8}
+00:56.719  render           | Saved: 'C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\Jungle-preview.png'
+STAGE_BLENDER_PROGRESS rendering {'stage': 'AbsoluteZero', 'index': 7, 'total': 8}
+01:06.156  render           | Saved: 'C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\AbsoluteZero-preview.png'
+STAGE_BLENDER_PROGRESS rendering {'stage': 'Portal', 'index': 8, 'total': 8}
+01:15.078  render           | Saved: 'C:\Users\wikto\Desktop\Roblox Gra\outputs\StageBlender20261001\Portal-preview.png'
+01:15.109  image.write      | ERROR OpenImageIO write failed: Could not open file "\.thumbnails\large\blender_38464_f91a20d9de51f92b032619a25015b604.png.png"
+Info: Saved as "AllStages.blend"
+STAGE_BLENDER_PROGRESS complete {'models': 44, 'triangles': 75818, 'previews': 8}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

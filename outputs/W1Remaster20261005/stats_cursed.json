@@ -1,0 +1,592 @@
+{
+ "C_WallSeg": {
+  "min": [
+   -14.0,
+   -8.48,
+   -0.64
+  ],
+  "max": [
+   14.0,
+   5.55,
+   25.46
+  ],
+  "tris": 4918,
+  "parts": [
+   "Stone0__5A5670SP",
+   "Block0__6E6A80SP",
+   "Block1__817C94SP",
+   "Block2__5A5670SP",
+   "Snow__F6FAFFSP",
+   "Slit__1C1A26SP",
+   "Crack__B98CFFNE",
+   "Vine__5E7A5ASP",
+   "Rubble__817C94SP"
+  ],
+  "origin": [
+   120.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   28.0,
+   14.03,
+   26.1
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   120,
+   0,
+   0
+  ],
+  "objects": 9,
+  "perObject": {
+   "Stone0": 44,
+   "Block0": 1148,
+   "Block1": 972,
+   "Block2": 972,
+   "Snow": 1404,
+   "Slit": 44,
+   "Crack": 36,
+   "Vine": 198,
+   "Rubble": 100
+  }
+ },
+ "C_WallSegB": {
+  "min": [
+   -14.0,
+   -8.48,
+   -0.64
+  ],
+  "max": [
+   14.0,
+   5.55,
+   25.46
+  ],
+  "tris": 5042,
+  "parts": [
+   "Stone0__5A5670SP",
+   "Block0__6E6A80SP",
+   "Block1__817C94SP",
+   "Block2__5A5670SP",
+   "Snow__F6FAFFSP",
+   "Slit__1C1A26SP",
+   "Crack__B98CFFNE",
+   "Vine__5E7A5ASP",
+   "Rubble__817C94SP",
+   "Window__1C1A26SP",
+   "Steel__3B3F4ASP",
+   "Lamp__7CFF9ENE"
+  ],
+  "origin": [
+   240.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   28.0,
+   14.03,
+   26.1
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   240,
+   0,
+   0
+  ],
+  "objects": 12,
+  "perObject": {
+   "Stone0": 44,
+   "Block0": 1148,
+   "Block1": 972,
+   "Block2": 972,
+   "Snow": 1404,
+   "Slit": 44,
+   "Crack": 36,
+   "Vine": 198,
+   "Rubble": 100,
+   "Window": 40,
+   "Steel": 56,
+   "Lamp": 28
+  }
+ },
+ "C_Chapel": {
+  "min": [
+   -19.5,
+   -12.9,
+   0.0
+  ],
+  "max": [
+   20.51,
+   10.99,
+   53.1
+  ],
+  "tris": 1688,
+  "parts": [
+   "Wall0__817C94SP",
+   "Window__1C1A26SP",
+   "Glow__7CFF9ENET20",
+   "Roof__4B3F66SP",
+   "Snow__F6FAFFSP",
+   "Tower__5A5670SP",
+   "Tower__6E6A80SP",
+   "Spire__3E3457SP",
+   "SpireOrb__B98CFFNE",
+   "Clock__F4F0D2NE",
+   "Hands__2E2C38SP",
+   "Door__5A4636SP",
+   "Steps__6E6A80SP",
+   "Iron__2E2C38SP",
+   "Grave__817C94SP",
+   "Steel__3B3F4ASP",
+   "Lamp__7CFF9ENE"
+  ],
+  "origin": [
+   360.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   40.01,
+   23.89,
+   53.1
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   360,
+   0,
+   0
+  ],
+  "objects": 17,
+  "perObject": {
+   "Wall0": 44,
+   "Window": 96,
+   "Glow": 96,
+   "Roof": 216,
+   "Snow": 324,
+   "Tower": 88,
+   "Spire": 12,
+   "SpireOrb": 48,
+   "Clock": 76,
+   "Hands": 88,
+   "Door": 32,
+   "Steps": 132,
+   "Iron": 124,
+   "Grave": 56,
+   "Steel": 112,
+   "Lamp": 56
+  }
+ },
+ "C_Cottage": {
+  "min": [
+   -8.26,
+   -6.94,
+   -0.61
+  ],
+  "max": [
+   8.51,
+   6.26,
+   19.0
+  ],
+  "tris": 1408,
+  "parts": [
+   "Wall__817C94SP",
+   "Timber__5A4636SP",
+   "Roof__4B3F66SP",
+   "Snow__F6FAFFSP",
+   "Chimney__5A5670SP",
+   "Glow__7CFF9ENE",
+   "Trim__5A4636SP",
+   "Door__5A4636SP"
+  ],
+  "origin": [
+   480.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   16.77,
+   13.2,
+   19.61
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   480,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Wall": 108,
+   "Timber": 108,
+   "Roof": 216,
+   "Snow": 648,
+   "Chimney": 108,
+   "Glow": 88,
+   "Trim": 88,
+   "Door": 44
+  }
+ },
+ "C_DeadTree": {
+  "min": [
+   -5.87,
+   -6.03,
+   -0.91
+  ],
+  "max": [
+   5.93,
+   5.98,
+   16.05
+  ],
+  "tris": 1144,
+  "parts": [
+   "Bark__4A3E3ASP",
+   "Snow__F6FAFFSP",
+   "Iron__2E2C38SP",
+   "Steel__3B3F4ASP",
+   "Lamp__7CFF9ENE"
+  ],
+  "origin": [
+   600.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   11.8,
+   12.01,
+   16.96
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   600,
+   0,
+   0
+  ],
+  "objects": 5,
+  "perObject": {
+   "Bark": 616,
+   "Snow": 432,
+   "Iron": 12,
+   "Steel": 56,
+   "Lamp": 28
+  }
+ },
+ "C_Graves": {
+  "min": [
+   -10.04,
+   -6.47,
+   -0.23
+  ],
+  "max": [
+   12.0,
+   3.31,
+   7.11
+  ],
+  "tris": 1432,
+  "parts": [
+   "Grave__6E6A80SP",
+   "Snow__F6FAFFSP",
+   "Snow__E4EEFASP",
+   "Grave__817C94SP",
+   "Crypt__5A5670SP",
+   "Roof__3E3457SP",
+   "Door__1C1A26SP",
+   "Orb__B98CFFNE",
+   "Candle__F3EBD8SP",
+   "Flame__FFD27ANE"
+  ],
+  "origin": [
+   720.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   22.04,
+   9.78,
+   7.34
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   720,
+   0,
+   0
+  ],
+  "objects": 10,
+  "perObject": {
+   "Grave": 112,
+   "Snow": 288,
+   "Crypt": 44,
+   "Roof": 216,
+   "Door": 44,
+   "Orb": 48,
+   "Candle": 100,
+   "Flame": 180
+  }
+ },
+ "C_Arch": {
+  "min": [
+   -10.35,
+   -2.66,
+   -0.46
+  ],
+  "max": [
+   10.35,
+   3.42,
+   23.61
+  ],
+  "tris": 1492,
+  "parts": [
+   "Stone0__817C94SP",
+   "Stone1__6E6A80SP",
+   "Snow__F6FAFFSP",
+   "ArchTop__817C94SP",
+   "Chain__2E2C38SP",
+   "Rubble__5A5670SP"
+  ],
+  "origin": [
+   840.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   20.7,
+   6.07,
+   24.07
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   840,
+   0,
+   0
+  ],
+  "objects": 6,
+  "perObject": {
+   "Stone0": 220,
+   "Stone1": 220,
+   "Snow": 216,
+   "ArchTop": 116,
+   "Chain": 640,
+   "Rubble": 80
+  }
+ },
+ "C_Fence": {
+  "min": [
+   -7.93,
+   -0.7,
+   0.0
+  ],
+  "max": [
+   7.93,
+   0.66,
+   5.31
+  ],
+  "tris": 808,
+  "parts": [
+   "Iron__2E2C38SP",
+   "Post__5A5670SP",
+   "Pumpkin__F28A2ESP",
+   "PumpkinGlow__FFE07ANE"
+  ],
+  "origin": [
+   960.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   15.86,
+   1.36,
+   5.31
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   960,
+   0,
+   0
+  ],
+  "objects": 4,
+  "perObject": {
+   "Iron": 448,
+   "Post": 88,
+   "Pumpkin": 200,
+   "PumpkinGlow": 72
+  }
+ },
+ "C_Pumpkins": {
+  "min": [
+   -5.44,
+   -4.06,
+   -0.08
+  ],
+  "max": [
+   7.0,
+   3.95,
+   7.9
+  ],
+  "tris": 2104,
+  "parts": [
+   "Pumpkin__F28A2ESP",
+   "Stem__4C6B2ESP",
+   "PumpkinGlow__FFE07ANE",
+   "Straw__E8C46ASP",
+   "Pole__5A4636SP",
+   "Coat__7B5CA8SP",
+   "Hat__2E2C38SP"
+  ],
+  "origin": [
+   1080.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   12.44,
+   8.01,
+   7.98
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   1080,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "Pumpkin": 1180,
+   "Stem": 144,
+   "PumpkinGlow": 108,
+   "Straw": 432,
+   "Pole": 60,
+   "Coat": 108,
+   "Hat": 72
+  }
+ },
+ "C_Ghost": {
+  "min": [
+   -1.25,
+   -1.26,
+   -0.11
+  ],
+  "max": [
+   1.26,
+   1.26,
+   2.9
+  ],
+  "tris": 424,
+  "parts": [
+   "Ghost__EEF4FFSPT15",
+   "Eyes__2A2340SP",
+   "Mouth__FF9AC8SP"
+  ],
+  "origin": [
+   1200.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   2.51,
+   2.53,
+   3.01
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   1200,
+   0,
+   0
+  ],
+  "objects": 3,
+  "perObject": {
+   "Ghost": 316,
+   "Eyes": 72,
+   "Mouth": 36
+  }
+ },
+ "C_Crag": {
+  "min": [
+   -25.61,
+   -18.73,
+   -0.92
+  ],
+  "max": [
+   24.74,
+   18.71,
+   63.38
+  ],
+  "tris": 668,
+  "parts": [
+   "Crag0__5A5670SP",
+   "Crag1__6E6A80SP",
+   "Crag2__4D4A60SP",
+   "Snow__F6FAFFSP",
+   "Tower__6E6A80SP",
+   "Tower__817C94SP",
+   "Spire__3E3457SP",
+   "Glow__B98CFFNE"
+  ],
+  "origin": [
+   1320.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   50.34,
+   37.44,
+   64.3
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   1320,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Crag0": 120,
+   "Crag1": 120,
+   "Crag2": 120,
+   "Snow": 120,
+   "Tower": 44,
+   "Spire": 12,
+   "Glow": 44
+  }
+ },
+ "C_Lamp": {
+  "min": [
+   -0.8,
+   -0.8,
+   -0.01
+  ],
+  "max": [
+   2.4,
+   0.8,
+   7.65
+  ],
+  "tris": 192,
+  "parts": [
+   "Iron__2E2C38SP",
+   "Steel__3B3F4ASP",
+   "Lamp__7CFF9ENE",
+   "Base__5A5670SP"
+  ],
+  "origin": [
+   1440.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   3.2,
+   1.6,
+   7.66
+  ],
+  "pack": "W1_Cursed",
+  "at": [
+   1440,
+   0,
+   0
+  ],
+  "objects": 4,
+  "perObject": {
+   "Iron": 64,
+   "Steel": 56,
+   "Lamp": 28,
+   "Base": 44
+  }
+ }
+}

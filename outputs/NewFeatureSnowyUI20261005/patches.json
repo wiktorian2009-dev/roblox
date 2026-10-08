@@ -1,0 +1,220 @@
+{
+  "description": "Six scripts: guarded presentation-only replacement pairs used by the completed Edit installation. Final FeatureUIArt source is in FeatureUIArt.luau; already-installed guards prevent accidental replay.",
+  "scripts": [
+    {
+      "sourceKey": "TravelClient",
+      "target": "StarterPlayer.StarterPlayerScripts.TravelClient",
+      "replacements": [
+        {
+          "label": "presentation module require",
+          "old": "local T = require(RS:WaitForChild(\"TravelConfig\"))",
+          "new": "local T = require(RS:WaitForChild(\"TravelConfig\"))\nlocal Art = require(RS:WaitForChild(\"FeatureUIArt\"))"
+        },
+        {
+          "label": "text above scoped artwork",
+          "old": "local l = mk(\"TextLabel\", {BackgroundTransparency = 1, Font = FONT, TextScaled = true, Text = text, TextColor3 = WHITE}, parent)",
+          "new": "local l = mk(\"TextLabel\", {BackgroundTransparency = 1, Font = FONT, TextScaled = true, Text = text, TextColor3 = WHITE, ZIndex = 3}, parent)"
+        },
+        {
+          "label": "travel button teleport artwork",
+          "old": "mk(\"UIGradient\", {Rotation = 90, Color = ColorSequence.new(Color3.fromRGB(235, 245, 255), Color3.fromRGB(170, 205, 245))}, btn)\nlabel(btn, \"\\u{1F9ED} TRAVEL\", {Size = UDim2.fromScale(0.86, 0.72), Position = UDim2.fromScale(0.07, 0.14)})",
+          "new": "Art.Skin(btn)\nArt.Icon(btn, \"teleport\", UDim2.fromScale(0.04, 0.08), UDim2.fromScale(0.18, 0.84), \"FeatureTravelIcon\")\nlabel(btn, \"TRAVEL\", {Name = \"TravelLabel\", Size = UDim2.fromScale(0.73, 0.72), Position = UDim2.fromScale(0.23, 0.14)})"
+        },
+        {
+          "label": "travel menu banner icon",
+          "old": "\t\tif title then title.Text = \"\\u{1F9ED} TRAVEL\" end\n\t\tlocal icon = panel:FindFirstChild(\"Banner\") and panel.Banner:FindFirstChild(\"Icon\")\n\t\tif icon then icon.Visible = false end",
+          "new": "\t\tif title then title.Text = \"TRAVEL\" end\n\t\tlocal banner = panel:FindFirstChild(\"Banner\")\n\t\tlocal icon = banner and banner:FindFirstChild(\"Icon\")\n\t\tif icon then icon.Visible = false end\n\t\tif banner then\n\t\t\tArt.Icon(banner, \"teleport\", UDim2.fromScale(0.035, 0.05), UDim2.fromScale(0.15, 0.9), \"FeatureTravelIcon\")\n\t\tend"
+        },
+        {
+          "label": "fallback travel window artwork",
+          "old": "\t\tmk(\"UICorner\", {CornerRadius = UDim.new(0.04, 0)}, panel)\n\t\tcontent = mk(\"ScrollingFrame\"",
+          "new": "\t\tmk(\"UICorner\", {CornerRadius = UDim.new(0.04, 0)}, panel)\n\t\tArt.Skin(panel)\n\t\tcontent = mk(\"ScrollingFrame\""
+        },
+        {
+          "label": "destination row scoped artwork",
+          "old": "\t\tstroke(row, 2.5)\n\t\tlocal name = label(row,",
+          "new": "\t\tstroke(row, 2.5)\n\t\tArt.Skin(row)\n\t\tlocal name = label(row,"
+        },
+        {
+          "label": "GO button scoped artwork",
+          "old": "\t\tstroke(go, 3)\n\t\tlocal goText = label(go,",
+          "new": "\t\tstroke(go, 3)\n\t\tArt.Skin(go)\n\t\tlocal goText = label(go,"
+        }
+      ],
+      "beforeCharacters": 11909,
+      "afterCharacters": 12168
+    },
+    {
+      "sourceKey": "ContractClient",
+      "target": "StarterPlayer.StarterPlayerScripts.ContractClient",
+      "replacements": [
+        {
+          "label": "presentation module require",
+          "old": "local okUI, UI = pcall(function() return require(RS:WaitForChild(\"SnowUI\", 10)) end)",
+          "new": "local okUI, UI = pcall(function() return require(RS:WaitForChild(\"SnowUI\", 10)) end)\nlocal Art = require(RS:WaitForChild(\"FeatureUIArt\"))"
+        },
+        {
+          "label": "clean dark blue contract panels",
+          "old": "local f = mk(\"Frame\", {BackgroundColor3 = Color3.fromRGB(200, 232, 255), BorderSizePixel = 0, Visible = false}, parent)",
+          "new": "local f = mk(\"Frame\", {BackgroundColor3 = Color3.fromRGB(34, 91, 153), BorderSizePixel = 0, Visible = false}, parent)"
+        },
+        {
+          "label": "scoped contract panel artwork",
+          "old": "\tif okUI then pcall(UI.Skin, f, \"card\") end\n\treturn f",
+          "new": "\tif okUI then pcall(UI.Skin, f, \"card\") end\n\tArt.Skin(f)\n\treturn f"
+        },
+        {
+          "label": "scoped contract action artwork",
+          "old": "\tb:SetAttribute(\"SnowUIDecor\", true)\n\treturn b, l",
+          "new": "\tb:SetAttribute(\"SnowUIDecor\", true)\n\tArt.Skin(b)\n\treturn b, l"
+        },
+        {
+          "label": "announcement clipboard beside lower action row",
+          "old": "local laterBtn = button(ann, \"LATER\", GREY, {Position = UDim2.fromScale(0.6, 0.79), Size = UDim2.fromScale(0.3, 0.17)})",
+          "new": "local laterBtn = button(ann, \"LATER\", GREY, {Position = UDim2.fromScale(0.6, 0.79), Size = UDim2.fromScale(0.3, 0.17)})\nArt.Icon(ann, \"contracts\", UDim2.fromScale(0.018, 0.805), UDim2.fromScale(0.068, 0.15), \"FeatureContractIcon\")"
+        },
+        {
+          "label": "available contract clipboard and label spacing",
+          "old": "local pillText = label(pill, \"\", {Position = UDim2.fromScale(0.04, 0.14), Size = UDim2.fromScale(0.72, 0.72), TextXAlignment = Enum.TextXAlignment.Left})",
+          "new": "Art.Icon(pill, \"contracts\", UDim2.fromScale(0.022, 0.14), UDim2.fromScale(0.115, 0.72), \"FeatureContractIcon\")\nlocal pillText = label(pill, \"\", {Position = UDim2.fromScale(0.15, 0.14), Size = UDim2.fromScale(0.62, 0.72), TextXAlignment = Enum.TextXAlignment.Left})"
+        },
+        {
+          "label": "remove duplicate emoji beside generated clipboard",
+          "old": "if offer then pillText.Text = \"\\u{2757} HELP REQUEST  \" .. fmtTime(offer.Expires - t) end",
+          "new": "if offer then pillText.Text = \"HELP REQUEST  \" .. fmtTime(offer.Expires - t) end"
+        }
+      ],
+      "beforeCharacters": 26283,
+      "afterCharacters": 26573
+    },
+    {
+      "sourceKey": "PlowDriveClient",
+      "target": "StarterPlayer.StarterPlayerScripts.PlowDriveClient",
+      "replacements": [
+        {
+          "old": "local C = require(RS:WaitForChild(\"PlowConfig\"))",
+          "new": "local C = require(RS:WaitForChild(\"PlowConfig\"))\nlocal Art = require(RS:WaitForChild(\"FeatureUIArt\"))",
+          "label": "presentation module"
+        },
+        {
+          "old": "\tl.TextColor3, l.Position, l.Size = WHITE, UDim2.fromScale(0.06, 0.12), UDim2.fromScale(0.88, 0.76)",
+          "new": "\tl.TextColor3, l.Position, l.Size = WHITE, UDim2.fromScale(0.25, 0.12), UDim2.fromScale(0.72, 0.76)\n\tl.ZIndex = b.ZIndex + 4",
+          "label": "label space for icon"
+        },
+        {
+          "old": "\tb.Parent = gui\n\treturn b, l",
+          "new": "\tb.Parent = gui\n\tArt.Skin(b)\n\tlocal symbol = name == \"Drift\" and \"drift\" or (name == \"Recover\" and \"recover\" or \"recover\")\n\tArt.Icon(b, symbol, UDim2.fromScale(0.025, 0.11), UDim2.fromScale(0.21, 0.78), \"FeatureDriveIcon\")\n\treturn b, l",
+          "label": "existing buttons decorated"
+        },
+        {
+          "old": "\tdrive.BackgroundColor3 = driving and Color3.fromRGB(235, 90, 100) or Color3.fromRGB(70, 200, 105)",
+          "new": "\tdrive.BackgroundColor3 = driving and Color3.fromRGB(235, 90, 100) or Color3.fromRGB(70, 200, 105)\n\tlocal symbol = drive:FindFirstChild(\"FeatureDriveIcon\")\n\tif symbol then symbol.Image = Art.Assets[driving and \"exit\" or \"recover\"] end",
+          "label": "live Drive/Exit icon state"
+        }
+      ]
+    },
+    {
+      "sourceKey": "PassClient",
+      "target": "StarterPlayer.StarterPlayerScripts.PassClient",
+      "replacements": [
+        {
+          "old": "local P = require(RS:WaitForChild(\"PassConfig\"))",
+          "new": "local P = require(RS:WaitForChild(\"PassConfig\"))\nlocal Art = require(RS:WaitForChild(\"FeatureUIArt\"))",
+          "label": "presentation module"
+        },
+        {
+          "old": "local l = mk(\"TextLabel\", {BackgroundTransparency = 1, Font = FONT, TextScaled = true, Text = text, TextColor3 = WHITE}, parent)",
+          "new": "local l = mk(\"TextLabel\", {BackgroundTransparency = 1, Font = FONT, TextScaled = true, Text = text, TextColor3 = WHITE, ZIndex = 4}, parent)",
+          "label": "labels above decoration"
+        },
+        {
+          "old": "label(toggle, \"\\u{2B50} OFFERS\", {Size = UDim2.fromScale(0.86, 0.72), Position = UDim2.fromScale(0.07, 0.14)})",
+          "new": "Art.Skin(toggle)\nArt.Icon(toggle, \"starter-pack\", UDim2.fromScale(0.035, 0.1), UDim2.fromScale(0.2, 0.8), \"FeatureOffersIcon\")\nlabel(toggle, \"OFFERS\", {Size = UDim2.fromScale(0.7, 0.72), Position = UDim2.fromScale(0.26, 0.14)})",
+          "label": "mobile offers button"
+        },
+        {
+          "old": "mk(\"UIGradient\", {Rotation = 90, Color = ColorSequence.new(Color3.fromRGB(80, 140, 225), Color3.fromRGB(32, 64, 135))}, pop)",
+          "new": "mk(\"UIGradient\", {Rotation = 90, Color = ColorSequence.new(Color3.fromRGB(80, 140, 225), Color3.fromRGB(32, 64, 135))}, pop)\nArt.Skin(pop)",
+          "label": "details frame"
+        },
+        {
+          "old": "mk(\"UICorner\", {CornerRadius = UDim.new(0.3, 0)}, popBuy); stroke(popBuy, 3)",
+          "new": "mk(\"UICorner\", {CornerRadius = UDim.new(0.3, 0)}, popBuy); stroke(popBuy, 3)\nArt.Skin(popBuy)",
+          "label": "buy style"
+        },
+        {
+          "old": "mk(\"UICorner\", {CornerRadius = UDim.new(0.3, 0)}, popClose); stroke(popClose, 3)",
+          "new": "mk(\"UICorner\", {CornerRadius = UDim.new(0.3, 0)}, popClose); stroke(popClose, 3)\nArt.Skin(popClose)",
+          "label": "close style"
+        },
+        {
+          "old": "c.pass.Color:Lerp(Color3.fromRGB(30, 60, 120), 0.45)",
+          "new": "c.pass.Color:Lerp(Color3.fromRGB(26, 60, 108), 0.18)",
+          "label": "brighter offer fills"
+        },
+        {
+          "old": "\tmk(\"UICorner\", {CornerRadius = UDim.new(0.22, 0)}, f); stroke(f, 3)",
+          "new": "\tmk(\"UICorner\", {CornerRadius = UDim.new(0.22, 0)}, f); stroke(f, 3)\n\tArt.Skin(f)",
+          "label": "offer card artwork"
+        },
+        {
+          "old": "Image = pass.Icon or \"\", Position = UDim2.fromScale(0.02, 0.06)",
+          "new": "Image = pass.Icon or \"\", ZIndex = 3, Position = UDim2.fromScale(0.02, 0.06)",
+          "label": "icons above rim"
+        },
+        {
+          "old": "local function panelsOpen()\n\tlocal rng = pg:FindFirstChild(\"RNGGui\")",
+          "new": "local function panelsOpen()\n\t-- Keep paid cards clear of the active job tracker shown in the same HUD area.\n\tlocal contracts = pg:FindFirstChild(\"ContractGui\")\n\tif contracts then\n\t\tlocal tracker, announce = contracts:FindFirstChild(\"Tracker\"), contracts:FindFirstChild(\"Announce\")\n\t\tif (tracker and tracker.Visible) or (announce and announce.Visible) then return true end\n\tend\n\tlocal rng = pg:FindFirstChild(\"RNGGui\")",
+          "label": "contract overlap"
+        }
+      ]
+    },
+    {
+      "sourceKey": "WheelClient",
+      "target": "StarterGui.RNGGui.WheelClient",
+      "replacements": [
+        {
+          "old": "local SnowUI = require(RS:WaitForChild(\"SnowUI\"))",
+          "new": "local SnowUI = require(RS:WaitForChild(\"SnowUI\"))\nlocal Art = require(RS:WaitForChild(\"FeatureUIArt\"))",
+          "label": "presentation module"
+        },
+        {
+          "old": "if bannerIcon then bannerIcon.Image = \"\"; miniWheel(bannerIcon, 2, UDim2.fromScale(0.5, 0.5), UDim2.fromScale(0.8, 0.8)) end",
+          "new": "if bannerIcon then bannerIcon.Image = Art.Assets.spin; bannerIcon.ScaleType = Enum.ScaleType.Fit end",
+          "label": "header wheel illustration"
+        },
+        {
+          "old": "menuButton.Image = \"\"\nlocal miniRotor = miniWheel(menuButton, 2, UDim2.fromScale(0.5, 0.4), UDim2.fromScale(0.68, 0.68))",
+          "new": "menuButton.Image = \"\"\nlocal miniRotor = Art.Icon(menuButton, \"spin\", UDim2.fromScale(0.08, 0.02), UDim2.fromScale(0.84, 0.77), \"FeatureSpinIcon\")",
+          "label": "SPIN icon"
+        },
+        {
+          "old": "RunService.RenderStepped:Connect(function(dt)\n\tminiRotor.Rotation = (miniRotor.Rotation + dt * (spins > 0 and 70 or 22)) % 360 -- 2026-10-03: always turns slowly, faster with free spins\nend)",
+          "new": "-- The generated menu illustration stays still so its top pointer is readable.\n-- The real reward wheel retains its original spin animation.",
+          "label": "static illustration; real wheel unchanged"
+        }
+      ]
+    },
+    {
+      "sourceKey": "PassConfig",
+      "target": "ReplicatedStorage.PassConfig",
+      "replacements": [
+        {
+          "old": "rbxassetid://124535252765594",
+          "new": "rbxassetid://118980978543857",
+          "label": "SnowBoost icon"
+        },
+        {
+          "old": "rbxassetid://120521989185048",
+          "new": "rbxassetid://109621099381649",
+          "label": "StarterPack icon"
+        },
+        {
+          "old": "rbxassetid://115002923012506",
+          "new": "rbxassetid://106686963600706",
+          "label": "PremiumWheels icon"
+        }
+      ]
+    }
+  ]
+}

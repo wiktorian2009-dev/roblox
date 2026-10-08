@@ -1,0 +1,158 @@
+{
+  "done": true,
+  "checks": [
+    {
+      "ok": true,
+      "name": "fresh profile has three starter parts"
+    },
+    {
+      "ok": true,
+      "name": "no fresh shovel or old player equipment"
+    },
+    {
+      "ok": true,
+      "name": "intro handshake ready without cinematic"
+    },
+    {
+      "ok": true,
+      "name": "old remotes/models removed"
+    },
+    {
+      "ok": true,
+      "name": "shared sounds remain"
+    },
+    {
+      "ok": true,
+      "name": "all upgrade effects current"
+    },
+    {
+      "ok": true,
+      "name": "width overflow stays useful"
+    },
+    {
+      "ok": true,
+      "name": "historical collection preserved"
+    },
+    {
+      "ok": true,
+      "name": "quest migration preserves progress",
+      "detail": {
+        "start": 120,
+        "quest": {
+          "Claimed": false,
+          "Progress": 20,
+          "Text": "Roll 25 part offers",
+          "Goal": 25,
+          "Reward": "❄️ 2x Snow for 5 min"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "name": "quest migration is once only"
+    },
+    {
+      "ok": true,
+      "name": "outside garage roll rejected"
+    },
+    {
+      "ok": true,
+      "name": "garage travel",
+      "detail": "Welcome to the Garage! Roll parts on the pedestals."
+    },
+    {
+      "ok": true,
+      "name": "garage roll advances quest and leaderstats",
+      "detail": {
+        "stat": 141,
+        "roll": true,
+        "quest": {
+          "Claimed": false,
+          "Progress": 21,
+          "Text": "Roll 25 part offers",
+          "Goal": 25,
+          "Reward": "❄️ 2x Snow for 5 min"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "name": "offer-speed upgrade changes cooldown",
+      "detail": 1.1999500999954762
+    },
+    {
+      "ok": true,
+      "name": "cooldown still enforced"
+    },
+    {
+      "ok": true,
+      "name": "offer purchase atomic"
+    },
+    {
+      "ok": true,
+      "name": "duplicate purchase rejected"
+    },
+    {
+      "ok": true,
+      "name": "lobby return"
+    },
+    {
+      "ok": true,
+      "name": "starter build fights without shovels",
+      "detail": {
+        "Estimate": 11.616000000000003,
+        "Snow": 3500,
+        "Reach": 9.7,
+        "DPS": 13.592668825764392,
+        "Power": 4.5,
+        "Rate": 11.616000000000003,
+        "HPShare": 1282.4636166057467
+      }
+    },
+    {
+      "ok": true,
+      "name": "unequipped blade does not attack",
+      "detail": 0
+    },
+    {
+      "ok": true,
+      "name": "better build improves boss strength",
+      "detail": {
+        "strong": {
+          "Estimate": 36,
+          "Snow": 11000,
+          "Reach": 10.45,
+          "DPS": 23.96836781421304,
+          "Power": 346.5,
+          "Rate": 36,
+          "HPShare": 1702.9892852040434
+        },
+        "basic": {
+          "Estimate": 11.616000000000003,
+          "Snow": 3500,
+          "Reach": 9.7,
+          "DPS": 13.592668825764392,
+          "Power": 4.5,
+          "Rate": 11.616000000000003,
+          "HPShare": 1282.4636166057467
+        }
+      }
+    },
+    {
+      "ok": true,
+      "name": "drive still seats player"
+    },
+    {
+      "ok": true,
+      "name": "vehicle stats refresh live"
+    },
+    {
+      "ok": true,
+      "name": "shared park removes vehicle and seat"
+    },
+    {
+      "ok": true,
+      "name": "rebirth keeps parts and historical data"
+    }
+  ]
+}

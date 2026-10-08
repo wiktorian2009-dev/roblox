@@ -1,0 +1,560 @@
+{
+ "Z_CliffSeg": {
+  "min": [
+   -7.87,
+   -6.44,
+   -0.28
+  ],
+  "max": [
+   7.8,
+   6.41,
+   28.38
+  ],
+  "tris": 1826,
+  "parts": [
+   "Foot__2C4566SP",
+   "Glacier0__9FD3F7SP",
+   "Snow__F6FAFFSP",
+   "Glacier1__6FAEE8SP",
+   "Glacier2__CFEBFFSP",
+   "Glacier3__9FD3F7SP",
+   "Icicle__CFEBFFIC",
+   "Spike__9FD3F7SP",
+   "Spike__CFEBFFSP"
+  ],
+  "origin": [
+   120.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   15.67,
+   12.85,
+   28.66
+  ],
+  "pack": "W1_Az",
+  "at": [
+   120,
+   0,
+   0
+  ],
+  "objects": 9,
+  "perObject": {
+   "Foot": 368,
+   "Glacier0": 260,
+   "Snow": 360,
+   "Glacier1": 216,
+   "Glacier2": 216,
+   "Glacier3": 216,
+   "Icicle": 112,
+   "Spike": 26
+  }
+ },
+ "Z_CliffSegB": {
+  "min": [
+   -8.11,
+   -6.48,
+   -0.06
+  ],
+  "max": [
+   8.29,
+   6.05,
+   34.48
+  ],
+  "tris": 1928,
+  "parts": [
+   "Foot__2C4566SP",
+   "Glacier0__9FD3F7SP",
+   "Snow__F6FAFFSP",
+   "Glacier1__6FAEE8SP",
+   "Glacier2__CFEBFFSP",
+   "Glacier3__9FD3F7SP",
+   "Icicle__CFEBFFIC",
+   "Spike__9FD3F7SP",
+   "Spike__CFEBFFSP",
+   "Spire__7FE9FFGLT20"
+  ],
+  "origin": [
+   240.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   16.4,
+   12.54,
+   34.54
+  ],
+  "pack": "W1_Az",
+  "at": [
+   240,
+   0,
+   0
+  ],
+  "objects": 10,
+  "perObject": {
+   "Foot": 368,
+   "Glacier0": 260,
+   "Snow": 456,
+   "Glacier1": 216,
+   "Glacier2": 216,
+   "Glacier3": 216,
+   "Icicle": 112,
+   "Spike": 26,
+   "Spire": 32
+  }
+ },
+ "Z_FrozenPine": {
+  "min": [
+   -13.0,
+   -13.0,
+   -1.84
+  ],
+  "max": [
+   13.01,
+   13.0,
+   44.5
+  ],
+  "tris": 2564,
+  "parts": [
+   "Trunk__5A6F8ASP",
+   "Tier2F7FD0__2F7FD0SP",
+   "SnowRim__F6FAFFSP",
+   "Icicle__CFEBFFIC",
+   "Tier4FA3E8__4FA3E8SP",
+   "Tier8CC8F5__8CC8F5SP",
+   "Star__7FE9FFNE",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   360.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   26.01,
+   26.0,
+   46.34
+  ],
+  "pack": "W1_Az",
+  "at": [
+   360,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Trunk": 36,
+   "Tier2F7FD0": 136,
+   "SnowRim": 1200,
+   "Icicle": 752,
+   "Tier4FA3E8": 136,
+   "Tier8CC8F5": 68,
+   "Star": 20,
+   "Snow": 216
+  }
+ },
+ "Z_CrystalTower": {
+  "min": [
+   -5.66,
+   -6.8,
+   -1.42
+  ],
+  "max": [
+   5.99,
+   4.89,
+   40.0
+  ],
+  "tris": 938,
+  "parts": [
+   "Plinth__2C4566SP",
+   "MainCrystal__7FE9FFGLT15",
+   "Core__7FE9FFNE",
+   "Satellite__CFEBFFICT10",
+   "Satellite__9FD3F7GLT10",
+   "Satellite__B9A6FFGLT10",
+   "FrostRing__CFEBFFNE",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   480.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   11.65,
+   11.69,
+   41.42
+  ],
+  "pack": "W1_Az",
+  "at": [
+   480,
+   0,
+   0
+  ],
+  "objects": 8,
+  "perObject": {
+   "Plinth": 80,
+   "MainCrystal": 44,
+   "Core": 32,
+   "Satellite": 52,
+   "FrostRing": 384,
+   "Snow": 216
+  }
+ },
+ "Z_HeartEngine": {
+  "min": [
+   -10.82,
+   -10.31,
+   0.0
+  ],
+  "max": [
+   10.42,
+   9.0,
+   16.95
+  ],
+  "tris": 2964,
+  "parts": [
+   "Base__8A96A8SP",
+   "Deck__2C4566SP",
+   "Pylon__8A96A8SP",
+   "PylonLight__7FE9FFNE",
+   "Pipe__5E6B7DSP",
+   "Ring__C9D6E6ME",
+   "IceShell__CFEBFFGLT25",
+   "HeartCore__7FE9FFNE",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   600.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   21.24,
+   19.31,
+   16.95
+  ],
+  "pack": "W1_Az",
+  "at": [
+   600,
+   0,
+   0
+  ],
+  "objects": 9,
+  "perObject": {
+   "Base": 76,
+   "Deck": 60,
+   "Pylon": 432,
+   "PylonLight": 400,
+   "Pipe": 304,
+   "Ring": 1024,
+   "IceShell": 196,
+   "HeartCore": 44,
+   "Snow": 428
+  }
+ },
+ "Z_Beacon": {
+  "min": [
+   -1.55,
+   -1.55,
+   0.0
+  ],
+  "max": [
+   1.55,
+   1.55,
+   11.4
+  ],
+  "tris": 284,
+  "parts": [
+   "Base__2C4566SP",
+   "Post__8A96A8SP",
+   "Cage__8A96A8SP",
+   "Lamp__7FE9FFNE",
+   "Cap__8A96A8SP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   720.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   3.1,
+   3.1,
+   11.4
+  ],
+  "pack": "W1_Az",
+  "at": [
+   720,
+   0,
+   0
+  ],
+  "objects": 6,
+  "perObject": {
+   "Base": 44,
+   "Post": 28,
+   "Cage": 36,
+   "Lamp": 32,
+   "Cap": 36,
+   "Snow": 108
+  }
+ },
+ "Z_Camp": {
+  "min": [
+   -7.79,
+   -6.75,
+   -3.15
+  ],
+  "max": [
+   7.65,
+   6.56,
+   14.9
+  ],
+  "tris": 2444,
+  "parts": [
+   "Dome__E9503FFA",
+   "Door__3A3F4ASP",
+   "Snow__F6FAFFSP",
+   "Mast__8A96A8SP",
+   "Flag__E9503FSP",
+   "MastLight__E9503FNE",
+   "Guy__C9D6E6SP",
+   "Crate__B9763FSP",
+   "CrateBand__8A5530SP",
+   "Sled__FF8A3DSP",
+   "Seat__2B2F38SP",
+   "Bar__2B2F38SP",
+   "Ski__8A96A8SP"
+  ],
+  "origin": [
+   840.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   15.44,
+   13.31,
+   18.05
+  ],
+  "pack": "W1_Az",
+  "at": [
+   840,
+   0,
+   0
+  ],
+  "objects": 13,
+  "perObject": {
+   "Dome": 168,
+   "Door": 44,
+   "Snow": 728,
+   "Mast": 68,
+   "Flag": 108,
+   "MastLight": 36,
+   "Guy": 36,
+   "Crate": 324,
+   "CrateBand": 648,
+   "Sled": 44,
+   "Seat": 44,
+   "Bar": 108,
+   "Ski": 88
+  }
+ },
+ "Z_Guardian": {
+  "min": [
+   -3.9,
+   -2.75,
+   0.0
+  ],
+  "max": [
+   3.9,
+   2.75,
+   16.2
+  ],
+  "tris": 894,
+  "parts": [
+   "Plinth__2C4566SP",
+   "Legs__9FD3F7SP",
+   "Torso__6FAEE8SP",
+   "Head__9FD3F7SP",
+   "Eye__7FE9FFNE",
+   "Arm__9FD3F7SP",
+   "Spear__8A96A8SP",
+   "SpearTip__7FE9FFNE",
+   "Crown__CFEBFFSP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   960.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   7.8,
+   5.5,
+   16.2
+  ],
+  "pack": "W1_Az",
+  "at": [
+   960,
+   0,
+   0
+  ],
+  "objects": 10,
+  "perObject": {
+   "Plinth": 44,
+   "Legs": 108,
+   "Torso": 108,
+   "Head": 108,
+   "Eye": 88,
+   "Arm": 216,
+   "Spear": 20,
+   "SpearTip": 16,
+   "Crown": 78,
+   "Snow": 108
+  }
+ },
+ "Z_Banner": {
+  "min": [
+   -1.01,
+   -0.75,
+   -0.21
+  ],
+  "max": [
+   4.9,
+   0.98,
+   17.4
+  ],
+  "tris": 544,
+  "parts": [
+   "Pole__8A96A8SP",
+   "Finial__7FE9FFNE",
+   "Bar__8A96A8SP",
+   "Cloth__4CD3C2FA",
+   "Cloth2__8E7CFFFA",
+   "Emblem__7FE9FFNE",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   1080.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   5.91,
+   1.73,
+   17.61
+  ],
+  "pack": "W1_Az",
+  "at": [
+   1080,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "Pole": 28,
+   "Finial": 20,
+   "Bar": 20,
+   "Cloth": 108,
+   "Cloth2": 108,
+   "Emblem": 44,
+   "Snow": 216
+  }
+ },
+ "Z_Ruins": {
+  "min": [
+   -8.11,
+   -3.36,
+   -0.11
+  ],
+  "max": [
+   7.6,
+   3.32,
+   16.0
+  ],
+  "tris": 1012,
+  "parts": [
+   "ColBase__2C4566SP",
+   "Column__A9B8C8SP",
+   "IceCrust__CFEBFFIC",
+   "Lintel__A9B8C8SP",
+   "Rubble__8E9BAASP",
+   "Spike__9FD3F7SP",
+   "Snow__F6FAFFSP"
+  ],
+  "origin": [
+   1200.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   15.71,
+   6.68,
+   16.11
+  ],
+  "pack": "W1_Az",
+  "at": [
+   1200,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "ColBase": 132,
+   "Column": 108,
+   "IceCrust": 114,
+   "Lintel": 44,
+   "Rubble": 480,
+   "Spike": 26,
+   "Snow": 108
+  }
+ },
+ "Z_Penguin": {
+  "min": [
+   -1.18,
+   -1.02,
+   0.0
+  ],
+  "max": [
+   1.18,
+   0.85,
+   3.35
+  ],
+  "tris": 892,
+  "parts": [
+   "Body__1F2433SP",
+   "Belly__F4F7FBSP",
+   "Head__1F2433SP",
+   "Eye__FFFFFFSP",
+   "Beak__FF8A3DSP",
+   "Foot__FF8A3DSP",
+   "Flipper__1F2433SP"
+  ],
+  "origin": [
+   1320.0,
+   0.0,
+   0.0
+  ],
+  "size": [
+   2.36,
+   1.87,
+   3.35
+  ],
+  "pack": "W1_Az",
+  "at": [
+   1320,
+   0,
+   0
+  ],
+  "objects": 7,
+  "perObject": {
+   "Body": 168,
+   "Belly": 100,
+   "Head": 100,
+   "Eye": 72,
+   "Beak": 20,
+   "Foot": 216,
+   "Flipper": 216
+  }
+ }
+}

@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-01",
+  "place": 94130990350526,
+  "asset": "rbxassetid://12221976",
+  "duration": 0.044125,
+  "sourceMatchesInstalled": true,
+  "cleanup": {
+    "balanceTestModeRemoved": true,
+    "leftovers": []
+  },
+  "tests": {
+    "Base": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"landings\":1,\"gaps\":[0.06584549999934097,0.06732600000032108,0.06690160000016476,0.06652769999982411,0.06591310000021622,0.0672642999998061,0.06752990000040882,0.06648829999994632,0.06565890000001673,0.06778029999986757,0.06634849999954895,0.0662534000002779,0.06679989999975078,0.13202449999971578,0.13461000000006607,0.13399630000003527,0.33352390000072776],\"trace\":[{\"pitch\":1.128121018409729,\"name\":\"RollTick2\",\"volume\":0.3199999928474426,\"t\":2323.4441972000006,\"muted\":false},{\"pitch\":1.1269853115081788,\"name\":\"RollTick3\",\"volume\":0.3186655640602112,\"t\":2323.5100426999999,\"muted\":false},{\"pitch\":1.1233782768249512,\"name\":\"RollTick4\",\"volume\":0.3138197064399719,\"t\":2323.5773687,\"muted\":false},{\"pitch\":1.1278549432754517,\"name\":\"RollTick1\",\"volume\":0.309282511472702,\"t\":2323.6442703000004,\"muted\":false},{\"pitch\":1.1050902605056763,\"name\":\"RollTick2\",\"volume\":0.30507031083106997,\"t\":2323.710798,\"muted\":false},{\"pitch\":1.1042741537094117,\"name\":\"RollTick3\",\"volume\":0.30116334557533266,\"t\":2323.7767111000005,\"muted\":false},{\"pitch\":1.1007261276245118,\"name\":\"RollTick4\",\"volume\":0.29752716422080996,\"t\":2323.8439754,\"muted\":false},{\"pitch\":1.0808948278427125,\"name\":\"RollTick1\",\"volume\":0.29411616921424868,\"t\":2323.9115053000007,\"muted\":false},{\"pitch\":1.0915544033050538,\"name\":\"RollTick2\",\"volume\":0.2909649610519409,\"t\":2323.9779936000006,\"muted\":false},{\"pitch\":1.0727618932724,\"name\":\"RollTick3\",\"volume\":0.28809425234794619,\"t\":2324.0436525000006,\"muted\":false},{\"pitch\":1.075157880783081,\"name\":\"RollTick4\",\"volume\":0.28542622923851015,\"t\":2324.1114328000005,\"muted\":false},{\"pitch\":1.0692412853240967,\"name\":\"RollTick1\",\"volume\":0.28296053409576418,\"t\":2324.1777813,\"muted\":false},{\"pitch\":1.0539437532424927,\"name\":\"RollTick2\",\"volume\":0.28072038292884829,\"t\":2324.2440347,\"muted\":false},{\"pitch\":1.048009991645813,\"name\":\"RollTick3\",\"volume\":0.2786576449871063,\"t\":2324.3108346,\"muted\":false},{\"pitch\":1.0432729721069337,\"name\":\"RollTick4\",\"volume\":0.27507466077804568,\"t\":2324.4428590999998,\"muted\":false},{\"pitch\":1.043296217918396,\"name\":\"RollTick1\",\"volume\":0.2720974385738373,\"t\":2324.5774690999999,\"muted\":false},{\"pitch\":1.0313806533813477,\"name\":\"RollTick2\",\"volume\":0.2696792185306549,\"t\":2324.7114653999999,\"muted\":false},{\"pitch\":1.0298212766647339,\"name\":\"RollTick3\",\"volume\":0.2656049430370331,\"t\":2325.0449893000006,\"muted\":false},{\"pitch\":0.8999999761581421,\"name\":\"RollLand\",\"volume\":0.36800000071525576,\"t\":2326.9103766999999,\"muted\":false}],\"rolling\":true,\"ticks\":18}"
+        }
+      ],
+      "isError": false
+    },
+    "Speed": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"last\":{\"pitch\":1.1785928010940552,\"name\":\"RollTick4\",\"volume\":0.26802322268486025,\"t\":2382.7750622000005,\"muted\":false},\"landings\":1,\"landing\":{\"pitch\":0.8999999761581421,\"name\":\"RollLand\",\"volume\":0.36800000071525576,\"t\":2384.2427107000005,\"muted\":false},\"ticks\":14,\"scale\":0.7,\"first\":{\"pitch\":1.2996138334274293,\"name\":\"RollTick3\",\"volume\":0.3199999928474426,\"t\":2381.7083504,\"muted\":false}}"
+        }
+      ],
+      "isError": false
+    },
+    "Fast": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"last\":{\"pitch\":1.22878098487854,\"name\":\"RollTick4\",\"volume\":0.2719971537590027,\"t\":2386.7080507,\"muted\":false},\"landings\":1,\"landing\":{\"pitch\":0.8999999761581421,\"name\":\"RollLand\",\"volume\":0.36800000071525576,\"t\":2387.5089565999999,\"muted\":false},\"ticks\":4,\"first\":{\"pitch\":1.351946234703064,\"name\":\"RollTick1\",\"volume\":0.3199999928474426,\"t\":2386.4424896,\"muted\":false}}"
+        }
+      ],
+      "isError": false
+    },
+    "Mini": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"landings\":1,\"landing\":{\"pitch\":0.8999999761581421,\"name\":\"RollLand\",\"volume\":0.20239999890327454,\"t\":2577.1336355000005,\"muted\":false},\"ticks\":4,\"mini\":true,\"first\":{\"pitch\":1.3509403467178345,\"name\":\"RollTick3\",\"volume\":0.17599999904632569,\"t\":2576.0673558999999,\"muted\":false}}"
+        }
+      ],
+      "isError": false
+    },
+    "Mute": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"muted\":true,\"playedEvents\":0}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "limits": "Sound loading and Played events verified. Audible quality was not listened to. Tick cadence was frame-limited in the background Studio client. Rare cutscene suppression was compile-checked, not forced in Play. No save or publishing."
+}
