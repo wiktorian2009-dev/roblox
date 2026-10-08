@@ -1,0 +1,89 @@
+--- game/studio-snapshots/StarterGui/RNGGui/TreasureReveal.client.luau	2026-10-08 16:22:53.362564683 +0000
++++ outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/TreasureReveal.client.luau	2026-10-08 21:50:40.021113586 +0000
+@@ -1,3 +1,4 @@
++--[[ UIAUDIT 20261008 PATCH - INSTALL PENDING. Targets Studio script: StarterGui.RNGGui.TreasureReveal. Based on the snapshot captured from Studio on 2026-10-02; re-read the live script in Studio before installing and re-apply on top of any newer edits. Not installed. ]]
+ -- TreasureReveal (2026-10-01, Claude; PNG v2): Buried Treasures reveal + reward toasts (presentation only).
+ -- Treasure pictures come from TreasureIcon (PNG ids in TreasureConfig.Images, emoji placeholders until then).
+ -- TreasureService (server) decides finds, rewards and ownership. One 3D reveal at a time, capped queues,
+@@ -8,6 +9,7 @@
+ local TweenService = game:GetService("TweenService")
+ local RunService = game:GetService("RunService")
+ local SoundService = game:GetService("SoundService")
++local UIS = game:GetService("UserInputService")
+ local TC = require(RS:WaitForChild("TreasureConfig"))
+ local TreasureIcon = require(RS:WaitForChild("TreasureIcon"))
+ local NumberFormat = require(RS:WaitForChild("NumberFormat"))
+@@ -240,8 +242,43 @@
+ text(newBadge, {Text = "NEW DISCOVERY!", Position = UDim2.fromScale(0.06, 0.12), Size = UDim2.fromScale(0.88, 0.76), TextColor3 = NAVY, TextXAlignment = Enum.TextXAlignment.Center}, false)
+ local hintL = text(toast, {Position = UDim2.new(0, 10, 1, 4), Size = UDim2.fromOffset(280, 20), Visible = false, Text = "Your first treasure! Open TREASURES to see it."}, 2)
+ 
++-- UIAUDIT: on touch the toast must stop left of the DRIFT/DRIVE/RECOVER column that PlowDriveClient builds in PlowDriveGui
++-- (colW = max(130, floor(0.17 * W)) wide, 8 px from the right edge) plus a 16 px gap, so its right edge is W-(colW+24).
++-- Both guis use DeviceSafeInsets on touch, so W (this gui's AbsoluteSize) and the column share one coordinate space.
++-- A toast wider than the free space is scaled down (children are fixed-offset). Desktop keeps the old 16 px inset, scale 1.
++local toastScale = mk("UIScale", {Scale = 1}, toast)
++local baseInsets
++pcall(function() baseInsets = toastGui.ScreenInsets end)
++local toastHolding = false -- true while the toast rests at SHOWN, so a resize can re-snap it
++local function refreshToastShown()
++	local touch = UIS.TouchEnabled and not UIS.KeyboardEnabled
++	pcall(function()
++		local want = touch and Enum.ScreenInsets.DeviceSafeInsets or baseInsets
++		if want and toastGui.ScreenInsets ~= want then toastGui.ScreenInsets = want end
++	end)
++	if not touch then
++		SHOWN, toastScale.Scale = UDim2.new(1, -16, 0.6, 0), 1
++		return
++	end
++	local w = toastGui.AbsoluteSize.X
++	if w <= 0 then -- not laid out yet: the camera viewport is the same size on a phone
++		local cam = workspace.CurrentCamera
++		w = cam and cam.ViewportSize.X or 0
++	end
++	local colW = math.max(130, math.floor(0.17 * w))
++	SHOWN = UDim2.new(1, -(colW + 24), 0.6, 0)
++	toastScale.Scale = w > 0 and math.clamp((w - (colW + 24) - 8) / toast.Size.X.Offset, 0.5, 1) or 1
++end
++toastGui:GetPropertyChangedSignal("AbsoluteSize"):Connect(function() -- connected once
++	refreshToastShown()
++	if toastHolding and toast.Visible then toast.Position = SHOWN end
++end)
++refreshToastShown()
++
+ local toastQueue, mergedN, mergedSnow = {}, 0, 0
+ local function showToast(entry)
++	toastHolding = false
++	refreshToastShown() -- also picks up a keyboard/touch change since the last toast
+ 	iconHolder:ClearAllChildren()
+ 	if entry.merged then
+ 		TreasureIcon.Create({Image = TC.Images and TC.Images.MenuIcon or nil, Emoji = "🎁"}).Parent = iconHolder
+@@ -266,10 +303,16 @@
+ 	end
+ 	toast.Visible = true
+ 	toast.Position = HIDDEN
+-	TweenService:Create(toast, TweenInfo.new(0.35, Enum.EasingStyle.Back), {Position = SHOWN}):Play()
++	local slideIn = TweenService:Create(toast, TweenInfo.new(0.35, Enum.EasingStyle.Back), {Position = SHOWN})
++	slideIn:Play()
+ 	local hold = entry.hold or 1.8
+ 	if #toastQueue > 0 then hold = math.min(hold, 1.1) end
+-	task.wait(0.35 + hold)
++	task.wait(0.35)
++	slideIn:Cancel()
++	toast.Position = SHOWN -- lands on the current SHOWN even if the screen was resized during the slide
++	toastHolding = true
++	task.wait(hold)
++	toastHolding = false
+ 	TweenService:Create(toast, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Position = HIDDEN}):Play()
+ 	task.wait(0.28)
+ 	toast.Visible = false
+@@ -333,7 +376,9 @@
+ --------------------------------------------------
+ -- MYTHIC ANNOUNCEMENT (finds by nearby players)
+ --------------------------------------------------
+-local ann = mk("Frame", {Name = "Announce", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.new(0.5, 0, 0.26, 0), Size = UDim2.fromOffset(440, 48), BackgroundColor3 = WHITE, Visible = false}, toastGui)
++local ann = mk("Frame", {Name = "Announce", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.new(0.5, 0, 0.26, 0), Size = UDim2.new(0.9, 0, 0, 48), BackgroundColor3 = WHITE, Visible = false}, toastGui)
++-- UIAUDIT: 90% of the screen width, capped at the original 440x48, so a narrow (portrait) screen no longer clips the pill
++mk("UISizeConstraint", {MaxSize = Vector2.new(440, 48)}, ann)
+ mk("UICorner", {CornerRadius = UDim.new(1, 0)}, ann)
+ mk("UIStroke", {Thickness = 3, Color = NAVY, ApplyStrokeMode = Enum.ApplyStrokeMode.Border}, ann)
+ mk("UIGradient", {Color = RAINBOW}, ann)

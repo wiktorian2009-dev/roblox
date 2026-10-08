@@ -1,0 +1,194 @@
+--- game/studio-snapshots/StarterGui/RNGGui/PetClient.client.luau	2026-10-08 16:22:53.362564683 +0000
++++ outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/PetClient.client.luau	2026-10-08 21:48:39.747161494 +0000
+@@ -1,3 +1,4 @@
++--[[ UIAUDIT 20261008 PATCH - INSTALL PENDING. Targets Studio script: StarterGui.RNGGui.PetClient. Based on the snapshot captured from Studio on 2026-10-02; re-read the live script in Studio before installing and re-apply on top of any newer edits. Not installed. ]]
+ -- PetClient: pets-only inventory + egg hatch animation.
+ local Players = game:GetService("Players")
+ local ReplicatedStorage = game:GetService("ReplicatedStorage")
+@@ -155,7 +156,12 @@
+ 		for _, pet in ipairs(egg.Pets) do
+ 			order += 1
+ 			local n = pets[pet.Name] or 0
+-			if n > 0 then any = true; card(order, pet, n) end
++			if n > 0 then any = true; card(order * 2, pet, n) end
++			-- UIAUDIT F15: fused Golden pets are in no egg (PetConfig.GoldenOf only), so they get their own card right after the base pet
++			local g = PetConfig.GoldenOf[pet.Name]
++			local goldenPet = g and PetConfig.PetByName[g]
++			local gn = g and pets[g] or 0
++			if goldenPet and gn > 0 then any = true; card(order * 2 + 1, goldenPet, gn) end
+ 		end
+ 	end
+ 	-- 2026-10-03 (Claude, redo): the empty message sits over the area instead of being squeezed into one grid cell
+@@ -231,15 +237,18 @@
+ 	return EggModels.create(eggId)
+ end
+ 
++-- UIAUDIT F47/F56: runHatch (below) owns `playing`; playHatch only draws one reveal.
+ local playing = false
++local hatchQueue = {} -- Hatched results that arrived while a reveal was playing: {eggId, petName, isNew}
++local HATCH_QUEUE_CAP = 3
++local fadeTweens = {} -- dim / blur / flash tweens, kept so an error cleanup can cancel them (a running tween would undo the reset)
+ local function playHatch(eggId, petName, isNew)
+-	playing = true
+ 	for _, c in ipairs(stage:GetChildren()) do if c:IsA("ViewportFrame") then c:Destroy() end end
+ 	topText.Text, nameText.Text, subText.Text = "", "", ""
+ 	overlay.Visible = true
+ 	overlay.BackgroundTransparency = 1
+-	tween(overlay, 0.25, {BackgroundTransparency = 0.45})
+-	tween(blur, 0.25, {Size = 18})
++	fadeTweens.overlay = tween(overlay, 0.25, {BackgroundTransparency = 0.45})
++	fadeTweens.blur = tween(blur, 0.25, {Size = 18})
+ 
+ 	-- the egg: a clone of the real egg model if possible
+ 	local eggVp = mk("ViewportFrame", {BackgroundTransparency = 1, Size = UDim2.fromScale(1, 1), ZIndex = 21,
+@@ -265,7 +274,7 @@
+ 
+ 	-- pop!
+ 	flash.BackgroundTransparency = 0
+-	tween(flash, 0.5, {BackgroundTransparency = 1})
++	fadeTweens.flash = tween(flash, 0.5, {BackgroundTransparency = 1})
+ 	eggVp:Destroy()
+ 	local pet = PetConfig.PetByName[petName]
+ 	local color = pet and PetConfig.Rarities[pet.Rarity] or WHITE
+@@ -284,28 +293,64 @@
+ 		model:PivotTo(CFrame.Angles(0, (os.clock() - t1) * 1.5, 0))
+ 		task.wait()
+ 	end
+-	tween(overlay, 0.3, {BackgroundTransparency = 1})
+-	tween(blur, 0.3, {Size = 0})
++	fadeTweens.overlay = tween(overlay, 0.3, {BackgroundTransparency = 1})
++	fadeTweens.blur = tween(blur, 0.3, {Size = 0})
+ 	task.wait(0.3)
+ 	popScale:Destroy()
+ 	vp:Destroy()
+ 	overlay.Visible = false
+ 	topText.Text, nameText.Text, subText.Text = "", "", ""
++end
++
++-- UIAUDIT F56: put the reveal back to rest after an error inside playHatch (dim, blur, flash, leftover viewports / UIScale)
++local function resetHatch()
++	for _, tw in pairs(fadeTweens) do tw:Cancel() end
++	table.clear(fadeTweens)
++	overlay.BackgroundTransparency = 1
++	overlay.Visible = false
++	blur.Size = 0
++	flash.BackgroundTransparency = 1
++	for _, c in ipairs(stage:GetChildren()) do
++		if c:IsA("ViewportFrame") or c:IsA("UIScale") then c:Destroy() end
++	end
++	topText.Text, nameText.Text, subText.Text = "", "", ""
++end
++
++-- UIAUDIT F47/F56: play one reveal under pcall, then start the next queued one (the server hatch cooldown is untouched)
++local function runHatch(eggId, petName, isNew)
++	playing = true
++	task.delay(4.6, function() updateSigns(petName) end) -- light up after the reveal
++	local ok, err = pcall(playHatch, eggId, petName, isNew)
++	if not ok then
++		warn("[PetClient] hatch reveal failed: " .. tostring(err))
++		resetHatch()
++	end
+ 	playing = false
++	local nextHatch = table.remove(hatchQueue, 1)
++	if nextHatch then task.spawn(runHatch, nextHatch[1], nextHatch[2], nextHatch[3]) end
+ end
+ 
+ -- "not enough snow" toast
+ local toast = label(gui, "", {Name = "Toast", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.235), -- 2026-10-03: below the tutorial box
+ 	Size = UDim2.fromScale(0.5, 0.06), TextColor3 = Color3.fromRGB(255, 110, 110), TextTransparency = 1, ZIndex = 30}, 3)
+ local toastStroke = toast:FindFirstChildOfClass("UIStroke")
++-- UIAUDIT F09: the old `tween(...).Delay = 0` threw (a Tween has no Delay member) before the stroke fade was scheduled, leaving the outline up.
++-- Hold the toast, then fade text and outline together; a newer toast cancels the older fade.
++local toastSeq, toastFade = 0, {}
+ local function showToast(text)
++	toastSeq += 1
++	local seq = toastSeq
++	for _, tw in ipairs(toastFade) do tw:Cancel() end
++	toastFade = {}
+ 	toast.Text = text
+ 	toast.TextTransparency = 0
+ 	toastStroke.Transparency = 0
+-	tween(toast, 0.6, {TextTransparency = 1}, Enum.EasingStyle.Quad, Enum.EasingDirection.In).Delay = 0
+ 	task.delay(1.2, function()
+-		tween(toast, 0.5, {TextTransparency = 1})
+-		tween(toastStroke, 0.5, {Transparency = 1})
++		if seq ~= toastSeq then return end -- a newer toast owns the label now
++		toastFade = {
++			tween(toast, 0.5, {TextTransparency = 1}),
++			tween(toastStroke, 0.5, {Transparency = 1}),
++		}
+ 	end)
+ end
+ 
+@@ -317,8 +362,13 @@
+ 		pets = c or pets
+ 		equipped = d or equipped
+ 		discovered = e or discovered
+-		if not playing then task.spawn(playHatch, eggId, a, b) end
+-		task.delay(4.6, function() updateSigns(a) end) -- light up after the reveal
++		if not playing then
++			task.spawn(runHatch, eggId, a, b)
++		elseif #hatchQueue < HATCH_QUEUE_CAP then
++			table.insert(hatchQueue, {eggId, a, b}) -- UIAUDIT F47: reveal it when the current one ends
++		else
++			task.delay(4.6, function() updateSigns(a) end) -- queue full: no reveal, still light up the sign
++		end
+ 		refresh()
+ 	end
+ end)
+@@ -369,6 +419,20 @@
+ 	end
+ end
+ 
++-- UIAUDIT F36: sign height above the egg part; shared by the first build and the rebind after a stream-in
++local function placeSign(bb, model, part)
++	local _, size = model:GetBoundingBox()
++	bb.StudsOffsetWorldSpace = Vector3.new(0, size.Y / 2 + 4.8, 0)
++	bb.SizeOffset = Vector2.new(0, 0)
++	-- lobby row eggs (Shell on a pedestal): sit the panel just above the egg itself
++	local shellPart = model:FindFirstChild("Shell")
++	if shellPart and shellPart:IsA("BasePart") then
++		local eggTop = shellPart.Position.Y + shellPart.Size.Y / 2 - part.Position.Y
++		bb.StudsOffsetWorldSpace = Vector3.new(0, eggTop + 1.3, 0)
++		bb.SizeOffset = Vector2.new(0, 0.5)
++	end
++end
++
+ local function makeSign(prompt)
+ 	local part = prompt.Parent
+ 	if not part then return end
+@@ -377,21 +441,24 @@
+ 	if not model then return end
+ 	local egg = PetConfig.EggById[model.Name]
+ 	local pg = Players.LocalPlayer:WaitForChild("PlayerGui")
+-	if pg:FindFirstChild("PetSign_" .. egg.Id) then return end
+-	local _, size = model:GetBoundingBox()
++	if pg:FindFirstChild("PetSign_" .. egg.Id) then
++		-- UIAUDIT F36: the egg streamed out and back in as a new part: rebind the existing sign to it (a live part keeps its sign)
++		local old = signs[egg.Id]
++		if old and old.bb and (not old.part or not old.part.Parent or not old.part:IsDescendantOf(workspace)) then
++			old.part = part
++			old.bb.Adornee = part
++			placeSign(old.bb, model, part)
++			old.shown = false -- the proximity loop below pops it in again when the player is close
++			old.bb.Enabled = false
++		end
++		return
++	end
+ 
+ 	local bb = Instance.new("BillboardGui")
+ 	bb.Name = "PetSign_" .. egg.Id
+ 	bb.Adornee = part
+ 	bb.Size = UDim2.fromOffset(270, 205)
+-	bb.StudsOffsetWorldSpace = Vector3.new(0, size.Y / 2 + 4.8, 0)
+-	-- lobby row eggs (Shell on a pedestal): sit the panel just above the egg itself
+-	local shellPart = model:FindFirstChild("Shell")
+-	if shellPart and shellPart:IsA("BasePart") then
+-		local eggTop = shellPart.Position.Y + shellPart.Size.Y / 2 - part.Position.Y
+-		bb.StudsOffsetWorldSpace = Vector3.new(0, eggTop + 1.3, 0)
+-		bb.SizeOffset = Vector2.new(0, 0.5)
+-	end
++	placeSign(bb, model, part)
+ 	bb.MaxDistance = 1000
+ 	bb.Enabled = false -- shown by the proximity loop below
+ 	bb.LightInfluence = 0

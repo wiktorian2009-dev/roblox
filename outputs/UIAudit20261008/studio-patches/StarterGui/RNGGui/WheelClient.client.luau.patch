@@ -1,0 +1,19 @@
+--- game/studio-snapshots/StarterGui/RNGGui/WheelClient.client.luau	2026-10-08 16:22:53.362564683 +0000
++++ outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/WheelClient.client.luau	2026-10-08 20:06:00.774795386 +0000
+@@ -1,3 +1,4 @@
++--[[ UIAUDIT 20261008 PATCH - INSTALL PENDING. Targets Studio script: StarterGui.RNGGui.WheelClient. Based on the snapshot captured from Studio on 2026-10-02; re-read the live script in Studio before installing and re-apply on top of any newer edits. Not installed. ]]
+ -- WheelClient (2026-10-03, Claude): the Lucky Wheel panel = RNGGui.Panels.Wheel, opened by LeftMenu.Wheel through RNGClient's
+ -- normal panel logic. You get a free spin for every newly unlocked stage. WheelService (server) picks and grants the prize;
+ -- this script only draws and animates. Slices come from ReplicatedStorage.WheelConfig.
+@@ -262,6 +263,11 @@
+ 	setSpins(player:GetAttribute("WheelSpins") or res.Spins)
+ 	showResult(res.Prize)
+ 	confetti()
++	-- UIAUDIT F68: the server granted the prize the moment "Spin" returned; if the panel was closed during the spin the
++	-- in-panel result is never seen (and is hidden again on reopen), so announce the prize with the existing WheelToast
++	local prize = res.Prize
++	local what = type(prize) == "table" and (prize.Long or prize.Text)
++	if what and not panel.Visible then showToast("YOU WON " .. what) end
+ end
+ spinButton.Activated:Connect(spin)
+ hub.Activated:Connect(spin)
