@@ -8,6 +8,8 @@
 -- the step; SKIP skips the remaining lessons. Progress / timings: PlowService "TutorialProgress" (Tutorial v2 checkpoint, onboarding funnel).
 -- While an essential step shows, LocalPlayer.SuppressEvents = true (contract + Frost King announcements wait). Replay: the HELP pill.
 -- Studio debug (BalanceTestMode sessions only): PlayerGui.PlowTutorial.TutorialDebug:Invoke("State" | "Start", lesson, stepId | "Stop").
+-- 2026-10-08 UI audit (UILayout): HELP stack clamped above the bottom edge on phones, HELP menu closes when anything else opens (one menu at a time),
+-- 150 px touch card with 40-44 px buttons, spotlight ring fully click-blocked, EQUIP row scrolled into its list, resume lessons only when idle.
 local Players = game:GetService("Players")
 local RS = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -23,6 +25,7 @@ local SF = require(RS:WaitForChild("SnowFields"))
 local Format = require(RS:WaitForChild("NumberFormat"))
 local Art = require(RS:WaitForChild("SnowArt"))
 local CleanControls = require(RS:WaitForChild("CleanControls"))
+local UILayout = require(RS:WaitForChild("UILayout"))
 local remote = RS:WaitForChild("PlowRemote")
 local event = RS:WaitForChild("PlowEvent")
 local collected = RS:WaitForChild("SnowCollected")
@@ -70,26 +73,29 @@ local card = mk("Frame", {Name = "Card", AnchorPoint = Vector2.new(0.5, 0), Posi
 card:SetAttribute("SnowUIDecor", true)
 mk("UICorner", {CornerRadius = UDim.new(0.16, 0)}, card)
 mk("UIStroke", {Thickness = 3, Color = Color3.fromRGB(150, 215, 255), ApplyStrokeMode = Enum.ApplyStrokeMode.Border}, card)
-mk("UISizeConstraint", {MinSize = Vector2.new(300, 92), MaxSize = Vector2.new(760, 178)}, card)
+-- touch (see layoutHud): MinSize 300x150 so the fixed-pixel card layout below always fits; MaxSize is the same on every device
+local cardLimit = mk("UISizeConstraint", {MinSize = Vector2.new(300, 92), MaxSize = Vector2.new(760, 178)}, card)
 local cardScale = mk("UIScale", {Scale = 1}, card)
-local stepL = mk("TextLabel", {Name = "Step", BackgroundTransparency = 1, Position = UDim2.fromScale(0.04, 0.05), Size = UDim2.fromScale(0.6, 0.17), Font = FONT, TextScaled = true,
-	TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = ICE, Text = "", ZIndex = 11}, card)
-local mainL = mk("TextLabel", {Name = "Text", BackgroundTransparency = 1, Position = UDim2.fromScale(0.04, 0.22), Size = UDim2.fromScale(0.92, 0.42), Font = FONT, TextScaled = true,
-	TextWrapped = true, TextColor3 = WHITE, Text = "", ZIndex = 11}, card)
+-- text never shrinks below 11 px (a label that cannot fit at 11 px wraps or overflows instead of becoming unreadable)
+local function minText(label) mk("UITextSizeConstraint", {MinTextSize = UILayout.MIN_TEXT_DENSE}, label); return label end
+local stepL = minText(mk("TextLabel", {Name = "Step", BackgroundTransparency = 1, Position = UDim2.fromScale(0.04, 0.05), Size = UDim2.fromScale(0.6, 0.17), Font = FONT, TextScaled = true,
+	TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = ICE, Text = "", ZIndex = 11}, card))
+local mainL = minText(mk("TextLabel", {Name = "Text", BackgroundTransparency = 1, Position = UDim2.fromScale(0.04, 0.22), Size = UDim2.fromScale(0.92, 0.42), Font = FONT, TextScaled = true,
+	TextWrapped = true, TextColor3 = WHITE, Text = "", ZIndex = 11}, card))
 mk("UIStroke", {Thickness = 2, Color = NAVY}, mainL)
-local progL = mk("TextLabel", {Name = "Progress", BackgroundTransparency = 1, Position = UDim2.fromScale(0.04, 0.64), Size = UDim2.fromScale(0.92, 0.17), Font = FONT, TextScaled = true,
-	TextColor3 = GOLD, Text = "", ZIndex = 11}, card)
+local progL = minText(mk("TextLabel", {Name = "Progress", BackgroundTransparency = 1, Position = UDim2.fromScale(0.04, 0.64), Size = UDim2.fromScale(0.92, 0.17), Font = FONT, TextScaled = true,
+	TextColor3 = GOLD, Text = "", ZIndex = 11}, card))
 mk("UIStroke", {Thickness = 2, Color = NAVY}, progL)
-local hintL = mk("TextLabel", {Name = "Hint", BackgroundTransparency = 1, Position = UDim2.fromScale(0.04, 0.81), Size = UDim2.fromScale(0.92, 0.16), Font = FONT, TextScaled = true,
-	TextColor3 = Color3.fromRGB(255, 240, 190), Text = "", ZIndex = 11}, card)
+local hintL = minText(mk("TextLabel", {Name = "Hint", BackgroundTransparency = 1, Position = UDim2.fromScale(0.04, 0.81), Size = UDim2.fromScale(0.92, 0.16), Font = FONT, TextScaled = true,
+	TextColor3 = Color3.fromRGB(255, 240, 190), Text = "", ZIndex = 11}, card))
 mk("UIStroke", {Thickness = 1.6, Color = NAVY}, hintL)
 local function smallButton(parent, text, color, pos, size)
 	local b = mk("TextButton", {Text = "", AutoButtonColor = true, BackgroundColor3 = color, Position = pos, Size = size, ZIndex = 12}, parent)
 	b:SetAttribute("SnowUIDecor", true)
 	mk("UICorner", {CornerRadius = UDim.new(1, 0)}, b)
 	mk("UIStroke", {Thickness = 2.5, Color = NAVY, ApplyStrokeMode = Enum.ApplyStrokeMode.Border}, b)
-	local l = mk("TextLabel", {Name = "Label", BackgroundTransparency = 1, Size = UDim2.fromScale(0.86, 0.72), Position = UDim2.fromScale(0.07, 0.14), Font = FONT, TextScaled = true,
-		TextColor3 = NAVY, Text = text, ZIndex = 13}, b)
+	local l = minText(mk("TextLabel", {Name = "Label", BackgroundTransparency = 1, Size = UDim2.fromScale(0.86, 0.72), Position = UDim2.fromScale(0.07, 0.14), Font = FONT, TextScaled = true,
+		TextColor3 = NAVY, Text = text, ZIndex = 13}, b))
 	return b, l
 end
 local helpB = smallButton(card, "? HELP", Color3.fromRGB(255, 225, 120), UDim2.fromScale(0.66, 0.04), UDim2.fromScale(0.15, 0.17))
@@ -102,6 +108,31 @@ Art.SkinPanel(card, "dark")
 Art.SkinButton(helpB, "gold"); Art.SkinButton(skipB, "blue"); Art.SkinButton(nextB, "green")
 skipText.TextColor3 = WHITE; mk("UIStroke", {Thickness = 2, Color = NAVY}, skipText)
 
+-- card children. Touch: fixed pixel layout inside a card that is always >= 150 high (HELP / SKIP 84x40, OK! 110x44, text never below 11 px).
+-- Everything else keeps the original fractional layout. Switched by layoutHud when the input kind changes.
+local function layoutCard(touch)
+	local function put(o, anchor, pos, size) o.AnchorPoint, o.Position, o.Size = anchor, pos, size end
+	local zero = Vector2.zero
+	if touch then
+		put(stepL, zero, UDim2.new(0, 10, 0, 6), UDim2.new(1, -196, 0, 40))
+		put(mainL, zero, UDim2.new(0, 10, 0, 48), UDim2.new(1, -20, 0, 52))
+		put(hintL, zero, UDim2.new(0, 10, 0, 102), UDim2.new(1, -20, 0, 20))
+		put(progL, zero, UDim2.new(0, 10, 0, 124), UDim2.new(1, -20, 0, 18))
+		put(helpB, Vector2.new(1, 0), UDim2.new(1, -98, 0, 6), UDim2.fromOffset(84, 40))
+		put(skipB, Vector2.new(1, 0), UDim2.new(1, -6, 0, 6), UDim2.fromOffset(84, 40))
+		put(nextB, Vector2.new(0.5, 1), UDim2.new(0.5, 0, 1, -6), UDim2.fromOffset(110, 44))
+	else
+		put(stepL, zero, UDim2.fromScale(0.04, 0.05), UDim2.fromScale(0.6, 0.17))
+		put(mainL, zero, UDim2.fromScale(0.04, 0.22), UDim2.fromScale(0.92, 0.42))
+		put(hintL, zero, UDim2.fromScale(0.04, 0.81), UDim2.fromScale(0.92, 0.16))
+		put(progL, zero, UDim2.fromScale(0.04, 0.64), UDim2.fromScale(0.92, 0.17))
+		put(helpB, zero, UDim2.fromScale(0.66, 0.04), UDim2.fromScale(0.15, 0.17))
+		put(skipB, zero, UDim2.fromScale(0.82, 0.04), UDim2.fromScale(0.14, 0.17))
+		put(nextB, zero, UDim2.fromScale(0.38, 0.66), UDim2.fromScale(0.24, 0.26))
+	end
+	stepL.TextWrapped, hintL.TextWrapped = touch, touch -- a long title / hint takes a second line instead of shrinking below 11 px
+end
+
 -- spotlight (2026-10-06): the screen dims around the current target. Click steps: a soft dark dim made of 4 Active frames around a
 -- feathered cut-out (only the target - and this card - can be clicked). Drive / walk steps: a light dim that never blocks input.
 local SPOT_DARK = Color3.new(0, 0, 0)
@@ -113,6 +144,13 @@ for _, n in ipairs({"Top", "Bottom", "Left", "Right"}) do
 end
 local hole = mk("ImageLabel", {Name = "Hole", BackgroundTransparency = 1, Image = Art.Images.tut_spot, ImageColor3 = SPOT_DARK, ImageTransparency = 1, ScaleType = Enum.ScaleType.Slice,
 	SliceCenter = Rect.new(96, 96, 160, 160), Active = false, Visible = false, ZIndex = 3}, spot)
+-- F27: the feathered ring between the clear rect (target + 8 px) and the dims' inner edge (e = 68 * k px) is covered by the Hole image, which is not
+-- Active, so a tap there reached MINIS / AFK / neighbouring hexagons. Four transparent Active blockers fill that ring in click mode only.
+-- ZIndex 4: above the dims, below the Card (10) and the HELP pill (5), so both stay usable. The clear rect itself is never covered.
+local blockers = {}
+for _, n in ipairs({"Top", "Bottom", "Left", "Right"}) do
+	blockers[n] = mk("Frame", {Name = "Block" .. n, BackgroundTransparency = 1, BorderSizePixel = 0, Active = false, Visible = false, ZIndex = 4}, spot)
+end
 local spotAlpha, spotHp, spotHs = 1, nil, nil
 local function viewportSize() return sg.AbsoluteSize.X > 10 and sg.AbsoluteSize or workspace.CurrentCamera.ViewportSize end
 -- mode: "click" | "light" | nil (clear); hp / hs: the clear rect (screen offsets in this overlay) or nil for a plain dim
@@ -136,14 +174,23 @@ local function setSpot(mode, hp, hs, dt)
 		dims.Left.Position, dims.Left.Size = UDim2.fromOffset(-4, y0), UDim2.fromOffset(math.max(0, x0 + 4), y1 - y0)
 		dims.Right.Position, dims.Right.Size = UDim2.fromOffset(x1, y0), UDim2.fromOffset(math.max(0, vp.X - x1), y1 - y0)
 		for _, f in pairs(dims) do f.Visible = true end
+		-- blockers: the Hole's outer rect (x0..x1, y0..y1) minus the clear rect (hp .. hp + hs)
+		local cx1, cy1 = hp.X + hs.X, hp.Y + hs.Y
+		blockers.Top.Position, blockers.Top.Size = UDim2.fromOffset(x0, y0), UDim2.fromOffset(math.max(0, x1 - x0), math.max(0, hp.Y - y0))
+		blockers.Bottom.Position, blockers.Bottom.Size = UDim2.fromOffset(x0, cy1), UDim2.fromOffset(math.max(0, x1 - x0), math.max(0, y1 - cy1))
+		blockers.Left.Position, blockers.Left.Size = UDim2.fromOffset(x0, hp.Y), UDim2.fromOffset(math.max(0, hp.X - x0), math.max(0, cy1 - hp.Y))
+		blockers.Right.Position, blockers.Right.Size = UDim2.fromOffset(cx1, hp.Y), UDim2.fromOffset(math.max(0, x1 - cx1), math.max(0, cy1 - hp.Y))
+		for _, f in pairs(blockers) do f.Visible = block; f.Active = block end
 	elseif show then
 		hole.Visible = false
 		dims.Top.Position, dims.Top.Size, dims.Top.Visible = UDim2.fromOffset(-4, -4), UDim2.fromOffset(vp.X, vp.Y), true
 		dims.Bottom.Visible, dims.Left.Visible, dims.Right.Visible = false, false, false
 		dims.Top.Active = block
+		for _, f in pairs(blockers) do f.Visible = false; f.Active = false end
 	else
 		hole.Visible = false
 		for _, f in pairs(dims) do f.Visible = false; f.Active = false end
+		for _, f in pairs(blockers) do f.Visible = false; f.Active = false end
 		spotHp, spotHs = nil, nil
 	end
 end
@@ -177,10 +224,14 @@ local helpPill = mk("TextButton", {Name = "HelpPill", Text = "", AutoButtonColor
 helpPill:SetAttribute("SnowUIDecor", true)
 mk("UICorner", {CornerRadius = UDim.new(1, 0)}, helpPill)
 mk("UIStroke", {Thickness = 2.5, Color = NAVY, ApplyStrokeMode = Enum.ApplyStrokeMode.Border}, helpPill)
-mk("UISizeConstraint", {MinSize = Vector2.new(92, 32)}, helpPill)
-mk("TextLabel", {BackgroundTransparency = 1, Size = UDim2.fromScale(0.86, 0.7), Position = UDim2.fromScale(0.07, 0.15), Font = FONT, TextScaled = true, TextColor3 = NAVY, Text = "? HELP", ZIndex = 6}, helpPill)
+local pillLimit = mk("UISizeConstraint", {MinSize = Vector2.new(92, 32)}, helpPill) -- touch: 40 high (see layoutHud)
+minText(mk("TextLabel", {BackgroundTransparency = 1, Size = UDim2.fromScale(0.86, 0.7), Position = UDim2.fromScale(0.07, 0.15), Font = FONT, TextScaled = true, TextColor3 = NAVY, Text = "? HELP", ZIndex = 6}, helpPill))
+-- the pill is shown when a lesson says so (pillOn) and hidden while the UPGRADES screen covers the HUD or on the Bumper Arena island (layoutHud)
+local pillOn = false
+local function setPill(on) pillOn = on == true end
+-- Active: taps in the menu's gaps must not reach the contract pill / HELP REQUEST popup beneath it (F48)
 local helpMenu = mk("Frame", {Name = "HelpMenu", AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.012, 0.83), Size = UDim2.fromScale(0.22, 0.2), BackgroundColor3 = Color3.fromRGB(18, 73, 122),
-	Visible = false, ZIndex = 40}, sg)
+	Active = true, Visible = false, ZIndex = 40}, sg)
 helpMenu:SetAttribute("SnowUIDecor", true)
 mk("UICorner", {CornerRadius = UDim.new(0.12, 0)}, helpMenu)
 mk("UIStroke", {Thickness = 3, Color = Color3.fromRGB(150, 215, 255), ApplyStrokeMode = Enum.ApplyStrokeMode.Border}, helpMenu)
@@ -199,6 +250,7 @@ for _, b in ipairs({replayMainB, replayGarageB, closeMenuB}) do
 	b.Label.TextColor3 = WHITE
 	b.Label.ZIndex = b.ZIndex + 2
 	mk("UIStroke", {Thickness = 1.5, Color = NAVY}, b.Label)
+	mk("UISizeConstraint", {MinSize = Vector2.new(0, UILayout.MIN_TOUCH_DENSE)}, b) -- never a tiny touch target (the menu is at least 150 high: 3 x 40 fit)
 end
 
 --------------------------------------------------
@@ -219,6 +271,73 @@ local function screenRect(o)
 	return o.AbsolutePosition - sg.AbsolutePosition, o.AbsoluteSize
 end
 local function viewport() return sg.AbsoluteSize.X > 10 and sg.AbsoluteSize or workspace.CurrentCamera.ViewportSize end
+
+-- nearest ScrollingFrame above a UI target (nil when it is not inside a list)
+local function scrollerOf(o)
+	local p = o.Parent
+	while p and not p:IsA("LayerCollector") do
+		if p:IsA("ScrollingFrame") then return p end
+		p = p.Parent
+	end
+	return nil
+end
+-- share (0..1) of a UI target that lies inside the visible window of its nearest ScrollingFrame (1 when it is not inside one)
+local function windowShare(o)
+	local sc = scrollerOf(o)
+	if not sc then return 1 end
+	local ap, asz, wp, ws = o.AbsolutePosition, o.AbsoluteSize, sc.AbsolutePosition, sc.AbsoluteWindowSize
+	local w = math.min(ap.X + asz.X, wp.X + ws.X) - math.max(ap.X, wp.X)
+	local h = math.min(ap.Y + asz.Y, wp.Y + ws.Y) - math.max(ap.Y, wp.Y)
+	if w <= 0 or h <= 0 then return 0 end
+	return (w * h) / math.max(1, asz.X * asz.Y)
+end
+-- F10: centre a target inside its ScrollingFrame's window (a phone shows only ~4 rows of the parts list). Cheap and rate-limited, so it
+-- never fights a layout pass that has not applied the previous scroll yet.
+local lastScrollAt = 0
+local function scrollIntoView(o)
+	local sc = scrollerOf(o)
+	if not sc or windowShare(o) >= 0.98 or os.clock() - lastScrollAt < 0.1 then return end
+	lastScrollAt = os.clock()
+	local oc = o.AbsolutePosition + o.AbsoluteSize / 2
+	local wc = sc.AbsolutePosition + sc.AbsoluteWindowSize / 2
+	local maxScroll = Vector2.new(math.max(0, sc.AbsoluteCanvasSize.X - sc.AbsoluteWindowSize.X), math.max(0, sc.AbsoluteCanvasSize.Y - sc.AbsoluteWindowSize.Y))
+	sc.CanvasPosition = Vector2.new(math.clamp(sc.CanvasPosition.X + (oc.X - wc.X), 0, maxScroll.X), math.clamp(sc.CanvasPosition.Y + (oc.Y - wc.Y), 0, maxScroll.Y))
+end
+-- F22: the UPGRADES screen (DisplayOrder 150, full screen, Active) sits under this overlay (200): a spotlight or click dim on anything that is
+-- not part of it would point at a button the player cannot reach, and block the screen's own X
+local function underTreeCover(o)
+	local g = pg:FindFirstChild("UpgradeTreeGui")
+	return g ~= nil and g:IsA("ScreenGui") and g.Enabled and not o:IsDescendantOf(g)
+end
+
+-- per frame: touch / desktop card constants and layout, and the bottom-left HELP stack (F37)
+local lastTouch
+local function layoutHud()
+	local touch = UILayout.isTouch()
+	if touch ~= lastTouch then
+		lastTouch = touch
+		pillLimit.MinSize = Vector2.new(92, touch and UILayout.MIN_TOUCH_DENSE or 32)
+		cardLimit.MinSize = Vector2.new(300, touch and 150 or 92)
+		layoutCard(touch)
+	end
+	local vp = viewport()
+	-- HELP: top = min(0.835 H, H - (2 h + gap + 16)) so HELP + TRAVEL (same height, gap below HELP, TravelClient) end >= 16 px above the bottom edge;
+	-- 1080p / 720p keep 0.835 H. TRAVEL and the offer cards follow the pill's live rect.
+	local h = helpPill.AbsoluteSize.Y
+	if h < 1 then h = math.max(pillLimit.MinSize.Y, vp.Y * 0.045) end
+	local gap = math.max(6, math.floor(0.18 * h))
+	local y = math.max(0, math.floor(math.min(0.835 * vp.Y, vp.Y - (2 * h + gap + UILayout.MARGIN))))
+	local pillPos, menuPos = UDim2.new(0.012, 0, 0, y), UDim2.new(0.012, 0, 0, y - 6) -- the menu's bottom (anchor 0,1) sits 6 px above the live pill
+	if helpPill.Position ~= pillPos then helpPill.Position = pillPos end
+	if helpMenu.Position ~= menuPos then helpMenu.Position = menuPos end
+	-- the UPGRADES screen covers the HUD: HELP hides while it is open and comes back afterwards (never on the Bumper Arena island)
+	local tree = pg:FindFirstChild("UpgradeTreeGui")
+	local treeOpen = tree ~= nil and tree:IsA("ScreenGui") and tree.Enabled
+	if treeOpen and helpMenu.Visible then helpMenu.Visible = false end
+	local want = pillOn and not treeOpen and player:GetAttribute("InArenaIsland") ~= true
+	if helpPill.Visible ~= want then helpPill.Visible = want end
+end
+RunService.RenderStepped:Connect(layoutHud)
 
 local cur = {target = nil, missingSince = nil}
 local worldFx = mk("Folder", {Name = "TutorialWorldFX"}, workspace)
@@ -315,7 +434,15 @@ end
 local function hidePointer()
 	arrow.Visible, ring.Visible, ring2.Visible, tag.Visible, edgeArrow.Visible = false, false, false, false, false
 end
+-- the card sits in the top slot; when a UI target would be under it, it moves to a lower slot (lower middle on desktop, 0.45 H on touch where the
+-- screen is short). F53: every step change, stopLesson and every non-UI target puts it back in the top slot.
+local CARD_TOP = UDim2.fromScale(0.5, 0.025)
 local cardAtBottom = false
+local function placeCard(low)
+	if low == cardAtBottom then return end
+	cardAtBottom = low
+	card.Position = low and UDim2.fromScale(0.5, UILayout.isTouch() and 0.45 or 0.6) or CARD_TOP
+end
 -- the overlay clears while you're dead / respawning or behind a loading screen
 local charGone = false
 local function watchChar(c)
@@ -344,13 +471,16 @@ RunService.RenderStepped:Connect(function(dt)
 	local t = cur.target
 	local blocked = charGone or player:GetAttribute("LoadingScreenActive") == true
 	if not card.Visible or blocked then hidePointer(); setSpot(nil, nil, nil, dt); releaseSelect(); if marker then clearWorld() end return end
-	if not t then hidePointer(); setSpot("light", nil, nil, dt); releaseSelect(); if marker then clearWorld() end return end -- OK cards: light dim
+	if not t then placeCard(false); hidePointer(); setSpot("light", nil, nil, dt); releaseSelect(); if marker then clearWorld() end return end -- OK cards: light dim
 	if t.kind == "ui" then
 		if marker then clearWorld() end
 		local o = t.get and t.get()
-		if o and o.Parent and guiShown(o) and o.AbsoluteSize.X > 2 then
+		-- usable = really there, shown, and not behind the full-screen UPGRADES page (F22); a target scrolled out of its list is scrolled back in first
+		-- and counts as missing until at least half of it is inside the list's window (F10): no dim, no ring, nothing to sink the scroll drag
+		local usable = o ~= nil and o.Parent ~= nil and guiShown(o) and o.AbsoluteSize.X > 2 and not underTreeCover(o)
+		if usable and t.ensure then t.ensure(o) end
+		if usable and windowShare(o) >= 0.5 then
 			cur.missingSince = nil
-			if t.ensure then t.ensure(o) end
 			local pos, size = screenRect(o)
 			setSpot(t.soft and "light" or "click", pos - Vector2.new(8, 8), size + Vector2.new(16, 16), dt)
 			padSelect(o)
@@ -363,19 +493,22 @@ RunService.RenderStepped:Connect(function(dt)
 			ringCorner.CornerRadius = UDim.new(0, math.min(size.X, size.Y) * 0.3)
 			placeArrowNear(pos, size, t.label)
 			edgeArrow.Visible = false
-			-- keep the instruction card off the target: move it to the lower middle if the target sits under its top slot
+			-- keep the instruction card off the target: move it to the lower slot if the target sits under its top slot AND the lower slot
+			-- does not cover it either (short phone screens). Uses the card's real size (AbsoluteSize includes the open animation's UIScale).
 			local vp, csize = viewport(), card.AbsoluteSize
-			local topX0, topY1 = (vp.X - csize.X) / 2, vp.Y * 0.025 + csize.Y + 130
-			local overlapTop = pos.X < topX0 + csize.X and pos.X + size.X > topX0 and pos.Y < topY1
-			if overlapTop ~= cardAtBottom then
-				cardAtBottom = overlapTop
-				card.Position = cardAtBottom and UDim2.fromScale(0.5, 0.6) or UDim2.fromScale(0.5, 0.025)
-			end
+			local sc = math.max(0.05, cardScale.Scale)
+			local cw, ch = csize.X / sc, csize.Y / sc
+			local cx0 = (vp.X - cw) / 2
+			local lowY = vp.Y * (UILayout.isTouch() and 0.45 or 0.6)
+			local function hits(y0, y1) return pos.X < cx0 + cw and pos.X + size.X > cx0 and pos.Y < y1 and pos.Y + size.Y > y0 end
+			local overlapTop = hits(-1e4, vp.Y * 0.025 + ch + 130)
+			placeCard(overlapTop and not hits(lowY, lowY + ch))
 		else
 			hidePointer(); setSpot(nil, nil, nil, dt); releaseSelect() -- target missing: never leave a dim with nothing to press
 			cur.missingSince = cur.missingSince or os.clock()
 		end
 	elseif t.kind == "world" then
+		placeCard(false)
 		hidePointer(); releaseSelect()
 		local p, model = worldPoint(t)
 		if not p then setSpot(nil, nil, nil, dt); cur.missingSince = cur.missingSince or os.clock(); return end
@@ -400,8 +533,12 @@ RunService.RenderStepped:Connect(function(dt)
 			local c = vp / 2
 			local k = math.min((vp.X / 2 - 70) / math.max(1e-3, math.abs(dir.X)), (vp.Y / 2 - 70) / math.max(1e-3, math.abs(dir.Y)))
 			local at = c + dir * k
-			local cp, cs = screenRect(card) -- never on top of the lesson card (targets behind the camera point up, where the card sits)
-			if card.Visible and at.X > cp.X - 60 and at.X < cp.X + cs.X + 60 and at.Y < cp.Y + cs.Y + 60 then at = Vector2.new(at.X, cp.Y + cs.Y + 60) end
+			local cp, cs = screenRect(card) -- never on top of the lesson card, wherever it is now (targets behind the camera point up, where the top slot is)
+			if card.Visible and at.X > cp.X - 60 and at.X < cp.X + cs.X + 60 and at.Y > cp.Y - 60 and at.Y < cp.Y + cs.Y + 60 then
+				local below, above = cp.Y + cs.Y + 60, cp.Y - 60
+				local useBelow = (at.Y >= cp.Y + cs.Y / 2 and below <= vp.Y - 30) or above < 30
+				at = Vector2.new(at.X, useBelow and below or above)
+			end
 			edgeArrow.Position = UDim2.fromOffset(at.X, at.Y)
 			edgeArrow.Rotation = math.deg(math.atan2(dir.Y, dir.X)) - 90
 			edgeArrow.Visible = true
@@ -503,17 +640,26 @@ S(MAIN, {id = "Intro", essential = true, title = "WELCOME!",
 	text = function() return "Drive through snow to earn Snow.\nUse it to improve your plow!" end, okButton = true,
 	done = function() return ctx.ok end})
 S(MAIN, {id = "Drive", essential = true, title = "STEP 1: GET IN",
-	text = function() return "Your starter plow is ready!\n" .. pick("Press F or click DRIVE to hop in.", "Tap DRIVE to hop in.", "Press Y (or select DRIVE) to hop in.") end,
+	text = function()
+		-- in the garage the button on the screen is LOBBY (PlowShopClient relabels GARAGE): say so instead of DRIVE
+		if player:GetAttribute("InGarage") then return "Your starter plow is ready!\n" .. pick("Click LOBBY to head out, then DRIVE.", "Tap LOBBY to head out, then DRIVE.", "Select LOBBY to head out, then DRIVE.") end
+		return "Your starter plow is ready!\n" .. pick("Press F or click DRIVE to hop in.", "Tap DRIVE to hop in.", "Press Y (or select DRIVE) to hop in.")
+	end,
 	hint = function() return player:GetAttribute("InGarage") and "You're in the garage - tap LOBBY first." or "Tap the green DRIVE button on the right." end,
 	target = {kind = "ui", label = "DRIVE", get = function()
-		if player:GetAttribute("InGarage") then return pg:FindFirstChild("Garage", true) end
-		local g = pg:FindFirstChild("PlowDriveGui"); return g and g:FindFirstChild("Drive") end},
+		if player:GetAttribute("InGarage") then
+			if cur.target then cur.target.label = "LOBBY" end
+			return pg:FindFirstChild("Garage", true)
+		end
+		if cur.target then cur.target.label = "DRIVE" end
+		-- recursive: on touch PlowDriveClient moves Drive into PlowDriveGui.TouchColumn
+		local g = pg:FindFirstChild("PlowDriveGui"); return g and g:FindFirstChild("Drive", true) end},
 	done = function() return player:GetAttribute("PlowDriving") == true end})
 S(MAIN, {id = "Field", essential = true, title = "STEP 2: DRIVE TO THE SNOW",
 	enter = function() ctx.collects0 = collects; ctx.field = nearestStarterField(); clearWorld(); if ctx.field then outlineField(ctx.field) end end,
 	text = function() return "Drive into the highlighted snow.\nYour blade clears it automatically!" end,
 	progress = function() return pick("W A S D to drive", "Use the thumbstick to drive", "Left stick to drive") end,
-	hint = function() return stuckHint() or "Move your plow into the highlighted snow - follow the glowing trail." end,
+	hint = function() return stuckHint() or "Drive into the glowing snow - follow the trail." end,
 	target = {kind = "world", label = "SNOW", get = function() return ctx.field and nearestPointOnField(ctx.field) end},
 	back = function() if player:GetAttribute("PlowDriving") ~= true then return "Drive" end end,
 	done = function() return collects > ctx.collects0 end})
@@ -521,7 +667,7 @@ S(MAIN, {id = "Earn", essential = true, title = "STEP 3: EARN SNOW",
 	enter = function() ctx.goal = goalUpgrade(); ctx.collects1 = collects end,
 	text = function() return ctx.goal and ("Keep clearing! Earn enough for your first upgrade: " .. ctx.goal.Name .. ".") or "Keep clearing snow!" end,
 	progress = function() return ctx.goal and ("Earn Snow:  " .. Format.Abbreviate(math.min(snow(), U.CostOf(ctx.goal))) .. " / " .. Format.Abbreviate(U.CostOf(ctx.goal))) or "" end,
-	hint = function() return stuckHint() or "Drive back and forth through the snow - every layer you clear pays Snow." end,
+	hint = function() return stuckHint() or "Drive back and forth - every layer cleared pays Snow." end,
 	target = {kind = "world", label = "SNOW", get = function() local f = ctx.field or nearestStarterField(); return f and nearestPointOnField(f) end},
 	back = function() if player:GetAttribute("PlowDriving") ~= true and snow() < (ctx.goal and U.CostOf(ctx.goal) or 0) then return "Drive" end end,
 	-- genuine clearing (at least a few payouts from the blade), not just a Snow increase from somewhere else
@@ -689,6 +835,8 @@ S(GARAGE, {id = "Equip", essential = true, title = "GARAGE 6: EQUIP IT",
 		local g = shopGui(); local w = g and g:FindFirstChild("GarageWindow")
 		if w and w.Visible then cur.target.kind = "ui"; cur.target.label = "EQUIP"; return w:FindFirstChild("Equip_" .. tostring(ctx.bought), true) end
 		cur.target.kind = "world"; cur.target.label = "YOUR CAR"; return nil end,
+		-- F10: the parts list scrolls (a phone shows ~4 rows): bring the bought part's EQUIP row into the list window before pointing at it
+		ensure = scrollIntoView,
 		worldGet = function() local b = myBay(); return b and topOf(b, "Lift") end}, -- 2026-10-06: the workbench is gone; the car opens the equip window
 	back = function() if player:GetAttribute("InGarage") ~= true then return "Open" end end,
 	done = function() local s = state(); local def = ctx.bought and C.Parts[ctx.bought]; return not def or (s and s.Build and s.Build[def.Slot] == ctx.bought) end})
@@ -716,7 +864,7 @@ S(GARAGE, {id = "Return", essential = true, title = "GARAGE 7: BACK TO THE SNOW"
 	end})
 S(GARAGE, {id = "Drive", essential = true, title = "GARAGE 8: TRY IT",
 	text = function() return pick("Press F or click DRIVE", "Tap DRIVE", "Press Y") .. " and try your plow!" end,
-	target = {kind = "ui", label = "DRIVE", get = function() local g = pg:FindFirstChild("PlowDriveGui"); return g and g:FindFirstChild("Drive") end},
+	target = {kind = "ui", label = "DRIVE", get = function() local g = pg:FindFirstChild("PlowDriveGui"); return g and g:FindFirstChild("Drive", true) end}, -- recursive: Drive lives in TouchColumn on touch
 	done = function() return player:GetAttribute("PlowDriving") == true end})
 S(GARAGE, {id = "Done", essential = false, title = "GARAGE LESSON DONE!",
 	enter = function() ctx.okAt = os.clock() + 6 end,
@@ -756,22 +904,34 @@ local function suppress(on)
 	if not on and player:GetAttribute("InArenaIsland") == true then return end -- the Bumper Arena keeps events quiet while you're there
 	player:SetAttribute("SuppressEvents", on and true or nil)
 end
+-- F64: an auto-started lesson (reserved part became affordable) turns the screen into a click dim, so it only starts when the player is idle:
+-- not driving (thumbstick / EXIT / RECOVER stay usable), not in the garage or on the Bumper Arena island, and no menu open.
+-- The HELP menu itself does not count: runLesson closes it.
+local function playerIdle()
+	return player:GetAttribute("PlowDriving") ~= true and player:GetAttribute("InGarage") ~= true and player:GetAttribute("InArenaIsland") ~= true
+		and UILayout.openMenu(pg, {HelpMenu = true}) == nil
+end
 local function stopLesson()
 	run.gen += 1
 	run.lesson, run.step = nil, nil
 	cur.target = nil
 	card.Visible = false
 	nextB.Visible = false
+	cardAtBottom = false; card.Position = CARD_TOP -- F53: the next card starts in the top slot
 	clearWorld()
 	suppress(false)
 end
 local function showStep(step)
+	helpMenu.Visible = false -- a lesson card and the HELP menu never stay open together
+	cardAtBottom = false; card.Position = CARD_TOP -- F53: every step starts in the top slot; RenderStepped moves it if the target is under it
 	stepL.Text = step.title or ""
 	mainL.Text = step.text()
 	progL.Text = step.progress and step.progress() or ""
 	hintL.Text = ""
 	nextB.Visible = step.okButton == true
 	progL.Visible = not nextB.Visible
+	hintL.Visible = not nextB.Visible -- the OK! button takes the line(s) below the text
+	helpB.Visible, skipB.Visible = step.tip ~= true, step.tip ~= true -- F61: the legacy TIP has no step to repeat or skip
 	cardScale.Scale = 0.86
 	TweenService:Create(cardScale, TweenInfo.new(0.3, Enum.EasingStyle.Back), {Scale = 1}):Play()
 	local t = step.target
@@ -794,6 +954,7 @@ local function showStep(step)
 end
 local function runLesson(list, lessonName, startId)
 	stopLesson()
+	helpMenu.Visible = false
 	run.gen += 1
 	local gen = run.gen
 	run.lesson = lessonName
@@ -850,7 +1011,7 @@ local function runLesson(list, lessonName, startId)
 		if lessonName == "Garage" and ctx.paused then ctx.resumePrice = ctx.reserved and ctx.reserved.Price end
 		local resume = ctx.resumePrice
 		stopLesson()
-		helpPill.Visible = true
+		setPill(true)
 		if lessonName == "Main" then
 			task.wait(2)
 			if run.lesson == nil then runLesson(GARAGE, "Garage") end
@@ -861,7 +1022,8 @@ local function runLesson(list, lessonName, startId)
 				while run.gen == myGen and run.lesson == nil do
 					local s = state()
 					if not (s and s.Reserved) then return end
-					if snow() >= (s.Reserved.Price or math.huge) then
+					-- affordable: wait (keep checking every second) until the player is idle, then start
+					if snow() >= (s.Reserved.Price or math.huge) and playerIdle() then
 						flashText("You can afford your reserved part!")
 						runLesson(GARAGE, "Garage", "Open")
 						return
@@ -900,9 +1062,42 @@ skipB.Activated:Connect(function()
 	-- SKIP = skip the remaining lessons (both); replay any time with ? HELP
 	if lesson == "Main" then report("Main", "Skip", "skipped", nil, nil, nil) end
 	report("Garage", "Skip", "skipped", nil, nil, nil)
-	helpPill.Visible = true
+	setPill(true)
 end)
-helpPill.Activated:Connect(function() helpMenu.Visible = not helpMenu.Visible end)
+-- one menu at a time (F18): close whatever else is open. Every Api.CloseX is a no-op until its client script overrides it.
+local function closeOtherMenus()
+	if Api.CloseBuild then pcall(Api.CloseBuild) end   -- garage / equip window
+	if Api.CloseCard then pcall(Api.CloseCard) end     -- offer card
+	if Api.CloseInspect then pcall(Api.CloseInspect) end -- inspect panel of another player's car
+	local mini = pg:FindFirstChild("MiniPlowGui")
+	local miniPanel = mini and mini:FindFirstChild("MiniPlowPanel")
+	if miniPanel and miniPanel:IsA("GuiObject") then miniPanel.Visible = false end
+	local egg = pg:FindFirstChild("VerityEggGui")
+	local eggScreen = egg and egg:FindFirstChild("EggScreen")
+	if eggScreen and eggScreen:IsA("GuiObject") then eggScreen.Visible = false end
+	-- RNG panels: RNGClient ignores names it has no panel for until its Studio patch learns "CloseAll" (UpgradeTreeClient closes on any name but "Upgrades")
+	local rng = pg:FindFirstChild("RNGGui")
+	local village = rng and rng:FindFirstChild("VillageOpenMenu")
+	if village and village:IsA("BindableEvent") then village:Fire("CloseAll") end
+end
+local lastMenuKey = nil
+helpPill.Activated:Connect(function()
+	if UILayout.openMenu(pg, {HelpMenu = true}) ~= nil then closeOtherMenus() end
+	helpMenu.Visible = not helpMenu.Visible
+	lastMenuKey = UILayout.openMenu(pg, {HelpMenu = true}) -- the edge poll below only reacts to a menu that opens AFTER this
+end)
+-- the HELP menu closes by itself when another menu opens or the plow starts driving (it never covers an offer card's BUY, a window or a lesson pointer)
+task.spawn(function()
+	while true do
+		task.wait(0.25)
+		local key = UILayout.openMenu(pg, {HelpMenu = true})
+		if key ~= nil and key ~= lastMenuKey and helpMenu.Visible then helpMenu.Visible = false end
+		lastMenuKey = key
+	end
+end)
+player:GetAttributeChangedSignal("PlowDriving"):Connect(function()
+	if player:GetAttribute("PlowDriving") == true then helpMenu.Visible = false end
+end)
 closeMenuB.Activated:Connect(function() helpMenu.Visible = false end)
 replayMainB.Activated:Connect(function() helpMenu.Visible = false; report("Main", "Replay", "replay", nil, nil, nil); runLesson(MAIN, "Main") end)
 replayGarageB.Activated:Connect(function() helpMenu.Visible = false; report("Garage", "Replay", "replay", nil, nil, nil); runLesson(GARAGE, "Garage") end)
@@ -913,7 +1108,7 @@ replayGarageB.Activated:Connect(function() helpMenu.Visible = false; report("Gar
 local function legacyHint()
 	local g = goalUpgrade()
 	if not g or next(ownedSet()) ~= nil then return end
-	local step = {id = "LegacyUpgrade", essential = false, title = "TIP",
+	local step = {id = "LegacyUpgrade", essential = false, title = "TIP", tip = true, -- tip: showStep hides HELP / SKIP (nothing to repeat or skip)
 		text = function() return "Spend your Snow on UPGRADES to earn even more!" end,
 		target = {kind = "ui", label = "UPGRADES", soft = true, get = function() return pg:FindFirstChild("UpgradesButton", true) end}} -- a tip: light dim, nothing blocked
 	run.gen += 1
@@ -942,7 +1137,7 @@ local function start()
 	end
 	if not r then return end
 	local tut = type(r.Tutorial) == "table" and r.Tutorial or {}
-	helpPill.Visible = true
+	setPill(true)
 	if not r.TutorialDone then
 		runLesson(MAIN, "Main")
 	elseif not tut.Main then
@@ -957,7 +1152,8 @@ local function start()
 				while run.lesson == nil do
 					local st = state()
 					if not (st and st.Reserved) then return end
-					if snow() >= (st.Reserved.Price or math.huge) then runLesson(GARAGE, "Garage", "Open") return end
+					-- affordable: wait (keep checking every second) until the player is idle, then start
+					if snow() >= (st.Reserved.Price or math.huge) and playerIdle() then runLesson(GARAGE, "Garage", "Open") return end
 					task.wait(1)
 				end
 			end)
@@ -969,9 +1165,9 @@ local pausedLesson
 player:GetAttributeChangedSignal("InArenaIsland"):Connect(function()
 	if player:GetAttribute("InArenaIsland") == true then
 		if run.lesson and run.step then pausedLesson = {name = run.lesson, step = run.step.id}; stopLesson() end
-		helpPill.Visible = false; helpMenu.Visible = false
+		setPill(false); helpMenu.Visible = false
 	else
-		helpPill.Visible = true
+		setPill(true)
 		local pl = pausedLesson
 		pausedLesson = nil
 		if pl then task.delay(1, function() if not run.lesson then runLesson(pl.name == "Garage" and GARAGE or MAIN, pl.name, pl.step) end end) end

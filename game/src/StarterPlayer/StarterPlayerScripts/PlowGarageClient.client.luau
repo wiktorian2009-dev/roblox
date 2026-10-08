@@ -15,6 +15,7 @@ if C.Mode ~= "Snowplow" then return end
 local Assembly = require(RS:WaitForChild("PlowAssembly"))
 local Api = require(RS:WaitForChild("PlowClientApi"))
 local Format = require(RS:WaitForChild("NumberFormat"))
+local UILayout = require(RS:WaitForChild("UILayout"))
 local TX = require(RS:WaitForChild("UniversalVFX")).Textures
 local event = RS:WaitForChild("PlowEvent")
 local FONT, NAVY, WHITE = Enum.Font.FredokaOne, Color3.fromRGB(20, 40, 85), Color3.new(1, 1, 1)
@@ -70,14 +71,24 @@ local function fitModel(m, maxSize)
 	if s ~= 1 then m:ScaleTo(s) end
 end
 local function myBayIndex() return player:GetAttribute("GarageBay") end
+-- 2026-10-08 (UI audit F26 / F31): the equip window is built by PlowShopClient (PlowShopGui.GarageWindow); nil-safe, so it counts as closed until it exists
+local BAY_REACH = 39 -- studs; PlowService refuses Equip / LevelUp farther than this from your bay pivot (its BAY_REACH)
+local function garageWindowOpen()
+	local pg = player:FindFirstChild("PlayerGui")
+	local shop = pg and pg:FindFirstChild("PlowShopGui")
+	local w = shop and shop:FindFirstChild("GarageWindow")
+	return w ~= nil and w:IsA("GuiObject") and w.Visible
+end
 
 ------------------------------------------------ inspection panel (read-only)
 local gui = Instance.new("ScreenGui")
 gui.Name, gui.ResetOnSpawn, gui.IgnoreGuiInset, gui.DisplayOrder = "GarageInspectGui", false, true, 102
-gui.Parent = player:WaitForChild("PlayerGui")
+local playerGui = player:WaitForChild("PlayerGui")
+gui.Parent = playerGui
 local panel = Instance.new("Frame")
 panel.Name, panel.AnchorPoint, panel.Position, panel.Size, panel.Visible = "Inspect", Vector2.new(0.5, 0.5), UDim2.fromScale(0.5, 0.5), UDim2.fromScale(0.42, 0.5), false
 panel.BackgroundColor3 = WHITE
+panel.Active = true -- 2026-10-08 (F26): the panel sinks clicks, so they cannot reach the car ClickDetector behind it
 panel:SetAttribute("SnowUIDecor", true)
 panel.Parent = gui
 do
@@ -86,12 +97,39 @@ do
 	local st = Instance.new("UIStroke"); st.Thickness = 4; st.Color = NAVY; st.ApplyStrokeMode = Enum.ApplyStrokeMode.Border; st.Parent = panel
 	local g = Instance.new("UIGradient"); g.Rotation = 90; g.Color = ColorSequence.new(Color3.fromRGB(72, 132, 215), Color3.fromRGB(30, 62, 130)); g.Parent = panel
 end
-local title = label(panel, 0.03, 0.12); title.Position = UDim2.fromScale(0.05, 0.03); title.Size = UDim2.fromScale(0.78, 0.12)
+-- 2026-10-08 (F39): the close button is at least 44x44, so it reaches down to 0.03 H + 44 px, while part row 1 starts at 0.17 H. Phones and short windows
+-- (where the normal panel is under ~340 px tall) therefore get a bigger panel, still capped by the 1.25 aspect constraint, so the button never covers the Blade row.
+local PANEL_NORMAL, PANEL_BIG, PANEL_MIN_H = UDim2.fromScale(0.42, 0.5), UDim2.fromScale(0.64, 0.92), 340
+local function fitPanel()
+	local cam = workspace.CurrentCamera
+	local vp = cam and cam.ViewportSize
+	if not vp or vp.X <= 0 or vp.Y <= 0 then return end
+	local normalH = math.min(0.5 * vp.Y, 0.42 * vp.X / 1.25) -- panel height at the normal size under the aspect constraint
+	panel.Size = (UILayout.isSmall(vp) or normalH < PANEL_MIN_H) and PANEL_BIG or PANEL_NORMAL
+end
+do -- created once: re-fit when the viewport changes (rotation, window resize) and when the camera object is replaced
+	local viewConn
+	local function watchViewport()
+		if viewConn then viewConn:Disconnect(); viewConn = nil end
+		local cam = workspace.CurrentCamera
+		if cam then viewConn = cam:GetPropertyChangedSignal("ViewportSize"):Connect(fitPanel) end
+		fitPanel()
+	end
+	watchViewport()
+	workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(watchViewport)
+end
+local title = label(panel, 0.03, 0.12); title.Position = UDim2.fromScale(0.05, 0.03); title.Size = UDim2.fromScale(0.72, 0.12) -- 0.72 (was 0.78): keeps the title clear of the 44 px close button on phones
 local closeB = Instance.new("TextButton")
 closeB.Text, closeB.Font, closeB.TextScaled, closeB.TextColor3 = "X", FONT, true, WHITE
-closeB.BackgroundColor3, closeB.Position, closeB.Size = Color3.fromRGB(240, 60, 90), UDim2.fromScale(0.86, 0.03), UDim2.fromScale(0.1, 0.12)
+-- 2026-10-08 (F39): right edge stays at 0.96 and the button grows leftwards to a 44x44 touch target on small panels (on desktop 0.1 x 0.12 is already bigger);
+-- fitPanel (above) makes the panel tall enough on phones that the button ends above the first part row
+closeB.BackgroundColor3, closeB.AnchorPoint, closeB.Position, closeB.Size = Color3.fromRGB(240, 60, 90), Vector2.new(1, 0), UDim2.fromScale(0.96, 0.03), UDim2.fromScale(0.1, 0.12)
+closeB.ZIndex = 3 -- above the part rows, which are created after it and would otherwise draw over the larger button
 closeB:SetAttribute("SnowUIDecor", true)
-do local cr = Instance.new("UICorner"); cr.CornerRadius = UDim.new(0.3, 0); cr.Parent = closeB end
+do
+	local cr = Instance.new("UICorner"); cr.CornerRadius = UDim.new(0.3, 0); cr.Parent = closeB
+	local mn = Instance.new("UISizeConstraint"); mn.MinSize = Vector2.new(44, 44); mn.Parent = closeB
+end
 closeB.Parent = panel
 do -- 2026-10-06: snowy image art for the inspection window and its close button
 	local SnowArt = require(RS:WaitForChild("SnowArt"))
@@ -109,7 +147,9 @@ for i = 1, 4 do
 	statRows[i] = r
 end
 local inspecting
-closeB.Activated:Connect(function() panel.Visible = false; inspecting = nil end)
+local function closeInspect() panel.Visible = false; inspecting = nil end
+Api.CloseInspect = closeInspect -- 2026-10-08 (F05): the other openers (equip window, offer card, MINI PLOWS, tutorial) close this panel through the Api
+closeB.Activated:Connect(closeInspect)
 -- public bay build "blade|engine|gear|body" (task 7); older 3-part strings still parse and show the starter body
 local function parseBuild(s)
 	local f = string.split(tostring(s or ""), "|")
@@ -118,10 +158,10 @@ local function parseBuild(s)
 	if not b.Body and (b.Blade or b.Engine or b.Gear) then b.Body = C.Starter.Body end
 	return b
 end
-local function openInspect(bay)
+-- fills the panel from the bay's public attributes; no open / close side effects, so a live refresh of the inspected bay never touches other panels
+local function renderInspect(bay)
 	local name = bay:GetAttribute("OwnerName") or ""
 	if name == "" then return end
-	inspecting = bay
 	local build = parseBuild(bay:GetAttribute("Build"))
 	title.Text = name .. "'s snowplow"
 	for i, slot in ipairs(C.Slots) do
@@ -134,8 +174,53 @@ local function openInspect(bay)
 	statRows[2].Text = ("Clearing power %s (before upgrades)"):format(Format.Abbreviate(math.floor(st.ClearPower + 0.5)))
 	statRows[3].Text = ("Blade width %.1f   Soft x%.2f   Hard x%.2f"):format(st.BladeWidth, st.Soft, st.Hard)
 	statRows[4].Text = ("Grip %d%%   Pivot %d%%   0-top %.1fs"):format(math.floor(st.Traction * 100 + 0.5), math.floor(st.Pivot * 100 + 0.5), st.AccelTime or 1.6)
+end
+-- 2026-10-08 (UI audit, review): the panel (DO 102, Active) closes by itself when ANOTHER menu opens, the same 0.25 s edge poll PlowShopClient, MINI PLOWS, the
+-- egg screen and the HELP menu use. It is needed because the RNG panels (PETS / SHOP / REWARDS / PARTS / Settings, RNGGui DO 100) and UPGRADES do not call
+-- Api.CloseInspect until their Studio patches are installed, so without it Inspect would draw over them and sink their taps. State-based, no DisplayOrder.
+local OTHER_MENUS = {"Panels", "UpgradeTree", "GarageWindow", "OfferCard", "EggScreen", "MiniPlow", "HelpMenu"} -- every UILayout.openMenu key except Inspect itself
+local ONLY = {} -- ONLY[key] = the `ignore` set for UILayout.openMenu that leaves just that one menu to be tested
+for _, k in ipairs(OTHER_MENUS) do
+	local ig = {Inspect = true}
+	for _, o in ipairs(OTHER_MENUS) do if o ~= k then ig[o] = true end end
+	ONLY[k] = ig
+end
+local function menusOpen() -- { [key] = true } for each other menu showing right now (per key, so one stuck menu cannot hide a newly opened one)
+	local s = {}
+	for _, k in ipairs(OTHER_MENUS) do s[k] = UILayout.openMenu(playerGui, ONLY[k]) ~= nil end
+	return s
+end
+local seenMenus = {} -- menus already open when the panel opened (re-seeded by openInspect): only a menu that opens AFTER that closes the panel
+local function openInspect(bay)
+	if (bay:GetAttribute("OwnerName") or "") == "" then return end
+	-- 2026-10-08 (F05): one menu at a time (UILayout contract). The RNG panels / Travel / UPGRADES are asked to close over the same bus as PlowShopClient
+	-- and MiniPlowClient ("CloseAll" is ignored by listeners that do not know it yet; HELP and MINI PLOWS close themselves by polling UILayout.openMenu),
+	-- and the equip window and offer card are closed (no-ops until PlowShopClient overrides them); otherwise they stay open beneath this panel (DO 102 vs 101).
+	local pg = player:FindFirstChild("PlayerGui")
+	local rng = pg and pg:FindFirstChild("RNGGui")
+	local village = rng and rng:FindFirstChild("VillageOpenMenu")
+	if village and village:IsA("BindableEvent") then village:Fire("CloseAll") end
+	pcall(Api.CloseBuild)
+	pcall(Api.CloseCard)
+	inspecting = bay -- set after the closes: a re-entrant Api.CloseInspect must not clear it
+	renderInspect(bay)
+	seenMenus = menusOpen() -- a menu that stays open (an RNG panel whose script ignores "CloseAll" yet) must not close the panel that is opening now
 	panel.Visible = true
 end
+-- one task for the whole script, nothing connected per open; it only does work while the panel shows. The pcall keeps the loop alive if a lookup ever errors.
+task.spawn(function()
+	while true do
+		task.wait(0.25)
+		if panel.Visible then
+			pcall(function()
+				local now, opened = menusOpen(), false
+				for k, on in pairs(now) do if on and not seenMenus[k] then opened = true end end
+				seenMenus = now
+				if opened then closeInspect() end
+			end)
+		end
+	end
+end)
 
 ------------------------------------------------ bays
 local bays = {} -- [bayModel] = entry
@@ -305,7 +390,7 @@ local function refreshBay(e)
 		end
 	end
 	refreshPreview(e)
-	if inspecting == m then if ownerId == 0 then panel.Visible = false; inspecting = nil else openInspect(m) end end
+	if inspecting == m then if ownerId == 0 then closeInspect() else renderInspect(m) end end
 end
 
 local function setupBay(m)
@@ -370,7 +455,12 @@ local function setupBay(m)
 		box.Anchored, box.CanCollide, box.CanTouch, box.CanQuery, box.CastShadow = true, false, false, true, false
 		box.Parent = e.liftModel or m
 		local cd = Instance.new("ClickDetector"); cd.MaxActivationDistance = 40; cd.Parent = box
-		cd.MouseClick:Connect(function() if e.mine then Api.OpenBuild() elseif (m:GetAttribute("OwnerUserId") or 0) ~= 0 then openInspect(m) end end)
+		cd.MouseClick:Connect(function()
+			-- 2026-10-08 (F26): Api.OpenBuild toggles, so a click that reaches the car behind the open equip window must not close it
+			-- (nor stack a neighbour's inspect on it). With the window shut, a click on your own car opens it (the card / inspect close with it).
+			if garageWindowOpen() then return end
+			if e.mine then Api.OpenBuild() elseif (m:GetAttribute("OwnerUserId") or 0) ~= 0 then openInspect(m) end
+		end)
 		e.carClick = cd
 		local hint = billboard(liftTop, UDim2.fromScale(7, 1.1), Vector3.new(0, 7.5, 0), 60)
 		hint.Name, hint.Enabled = "EquipHint", false
@@ -400,7 +490,7 @@ local function cleanupBay(m)
 	bays[m] = nil
 	if e.preview then e.preview:Destroy() end
 	for _, ped in pairs(e.peds) do if ped.display then ped.display:Destroy() end end
-	if inspecting == m then panel.Visible = false; inspecting = nil end
+	if inspecting == m then closeInspect() end
 end
 
 local function myBay()
@@ -533,19 +623,27 @@ RunService.Heartbeat:Connect(function()
 	end
 end)
 
--- an open offer card closes when you walk away from your pedestal; the inspection panel closes when you walk away too
+-- an open offer card closes when you walk away from your pedestal; the inspection panel closes when you walk away too;
+-- 2026-10-08 (F31): so does the equip window (it used to stay open over the screen while the server refused Equip / LevelUp)
 task.spawn(function()
 	while true do
 		task.wait(0.5)
-		local hrp = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+		local char = player.Character
+		local hrp = char and char:FindFirstChild("HumanoidRootPart")
+		local hum = char and char:FindFirstChildOfClass("Humanoid")
 		local key = Api.CardTarget()
 		local e = myBay()
 		local ped = key and e and e.peds[key]
 		if hrp and key and (not ped or (hrp.Position - ped.top.Position).Magnitude > 20) then Api.CloseCard() end
 		if hrp and inspecting and inspecting.Parent then
-			if (hrp.Position - inspecting:GetPivot().Position).Magnitude > 65 then panel.Visible = false; inspecting = nil end
+			if (hrp.Position - inspecting:GetPivot().Position).Magnitude > 65 then closeInspect() end
 		end
-		if player:GetAttribute("InGarage") ~= true and panel.Visible then panel.Visible = false; inspecting = nil end
+		if player:GetAttribute("InGarage") ~= true and panel.Visible then closeInspect() end
+		if garageWindowOpen() then
+			-- dead, no character yet, or farther from your own bay pivot than the server's BAY_REACH: the window cannot do anything, so close it
+			local away = hrp and e and e.model.Parent and (hrp.Position - e.model:GetPivot().Position).Magnitude > BAY_REACH
+			if not hrp or (hum and hum.Health <= 0) or away then pcall(Api.CloseBuild) end -- pcall: this loop must outlive a faulty override
+		end
 	end
 end)
 player:GetAttributeChangedSignal("InGarage"):Connect(function()

@@ -16,6 +16,8 @@ local Assembly = require(RS:WaitForChild("PlowAssembly"))
 local SnowArt = require(RS:WaitForChild("SnowArt"))
 local CleanControls = require(RS:WaitForChild("CleanControls"))
 local NF = require(RS:WaitForChild("NumberFormat"))
+local UILayout = require(RS:WaitForChild("UILayout"))
+local Api = require(RS:WaitForChild("PlowClientApi"))
 local remote = RS:WaitForChild("MiniPlowRemote")
 local M = C.Minis
 local FONT = Enum.Font.FredokaOne
@@ -151,8 +153,40 @@ local function say(t)
 	toast.Text = t; toast.Visible = true
 	task.delay(2.5, function() if my == toastId then toast.Visible = false end end)
 end
-btn.Activated:Connect(function() fit(); refresh(); panel.Visible = not panel.Visible end)
+-- one menu at a time (UILayout contract): opening MINI PLOWS closes whatever else is open. Every Api.CloseX is a no-op until its client
+-- script overrides it, and the "CloseAll" event is ignored by RNGClient until its Studio patch learns it (UpgradeTreeClient closes on any name but "Upgrades").
+local function closeOtherMenus()
+	local tut = pg:FindFirstChild("PlowTutorial")
+	local help = tut and tut:FindFirstChild("HelpMenu")
+	if help and help:IsA("GuiObject") then help.Visible = false end
+	local rngGui = pg:FindFirstChild("RNGGui")
+	local village = rngGui and rngGui:FindFirstChild("VillageOpenMenu")
+	if village and village:IsA("BindableEvent") then village:Fire("CloseAll") end
+	if Api.CloseBuild then pcall(Api.CloseBuild) end     -- garage / equip window
+	if Api.CloseCard then pcall(Api.CloseCard) end       -- offer card
+	if Api.CloseInspect then pcall(Api.CloseInspect) end -- inspect panel of another player's car
+	local egg = pg:FindFirstChild("VerityEggGui")
+	local eggScreen = egg and egg:FindFirstChild("EggScreen")
+	if eggScreen and eggScreen:IsA("GuiObject") then eggScreen.Visible = false end
+end
+local prevKey = nil -- last menu seen open by the poll below (MINI PLOWS itself not counted)
+btn.Activated:Connect(function()
+	if panel.Visible then panel.Visible = false; return end
+	closeOtherMenus()
+	fit(); refresh()
+	panel.Visible = true
+	prevKey = UILayout.openMenu(pg, {MiniPlow = true}) -- the poll below only reacts to a menu that opens AFTER this
+end)
 close.Activated:Connect(function() panel.Visible = false end)
+-- MINI PLOWS closes by itself when another menu (RNG panel / Travel, UPGRADES, garage window, offer card, inspect, egg screen, HELP menu) opens
+task.spawn(function()
+	while true do
+		task.wait(0.25)
+		local key = UILayout.openMenu(pg, {MiniPlow = true})
+		if key ~= nil and key ~= prevKey and panel.Visible then panel.Visible = false end
+		prevKey = key
+	end
+end)
 local busy = false
 buy.Activated:Connect(function()
 	if busy then return end

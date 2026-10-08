@@ -1,6 +1,12 @@
 -- FrostKingClient (2026-10-04, Claude): draws THE FROST KING event; FrostKingService (server) decides everything.
 -- Snowy GUI (announcement + JOIN, pill, boss bar, personal panel, messages, rewards), world marker, the animated penguin,
 -- attack telegraphs (always shown, even with reduced effects), layered VFX from ReplicatedStorage.UniversalVFX, sounds.
+-- 2026-10-08 UI audit (UILayout): desktop "Me" panel ends left of the DRIVE column (x < 0.877W); touch "Me" sits under the boss bar and the pill above the
+-- DRIVE column (both from live rects); boss bar / Me only while at the fight (not in the garage / arena island), pill + JOIN off on the arena island;
+-- the announcement waits for any open menu (the HELP menu included) and retries; touch targets are at least 44 px high; the touch announcement / reward
+-- panels stop left of the DRIFT / DRIVE / RECOVER column.
+-- 2026-10-08 follow-up: PopupStack and ContractClient.layoutSlot start below FrostKingGui.BossBar while it is up (the touch bar is >= 56 px high); on touch
+-- the announcement also waits for the tutorial card and the bar steps aside while the announcement is up; the pill waits for open menus.
 local Players = game:GetService("Players")
 local RS = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -8,11 +14,13 @@ local TweenService = game:GetService("TweenService")
 local UIS = game:GetService("UserInputService")
 local Debris = game:GetService("Debris")
 local player = Players.LocalPlayer
+local pg = player:WaitForChild("PlayerGui")
 local C = require(RS:WaitForChild("FrostKingConfig"))
 local VFX = require(RS:WaitForChild("UniversalVFX"))
 local UI = require(RS:WaitForChild("SnowUI"))
 local Format = require(RS:WaitForChild("NumberFormat"))
 local GameAudio = require(RS:WaitForChild("GameAudio"))
+local UILayout = require(RS:WaitForChild("UILayout"))
 local Assets = RS:WaitForChild("FrostKingAssets")
 local event = RS:WaitForChild("FrostKingEvent")
 local joinFn = RS:WaitForChild("FrostKingJoin")
@@ -88,7 +96,7 @@ end
 --------------------------------------------------
 -- GUI
 --------------------------------------------------
-local gui = mk("ScreenGui", {Name = "FrostKingGui", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 57, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, player:WaitForChild("PlayerGui"))
+local gui = mk("ScreenGui", {Name = "FrostKingGui", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 57, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, pg)
 local ann = panel(gui, {Name = "Announce", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.21), Size = UDim2.fromScale(touch and 0.88 or 0.6, 0.3)}, "panel")
 local annScale = mk("UIScale", {Scale = 1}, ann)
 local annTitle = label(ann, "\u{2744} THE FROST KING HAS APPEARED!", {Position = UDim2.fromScale(0.04, 0.05), Size = UDim2.fromScale(0.92, 0.29)})
@@ -101,7 +109,7 @@ local pill = panel(gui, {Name = "Pill", AnchorPoint = Vector2.new(1, 0), Positio
 local pillText = label(pill, "", {Position = UDim2.fromScale(0.04, 0.14), Size = UDim2.fromScale(0.6, 0.72), TextXAlignment = Enum.TextXAlignment.Left})
 local pillJoin, pillJoinText = button(pill, "JOIN", GREEN, {Position = UDim2.fromScale(0.66, 0.14), Size = UDim2.fromScale(0.31, 0.72)})
 local bar = panel(gui, {Name = "BossBar", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.016), Size = UDim2.fromScale(touch and 0.74 or 0.46, 0.095)})
-label(bar, "\u{1F451} THE FROST KING", {Position = UDim2.fromScale(0.03, 0.07), Size = UDim2.fromScale(0.42, 0.38), TextXAlignment = Enum.TextXAlignment.Left})
+local barTitle = label(bar, "\u{1F451} THE FROST KING", {Position = UDim2.fromScale(0.03, 0.07), Size = UDim2.fromScale(0.42, 0.38), TextXAlignment = Enum.TextXAlignment.Left})
 local barPhase = label(bar, "PHASE I", {Position = UDim2.fromScale(0.45, 0.07), Size = UDim2.fromScale(0.2, 0.38), TextColor3 = ICE})
 local barTime = label(bar, "", {Position = UDim2.fromScale(0.65, 0.07), Size = UDim2.fromScale(0.14, 0.38), TextColor3 = Color3.fromRGB(255, 232, 150)})
 local fxBtn, fxText = button(bar, "FX", Color3.fromRGB(120, 180, 255), {Position = UDim2.fromScale(0.8, 0.07), Size = UDim2.fromScale(0.08, 0.38)})
@@ -112,7 +120,8 @@ local fill = decor(mk("Frame", {Size = UDim2.fromScale(1, 1), BackgroundColor3 =
 mk("UICorner", {CornerRadius = UDim.new(0.5, 0)}, fill)
 local fillGrad = mk("UIGradient", {Color = ColorSequence.new(Color3.fromRGB(120, 220, 255), Color3.fromRGB(60, 140, 255))}, fill)
 local hpText = label(track, "", {Size = UDim2.fromScale(1, 1), ZIndex = 8})
-local mePanel = panel(gui, {Name = "Me", AnchorPoint = touch and Vector2.new(0, 1) or Vector2.new(1, 1), Position = touch and UDim2.fromScale(0.012, 0.87) or UDim2.fromScale(0.988, 0.87), Size = UDim2.fromScale(touch and 0.34 or 0.2, 0.13)})
+-- F03: desktop bottom-right but ending left of the DRIVE / DRIFT / RECOVER column (x >= 0.877W); touch: top-centre under the boss bar (hud() re-anchors it to the live bar rect)
+local mePanel = panel(gui, {Name = "Me", AnchorPoint = touch and Vector2.new(0.5, 0) or Vector2.new(1, 1), Position = touch and UDim2.fromScale(0.5, 0.125) or UDim2.fromScale(0.86, 0.87), Size = UDim2.fromScale(touch and 0.34 or 0.2, 0.13)})
 local meHPTrack = decor(mk("Frame", {Position = UDim2.fromScale(0.05, 0.1), Size = UDim2.fromScale(0.9, 0.24), BackgroundColor3 = Color3.fromRGB(70, 25, 40), BorderSizePixel = 0, ZIndex = 5}, mePanel))
 mk("UICorner", {CornerRadius = UDim.new(0.5, 0)}, meHPTrack)
 local meHPFill = decor(mk("Frame", {Size = UDim2.fromScale(1, 1), BackgroundColor3 = Color3.fromRGB(255, 110, 130), BorderSizePixel = 0, ZIndex = 6}, meHPTrack))
@@ -129,6 +138,53 @@ local rewardScale = mk("UIScale", {Scale = 1}, rewardPanel)
 local rewardTitle = label(rewardPanel, "", {Position = UDim2.fromScale(0.05, 0.06), Size = UDim2.fromScale(0.9, 0.24)})
 local rewardLines = label(rewardPanel, "", {Position = UDim2.fromScale(0.07, 0.33), Size = UDim2.fromScale(0.86, 0.4)})
 local rewardOk = button(rewardPanel, "OK", GREEN, {Position = UDim2.fromScale(0.35, 0.77), Size = UDim2.fromScale(0.3, 0.17)})
+
+-- F43 / F16 (touch only): every control is at least 44 px high; the pure-scale panels get a pixel floor so their buttons fit. Desktop keeps the original scale layout.
+local PILL_H = 56 -- touch pill height (also used by layoutTouch)
+local annSizeLimit, rewardSizeLimit = nil, nil -- touch only: the UISizeConstraints whose MaxSize.X capPanels() keeps clear of the action column
+if touch then
+	local minTouch = UILayout.MIN_TOUCH
+	local function floorSize(o, x, y) return mk("UISizeConstraint", {MinSize = Vector2.new(x, y)}, o) end
+	-- announcement: JOIN / LATER sit on the panel's bottom edge and grow upwards (the panel is at least 156 high: the text rows end at 0.67)
+	annSizeLimit = floorSize(ann, 0, 156)
+	for _, btn in ipairs({joinBtn, laterBtn}) do
+		btn.AnchorPoint, btn.Position = Vector2.new(0, 1), UDim2.fromScale(btn.Position.X.Scale, 0.95)
+		floorSize(btn, 0, minTouch)
+	end
+	-- reward: OK is bottom-centred, the panel at least 190 high so three reward lines still fit above it
+	rewardSizeLimit = floorSize(rewardPanel, 0, 190)
+	rewardOk.AnchorPoint, rewardOk.Position = Vector2.new(0.5, 1), UDim2.fromScale(0.5, 0.95)
+	floorSize(rewardOk, 0, minTouch)
+	-- pill (its top is set by hud() from the jump button): 56 high, JOIN a 44 high vertically centred button
+	floorSize(pill, 200, PILL_H)
+	pillJoin.AnchorPoint, pillJoin.Position, pillJoin.Size = Vector2.new(1, 0.5), UDim2.new(0.97, 0, 0.5, 0), UDim2.new(0.31, 0, 0, minTouch)
+	floorSize(pillJoin, 84, minTouch)
+	-- boss bar: 56 high; FX / SHAKE are 44x44 minimum and vertically centred, so the title row and the HP track stop short of them (they never sit on the track)
+	floorSize(bar, 0, 56)
+	barTitle.Size = UDim2.fromScale(0.37, 0.38)
+	barPhase.Position, barPhase.Size = UDim2.fromScale(0.4, 0.07), UDim2.fromScale(0.2, 0.38)
+	barTime.Position, barTime.Size = UDim2.fromScale(0.6, 0.07), UDim2.fromScale(0.12, 0.38)
+	track.Size = UDim2.fromScale(0.69, 0.36)
+	for i, pair in ipairs({{fxBtn, fxText}, {shakeBtn, shakeText}}) do
+		pair[1].AnchorPoint, pair[1].Position, pair[1].Size = Vector2.new(0, 0.5), UDim2.fromScale(i == 1 and 0.73 or 0.865, 0.5), UDim2.fromScale(0.125, 0.38)
+		floorSize(pair[1], minTouch, minTouch)
+		mk("UITextSizeConstraint", {MinTextSize = UILayout.MIN_TEXT}, pair[2])
+	end
+	-- Me card (0.13H is only ~49 px at 375-390 high, so its 0.24-0.26 rows were ~12 px): 52 px keeps every row >= 12.5 px (text stays near the 12 px minimum)
+	floorSize(mePanel, 0, 52)
+end
+-- touch: the announcement (0.88W) and reward panel (0.8W) are centred, so cap their width to keep the right edge left of the DRIFT / DRIVE / RECOVER column
+-- (x >= W - 8 - colW). 667 wide: 375; 844 wide: 526. Never narrower than 240 (portrait is not designed; there the panels do not reach the column's rows).
+local function capPanels()
+	if not touch then return end
+	local W = gui.AbsoluteSize.X
+	if W < 1 then local cam = workspace.CurrentCamera; W = cam and cam.ViewportSize.X or 0 end
+	if W < 1 then return end
+	local w = math.floor(math.max(2 * (UILayout.touchColLeft(W) - UILayout.GAP - W / 2), math.min(240, 0.8 * W)))
+	for _, limit in ipairs({annSizeLimit, rewardSizeLimit}) do
+		if limit and limit.MaxSize.X ~= w then limit.MaxSize = Vector2.new(w, math.huge) end
+	end
+end
 
 local msgToken = 0
 local function showMsg(text, color, seconds)
@@ -739,10 +795,22 @@ end
 --------------------------------------------------
 -- announcement, JOIN, toggles
 --------------------------------------------------
+-- F23: any open menu (RNG panels, UPGRADES, garage windows, egg screen, MINI PLOWS, and the HELP menu: on phones its 230x150 minimum reaches under the capped
+-- announcement) makes the announcement wait; the pill stays up meanwhile. No ignore set: FK popups wait for every menu, like ContractClient's popups.
+local function menuOpen() return UILayout.openMenu(pg) ~= nil end
+-- touch: the tutorial card is wide and tall (150 px min), so the announcement waits for it like ContractClient's popups do
+local function lessonCardUp()
+	local tut = pg:FindFirstChild("PlowTutorial")
+	local card = tut and tut:FindFirstChild("Card")
+	if not (card and card:IsA("GuiObject") and card.Visible) then return false end
+	return tut:IsA("ScreenGui") and tut.Enabled
+end
 local function busy()
 	if player:GetAttribute("IntroActive") or player:GetAttribute("IntroPlaying") then return true end
-	local pg = player:FindFirstChild("PlayerGui")
-	local rd = pg and pg:FindFirstChild("RareDropGui")
+	if player:GetAttribute("InArenaIsland") == true or player:GetAttribute("SuppressEvents") == true then return true end -- JOIN is refused on the island; a tutorial step is showing
+	if menuOpen() then return true end
+	if touch and lessonCardUp() then return true end
+	local rd = pg:FindFirstChild("RareDropGui")
 	if rd and rd.Enabled then return true end
 	local cam = workspace.CurrentCamera
 	local blur = cam and cam:FindFirstChild("HatchBlur")
@@ -762,9 +830,11 @@ local function refreshJoin()
 	end
 	return ok
 end
+local annShown, annQueued = 0, 0 -- counters: the newest showing owns the 14 s timeout, the newest queue request owns the retry loop
 local function showAnnouncement()
 	if not ev or dismissed then return end
 	if player:GetAttribute("SuppressEvents") == true then return end -- 2026-10-05: an essential tutorial step is showing (the pill still offers JOIN)
+	capPanels()
 	local ok = refreshJoin()
 	annSub.Text = ok and ("Giant Penguin spotted in %s!"):format(ev.Name) or ("Giant Penguin spotted in %s! (unlock it to join)"):format(ev.Name)
 	ann.Visible = true
@@ -772,25 +842,31 @@ local function showAnnouncement()
 	TweenService:Create(annScale, TweenInfo.new(0.45, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Scale = 1}):Play()
 	sound("Arrive")
 	task.delay(0.35, function() sound("Sting") end)
-	local my = ev.Id
-	task.delay(14, function() if ev and ev.Id == my then ann.Visible = false end end)
+	annShown += 1
+	local my = annShown
+	task.delay(14, function() if annShown == my then ann.Visible = false end end) -- only the latest showing times out (a re-shown popup gets its full 14 s)
 end
+-- F23: a deferred announcement retries every 0.5 s while the event is live and the player has not pressed LATER / JOIN; only the newest waiter runs
 local function queueAnnouncement()
-	local my = ev.Id
+	if not ev then return end
+	annQueued += 1
+	local my, id = annQueued, ev.Id
 	task.spawn(function()
-		local waited = 0
-		while ev and ev.Id == my and busy() and waited < 90 do task.wait(0.5); waited += 0.5 end
-		if ev and ev.Id == my and st and (st.State == "Arrival" or st.State == "Fight") then showAnnouncement() end
+		while annQueued == my and ev and ev.Id == id and not dismissed and st and (st.State == "Arrival" or st.State == "Fight") do
+			if not busy() then showAnnouncement(); return end
+			task.wait(0.5)
+		end
 	end)
 end
 local joining = false
 local function doJoin()
 	if not ev or joining then return end
-	if not canJoinLocal() then showMsg(("Unlock %s to join!"):format(ev.Name), WARN, 2.5) return end
+	if player:GetAttribute("InArenaIsland") == true then showMsg("Leave the arena first!", WARN, 2.5); return end -- F25: the server would pull you out of the round
+	if not canJoinLocal() then showMsg(("Unlock %s to join!"):format(ev.Name), WARN, 2.5); return end
 	joining = true
 	local ok, res, text = pcall(function() return joinFn:InvokeServer("Join") end)
 	joining = false
-	if ok and res then ann.Visible = false; showMsg("\u{2744} To battle!", ICE, 1.6) else showMsg(tostring((ok and text) or "Couldn't join right now."), WARN, 2.5) end
+	if ok and res then ann.Visible = false; dismissed = true; showMsg("\u{2744} To battle!", ICE, 1.6) else showMsg(tostring((ok and text) or "Couldn't join right now."), WARN, 2.5) end
 end
 joinBtn.Activated:Connect(doJoin)
 pillJoin.Activated:Connect(doJoin)
@@ -862,6 +938,7 @@ local function onReward(r)
 	rewardTitle.Text = r.Result == "Victory" and "\u{1F3C6} VICTORY!" or "\u{2744} IT ESCAPED"
 	rewardTitle.TextColor3 = r.Result == "Victory" and Color3.fromRGB(255, 232, 150) or ICE
 	rewardLines.Text = table.concat(lines, "\n")
+	capPanels()
 	rewardPanel.Visible = true
 	rewardScale.Scale = 0.5
 	TweenService:Create(rewardScale, TweenInfo.new(0.45, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Scale = 1}):Play()
@@ -921,6 +998,23 @@ end)
 --------------------------------------------------
 -- every frame
 --------------------------------------------------
+-- touch: the pill sits above the DRIVE / DRIFT / RECOVER column (its top comes from the jump button: colTop = jumpTop - 152) and the Me panel directly
+-- under the boss bar (live rect, fallback 0.125 scale); desktop positions are fixed in the constructors above
+local function layoutTouch()
+	capPanels()
+	local size = gui.AbsoluteSize
+	if size.Y < 1 then local cam = workspace.CurrentCamera; size = cam and cam.ViewportSize or size end
+	if size.Y >= 1 then
+		local _, jumpTop = UILayout.jumpLeftTop(pg, gui)
+		local colTop = jumpTop - UILayout.GAP - UILayout.COL_H
+		local py = math.max(0, math.floor(math.min(0.19 * size.Y, colTop - UILayout.GAP - PILL_H) + 0.5))
+		local pillPos = UDim2.new(0.988, 0, 0, py)
+		if pill.Position ~= pillPos then pill.Position = pillPos end
+	end
+	local barPos, barSize = UILayout.rectIn(bar, gui)
+	local mePos = barSize.Y > 0 and UDim2.new(0.5, 0, 0, math.floor(barPos.Y + barSize.Y + 6 + 0.5)) or UDim2.fromScale(0.5, 0.125)
+	if mePanel.Position ~= mePos then mePanel.Position = mePos end
+end
 local function hud()
 	local t = now()
 	local hrp = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
@@ -928,14 +1022,20 @@ local function hud()
 	local near = pd < math.max(ev.W, ev.D) * 0.7 + 25
 	local state = st and st.State or "Arrival"
 	local live = state == "Arrival" or state == "Fight"
+	-- F34 / F25: the boss bar + personal panel belong to the fight only (never the garage or the arena island); the pill stays so you can rejoin, but is off on the island
+	local inArena = player:GetAttribute("InArenaIsland") == true
+	local atFight = near and not inArena and player:GetAttribute("InGarage") ~= true
+	if ann.Visible and (inArena or menuOpen() or (touch and lessonCardUp())) then ann.Visible = false; queueAnnouncement() end -- F23: never leave it unseen behind a menu; it comes back when the menu closes
 	if ann.Visible then
 		annTime.Text = state == "Arrival" and ("Battle starts in " .. fmtTime(ev.FightAt - t)) or ("Battle in progress \u{2022} " .. fmtTime((st.Ends or t) - t) .. " left")
 	end
-	pill.Visible = live and not ann.Visible and not near
+	if touch then layoutTouch() end
+	-- the pill (DisplayOrder 57) waits for open menus so its JOIN never takes taps meant for a menu; the bottom-left HELP menu never reaches it
+	pill.Visible = live and not ann.Visible and not atFight and not inArena and UILayout.openMenu(pg, {HelpMenu = true}) == nil
 	if pill.Visible then
 		pillText.Text = ("\u{2744} FROST KING \u{2022} %s"):format(state == "Arrival" and fmtTime(ev.FightAt - t) or fmtTime((st.Ends or t) - t))
 	end
-	bar.Visible = (near or me ~= nil) and (live or state == "Defeat")
+	bar.Visible = atFight and (live or state == "Defeat") and not (touch and ann.Visible) -- touch: the 156 px announcement takes the top-centre slot
 	if bar.Visible and st then
 		local f = math.clamp((st.HP or 0) / math.max(1, st.MaxHP or 1), 0, 1)
 		fill.Size = UDim2.fromScale(state == "Arrival" and 1 or f, 1)
@@ -946,7 +1046,7 @@ local function hud()
 		barTime.Text = state == "Arrival" and fmtTime(ev.FightAt - t) or fmtTime((st.Ends or t) - t)
 		fillGrad.Color = ph >= 3 and ColorSequence.new(Color3.fromRGB(205, 150, 255), Color3.fromRGB(125, 70, 255)) or ColorSequence.new(Color3.fromRGB(120, 220, 255), Color3.fromRGB(60, 140, 255))
 	end
-	mePanel.Visible = me ~= nil and live
+	mePanel.Visible = atFight and me ~= nil and live
 	if mePanel.Visible then
 		local hpv = math.max(0, me.HP or 0)
 		meHPFill.Size = UDim2.fromScale(math.clamp(hpv / (me.MaxHP or 100), 0, 1), 1)
