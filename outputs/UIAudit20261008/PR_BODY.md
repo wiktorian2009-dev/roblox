@@ -22,7 +22,7 @@ Full report: `outputs/UIAudit20261008/README.md` (findings table, refuted/deferr
 6. **Invisible frames intercepting input (F08, F26, F27, F28).** Garage card/window/inspect and OfferDetails sink input; the own-car click is ignored while the equip window is visible; four transparent blockers fill the tutorial spotlight ring; Pedestal E and R prompts no longer render at the same spot; PlowDriveClient ignores F/ButtonY while the loading screen is up.
 7. **UI left visible (F30-F34; F09, F35, F36 as patches).** AFK hides on the arena island; the equip window closes when you walk away from your bay; the HELP REQUEST popup hides when the offer expires; Frost King boss bar and Me panel show only at the fight.
 8. **Text and touch targets on small screens (F10-F14, F37-F44, F46).** Two-line equip rows, wrapped offer text with an 11-12 px floor, 40-44 px buttons, scrollable offer details with a retry on failed price lookups.
-9. **Classes 5, 8 and 10:** no finding was confirmed in classes 5, 8 or 10. New polling and listeners were written to connect once, and the checklist repeats open/close cycles and checks that movement and camera work after every close.
+9. **Classes 5, 8 and 10:** the audit confirmed no defect filed under these classes (item 5 above is related tutorial-spotlight work). That is not proof they are fine: duplicate connections and leaked input locks are not verified at runtime. New polling and listeners were written to connect once, and the checklist repeats open/close cycles and checks that movement and camera still work after every close.
 
 ### What changed and why
 
