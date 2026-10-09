@@ -61,3 +61,22 @@ Not moved: bays, spawn, travel points, leaderboards, snow yard, egg display, sno
 Run hub_open.luau with MODE "undo". It puts every object listed in ServerStorage.HubOpenBackup_20261009.Moved back at its OrigPivot, including the colliders, mountains, cliff facets and string lights. It also returns the orphan collider from .Removed to W1Remaster.Frostfall.Colliders.
 
 MODE "apply" can be re-run safely, because it always starts from the original pivots in the backup.
+
+## Paths to the garages (later the same evening, save point 67)
+wiktor: "Make layout diffrent so paths will lead to garages".
+
+The old village ice walk (one trident-shaped union whose arms led to the old village spots) is replaced by a wheel of paths. Script: hub_paths.luau (MODE "build" / "undo"). Before/after: screens/compare_paths_overview.jpg.
+- **Spokes:** a straight ice path from the plaza (r 21, under the central ice) to the open side of each of the 8 bays (r 96.6). Each runs along that bay's clear lane, 10 studs wide.
+- **Ring:** a ring path r 82-90 in front of the bays, from Bay 7 (52°) round the west to Bay 8 (308°). It crosses the spawn avenue between the spawn and the pond. The east stays open to the snow yard.
+- **Spawn avenue:** from the plaza past the spawn to the ring.
+- **Snow yard link:** a short link from the plaza to the snow yard.
+- **Gap branches:** narrow (5-stud) paths from the ring into the gaps with the Crafting machine, the arena portal and the Crystal Pavilion.
+- **Look:** the same as the old walk. Ice (132,200,232) with top 0.49 sits on a Snow (238,245,252) border 0.6 wider each side, top 0.435. The slabs reach below both floors, so there is no gap at the edges. Two unions: FrostfallVillage.Walkways.SpokeIceWalk / SpokeSnowBorder. They are not solid and not queryable, like the old walk; players walk on the snow underneath.
+- **Kept:** the central ice discs, the compass inlays and the pastel plaza ring.
+- **Old walk:** ContinuousIceWalk + ContinuousSnowBorder moved to ServerStorage.HubPathsBackup_20261009.Removed.
+- **Checks:**
+  - Edit: top and eye-level views (plaza to Bay 5, spawn to the north arc, ring to the Crafting branch).
+  - Play (BalanceTestMode): spawn view, then walked the Bay 6 path from the plaza into Bay 6 and got Bay 6.
+  - No script refers to the old walk.
+  - No console errors.
+- **Undo:** hub_paths.luau MODE "undo". The old walk comes back and the new unions go to HubPathsBackup_20261009.Built.
