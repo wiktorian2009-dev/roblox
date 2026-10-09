@@ -4,8 +4,11 @@
 --   * Pet Fuser (Golden), Crafting Machine, Hot Cocoa: row buttons -> green art when ready (FUSE! / CRAFT! / BUY), grey otherwise,
 --     following the label text the machine script sets.
 --   * The X close buttons of those panels (and the SHOP) -> the round SnowArt close.
+--   * Touch-only devices (UIAudit F41, 2026-10-08): the EQUIP / EQUIPPED pill and the unequip X get a minimum size; on short cards the
+--     preview / name / boost rows are lifted so the larger pill never covers the +x% text (see skinPetButton / fitCard).
 -- The upgrade screen is not touched.
 local Players = game:GetService("Players")
+local UIS = game:GetService("UserInputService")
 local RS = game:GetService("ReplicatedStorage")
 local Art = require(RS:WaitForChild("SnowArt"))
 local pg = Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -16,14 +19,73 @@ local function labelOf(b)
 end
 
 -- inventory pet cards
+-- UIAudit F41: PetClient sizes EQUIP at 0.86 x 0.17 and the unequip X at 0.26 x 0.26 (+aspect 1) of the card, so on a phone they shrink to
+-- slivers. On touch-only devices give them a floor (40 px, the dense touch target) with a UISizeConstraint; layout only, handlers untouched.
+local TOUCH_MIN = 40 -- dense touch target, px
+local PILL_BOTTOM, TEXT_GAP = 0.96, 4 -- floored EQUIP pill: bottom edge (card scale) and px kept clear between its top and the text above
+local function touchOnly() return UIS.TouchEnabled and not UIS.KeyboardEnabled end
+local function minSize(b, w, h)
+	if b:FindFirstChild("TouchMinSize") then return end
+	local c = Instance.new("UISizeConstraint")
+	c.Name, c.MinSize = "TouchMinSize", Vector2.new(w, h)
+	c.Parent = b
+end
+-- PetClient stacks the card as preview (y 0.02-0.46), name (0.46-0.60), "+x% boost" (0.60-0.71), then the pill (0.75-0.92). Once the pill is
+-- floored to 40 px (card under ~235 px high) it no longer fits there, so it is bottom-anchored (grows upward) and the rows above are lifted -
+-- preview shrinks, name / boost move up - until they end TEXT_GAP above its top: the +x% stat is never covered. Everything is recomputed from the
+-- original geometry on each card resize (a taller card gets the PetClient layout back). The connection sits on the card, which PetClient
+-- destroys on every refresh, so it never outlives it.
+local function fitCard(main, pill)
+	local rows, preview = {}, nil
+	for _, r in ipairs(main:GetChildren()) do
+		if r ~= pill and (r:IsA("ViewportFrame") or r:IsA("TextLabel")) and r.Position.Y.Offset == 0 and r.Size.Y.Offset == 0 then
+			local o = {r = r, y = r.Position.Y.Scale, h = r.Size.Y.Scale}
+			if r:IsA("ViewportFrame") then preview = o end
+			rows[#rows + 1] = o
+		end
+	end
+	local textTop = preview and (preview.y + preview.h - 0.001) or 0 -- text rows = labels stacked under the preview
+	local anchor, pos = pill.AnchorPoint, pill.Position
+	local function apply()
+		local H = main.AbsoluteSize.Y
+		if H <= 0 or not pill.Parent then return end
+		local floored = pill.Size.Y.Scale * H + pill.Size.Y.Offset < TOUCH_MIN
+		local lift = 0
+		if floored then
+			pill.AnchorPoint = Vector2.new(anchor.X, 1)
+			pill.Position = UDim2.new(pos.X.Scale, pos.X.Offset, PILL_BOTTOM, 0)
+			local limit = PILL_BOTTOM - (TOUCH_MIN + TEXT_GAP) / H -- lowest card-scale y the text may reach
+			for _, o in ipairs(rows) do
+				if o ~= preview and o.y >= textTop then lift = math.max(lift, o.y + o.h - limit) end
+			end
+		else
+			pill.AnchorPoint, pill.Position = anchor, pos
+		end
+		for _, o in ipairs(rows) do
+			local r = o.r
+			if o == preview then
+				r.Size = UDim2.new(r.Size.X.Scale, r.Size.X.Offset, math.max(o.h - lift, math.min(o.h, 0.15)), 0)
+			elseif o.y >= textTop then
+				r.Position = UDim2.new(r.Position.X.Scale, r.Position.X.Offset, o.y - lift, 0)
+			end
+		end
+	end
+	apply()
+	main:GetPropertyChangedSignal("AbsoluteSize"):Connect(apply)
+end
 local function skinPetButton(b)
 	if not b:IsA("TextButton") or b:GetAttribute("SnowArtSkinned") then return end
 	local l = labelOf(b)
 	if not l then return end
 	if l.Text == "EQUIP" or l.Text == "EQUIPPED" then
 		Art.SkinButton(b) -- colour follows BackgroundColor3 (blue / green)
+		if touchOnly() then
+			minSize(b, 0, TOUCH_MIN)
+			if b.Parent and b.Parent:IsA("GuiObject") then fitCard(b.Parent, b) end
+		end
 	elseif l.Text == "X" then
 		Art.SkinClose(b)
+		if touchOnly() then minSize(b, TOUCH_MIN, TOUCH_MIN) end
 	end
 end
 -- machine rows: state from the label text

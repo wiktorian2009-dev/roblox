@@ -5,6 +5,10 @@
 -- gamepad L1 or the DRIFT button. It needs ground contact, speed and steering; lowers sideways grip, keeps momentum, bounded yaw help,
 -- smooth grip return. Tuning: PlowConfig C.Drive.Drift. Wheel powder, fading skid trails, engine/skid audio and a small camera lean
 -- follow the Settings toggles DriveSoundOn / ReducedMotion. Drifting never awards Snow and never exceeds the build's top speed.
+-- 2026-10-08 (Claude, UI audit F02 / F28 / F40): on touch, DRIFT / DRIVE (EXIT) / RECOVER sit in ONE bottom-right column (TouchColumn, a
+-- UIListLayout; hidden buttons collapse) anchored just above Roblox's jump button (read live from PlayerGui.TouchGui, with the Roblox
+-- defaults as fallback), so they never cover the jump button or each other, and the gui uses DeviceSafeInsets. Desktop layout is unchanged.
+-- The F / Y and R actions and the on-screen buttons do nothing while the loading screen is up (it does not sink input).
 local Players = game:GetService("Players")
 local RS = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -15,18 +19,82 @@ local GuiService = game:GetService("GuiService")
 local player = Players.LocalPlayer
 local C = require(RS:WaitForChild("PlowConfig"))
 local Art = require(RS:WaitForChild("FeatureUIArt"))
+local UILayout = require(RS:WaitForChild("UILayout"))
 if C.Mode ~= "Snowplow" then return end
 local TX = require(RS:WaitForChild("UniversalVFX")).Textures
 local remote = RS:WaitForChild("PlowRemote")
 local touch = UIS.TouchEnabled and not UIS.KeyboardEnabled
 local FONT, NAVY, WHITE = Enum.Font.FredokaOne, Color3.fromRGB(20, 40, 85), Color3.new(1, 1, 1)
 
+local pg = player:WaitForChild("PlayerGui")
 local gui = Instance.new("ScreenGui")
 gui.Name, gui.ResetOnSpawn, gui.IgnoreGuiInset, gui.DisplayOrder = "PlowDriveGui", false, true, 51
-gui.Parent = player:WaitForChild("PlayerGui")
-local function makeButton(name, label, color, pos, size)
+if touch then gui.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets end -- notches / rounded corners on phones
+gui.Parent = pg
+
+-- touch only: ONE column for DRIFT / DRIVE (EXIT) / RECOVER, bottom-right, right edge 8 px in, bottom 8 px above Roblox's jump button.
+-- Hidden buttons collapse (UIListLayout skips them). The frame is transparent and not Active, so it never takes input itself.
+local column
+if touch then
+	column = Instance.new("Frame")
+	column.Name, column.BackgroundTransparency, column.BorderSizePixel, column.Active = "TouchColumn", 1, 0, false
+	column.AnchorPoint, column.Size, column.AutomaticSize = Vector2.new(1, 1), UDim2.fromOffset(130, 0), Enum.AutomaticSize.Y
+	local list = Instance.new("UIListLayout")
+	list.FillDirection, list.SortOrder, list.Padding = Enum.FillDirection.Vertical, Enum.SortOrder.LayoutOrder, UDim.new(0, UILayout.COL_GAP)
+	list.HorizontalAlignment, list.VerticalAlignment = Enum.HorizontalAlignment.Right, Enum.VerticalAlignment.Bottom
+	list.Parent = column
+	column.Parent = gui
+
+	local function layoutColumn()
+		local size = gui.AbsoluteSize
+		if size.X <= 0 or size.Y <= 0 then -- not laid out yet: the camera viewport is the same size on a phone
+			local vcam = workspace.CurrentCamera
+			size = vcam and vcam.ViewportSize or size
+			if size.X <= 0 or size.Y <= 0 then return end
+		end
+		local _, jumpTop = UILayout.jumpLeftTop(pg, gui) -- Roblox's jump button in this gui's space (fallback: the Roblox defaults)
+		column.Size = UDim2.fromOffset(UILayout.touchColW(size.X), 0)
+		column.Position = UDim2.fromOffset(size.X - UILayout.COL_EDGE, jumpTop - UILayout.GAP)
+	end
+
+	-- relayout triggers, each connected ONCE: this gui's size, the camera viewport, and the jump button (watched when it appears)
+	gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(layoutColumn)
+	gui:GetPropertyChangedSignal("AbsolutePosition"):Connect(layoutColumn)
+	local camConn
+	local function watchCamera()
+		if camConn then camConn:Disconnect(); camConn = nil end
+		local vcam = workspace.CurrentCamera
+		if vcam then camConn = vcam:GetPropertyChangedSignal("ViewportSize"):Connect(layoutColumn) end
+		layoutColumn()
+	end
+	workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(watchCamera)
+	local jumpConns, jumpWatched = {}, nil
+	local function watchJump()
+		local touchGui = pg:FindFirstChild("TouchGui")
+		local jump = touchGui and touchGui:FindFirstChild("JumpButton", true)
+		if not (jump and jump:IsA("GuiObject")) or jump == jumpWatched then return end
+		for _, c in ipairs(jumpConns) do c:Disconnect() end -- a new JumpButton replaces the old one: never keep two sets of connections
+		table.clear(jumpConns)
+		jumpWatched = jump
+		for _, prop in ipairs({"AbsolutePosition", "AbsoluteSize", "Visible"}) do
+			table.insert(jumpConns, jump:GetPropertyChangedSignal(prop):Connect(layoutColumn))
+		end
+		table.insert(jumpConns, jump.AncestryChanged:Connect(layoutColumn))
+		if touchGui:IsA("ScreenGui") then table.insert(jumpConns, touchGui:GetPropertyChangedSignal("Enabled"):Connect(layoutColumn)) end
+		layoutColumn()
+	end
+	pg.ChildAdded:Connect(function(ch) if ch.Name == "TouchGui" then watchJump() end end)
+	pg.DescendantAdded:Connect(function(d) if d.Name == "JumpButton" then watchJump() end end)
+	watchCamera()
+	watchJump()
+end
+
+local function makeButton(name, label, color, pos, size, order)
 	local b = Instance.new("TextButton")
 	b.Name, b.Text, b.AnchorPoint, b.Position, b.Size = name, "", Vector2.new(1, 0.5), pos, size
+	if touch and order then -- a list item of TouchColumn: full column width, 44 high, the list owns the position
+		b.AnchorPoint, b.Position, b.Size, b.LayoutOrder = Vector2.zero, UDim2.new(), UDim2.new(1, 0, 0, UILayout.COL_BTN_H), order
+	end
 	b.BackgroundColor3, b.BorderSizePixel, b.AutoButtonColor = color, 0, true
 	b:SetAttribute("SnowUIDecor", true)
 	local cr = Instance.new("UICorner"); cr.CornerRadius = UDim.new(0.3, 0); cr.Parent = b
@@ -38,15 +106,17 @@ local function makeButton(name, label, color, pos, size)
 	l.ZIndex = b.ZIndex + 4
 	l.Parent = b
 	local ls = Instance.new("UIStroke"); ls.Thickness = 2.2; ls.Color = NAVY; ls.Parent = l
-	local sc = Instance.new("UISizeConstraint"); sc.MinSize = Vector2.new(touch and 130 or 118, touch and 54 or 44); sc.Parent = b
-	b.Parent = gui
+	if touch then local tc = Instance.new("UITextSizeConstraint"); tc.MinTextSize = UILayout.MIN_TEXT; tc.Parent = l end -- never below 12 px
+	local sc = Instance.new("UISizeConstraint"); sc.MinSize = Vector2.new(touch and 130 or 118, UILayout.MIN_TOUCH); sc.Parent = b -- 44 high (touch: 130 wide = the column's minimum width)
+	b.Parent = (touch and order) and column or gui
 	Art.Skin(b)
 	local symbol = name == "Drift" and "drift" or (name == "Recover" and "recover" or "recover")
 	Art.Icon(b, symbol, UDim2.fromScale(0.025, 0.11), UDim2.fromScale(0.21, 0.78), "FeatureDriveIcon")
 	return b, l
 end
-local drive, driveLabel = makeButton("Drive", "DRIVE", Color3.fromRGB(70, 200, 105), UDim2.fromScale(0.992, 0.8), UDim2.fromScale(touch and 0.17 or 0.115, touch and 0.12 or 0.066))
-local recover = makeButton("Recover", touch and "RECOVER" or "RECOVER [R]", Color3.fromRGB(250, 150, 50), UDim2.fromScale(0.992, touch and 0.93 or 0.885), UDim2.fromScale(touch and 0.14 or 0.1, touch and 0.09 or 0.05))
+-- pos / size are the desktop values; on touch the last argument (LayoutOrder in TouchColumn: DRIFT 1, DRIVE / EXIT 2, RECOVER 3) replaces them
+local drive, driveLabel = makeButton("Drive", "DRIVE", Color3.fromRGB(70, 200, 105), UDim2.fromScale(0.992, 0.8), UDim2.fromScale(0.115, 0.066), 2)
+local recover = makeButton("Recover", touch and "RECOVER" or "RECOVER [R]", Color3.fromRGB(250, 150, 50), UDim2.fromScale(0.992, 0.885), UDim2.fromScale(0.1, 0.05), 3)
 recover.Visible = false
 local msg = Instance.new("TextLabel")
 msg.Name, msg.BackgroundTransparency, msg.Font, msg.TextScaled, msg.Text = "Msg", 1, FONT, true, ""
@@ -81,8 +151,10 @@ player:GetAttributeChangedSignal("InGarage"):Connect(refreshButtons)
 player:GetAttributeChangedSignal("InArenaIsland"):Connect(refreshButtons)
 refreshButtons()
 local busy = false
+-- 2026-10-08 (F28): the loading screen (ReplicatedFirst) does not sink input, so F / Y / R and the on-screen buttons must wait for it
+local function loadingActive() return player:GetAttribute("LoadingScreenActive") == true end
 local function ask(action)
-	if busy then return end
+	if busy or loadingActive() then return end
 	busy = true
 	local ok, res = pcall(function() return remote:InvokeServer(action) end)
 	busy = false
@@ -90,8 +162,8 @@ local function ask(action)
 end
 drive.Activated:Connect(function() ask("Drive") end)
 recover.Activated:Connect(function() ask("Recover") end)
-CAS:BindAction("PlowDrive", function(_, state) if state == Enum.UserInputState.Begin and player:GetAttribute("InArenaIsland") ~= true then task.spawn(ask, "Drive") end return Enum.ContextActionResult.Pass end, false, Enum.KeyCode.F, Enum.KeyCode.ButtonY) -- 2026-10-05: Y on a controller too
-CAS:BindAction("PlowRecover", function(_, state) if state == Enum.UserInputState.Begin and player:GetAttribute("InGarage") ~= true and player:GetAttribute("InArenaIsland") ~= true then task.spawn(ask, "Recover") end return Enum.ContextActionResult.Pass end, false, Enum.KeyCode.R)
+CAS:BindAction("PlowDrive", function(_, state) if state == Enum.UserInputState.Begin and not loadingActive() and player:GetAttribute("InArenaIsland") ~= true then task.spawn(ask, "Drive") end return Enum.ContextActionResult.Pass end, false, Enum.KeyCode.F, Enum.KeyCode.ButtonY) -- 2026-10-05: Y on a controller too
+CAS:BindAction("PlowRecover", function(_, state) if state == Enum.UserInputState.Begin and not loadingActive() and player:GetAttribute("InGarage") ~= true and player:GetAttribute("InArenaIsland") ~= true then task.spawn(ask, "Recover") end return Enum.ContextActionResult.Pass end, false, Enum.KeyCode.R)
 
 -- hold-to-drift input (2026-10-05). Polled by the Heartbeat below; never sunk, so other systems keep their keys.
 -- Ignored while typing, in the Roblox menu, or (gamepad) while a GUI element is selected.
@@ -99,7 +171,7 @@ local DR = C.Drive.Drift or {}
 local driftKey, driftPad, driftTouch = false, false, false
 local usingPad = false
 local function releaseDrift() driftKey, driftPad, driftTouch = false, false, false end
-local driftBtn, driftLabel = makeButton("Drift", "DRIFT", Color3.fromRGB(120, 150, 255), UDim2.fromScale(0.992, touch and 0.665 or 0.725), UDim2.fromScale(touch and 0.14 or 0.1, touch and 0.09 or 0.05))
+local driftBtn, driftLabel = makeButton("Drift", "DRIFT", Color3.fromRGB(120, 150, 255), UDim2.fromScale(0.992, 0.725), UDim2.fromScale(0.1, 0.05), 1)
 driftBtn.Visible = false
 local function driftHint()
 	driftLabel.Text = touch and "DRIFT" or (usingPad and "DRIFT (L1)" or "DRIFT [SHIFT]")

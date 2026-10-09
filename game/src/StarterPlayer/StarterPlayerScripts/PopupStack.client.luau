@@ -5,6 +5,8 @@
 --   * HELP REQUEST and the Frost King announcement keep their buttons clickable and are never hidden by the stack.
 --   * Cap: at most MAX popups or 70% of the screen height; when it is full the OLDEST plain toast fades out first.
 --   * While the tutorial card is up, the column starts below it (the tutorial's own spotlight / card are never covered).
+--   * 2026-10-08 UI audit: also starts below the touch Frost King "Me" card (top-centre) while it is up; the free-spin WheelToast is stacked too.
+--   * 2026-10-08 follow-up: also starts below the Frost King boss bar while it is up.
 -- Not stacked (they live elsewhere on purpose): the right-edge treasure toast, the arena banner, the Frost King battle text in the
 -- middle, the tutorial's own flash text and toasts inside open panels.
 local Players = game:GetService("Players")
@@ -20,6 +22,7 @@ local WATCH = {
 	{"FrostKingGui", "Announce", true},      -- THE FROST KING HAS APPEARED! (JOIN / LATER)
 	{"ContractGui", "Toast"},
 	{"RNGGui", "ActivityToast"},             -- rewards / quests / achievements / events
+	{"RNGGui", "WheelToast"},                -- free spin earned (WheelClient label; faded-out label = hidden)
 	{"RNGGui", "Toast"},                     -- eggs: not enough Snow
 	{"PlowShopGui", "Toast"},                -- garage offers, offer ran out
 	{"TreasureToastGui", "Announce"},        -- mythic treasure nearby
@@ -85,6 +88,17 @@ RunService.RenderStepped:Connect(function()
 	local tut = pg:FindFirstChild("PlowTutorial")
 	local card = tut and tut:FindFirstChild("Card")
 	if card and card.Visible and card.AbsolutePosition.Y < vp.Y * 0.4 then y = math.max(y, card.AbsolutePosition.Y + card.AbsoluteSize.Y + 18) end
+	-- touch Frost King "Me" HP card (top-centre, under the boss bar): the column starts below it. Desktop "Me" is bottom-right, so no effect there.
+	local fk = pg:FindFirstChild("FrostKingGui")
+	local me = fk and fk:FindFirstChild("Me")
+	if me and me:IsA("GuiObject") and enabledChain(me) and me.AbsolutePosition.Y < vp.Y * 0.5 then
+		y = math.max(y, me.AbsolutePosition.Y + me.AbsoluteSize.Y + 8)
+	end
+	-- Frost King boss bar (top-centre, >= 56 px high on touch): the column starts below it while it is up
+	local bossBar = fk and fk:FindFirstChild("BossBar")
+	if bossBar and bossBar:IsA("GuiObject") and enabledChain(bossBar) and bossBar.AbsolutePosition.Y < vp.Y * 0.3 then
+		y = math.max(y, bossBar.AbsolutePosition.Y + bossBar.AbsoluteSize.Y + 8)
+	end
 	local limit = vp.Y * MAXH - insetY
 	local n = 0
 	for _, o in ipairs(list) do

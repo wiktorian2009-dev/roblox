@@ -11,6 +11,7 @@ if C.Mode ~= "Snowplow" then return end
 local Assembly = require(RS:WaitForChild("PlowAssembly"))
 local Format = require(RS:WaitForChild("NumberFormat"))
 local Api = require(RS:WaitForChild("PlowClientApi"))
+local UILayout = require(RS:WaitForChild("UILayout")) -- 2026-10-08 UI audit: isSmall() for the phone layouts of the card / equip window
 local TX = require(RS:WaitForChild("UniversalVFX")).Textures
 local SnowArt = require(RS:WaitForChild("SnowArt")) -- 2026-10-06: image-based buttons / windows
 local remote, event = RS:WaitForChild("PlowRemote"), RS:WaitForChild("PlowEvent")
@@ -30,6 +31,13 @@ local function mk(class, props, parent)
 end
 local function round(o, r) return mk("UICorner", {CornerRadius = UDim.new(r or 0.2, 0)}, o) end
 local function outline(o, th, col) return mk("UIStroke", {Thickness = th or 2.5, Color = col or NAVY, ApplyStrokeMode = Enum.ApplyStrokeMode.Border}, o) end
+-- 2026-10-08 UI audit (F39 / F12 / F13): scale-sized buttons and text shrink below a usable size on phones; these keep a floor under them
+local function minSize(o, x, y) return mk("UISizeConstraint", {MinSize = Vector2.new(x or 0, y or 0)}, o) end -- touch targets
+local function minText(l, n) return mk("UITextSizeConstraint", {MinTextSize = n or 11}, l) end
+local function onViewport(fn) -- re-run a layout function when the screen size changes (rotation / window resize)
+	local cam = workspace.CurrentCamera
+	if cam then cam:GetPropertyChangedSignal("ViewportSize"):Connect(fn) end
+end
 local function text(parent, str, props, th)
 	local l = mk("TextLabel", {BackgroundTransparency = 1, Font = FONT, Text = str, TextColor3 = WHITE, TextScaled = true, Size = UDim2.fromScale(1, 1)}, parent)
 	for k, v in pairs(props or {}) do l[k] = v end
@@ -175,17 +183,27 @@ end
 
 ------------------------------------------------ the offer card (for one pedestal, or the reserved shelf)
 local target = "1"
-local card = mk("Frame", {Name = "OfferCard", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.9), Size = UDim2.fromScale(0.5, touch and 0.72 or 0.54), BackgroundColor3 = WHITE, Visible = false}, gui)
+-- Active = true (F26): the card sinks clicks, so they never reach a car's ClickDetector behind it
+local card = mk("Frame", {Name = "OfferCard", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.9), Size = UDim2.fromScale(0.5, touch and 0.72 or 0.54), BackgroundColor3 = WHITE, Visible = false, Active = true}, gui)
 card:SetAttribute("SnowUIDecor", true)
 mk("UIAspectRatioConstraint", {AspectRatio = 1.2, AspectType = Enum.AspectType.FitWithinMaxSize}, card)
+-- 2026-10-08 (F39): phones / short windows get a taller, wider card (still 1.2 : 1) so the 44 px BUY / RESERVE / REROLL row and the 44 px reserved-shelf strip fit
+local function layoutCard()
+	if UILayout.isSmall() then card.Size = UDim2.fromScale(0.58, 0.86)
+	else card.Size = UDim2.fromScale(0.5, touch and 0.72 or 0.54) end
+end
+layoutCard()
+onViewport(layoutCard)
 round(card, 0.07); outline(card, 4)
 mk("UIGradient", {Rotation = 90, Color = ColorSequence.new(Color3.fromRGB(72, 132, 215), Color3.fromRGB(30, 62, 130))}, card)
 SnowArt.SkinPanel(card) -- 2026-10-06: snowy window art
 local cardScale = mk("UIScale", {Scale = 1}, card)
-local hdr = mk("Frame", {Position = UDim2.fromScale(0.03, 0.025), Size = UDim2.fromScale(0.82, 0.095), BackgroundColor3 = ICE}, card)
+local hdr = mk("Frame", {Position = UDim2.fromScale(0.03, 0.025), Size = UDim2.fromScale(0.8, 0.095), BackgroundColor3 = ICE}, card) -- 0.8 (was 0.82): clear of the 44 px X below
 hdr:SetAttribute("SnowUIDecor", true); round(hdr, 0.3); outline(hdr, 2.5)
 local hdrText = text(hdr, "", {Position = UDim2.fromScale(0.04, 0.1), Size = UDim2.fromScale(0.92, 0.8)})
-local closeB = button(card, "X", Color3.fromRGB(240, 60, 90), {Position = UDim2.fromScale(0.875, 0.025), Size = UDim2.fromScale(0.095, 0.095)})
+-- F39: right edge stays at 0.97; anchored top-right and never smaller than 44 x 44, so it grows left / down on phones
+local closeB = button(card, "X", Color3.fromRGB(240, 60, 90), {AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.97, 0.025), Size = UDim2.fromScale(0.095, 0.095)})
+minSize(closeB, 44, 44)
 local glow = mk("ImageLabel", {BackgroundTransparency = 1, Image = TX.glow, AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.26, 0.34), Size = UDim2.fromScale(0.62, 0.62), ImageTransparency = 0.8, ZIndex = 1}, card)
 local vp = viewport(card, {Position = UDim2.fromScale(0.04, 0.14), Size = UDim2.fromScale(0.44, 0.4), ZIndex = 2})
 local nameL = text(card, "", {Position = UDim2.fromScale(0.51, 0.14), Size = UDim2.fromScale(0.46, 0.105), TextXAlignment = Enum.TextXAlignment.Left})
@@ -194,18 +212,22 @@ rarPill:SetAttribute("SnowUIDecor", true); round(rarPill, 0.5); outline(rarPill,
 local rarL = text(rarPill, "", {Position = UDim2.fromScale(0.06, 0.1), Size = UDim2.fromScale(0.88, 0.8)}, 1.8)
 local slotL = text(card, "", {Position = UDim2.fromScale(0.8, 0.255), Size = UDim2.fromScale(0.17, 0.07), TextColor3 = ICE}, 1.8)
 local chanceL = text(card, "", {Position = UDim2.fromScale(0.51, 0.33), Size = UDim2.fromScale(0.46, 0.055), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = Color3.fromRGB(255, 232, 150)}, 1.8)
-local descL = text(card, "", {Position = UDim2.fromScale(0.51, 0.39), Size = UDim2.fromScale(0.46, 0.05), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = Color3.fromRGB(215, 235, 255)}, 1.5)
-local statL = text(card, "", {Position = UDim2.fromScale(0.51, 0.445), Size = UDim2.fromScale(0.46, 0.05), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = WHITE}, 1.5)
-local compareL = text(card, "", {Position = UDim2.fromScale(0.51, 0.5), Size = UDim2.fromScale(0.46, 0.05), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = Color3.fromRGB(150, 255, 170)}, 1.5)
-local priceL = text(card, "", {Name = "Price", Position = UDim2.fromScale(0.04, 0.565), Size = UDim2.fromScale(0.3, 0.085), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = Color3.fromRGB(255, 232, 150)})
-local needL = text(card, "", {Position = UDim2.fromScale(0.36, 0.565), Size = UDim2.fromScale(0.61, 0.085), TextXAlignment = Enum.TextXAlignment.Right}, 2)
-local track = mk("Frame", {Position = UDim2.fromScale(0.04, 0.66), Size = UDim2.fromScale(0.93, 0.04), BackgroundColor3 = Color3.fromRGB(20, 38, 80)}, card)
+-- F13: the description gets a two-line wrapped block, stat / compare a line each; MinTextSize 11 + truncation keep them readable (and inside the card) on phones
+local descL = text(card, "", {Position = UDim2.fromScale(0.51, 0.385), Size = UDim2.fromScale(0.46, 0.095), TextWrapped = true, TextTruncate = Enum.TextTruncate.AtEnd, TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = Color3.fromRGB(215, 235, 255)}, 1.5)
+local statL = text(card, "", {Position = UDim2.fromScale(0.51, 0.485), Size = UDim2.fromScale(0.46, 0.045), TextTruncate = Enum.TextTruncate.AtEnd, TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = WHITE}, 1.5)
+local compareL = text(card, "", {Position = UDim2.fromScale(0.51, 0.53), Size = UDim2.fromScale(0.46, 0.04), TextTruncate = Enum.TextTruncate.AtEnd, TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = Color3.fromRGB(150, 255, 170)}, 1.5)
+minText(descL, 11); minText(statL, 11); minText(compareL, 11)
+local priceL = text(card, "", {Name = "Price", Position = UDim2.fromScale(0.04, 0.575), Size = UDim2.fromScale(0.3, 0.075), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = Color3.fromRGB(255, 232, 150)})
+local needL = text(card, "", {Position = UDim2.fromScale(0.36, 0.575), Size = UDim2.fromScale(0.61, 0.075), TextXAlignment = Enum.TextXAlignment.Right}, 2)
+local track = mk("Frame", {Position = UDim2.fromScale(0.04, 0.655), Size = UDim2.fromScale(0.93, 0.032), BackgroundColor3 = Color3.fromRGB(20, 38, 80)}, card)
 track:SetAttribute("SnowUIDecor", true); round(track, 0.5); outline(track, 2)
 local fill = mk("Frame", {Size = UDim2.fromScale(0, 1), BackgroundColor3 = GREEN, BorderSizePixel = 0}, track)
 fill:SetAttribute("SnowUIDecor", true); round(fill, 0.5)
-local buyB = button(card, "BUY", GREEN, {Name = "BuyButton", Position = UDim2.fromScale(0.04, 0.725), Size = UDim2.fromScale(0.3, 0.13)})
-local resB = button(card, "RESERVE", BLUE, {Name = "ReserveButton", Position = UDim2.fromScale(0.36, 0.725), Size = UDim2.fromScale(0.3, 0.13)})
-local rerB = button(card, "REROLL", ORANGE, {Position = UDim2.fromScale(0.68, 0.725), Size = UDim2.fromScale(0.29, 0.13)})
+-- F39: three equal buttons with a fixed 12 px gap (RESERVE - REROLL keeps the discarding REROLL away from RESERVE), each at least 44 px high
+local buyB = button(card, "BUY", GREEN, {Name = "BuyButton", Position = UDim2.new(0.04, 0, 0.7, 0), Size = UDim2.new(0.31, -8, 0.13, 0)})
+local resB = button(card, "RESERVE", BLUE, {Name = "ReserveButton", Position = UDim2.new(0.35, 4, 0.7, 0), Size = UDim2.new(0.31, -8, 0.13, 0)})
+local rerB = button(card, "REROLL", ORANGE, {Position = UDim2.new(0.66, 8, 0.7, 0), Size = UDim2.new(0.31, -8, 0.13, 0)})
+minSize(buyB, 0, 44); minSize(resB, 0, 44); minSize(rerB, 0, 44)
 SnowArt.IconButton(buyB, "coin"); SnowArt.IconButton(resB, "star"); SnowArt.IconButton(rerB, "reroll")
 -- 2026-10-06: visible roll cooldown (server time from the RollReadyAt attribute): the button fills up and reads READY when it can roll
 local rerFill = mk("Frame", {Name = "CooldownFill", Size = UDim2.fromScale(0, 1), BackgroundColor3 = WHITE, BackgroundTransparency = 0.55, BorderSizePixel = 0, ZIndex = 2, Visible = false}, rerB)
@@ -234,10 +256,13 @@ local function updateRollButton(hasOffer)
 		end
 	end
 end
-local resStrip = mk("Frame", {Position = UDim2.fromScale(0.03, 0.88), Size = UDim2.fromScale(0.94, 0.1), BackgroundColor3 = Color3.fromRGB(28, 56, 112)}, card)
+-- F39: the reserved shelf sits on the card's bottom edge (anchored bottom-left) and is at least 44 px high, so its BUY can be 40 px high
+local resStrip = mk("Frame", {AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.03, 0.99), Size = UDim2.fromScale(0.94, 0.1), BackgroundColor3 = Color3.fromRGB(28, 56, 112)}, card)
 resStrip:SetAttribute("SnowUIDecor", true); round(resStrip, 0.25); outline(resStrip, 2)
+minSize(resStrip, 0, 44)
 local resText = text(resStrip, "", {Position = UDim2.fromScale(0.03, 0.08), Size = UDim2.fromScale(0.68, 0.84), TextXAlignment = Enum.TextXAlignment.Left}, 1.8)
-local resBuy = button(resStrip, "BUY", GREEN, {Position = UDim2.fromScale(0.74, 0.1), Size = UDim2.fromScale(0.23, 0.8)})
+local resBuy = button(resStrip, "BUY", GREEN, {AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(0.97, 0.5), Size = UDim2.fromScale(0.23, 0.8)})
+minSize(resBuy, 0, 40)
 local resBar = mk("Frame", {Position = UDim2.fromScale(0.03, 0.86), Size = UDim2.fromScale(0.68, 0.1), BackgroundColor3 = Color3.fromRGB(20, 38, 80)}, resStrip)
 resBar:SetAttribute("SnowUIDecor", true); round(resBar, 0.5)
 local resFill = mk("Frame", {Size = UDim2.fromScale(0, 1), BackgroundColor3 = BLUE, BorderSizePixel = 0}, resBar)
@@ -247,6 +272,7 @@ confirm:SetAttribute("SnowUIDecor", true); round(confirm, 0.1); outline(confirm,
 local confirmText = text(confirm, "", {Position = UDim2.fromScale(0.06, 0.08), Size = UDim2.fromScale(0.88, 0.5), ZIndex = 21})
 local yesB = button(confirm, "REPLACE", ORANGE, {Position = UDim2.fromScale(0.06, 0.64), Size = UDim2.fromScale(0.42, 0.26), ZIndex = 21})
 local noB = button(confirm, "KEEP OLD", GREY, {Position = UDim2.fromScale(0.52, 0.64), Size = UDim2.fromScale(0.42, 0.26), ZIndex = 21})
+minSize(yesB, 0, 40); minSize(noB, 0, 40) -- F39
 local flash = mk("Frame", {Size = UDim2.fromScale(1, 1), BackgroundColor3 = WHITE, BackgroundTransparency = 1, ZIndex = 25, Active = false}, card)
 flash:SetAttribute("SnowUIDecor", true); round(flash, 0.07)
 
@@ -271,7 +297,9 @@ local function refreshCard()
 		hdr.BackgroundColor3 = col:Lerp(NAVY, 0.3)
 		nameL.Text, rarL.Text, slotL.Text, chanceL.Text = def.Name, def.Rarity:upper(), def.Slot:upper(), chanceText(o.Part)
 		rarPill.BackgroundColor3 = col:Lerp(NAVY, 0.25)
-		descL.Text, statL.Text = def.Desc, brief(o.Part)
+		-- display only (PlowConfig untouched): the repeated tail of the descriptions does not fit the small text block; the stat line drops its double spaces
+		descL.Text = ((def.Desc or ""):gsub("%s*A solid step up between its world's starter and premium parts%.%s*$", ""))
+		statL.Text = (brief(o.Part):gsub("%s+|%s+", " | "))
 		compareL.Text = compareText(o.Part)
 		compareL.TextColor3 = compareL.Text:sub(1, 1) == "-" and Color3.fromRGB(255, 170, 150) or Color3.fromRGB(150, 255, 170)
 		priceL.Text = "\u{2744} " .. Format.Abbreviate(o.Price)
@@ -325,7 +353,44 @@ local function reveal(rank)
 	end
 end
 
-local function showCard(on) card.Visible = on; if on then confirm.Visible = false; refreshCard() end end
+-- F05: one menu at a time (UILayout contract). Opening the offer card or the equip window closes the other one, the inspect panel of another player's car
+-- (Api.CloseInspect is a no-op until PlowGarageClient overrides it), the HELP menu, MINI PLOWS and the egg screen, and asks the RNG panels / UPGRADES to close
+-- ("CloseAll" is ignored by listeners that do not know it yet). The edge poll below closes the card / window when ANOTHER menu opens. State-based: nothing
+-- here depends on DisplayOrder.
+local garage, gl: any = nil, {} -- gl = loose bag of the equip window's widgets; `any` stops the analyzer's unsealed-table inference giving up on it
+local OTHER_MENUS = {"Panels", "UpgradeTree", "Inspect", "EggScreen", "MiniPlow", "HelpMenu"} -- the UILayout.openMenu keys of every menu except the card and the window
+local ONLY = {} -- ONLY[key] = the `ignore` set for UILayout.openMenu that leaves just that one menu to be tested
+for _, k in ipairs(OTHER_MENUS) do
+	local ig = {GarageWindow = true, OfferCard = true}
+	for _, o in ipairs(OTHER_MENUS) do if o ~= k then ig[o] = true end end
+	ONLY[k] = ig
+end
+local function menusOpen() -- { [key] = true } for each of the other menus that is showing right now (all keys, so one stuck menu cannot hide a newly opened one)
+	local s = {}
+	for _, k in ipairs(OTHER_MENUS) do s[k] = UILayout.openMenu(pg, ONLY[k]) ~= nil end
+	return s
+end
+local seenMenus = menusOpen()
+local function hideMenu(guiName, objName) -- same direct hide MINI PLOWS and the tutorial use; nil-safe while the other script has not built its screen yet
+	local g = pg:FindFirstChild(guiName)
+	local o = g and g:FindFirstChild(objName)
+	if o and o:IsA("GuiObject") then o.Visible = false end
+end
+local function closeOthers(keep) -- keep = "Card" | "Build": the panel that is being opened stays
+	if keep ~= "Card" then card.Visible = false end
+	if keep ~= "Build" and garage then garage.Visible = false end
+	if Api.CloseInspect then pcall(Api.CloseInspect) end
+	hideMenu("PlowTutorial", "HelpMenu"); hideMenu("MiniPlowGui", "MiniPlowPanel"); hideMenu("VerityEggGui", "EggScreen")
+	local village = rng:FindFirstChild("VillageOpenMenu")
+	if village and village:IsA("BindableEvent") then village:Fire("CloseAll") end
+	seenMenus = menusOpen() -- menus that stay open (an RNG panel whose script ignores "CloseAll" yet) must not close the one that is opening now
+end
+local function showCard(on)
+	if on and not card.Visible then closeOthers("Card") end -- only when it actually opens (a REROLL inside the open card re-calls showCard(true))
+	if on then layoutCard() end
+	card.Visible = on
+	if on then confirm.Visible = false; refreshCard() end
+end
 closeB.Activated:Connect(function() showCard(false) end)
 local function doRoll(key, inCard)
 	key = key or target
@@ -350,7 +415,7 @@ local function doRoll(key, inCard)
 end
 rerB.Activated:Connect(function() doRoll(target, true) end)
 -- 2026-10-06: offer countdown on the card (server time ExpiresAt; Left = paused outside the garage / during the tutorial)
-local timerTrack = mk("Frame", {Position = UDim2.fromScale(0.03, 0.123), Size = UDim2.fromScale(0.82, 0.012), BackgroundColor3 = Color3.fromRGB(28, 56, 112), BorderSizePixel = 0, Visible = false}, card)
+local timerTrack = mk("Frame", {Position = UDim2.fromScale(0.03, 0.123), Size = UDim2.fromScale(0.8, 0.012), BackgroundColor3 = Color3.fromRGB(28, 56, 112), BorderSizePixel = 0, Visible = false}, card)
 timerTrack:SetAttribute("SnowUIDecor", true); round(timerTrack, 0.5)
 local timerFill = mk("Frame", {Size = UDim2.fromScale(1, 1), BackgroundColor3 = Color3.fromRGB(143, 190, 230), BorderSizePixel = 0}, timerTrack)
 timerFill:SetAttribute("SnowUIDecor", true); round(timerFill, 0.5)
@@ -375,7 +440,7 @@ RunService.Heartbeat:Connect(function()
 	end
 end)
 local function afterBuy(r)
-	if r.ok then showCard(false); sfx("rbxassetid://12221976", 0.6, 0.9); toast(r.msg .. " Equip it at the WORKBENCH!", Color3.fromRGB(150, 255, 170)) else toast(r.msg or "Couldn't buy.", Color3.fromRGB(255, 190, 120)) end
+	if r.ok then showCard(false); sfx("rbxassetid://12221976", 0.6, 0.9); toast(r.msg .. (touch and " Tap your car to equip it!" or " Click your car to equip it!"), Color3.fromRGB(150, 255, 170)) else toast(r.msg or "Couldn't buy.", Color3.fromRGB(255, 190, 120)) end
 	refreshAll()
 end
 buyB.Activated:Connect(function()
@@ -406,9 +471,30 @@ yesB.Activated:Connect(function()
 end)
 noB.Activated:Connect(function() confirm.Visible = false end)
 
------------------------------------------------- the build window (opened at the workbench)
-local garage, gl = nil, {}
-local function buildSignature(b) return tostring(b.Blade) .. "|" .. tostring(b.Engine) .. "|" .. tostring(b.Gear) end
+------------------------------------------------ the equip window (opened by clicking your own car; `garage` / `gl` are declared above, next to closeOthers)
+local ROW_H = 112 -- F12: two-line part rows (name / stats / comparison on top, LEVEL + EQUIP below); the slot headers stay 36
+local function buildSignature(b) return tostring(b.Blade) .. "|" .. tostring(b.Engine) .. "|" .. tostring(b.Gear) .. "|" .. tostring(b.Body) end -- F65: Body changes the 3D preview too
+-- F12: the small layout's left column is only 0.33 of the window wide (~145 px of label at 844x390), so on isSmall every stat is a short line (<= ~21 chars)
+-- spread over six rows with a MinTextSize 11 floor (sizes are estimates, not measured); desktop keeps the original five longer lines. Re-run by layoutGarage
+-- on a resize / rotation, from the stats cached in gl.st.
+local function setStats()
+	local st = gl.st
+	if not st or not gl.stats then return end
+	local small = UILayout.isSmall()
+	local top, inSnow = math.floor(st.MaxSpeed + 0.5), math.floor(st.MaxSpeed * (C.Drive.PlowingSpeedFactor or 1) + 0.5)
+	local power = st.ClearPower < 100 and ("%.1f"):format(st.ClearPower) or Format.Abbreviate(math.floor(st.ClearPower + 0.5))
+	local grip, pivot, accel = math.floor(st.Traction * 100 + 0.5), math.floor(st.Pivot * 100 + 0.5), st.AccelTime or C.Drive.AccelTime
+	local lines
+	if small then
+		lines = {("Speed %d (snow %d)"):format(top, inSnow), ("Clear power %s"):format(power), ("Blade width %.1f"):format(st.BladeWidth),
+			("Soft x%.1f Hard x%.1f"):format(st.Soft, st.Hard), ("Grip %d%% Pivot %d%%"):format(grip, pivot), ("0-top %.1fs"):format(accel)}
+	else
+		lines = {("Top speed: %d   In snow: %d"):format(top, inSnow), ("Clearing power: %s"):format(power), ("Blade width: %.1f"):format(st.BladeWidth),
+			("Soft snow: x%.1f   Hard snow: x%.1f"):format(st.Soft, st.Hard), ("Grip: %d%%   Pivot: %d%%   0-top: %.1fs"):format(grip, pivot, accel)}
+	end
+	for i, l in ipairs(gl.stats) do l.Text = lines[i] or "" end
+	gl.warn.Text = st.Valid and "" or (small and "Needs engine + gear!" or "Needs an engine and running gear to drive!")
+end
 local function refreshGarage()
 	if not garage or not state then return end
 	local b = state.Build
@@ -417,22 +503,18 @@ local function refreshGarage()
 		gl.sig = sig
 		setPreview(gl.vp, Assembly.Build(b), 1.35)
 	end
-	local st = C.StatsFor(b, clientMods())
-	local lines = {
-		("Top speed: %d   In snow: %d"):format(math.floor(st.MaxSpeed + 0.5), math.floor(st.MaxSpeed * (C.Drive.PlowingSpeedFactor or 1) + 0.5)), ("Clearing power: %s"):format(st.ClearPower < 100 and ("%.1f"):format(st.ClearPower) or Format.Abbreviate(math.floor(st.ClearPower + 0.5))),
-		("Blade width: %.1f"):format(st.BladeWidth), ("Soft snow: x%.1f   Hard snow: x%.1f"):format(st.Soft, st.Hard),
-		("Grip: %d%%   Pivot: %d%%   0-top: %.1fs"):format(math.floor(st.Traction * 100 + 0.5), math.floor(st.Pivot * 100 + 0.5), st.AccelTime or C.Drive.AccelTime),
-	}
-	for i, l in ipairs(gl.stats) do l.Text = lines[i] or "" end
-	gl.warn.Text = (st.Valid and "") or "Needs an engine and running gear to drive!"
+	gl.st = C.StatsFor(b, clientMods())
+	setStats()
 	gl.list:ClearAllChildren()
 	mk("UIListLayout", {Padding = UDim.new(0, 6), SortOrder = Enum.SortOrder.LayoutOrder}, gl.list)
+	mk("UIPadding", {PaddingTop = UDim.new(0, 3)}, gl.list) -- room for the 40 px UNEQUIP button of the first header (36 px row)
 	local order = 0
 	for _, slot in ipairs(C.Slots) do
 		order += 1
 		local head = mk("Frame", {Size = UDim2.new(1, -8, 0, 36), BackgroundTransparency = 1, LayoutOrder = order}, gl.list)
 		text(head, slot:upper(), {Size = UDim2.fromScale(0.5, 1), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = ICE})
 		local un = button(head, "UNEQUIP", GREY, {AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(1, 0.5), Size = UDim2.fromScale(0.3, 0.8)})
+		minSize(un, 0, 40) -- F39
 		un.Visible = b[slot] ~= nil and b[slot] ~= C.Starter[slot]
 		un.Activated:Connect(function()
 			local r = call("Unequip", slot)
@@ -445,23 +527,26 @@ local function refreshGarage()
 			order += 1
 			local def = C.Parts[id]
 			local equipped = b[slot] == id
-			local row = mk("Frame", {Size = UDim2.new(1, -8, 0, 62), BackgroundColor3 = equipped and Color3.fromRGB(40, 110, 80) or Color3.fromRGB(34, 66, 128), LayoutOrder = order}, gl.list)
+			local row = mk("Frame", {Size = UDim2.new(1, -8, 0, ROW_H), BackgroundColor3 = equipped and Color3.fromRGB(40, 110, 80) or Color3.fromRGB(34, 66, 128), LayoutOrder = order}, gl.list)
 			row:SetAttribute("SnowUIDecor", true); round(row, 0.18); outline(row, 2.5, equipped and GREEN or NAVY)
-			mk("Frame", {Size = UDim2.new(0, 8, 1, -10), Position = UDim2.new(0, 6, 0, 5), BackgroundColor3 = RCOL[def.Rarity], BorderSizePixel = 0}, row):SetAttribute("SnowUIDecor", true)
+			mk("Frame", {Size = UDim2.new(0, 4, 1, -24), Position = UDim2.new(0, 2, 0, 12), BackgroundColor3 = RCOL[def.Rarity], BorderSizePixel = 0}, row):SetAttribute("SnowUIDecor", true) -- slim rarity bar: the text and buttons start at x = 6
 			local lvl = C.LevelOf(state.Levels, id)
-			text(row, def.Name .. ((state.Parts[id] or 0) > 1 and ("  x" .. state.Parts[id]) or "") .. "  Lv " .. lvl, {Position = UDim2.fromScale(0.05, 0.06), Size = UDim2.fromScale(0.42, 0.48), TextXAlignment = Enum.TextXAlignment.Left})
-			text(row, brief(id) .. (equipped and "" or ("   " .. compareText(id))), {Position = UDim2.fromScale(0.05, 0.56), Size = UDim2.fromScale(0.42, 0.36), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = Color3.fromRGB(205, 225, 250)}, 1.4)
+			-- F12: full-width lines (name, wrapped stats, one-line comparison in its own label) with a floor under the text size; LEVEL / EQUIP are 44 px high below, 8 px apart at any width
+			local rowName = text(row, def.Name .. ((state.Parts[id] or 0) > 1 and ("  x" .. state.Parts[id]) or "") .. "  Lv " .. lvl, {Position = UDim2.new(0, 6, 0, 4), Size = UDim2.new(1, -12, 0, 20), TextXAlignment = Enum.TextXAlignment.Left, TextTruncate = Enum.TextTruncate.AtEnd})
+			local rowStat = text(row, brief(id), {Position = UDim2.new(0, 6, 0, 24), Size = UDim2.new(1, -12, 0, 26), TextXAlignment = Enum.TextXAlignment.Left, TextWrapped = true, TextTruncate = Enum.TextTruncate.AtEnd, TextColor3 = Color3.fromRGB(205, 225, 250)}, 1.4)
+			local rowCompare = text(row, equipped and "" or compareText(id), {Position = UDim2.new(0, 6, 0, 50), Size = UDim2.new(1, -12, 0, 14), TextXAlignment = Enum.TextXAlignment.Left, TextTruncate = Enum.TextTruncate.AtEnd, TextColor3 = Color3.fromRGB(205, 225, 250)}, 1.4)
+			minText(rowName, 11); minText(rowStat, 11); minText(rowCompare, 11)
 			-- 2026-10-06 part levels: LEVEL UP with Snow (the server checks ownership, Snow, the bay and the max level)
 			local maxed = lvl >= C.Levels.Max
 			local cost = not maxed and C.LevelCost(def, lvl) or 0
 			local lb = button(row, maxed and ("LV " .. lvl .. " MAX") or ("LV " .. (lvl + 1) .. " \u{2191} \u{2744}" .. Format.Abbreviate(cost)), maxed and GREY or Color3.fromRGB(255, 200, 60),
-				{Name = "Level_" .. id, AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(0.69, 0.5), Size = UDim2.fromScale(0.2, 0.7)})
+				{Name = "Level_" .. id, AnchorPoint = Vector2.new(0, 1), Position = UDim2.new(0, 6, 1, -4), Size = UDim2.new(0.5, -10, 0, 44)})
 			lb.Activated:Connect(function()
 				if maxed then toast(def.Name .. " is at max level!", Color3.fromRGB(255, 220, 140)); return end
 				local r = call("LevelUp", id)
 				toast(r.msg or "", r.ok and Color3.fromRGB(255, 230, 140) or Color3.fromRGB(255, 190, 120)); refreshAll()
 			end)
-			local eb = button(row, equipped and "EQUIPPED" or "EQUIP", equipped and GREEN or BLUE, {Name = "Equip_" .. id, AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(0.97, 0.5), Size = UDim2.fromScale(0.27, 0.7)})
+			local eb = button(row, equipped and "EQUIPPED" or "EQUIP", equipped and GREEN or BLUE, {Name = "Equip_" .. id, AnchorPoint = Vector2.new(1, 1), Position = UDim2.new(1, -6, 1, -4), Size = UDim2.new(0.5, -10, 0, 44)})
 			eb.Activated:Connect(function()
 				if equipped then return end
 				local r = call("Equip", slot, id)
@@ -472,30 +557,81 @@ local function refreshGarage()
 	gl.list.CanvasSize = UDim2.new(0, 0, 0, 0)
 	gl.list.AutomaticCanvasSize = Enum.AutomaticSize.Y
 end
+-- F12: phones / short windows (UILayout.isSmall) get a narrow left column and a wide part list; desktop keeps the original split.
+-- The small list starts 50 px below the window top, i.e. below the 44 px close X (which would otherwise sit on the first slot header's UNEQUIP).
+local function layoutGarage()
+	if not garage or not gl.list then return end
+	local small = UILayout.isSmall()
+	if small then
+		gl.vp.Position, gl.vp.Size = UDim2.fromScale(0.03, 0.13), UDim2.fromScale(0.33, 0.4)
+		gl.sf.Position, gl.sf.Size = UDim2.fromScale(0.03, 0.55), UDim2.fromScale(0.33, 0.42)
+		gl.list.Position, gl.list.Size = UDim2.new(0.38, 0, 0.02, 50), UDim2.new(0.6, 0, 0.95, -50)
+		gl.warn.Position, gl.warn.Size = UDim2.fromScale(0.05, 0.78), UDim2.fromScale(0.9, 0.19)
+	else
+		gl.vp.Position, gl.vp.Size = UDim2.fromScale(0.03, 0.13), UDim2.fromScale(0.45, 0.5)
+		gl.sf.Position, gl.sf.Size = UDim2.fromScale(0.03, 0.65), UDim2.fromScale(0.45, 0.32)
+		gl.list.Position, gl.list.Size = UDim2.fromScale(0.5, 0.13), UDim2.fromScale(0.47, 0.84)
+		gl.warn.Position, gl.warn.Size = UDim2.fromScale(0.05, 0.8), UDim2.fromScale(0.9, 0.15)
+	end
+	for i, l in ipairs(gl.stats) do -- six rows of 11.5 % on isSmall (128 px stats panel), the original five rows of 14 % on desktop
+		if small then l.Position, l.Size = UDim2.fromScale(0.05, 0.03 + (i - 1) * 0.125), UDim2.fromScale(0.9, 0.115)
+		else l.Position, l.Size = UDim2.fromScale(0.05, 0.04 + (i - 1) * 0.15), UDim2.fromScale(0.9, 0.14) end
+		l.Visible = small or i <= 5
+	end
+	setStats() -- the stat strings differ between the two layouts
+end
 local function buildGarageWindow()
-	garage = mk("Frame", {Name = "GarageWindow", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.47), Size = UDim2.fromScale(0.9, 0.78), BackgroundColor3 = WHITE, Visible = false}, gui)
+	-- Active = true (F26): the window sinks clicks, so they never reach a car's ClickDetector behind it
+	garage = mk("Frame", {Name = "GarageWindow", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.47), Size = UDim2.fromScale(0.9, 0.78), BackgroundColor3 = WHITE, Visible = false, Active = true}, gui)
 	garage:SetAttribute("SnowUIDecor", true)
 	mk("UIAspectRatioConstraint", {AspectRatio = 1.6, AspectType = Enum.AspectType.FitWithinMaxSize}, garage)
 	round(garage, 0.05); outline(garage, 4)
 	mk("UIGradient", {Rotation = 90, Color = ColorSequence.new(Color3.fromRGB(72, 132, 215), Color3.fromRGB(30, 62, 130))}, garage)
 	SnowArt.SkinPanel(garage) -- 2026-10-06: snowy window art
 	SnowArt.Icon(garage, "wrench", {Position = UDim2.fromScale(0.03, 0.02), Size = UDim2.fromScale(0.07, 0.1)})
-	text(garage, "      WORKBENCH", {Position = UDim2.fromScale(0.04, 0.02), Size = UDim2.fromScale(0.45, 0.1), TextXAlignment = Enum.TextXAlignment.Left})
-	local x = button(garage, "X", Color3.fromRGB(240, 60, 90), {Position = UDim2.fromScale(0.925, 0.02), Size = UDim2.fromScale(0.055, 0.09)})
+	text(garage, "      EQUIP PARTS", {Position = UDim2.fromScale(0.04, 0.02), Size = UDim2.fromScale(0.45, 0.1), TextXAlignment = Enum.TextXAlignment.Left}) -- F66: the workbench is gone
+	-- F39: right edge stays at 0.98; anchored top-right and never smaller than 44 x 44
+	local x = button(garage, "X", Color3.fromRGB(240, 60, 90), {AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.98, 0.02), Size = UDim2.fromScale(0.055, 0.09)})
+	minSize(x, 44, 44)
 	x.Activated:Connect(function() garage.Visible = false end)
 	gl.vp = viewport(garage, {Position = UDim2.fromScale(0.03, 0.13), Size = UDim2.fromScale(0.45, 0.5)})
 	local sf = mk("Frame", {Position = UDim2.fromScale(0.03, 0.65), Size = UDim2.fromScale(0.45, 0.32), BackgroundColor3 = Color3.fromRGB(24, 48, 100)}, garage)
 	sf:SetAttribute("SnowUIDecor", true); round(sf, 0.08); outline(sf, 2.5)
+	gl.sf = sf
 	gl.stats = {}
-	for i = 1, 5 do gl.stats[i] = text(sf, "", {Position = UDim2.fromScale(0.05, 0.04 + (i - 1) * 0.15), Size = UDim2.fromScale(0.9, 0.14), TextXAlignment = Enum.TextXAlignment.Left}, 1.6) end
-	gl.warn = text(sf, "", {Position = UDim2.fromScale(0.05, 0.8), Size = UDim2.fromScale(0.9, 0.15), TextColor3 = Color3.fromRGB(255, 190, 120)}, 1.6)
+	-- F12: six rows (the sixth only shows on isSmall); layoutGarage places them. MinTextSize 11 keeps the small layout's short lines readable.
+	for i = 1, 6 do
+		gl.stats[i] = text(sf, "", {TextXAlignment = Enum.TextXAlignment.Left, TextTruncate = Enum.TextTruncate.AtEnd}, 1.6)
+		minText(gl.stats[i], 11)
+	end
+	gl.warn = text(sf, "", {TextTruncate = Enum.TextTruncate.AtEnd, TextColor3 = Color3.fromRGB(255, 190, 120)}, 1.6)
+	minText(gl.warn, 11)
 	gl.list = mk("ScrollingFrame", {Position = UDim2.fromScale(0.5, 0.13), Size = UDim2.fromScale(0.47, 0.84), BackgroundTransparency = 1, BorderSizePixel = 0, ScrollBarThickness = 6, CanvasSize = UDim2.new()}, garage)
+	layoutGarage()
+	onViewport(layoutGarage) -- once: the window is only built once
 end
 local function openBuild()
 	if not garage then buildGarageWindow() end
 	garage.Visible = not garage.Visible
-	if garage.Visible then card.Visible = false; call("State"); refreshGarage() end
+	if garage.Visible then closeOthers("Build"); layoutGarage(); call("State"); refreshGarage() end -- F05: the card / inspect panel / RNG panels close first
 end
+-- F05: the card / window close by themselves when ANOTHER menu opens (RNG panel / Travel, UPGRADES, inspect, egg screen, MINI PLOWS, HELP menu): the same 0.25 s
+-- edge poll MINI PLOWS and the HELP menu use, one task for the whole script. closeOthers re-seeds seenMenus when the card / window opens, so a menu that was
+-- already open then never closes the new one. Nothing is connected per open; the pcall keeps the loop alive if a lookup ever errors.
+task.spawn(function()
+	while true do
+		task.wait(0.25)
+		pcall(function()
+			local now, opened = menusOpen(), false
+			for k, on in pairs(now) do if on and not seenMenus[k] then opened = true end end
+			seenMenus = now
+			if opened and (card.Visible or (garage and garage.Visible)) then
+				showCard(false)
+				if garage then garage.Visible = false end
+			end
+		end)
+	end
+end)
 
 ------------------------------------------------ GARAGE button (left menu, 6th cell) = teleport to the garage place and back
 local lm = rng:FindFirstChild("LeftMenu") or rng:FindFirstChild("RightMenu")
@@ -543,6 +679,7 @@ Api.OpenCard = function(key) target = key; showCard(true) end
 Api.Roll = function(key) doRoll(key, card.Visible and target == key) end
 Api.CardTarget = function() return card.Visible and target or nil end
 Api.CloseCard = function() showCard(false) end
+Api.CloseBuild = function() if garage then garage.Visible = false end end -- F05 / F31: lets PlowGarageClient, the tutorial and MINI PLOWS close the equip window
 Api.OpenBuild = openBuild
 Api.Go = function() task.spawn(goToggle) end
 Api.Toast = toast

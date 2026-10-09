@@ -17,6 +17,13 @@ local function label(parent,text,pos,size,color)
 	make("UIStroke",{Color=Color3.fromRGB(17,49,83),Thickness=1.5},t) return t
 end
 local views={}
+-- 2026-10-08 UI audit: honour prompt.UIOffset (pixels, +Y = down) like the default prompt UI does. BillboardGui.SizeOffset is in card sizes
+-- (248x80, +Y = up), so a second prompt on the same part (PlowGarageClient: R Reroll with UIOffset (0,80)) sits one card below E instead of
+-- being drawn on top of it and having its Hit button eat the other card's tap. Zero UIOffset gives (0,0) = unchanged.
+local function offsetSize(prompt)
+	local o=prompt.UIOffset
+	return Vector2.new(o.X/248,0-o.Y/80)
+end
 local function customPrompt(o)
 	if o:IsA("ProximityPrompt") and (o.Style==Enum.ProximityPromptStyle.Default or o:GetAttribute("SnowUIOwnPrompt")) then
 		o:SetAttribute("SnowUIOwnPrompt",true) o.Style=Enum.ProximityPromptStyle.Custom
@@ -30,7 +37,7 @@ PromptService.PromptShown:Connect(function(prompt,inputType)
 	if not part then return end
 	-- 2026-10-03 (Claude): AlwaysOnTop billboards do not render in this place (tested), so the card is a normal billboard
 	local gui=make("BillboardGui",{Name="SnowPrompt",Adornee=part,AlwaysOnTop=false,LightInfluence=0,Active=true,
-		Size=UDim2.fromOffset(248,80),StudsOffsetWorldSpace=Vector3.new(0,3.4,0),MaxDistance=1e5},pg) -- 2026-10-03 (Claude): BillboardGui.MaxDistance is measured from the CAMERA; the old limit (reach+4) hid the card behind a normal third-person camera. PromptShown/Hidden already control when it shows.
+		Size=UDim2.fromOffset(248,80),SizeOffset=offsetSize(prompt),StudsOffsetWorldSpace=Vector3.new(0,3.4,0),MaxDistance=1e5},pg) -- 2026-10-03 (Claude): BillboardGui.MaxDistance is measured from the CAMERA; the old limit (reach+4) hid the card behind a normal third-person camera. PromptShown/Hidden already control when it shows.
 	local body=make("Frame",{Name="Body",BackgroundColor3=Color3.fromRGB(20,84,146),BackgroundTransparency=0.08,
 		Size=UDim2.fromScale(1,1),BorderSizePixel=0,ZIndex=1},gui)
 	make("UICorner",{CornerRadius=UDim.new(0,14)},body) UI.Skin(body,"card")
@@ -70,6 +77,7 @@ PromptService.PromptShown:Connect(function(prompt,inputType)
 	table.insert(connections,UIS.InputEnded:Connect(release))
 	table.insert(connections,prompt:GetPropertyChangedSignal("ActionText"):Connect(function() title.Text=prompt.ActionText end))
 	table.insert(connections,prompt:GetPropertyChangedSignal("ObjectText"):Connect(function() sub.Text=prompt.ObjectText end))
+	table.insert(connections,prompt:GetPropertyChangedSignal("UIOffset"):Connect(function() if gui.Parent then gui.SizeOffset=offsetSize(prompt) end end))
 	table.insert(connections,prompt.PromptButtonHoldBegan:Connect(function()
 		if tween then tween:Cancel() end fill.Size=UDim2.fromScale(0,1)
 		tween=TweenService:Create(fill,TweenInfo.new(prompt.HoldDuration,Enum.EasingStyle.Linear),{Size=UDim2.fromScale(1,1)}) tween:Play()

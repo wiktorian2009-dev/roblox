@@ -60,7 +60,7 @@ local toast = label(gui, "", {Name = "AfkToast", AnchorPoint = Vector2.new(0.5, 
 local toastId = 0
 local function say(text)
 	toastId += 1; local my = toastId
-	toast.Text = text; toast.TextTransparency = 0; toast.Visible = true
+	toast.Text = text; toast.TextTransparency = 0; toast.Visible = btn.Visible -- 2026-10-08: no floating toast while the button is hidden (arena island / bar hidden)
 	task.delay(3, function()
 		if my ~= toastId then return end
 		TweenService:Create(toast, TweenInfo.new(0.6), {TextTransparency = 1}):Play()
@@ -82,17 +82,7 @@ local function place()
 	cap.Position = UDim2.fromOffset(bp.X + bs.X / 2, bp.Y - 6)
 	toast.Position = UDim2.fromOffset(bp.X + bs.X / 2, bp.Y - 58)
 end
-task.spawn(function()
-	for _ = 1, 60 do
-		place()
-		if upgrades then break end
-		task.wait(0.5)
-	end
-	if upgrades then
-		upgrades:GetPropertyChangedSignal("AbsolutePosition"):Connect(place)
-		upgrades:GetPropertyChangedSignal("AbsoluteSize"):Connect(place)
-	end
-end)
+-- (the task that finds UPGRADES and wires place() / showButton() lives at the end of the file, after the meter exists)
 btn:GetPropertyChangedSignal("AbsolutePosition"):Connect(place)
 
 local function on() return player:GetAttribute("AfkPlow") == true end
@@ -103,7 +93,7 @@ local function refresh()
 	title.Text = a and "AFK ON" or "AFK"
 	sub.Text = a and "TAP TO STOP" or "AUTO-PLOW"
 	capTop.Text = a and ("Auto-plowing: " .. math.floor(RATE * 100 + 0.5) .. "% Snow") or "Auto-plow this field while AFK"
-	cap.Visible = a or hovering
+	cap.Visible = btn.Visible and (a or hovering)
 end
 player:GetAttributeChangedSignal("AfkPlow"):Connect(refresh)
 btn.MouseEnter:Connect(function() hovering = true; refresh() end)
@@ -144,7 +134,7 @@ Instance.new("UICorner", fill).CornerRadius = UDim.new(0, 10)
 local mText = label(meter, "", {Position = UDim2.fromScale(0.04, 0.1), Size = UDim2.fromScale(0.92, 0.8), ZIndex = 2})
 local function drawMeter()
 	local m = (player:GetAttribute("DriftMeter") or 0) / 100
-	meter.Visible = m > 0 and not on()
+	meter.Visible = m > 0 and not on() and btn.Visible
 	if m <= 0 then return end
 	fill.Size = UDim2.fromScale(math.clamp(m, 0.06, 1), 1)
 	mText.Text = string.format("DRIFT  +%d%% SNOW", math.floor(m * BONUS * 100 + 0.5))
@@ -155,3 +145,43 @@ local function drawMeter()
 end
 player:GetAttributeChangedSignal("DriftMeter"):Connect(drawMeter)
 player:GetAttributeChangedSignal("AfkPlow"):Connect(drawMeter)
+
+-- visibility + wiring (2026-10-08) ------------------------------------------------------------------------------------------------
+-- Same rule as MiniPlowClient.showButton: the AFK button is shown only while the bottom bar (UPGRADES) is shown. The Bumper Arena
+-- island hides that bar (ArenaHudClient HIDE list) and sets InArenaIsland, and AfkService refuses AFK there anyway, so the button,
+-- its caption, its toast and the drift meter all hide with it instead of floating over the arena HUD. Placement / server stay as they were.
+local function showButton()
+	local bar = upgrades and upgrades.Parent
+	local vis = upgrades ~= nil and upgrades.Visible and not (bar and bar:IsA("GuiObject") and not bar.Visible) and player:GetAttribute("InArenaIsland") ~= true
+	btn.Visible = vis
+	if vis then
+		place()
+		refresh(); drawMeter()
+	else
+		hovering = false -- MouseLeave never fires on a hidden button
+		cap.Visible = false; toast.Visible = false; meter.Visible = false
+	end
+end
+local barConn
+local function watchBar()
+	if barConn then barConn:Disconnect(); barConn = nil end
+	local bar = upgrades and upgrades.Parent
+	if bar and bar:IsA("GuiObject") then barConn = bar:GetPropertyChangedSignal("Visible"):Connect(showButton) end
+	showButton()
+end
+task.spawn(function()
+	for _ = 1, 60 do
+		place()
+		if upgrades then break end
+		task.wait(0.5)
+	end
+	if upgrades then
+		upgrades:GetPropertyChangedSignal("AbsolutePosition"):Connect(place)
+		upgrades:GetPropertyChangedSignal("AbsoluteSize"):Connect(place)
+		upgrades:GetPropertyChangedSignal("Visible"):Connect(showButton)
+		upgrades.AncestryChanged:Connect(function() watchBar(); place() end)
+		watchBar()
+	end
+end)
+player:GetAttributeChangedSignal("InArenaIsland"):Connect(showButton)
+showButton()

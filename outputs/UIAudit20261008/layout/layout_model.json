@@ -1,0 +1,6619 @@
+{
+  "_readme": "SOURCE-DERIVED layout model. Numbers were read by hand out of the cited source lines (src.file:line + quote). It does NOT render Roblox, was not run in Studio and does not prove input works. kind=unknown elements are static Studio frames (not in the repo) and are excluded from every overlap result; kind=assumed elements are probes reported separately and never counted.",
+  "meta": {
+    "generated": "2026-10-08",
+    "coordinateSystem": "Physical pixels, origin top-left of the window (Camera.ViewportSize = W x H). A ScreenGui with IgnoreGuiInset=true spans (0,0)-(W,H); with IgnoreGuiInset=false it spans (0,inset)-(W,H) and its scale values use H-inset.",
+    "insetAssumption": "GuiInset (top bar) = 36 px on desktop viewports, 58 px on phone viewports (task instruction; Roblox reports different values per platform/app version - override with --inset-desktop/--inset-phone).",
+    "formulas": {
+      "size": "px = scale * parentSize + offset; RelativeYY uses the parent HEIGHT for both axes; then UISizeConstraint Min/Max per axis; then UIAspectRatioConstraint (FitWithinMaxSize: shrink to the aspect inside the box); then UIScale.",
+      "position": "topLeft = parentTopLeft + scale*parentSize + offset - anchorPoint*size",
+      "small": "UILayout.isSmall: viewportX < 1000 or viewportY < 560",
+      "touch": "phone viewports (844x390, 667x375, 932x430, 390x844) are modelled as TouchEnabled and not KeyboardEnabled; desktop viewports as keyboard/mouse",
+      "touchTargets": "Only checked on touch viewports. 44 px is the target; 40 px is accepted for elements flagged denseOk (UILayout.MIN_TOUCH_DENSE) and reported separately."
+    }
+  },
+  "viewports": [
+    {
+      "name": "1920x1080",
+      "w": 1920,
+      "h": 1080,
+      "touch": false
+    },
+    {
+      "name": "1366x768",
+      "w": 1366,
+      "h": 768,
+      "touch": false
+    },
+    {
+      "name": "1280x720",
+      "w": 1280,
+      "h": 720,
+      "touch": false
+    },
+    {
+      "name": "844x390",
+      "w": 844,
+      "h": 390,
+      "touch": true
+    },
+    {
+      "name": "667x375",
+      "w": 667,
+      "h": 375,
+      "touch": true
+    },
+    {
+      "name": "932x430",
+      "w": 932,
+      "h": 430,
+      "touch": true
+    },
+    {
+      "name": "390x844",
+      "w": 390,
+      "h": 844,
+      "touch": true
+    }
+  ],
+  "scenarios": {
+    "lobby_idle": "Lobby, on foot, nothing open, no contract. Small screens: OFFERS toggle only (column folded).",
+    "lobby_offers_open": "Lobby, nothing else open; on small screens the player tapped OFFERS so the card column is open.",
+    "lobby_contract_pill": "Lobby with a HELP REQUEST pill pending (offer exists, no job, popup closed).",
+    "contract_announcement": "HELP REQUEST announcement popup up (offers hide; pill hidden).",
+    "garage_offer_card": "In the garage, a pedestal OfferCard open.",
+    "garage_equip_window": "In the garage, the equip window (GarageWindow) open.",
+    "garage_inspect": "In the garage, a neighbour's Inspect panel open.",
+    "driving": "Seated in own plow: EXIT / DRIFT / RECOVER visible, nothing else open.",
+    "driving_offers_open": "Driving after the player had opened the OFFERS list on a small screen (desktop: column always shown).",
+    "driving_contract_tracker": "Driving with an active job tracker.",
+    "driving_treasure_toast": "Driving; a treasure reward toast and the dig-combo meter are up (transient, coincide in normal play).",
+    "tutorial_step_help_open": "Replay lesson step (card in the top slot) with the HELP menu opened by tapping the HELP pill (no guard against this in the pill handler).",
+    "tutorial_card_low_help_open": "Same, but the card was moved to its lowered slot because the target sits under the top slot.",
+    "help_menu_open": "HELP menu open on the lobby with a contract pill pending.",
+    "travel_menu_open": "TRAVEL panel (RNGGui.Panels.Travel) open; its rect is a static Studio frame (unknown).",
+    "offer_details_open": "A paid-offer card was tapped: OfferDetails popup open.",
+    "offers_mini_plows_open": "MINI PLOWS panel open while the offer cards are showing (small: column expanded).",
+    "offers_inspect_open": "A neighbour's Inspect panel open while the offer cards are showing (small: column expanded).",
+    "offers_egg_screen_open": "Verity egg DETAILS screen open while the offer cards are showing (small: column expanded).",
+    "boss_pill_contract_tracker": "Frost King event live (JOIN pill) while a contract job tracker runs.",
+    "boss_fight": "In the Frost King fight, driving: boss bar + personal HP panel.",
+    "upgrades_open": "UPGRADES page open.",
+    "arena_prejoin": "Bumper Arena island, not joined (JOIN MATCH visible).",
+    "arena_match": "Bumper Arena island, joined and driving (BOOST / BRACE visible).",
+    "boss_fight_contract_tracker": "Frost King fight (boss bar + personal panel up) while a contract tracker is also active. Added 2026-10-08 after review: the touch boss bar is >= 56 px high."
+  },
+  "guis": {
+    "PlowTutorial": {
+      "displayOrder": 200,
+      "ignoreInset": true,
+      "basis": "source",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+        "line": 70,
+        "quote": "local sg = mk(\"ScreenGui\", {Name = \"PlowTutorial\", ResetOnSpawn = false, DisplayOrder = 200, IgnoreGuiInset = true, Enabled = true, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, pg)"
+      }
+    },
+    "TravelGui": {
+      "displayOrder": 12,
+      "ignoreInset": true,
+      "basis": "source (copied from HELP's gui, which is true)",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/TravelClient.client.luau",
+        "line": 34,
+        "quote": "local hud = mk(\"ScreenGui\", {Name = \"TravelGui\", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 12}, pg)"
+      }
+    },
+    "PassOffersGui": {
+      "displayOrder": 11,
+      "ignoreInset": true,
+      "basis": "source",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+        "line": 39,
+        "quote": "local gui = mk(\"ScreenGui\", {Name = \"PassOffersGui\", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 11}, pg)"
+      }
+    },
+    "PlowDriveGui": {
+      "displayOrder": 51,
+      "ignoreInset": true,
+      "basis": "source (after, touch: ScreenInsets = DeviceSafeInsets, device notch assumed 0)",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+        "line": 31,
+        "quote": "gui.Name, gui.ResetOnSpawn, gui.IgnoreGuiInset, gui.DisplayOrder = \"PlowDriveGui\", false, true, 51"
+      }
+    },
+    "ContractGui": {
+      "displayOrder": 55,
+      "ignoreInset": false,
+      "basis": "source",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+        "line": 93,
+        "quote": "local gui = mk(\"ScreenGui\", {Name = \"ContractGui\", ResetOnSpawn = false, IgnoreGuiInset = false, DisplayOrder = 55, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, pg)"
+      }
+    },
+    "FrostKingGui": {
+      "displayOrder": 57,
+      "ignoreInset": true,
+      "basis": "source",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+        "line": 100,
+        "quote": "local gui = mk(\"ScreenGui\", {Name = \"FrostKingGui\", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 57, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, pg)"
+      }
+    },
+    "PlowShopGui": {
+      "displayOrder": 101,
+      "ignoreInset": true,
+      "basis": "source",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+        "line": 130,
+        "quote": "local gui = mk(\"ScreenGui\", {Name = \"PlowShopGui\", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 101, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, pg)"
+      }
+    },
+    "GarageInspectGui": {
+      "displayOrder": 102,
+      "ignoreInset": true,
+      "basis": "source",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau",
+        "line": 85,
+        "quote": "gui.Name, gui.ResetOnSpawn, gui.IgnoreGuiInset, gui.DisplayOrder = \"GarageInspectGui\", false, true, 102"
+      }
+    },
+    "VerityEggGui": {
+      "displayOrder": 103,
+      "ignoreInset": true,
+      "basis": "source",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/VerityEggClient.client.luau",
+        "line": 95,
+        "quote": "local sg = mk(\"ScreenGui\", {Name = \"VerityEggGui\", ResetOnSpawn = false, DisplayOrder = 103, IgnoreGuiInset = true, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, pg)"
+      }
+    },
+    "MiniPlowGui": {
+      "displayOrder": 6,
+      "ignoreInset": true,
+      "basis": "ASSUMED: copied from static RNGGui.IgnoreGuiInset (Studio-only value, not in repo)",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau",
+        "line": 31,
+        "quote": "gui.IgnoreGuiInset = rng and rng.IgnoreGuiInset or false"
+      }
+    },
+    "ArenaHud": {
+      "displayOrder": 120,
+      "ignoreInset": false,
+      "basis": "ASSUMED: the source sets both IgnoreGuiInset=true and ScreenInsets=CoreUISafeInsets; the model assumes CoreUISafeInsets wins (top-bar inset respected). Override with --gui-inset ArenaHud=true",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+        "line": 55,
+        "quote": "local gui = mk(\"ScreenGui\", {Name = \"ArenaHud\", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 120, Enabled = false,"
+      }
+    },
+    "DigJuice": {
+      "displayOrder": 55,
+      "ignoreInset": true,
+      "basis": "source",
+      "src": {
+        "file": "game/src/StarterPlayer/StarterPlayerScripts/DigJuiceClient.client.luau",
+        "line": 24,
+        "quote": "local gui = mk(\"ScreenGui\", {Name = \"DigJuice\", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 55}, player:WaitForChild(\"PlayerGui\"))"
+      }
+    },
+    "TreasureToastGui": {
+      "displayOrder": 55,
+      "ignoreInset": true,
+      "basis": "snapshot (Studio-only script), touch after-patch uses DeviceSafeInsets (no top-bar inset)",
+      "src": {
+        "file": "outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/TreasureReveal.client.luau [PENDING Studio patch copy]",
+        "line": 216,
+        "quote": "local toastGui = mk(\"ScreenGui\", {Name = \"TreasureToastGui\", DisplayOrder = 55, IgnoreGuiInset = true, ResetOnSpawn = false}, player:WaitForChild(\"PlayerGui\"))"
+      }
+    },
+    "UpgradeTreeGui": {
+      "displayOrder": 150,
+      "ignoreInset": true,
+      "basis": "snapshot (Studio-only script)",
+      "src": {
+        "file": "outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/UpgradeTreeClient.client.luau [PENDING Studio patch copy]",
+        "line": 121,
+        "quote": "local sg = mk(\"ScreenGui\", {Name = \"UpgradeTreeGui\", DisplayOrder = 150, IgnoreGuiInset = true, ResetOnSpawn = false, Enabled = false,"
+      }
+    },
+    "TouchGui": {
+      "displayOrder": 0,
+      "ignoreInset": true,
+      "basis": "ASSUMED: Roblox PlayerModule gui, not in repo"
+    }
+  },
+  "allowList": [
+    {
+      "rule": "parent-child",
+      "reason": "A child sits inside (or deliberately pokes out of) its parent: buttons on a card, the OP! badge on an offer card. Only sibling and cross-parent overlaps are reported. Overlaps of a badge with a THIRD element are still counted."
+    }
+  ],
+  "allowListPairs": [],
+  "ruleDocs": {
+    "helpY": "AFTER HelpPill: y = max(0, floor(min(0.835 H, H - (2 h + gap + 16)))), h = pill height after its UISizeConstraint, gap = max(6, floor(0.18 h)).",
+    "helpMenuAboveHelp": "AFTER HelpMenu: bottom edge = HelpPill top - 6 (anchor 0,1).",
+    "travelDock": "TravelButton = HelpPill size (floored); top = HelpPill bottom + max(6, floor(0.18 h)); left = HelpPill left. Follows HELP's live rect.",
+    "offers": "Offer column / OFFERS toggle: left = floor(HELP right + max(10, 0.35 HELP.h)); bottom = floor(max(HELP bottom, TRAVEL bottom when TRAVEL is visible)); the opened column on a small screen is lifted 48 px (anchor 0,1).",
+    "offerPopupSmall": "AFTER OfferDetails on small screens: width = max(300, min(0.8 W, colLeft - 16)), centre x = max(colLeft/2, w/2 + 8), height 0.9 H (min 300), colLeft = W - 8 - max(130, floor(0.17 W)).",
+    "popupTop": "PopupStack: a stacked popup's top = max(0.11 H, tutorial card bottom + 18 when the card top is above 0.4 H, AFTER also touch Frost King Me bottom + 8 when it is in the top half). AFTER touch HELP REQUEST width max = floor(clamp(2*(colLeft - 8 - W/2), 320, 620)).",
+    "touchColumn": "AFTER touch DRIFT(1) / DRIVE-EXIT(2) / RECOVER(3): right edge W-8, width max(130, floor(0.17 W)), 44 high, 6 px gaps, hidden members collapse, column bottom = jump button top - 8.",
+    "fkPillTouch": "AFTER touch Frost King pill: top = max(0, floor(min(0.19 H, colTop - 8 - 56) + 0.5)), colTop = jumpTop - 8 - 144, right edge 0.988 W.",
+    "fkMeTouch": "AFTER touch Frost King Me card: top = floor(boss bar bottom + 6 + 0.5), centred.",
+    "contractSlot": "AFTER pill/tracker share one slot (anchor 1,0): right = 0.925 W (touch min(0.8 W, colLeft - 8)), top = 0.27 Hg (touch 0.16 Hg) pushed below the Frost King pill / top-half Me card (+8); touch top = min(top, stripTop - 8 - 140), stripTop = Hg - 92 (fallback; live UPGRADES top unknown); touch tracker height = floor(max(140, min(clamp(0.36 Hg,140,230), stripTop - 8 - top))). Hg = H - inset.",
+    "inspectFit": "AFTER Inspect panel: (0.64, 0.92) when small or the normal panel would be < 340 px tall, else (0.42, 0.5); aspect 1.25.",
+    "uiScaleViewport": "MINI PLOWS panel UIScale = clamp(min(W/420, H/330), 0.6, 1.3).",
+    "toastShownTouch": "AFTER touch treasure toast: right edge W-(colW+24), UIScale clamp((W-(colW+24)-8)/300, 0.5, 1), centre y 0.6 H.",
+    "treePill": "UPGRADES progress pill top = GuiInset.Y + 8 in an IgnoreGuiInset gui.",
+    "arenaLeave/arenaPaint": "AFTER touch bottom-left stack (anchor 0,1 at 0.012 W, 0.6 Hg): LEAVE bottom, PAINT above it with an 8 px gap; widths max(140, 0.17 W) / max(96, 0.12 W).",
+    "arenaBoost/arenaBrace/arenaStatus": "AFTER touch: BOOST 88 px, right edge jumpLeft-12, bottom Hg-16; BRACE 72 px, 8 px left of BOOST; Status left aligned, width max(0, min(0.5 W, jumpLeft - 196 - 0.012 W)).",
+    "jumpProbe": "ASSUMED Roblox jump button: left/top from UILayout.jumpLeftTop's fallback, size 70 or 120 px from memory.",
+    "stripProbe": "ASSUMED UPGRADES strip fallback band (H-92..H, 0.5 W +/- 166)."
+  },
+  "notModelled": [
+    "Tutorial spotlight dims, hole, rings, arrows and tag (recomputed per frame from the live target rect).",
+    "ContractGui.Toast, PlowShopGui.Toast, other PopupStack toasts, Frost King announcement, treasure Mythic announce (popup column; only the contract announcement is modelled).",
+    "OfferCard confirm dialog and reserved-shelf strip, Arena results/intro cards, Dig callout, Frost King Msg/Hint/Reward, drive Msg label.",
+    "SnowPrompt billboards and tutorial world markers (world-space BillboardGuis).",
+    "Roblox thumbstick, chat, top-bar buttons (core gui, not in the repo).",
+    "TravelButton BEFORE is found by a 60 s scan for a bottom-left 'HELP' button; the model assumes it finds the PlowTutorial HelpPill."
+  ],
+  "before": {
+    "label": "BEFORE = git HEAD of game/src + untouched game/studio-snapshots",
+    "elements": [
+      {
+        "id": "tut_card",
+        "name": "Tutorial instruction Card",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 68,
+          "quote": "local card = mk(\"Frame\", {Name = \"Card\", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.025), Size = UDim2.fromScale(0.5, 0.16),"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.025,
+          0
+        ],
+        "size": [
+          0.5,
+          0,
+          0.16,
+          0
+        ],
+        "min": [
+          300,
+          92
+        ],
+        "max": [
+          760,
+          178
+        ],
+        "when": [],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true
+        },
+        "note": "Position flips to the lowered slot when a UI target sits under the top slot.",
+        "scenarioOverride": {
+          "tutorial_card_low_help_open": {
+            "pos": [
+              0.5,
+              0,
+              0.6,
+              0
+            ]
+          }
+        },
+        "srcLowered": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 372,
+          "quote": "card.Position = cardAtBottom and UDim2.fromScale(0.5, 0.6) or UDim2.fromScale(0.5, 0.025)"
+        }
+      },
+      {
+        "id": "tut_card_help",
+        "name": "Card button ? HELP",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 95,
+          "quote": "local helpB = smallButton(card, \"? HELP\", Color3.fromRGB(255, 225, 120), UDim2.fromScale(0.66, 0.04), UDim2.fromScale(0.15, 0.17))"
+        },
+        "parent": "tut_card",
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.66,
+          0,
+          0.04,
+          0
+        ],
+        "size": [
+          0.15,
+          0,
+          0.17,
+          0
+        ],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true
+        }
+      },
+      {
+        "id": "tut_card_skip",
+        "name": "Card button SKIP",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 96,
+          "quote": "local skipB, skipText = smallButton(card, \"SKIP\", WHITE, UDim2.fromScale(0.82, 0.04), UDim2.fromScale(0.14, 0.17))"
+        },
+        "parent": "tut_card",
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.82,
+          0,
+          0.04,
+          0
+        ],
+        "size": [
+          0.14,
+          0,
+          0.17,
+          0
+        ],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true
+        }
+      },
+      {
+        "id": "tut_card_ok",
+        "name": "Card button OK! (okButton steps only)",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 97,
+          "quote": "local nextB, nextText = smallButton(card, \"OK!\", GREEN, UDim2.fromScale(0.38, 0.66), UDim2.fromScale(0.24, 0.26))"
+        },
+        "parent": "tut_card",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.38,
+          0,
+          0.66,
+          0
+        ],
+        "size": [
+          0.24,
+          0,
+          0.26,
+          0
+        ],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true
+        }
+      },
+      {
+        "id": "help_pill",
+        "name": "HELP pill",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 175,
+          "quote": "local helpPill = mk(\"TextButton\", {Name = \"HelpPill\", Text = \"\", AutoButtonColor = true, BackgroundColor3 = Color3.fromRGB(255, 225, 120), AnchorPoint = Vector2.new(0, 0),"
+        },
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.012,
+          0,
+          0.835,
+          0
+        ],
+        "size": [
+          0.09,
+          0,
+          0.045,
+          0
+        ],
+        "min": [
+          92,
+          32
+        ],
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "upgrades_open": true,
+          "boss_fight_contract_tracker": true
+        },
+        "note": "BEFORE: plain scale layout; hidden only on the arena island."
+      },
+      {
+        "id": "help_menu",
+        "name": "HELP menu",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 182,
+          "quote": "local helpMenu = mk(\"Frame\", {Name = \"HelpMenu\", AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.012, 0.83), Size = UDim2.fromScale(0.22, 0.2), BackgroundColor3 = Color3.fromRGB(18, 73, 122),"
+        },
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.012,
+          0,
+          0.83,
+          0
+        ],
+        "size": [
+          0.22,
+          0,
+          0.2,
+          0
+        ],
+        "min": [
+          230,
+          150
+        ],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true
+        }
+      },
+      {
+        "id": "travel_button",
+        "name": "TRAVEL button",
+        "gui": "TravelGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/TravelClient.client.luau",
+          "line": 58,
+          "quote": "btn.Position = UDim2.fromOffset(math.floor(ap.X), math.floor(ap.Y + as.Y + gap + top))"
+        },
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.11,
+          0,
+          0.84,
+          0
+        ],
+        "size": [
+          0,
+          170,
+          0,
+          42
+        ],
+        "rule": {
+          "type": "travelDock"
+        },
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "note": "Docked directly under HELP: size = HELP size, y = HELP bottom + max(6, floor(0.18 h)). The fallback (0.11, 0.84, 170x42) is only used until HELP exists (assumed found)."
+      },
+      {
+        "id": "offers_column",
+        "name": "Offers column (1.5x Snow, Aurora Wheels cards)",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 39,
+          "quote": "local column = mk(\"Frame\", {Name = \"Offers\", BackgroundTransparency = 1, AnchorPoint = Vector2.new(0, 1), Position = COLUMN_POS, Size = UDim2.new(0.17, 0, 0.19, 0)}, gui)"
+        },
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.11,
+          0,
+          0.93,
+          0
+        ],
+        "size": [
+          0.17,
+          0,
+          0.19,
+          0
+        ],
+        "min": [
+          170,
+          110
+        ],
+        "max": [
+          320,
+          210
+        ],
+        "rule": {
+          "type": "offers",
+          "kind": "column"
+        },
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "garage_inspect": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": true,
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "srcRule": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 281,
+          "quote": "column.Position = small and corner - UDim2.fromOffset(0, 48) or corner -- on small screens the opened cards sit above the button"
+        },
+        "srcAnchor": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 178,
+          "quote": "return UDim2.fromOffset(math.floor(hp.X + hs.X + math.max(10, hs.Y * 0.35)), math.floor(bottom))"
+        },
+        "note": "Corner = (HELP right + max(10, 0.35 h), bottom of max(HELP, TRAVEL)); small screens: opened column 48 px higher. Hidden by the hide rule (see visibleIn)."
+      },
+      {
+        "id": "offers_card1",
+        "name": "Offer card 1",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 204,
+          "quote": "local f = mk(\"TextButton\", {Name = pass.Key, Text = \"\", AutoButtonColor = true, Size = UDim2.fromScale(1, 0.47), LayoutOrder = i, BackgroundColor3 = pass.Color, Selectable = true}, column)"
+        },
+        "parent": "offers_column",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0.0,
+          0
+        ],
+        "size": [
+          1,
+          0,
+          0.47,
+          0
+        ],
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "garage_inspect": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": true,
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "note": "UIListLayout padding 0.06 of the column, cards 0.47 of its height."
+      },
+      {
+        "id": "offers_card2",
+        "name": "Offer card 2",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 204,
+          "quote": "local f = mk(\"TextButton\", {Name = pass.Key, Text = \"\", AutoButtonColor = true, Size = UDim2.fromScale(1, 0.47), LayoutOrder = i, BackgroundColor3 = pass.Color, Selectable = true}, column)"
+        },
+        "parent": "offers_column",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0.53,
+          0
+        ],
+        "size": [
+          1,
+          0,
+          0.47,
+          0
+        ],
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "garage_inspect": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": true,
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "note": "UIListLayout padding 0.06 of the column, cards 0.47 of its height."
+      },
+      {
+        "id": "offers_badge1",
+        "name": "OP! badge on offer card 1 (intentional overlap)",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 121,
+          "quote": "local badge = mk(\"Frame\", {Name = \"OPBadge\", AnchorPoint = Vector2.new(0.5, 0.5), Position = badgePos, Size = UDim2.fromScale(0.3, 0.42), Rotation = badgeRot, BackgroundColor3 = Color3.fromRGB(255, 60, 90), ZIndex = 6}, f)"
+        },
+        "parent": "offers_card1",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.93,
+          0,
+          0.08,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.42,
+          0
+        ],
+        "aspect": 2.1,
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "garage_inspect": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": true,
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "note": "Intentional: the badge pokes out of the card's top-right corner (rotation 12 deg and pulse animation ignored)."
+      },
+      {
+        "id": "offers_badge2",
+        "name": "OP! badge on offer card 2 (intentional overlap)",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 121,
+          "quote": "local badge = mk(\"Frame\", {Name = \"OPBadge\", AnchorPoint = Vector2.new(0.5, 0.5), Position = badgePos, Size = UDim2.fromScale(0.3, 0.42), Rotation = badgeRot, BackgroundColor3 = Color3.fromRGB(255, 60, 90), ZIndex = 6}, f)"
+        },
+        "parent": "offers_card2",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.93,
+          0,
+          0.08,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.42,
+          0
+        ],
+        "aspect": 2.1,
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "garage_inspect": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": true,
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "note": "Intentional: the badge pokes out of the card's top-right corner (rotation 12 deg and pulse animation ignored)."
+      },
+      {
+        "id": "offers_toggle",
+        "name": "OFFERS toggle (small screens)",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 42,
+          "quote": "local toggle = mk(\"TextButton\", {Name = \"OffersToggle\", Text = \"\", AnchorPoint = Vector2.new(0, 1), Position = COLUMN_POS, Size = UDim2.fromOffset(120, 40), BackgroundColor3 = Color3.fromRGB(255, 200, 70), Visible = false}, gui)"
+        },
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.11,
+          0,
+          0.93,
+          0
+        ],
+        "size": [
+          0,
+          120,
+          0,
+          40
+        ],
+        "rule": {
+          "type": "offers",
+          "kind": "toggle"
+        },
+        "visibleIn": {
+          "lobby_idle": [
+            "small"
+          ],
+          "lobby_offers_open": [
+            "small"
+          ],
+          "lobby_contract_pill": [
+            "small"
+          ],
+          "garage_inspect": [
+            "small"
+          ],
+          "driving": [
+            "small"
+          ],
+          "driving_offers_open": [
+            "small"
+          ],
+          "driving_treasure_toast": [
+            "small"
+          ],
+          "boss_fight": [
+            "small"
+          ],
+          "offer_details_open": [
+            "small"
+          ],
+          "offers_mini_plows_open": [
+            "small"
+          ],
+          "offers_inspect_open": [
+            "small"
+          ],
+          "offers_egg_screen_open": [
+            "small"
+          ],
+          "boss_fight_contract_tracker": [
+            "small"
+          ]
+        },
+        "note": "Same corner as the column bottom; 120x40 (below 44 but at the dense 40 allowance)."
+      },
+      {
+        "id": "offer_popup",
+        "name": "OfferDetails popup",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 50,
+          "quote": "local pop = mk(\"Frame\", {Name = \"OfferDetails\", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.5), Size = UDim2.fromScale(0.34, 0.5), BackgroundColor3 = Color3.fromRGB(52, 102, 190), Visible = false}, gui)"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.5,
+          0
+        ],
+        "size": [
+          0.34,
+          0,
+          0.5,
+          0
+        ],
+        "min": [
+          300,
+          300
+        ],
+        "visibleIn": {
+          "offer_details_open": true
+        }
+      },
+      {
+        "id": "offer_popup_buy",
+        "name": "OfferDetails BUY",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 62,
+          "quote": "local popBuy = mk(\"TextButton\", {Name = \"Buy\", Text = \"\", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.36, 0.95), Size = UDim2.fromScale(0.5, 0.13), BackgroundColor3 = Color3.fromRGB(70, 200, 105), Selectable = true}, pop)"
+        },
+        "parent": "offer_popup",
+        "interactive": true,
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.36,
+          0,
+          0.95,
+          0
+        ],
+        "size": [
+          0.5,
+          0,
+          0.13,
+          0
+        ],
+        "min": null,
+        "visibleIn": {
+          "offer_details_open": true
+        }
+      },
+      {
+        "id": "offer_popup_close",
+        "name": "OfferDetails CLOSE",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 67,
+          "quote": "local popClose = mk(\"TextButton\", {Name = \"Close\", Text = \"\", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.78, 0.95), Size = UDim2.fromScale(0.3, 0.13), BackgroundColor3 = Color3.fromRGB(235, 90, 100), Selectable = true}, pop)"
+        },
+        "parent": "offer_popup",
+        "interactive": true,
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.78,
+          0,
+          0.95,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.13,
+          0
+        ],
+        "min": null,
+        "visibleIn": {
+          "offer_details_open": true
+        }
+      },
+      {
+        "id": "c_announce",
+        "name": "HELP REQUEST announcement",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 85,
+          "quote": "local ann = panel(gui, {Name = \"Announce\", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.12), Size = UDim2.fromScale(touch and 0.9 or 0.44, touch and 0.36 or 0.3)})"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.12,
+          0
+        ],
+        "size": [
+          0.44,
+          0,
+          0.3,
+          0
+        ],
+        "max": [
+          620,
+          300
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "size": [
+                0.9,
+                0,
+                0.36,
+                0
+              ]
+            }
+          }
+        ],
+        "rule": {
+          "type": "popupTop",
+          "meAware": false,
+          "ann": true
+        },
+        "visibleIn": {
+          "contract_announcement": true
+        },
+        "srcRule": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PopupStack.client.luau",
+          "line": 84,
+          "quote": "local y = vp.Y * TOP - insetY"
+        },
+        "note": "PopupStack rewrites its Y each frame into the shared top column (0.11 H, or below the tutorial card; AFTER also below a touch Frost King Me card)."
+      },
+      {
+        "id": "c_announce_helpout",
+        "name": "Announce HELP OUT",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 95,
+          "quote": "local helpBtn, helpText = button(ann, \"HELP OUT\", GREEN, {Position = UDim2.fromScale(0.1, 0.79), Size = UDim2.fromScale(0.44, 0.17)})"
+        },
+        "parent": "c_announce",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.1,
+          0,
+          0.79,
+          0
+        ],
+        "size": [
+          0.44,
+          0,
+          0.17,
+          0
+        ],
+        "when": [],
+        "visibleIn": {
+          "contract_announcement": true
+        }
+      },
+      {
+        "id": "c_announce_later",
+        "name": "Announce LATER",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 96,
+          "quote": "local laterBtn = button(ann, \"LATER\", GREY, {Position = UDim2.fromScale(0.6, 0.79), Size = UDim2.fromScale(0.3, 0.17)})"
+        },
+        "parent": "c_announce",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.6,
+          0,
+          0.79,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.17,
+          0
+        ],
+        "when": [],
+        "visibleIn": {
+          "contract_announcement": true
+        }
+      },
+      {
+        "id": "c_pill",
+        "name": "HELP REQUEST pill",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 99,
+          "quote": "local pill = panel(gui, {Name = \"Pill\", AnchorPoint = Vector2.new(0, 0), Position = UDim2.fromScale(0.012, touch and 0.62 or 0.76), Size = UDim2.fromScale(touch and 0.42 or 0.2, touch and 0.075 or 0.062)})"
+        },
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.012,
+          0,
+          0.76,
+          0
+        ],
+        "size": [
+          0.2,
+          0,
+          0.062,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.012,
+                0,
+                0.62,
+                0
+              ],
+              "size": [
+                0.42,
+                0,
+                0.075,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "lobby_contract_pill": true,
+          "help_menu_open": true
+        },
+        "note": "BEFORE: bottom-left, above HELP (does not follow HELP or the offer cards)."
+      },
+      {
+        "id": "c_pill_tap",
+        "name": "Pill tap area (pillBtn)",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 100,
+          "quote": "local pillBtn = mk(\"TextButton\", {BackgroundTransparency = 1, Text = \"\", Size = UDim2.fromScale(0.78, 1), ZIndex = 9}, pill)"
+        },
+        "parent": "c_pill",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0.78,
+          0,
+          1,
+          0
+        ],
+        "visibleIn": {
+          "lobby_contract_pill": true,
+          "help_menu_open": true
+        }
+      },
+      {
+        "id": "c_pill_bell",
+        "name": "Pill mute bell",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 103,
+          "quote": "local muteBtn, muteText = button(pill, \"\\u{1F514}\", Color3.fromRGB(120, 180, 255), {Position = UDim2.fromScale(0.8, 0.14), Size = UDim2.fromScale(0.17, 0.72)})"
+        },
+        "parent": "c_pill",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.8,
+          0,
+          0.14,
+          0
+        ],
+        "size": [
+          0.17,
+          0,
+          0.72,
+          0
+        ],
+        "when": [],
+        "visibleIn": {
+          "lobby_contract_pill": true,
+          "help_menu_open": true
+        }
+      },
+      {
+        "id": "c_tracker",
+        "name": "Contract job tracker",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 105,
+          "quote": "local tracker = panel(gui, {Name = \"Tracker\", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(touch and 0.8 or 0.925, touch and 0.16 or 0.27), Size = UDim2.fromScale(touch and 0.42 or 0.21, touch and 0.36 or 0.33)})"
+        },
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.925,
+          0,
+          0.27,
+          0
+        ],
+        "size": [
+          0.21,
+          0,
+          0.33,
+          0
+        ],
+        "max": [
+          360,
+          340
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.8,
+                0,
+                0.16,
+                0
+              ],
+              "size": [
+                0.42,
+                0,
+                0.36,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "driving_contract_tracker": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "c_tracker_cancel",
+        "name": "Tracker CANCEL",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 119,
+          "quote": "local cancelBtn, cancelText = button(tracker, \"CANCEL\", Color3.fromRGB(235, 95, 105), {Position = UDim2.fromScale(0.3, 0.89), Size = UDim2.fromScale(0.4, 0.09)})"
+        },
+        "parent": "c_tracker",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.3,
+          0,
+          0.89,
+          0
+        ],
+        "size": [
+          0.4,
+          0,
+          0.09,
+          0
+        ],
+        "when": [],
+        "visibleIn": {
+          "driving_contract_tracker": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "drive_button",
+        "name": "DRIVE / EXIT button",
+        "gui": "PlowDriveGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+          "line": 48,
+          "quote": "local drive, driveLabel = makeButton(\"Drive\", \"DRIVE\", Color3.fromRGB(70, 200, 105), UDim2.fromScale(0.992, 0.8), UDim2.fromScale(touch and 0.17 or 0.115, touch and 0.12 or 0.066))"
+        },
+        "interactive": true,
+        "anchor": [
+          1,
+          0.5
+        ],
+        "pos": [
+          0.992,
+          0,
+          0.8,
+          0
+        ],
+        "size": [
+          0.115,
+          0,
+          0.066,
+          0
+        ],
+        "min": [
+          118,
+          44
+        ],
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.992,
+                0,
+                0.8,
+                0
+              ],
+              "size": [
+                0.17,
+                0,
+                0.12,
+                0
+              ],
+              "min": [
+                130,
+                54
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "drift_button",
+        "name": "DRIFT button",
+        "gui": "PlowDriveGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+          "line": 102,
+          "quote": "local driftBtn, driftLabel = makeButton(\"Drift\", \"DRIFT\", Color3.fromRGB(120, 150, 255), UDim2.fromScale(0.992, touch and 0.665 or 0.725), UDim2.fromScale(touch and 0.14 or 0.1, touch and 0.09 or 0.05))"
+        },
+        "interactive": true,
+        "anchor": [
+          1,
+          0.5
+        ],
+        "pos": [
+          0.992,
+          0,
+          0.725,
+          0
+        ],
+        "size": [
+          0.1,
+          0,
+          0.05,
+          0
+        ],
+        "min": [
+          118,
+          44
+        ],
+        "visibleIn": {
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.992,
+                0,
+                0.665,
+                0
+              ],
+              "size": [
+                0.14,
+                0,
+                0.09,
+                0
+              ],
+              "min": [
+                130,
+                54
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "recover_button",
+        "name": "RECOVER button",
+        "gui": "PlowDriveGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+          "line": 49,
+          "quote": "local recover = makeButton(\"Recover\", touch and \"RECOVER\" or \"RECOVER [R]\", Color3.fromRGB(250, 150, 50), UDim2.fromScale(0.992, touch and 0.93 or 0.885), UDim2.fromScale(touch and 0.14 or 0.1, touch and 0.09 or 0.05))"
+        },
+        "interactive": true,
+        "anchor": [
+          1,
+          0.5
+        ],
+        "pos": [
+          0.992,
+          0,
+          0.885,
+          0
+        ],
+        "size": [
+          0.1,
+          0,
+          0.05,
+          0
+        ],
+        "min": [
+          118,
+          44
+        ],
+        "visibleIn": {
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.992,
+                0,
+                0.93,
+                0
+              ],
+              "size": [
+                0.14,
+                0,
+                0.09,
+                0
+              ],
+              "min": [
+                130,
+                54
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "fk_pill",
+        "name": "Frost King JOIN pill",
+        "gui": "FrostKingGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+          "line": 100,
+          "quote": "local pill = panel(gui, {Name = \"Pill\", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.988, touch and 0.19 or 0.3), Size = UDim2.fromScale(touch and 0.4 or 0.24, 0.07)})"
+        },
+        "interactive": true,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.988,
+          0,
+          0.3,
+          0
+        ],
+        "size": [
+          0.24,
+          0,
+          0.07,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.988,
+                0,
+                0.19,
+                0
+              ],
+              "size": [
+                0.4,
+                0,
+                0.07,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "boss_pill_contract_tracker": true
+        }
+      },
+      {
+        "id": "fk_bar",
+        "name": "Frost King boss bar",
+        "gui": "FrostKingGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+          "line": 103,
+          "quote": "local bar = panel(gui, {Name = \"BossBar\", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.016), Size = UDim2.fromScale(touch and 0.74 or 0.46, 0.095)})"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.016,
+          0
+        ],
+        "size": [
+          0.46,
+          0,
+          0.095,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "size": [
+                0.74,
+                0,
+                0.095,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "fk_me",
+        "name": "Frost King Me (HP) panel",
+        "gui": "FrostKingGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+          "line": 115,
+          "quote": "local mePanel = panel(gui, {Name = \"Me\", AnchorPoint = touch and Vector2.new(0, 1) or Vector2.new(1, 1), Position = touch and UDim2.fromScale(0.012, 0.87) or UDim2.fromScale(0.988, 0.87), Size = UDim2.fromScale(touch and 0.34 or 0.2, 0.13)})"
+        },
+        "anchor": [
+          1,
+          1
+        ],
+        "pos": [
+          0.988,
+          0,
+          0.87,
+          0
+        ],
+        "size": [
+          0.2,
+          0,
+          0.13,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                0,
+                1
+              ],
+              "pos": [
+                0.012,
+                0,
+                0.87,
+                0
+              ],
+              "size": [
+                0.34,
+                0,
+                0.13,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "offer_card",
+        "name": "Garage OfferCard",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 178,
+          "quote": "local card = mk(\"Frame\", {Name = \"OfferCard\", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.9), Size = UDim2.fromScale(0.5, touch and 0.72 or 0.54), BackgroundColor3 = WHITE, Visible = false}, gui)"
+        },
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.9,
+          0
+        ],
+        "size": [
+          0.5,
+          0,
+          0.54,
+          0
+        ],
+        "aspect": 1.2,
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "size": [
+                0.5,
+                0,
+                0.72,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        }
+      },
+      {
+        "id": "offer_card_x",
+        "name": "OfferCard X",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 188,
+          "quote": "local closeB = button(card, \"X\", Color3.fromRGB(240, 60, 90), {Position = UDim2.fromScale(0.875, 0.025), Size = UDim2.fromScale(0.095, 0.095)})"
+        },
+        "parent": "offer_card",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.875,
+          0,
+          0.025,
+          0
+        ],
+        "size": [
+          0.095,
+          0,
+          0.095,
+          0
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        }
+      },
+      {
+        "id": "offer_card_buy",
+        "name": "OfferCard BUY",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 206,
+          "quote": "local buyB = button(card, \"BUY\", GREEN, {Name = \"BuyButton\", Position = UDim2.fromScale(0.04, 0.725), Size = UDim2.fromScale(0.3, 0.13)})"
+        },
+        "parent": "offer_card",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.04,
+          0,
+          0.725,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.13,
+          0
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        }
+      },
+      {
+        "id": "offer_card_reserve",
+        "name": "OfferCard RESERVE",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 207,
+          "quote": "local resB = button(card, \"RESERVE\", BLUE, {Name = \"ReserveButton\", Position = UDim2.fromScale(0.36, 0.725), Size = UDim2.fromScale(0.3, 0.13)})"
+        },
+        "parent": "offer_card",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.36,
+          0,
+          0.725,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.13,
+          0
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        }
+      },
+      {
+        "id": "offer_card_reroll",
+        "name": "OfferCard REROLL",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 208,
+          "quote": "local rerB = button(card, \"REROLL\", ORANGE, {Position = UDim2.fromScale(0.68, 0.725), Size = UDim2.fromScale(0.29, 0.13)})"
+        },
+        "parent": "offer_card",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.68,
+          0,
+          0.725,
+          0
+        ],
+        "size": [
+          0.29,
+          0,
+          0.13,
+          0
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        }
+      },
+      {
+        "id": "garage_window",
+        "name": "Garage equip window (GarageWindow)",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 476,
+          "quote": "garage = mk(\"Frame\", {Name = \"GarageWindow\", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.47), Size = UDim2.fromScale(0.9, 0.78), BackgroundColor3 = WHITE, Visible = false}, gui)"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.47,
+          0
+        ],
+        "size": [
+          0.9,
+          0,
+          0.78,
+          0
+        ],
+        "aspect": 1.6,
+        "visibleIn": {
+          "garage_equip_window": true
+        }
+      },
+      {
+        "id": "garage_window_x",
+        "name": "GarageWindow X",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 484,
+          "quote": "local x = button(garage, \"X\", Color3.fromRGB(240, 60, 90), {Position = UDim2.fromScale(0.925, 0.02), Size = UDim2.fromScale(0.055, 0.09)})"
+        },
+        "parent": "garage_window",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.925,
+          0,
+          0.02,
+          0
+        ],
+        "size": [
+          0.055,
+          0,
+          0.09,
+          0
+        ],
+        "visibleIn": {
+          "garage_equip_window": true
+        }
+      },
+      {
+        "id": "inspect_panel",
+        "name": "Garage Inspect panel (neighbour build)",
+        "gui": "GarageInspectGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau",
+          "line": 79,
+          "quote": "panel.Name, panel.AnchorPoint, panel.Position, panel.Size, panel.Visible = \"Inspect\", Vector2.new(0.5, 0.5), UDim2.fromScale(0.5, 0.5), UDim2.fromScale(0.42, 0.5), false"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.5,
+          0
+        ],
+        "size": [
+          0.42,
+          0,
+          0.5,
+          0
+        ],
+        "aspect": 1.25,
+        "visibleIn": {
+          "garage_inspect": true,
+          "offers_inspect_open": true
+        }
+      },
+      {
+        "id": "inspect_x",
+        "name": "Inspect X",
+        "gui": "GarageInspectGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau",
+          "line": 92,
+          "quote": "closeB.BackgroundColor3, closeB.Position, closeB.Size = Color3.fromRGB(240, 60, 90), UDim2.fromScale(0.86, 0.03), UDim2.fromScale(0.1, 0.12)"
+        },
+        "parent": "inspect_panel",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.86,
+          0,
+          0.03,
+          0
+        ],
+        "size": [
+          0.1,
+          0,
+          0.12,
+          0
+        ],
+        "visibleIn": {
+          "garage_inspect": true,
+          "offers_inspect_open": true
+        }
+      },
+      {
+        "id": "egg_screen",
+        "name": "Verity EggScreen (DETAILS)",
+        "gui": "VerityEggGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/VerityEggClient.client.luau",
+          "line": 92,
+          "quote": "local screen = mk(\"Frame\", {Name = \"EggScreen\", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.52), Size = UDim2.fromScale(0.62, 0.7),"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.52,
+          0
+        ],
+        "size": [
+          0.62,
+          0,
+          0.7,
+          0
+        ],
+        "min": [
+          330,
+          260
+        ],
+        "max": [
+          980,
+          640
+        ],
+        "visibleIn": {
+          "offers_egg_screen_open": true
+        }
+      },
+      {
+        "id": "egg_close",
+        "name": "EggScreen X",
+        "gui": "VerityEggGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/VerityEggClient.client.luau",
+          "line": 99,
+          "quote": "local close = mk(\"TextButton\", {Name = \"Close\", Text = \"X\", BackgroundColor3 = Color3.fromRGB(235, 80, 90), AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.97, 0.03),"
+        },
+        "parent": "egg_screen",
+        "interactive": true,
+        "relYY": true,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.97,
+          0,
+          0.03,
+          0
+        ],
+        "size": [
+          0.09,
+          0,
+          0.13,
+          0
+        ],
+        "min": null,
+        "when": [],
+        "visibleIn": {
+          "offers_egg_screen_open": true
+        },
+        "note": "SizeConstraint RelativeYY: width scale is relative to the panel HEIGHT; AFTER touch min 44 (applied here to every viewport kind, the source applies it on touch only)."
+      },
+      {
+        "id": "mini_panel",
+        "name": "MINI PLOWS panel",
+        "gui": "MiniPlowGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau",
+          "line": 92,
+          "quote": "panel.Size = UDim2.fromOffset(360, 250); panel.BackgroundColor3 = Color3.fromRGB(28, 48, 84); panel.Visible = false; panel.Parent = gui"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.5,
+          0
+        ],
+        "size": [
+          0,
+          360,
+          0,
+          250
+        ],
+        "rule": {
+          "type": "uiScaleViewport",
+          "div": [
+            420,
+            330
+          ],
+          "clamp": [
+            0.6,
+            1.3
+          ]
+        },
+        "visibleIn": {
+          "offers_mini_plows_open": true
+        },
+        "srcRule": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau",
+          "line": 117,
+          "quote": "scale.Scale = math.clamp(math.min(vs.X / 420, vs.Y / 330), 0.6, 1.3)"
+        },
+        "note": "UIScale set only when the panel opens (not on later resize); the model uses the scale for the current viewport."
+      },
+      {
+        "id": "mini_close",
+        "name": "MINI PLOWS X",
+        "gui": "MiniPlowGui",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau",
+          "line": 108,
+          "quote": "close.BackgroundColor3 = Color3.fromRGB(225, 80, 80); close.AnchorPoint = Vector2.new(1, 0); close.Position = UDim2.fromScale(0.96, 0.04)"
+        },
+        "parent": "mini_panel",
+        "interactive": true,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.96,
+          0,
+          0.04,
+          0
+        ],
+        "size": [
+          0.1,
+          0,
+          0.14,
+          0
+        ],
+        "visibleIn": {
+          "offers_mini_plows_open": true
+        }
+      },
+      {
+        "id": "dig_combo",
+        "name": "Dig combo meter",
+        "gui": "DigJuice",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/DigJuiceClient.client.luau",
+          "line": 26,
+          "quote": "local meter = mk(\"Frame\", {Name = \"Combo\", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.635), Size = UDim2.fromScale(0.17, 0.062),"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.635,
+          0
+        ],
+        "size": [
+          0.17,
+          0,
+          0.062,
+          0
+        ],
+        "aspect": 4.6,
+        "visibleIn": {
+          "driving_treasure_toast": true
+        }
+      },
+      {
+        "id": "treasure_toast",
+        "name": "Treasure reward toast (Studio-only script)",
+        "gui": "TreasureToastGui",
+        "kind": "known",
+        "src": {
+          "file": "game/studio-snapshots/StarterGui/RNGGui/TreasureReveal.client.luau",
+          "line": 215,
+          "quote": "local HIDDEN, SHOWN = UDim2.new(1, 340, 0.6, 0), UDim2.new(1, -16, 0.6, 0)"
+        },
+        "anchor": [
+          1,
+          0.5
+        ],
+        "pos": [
+          1,
+          -16,
+          0.6,
+          0
+        ],
+        "size": [
+          0,
+          300,
+          0,
+          84
+        ],
+        "visibleIn": {
+          "driving_treasure_toast": true
+        },
+        "note": "Snapshot script TreasureReveal; installing the touch patch in Studio is PENDING."
+      },
+      {
+        "id": "tree_title",
+        "name": "UPGRADES title",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "game/studio-snapshots/StarterGui/RNGGui/UpgradeTreeClient.client.luau",
+          "line": 134,
+          "quote": "local title = text(bg, \"UPGRADES\", {AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.025), Size = UDim2.fromScale(0.4, 0.08), ZIndex = 20}, 4)"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.025,
+          0
+        ],
+        "size": [
+          0.4,
+          0,
+          0.08,
+          0
+        ],
+        "visibleIn": {
+          "upgrades_open": true
+        }
+      },
+      {
+        "id": "tree_pill",
+        "name": "UPGRADES progress pill",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "game/studio-snapshots/StarterGui/RNGGui/UpgradeTreeClient.client.luau",
+          "line": 146,
+          "quote": "progressPill.Position = UDim2.new(0, 18, 0, GuiService:GetGuiInset().Y + 8) -- below Roblox's own top bar"
+        },
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          18,
+          0,
+          0
+        ],
+        "size": [
+          0.15,
+          0,
+          0.05,
+          0
+        ],
+        "min": null,
+        "visibleIn": {
+          "upgrades_open": true
+        },
+        "rule": {
+          "type": "treePill"
+        },
+        "note": "y offset = GuiInset.Y + 8 in an IgnoreGuiInset gui (physical y = inset + 8)."
+      },
+      {
+        "id": "tree_close",
+        "name": "UPGRADES close X",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "game/studio-snapshots/StarterGui/RNGGui/UpgradeTreeClient.client.luau",
+          "line": 150,
+          "quote": "local closeB = mk(\"TextButton\", {Name = \"Close\", Text = \"\", AutoButtonColor = false, AnchorPoint = Vector2.new(1, 0), Position = UDim2.new(1, -18, 0.025, 0),"
+        },
+        "interactive": true,
+        "aspect": 1,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          1,
+          -18,
+          0.025,
+          0
+        ],
+        "size": [
+          0.06,
+          0,
+          0.06,
+          0
+        ],
+        "min": null,
+        "visibleIn": {
+          "upgrades_open": true
+        }
+      },
+      {
+        "id": "tree_legend",
+        "name": "UPGRADES legend",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "game/studio-snapshots/StarterGui/RNGGui/UpgradeTreeClient.client.luau",
+          "line": 161,
+          "quote": "local legend = mk(\"Frame\", {Name = \"Legend\", AnchorPoint = Vector2.new(0, 1), Position = UDim2.new(0, 18, 1, -16), Size = UDim2.fromScale(0.32, 0.04), BackgroundTransparency = 1, ZIndex = 20}, bg)"
+        },
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0,
+          18,
+          1,
+          -16
+        ],
+        "size": [
+          0.32,
+          0,
+          0.04,
+          0
+        ],
+        "when": [],
+        "visibleIn": {
+          "upgrades_open": true
+        },
+        "note": "AFTER small screens: 2x2 grid, 22 px items (frame 52 px high)."
+      },
+      {
+        "id": "tree_tooltip",
+        "name": "UPGRADES hover tooltip (desktop only)",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "game/studio-snapshots/StarterGui/RNGGui/UpgradeTreeClient.client.luau",
+          "line": 174,
+          "quote": "local tip = mk(\"Frame\", {Name = \"Tooltip\", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.new(0.5, 0, 1, -16), Size = UDim2.fromScale(0.36, 0.075),"
+        },
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.5,
+          0,
+          1,
+          -16
+        ],
+        "size": [
+          0.36,
+          0,
+          0.075,
+          0
+        ],
+        "cond": [
+          "desktop"
+        ],
+        "visibleIn": {
+          "upgrades_open": true
+        },
+        "note": "Only shown while hovering a hexagon with a mouse."
+      },
+      {
+        "id": "arena_timer",
+        "name": "Arena timer",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 54,
+          "quote": "local top = mk(\"Frame\", {Name = \"Timer\", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.015), Size = UDim2.fromScale(0.26, 0.105),"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.015,
+          0
+        ],
+        "size": [
+          0.26,
+          0,
+          0.105,
+          0
+        ],
+        "min": [
+          250,
+          70
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_standings",
+        "name": "Arena standings",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 69,
+          "quote": "local board = mk(\"Frame\", {Name = \"Standings\", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.985, 0.2), Size = UDim2.fromScale(0.16, 0.3),"
+        },
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.985,
+          0,
+          0.2,
+          0
+        ],
+        "size": [
+          0.16,
+          0,
+          0.3,
+          0
+        ],
+        "min": [
+          150,
+          120
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_feed",
+        "name": "Arena feed",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 81,
+          "quote": "local feed = mk(\"Frame\", {Name = \"Feed\", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.985, 0.52), Size = UDim2.fromScale(0.2, 0.14), BackgroundTransparency = 1}, gui)"
+        },
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.985,
+          0,
+          0.52,
+          0
+        ],
+        "size": [
+          0.2,
+          0,
+          0.14,
+          0
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_leave",
+        "name": "LEAVE ARENA button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 85,
+          "quote": "local leaveB = button(gui, \"LeaveButton\", \"LEAVE ARENA\", RED, {AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.012, touch and 0.6 or 0.97), Size = UDim2.fromScale(touch and 0.17 or 0.12, touch and 0.075 or 0.06)})"
+        },
+        "interactive": true,
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.012,
+          0,
+          0.97,
+          0
+        ],
+        "size": [
+          0.12,
+          0,
+          0.06,
+          0
+        ],
+        "min": [
+          120,
+          38
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.012,
+                0,
+                0.6,
+                0
+              ],
+              "size": [
+                0.17,
+                0,
+                0.075,
+                0
+              ],
+              "min": [
+                140,
+                46
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_paint",
+        "name": "PAINT button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 87,
+          "quote": "local paintB, paintL = button(gui, \"PaintButton\", \"PAINT\", BLUE, {AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.012, touch and 0.51 or 0.9), Size = UDim2.fromScale(touch and 0.12 or 0.085, touch and 0.06 or 0.05)})"
+        },
+        "interactive": true,
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.012,
+          0,
+          0.9,
+          0
+        ],
+        "size": [
+          0.085,
+          0,
+          0.05,
+          0
+        ],
+        "min": [
+          96,
+          32
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.012,
+                0,
+                0.51,
+                0
+              ],
+              "size": [
+                0.12,
+                0,
+                0.06,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_join",
+        "name": "JOIN MATCH button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 92,
+          "quote": "local joinB, joinL = button(gui, \"JoinButton\", \"JOIN MATCH\", GREEN, {AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.9), Size = UDim2.fromScale(0.2, 0.09)})"
+        },
+        "interactive": true,
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.9,
+          0
+        ],
+        "size": [
+          0.2,
+          0,
+          0.09,
+          0
+        ],
+        "min": [
+          200,
+          56
+        ],
+        "visibleIn": {
+          "arena_prejoin": true
+        }
+      },
+      {
+        "id": "arena_status",
+        "name": "Arena status line",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 94,
+          "quote": "local statusL = label(gui, \"\", {Name = \"Status\", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.965), Size = UDim2.fromScale(0.5, 0.045), TextColor3 = Color3.fromRGB(230, 242, 255)})"
+        },
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.965,
+          0
+        ],
+        "size": [
+          0.5,
+          0,
+          0.045,
+          0
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_boost",
+        "name": "BOOST button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 109,
+          "quote": "local boostU = abilityButton(\"BoostButton\", \"BOOST\", ORANGE, touch and UDim2.fromScale(0.84, 0.5) or UDim2.fromScale(0.9, 0.8), touch and UDim2.fromScale(0.24, 0.24) or UDim2.fromScale(0.15, 0.15))"
+        },
+        "interactive": true,
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "relYY": true,
+        "pos": [
+          0.9,
+          0,
+          0.8,
+          0
+        ],
+        "size": [
+          0.15,
+          0,
+          0.15,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.84,
+                0,
+                0.5,
+                0
+              ],
+              "size": [
+                0.24,
+                0,
+                0.24,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_brace",
+        "name": "BRACE button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "HEAD:game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 110,
+          "quote": "local braceU = abilityButton(\"BraceButton\", \"BRACE\", BLUE, touch and UDim2.fromScale(0.68, 0.68) or UDim2.fromScale(0.8, 0.88), touch and UDim2.fromScale(0.17, 0.17) or UDim2.fromScale(0.11, 0.11))"
+        },
+        "interactive": true,
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "relYY": true,
+        "pos": [
+          0.8,
+          0,
+          0.88,
+          0
+        ],
+        "size": [
+          0.11,
+          0,
+          0.11,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.68,
+                0,
+                0.68,
+                0
+              ],
+              "size": [
+                0.17,
+                0,
+                0.17,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "arena_match": true
+        }
+      },
+      {
+        "id": "probe_jump",
+        "name": "Roblox touch jump button (ASSUMED default rect)",
+        "gui": "TouchGui",
+        "kind": "assumed",
+        "src": {
+          "file": "n/a (UILayout.luau does not exist at HEAD)",
+          "line": 0,
+          "quote": "Roblox default; position/size from memory (not in the repo)"
+        },
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rule": {
+          "type": "jumpProbe"
+        },
+        "cond": [
+          "touch"
+        ],
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "arena_prejoin": true,
+          "arena_match": true,
+          "boss_fight_contract_tracker": true
+        },
+        "note": "left/top from UILayout.jumpLeftTop's fallback (W-115,H-90 if min(W,H)<=500 else W-190,H-210); size 70x70 / 120x120 is from memory of Roblox defaults (NOT in the repo)."
+      },
+      {
+        "id": "probe_strip",
+        "name": "UPGRADES strip fallback band (ASSUMED)",
+        "gui": "PlowTutorial",
+        "kind": "assumed",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "fallback band from the AFTER contract (stripTop = H-92)"
+        },
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rule": {
+          "type": "stripProbe"
+        },
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "note": "Bottom band H-92..H, x = 0.5W +/- 166: the fallback place of MINIS | UPGRADES | AFK (fallbacks 0.5W-70-96 .. 0.5W+70+96). The LIVE UPGRADES rect is a static Studio frame and unknown."
+      },
+      {
+        "id": "u_upgrades",
+        "name": "UPGRADES button (BottomBar)",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "static Studio frame; MINIS/AFK/DriftMeter/tutorial arrows read its live AbsolutePosition"
+        },
+        "unknownReason": "static Studio frame; MINIS/AFK/DriftMeter/tutorial arrows read its live AbsolutePosition",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_minis",
+        "name": "MINIS button",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "MiniPlowClient places it from the live UPGRADES rect (left of UPGRADES); UPGRADES rect unknown"
+        },
+        "unknownReason": "MiniPlowClient places it from the live UPGRADES rect (left of UPGRADES); UPGRADES rect unknown",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_afk",
+        "name": "AFK button + caption/toast",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "AfkDriftClient places it from the live UPGRADES rect (right of UPGRADES); UPGRADES rect unknown"
+        },
+        "unknownReason": "AfkDriftClient places it from the live UPGRADES rect (right of UPGRADES); UPGRADES rect unknown",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_rewards",
+        "name": "REWARDS button + Starter Pack square",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "static Studio frame; PassClient sizes the Starter Pack square from it"
+        },
+        "unknownReason": "static Studio frame; PassClient sizes the Starter Pack square from it",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_leftmenu",
+        "name": "LeftMenu (incl. GARAGE/LOBBY button, TREASURES, PETS)",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "static Studio frame"
+        },
+        "unknownReason": "static Studio frame",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_snowcounter",
+        "name": "SnowCounter / StatIcons / SettingsCorner",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "static Studio frames (only SettingsCorner touch AnchorPoint (1,0) Position (1,-14,0,14) is in RNGClient.client.luau:70-73; its size is not)"
+        },
+        "unknownReason": "static Studio frames (only SettingsCorner touch AnchorPoint (1,0) Position (1,-14,0,14) is in RNGClient.client.luau:70-73; its size is not)",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_activity",
+        "name": "ActivityHUD (event banner + boost pills)",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "snapshot ActivityClient: AnchorPoint (1,0), Position (1,-12,0.14,0), Size (0.25,0.3) of RNGGui, but occupancy depends on active events and RNGGui's inset is unknown; the contract slot reads its visible children live"
+        },
+        "unknownReason": "snapshot ActivityClient: AnchorPoint (1,0), Position (1,-12,0.14,0), Size (0.25,0.3) of RNGGui, but occupancy depends on active events and RNGGui's inset is unknown; the contract slot reads its visible children live",
+        "visibleIn": {}
+      },
+      {
+        "id": "u_travel_panel",
+        "name": "Travel panel (RNGGui.Panels.Travel)",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "clone of the static Settings panel; rect not in the repo"
+        },
+        "unknownReason": "clone of the static Settings panel; rect not in the repo",
+        "visibleIn": {
+          "travel_menu_open": true
+        }
+      },
+      {
+        "id": "u_thumbstick",
+        "name": "Roblox thumbstick / TouchGui",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "Roblox core gui, not in the repo"
+        },
+        "unknownReason": "Roblox core gui, not in the repo",
+        "visibleIn": {}
+      },
+      {
+        "id": "u_tutorial_pointers",
+        "name": "Tutorial spotlight / pointer layer",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "recomputed every frame from the live target rect; not a static layout"
+        },
+        "unknownReason": "recomputed every frame from the live target rect; not a static layout",
+        "visibleIn": {}
+      }
+    ]
+  },
+  "after": {
+    "label": "AFTER = working tree of game/src + PENDING Studio patch copies under outputs/UIAudit20261008/studio-patches",
+    "elements": [
+      {
+        "id": "tut_card",
+        "name": "Tutorial instruction Card",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 71,
+          "quote": "local card = mk(\"Frame\", {Name = \"Card\", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.025), Size = UDim2.fromScale(0.5, 0.16),"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.025,
+          0
+        ],
+        "size": [
+          0.5,
+          0,
+          0.16,
+          0
+        ],
+        "min": [
+          300,
+          92
+        ],
+        "max": [
+          760,
+          178
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "min": [
+                300,
+                150
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true
+        },
+        "note": "Position flips to the lowered slot when a UI target sits under the top slot.",
+        "scenarioOverride": {
+          "tutorial_card_low_help_open": {
+            "pos": [
+              0.5,
+              0,
+              0.6,
+              0
+            ],
+            "whenTouch": {
+              "pos": [
+                0.5,
+                0,
+                0.45,
+                0
+              ]
+            }
+          }
+        },
+        "srcLowered": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 444,
+          "quote": "card.Position = low and UDim2.fromScale(0.5, UILayout.isTouch() and 0.45 or 0.6) or CARD_TOP"
+        }
+      },
+      {
+        "id": "tut_card_help",
+        "name": "Card button ? HELP",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 121,
+          "quote": "put(helpB, Vector2.new(1, 0), UDim2.new(1, -98, 0, 6), UDim2.fromOffset(84, 40))"
+        },
+        "parent": "tut_card",
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.66,
+          0,
+          0.04,
+          0
+        ],
+        "size": [
+          0.15,
+          0,
+          0.17,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                1,
+                0
+              ],
+              "pos": [
+                1,
+                -98,
+                0,
+                6
+              ],
+              "size": [
+                0,
+                84,
+                0,
+                40
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true
+        }
+      },
+      {
+        "id": "tut_card_skip",
+        "name": "Card button SKIP",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 122,
+          "quote": "put(skipB, Vector2.new(1, 0), UDim2.new(1, -6, 0, 6), UDim2.fromOffset(84, 40))"
+        },
+        "parent": "tut_card",
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.82,
+          0,
+          0.04,
+          0
+        ],
+        "size": [
+          0.14,
+          0,
+          0.17,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                1,
+                0
+              ],
+              "pos": [
+                1,
+                -6,
+                0,
+                6
+              ],
+              "size": [
+                0,
+                84,
+                0,
+                40
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true
+        }
+      },
+      {
+        "id": "tut_card_ok",
+        "name": "Card button OK! (okButton steps only)",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 123,
+          "quote": "put(nextB, Vector2.new(0.5, 1), UDim2.new(0.5, 0, 1, -6), UDim2.fromOffset(110, 44))"
+        },
+        "parent": "tut_card",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.38,
+          0,
+          0.66,
+          0
+        ],
+        "size": [
+          0.24,
+          0,
+          0.26,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                0.5,
+                1
+              ],
+              "pos": [
+                0.5,
+                0,
+                1,
+                -6
+              ],
+              "size": [
+                0,
+                110,
+                0,
+                44
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true
+        }
+      },
+      {
+        "id": "help_pill",
+        "name": "HELP pill",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 222,
+          "quote": "local helpPill = mk(\"TextButton\", {Name = \"HelpPill\", Text = \"\", AutoButtonColor = true, BackgroundColor3 = Color3.fromRGB(255, 225, 120), AnchorPoint = Vector2.new(0, 0),"
+        },
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.012,
+          0,
+          0.835,
+          0
+        ],
+        "size": [
+          0.09,
+          0,
+          0.045,
+          0
+        ],
+        "min": [
+          92,
+          32
+        ],
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "min": [
+                92,
+                40
+              ]
+            }
+          }
+        ],
+        "rule": {
+          "type": "helpY"
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 329,
+          "quote": "local y = math.max(0, math.floor(math.min(0.835 * vp.Y, vp.Y - (2 * h + gap + UILayout.MARGIN))))"
+        },
+        "note": "AFTER: y = max(0, floor(min(0.835 H, H - (2h + gap + 16)))), gap = max(6, floor(0.18 h)); touch pill min height 40. Hidden while UPGRADES is open and on the arena island."
+      },
+      {
+        "id": "help_menu",
+        "name": "HELP menu",
+        "gui": "PlowTutorial",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 233,
+          "quote": "local helpMenu = mk(\"Frame\", {Name = \"HelpMenu\", AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.012, 0.83), Size = UDim2.fromScale(0.22, 0.2), BackgroundColor3 = Color3.fromRGB(18, 73, 122),"
+        },
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.012,
+          0,
+          0.83,
+          0
+        ],
+        "size": [
+          0.22,
+          0,
+          0.2,
+          0
+        ],
+        "min": [
+          230,
+          150
+        ],
+        "visibleIn": {
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true
+        },
+        "rule": {
+          "type": "helpMenuAboveHelp"
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+          "line": 330,
+          "quote": "local pillPos, menuPos = UDim2.new(0.012, 0, 0, y), UDim2.new(0.012, 0, 0, y - 6) -- the menu's bottom (anchor 0,1) sits 6 px above the live pill"
+        }
+      },
+      {
+        "id": "travel_button",
+        "name": "TRAVEL button",
+        "gui": "TravelGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/TravelClient.client.luau",
+          "line": 59,
+          "quote": "btn.Position = UDim2.fromOffset(math.floor(ap.X), math.floor(ap.Y + as.Y + gap + top))"
+        },
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.11,
+          0,
+          0.84,
+          0
+        ],
+        "size": [
+          0,
+          170,
+          0,
+          42
+        ],
+        "rule": {
+          "type": "travelDock"
+        },
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "note": "Docked directly under HELP: size = HELP size, y = HELP bottom + max(6, floor(0.18 h)). The fallback (0.11, 0.84, 170x42) is only used until HELP exists (assumed found)."
+      },
+      {
+        "id": "offers_column",
+        "name": "Offers column (1.5x Snow, Aurora Wheels cards)",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 44,
+          "quote": "local column = mk(\"Frame\", {Name = \"Offers\", BackgroundTransparency = 1, AnchorPoint = Vector2.new(0, 1), Position = COLUMN_POS, Size = UDim2.new(0.17, 0, 0.19, 0)}, gui)"
+        },
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.11,
+          0,
+          0.93,
+          0
+        ],
+        "size": [
+          0.17,
+          0,
+          0.19,
+          0
+        ],
+        "min": [
+          170,
+          110
+        ],
+        "max": [
+          320,
+          210
+        ],
+        "rule": {
+          "type": "offers",
+          "kind": "column"
+        },
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": [
+            "notSmall"
+          ],
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": [
+            "notSmall"
+          ],
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 359,
+          "quote": "column.Position = small and corner - UDim2.fromOffset(0, 48) or corner -- on small screens the opened cards sit above the button"
+        },
+        "srcAnchor": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 248,
+          "quote": "return UDim2.fromOffset(math.floor(hp.X + hs.X + math.max(10, hs.Y * 0.35)), math.floor(bottom))"
+        },
+        "note": "Corner = (HELP right + max(10, 0.35 h), bottom of max(HELP, TRAVEL)); small screens: opened column 48 px higher. Hidden by the hide rule (see visibleIn)."
+      },
+      {
+        "id": "offers_card1",
+        "name": "Offer card 1",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 274,
+          "quote": "local f = mk(\"TextButton\", {Name = pass.Key, Text = \"\", AutoButtonColor = true, Size = UDim2.fromScale(1, 0.47), LayoutOrder = i, BackgroundColor3 = pass.Color, Selectable = true}, column)"
+        },
+        "parent": "offers_column",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0.0,
+          0
+        ],
+        "size": [
+          1,
+          0,
+          0.47,
+          0
+        ],
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": [
+            "notSmall"
+          ],
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": [
+            "notSmall"
+          ],
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "note": "UIListLayout padding 0.06 of the column, cards 0.47 of its height."
+      },
+      {
+        "id": "offers_card2",
+        "name": "Offer card 2",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 274,
+          "quote": "local f = mk(\"TextButton\", {Name = pass.Key, Text = \"\", AutoButtonColor = true, Size = UDim2.fromScale(1, 0.47), LayoutOrder = i, BackgroundColor3 = pass.Color, Selectable = true}, column)"
+        },
+        "parent": "offers_column",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0.53,
+          0
+        ],
+        "size": [
+          1,
+          0,
+          0.47,
+          0
+        ],
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": [
+            "notSmall"
+          ],
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": [
+            "notSmall"
+          ],
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "note": "UIListLayout padding 0.06 of the column, cards 0.47 of its height."
+      },
+      {
+        "id": "offers_badge1",
+        "name": "OP! badge on offer card 1 (intentional overlap)",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 191,
+          "quote": "local badge = mk(\"Frame\", {Name = \"OPBadge\", AnchorPoint = Vector2.new(0.5, 0.5), Position = badgePos, Size = UDim2.fromScale(0.3, 0.42), Rotation = badgeRot, BackgroundColor3 = Color3.fromRGB(255, 60, 90), ZIndex = 6}, f)"
+        },
+        "parent": "offers_card1",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.93,
+          0,
+          0.08,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.42,
+          0
+        ],
+        "aspect": 2.1,
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": [
+            "notSmall"
+          ],
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": [
+            "notSmall"
+          ],
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "note": "Intentional: the badge pokes out of the card's top-right corner (rotation 12 deg and pulse animation ignored)."
+      },
+      {
+        "id": "offers_badge2",
+        "name": "OP! badge on offer card 2 (intentional overlap)",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 191,
+          "quote": "local badge = mk(\"Frame\", {Name = \"OPBadge\", AnchorPoint = Vector2.new(0.5, 0.5), Position = badgePos, Size = UDim2.fromScale(0.3, 0.42), Rotation = badgeRot, BackgroundColor3 = Color3.fromRGB(255, 60, 90), ZIndex = 6}, f)"
+        },
+        "parent": "offers_card2",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.93,
+          0,
+          0.08,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.42,
+          0
+        ],
+        "aspect": 2.1,
+        "visibleIn": {
+          "lobby_idle": [
+            "notSmall"
+          ],
+          "lobby_offers_open": true,
+          "lobby_contract_pill": [
+            "notSmall"
+          ],
+          "driving": [
+            "notSmall"
+          ],
+          "driving_offers_open": [
+            "notSmall"
+          ],
+          "driving_treasure_toast": [
+            "notSmall"
+          ],
+          "boss_fight": [
+            "notSmall"
+          ],
+          "offer_details_open": [
+            "notSmall"
+          ],
+          "boss_fight_contract_tracker": [
+            "notSmall"
+          ]
+        },
+        "note": "Intentional: the badge pokes out of the card's top-right corner (rotation 12 deg and pulse animation ignored)."
+      },
+      {
+        "id": "offers_toggle",
+        "name": "OFFERS toggle (small screens)",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 47,
+          "quote": "local toggle = mk(\"TextButton\", {Name = \"OffersToggle\", Text = \"\", AnchorPoint = Vector2.new(0, 1), Position = COLUMN_POS, Size = UDim2.fromOffset(120, 40), BackgroundColor3 = Color3.fromRGB(255, 200, 70), Visible = false}, gui)"
+        },
+        "interactive": true,
+        "denseOk": true,
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.11,
+          0,
+          0.93,
+          0
+        ],
+        "size": [
+          0,
+          120,
+          0,
+          40
+        ],
+        "rule": {
+          "type": "offers",
+          "kind": "toggle"
+        },
+        "visibleIn": {
+          "lobby_idle": [
+            "small"
+          ],
+          "lobby_offers_open": [
+            "small"
+          ],
+          "lobby_contract_pill": [
+            "small"
+          ],
+          "driving": [
+            "small"
+          ],
+          "driving_offers_open": [
+            "small"
+          ],
+          "driving_treasure_toast": [
+            "small"
+          ],
+          "boss_fight": [
+            "small"
+          ],
+          "offer_details_open": [
+            "small"
+          ],
+          "boss_fight_contract_tracker": [
+            "small"
+          ]
+        },
+        "note": "Same corner as the column bottom; 120x40 (below 44 but at the dense 40 allowance)."
+      },
+      {
+        "id": "offer_popup",
+        "name": "OfferDetails popup",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 60,
+          "quote": "local pop = mk(\"Frame\", {Name = \"OfferDetails\", Active = true, AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.5), Size = POP_SIZE, BackgroundColor3 = Color3.fromRGB(52, 102, 190), Visible = false}, gui)"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.5,
+          0
+        ],
+        "size": [
+          0.34,
+          0,
+          0.5,
+          0
+        ],
+        "min": [
+          300,
+          300
+        ],
+        "visibleIn": {
+          "offer_details_open": true
+        },
+        "when": [
+          {
+            "cond": [
+              "small"
+            ],
+            "rule": {
+              "type": "offerPopupSmall"
+            }
+          }
+        ],
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 344,
+          "quote": "local w = math.max(POP_MIN, math.min(0.8 * vp.X, colLeft - 2 * UILayout.GAP))"
+        }
+      },
+      {
+        "id": "offer_popup_buy",
+        "name": "OfferDetails BUY",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 87,
+          "quote": "local popBuy = mk(\"TextButton\", {Name = \"Buy\", Text = \"\", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.36, 0.95), Size = UDim2.fromScale(0.5, 0.13), BackgroundColor3 = Color3.fromRGB(70, 200, 105), Selectable = true}, pop)"
+        },
+        "parent": "offer_popup",
+        "interactive": true,
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.36,
+          0,
+          0.95,
+          0
+        ],
+        "size": [
+          0.5,
+          0,
+          0.13,
+          0
+        ],
+        "min": [
+          0,
+          44
+        ],
+        "visibleIn": {
+          "offer_details_open": true
+        }
+      },
+      {
+        "id": "offer_popup_close",
+        "name": "OfferDetails CLOSE",
+        "gui": "PassOffersGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+          "line": 93,
+          "quote": "local popClose = mk(\"TextButton\", {Name = \"Close\", Text = \"\", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.78, 0.95), Size = UDim2.fromScale(0.3, 0.13), BackgroundColor3 = Color3.fromRGB(235, 90, 100), Selectable = true}, pop)"
+        },
+        "parent": "offer_popup",
+        "interactive": true,
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.78,
+          0,
+          0.95,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.13,
+          0
+        ],
+        "min": [
+          0,
+          44
+        ],
+        "visibleIn": {
+          "offer_details_open": true
+        }
+      },
+      {
+        "id": "c_announce",
+        "name": "HELP REQUEST announcement",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 95,
+          "quote": "local ann = panel(gui, {Name = \"Announce\", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.12), Size = UDim2.fromScale(touch and 0.9 or 0.44, touch and 0.36 or 0.3)})"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.12,
+          0
+        ],
+        "size": [
+          0.44,
+          0,
+          0.3,
+          0
+        ],
+        "max": [
+          620,
+          300
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "size": [
+                0.9,
+                0,
+                0.36,
+                0
+              ],
+              "min": [
+                320,
+                220
+              ],
+              "rule": {
+                "type": "popupTop",
+                "meAware": true,
+                "ann": true,
+                "maxWFormula": "contractAnn"
+              }
+            }
+          }
+        ],
+        "rule": {
+          "type": "popupTop",
+          "meAware": true,
+          "ann": true
+        },
+        "visibleIn": {
+          "contract_announcement": true
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PopupStack.client.luau",
+          "line": 86,
+          "quote": "local y = vp.Y * TOP - insetY"
+        },
+        "note": "PopupStack rewrites its Y each frame into the shared top column (0.11 H, or below the tutorial card; AFTER also below a touch Frost King Me card).",
+        "srcMax": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 450,
+          "quote": "local maxW = math.floor(math.clamp(2 * (UILayout.touchColLeft(W) - gap - W / 2), 320, 620))"
+        }
+      },
+      {
+        "id": "c_announce_helpout",
+        "name": "Announce HELP OUT",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 106,
+          "quote": "local helpBtn, helpText = button(ann, \"HELP OUT\", GREEN, touch and {AnchorPoint = Vector2.new(0, 1), Position = UDim2.new(0.1, 0, 1, -8), Size = UDim2.new(0.44, 0, 0, 44)}"
+        },
+        "parent": "c_announce",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.1,
+          0,
+          0.79,
+          0
+        ],
+        "size": [
+          0.44,
+          0,
+          0.17,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                0,
+                1
+              ],
+              "pos": [
+                0.1,
+                0,
+                1,
+                -8
+              ],
+              "size": [
+                0.44,
+                0,
+                0,
+                44
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "contract_announcement": true
+        }
+      },
+      {
+        "id": "c_announce_later",
+        "name": "Announce LATER",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 108,
+          "quote": "local laterBtn = button(ann, \"LATER\", GREY, touch and {AnchorPoint = Vector2.new(0, 1), Position = UDim2.new(0.6, 0, 1, -8), Size = UDim2.new(0.3, 0, 0, 44)}"
+        },
+        "parent": "c_announce",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.6,
+          0,
+          0.79,
+          0
+        ],
+        "size": [
+          0.3,
+          0,
+          0.17,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                0,
+                1
+              ],
+              "pos": [
+                0.6,
+                0,
+                1,
+                -8
+              ],
+              "size": [
+                0.3,
+                0,
+                0,
+                44
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "contract_announcement": true
+        }
+      },
+      {
+        "id": "c_pill",
+        "name": "HELP REQUEST pill",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 115,
+          "quote": "local pill = panel(gui, {Name = \"Pill\", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(touch and 0.8 or 0.925, touch and 0.16 or 0.27), Size = UDim2.fromScale(touch and 0.42 or 0.2, touch and 0.075 or 0.062)})"
+        },
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.925,
+          0,
+          0.27,
+          0
+        ],
+        "size": [
+          0.2,
+          0,
+          0.062,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.8,
+                0,
+                0.16,
+                0
+              ],
+              "size": [
+                0.42,
+                0,
+                0.075,
+                0
+              ],
+              "min": [
+                200,
+                48
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "lobby_contract_pill": true,
+          "help_menu_open": true
+        },
+        "note": "AFTER: top-right slot shared with the tracker; below the Frost King pill / Me card; touch: left of the action column and above the UPGRADES strip (strip top = fallback H-92; the live UPGRADES rect is unknown).",
+        "rule": {
+          "type": "contractSlot",
+          "as": "pill"
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 456,
+          "quote": "local right, top = 0.925 * W, 0.27 * Hg"
+        }
+      },
+      {
+        "id": "c_pill_tap",
+        "name": "Pill tap area (pillBtn)",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 117,
+          "quote": "local pillBtn = mk(\"TextButton\", {BackgroundTransparency = 1, Text = \"\", Size = UDim2.fromScale(0.78, 1), ZIndex = 9}, pill)"
+        },
+        "parent": "c_pill",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0.78,
+          0,
+          1,
+          0
+        ],
+        "visibleIn": {
+          "lobby_contract_pill": true,
+          "help_menu_open": true
+        }
+      },
+      {
+        "id": "c_pill_bell",
+        "name": "Pill mute bell",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 120,
+          "quote": "local muteBtn, muteText = button(pill, \"\\u{1F514}\", Color3.fromRGB(120, 180, 255), touch and {AnchorPoint = Vector2.new(0, 0.5), Position = UDim2.new(0.8, 0, 0.5, 0), Size = UDim2.new(0.17, 0, 0, 44)}"
+        },
+        "parent": "c_pill",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.8,
+          0,
+          0.14,
+          0
+        ],
+        "size": [
+          0.17,
+          0,
+          0.72,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                0,
+                0.5
+              ],
+              "pos": [
+                0.8,
+                0,
+                0.5,
+                0
+              ],
+              "size": [
+                0.17,
+                0,
+                0,
+                44
+              ],
+              "min": [
+                44,
+                44
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "lobby_contract_pill": true,
+          "help_menu_open": true
+        }
+      },
+      {
+        "id": "c_tracker",
+        "name": "Contract job tracker",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 125,
+          "quote": "local tracker = panel(gui, {Name = \"Tracker\", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(touch and 0.8 or 0.925, touch and 0.16 or 0.27), Size = touch and UDim2.new(0.42, 0, 0, 140) or UDim2.fromScale(0.21, 0.33)})"
+        },
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.925,
+          0,
+          0.27,
+          0
+        ],
+        "size": [
+          0.21,
+          0,
+          0.33,
+          0
+        ],
+        "max": [
+          360,
+          340
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.8,
+                0,
+                0.16,
+                0
+              ],
+              "size": [
+                0.42,
+                0,
+                0,
+                140
+              ],
+              "min": [
+                260,
+                140
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "driving_contract_tracker": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight_contract_tracker": true
+        },
+        "rule": {
+          "type": "contractSlot",
+          "as": "tracker"
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 496,
+          "quote": "local h = math.floor(math.max(140, math.min(math.clamp(0.36 * Hg, 140, 230), stripTop - gap - top)))"
+        }
+      },
+      {
+        "id": "c_tracker_cancel",
+        "name": "Tracker CANCEL",
+        "gui": "ContractGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 152,
+          "quote": "local cancelBtn, cancelText = button(tracker, \"CANCEL\", Color3.fromRGB(235, 95, 105), touch and {AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.new(0.5, 0, 1, -6), Size = UDim2.new(0.4, 0, 0, 44)}"
+        },
+        "parent": "c_tracker",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.3,
+          0,
+          0.89,
+          0
+        ],
+        "size": [
+          0.4,
+          0,
+          0.09,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                0.5,
+                1
+              ],
+              "pos": [
+                0.5,
+                0,
+                1,
+                -6
+              ],
+              "size": [
+                0.4,
+                0,
+                0,
+                44
+              ],
+              "min": [
+                110,
+                44
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "driving_contract_tracker": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "drive_button",
+        "name": "DRIVE / EXIT button",
+        "gui": "PlowDriveGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+          "line": 118,
+          "quote": "local drive, driveLabel = makeButton(\"Drive\", \"DRIVE\", Color3.fromRGB(70, 200, 105), UDim2.fromScale(0.992, 0.8), UDim2.fromScale(0.115, 0.066), 2)"
+        },
+        "interactive": true,
+        "anchor": [
+          1,
+          0.5
+        ],
+        "pos": [
+          0.992,
+          0,
+          0.8,
+          0
+        ],
+        "size": [
+          0.115,
+          0,
+          0.066,
+          0
+        ],
+        "min": [
+          118,
+          44
+        ],
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "min": [
+                130,
+                44
+              ]
+            },
+            "rule": {
+              "type": "touchColumn",
+              "order": 2
+            }
+          }
+        ],
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+          "line": 57,
+          "quote": "column.Position = UDim2.fromOffset(size.X - UILayout.COL_EDGE, jumpTop - UILayout.GAP)"
+        },
+        "note": "AFTER touch: one right-aligned column (right edge W-8, bottom = jump top - 8), 44 high, width max(130, floor(0.17 W)); hidden members collapse. Desktop unchanged."
+      },
+      {
+        "id": "drift_button",
+        "name": "DRIFT button",
+        "gui": "PlowDriveGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+          "line": 174,
+          "quote": "local driftBtn, driftLabel = makeButton(\"Drift\", \"DRIFT\", Color3.fromRGB(120, 150, 255), UDim2.fromScale(0.992, 0.725), UDim2.fromScale(0.1, 0.05), 1)"
+        },
+        "interactive": true,
+        "anchor": [
+          1,
+          0.5
+        ],
+        "pos": [
+          0.992,
+          0,
+          0.725,
+          0
+        ],
+        "size": [
+          0.1,
+          0,
+          0.05,
+          0
+        ],
+        "min": [
+          118,
+          44
+        ],
+        "visibleIn": {
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "min": [
+                130,
+                44
+              ]
+            },
+            "rule": {
+              "type": "touchColumn",
+              "order": 1
+            }
+          }
+        ],
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+          "line": 57,
+          "quote": "column.Position = UDim2.fromOffset(size.X - UILayout.COL_EDGE, jumpTop - UILayout.GAP)"
+        },
+        "note": "AFTER touch: one right-aligned column (right edge W-8, bottom = jump top - 8), 44 high, width max(130, floor(0.17 W)); hidden members collapse. Desktop unchanged."
+      },
+      {
+        "id": "recover_button",
+        "name": "RECOVER button",
+        "gui": "PlowDriveGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+          "line": 119,
+          "quote": "local recover = makeButton(\"Recover\", touch and \"RECOVER\" or \"RECOVER [R]\", Color3.fromRGB(250, 150, 50), UDim2.fromScale(0.992, 0.885), UDim2.fromScale(0.1, 0.05), 3)"
+        },
+        "interactive": true,
+        "anchor": [
+          1,
+          0.5
+        ],
+        "pos": [
+          0.992,
+          0,
+          0.885,
+          0
+        ],
+        "size": [
+          0.1,
+          0,
+          0.05,
+          0
+        ],
+        "min": [
+          118,
+          44
+        ],
+        "visibleIn": {
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "min": [
+                130,
+                44
+              ]
+            },
+            "rule": {
+              "type": "touchColumn",
+              "order": 3
+            }
+          }
+        ],
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+          "line": 57,
+          "quote": "column.Position = UDim2.fromOffset(size.X - UILayout.COL_EDGE, jumpTop - UILayout.GAP)"
+        },
+        "note": "AFTER touch: one right-aligned column (right edge W-8, bottom = jump top - 8), 44 high, width max(130, floor(0.17 W)); hidden members collapse. Desktop unchanged."
+      },
+      {
+        "id": "fk_pill",
+        "name": "Frost King JOIN pill",
+        "gui": "FrostKingGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+          "line": 109,
+          "quote": "local pill = panel(gui, {Name = \"Pill\", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.988, touch and 0.19 or 0.3), Size = UDim2.fromScale(touch and 0.4 or 0.24, 0.07)})"
+        },
+        "interactive": true,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.988,
+          0,
+          0.3,
+          0
+        ],
+        "size": [
+          0.24,
+          0,
+          0.07,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "pos": [
+                0.988,
+                0,
+                0.19,
+                0
+              ],
+              "size": [
+                0.4,
+                0,
+                0.07,
+                0
+              ],
+              "min": [
+                200,
+                56
+              ]
+            },
+            "rule": {
+              "type": "fkPillTouch"
+            }
+          }
+        ],
+        "visibleIn": {
+          "boss_pill_contract_tracker": true
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+          "line": 1003,
+          "quote": "local py = math.max(0, math.floor(math.min(0.19 * size.Y, colTop - UILayout.GAP - PILL_H) + 0.5))"
+        }
+      },
+      {
+        "id": "fk_bar",
+        "name": "Frost King boss bar",
+        "gui": "FrostKingGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+          "line": 112,
+          "quote": "local bar = panel(gui, {Name = \"BossBar\", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.016), Size = UDim2.fromScale(touch and 0.74 or 0.46, 0.095)})"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.016,
+          0
+        ],
+        "size": [
+          0.46,
+          0,
+          0.095,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "size": [
+                0.74,
+                0,
+                0.095,
+                0
+              ],
+              "min": [
+                0,
+                56
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "fk_me",
+        "name": "Frost King Me (HP) panel",
+        "gui": "FrostKingGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+          "line": 125,
+          "quote": "local mePanel = panel(gui, {Name = \"Me\", AnchorPoint = touch and Vector2.new(0.5, 0) or Vector2.new(1, 1), Position = touch and UDim2.fromScale(0.5, 0.125) or UDim2.fromScale(0.86, 0.87), Size = UDim2.fromScale(touch and 0.34 or 0.2, 0.13)})"
+        },
+        "anchor": [
+          1,
+          1
+        ],
+        "pos": [
+          0.86,
+          0,
+          0.87,
+          0
+        ],
+        "size": [
+          0.2,
+          0,
+          0.13,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "pos": [
+                0.5,
+                0,
+                0.125,
+                0
+              ],
+              "size": [
+                0.34,
+                0,
+                0.13,
+                0
+              ],
+              "min": [
+                0,
+                52
+              ]
+            },
+            "rule": {
+              "type": "fkMeTouch"
+            }
+          }
+        ],
+        "visibleIn": {
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+          "line": 1008,
+          "quote": "local mePos = barSize.Y > 0 and UDim2.new(0.5, 0, 0, math.floor(barPos.Y + barSize.Y + 6 + 0.5)) or UDim2.fromScale(0.5, 0.125)"
+        }
+      },
+      {
+        "id": "offer_card",
+        "name": "Garage OfferCard",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 187,
+          "quote": "local card = mk(\"Frame\", {Name = \"OfferCard\", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.9), Size = UDim2.fromScale(0.5, touch and 0.72 or 0.54), BackgroundColor3 = WHITE, Visible = false, Active = true}, gui)"
+        },
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.9,
+          0
+        ],
+        "size": [
+          0.5,
+          0,
+          0.54,
+          0
+        ],
+        "aspect": 1.2,
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "size": [
+                0.5,
+                0,
+                0.72,
+                0
+              ]
+            }
+          },
+          {
+            "cond": [
+              "small"
+            ],
+            "set": {
+              "size": [
+                0.58,
+                0,
+                0.86,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 192,
+          "quote": "if UILayout.isSmall() then card.Size = UDim2.fromScale(0.58, 0.86)"
+        }
+      },
+      {
+        "id": "offer_card_x",
+        "name": "OfferCard X",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 205,
+          "quote": "local closeB = button(card, \"X\", Color3.fromRGB(240, 60, 90), {AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.97, 0.025), Size = UDim2.fromScale(0.095, 0.095)})"
+        },
+        "parent": "offer_card",
+        "interactive": true,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.97,
+          0,
+          0.025,
+          0
+        ],
+        "size": [
+          0.095,
+          0,
+          0.095,
+          0
+        ],
+        "min": [
+          44,
+          44
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        }
+      },
+      {
+        "id": "offer_card_buy",
+        "name": "OfferCard BUY",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 227,
+          "quote": "local buyB = button(card, \"BUY\", GREEN, {Name = \"BuyButton\", Position = UDim2.new(0.04, 0, 0.7, 0), Size = UDim2.new(0.31, -8, 0.13, 0)})"
+        },
+        "parent": "offer_card",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.04,
+          0,
+          0.7,
+          0
+        ],
+        "size": [
+          0.31,
+          -8,
+          0.13,
+          0
+        ],
+        "min": [
+          0,
+          44
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        }
+      },
+      {
+        "id": "offer_card_reserve",
+        "name": "OfferCard RESERVE",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 228,
+          "quote": "local resB = button(card, \"RESERVE\", BLUE, {Name = \"ReserveButton\", Position = UDim2.new(0.35, 4, 0.7, 0), Size = UDim2.new(0.31, -8, 0.13, 0)})"
+        },
+        "parent": "offer_card",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.35,
+          4,
+          0.7,
+          0
+        ],
+        "size": [
+          0.31,
+          -8,
+          0.13,
+          0
+        ],
+        "min": [
+          0,
+          44
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        }
+      },
+      {
+        "id": "offer_card_reroll",
+        "name": "OfferCard REROLL",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 229,
+          "quote": "local rerB = button(card, \"REROLL\", ORANGE, {Position = UDim2.new(0.66, 8, 0.7, 0), Size = UDim2.new(0.31, -8, 0.13, 0)})"
+        },
+        "parent": "offer_card",
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0.66,
+          8,
+          0.7,
+          0
+        ],
+        "size": [
+          0.31,
+          -8,
+          0.13,
+          0
+        ],
+        "min": [
+          0,
+          44
+        ],
+        "visibleIn": {
+          "garage_offer_card": true
+        }
+      },
+      {
+        "id": "garage_window",
+        "name": "Garage equip window (GarageWindow)",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 585,
+          "quote": "garage = mk(\"Frame\", {Name = \"GarageWindow\", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.47), Size = UDim2.fromScale(0.9, 0.78), BackgroundColor3 = WHITE, Visible = false, Active = true}, gui)"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.47,
+          0
+        ],
+        "size": [
+          0.9,
+          0,
+          0.78,
+          0
+        ],
+        "aspect": 1.6,
+        "visibleIn": {
+          "garage_equip_window": true
+        }
+      },
+      {
+        "id": "garage_window_x",
+        "name": "GarageWindow X",
+        "gui": "PlowShopGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+          "line": 594,
+          "quote": "local x = button(garage, \"X\", Color3.fromRGB(240, 60, 90), {AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.98, 0.02), Size = UDim2.fromScale(0.055, 0.09)})"
+        },
+        "parent": "garage_window",
+        "interactive": true,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.98,
+          0,
+          0.02,
+          0
+        ],
+        "size": [
+          0.055,
+          0,
+          0.09,
+          0
+        ],
+        "min": [
+          44,
+          44
+        ],
+        "visibleIn": {
+          "garage_equip_window": true
+        }
+      },
+      {
+        "id": "inspect_panel",
+        "name": "Garage Inspect panel (neighbour build)",
+        "gui": "GarageInspectGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau",
+          "line": 89,
+          "quote": "panel.Name, panel.AnchorPoint, panel.Position, panel.Size, panel.Visible = \"Inspect\", Vector2.new(0.5, 0.5), UDim2.fromScale(0.5, 0.5), UDim2.fromScale(0.42, 0.5), false"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.5,
+          0
+        ],
+        "size": [
+          0.42,
+          0,
+          0.5,
+          0
+        ],
+        "aspect": 1.25,
+        "visibleIn": {
+          "garage_inspect": true,
+          "offers_inspect_open": true
+        },
+        "rule": {
+          "type": "inspectFit"
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau",
+          "line": 108,
+          "quote": "panel.Size = (UILayout.isSmall(vp) or normalH < PANEL_MIN_H) and PANEL_BIG or PANEL_NORMAL"
+        }
+      },
+      {
+        "id": "inspect_x",
+        "name": "Inspect X",
+        "gui": "GarageInspectGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau",
+          "line": 126,
+          "quote": "closeB.BackgroundColor3, closeB.AnchorPoint, closeB.Position, closeB.Size = Color3.fromRGB(240, 60, 90), Vector2.new(1, 0), UDim2.fromScale(0.96, 0.03), UDim2.fromScale(0.1, 0.12)"
+        },
+        "parent": "inspect_panel",
+        "interactive": true,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.96,
+          0,
+          0.03,
+          0
+        ],
+        "size": [
+          0.1,
+          0,
+          0.12,
+          0
+        ],
+        "min": [
+          44,
+          44
+        ],
+        "visibleIn": {
+          "garage_inspect": true,
+          "offers_inspect_open": true
+        }
+      },
+      {
+        "id": "egg_screen",
+        "name": "Verity EggScreen (DETAILS)",
+        "gui": "VerityEggGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/VerityEggClient.client.luau",
+          "line": 96,
+          "quote": "local screen = mk(\"Frame\", {Name = \"EggScreen\", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.52), Size = UDim2.fromScale(0.62, 0.7),"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.52,
+          0
+        ],
+        "size": [
+          0.62,
+          0,
+          0.7,
+          0
+        ],
+        "min": [
+          330,
+          260
+        ],
+        "max": [
+          980,
+          640
+        ],
+        "visibleIn": {
+          "offers_egg_screen_open": true
+        }
+      },
+      {
+        "id": "egg_close",
+        "name": "EggScreen X",
+        "gui": "VerityEggGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/VerityEggClient.client.luau",
+          "line": 103,
+          "quote": "local close = mk(\"TextButton\", {Name = \"Close\", Text = \"X\", BackgroundColor3 = Color3.fromRGB(235, 80, 90), AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.97, 0.03),"
+        },
+        "parent": "egg_screen",
+        "interactive": true,
+        "relYY": true,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.97,
+          0,
+          0.03,
+          0
+        ],
+        "size": [
+          0.09,
+          0,
+          0.13,
+          0
+        ],
+        "min": [
+          44,
+          44
+        ],
+        "when": [
+          {
+            "cond": [
+              "desktop"
+            ],
+            "set": {
+              "min": [
+                0,
+                0
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "offers_egg_screen_open": true
+        },
+        "note": "SizeConstraint RelativeYY: width scale is relative to the panel HEIGHT; AFTER touch min 44 (applied here to every viewport kind, the source applies it on touch only)."
+      },
+      {
+        "id": "mini_panel",
+        "name": "MINI PLOWS panel",
+        "gui": "MiniPlowGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau",
+          "line": 94,
+          "quote": "panel.Size = UDim2.fromOffset(360, 250); panel.BackgroundColor3 = Color3.fromRGB(28, 48, 84); panel.Visible = false; panel.Parent = gui"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.5,
+          0
+        ],
+        "size": [
+          0,
+          360,
+          0,
+          250
+        ],
+        "rule": {
+          "type": "uiScaleViewport",
+          "div": [
+            420,
+            330
+          ],
+          "clamp": [
+            0.6,
+            1.3
+          ]
+        },
+        "visibleIn": {
+          "offers_mini_plows_open": true
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau",
+          "line": 119,
+          "quote": "scale.Scale = math.clamp(math.min(vs.X / 420, vs.Y / 330), 0.6, 1.3)"
+        },
+        "note": "UIScale set only when the panel opens (not on later resize); the model uses the scale for the current viewport."
+      },
+      {
+        "id": "mini_close",
+        "name": "MINI PLOWS X",
+        "gui": "MiniPlowGui",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau",
+          "line": 110,
+          "quote": "close.BackgroundColor3 = Color3.fromRGB(225, 80, 80); close.AnchorPoint = Vector2.new(1, 0); close.Position = UDim2.fromScale(0.96, 0.04)"
+        },
+        "parent": "mini_panel",
+        "interactive": true,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.96,
+          0,
+          0.04,
+          0
+        ],
+        "size": [
+          0.1,
+          0,
+          0.14,
+          0
+        ],
+        "visibleIn": {
+          "offers_mini_plows_open": true
+        }
+      },
+      {
+        "id": "dig_combo",
+        "name": "Dig combo meter",
+        "gui": "DigJuice",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/DigJuiceClient.client.luau",
+          "line": 26,
+          "quote": "local meter = mk(\"Frame\", {Name = \"Combo\", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.635), Size = UDim2.fromScale(0.17, 0.062),"
+        },
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.635,
+          0
+        ],
+        "size": [
+          0.17,
+          0,
+          0.062,
+          0
+        ],
+        "aspect": 4.6,
+        "visibleIn": {
+          "driving_treasure_toast": true
+        }
+      },
+      {
+        "id": "treasure_toast",
+        "name": "Treasure reward toast (Studio-only script)",
+        "gui": "TreasureToastGui",
+        "kind": "known",
+        "src": {
+          "file": "outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/TreasureReveal.client.luau [PENDING Studio patch copy]",
+          "line": 217,
+          "quote": "local HIDDEN, SHOWN = UDim2.new(1, 340, 0.6, 0), UDim2.new(1, -16, 0.6, 0)"
+        },
+        "anchor": [
+          1,
+          0.5
+        ],
+        "pos": [
+          1,
+          -16,
+          0.6,
+          0
+        ],
+        "size": [
+          0,
+          300,
+          0,
+          84
+        ],
+        "visibleIn": {
+          "driving_treasure_toast": true
+        },
+        "note": "Snapshot script TreasureReveal; installing the touch patch in Studio is PENDING.",
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {},
+            "rule": {
+              "type": "toastShownTouch"
+            }
+          }
+        ],
+        "srcRule": {
+          "file": "outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/TreasureReveal.client.luau [PENDING Studio patch copy]",
+          "line": 269,
+          "quote": "SHOWN = UDim2.new(1, -(colW + 24), 0.6, 0)"
+        }
+      },
+      {
+        "id": "tree_title",
+        "name": "UPGRADES title",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/UpgradeTreeClient.client.luau [PENDING Studio patch copy]",
+          "line": 135,
+          "quote": "local title = text(bg, \"UPGRADES\", {AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.025), Size = UDim2.fromScale(0.4, 0.08), ZIndex = 20}, 4)"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.025,
+          0
+        ],
+        "size": [
+          0.4,
+          0,
+          0.08,
+          0
+        ],
+        "visibleIn": {
+          "upgrades_open": true
+        }
+      },
+      {
+        "id": "tree_pill",
+        "name": "UPGRADES progress pill",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/UpgradeTreeClient.client.luau [PENDING Studio patch copy]",
+          "line": 148,
+          "quote": "progressPill.Position = UDim2.new(0, 18, 0, GuiService:GetGuiInset().Y + 8) -- below Roblox's own top bar"
+        },
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          18,
+          0,
+          0
+        ],
+        "size": [
+          0.15,
+          0,
+          0.05,
+          0
+        ],
+        "min": [
+          120,
+          28
+        ],
+        "visibleIn": {
+          "upgrades_open": true
+        },
+        "rule": {
+          "type": "treePill"
+        },
+        "note": "y offset = GuiInset.Y + 8 in an IgnoreGuiInset gui (physical y = inset + 8)."
+      },
+      {
+        "id": "tree_close",
+        "name": "UPGRADES close X",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/UpgradeTreeClient.client.luau [PENDING Studio patch copy]",
+          "line": 152,
+          "quote": "local closeB = mk(\"TextButton\", {Name = \"Close\", Text = \"\", AutoButtonColor = false, AnchorPoint = Vector2.new(1, 0), Position = UDim2.new(1, -18, 0.025, 0),"
+        },
+        "interactive": true,
+        "aspect": 1,
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          1,
+          -18,
+          0.025,
+          0
+        ],
+        "size": [
+          0.06,
+          0,
+          0.06,
+          0
+        ],
+        "min": [
+          44,
+          44
+        ],
+        "visibleIn": {
+          "upgrades_open": true
+        }
+      },
+      {
+        "id": "tree_legend",
+        "name": "UPGRADES legend",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/UpgradeTreeClient.client.luau [PENDING Studio patch copy]",
+          "line": 168,
+          "quote": "local legend = mk(\"Frame\", {Name = \"Legend\", AnchorPoint = Vector2.new(0, 1), Position = UDim2.new(0, 18, 1, -16), Size = UDim2.fromScale(0.32, 0.04), BackgroundTransparency = 1, ZIndex = 20}, bg)"
+        },
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0,
+          18,
+          1,
+          -16
+        ],
+        "size": [
+          0.32,
+          0,
+          0.04,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "small"
+            ],
+            "set": {
+              "size": [
+                0.32,
+                0,
+                0,
+                52
+              ]
+            }
+          }
+        ],
+        "visibleIn": {
+          "upgrades_open": true
+        },
+        "note": "AFTER small screens: 2x2 grid, 22 px items (frame 52 px high)."
+      },
+      {
+        "id": "tree_tooltip",
+        "name": "UPGRADES hover tooltip (desktop only)",
+        "gui": "UpgradeTreeGui",
+        "kind": "known",
+        "src": {
+          "file": "outputs/UIAudit20261008/studio-patches/StarterGui/RNGGui/UpgradeTreeClient.client.luau [PENDING Studio patch copy]",
+          "line": 205,
+          "quote": "local tip = mk(\"Frame\", {Name = \"Tooltip\", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.new(0.5, 0, 1, -16), Size = UDim2.fromScale(0.36, 0.075),"
+        },
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.5,
+          0,
+          1,
+          -16
+        ],
+        "size": [
+          0.36,
+          0,
+          0.075,
+          0
+        ],
+        "cond": [
+          "desktop"
+        ],
+        "visibleIn": {
+          "upgrades_open": true
+        },
+        "note": "Only shown while hovering a hexagon with a mouse."
+      },
+      {
+        "id": "arena_timer",
+        "name": "Arena timer",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 59,
+          "quote": "local top = mk(\"Frame\", {Name = \"Timer\", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.015), Size = UDim2.fromScale(0.26, 0.105),"
+        },
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.015,
+          0
+        ],
+        "size": [
+          0.26,
+          0,
+          0.105,
+          0
+        ],
+        "min": [
+          250,
+          70
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_standings",
+        "name": "Arena standings",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 74,
+          "quote": "local board = mk(\"Frame\", {Name = \"Standings\", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.985, 0.2), Size = UDim2.fromScale(0.16, 0.3),"
+        },
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.985,
+          0,
+          0.2,
+          0
+        ],
+        "size": [
+          0.16,
+          0,
+          0.3,
+          0
+        ],
+        "min": [
+          150,
+          120
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_feed",
+        "name": "Arena feed",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 86,
+          "quote": "local feed = mk(\"Frame\", {Name = \"Feed\", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.985, 0.52), Size = UDim2.fromScale(0.2, 0.14), BackgroundTransparency = 1}, gui)"
+        },
+        "anchor": [
+          1,
+          0
+        ],
+        "pos": [
+          0.985,
+          0,
+          0.52,
+          0
+        ],
+        "size": [
+          0.2,
+          0,
+          0.14,
+          0
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        }
+      },
+      {
+        "id": "arena_leave",
+        "name": "LEAVE ARENA button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 97,
+          "quote": "local leaveB = button(leavePaint or gui, \"LeaveButton\", \"LEAVE ARENA\", RED, touch and {LayoutOrder = 2, Size = UDim2.fromOffset(140, 46)}"
+        },
+        "interactive": true,
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.012,
+          0,
+          0.97,
+          0
+        ],
+        "size": [
+          0.12,
+          0,
+          0.06,
+          0
+        ],
+        "min": [
+          120,
+          38
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "min": [
+                140,
+                46
+              ]
+            },
+            "rule": {
+              "type": "arenaLeave"
+            }
+          }
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 93,
+          "quote": "Position = UDim2.fromScale(0.012, 0.6), Size = UDim2.fromOffset(0, 0), AutomaticSize = Enum.AutomaticSize.XY}, gui)"
+        }
+      },
+      {
+        "id": "arena_paint",
+        "name": "PAINT button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 100,
+          "quote": "local paintB = button(leavePaint or gui, \"PaintButton\", \"PAINT\", BLUE, touch and {LayoutOrder = 1, Size = UDim2.fromOffset(96, 44)}"
+        },
+        "interactive": true,
+        "anchor": [
+          0,
+          1
+        ],
+        "pos": [
+          0.012,
+          0,
+          0.9,
+          0
+        ],
+        "size": [
+          0.085,
+          0,
+          0.05,
+          0
+        ],
+        "min": [
+          96,
+          32
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "min": [
+                96,
+                44
+              ]
+            },
+            "rule": {
+              "type": "arenaPaint"
+            }
+          }
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 93,
+          "quote": "Position = UDim2.fromScale(0.012, 0.6), Size = UDim2.fromOffset(0, 0), AutomaticSize = Enum.AutomaticSize.XY}, gui)"
+        }
+      },
+      {
+        "id": "arena_join",
+        "name": "JOIN MATCH button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 106,
+          "quote": "local joinB, joinL = button(gui, \"JoinButton\", \"JOIN MATCH\", GREEN, {AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.9), Size = UDim2.fromScale(0.2, 0.09)})"
+        },
+        "interactive": true,
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.9,
+          0
+        ],
+        "size": [
+          0.2,
+          0,
+          0.09,
+          0
+        ],
+        "min": [
+          200,
+          56
+        ],
+        "visibleIn": {
+          "arena_prejoin": true
+        }
+      },
+      {
+        "id": "arena_status",
+        "name": "Arena status line",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 109,
+          "quote": "local statusL = label(gui, \"\", {Name = \"Status\", AnchorPoint = touch and Vector2.new(0, 1) or Vector2.new(0.5, 1), Position = UDim2.fromScale(touch and 0.012 or 0.5, 0.965),"
+        },
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pos": [
+          0.5,
+          0,
+          0.965,
+          0
+        ],
+        "size": [
+          0.5,
+          0,
+          0.045,
+          0
+        ],
+        "visibleIn": {
+          "arena_prejoin": true,
+          "arena_match": true
+        },
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                0,
+                1
+              ],
+              "pos": [
+                0.012,
+                0,
+                0.965,
+                0
+              ]
+            },
+            "rule": {
+              "type": "arenaStatus"
+            }
+          }
+        ],
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 141,
+          "quote": "statusL.Size = UDim2.fromOffset(math.max(0, math.min(0.5 * W, jumpLeft - 196 - 0.012 * W)), 0.045 * H)"
+        }
+      },
+      {
+        "id": "arena_boost",
+        "name": "BOOST button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 126,
+          "quote": "local boostU = abilityButton(\"BoostButton\", \"BOOST\", ORANGE, touch and UDim2.new(0.84, 0, 1, -16) or UDim2.fromScale(0.9, 0.8), touch and UDim2.fromOffset(88, 88) or UDim2.fromScale(0.15, 0.15))"
+        },
+        "interactive": true,
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "relYY": true,
+        "pos": [
+          0.9,
+          0,
+          0.8,
+          0
+        ],
+        "size": [
+          0.15,
+          0,
+          0.15,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                1,
+                1
+              ],
+              "relYY": false,
+              "size": [
+                0,
+                88,
+                0,
+                88
+              ]
+            },
+            "rule": {
+              "type": "arenaBoost"
+            }
+          }
+        ],
+        "visibleIn": {
+          "arena_match": true
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 139,
+          "quote": "boostU.button.Position = UDim2.fromOffset(jumpLeft - 12, H - 16)"
+        }
+      },
+      {
+        "id": "arena_brace",
+        "name": "BRACE button",
+        "gui": "ArenaHud",
+        "kind": "known",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 127,
+          "quote": "local braceU = abilityButton(\"BraceButton\", \"BRACE\", BLUE, touch and UDim2.new(0.68, 0, 1, -16) or UDim2.fromScale(0.8, 0.88), touch and UDim2.fromOffset(72, 72) or UDim2.fromScale(0.11, 0.11))"
+        },
+        "interactive": true,
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "relYY": true,
+        "pos": [
+          0.8,
+          0,
+          0.88,
+          0
+        ],
+        "size": [
+          0.11,
+          0,
+          0.11,
+          0
+        ],
+        "when": [
+          {
+            "cond": [
+              "touch"
+            ],
+            "set": {
+              "anchor": [
+                1,
+                1
+              ],
+              "relYY": false,
+              "size": [
+                0,
+                72,
+                0,
+                72
+              ]
+            },
+            "rule": {
+              "type": "arenaBrace"
+            }
+          }
+        ],
+        "visibleIn": {
+          "arena_match": true
+        },
+        "srcRule": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+          "line": 140,
+          "quote": "braceU.button.Position = UDim2.fromOffset(jumpLeft - 12 - 88 - 8, H - 16)"
+        }
+      },
+      {
+        "id": "probe_jump",
+        "name": "Roblox touch jump button (ASSUMED default rect)",
+        "gui": "TouchGui",
+        "kind": "assumed",
+        "src": {
+          "file": "game/src/ReplicatedStorage/UILayout.luau",
+          "line": 102,
+          "quote": "if math.min(W, H) <= 500 then return W - 115, H - 90 end"
+        },
+        "interactive": true,
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rule": {
+          "type": "jumpProbe"
+        },
+        "cond": [
+          "touch"
+        ],
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "arena_prejoin": true,
+          "arena_match": true,
+          "boss_fight_contract_tracker": true
+        },
+        "note": "left/top from UILayout.jumpLeftTop's fallback (W-115,H-90 if min(W,H)<=500 else W-190,H-210); size 70x70 / 120x120 is from memory of Roblox defaults (NOT in the repo)."
+      },
+      {
+        "id": "probe_strip",
+        "name": "UPGRADES strip fallback band (ASSUMED)",
+        "gui": "PlowTutorial",
+        "kind": "assumed",
+        "src": {
+          "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+          "line": 482,
+          "quote": "local stripTop = Hg - 92"
+        },
+        "anchor": [
+          0,
+          0
+        ],
+        "pos": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rule": {
+          "type": "stripProbe"
+        },
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        },
+        "note": "Bottom band H-92..H, x = 0.5W +/- 166: the fallback place of MINIS | UPGRADES | AFK (fallbacks 0.5W-70-96 .. 0.5W+70+96). The LIVE UPGRADES rect is a static Studio frame and unknown."
+      },
+      {
+        "id": "u_upgrades",
+        "name": "UPGRADES button (BottomBar)",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "static Studio frame; MINIS/AFK/DriftMeter/tutorial arrows read its live AbsolutePosition"
+        },
+        "unknownReason": "static Studio frame; MINIS/AFK/DriftMeter/tutorial arrows read its live AbsolutePosition",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_minis",
+        "name": "MINIS button",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "MiniPlowClient places it from the live UPGRADES rect (left of UPGRADES); UPGRADES rect unknown"
+        },
+        "unknownReason": "MiniPlowClient places it from the live UPGRADES rect (left of UPGRADES); UPGRADES rect unknown",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_afk",
+        "name": "AFK button + caption/toast",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "AfkDriftClient places it from the live UPGRADES rect (right of UPGRADES); UPGRADES rect unknown"
+        },
+        "unknownReason": "AfkDriftClient places it from the live UPGRADES rect (right of UPGRADES); UPGRADES rect unknown",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_rewards",
+        "name": "REWARDS button + Starter Pack square",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "static Studio frame; PassClient sizes the Starter Pack square from it"
+        },
+        "unknownReason": "static Studio frame; PassClient sizes the Starter Pack square from it",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_leftmenu",
+        "name": "LeftMenu (incl. GARAGE/LOBBY button, TREASURES, PETS)",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "static Studio frame"
+        },
+        "unknownReason": "static Studio frame",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_snowcounter",
+        "name": "SnowCounter / StatIcons / SettingsCorner",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "static Studio frames (only SettingsCorner touch AnchorPoint (1,0) Position (1,-14,0,14) is in RNGClient.client.luau:70-73; its size is not)"
+        },
+        "unknownReason": "static Studio frames (only SettingsCorner touch AnchorPoint (1,0) Position (1,-14,0,14) is in RNGClient.client.luau:70-73; its size is not)",
+        "visibleIn": {
+          "lobby_idle": true,
+          "lobby_offers_open": true,
+          "lobby_contract_pill": true,
+          "contract_announcement": true,
+          "garage_offer_card": true,
+          "garage_equip_window": true,
+          "garage_inspect": true,
+          "driving": true,
+          "driving_offers_open": true,
+          "driving_contract_tracker": true,
+          "driving_treasure_toast": true,
+          "tutorial_step_help_open": true,
+          "tutorial_card_low_help_open": true,
+          "help_menu_open": true,
+          "travel_menu_open": true,
+          "offer_details_open": true,
+          "offers_mini_plows_open": true,
+          "offers_inspect_open": true,
+          "offers_egg_screen_open": true,
+          "boss_pill_contract_tracker": true,
+          "boss_fight": true,
+          "boss_fight_contract_tracker": true
+        }
+      },
+      {
+        "id": "u_activity",
+        "name": "ActivityHUD (event banner + boost pills)",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "snapshot ActivityClient: AnchorPoint (1,0), Position (1,-12,0.14,0), Size (0.25,0.3) of RNGGui, but occupancy depends on active events and RNGGui's inset is unknown; the contract slot reads its visible children live"
+        },
+        "unknownReason": "snapshot ActivityClient: AnchorPoint (1,0), Position (1,-12,0.14,0), Size (0.25,0.3) of RNGGui, but occupancy depends on active events and RNGGui's inset is unknown; the contract slot reads its visible children live",
+        "visibleIn": {}
+      },
+      {
+        "id": "u_travel_panel",
+        "name": "Travel panel (RNGGui.Panels.Travel)",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "clone of the static Settings panel; rect not in the repo"
+        },
+        "unknownReason": "clone of the static Settings panel; rect not in the repo",
+        "visibleIn": {
+          "travel_menu_open": true
+        }
+      },
+      {
+        "id": "u_thumbstick",
+        "name": "Roblox thumbstick / TouchGui",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "Roblox core gui, not in the repo"
+        },
+        "unknownReason": "Roblox core gui, not in the repo",
+        "visibleIn": {}
+      },
+      {
+        "id": "u_tutorial_pointers",
+        "name": "Tutorial spotlight / pointer layer",
+        "gui": "RNGGui",
+        "kind": "unknown",
+        "src": {
+          "file": "n/a",
+          "line": 0,
+          "quote": "recomputed every frame from the live target rect; not a static layout"
+        },
+        "unknownReason": "recomputed every frame from the live target rect; not a static layout",
+        "visibleIn": {}
+      }
+    ]
+  }
+}

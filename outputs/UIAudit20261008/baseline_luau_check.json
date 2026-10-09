@@ -1,0 +1,558 @@
+[
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/AfkDriftClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/AfkDriftClient.client.luau(15,7): ImportUnused: Import 'SnowArt' is never used; prefix with '_' to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/AfkDriftClient.client.luau(56,7): LocalUnused: Variable 'capNote' is never used; prefix with '_' to silence"
+  ],
+  "noise_filtered": 67
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaDriveClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/ArenaDriveClient.client.luau(21,7): LocalUnused: Variable 'myLife' is never used; prefix with '_' to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/ArenaDriveClient.client.luau(112,72): ImplicitReturn: Function can implicitly return no values even though there's an explicit return at line 112; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/ArenaDriveClient.client.luau(115,79): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/ArenaDriveClient.client.luau(119,79): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/ArenaDriveClient.client.luau(177,8): LocalUnused: Variable 't' is never used; prefix with '_' to silence"
+  ],
+  "noise_filtered": 85
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau(87,15): LocalUnused: Variable 'paintL' is never used; prefix with '_' to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau(169,104): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau(332,62): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 218
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau(366,63): FormatString: Invalid match pattern: character range can't include character sets"
+  ],
+  "noise_filtered": 172
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/DigJuiceClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 50
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau(47,107): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau(789,88): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 361
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/FrostfallClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 38
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/MachineLocksClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 5
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau(254,43): TypeError: the function 'math.min' expects to get a number as its 1st argument, but is being given a T & number",
+   "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau(9,7): LocalUnused: Variable 'TweenService' is never used; prefix with '_' to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau(49,7): LocalUnused: Variable 'bTitle' is never used; prefix with '_' to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau(321,77): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 91
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/MusicPlayer.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 23
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/MuteFootsteps.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 1
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau(10,7): LocalUnused: Variable 'UIS' is never used; prefix with '_' to silence"
+  ],
+  "noise_filtered": 136
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/PetFollow.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 16
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau(516,105): TypeError: the function 'math.max' expects to get a number as its 1st argument, but is being given a nil",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau(93,169): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau(94,217): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau(153,33): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau(156,99): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau(242,131): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 193
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau(24,13): LocalUnused: Variable 'FAR' is never used; prefix with '_' to silence"
+  ],
+  "noise_filtered": 149
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau(374,130): TypeError: the function 'math.ceil' expects to get a number as its 1st argument, but is being given a nil",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau(154,39): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 238
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowSoundClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 9
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(1,1): TypeError: Type inference failed to complete, you may see some confusing types and type errors.",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(97,14): LocalUnused: Variable 'nextText' is never used; prefix with '_' to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(225,28): LocalUnused: Variable 'beam' is never used; prefix with '_' to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(346,130): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(347,112): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(419,40): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(449,2): ImplicitReturn: Function 'myBay' can implicitly return no values even though there's an explicit return at line 448; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(518,20): ImplicitReturn: Function 'back' can implicitly return no values even though there's an explicit return at line 518; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(526,20): ImplicitReturn: Function 'back' can implicitly return no values even though there's an explicit return at line 526; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(534,20): ImplicitReturn: Function 'back' can implicitly return no values even though there's an explicit return at line 534; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(554,3): ImplicitReturn: Function 'back' can implicitly return no values even though there's an explicit return at line 552; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(599,20): ImplicitReturn: Function 'back' can implicitly return no values even though there's an explicit return at line 599; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(609,4): ImplicitReturn: Function 'highlightModel' can implicitly return no values even though there's an explicit return at line 608; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(610,20): ImplicitReturn: Function 'back' can implicitly return no values even though there's an explicit return at line 610; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(629,76): ImplicitReturn: Function 'back' can implicitly return no values even though there's an explicit return at line 622; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(659,3): ImplicitReturn: Function 'back' can implicitly return no values even though there's an explicit return at line 652; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(693,20): ImplicitReturn: Function 'back' can implicitly return no values even though there's an explicit return at line 693; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(935,3): ImplicitReturn: Function can implicitly return no values even though there's an explicit return at line 933; add explicit return to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(940,35): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(960,93): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau(1005,3): ImplicitReturn: Function can implicitly return no values even though there's an explicit return at line 993; add explicit return to silence"
+  ],
+  "noise_filtered": 193
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/PopupStack.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 9
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/SnowArtPetScreens.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowArtPetScreens.client.luau(15,2): ImplicitReturn: Function 'labelOf' can implicitly return no values even though there's an explicit return at line 15; add explicit return to silence"
+  ],
+  "noise_filtered": 30
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/SnowFieldClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 61
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(12,30): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(17,68): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(22,42): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(36,54): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(62,15): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(67,49): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(74,36): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(75,122): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(78,36): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(81,13): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau(85,30): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 58
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/StageClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 23
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/StageDecorClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/StageDecorClient.client.luau(12,100): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 23
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/TravelClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/StarterPlayer/StarterPlayerScripts/TravelClient.client.luau(70,139): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/StarterPlayer/StarterPlayerScripts/TravelClient.client.luau(203,121): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 72
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/VerityEggClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 120
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/W2FogClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 8
+ },
+ {
+  "file": "game/src/StarterPlayer/StarterPlayerScripts/World2Client.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 15
+ },
+ {
+  "file": "game/src/ReplicatedStorage/ActivityConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 7
+ },
+ {
+  "file": "game/src/ReplicatedStorage/ArenaConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 15
+ },
+ {
+  "file": "game/src/ReplicatedStorage/CleanControls.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 11
+ },
+ {
+  "file": "game/src/ReplicatedStorage/ContractConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 6
+ },
+ {
+  "file": "game/src/ReplicatedStorage/CraftingConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 0
+ },
+ {
+  "file": "game/src/ReplicatedStorage/EggModels.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/ReplicatedStorage/EggModels.luau(36,64): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/EggModels.luau(46,30): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 34
+ },
+ {
+  "file": "game/src/ReplicatedStorage/FeatureUIArt.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/ReplicatedStorage/FeatureUIArt.luau(19,25): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 26
+ },
+ {
+  "file": "game/src/ReplicatedStorage/FrostKingConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 0
+ },
+ {
+  "file": "game/src/ReplicatedStorage/GameAudio.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 0
+ },
+ {
+  "file": "game/src/ReplicatedStorage/MachineConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 3
+ },
+ {
+  "file": "game/src/ReplicatedStorage/MusicConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 0
+ },
+ {
+  "file": "game/src/ReplicatedStorage/NumberFormat.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 0
+ },
+ {
+  "file": "game/src/ReplicatedStorage/PassConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 3
+ },
+ {
+  "file": "game/src/ReplicatedStorage/PetConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/ReplicatedStorage/PetConfig.luau(203,3): TypeError: Internal error: Code is too complex to typecheck! Consider adding type annotations around this area",
+   "game/src/ReplicatedStorage/PetConfig.luau(212,13): TypeError: Internal error: Code is too complex to typecheck! Consider adding type annotations around this area",
+   "game/src/ReplicatedStorage/PetConfig.luau(1,1): TypeError: Type inference failed to complete, you may see some confusing types and type errors.",
+   "(1,1): TypeError: Internal error: Code is too complex to typecheck! Consider adding type annotations around this area",
+   "game/src/ReplicatedStorage/PetConfig.luau(1,1): TypeError: An internal type is escaping this module; please report this bug at https://github.com/luau-lang/luau/issues"
+  ],
+  "noise_filtered": 9
+ },
+ {
+  "file": "game/src/ReplicatedStorage/PetModels.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/ReplicatedStorage/PetModels.luau(86,92): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/PetModels.luau(103,33): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/PetModels.luau(119,38): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 64
+ },
+ {
+  "file": "game/src/ReplicatedStorage/PlowAssembly.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 3
+ },
+ {
+  "file": "game/src/ReplicatedStorage/PlowClientApi.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 1
+ },
+ {
+  "file": "game/src/ReplicatedStorage/PlowConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/ReplicatedStorage/PlowConfig.luau(364,10): DuplicateFunction: Duplicate function definition: 'C.OfferPrice' also defined on line 348",
+   "game/src/ReplicatedStorage/PlowConfig.luau(427,64): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/PlowConfig.luau(510,117): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 8
+ },
+ {
+  "file": "game/src/ReplicatedStorage/SnowArt.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 28
+ },
+ {
+  "file": "game/src/ReplicatedStorage/SnowFields.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 11
+ },
+ {
+  "file": "game/src/ReplicatedStorage/SnowUI.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/ReplicatedStorage/SnowUI.luau(16,138): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(53,116): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(117,27): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(118,42): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(129,21): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(144,2): ImplicitReturn: Function 'rootOf' can implicitly return no values even though there's an explicit return at line 139; add explicit return to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(153,18): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(158,44): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(165,37): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(167,16): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(178,39): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(185,116): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(206,15): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/src/ReplicatedStorage/SnowUI.luau(207,46): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 43
+ },
+ {
+  "file": "game/src/ReplicatedStorage/StageConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 0
+ },
+ {
+  "file": "game/src/ReplicatedStorage/TravelConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 1
+ },
+ {
+  "file": "game/src/ReplicatedStorage/TreasureConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 1
+ },
+ {
+  "file": "game/src/ReplicatedStorage/TreasureIcon.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 20
+ },
+ {
+  "file": "game/src/ReplicatedStorage/TreasureModels.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 96
+ },
+ {
+  "file": "game/src/ReplicatedStorage/UpgradeConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/src/ReplicatedStorage/UpgradeConfig.luau(1,1): TypeError: Type inference failed to complete, you may see some confusing types and type errors.",
+   "game/src/ReplicatedStorage/UpgradeConfig.luau(1,1): TypeError: An internal type is escaping this module; please report this bug at https://github.com/luau-lang/luau/issues",
+   "game/src/ReplicatedStorage/UpgradeConfig.luau(260,100): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 10
+ },
+ {
+  "file": "game/src/ReplicatedStorage/UpgradeIconArt.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 0
+ },
+ {
+  "file": "game/src/ReplicatedStorage/WheelConfig.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 8
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/ActivityClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 195
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/BottomBarFX.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 25
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/MachinesClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/studio-snapshots/StarterGui/RNGGui/MachinesClient.client.luau(8,7): ImportUnused: Import 'PetConfig' is never used; prefix with '_' to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/MachinesClient.client.luau(25,7): LocalUnused: Variable 'MUT_COLOR' is never used; prefix with '_' to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/MachinesClient.client.luau(41,86): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/MachinesClient.client.luau(212,107): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/MachinesClient.client.luau(332,78): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/MachinesClient.client.luau(339,83): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 170
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/PetClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 146
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/RNGClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/studio-snapshots/StarterGui/RNGGui/RNGClient.client.luau(10,7): LocalUnused: Variable 'player' is never used; prefix with '_' to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/RNGClient.client.luau(131,8): LocalUnused: Variable 'l' is never used; prefix with '_' to silence"
+  ],
+  "noise_filtered": 61
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/SaleBadgeAnim.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 2
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/TreasureBook.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/studio-snapshots/StarterGui/RNGGui/TreasureBook.client.luau(108,39): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/TreasureBook.client.luau(114,39): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/TreasureBook.client.luau(115,101): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/TreasureBook.client.luau(282,45): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 113
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/TreasureReveal.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/studio-snapshots/StarterGui/RNGGui/TreasureReveal.client.luau(313,47): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 165
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/UpgradeTreeClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/studio-snapshots/StarterGui/RNGGui/UpgradeTreeClient.client.luau(56,69): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence"
+  ],
+  "noise_filtered": 236
+ },
+ {
+  "file": "game/studio-snapshots/StarterGui/RNGGui/WheelClient.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/studio-snapshots/StarterGui/RNGGui/WheelClient.client.luau(7,7): LocalUnused: Variable 'RunService' is never used; prefix with '_' to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/WheelClient.client.luau(41,86): SameLineStatement: A new statement is on the same line; add semi-colon on previous statement to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/WheelClient.client.luau(99,16): FunctionUnused: Function 'miniWheel' is never used; prefix with '_' to silence",
+   "game/studio-snapshots/StarterGui/RNGGui/WheelClient.client.luau(157,7): LocalUnused: Variable 'miniRotor' is never used; prefix with '_' to silence"
+  ],
+  "noise_filtered": 140
+ },
+ {
+  "file": "game/studio-snapshots/ReplicatedFirst/BiomeLighting.client.luau",
+  "syntax_errors": [],
+  "analyzer": [],
+  "noise_filtered": 11
+ },
+ {
+  "file": "game/studio-snapshots/ReplicatedFirst/LoadingScreen.client.luau",
+  "syntax_errors": [],
+  "analyzer": [
+   "game/studio-snapshots/ReplicatedFirst/LoadingScreen.client.luau(101,7): LocalUnused: Variable 'welcome' is never used; prefix with '_' to silence"
+  ],
+  "noise_filtered": 93
+ }
+]

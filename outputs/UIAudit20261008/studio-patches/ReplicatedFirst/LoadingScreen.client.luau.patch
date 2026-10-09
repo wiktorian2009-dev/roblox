@@ -1,0 +1,50 @@
+--- game/studio-snapshots/ReplicatedFirst/LoadingScreen.client.luau	2026-10-08 16:22:53.361845766 +0000
++++ outputs/UIAudit20261008/studio-patches/ReplicatedFirst/LoadingScreen.client.luau	2026-10-08 20:07:14.326799758 +0000
+@@ -1,3 +1,4 @@
++--[[ UIAUDIT 20261008 PATCH - INSTALL PENDING. Targets Studio script: ReplicatedFirst.LoadingScreen. Based on the snapshot captured from Studio on 2026-10-02; re-read the live script in Studio before installing and re-apply on top of any newer edits. Not installed. ]]
+ -- LoadingScreen: bright snowy loading screen shown from the first moment a player joins.
+ -- It tracks game, snowplow models, avatar, streamed village and player data, then reveals gameplay.
+ -- Once per join; loading does not depend on the retired shovel arrival cinematic.
+@@ -12,7 +13,7 @@
+ 
+ local GAME_TITLE="FROSTFALL"   -- change to your game's title
+ local MIN_SHOW=1.8             -- never just flash: show at least this long (seconds)
+-local MAX_SHOW=40              -- fail-safe: always leave after this long
++local MAX_SHOW=40              -- fail-safe: always leave after this long (also bounds load() itself, see the main wait below)
+ local TIPS={
+  "Visit the GARAGE and roll part offers on the pedestals!",
+  "Drive your snowplow through snow to earn Snow ❄!",
+@@ -60,7 +61,8 @@
+ ---------------------------------------------------------------- build (first thing, so nothing flashes)
+ local gui=make("ScreenGui",{Name="LoadingScreen",DisplayOrder=100000,IgnoreGuiInset=true,ResetOnSpawn=false,
+  ZIndexBehavior=Enum.ZIndexBehavior.Sibling},playerGui)
+-local group=make("CanvasGroup",{Name="Root",Size=UDim2.fromScale(1,1),BackgroundTransparency=1,BorderSizePixel=0,GroupTransparency=0},gui)
++-- Active=true: the cover sinks mouse/touch input, so HUD buttons behind the loading art cannot be pressed while it is up (UIAudit F28).
++local group=make("CanvasGroup",{Name="Root",Size=UDim2.fromScale(1,1),BackgroundTransparency=1,BorderSizePixel=0,GroupTransparency=0,Active=true},gui)
+ local bg=make("Frame",{Name="Sky",Size=UDim2.fromScale(1,1),BackgroundColor3=WHITE,BorderSizePixel=0,ZIndex=1},group)
+ make("UIGradient",{Rotation=90,Color=ColorSequence.new({ColorSequenceKeypoint.new(0,C(104,204,255)),
+  ColorSequenceKeypoint.new(.55,C(184,234,255)),ColorSequenceKeypoint.new(1,C(238,250,255))})},bg)
+@@ -211,9 +213,20 @@
+  player:SetAttribute("LoadingReady",true)
+  step(1,"Here we go!")
+ end
+-local ok,err=pcall(load)
+-if not ok then warn("[LoadingScreen] "..tostring(err))end
+-player:SetAttribute("LoadingReady",true)   -- also on failure: allow gameplay onboarding to continue
++-- UIAudit F35: load() runs in its own thread so MAX_SHOW also covers a stuck load (game.Loaded:Wait(), slow assets/character).
++local loadDone=false
++task.spawn(function()
++ local ok,err=pcall(load)
++ if not ok then warn("[LoadingScreen] "..tostring(err))end
++ loadDone=true
++end)
++repeat task.wait(.05)
++until loadDone or os.clock()-started>math.max(MAX_SHOW,studioHold())   -- studioHold() is 0 outside Studio, so the cap is MAX_SHOW there
++if not loadDone then
++ mark("timeout")
++ warn("[LoadingScreen] load() still running after MAX_SHOW; revealing gameplay anyway")
++end
++player:SetAttribute("LoadingReady",true)   -- also on failure/timeout: allow gameplay onboarding to continue
+ target=1
+ -- Bar full: reveal gameplay.
+ repeat task.wait(.05)

@@ -1,0 +1,30 @@
+--- /home/user/roblox/game/studio-snapshots/StarterGui/RNGGui/ActivityClient.client.luau	2026-10-08 16:22:53.362349371 +0000
++++ ActivityClient.client.luau	2026-10-08 20:05:28.294793455 +0000
+@@ -1,3 +1,4 @@
++--[[ UIAUDIT 20261008 PATCH - INSTALL PENDING. Targets Studio script: StarterGui.RNGGui.ActivityClient. Based on the snapshot captured from Studio on 2026-10-02; re-read the live script in Studio before installing and re-apply on top of any newer edits. Not installed. ]]
+ -- ActivityClient (2026-10-02, Claude): the Rewards panel (Daily / Quests / Achievements / Codes), the event banner,
+ -- active boost timers, toasts and event weather. Server side: ServerScriptService.ActivityService + BoostService.
+ -- Panel shell = RNGGui.Panels.Rewards, opened by LeftMenu.Rewards through RNGClient's normal panel logic.
+@@ -285,7 +286,8 @@
+ 		showToast(res.Msg or "", res.Ok and GREEN or RED)
+ 		setState(res.State)
+ 	end
+-	render()
++	-- UIAudit 20261008: InvokeServer yields; if the player switched to CODES meanwhile, a rebuild would destroy the CodeBox (typed text + keyboard focus)
++	if current ~= "Codes" then render() end
+ end
+ 
+ local renderedTab -- 2026-10-03 (Claude): last tab drawn, so a newly opened tab starts at the top
+@@ -442,7 +444,11 @@
+ 	elseif msg.Type == "NewQuests" then
+ 		showToast("📜 New quests are ready!", Color3.fromRGB(130, 205, 255))
+ 	end
+-	if panel.Visible then fetch(); render() end
++	-- UIAudit 20261008: still fetch (state stays current), but never rebuild the CODES page - render() destroys the CodeBox while the player is typing
++	if panel.Visible then
++		fetch()
++		if current ~= "Codes" then render() end
++	end
+ end)
+ 
+ -- timers: event banner, boost pills, page countdowns

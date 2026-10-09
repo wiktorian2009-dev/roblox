@@ -9,5 +9,9 @@ Api.Go = function() end         -- teleport to the garage / back to the lobby
 Api.Revealed = function() end   -- (slotKey, rank) a roll finished on that pedestal: the garage plays the reveal in the world
 Api.CardTarget = function() return nil end -- which offer card is open ("1" / "2" / "3" / "Reserved"), or nil
 Api.CloseCard = function() end
+-- Callers may call any Api.CloseX unconditionally (no-op until a client script overrides it):
+-- PlowShopClient overrides CloseBuild / CloseCard, PlowGarageClient overrides CloseInspect.
+Api.CloseBuild = function() end   -- close the build (garage) window
+Api.CloseInspect = function() end -- close the inspect panel of another player's car
 Api.Toast = function() end      -- (text, colour)
 return Api

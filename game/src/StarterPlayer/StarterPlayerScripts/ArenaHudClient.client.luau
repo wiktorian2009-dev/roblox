@@ -3,6 +3,9 @@
 -- buttons clear of the thumbstick and safe areas), knockout + respawn messages with an overview camera, spawn-shield indicator,
 -- results card, first-time intro (points at the ability buttons and the exits), exit danger markers, restrained impact effects.
 -- Movement and abilities live in ArenaDriveClient; the server (ArenaService) decides every hit, knockout and score.
+-- 2026-10-08 (Claude, UI audit F19 / F57): touch only - LEAVE ARENA + PAINT share one bottom-left stack (no overlap), BOOST / BRACE are
+-- fixed-size buttons anchored left of Roblox's jump button (read live via UILayout), Status is left-aligned and stops short of BRACE, the
+-- intro OK is at least 120x44. Leaving the island resets the intro step so the intro still shows on the next visit. Desktop is unchanged.
 local Players = game:GetService("Players")
 local RS = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -11,6 +14,7 @@ local TweenService = game:GetService("TweenService")
 local Debris = game:GetService("Debris")
 local player = Players.LocalPlayer
 local A = require(RS:WaitForChild("ArenaConfig"))
+local UILayout = require(RS:WaitForChild("UILayout"))
 local remote = RS:WaitForChild("ArenaRemote")
 local event = RS:WaitForChild("ArenaEvent")
 local folder = workspace:WaitForChild("ArenaVehicles")
@@ -47,8 +51,9 @@ local function button(parent, name, text, color, props)
 	return b, l
 end
 
+local pg = player:WaitForChild("PlayerGui")
 local gui = mk("ScreenGui", {Name = "ArenaHud", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 120, Enabled = false,
-	ScreenInsets = Enum.ScreenInsets.CoreUISafeInsets, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, player:WaitForChild("PlayerGui"))
+	ScreenInsets = Enum.ScreenInsets.CoreUISafeInsets, ZIndexBehavior = Enum.ZIndexBehavior.Sibling}, pg)
 
 -- top: phase + timer + your score
 local top = mk("Frame", {Name = "Timer", AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.fromScale(0.5, 0.015), Size = UDim2.fromScale(0.26, 0.105),
@@ -81,22 +86,33 @@ end
 local feed = mk("Frame", {Name = "Feed", AnchorPoint = Vector2.new(1, 0), Position = UDim2.fromScale(0.985, 0.52), Size = UDim2.fromScale(0.2, 0.14), BackgroundTransparency = 1}, gui)
 mk("UIListLayout", {Padding = UDim.new(0.04, 0), VerticalAlignment = Enum.VerticalAlignment.Top}, feed)
 
--- bottom-left: leave + paint
-local leaveB = button(gui, "LeaveButton", "LEAVE ARENA", RED, {AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.012, touch and 0.6 or 0.97), Size = UDim2.fromScale(touch and 0.17 or 0.12, touch and 0.075 or 0.06)})
+-- bottom-left: leave + paint. Touch: one transparent, non-Active stack (PAINT above LEAVE, 8 px apart) so the two can never overlap on a short phone.
+local leavePaint
+if touch then
+	leavePaint = mk("Frame", {Name = "LeavePaint", BackgroundTransparency = 1, BorderSizePixel = 0, Active = false, AnchorPoint = Vector2.new(0, 1),
+		Position = UDim2.fromScale(0.012, 0.6), Size = UDim2.fromOffset(0, 0), AutomaticSize = Enum.AutomaticSize.XY}, gui)
+	mk("UIListLayout", {FillDirection = Enum.FillDirection.Vertical, SortOrder = Enum.SortOrder.LayoutOrder, Padding = UDim.new(0, UILayout.GAP),
+		HorizontalAlignment = Enum.HorizontalAlignment.Left, VerticalAlignment = Enum.VerticalAlignment.Bottom}, leavePaint)
+end
+local leaveB = button(leavePaint or gui, "LeaveButton", "LEAVE ARENA", RED, touch and {LayoutOrder = 2, Size = UDim2.fromOffset(140, 46)}
+	or {AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.012, 0.97), Size = UDim2.fromScale(0.12, 0.06)})
 mk("UISizeConstraint", {MinSize = Vector2.new(touch and 140 or 120, touch and 46 or 38)}, leaveB)
-local paintB, paintL = button(gui, "PaintButton", "PAINT", BLUE, {AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.012, touch and 0.51 or 0.9), Size = UDim2.fromScale(touch and 0.12 or 0.085, touch and 0.06 or 0.05)})
-mk("UISizeConstraint", {MinSize = Vector2.new(96, 32)}, paintB)
+local paintB = button(leavePaint or gui, "PaintButton", "PAINT", BLUE, touch and {LayoutOrder = 1, Size = UDim2.fromOffset(96, 44)}
+	or {AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0.012, 0.9), Size = UDim2.fromScale(0.085, 0.05)})
+mk("UISizeConstraint", {MinSize = Vector2.new(96, touch and 44 or 32)}, paintB)
 do local SA = require(RS:WaitForChild("SnowArt")); SA.IconButton(leaveB, "leave"); SA.IconButton(paintB, "brush") end
 
 -- bottom-centre: join + status
 local joinB, joinL = button(gui, "JoinButton", "JOIN MATCH", GREEN, {AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.9), Size = UDim2.fromScale(0.2, 0.09)})
 mk("UISizeConstraint", {MinSize = Vector2.new(200, 56)}, joinB)
-local statusL = label(gui, "", {Name = "Status", AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.965), Size = UDim2.fromScale(0.5, 0.045), TextColor3 = Color3.fromRGB(230, 242, 255)})
+-- touch: left-aligned bottom-left; layoutTouch() below sizes it so it stops 16 px short of BRACE
+local statusL = label(gui, "", {Name = "Status", AnchorPoint = touch and Vector2.new(0, 1) or Vector2.new(0.5, 1), Position = UDim2.fromScale(touch and 0.012 or 0.5, 0.965),
+	Size = UDim2.fromScale(0.5, 0.045), TextXAlignment = touch and Enum.TextXAlignment.Left or Enum.TextXAlignment.Center, TextColor3 = Color3.fromRGB(230, 242, 255)})
 
--- bottom-right: abilities (big round touch buttons above the jump-button area)
+-- bottom-right: abilities (big round touch buttons left of the jump button; touch: fixed pixel size anchored bottom-right, positioned by layoutTouch)
 local function abilityButton(name, text, color, pos, size)
-	local b = mk("TextButton", {Name = name, Text = "", AutoButtonColor = true, BackgroundColor3 = color, AnchorPoint = Vector2.new(0.5, 0.5), Position = pos, Size = size,
-		SizeConstraint = Enum.SizeConstraint.RelativeYY}, gui)
+	local b = mk("TextButton", {Name = name, Text = "", AutoButtonColor = true, BackgroundColor3 = color, AnchorPoint = touch and Vector2.new(1, 1) or Vector2.new(0.5, 0.5), Position = pos, Size = size,
+		SizeConstraint = touch and Enum.SizeConstraint.RelativeXY or Enum.SizeConstraint.RelativeYY}, gui)
 	corner(b, 0.5); stroke(b, 3.5)
 	mk("UIGradient", {Rotation = 90, Color = ColorSequence.new(WHITE, Color3.fromRGB(200, 215, 235))}, b)
 	local cd = mk("Frame", {Name = "Cooldown", BackgroundColor3 = Color3.fromRGB(10, 20, 45), BackgroundTransparency = 0.35, AnchorPoint = Vector2.new(0, 1), Position = UDim2.fromScale(0, 1), Size = UDim2.fromScale(1, 0), ZIndex = 2}, b)
@@ -106,8 +122,57 @@ local function abilityButton(name, text, color, pos, size)
 	local t = label(b, "", {Name = "Secs", Position = UDim2.fromScale(0.2, 0.2), Size = UDim2.fromScale(0.6, 0.6), ZIndex = 4, Visible = false})
 	return {button = b, cd = cd, label = l, key = k, secs = t}
 end
-local boostU = abilityButton("BoostButton", "BOOST", ORANGE, touch and UDim2.fromScale(0.84, 0.5) or UDim2.fromScale(0.9, 0.8), touch and UDim2.fromScale(0.24, 0.24) or UDim2.fromScale(0.15, 0.15))
-local braceU = abilityButton("BraceButton", "BRACE", BLUE, touch and UDim2.fromScale(0.68, 0.68) or UDim2.fromScale(0.8, 0.88), touch and UDim2.fromScale(0.17, 0.17) or UDim2.fromScale(0.11, 0.11))
+-- touch positions below are placeholders until layoutTouch() runs (BOOST 88 px, BRACE 72 px, bottoms 16 px above the gui bottom)
+local boostU = abilityButton("BoostButton", "BOOST", ORANGE, touch and UDim2.new(0.84, 0, 1, -16) or UDim2.fromScale(0.9, 0.8), touch and UDim2.fromOffset(88, 88) or UDim2.fromScale(0.15, 0.15))
+local braceU = abilityButton("BraceButton", "BRACE", BLUE, touch and UDim2.new(0.68, 0, 1, -16) or UDim2.fromScale(0.8, 0.88), touch and UDim2.fromOffset(72, 72) or UDim2.fromScale(0.11, 0.11))
+
+-- touch layout: everything that depends on the screen size or on Roblox's jump button, recomputed (connections made ONCE) when any of them change
+local function layoutTouch()
+	local size = gui.AbsoluteSize
+	if size.X <= 0 or size.Y <= 0 then -- not laid out yet (disabled gui): the camera viewport is the same size on a phone
+		local vcam = workspace.CurrentCamera
+		size = vcam and vcam.ViewportSize or size
+		if size.X <= 0 or size.Y <= 0 then return end
+	end
+	local W, H = size.X, size.Y
+	local jumpLeft = (UILayout.jumpLeftTop(pg, gui)) -- left edge of Roblox's jump button in this gui's space (fallback: the Roblox defaults)
+	boostU.button.Position = UDim2.fromOffset(jumpLeft - 12, H - 16)
+	braceU.button.Position = UDim2.fromOffset(jumpLeft - 12 - 88 - 8, H - 16)
+	statusL.Size = UDim2.fromOffset(math.max(0, math.min(0.5 * W, jumpLeft - 196 - 0.012 * W)), 0.045 * H)
+	leaveB.Size = UDim2.fromOffset(math.max(140, 0.17 * W), 46)
+	paintB.Size = UDim2.fromOffset(math.max(96, 0.12 * W), 44)
+end
+if touch then
+	gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(layoutTouch)
+	gui:GetPropertyChangedSignal("AbsolutePosition"):Connect(layoutTouch)
+	gui:GetPropertyChangedSignal("Enabled"):Connect(layoutTouch)
+	local camConn
+	local function watchCamera()
+		if camConn then camConn:Disconnect(); camConn = nil end
+		local vcam = workspace.CurrentCamera
+		if vcam then camConn = vcam:GetPropertyChangedSignal("ViewportSize"):Connect(layoutTouch) end
+		layoutTouch()
+	end
+	workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(watchCamera)
+	local jumpConns, jumpWatched = {}, nil
+	local function watchJump() -- the JumpButton can appear late or be replaced: keep exactly one set of connections on the current one
+		local touchGui = pg:FindFirstChild("TouchGui")
+		local jump = touchGui and touchGui:FindFirstChild("JumpButton", true)
+		if not (jump and jump:IsA("GuiObject")) or jump == jumpWatched then return end
+		for _, c in ipairs(jumpConns) do c:Disconnect() end
+		table.clear(jumpConns)
+		jumpWatched = jump
+		for _, prop in ipairs({"AbsolutePosition", "AbsoluteSize", "Visible"}) do
+			table.insert(jumpConns, jump:GetPropertyChangedSignal(prop):Connect(layoutTouch))
+		end
+		table.insert(jumpConns, jump.AncestryChanged:Connect(layoutTouch))
+		if touchGui:IsA("ScreenGui") then table.insert(jumpConns, touchGui:GetPropertyChangedSignal("Enabled"):Connect(layoutTouch)) end
+		layoutTouch()
+	end
+	pg.DescendantAdded:Connect(function(d) if d.Name == "JumpButton" then watchJump() end end)
+	watchCamera()
+	watchJump()
+end
 
 -- centre: banner + respawn
 local banner = label(gui, "", {Name = "Banner", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.3), Size = UDim2.fromScale(0.6, 0.08), TextTransparency = 1})
@@ -152,9 +217,11 @@ local intro = mk("Frame", {Name = "Intro", AnchorPoint = Vector2.new(0.5, 0), Po
 	BackgroundColor3 = Color3.fromRGB(18, 73, 122), Visible = false, ZIndex = 5}, gui)
 corner(intro, 0.12); stroke(intro, 3.5)
 mk("UISizeConstraint", {MinSize = Vector2.new(320, 130)}, intro)
-local introTitle = label(intro, "", {Position = UDim2.fromScale(0.05, 0.06), Size = UDim2.fromScale(0.9, 0.36), TextColor3 = GOLD, ZIndex = 6})
-local introText = label(intro, "", {Position = UDim2.fromScale(0.05, 0.42), Size = UDim2.fromScale(0.9, 0.26), ZIndex = 6})
+-- touch: title/text sit a little higher so the 44 px high OK (MinSize below) never covers the text on the 130 px minimum card
+local introTitle = label(intro, "", {Position = UDim2.fromScale(0.05, touch and 0.04 or 0.06), Size = UDim2.fromScale(0.9, touch and 0.3 or 0.36), TextColor3 = GOLD, ZIndex = 6})
+local introText = label(intro, "", {Position = UDim2.fromScale(0.05, touch and 0.34 or 0.42), Size = UDim2.fromScale(0.9, 0.26), ZIndex = 6})
 local introOk = button(intro, "OkButton", "OK!", GREEN, {AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.95), Size = UDim2.fromScale(0.26, 0.22), ZIndex = 6})
+if touch then mk("UISizeConstraint", {MinSize = Vector2.new(120, 44)}, introOk) end
 local pointers = {}
 local function pointerAt(target, text)
 	local p = mk("Frame", {Name = "Pointer", BackgroundTransparency = 1, AnchorPoint = Vector2.new(0.5, 1), Size = UDim2.fromOffset(120, 90), ZIndex = 7}, gui)
@@ -497,6 +564,7 @@ local function onIsland()
 		end)
 	else
 		joined = false
+		introStep = 0 -- a visitor who left mid-intro (before pressing OK) gets the intro again next visit
 		intro.Visible = false; clearPointers(); results.Visible = false
 		for _, m in ipairs(exitMarks) do m.gui:Destroy() end
 		table.clear(exitMarks)
