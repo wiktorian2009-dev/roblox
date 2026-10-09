@@ -39,6 +39,18 @@ for _, p in ipairs(P.Passes) do
 	P.ByKey[p.Key] = p
 	if p.Id then P.ById[p.Id] = p end
 end
+-- QUICK ROLLS (2026-10-09, wiktor: "make click to skip trigger game pass payment for quicker rolls"): a perk pass, NOT a HUD card
+-- (kept out of P.Passes). Owners skip the garage part-roll reveal with a click / tap / E (same server result). Others who click
+-- during a reveal get this pass's purchase prompt (once per roll, at most every few seconds); the reveal keeps playing.
+-- Reduced motion and players where paid random items are restricted always skip for free. Presentation only: rolls, odds, pity,
+-- cooldown and prices are identical with or without it. Id = nil: skipping stays free for everyone and nothing is ever prompted -
+-- create the pass in the Creator Dashboard, paste its id here, publish (outputs/RollReveal20261009/README.md).
+P.QuickRolls = {Key = "QuickRolls", Name = "Quick Rolls", Id = nil, Benefit = "Skip the part-roll animation"}
+P.Perks = {P.QuickRolls} -- passes checked and granted by PassService but never drawn as HUD cards
+for _, p in ipairs(P.Perks) do
+	P.ByKey[p.Key] = p
+	if p.Id then P.ById[p.Id] = p end
+end
 P.SnowMult = 1.5 -- the 1.5x Snow pass factor (UpgradeService folds it into SnowMult exactly once)
 
 -- DEVELOPER PRODUCTS (2026-10-06, Claude): repeatable purchases granted by ProductService.ProcessReceipt (server roll, saved before

@@ -72,8 +72,10 @@ local function grant(player, pass)
 	return true
 end
 
+local ALL = table.clone(P.Passes) -- 2026-10-09: HUD passes + perk passes (Quick Rolls: Pass_QuickRolls, nothing else to grant)
+for _, p in ipairs(P.Perks or {}) do table.insert(ALL, p) end
 local function checkAll(player)
-	for _, pass in ipairs(P.Passes) do
+	for _, pass in ipairs(ALL) do
 		task.spawn(function()
 			local owned, known = checkOwned(player, pass)
 			if owned then grant(player, pass) end

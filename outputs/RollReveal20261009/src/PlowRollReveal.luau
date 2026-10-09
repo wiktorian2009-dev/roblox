@@ -17,6 +17,8 @@ local C = require(RS:WaitForChild("PlowConfig"))
 local Api = require(RS:WaitForChild("PlowClientApi"))
 local TX = require(RS:WaitForChild("UniversalVFX")).Textures
 local Audio = require(RS:WaitForChild("GameAudio"))
+local Pass = require(RS:WaitForChild("PassConfig"))
+local MPS = game:GetService("MarketplaceService")
 
 local M = {}
 local CYAN, ICE, NAVY = Color3.fromRGB(120, 225, 255), Color3.fromRGB(190, 235, 255), Color3.fromRGB(22, 32, 58)
@@ -63,6 +65,32 @@ local function soundVolume()
 	local rng = pg and pg:FindFirstChild("RNGGui")
 	if player:GetAttribute("RollSoundOff") == true or (rng and rng:GetAttribute("RollTickOff") == true) then return 0 end
 	return math.clamp(tonumber(rng and rng:GetAttribute("RollTickVolume")) or 1, 0, 2)
+end
+
+------------------------------------------------ Quick Rolls (2026-10-09): skipping is the perk of the Quick Rolls game pass once it has an id
+-- Free while PassConfig.QuickRolls.Id is nil or sales are off, with reduced motion, and where paid random items are restricted (or
+-- the policy is not known yet). Otherwise a click / tap / E during your reveal opens the pass's purchase prompt (once per roll and at
+-- most every PROMPT_GAP seconds); the reveal keeps playing. Ownership comes only from the server (PassService -> Pass_QuickRolls).
+local QR = Pass.QuickRolls
+local PROMPT_GAP = 5
+local lastPrompt = -math.huge
+function M.SkipIsPaid() -- true = skipping needs the pass right now
+	if not (QR and QR.Id and Pass.SalesEnabled == true) then return false end
+	if M.ReducedMotion() then return false end
+	if player:GetAttribute("PaidRandomRestricted") ~= false then return false end
+	return player:GetAttribute("Pass_" .. QR.Key) ~= true
+end
+local function offerQuickRolls(a)
+	if a.prompted or os.clock() - lastPrompt < PROMPT_GAP then return end
+	a.prompted, lastPrompt = true, os.clock()
+	pcall(function() MPS:PromptGamePassPurchase(player, QR.Id) end) -- PassService verifies and grants after the purchase
+end
+if QR then
+	player:GetAttributeChangedSignal("Pass_" .. QR.Key):Connect(function()
+		if player:GetAttribute("Pass_" .. QR.Key) == true and os.clock() - lastPrompt < 300 then
+			Api.Toast("\u{26A1} Quick Rolls unlocked - click to skip roll reveals!", Color3.fromRGB(150, 255, 170))
+		end
+	end)
 end
 
 ------------------------------------------------ models
@@ -321,6 +349,11 @@ function Anim:Skip()
 	self.fast = true
 	if self.result then self:Finish(true) end
 end
+function Anim:TrySkip() -- a player's skip request (click / tap / E): free, or the Quick Rolls offer
+	if self.dead then return end
+	if M.SkipIsPaid() then offerQuickRolls(self); return end
+	self:Skip()
+end
 
 local function placeModel(m, top, hover, offset, angle, y)
 	m:PivotTo(top.CFrame * CFrame.new(0, hover + (y or 0), 0) * CFrame.Angles(0, angle, 0) * offset:Inverse())
@@ -557,12 +590,13 @@ function M.Mini(ped, rank)
 	task.delay(0.85, function() if r.token == my and r.folder.Parent then r.light.Enabled = false end end)
 end
 
--- click / tap anywhere in the world skips your own running reveal to the same result (does not change roll speed or odds)
+-- click / tap anywhere in the world skips your own running reveal to the same result (does not change roll speed or odds);
+-- with the Quick Rolls pass active (see above) this is the pass perk and non-owners get its purchase prompt instead
 UIS.InputBegan:Connect(function(input, processed)
 	if processed then return end
 	local t = input.UserInputType
 	if t ~= Enum.UserInputType.MouseButton1 and t ~= Enum.UserInputType.Touch then return end
-	for a in pairs(running) do if a.result then a:Skip() end end
+	for a in pairs(running) do if a.result then a:TrySkip() end end
 end)
 
 return M

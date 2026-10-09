@@ -144,3 +144,4 @@ All scripts are mirrored in game/src, so scripts survive even without a save; St
 
 60. Egg toast outline + World 1 walls after World 2 (2026-10-09, Claude): PetClient (egg 'need X snow' toast outline fades) and StageClient (walls re-apply open state when they stream back in), mirrored. Backup: ServerStorage.EggToastTravelFix_20261009.
 61. Part-roll reveal remake (2026-10-09, Claude): new ReplicatedStorage.PlowRollReveal; PlowGarageClient, PlowShopClient, PlowClientApi edited (merged into game/src). Backup: ServerStorage.RollRevealBackup_20261009. Details: outputs/RollReveal20261009/README.md.
+62. Quick Rolls pass gate on the reveal skip (2026-10-09, Claude): PassConfig (QuickRolls perk, Id nil), PassService (checks perks), PlowRollReveal, PlowGarageClient; mirrored. Backup: ServerStorage.QuickRollsBackup_20261009. With Id nil nothing changes for players.

@@ -341,7 +341,7 @@ local function refreshBay(e)
 	for key, ped in pairs(e.peds) do
 		if ped.anim and ped.anim:Alive() then -- 2026-10-09: a roll reveal owns this pedestal until it hands the part over
 			ped.l1.Text, ped.l1.TextColor3 = "ROLLING...", ICE
-			ped.l2.Text = mine and (touchOnly and "tap to skip" or "click to skip") or ""
+			ped.l2.Text = mine and (Reveal.SkipIsPaid() and "\u{26A1} QUICK ROLLS to skip" or (touchOnly and "tap to skip" or "click to skip")) or ""
 			if ped.prompt then ped.prompt.Enabled = mine; ped.baseAction = "Skip"; ped.prompt.ActionText = "Skip"; ped.rollPrompt = false end
 			if ped.reroll then ped.reroll.Enabled = false end
 			if ped.cd then ped.cd.bb.Enabled = mine end
@@ -427,7 +427,7 @@ local function setupBay(m)
 			ped.light = Instance.new("PointLight"); ped.light.Range, ped.light.Brightness, ped.light.Enabled = 9, 0.8, false; ped.light.Parent = top
 			ped.prompt = prompt(top, "Roll a part", key == "Reserved" and "Reserved shelf" or ("Pedestal " .. key), Enum.KeyCode.E, function()
 				if not e.mine then return end
-				if ped.anim and ped.anim:Alive() then ped.anim:Skip(); return end -- E during a reveal = skip to the same result
+				if ped.anim and ped.anim:Alive() then ped.anim:TrySkip(); return end -- E during a reveal = skip to the same result (Quick Rolls perk)
 				local S = Api.State
 				if key == "Reserved" then
 					if S and S.Reserved then Api.OpenCard("Reserved") else Api.Toast("Nothing reserved yet - RESERVE a part from a pedestal!", ICE) end

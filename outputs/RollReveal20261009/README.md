@@ -26,5 +26,9 @@ Sounds: existing ids only (tick 12221976, GameAudio Start / Reveal / Steps.Epic 
 ## Studio test hook (inert outside Studio)
 `PlayerGui.GarageInspectGui.RollRevealTest:Invoke(key, partId, rank, delay, speed)` plays the reveal on your own pedestal with no server call (no offer, price or odds change); the pedestal snaps back to its real offer afterwards. `speed` < 1 = slow motion for screenshots.
 
+## Quick Rolls pass (save point 62)
+Skipping becomes the perk of a game pass once `PassConfig.QuickRolls.Id` is set (now nil = free skip, no prompts). Owners skip with click / tap / E; non-owners get the pass's purchase prompt (once per roll, at most every 5 s) and the reveal keeps playing. Always free with reduced motion and where paid random items are restricted. Backup: ServerStorage.QuickRollsBackup_20261009.
+To switch it on (dashboard steps unverified): Creator Dashboard > this experience > Monetization > Passes > create "Quick Rolls" (image, description "Skip the part-roll animation"), set it on sale with a price, copy its id, then put it in `PassConfig.QuickRolls.Id` (or send it to Claude) and publish.
+
 ## Recovery
 ServerStorage.RollRevealBackup_20261009 holds the original PlowGarageClient, PlowShopClient (disabled) and PlowClientApi. Restore them to StarterPlayerScripts / ReplicatedStorage (enable the scripts) and delete ReplicatedStorage.PlowRollReveal.
