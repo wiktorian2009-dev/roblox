@@ -141,3 +141,6 @@ Nothing below has been saved in Studio yet (wiktor is away; no publish).
 Note: at about 15:30 the Studio MCP connection came back with a new id (c7cec63dâ€¦) holding the same place. It had reloaded a state from a little earlier, so I re-installed my last edits and checked them against disk. Everything listed above was present after that.
 
 All scripts are mirrored in game/src, so scripts survive even without a save; Studio-only geometry (arena island, remaster scenery) is lost if Studio closes unsaved.
+
+60. Egg toast outline + World 1 walls after World 2 (2026-10-09, Claude): PetClient (egg 'need X snow' toast outline fades) and StageClient (walls re-apply open state when they stream back in), mirrored. Backup: ServerStorage.EggToastTravelFix_20261009.
+61. Part-roll reveal remake (2026-10-09, Claude): new ReplicatedStorage.PlowRollReveal; PlowGarageClient, PlowShopClient, PlowClientApi edited (merged into game/src). Backup: ServerStorage.RollRevealBackup_20261009. Details: outputs/RollReveal20261009/README.md.

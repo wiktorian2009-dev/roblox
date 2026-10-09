@@ -317,7 +317,7 @@ local function refreshCard()
 			shownKey = target .. o.Token
 			setPreview(vp, Assembly.PartModel(o.Part), 1.15)
 		end
-		hdrText.Text = isRes and "YOUR RESERVED PART" or ("PEDESTAL " .. target .. " - FOR SALE!")
+		hdrText.Text = isRes and "YOUR RESERVED PART" or ("OFFER - PEDESTAL " .. target)
 	else
 		shownKey = nil
 		setPreview(vp, nil)
@@ -335,9 +335,17 @@ local function refreshCard()
 	end
 end
 
-local function reveal(rank)
+local function reveal(rank, quiet) -- quiet (2026-10-09): the pedestal reveal already celebrated; the card only pops in
 	local big = rank >= C.Shop.BigRevealRank
 	local col = RCOL[C.Rarities[rank].Id]
+	if quiet then
+		cardScale.Scale = 0.9
+		TweenService:Create(cardScale, TweenInfo.new(0.22, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Scale = 1}):Play()
+		glow.ImageTransparency = 0.65
+		TweenService:Create(glow, TweenInfo.new(0.5), {ImageTransparency = 0.82}):Play()
+		vp.Ambient, vp.LightColor = Color3.fromRGB(175, 175, 195), WHITE
+		return
+	end
 	cardScale.Scale = big and 0.78 or 0.93
 	TweenService:Create(cardScale, TweenInfo.new(big and 0.45 or 0.22, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Scale = 1}):Play()
 	glow.ImageTransparency = big and 0.1 or 0.65
@@ -392,9 +400,36 @@ local function showCard(on)
 	if on then confirm.Visible = false; refreshCard() end
 end
 closeB.Activated:Connect(function() showCard(false) end)
+-- 2026-10-09: the pedestal reveal (PlowRollReveal via Api.RollBegin) starts before the server call and only shows a part once the
+-- server's answer is in; its handoff opens this card with BUY / RESERVE. One request per pedestal at a time; a refused roll undoes it.
+local rolling = {}
 local function doRoll(key, inCard)
 	key = key or target
+	if rolling[key] then return end
+	rolling[key] = true
+	local cardWasOpen = card.Visible and target or nil -- any open card (this or another pedestal) steps aside for the reveal
+	local h = Api.RollBegin and Api.RollBegin(key)
+	if h and cardWasOpen then card.Visible = false end -- the new offer's card comes at the handoff
 	local r = call("Roll", key)
+	rolling[key] = nil
+	local o = r.ok and state and state.Offers and state.Offers[key]
+	if h then
+		if o then
+			refreshAll()
+			local rank = r.rank or 2
+			h.Resolve(o.Part, rank, function()
+				if player:GetAttribute("InGarage") ~= true then return end
+				local now = state and state.Offers and state.Offers[key]
+				if not now or now.Token ~= o.Token then return end -- a newer roll or a purchase replaced it
+				target = key
+				showCard(true)
+				reveal(rank, true)
+			end)
+			return
+		end
+		h.Abort()
+		if cardWasOpen then target = cardWasOpen; showCard(true) end
+	end
 	if r.ok then
 		refreshAll()
 		if inCard then -- rerolled from the open card: it stays open
@@ -436,7 +471,7 @@ RunService.Heartbeat:Connect(function()
 		local total = o.Protected and (C.Shop.ProtectedOfferSeconds or 60) or (C.Shop.OfferSeconds or 30)
 		timerFill.Size = UDim2.fromScale(math.clamp(left / total, 0, 1), 1)
 		timerFill.BackgroundColor3 = left <= 8 and not paused and Color3.fromRGB(232, 176, 122) or Color3.fromRGB(143, 190, 230)
-		hdrText.Text = ("PEDESTAL %s - %s"):format(target, paused and "TIMER PAUSED" or ("GONE IN %ds - RESERVE IT?"):format(math.ceil(left)))
+		hdrText.Text = ("OFFER %s - %s"):format(target, paused and "TIMER PAUSED" or ("GONE IN %ds - RESERVE IT?"):format(math.ceil(left)))
 	end
 end)
 local function afterBuy(r)

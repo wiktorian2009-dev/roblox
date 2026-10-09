@@ -9,6 +9,7 @@ local RS = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 local Debris = game:GetService("Debris")
+local UIS = game:GetService("UserInputService")
 local player = Players.LocalPlayer
 local C = require(RS:WaitForChild("PlowConfig"))
 if C.Mode ~= "Snowplow" then return end
@@ -18,6 +19,8 @@ local Format = require(RS:WaitForChild("NumberFormat"))
 local UILayout = require(RS:WaitForChild("UILayout"))
 local TX = require(RS:WaitForChild("UniversalVFX")).Textures
 local event = RS:WaitForChild("PlowEvent")
+local Reveal = require(RS:WaitForChild("PlowRollReveal")) -- 2026-10-09: the pedestal part-roll reveal (presentation only)
+local touchOnly = UIS.TouchEnabled and not UIS.KeyboardEnabled
 local FONT, NAVY, WHITE = Enum.Font.FredokaOne, Color3.fromRGB(20, 40, 85), Color3.new(1, 1, 1)
 local GREEN, ICE = Color3.fromRGB(110, 235, 140), Color3.fromRGB(150, 225, 255)
 local RCOL = {}
@@ -71,6 +74,16 @@ local function fitModel(m, maxSize)
 	if s ~= 1 then m:ScaleTo(s) end
 end
 local function myBayIndex() return player:GetAttribute("GarageBay") end
+-- a part model fitted for a pedestal: the same size / centre the pedestal display and the roll reveal use
+local function preparePart(id)
+	local d = Assembly.PartModel(id)
+	if not d then return nil end
+	visual(d)
+	fitModel(d, 4.6)
+	local cf, size = d:GetBoundingBox()
+	return d, d:GetPivot():ToObjectSpace(cf), size.Y / 2 + 1.7
+end
+Reveal.Init({prepare = preparePart})
 -- 2026-10-08 (UI audit F26 / F31): the equip window is built by PlowShopClient (PlowShopGui.GarageWindow); nil-safe, so it counts as closed until it exists
 local BAY_REACH = 39 -- studs; PlowService refuses Equip / LevelUp farther than this from your bay pivot (its BAY_REACH)
 local function garageWindowOpen()
@@ -326,17 +339,23 @@ local function refreshBay(e)
 	local snow = snowNow()
 	e.mine = mine
 	for key, ped in pairs(e.peds) do
+		if ped.anim and ped.anim:Alive() then -- 2026-10-09: a roll reveal owns this pedestal until it hands the part over
+			ped.l1.Text, ped.l1.TextColor3 = "ROLLING...", ICE
+			ped.l2.Text = mine and (touchOnly and "tap to skip" or "click to skip") or ""
+			if ped.prompt then ped.prompt.Enabled = mine; ped.baseAction = "Skip"; ped.prompt.ActionText = "Skip"; ped.rollPrompt = false end
+			if ped.reroll then ped.reroll.Enabled = false end
+			if ped.cd then ped.cd.bb.Enabled = mine end
+			continue
+		end
 		local id = key == "Reserved" and (m:GetAttribute("Reserved") or "") or (m:GetAttribute("Offer" .. key) or "")
 		if ownerId == 0 then id = "" end
 		if ped.id ~= id then
 			ped.id = id
 			if ped.display then ped.display:Destroy(); ped.display = nil end
-			local d = id ~= "" and Assembly.PartModel(id)
+			local d, offset, hover
+			if id ~= "" then d, offset, hover = preparePart(id) end
 			if d then
-				visual(d)
-				fitModel(d, 4.6)
-				local cf, size = d:GetBoundingBox()
-				ped.offset, ped.hover = d:GetPivot():ToObjectSpace(cf), size.Y / 2 + 1.7
+				ped.offset, ped.hover, ped.phase = offset, hover, nil
 				d.Parent = ped.model
 				ped.display = d
 				ped.display:PivotTo(ped.top.CFrame * CFrame.new(0, ped.hover, 0) * ped.offset:Inverse())
@@ -351,7 +370,7 @@ local function refreshBay(e)
 				local S = Api.State
 				local o = S and (key == "Reserved" and S.Reserved or (S.Offers and S.Offers[key]))
 				local price = o and o.Price or def.Price
-				p = "\u{2744} " .. Format.Abbreviate(price) .. (snow >= price and "  READY!" or ("  need " .. Format.Abbreviate(math.ceil(price - snow))))
+				p = (key == "Reserved" and "" or "OFFER  ") .. "\u{2744} " .. Format.Abbreviate(price) .. (snow >= price and "  READY!" or ("  need " .. Format.Abbreviate(math.ceil(price - snow))))
 			end
 			ped.l2.Text = p
 			ped.light.Color, ped.light.Enabled = RCOL[def.Rarity], (ped.top.Position - camPos()).Magnitude < NEAR
@@ -408,6 +427,7 @@ local function setupBay(m)
 			ped.light = Instance.new("PointLight"); ped.light.Range, ped.light.Brightness, ped.light.Enabled = 9, 0.8, false; ped.light.Parent = top
 			ped.prompt = prompt(top, "Roll a part", key == "Reserved" and "Reserved shelf" or ("Pedestal " .. key), Enum.KeyCode.E, function()
 				if not e.mine then return end
+				if ped.anim and ped.anim:Alive() then ped.anim:Skip(); return end -- E during a reveal = skip to the same result
 				local S = Api.State
 				if key == "Reserved" then
 					if S and S.Reserved then Api.OpenCard("Reserved") else Api.Toast("Nothing reserved yet - RESERVE a part from a pedestal!", ICE) end
@@ -489,7 +509,10 @@ local function cleanupBay(m)
 	if not e then return end
 	bays[m] = nil
 	if e.preview then e.preview:Destroy() end
-	for _, ped in pairs(e.peds) do if ped.display then ped.display:Destroy() end end
+	for _, ped in pairs(e.peds) do
+		if ped.anim and ped.anim:Alive() then ped.anim:Abort() end
+		if ped.display then ped.display:Destroy() end
+	end
 	if inspecting == m then closeInspect() end
 end
 
@@ -542,12 +565,73 @@ Api.Revealed = function(key, rank)
 	local e = myBay()
 	if e then playReveal(e, key, rank) end
 end
+-- 2026-10-09: your own roll plays the full reveal (PlowRollReveal). PlowShopClient calls RollBegin BEFORE asking the server, then
+-- Resolve(partId, rank, onHandoff) with the server's answer, or Abort() when the roll is refused. Returns nil without a bay (old path).
+Api.RollBegin = function(key, speed)
+	local e = myBay()
+	local ped = e and e.peds[key]
+	if not ped or key == "Reserved" then return nil end
+	if ped.anim and ped.anim:Alive() then ped.anim:Skip() end
+	if ped.anim and ped.anim:Alive() then ped.anim:Abort() end
+	local h = {}
+	local anim
+	anim = Reveal.Begin(ped, {
+		onSettle = function(model, offset, hover, angle, id)
+			if ped.anim ~= anim or not bays[e.model] then model:Destroy(); return end
+			ped.anim = nil
+			if ped.display then ped.display:Destroy() end
+			model.Parent = ped.model
+			ped.id, ped.display, ped.offset, ped.hover = id, model, offset, hover
+			ped.phase = angle - os.clock() * 0.9 -- the idle spin carries on from the reveal's angle
+			refreshBay(e) -- a newer offer on this pedestal (stale reveal) replaces the model here
+		end,
+		onRelease = function()
+			if ped.anim == anim then ped.anim = nil end
+			ped.id = nil -- rebuild the display from the bay attributes (the saved offer is untouched)
+			if bays[e.model] then refreshBay(e) end
+		end,
+		onHandoff = function() if h.onHandoff then h.onHandoff() end end,
+		speed = speed,
+	})
+	ped.anim = anim
+	ped.display = nil -- the reveal sinks and removes the old part
+	ped.id = "\0rolling"
+	refreshBay(e)
+	h.Resolve = function(id, rank, onHandoff) h.onHandoff = onHandoff; anim:Resolve(id, rank) end
+	h.Abort = function() anim:Abort() end
+	return h
+end
+-- Studio-only test hook (absent in live servers): plays the reveal for a chosen part / rarity on your own pedestal WITHOUT asking the
+-- server, so no offer, price or odds change; the pedestal snaps back to its real offer afterwards. Args: key, partId, rank, delay, speed.
+if RunService:IsStudio() then
+	local bf = Instance.new("BindableFunction")
+	bf.Name = "RollRevealTest"
+	bf.Parent = gui
+	bf.OnInvoke = function(key, id, rank, delay, speed)
+		if not C.Parts[id or ""] then return "bad part" end
+		local h = Api.RollBegin(key, speed)
+		if not h then return "no bay" end
+		task.delay(delay or 0.2, function() h.Resolve(id, rank, function() Api.Toast("(test) offer card would open now") end) end)
+		return "ok"
+	end
+end
+-- neighbours: a smaller reveal on that bay's pedestal (no camera, no card); rare ones also get the quiet chime
 event.OnClientEvent:Connect(function(kind, bayIndex, key, rank)
 	if kind ~= "BayReveal" or bayIndex == myBayIndex() then return end
 	for m, e in pairs(bays) do
 		if m:GetAttribute("BayIndex") == bayIndex then
-			if e.peds[key] and (e.peds[key].top.Position - camPos()).Magnitude < 90 then
-				task.delay(0.15, function() playReveal(e, key, tonumber(rank) or 2) end)
+			local ped = e.peds[key]
+			if ped and (ped.top.Position - camPos()).Magnitude < 90 then
+				local r = tonumber(rank) or 2
+				task.delay(0.15, function()
+					if not ped.top:IsDescendantOf(workspace) then return end
+					Reveal.Mini(ped, r)
+					if r >= C.Shop.BigRevealRank then
+						local s = Instance.new("Sound")
+						s.SoundId, s.Volume, s.RollOffMinDistance, s.RollOffMaxDistance = "rbxassetid://125078105193243", 0.35, 8, 70
+						s.Parent = ped.top; s:Play(); Debris:AddItem(s, 5)
+					end
+				end)
 			end
 		end
 	end
@@ -580,7 +664,7 @@ RunService.RenderStepped:Connect(function()
 			if ped.display and ped.offset then
 				local d = (ped.top.Position - cam).Magnitude
 				if d < NEAR then
-					local base = ped.top.CFrame * CFrame.new(0, ped.hover + math.sin(t * 2 + (tonumber(ped.key) or 4)) * 0.25, 0) * CFrame.Angles(0, t * 0.9, 0)
+					local base = ped.top.CFrame * CFrame.new(0, ped.hover + math.sin(t * 2 + (tonumber(ped.key) or 4)) * 0.25, 0) * CFrame.Angles(0, t * 0.9 + (ped.phase or 0), 0)
 					ped.display:PivotTo(base * ped.offset:Inverse())
 				end
 			end
@@ -603,7 +687,11 @@ RunService.Heartbeat:Connect(function()
 		local o = S and S.Offers and S.Offers[key]
 		local oleft, paused
 		if o and Api.OfferLeft then oleft, paused = Api.OfferLeft(o) end
-		if ped.cd and oleft then -- 2026-10-06: an offer on this pedestal: calm countdown until it is gone (RESERVE keeps it)
+		local animating = ped.anim and ped.anim:Alive()
+		if ped.cd and animating then -- 2026-10-09: the reveal is running: no offer timer yet
+			ped.cd.fill.Size, ped.cd.fill.BackgroundColor3 = UDim2.fromScale(1, 1), Color3.fromRGB(143, 190, 230)
+			ped.cd.text.Text = "\u{2744} ROLLING"
+		elseif ped.cd and oleft then -- 2026-10-06: an offer on this pedestal: calm countdown until it is gone (RESERVE keeps it)
 			local total = o.Protected and (C.Shop.ProtectedOfferSeconds or 60) or (C.Shop.OfferSeconds or 30)
 			ped.cd.fill.Size = UDim2.fromScale(math.clamp(oleft / total, 0.08, 1), 1)
 			ped.cd.fill.BackgroundColor3 = (oleft <= 8 and not paused) and WAIT or Color3.fromRGB(143, 190, 230)
