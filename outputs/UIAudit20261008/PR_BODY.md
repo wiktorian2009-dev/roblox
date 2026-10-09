@@ -46,7 +46,7 @@ Full report: `outputs/UIAudit20261008/README.md` (findings table, refuted/deferr
 
 ### Snapshot patches requiring manual installation (INSTALL PENDING)
 
-`game/studio-snapshots/**` was not edited. Each patch copy has a `UIAUDIT 20261008 PATCH - INSTALL PENDING` first line and a `.patch` diff, under `outputs/UIAudit20261008/studio-patches/`. To install: open the live Studio script, diff it against the snapshot and the patch, and re-apply on top of the live source (do not overwrite newer Studio edits).
+`game/studio-snapshots/**` was not edited. Each patch copy has a `UIAUDIT 20261008 PATCH - INSTALL PENDING` first line and a `.patch` diff, under `outputs/UIAudit20261008/studio-patches/`. To install: run `outputs/UIAudit20261008/tools/Install-StudioPatches.ps1 -Place <saved copy of the place>` on a PC with git and Rojo 7.5+ (it syncbacks the live scripts into `game/tmp`, three-way merges each patch onto them so newer Studio edits are kept, and walks you through pasting; tested here only on stand-in data, not with real Rojo or Studio), or do it by hand: open the live Studio script, diff it against the snapshot and the patch, and re-apply on top of the live source (do not overwrite newer Studio edits).
 
 | Patch copy | Studio script | Findings |
 |---|---|---|

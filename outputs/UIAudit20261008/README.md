@@ -234,6 +234,8 @@ Confirmed unchanged by `git diff --stat`: `ServerScriptService/**`, every config
 
 ## 12. Studio snapshot patches (INSTALL PENDING)
 
+**Helper script (added after the workflow).** `tools/Install-StudioPatches.ps1` (run on your PC, needs git and Rojo 7.5+) runs `rojo syncback` on a SAVED COPY of the place into `game\tmp\live` only, three-way merges each patch onto that live script with `git merge-file` (live + the 2026-10-02 snapshot it was patched from + the patched copy), writes `game\tmp\merged`, and then copies each clean result to the clipboard for you to paste into the named Studio script (it cannot reach Studio itself). Conflicting scripts are written as `<Name>.CONFLICT.luau` and are never offered for pasting. Tested in the cloud with PowerShell 7.4 on stand-in syncback output (CRLF input, a real older Studio copy of ActivityClient, a newer unrelated edit, an already-installed script, a missing script, a real conflict); **not tested:** the `rojo syncback` call and its flags, `Set-Clipboard`, Windows PowerShell 5.1, and anything in Studio. `game/syncback-live.project.json` is the syncback mapping it uses; `game/tmp/` is git-ignored.
+
 Each patch folder holds the patched copy (first line is a `UIAUDIT 20261008 PATCH - INSTALL PENDING` header) and a unified diff against the read-only snapshot. Paths below are under `outputs/UIAudit20261008/studio-patches/`.
 
 | Patch copy (+ `.patch`) | Studio script it targets | Findings | Status | Lines (+/-) | Analyzer (snapshot -> patch) | Install notes |
