@@ -80,3 +80,28 @@ The old village ice walk (one trident-shaped union whose arms led to the old vil
   - No script refers to the old walk.
   - No console errors.
 - **Undo:** hub_paths.luau MODE "undo". The old walk comes back and the new unions go to HubPathsBackup_20261009.Built.
+
+## Mountain wall around the hub (2026-10-10, save point 68)
+wiktor: "place the wall from this mountains around garages/lobby". Assumed meaning: the same snowy mountains that already stand around the hub, made into one closed wall around the garages and the lobby.
+
+Script: hub_mountains.luau (MODE "plan" / "apply" / "undo"). Pictures: screens/wall_from_above.jpg and screens/wall_eye_level.jpg.
+
+- **29 new mountains** in workspace.HubMountainWall. Each is a copy of the hub's SnowyMountain model (same mesh, texture and collision), scaled and turned at random.
+  - **8 gap fillers** (r 192-196): they close the places where the sky showed between the mountains behind the bays.
+  - **13 ridge mountains** (r 220-236, taller): they make one continuous range behind the bays, from the north-east round to the south-east.
+  - **8 canyon mountains:** they line both sides of the west gap behind the leaderboards, from x -290 to -440, at |z+282| ≥ 97.
+- **West gap:** stays open as a pass. Extra garage bays are built there when more than 8 players use the garage at once. Their street is at most 90 studs either side of z -282, and it can grow far west on 60-player servers.
+- **East:** the opening to the snow fields stays open.
+- **Mountain feet:** the hub floats, so every new cone reaches down to y -30. No sky shows between the rim and a mountain's foot. The tops and the width at floor height are as planned.
+- **Not changed:** existing mountains, bays, paths, boards and the rim colliders.
+- **Checks:**
+  - Plan check: no new mountain is inside the hub floor (r < 162), on the extra-garage street, in the east opening, or next to the Crafting machine, the arena portal, the Pavilion or a tree.
+  - Overlap check: the only hits are AABB corners of the HubRing unions; there is no real overlap.
+  - Eye-level views from the plaza to the north and south, from the spawn to the west and north-west, and from outside the west pass.
+  - **Play** (BalanceTestMode, PC, one player):
+    - Walk-off test at the 6 gaps between bays, the west gap and both ring ends: the rim stopped me on the floor every time. One start point in the first run was placed inside the yard-side wall and fell; that was a test mistake, and re-run from inside the floor it stopped at the wall.
+    - Walked on foot from the plaza through the snow yard to the Starter field, then TRAVEL Lobby.
+    - GARAGE and LOBBY both worked.
+    - Arena portal there and back.
+    - No console errors.
+- **Undo:** hub_mountains.luau MODE "undo" moves the folder to ServerStorage.HubMountainWallBackup_20261010.
