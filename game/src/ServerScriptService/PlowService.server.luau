@@ -356,10 +356,10 @@ local function publishBay(player, d)
 	for _, k in ipairs({"1", "2", "3"}) do m:SetAttribute("Offer" .. k, p.Offers[k] and p.Offers[k].Part or "") end
 	m:SetAttribute("Reserved", p.Reserved and p.Reserved.Part or "")
 end
-local function assignBay(player, d)
+local function assignBay(player, d, prefer) -- prefer: a free bay the player walked into (hub ring, 2026-10-09)
 	local bay = Garage.byPlayer[player]
 	if bay and bay.owner == player then return bay end
-	bay = freeBay()
+	if prefer and not prefer.owner and prefer.model.Parent then bay = prefer else bay = freeBay() end
 	if not bay then return nil end
 	Garage.seq += 1
 	bay.owner, bay.lease = player, Garage.seq
@@ -619,6 +619,13 @@ local function lobbySpawn()
 	local sp = workspace:FindFirstChildWhichIsA("SpawnLocation", true)
 	return sp and (sp.CFrame * CFrame.new(0, 4, 0)) or CFrame.new(0, 10, 0)
 end
+-- 2026-10-09 (hub ring): the bays stand in a ring around the lobby, open side toward the lobby centre. Arriving = standing just
+-- inside your bay's open side, facing the lift and the pedestals.
+local function bayArrival(bay)
+	local m = bay and bay.model
+	if not (m and m.Parent) then return nil end
+	return m:GetPivot() * CFrame.new(0, 3, -17) * CFrame.Angles(0, math.pi, 0)
+end
 function actions.GoGarage(player, d, p)
 	if player:GetAttribute("InGarage") then return fail("You're already in the garage!") end
 	if player:GetAttribute("InArenaIsland") then return fail("Tap LEAVE ARENA first, then visit the garage.") end -- 2026-10-05 (arena)
@@ -626,21 +633,23 @@ function actions.GoGarage(player, d, p)
 	local hum = char and char:FindFirstChildOfClass("Humanoid")
 	local hrp = char and char:FindFirstChild("HumanoidRootPart")
 	if not (hum and hrp and hum.Health > 0) then return fail("Wait until you respawn.") end
+	local shared = sharedMode()
 	local arrival = garageArrival()
-	if not arrival then return fail("The garage isn't open yet.") end
+	if not shared and not arrival then return fail("The garage isn't open yet.") end
 	if Registry.Active[player] then despawn(player, "garage") end
 	if hum.SeatPart then hum.Sit = false end
-	local shared = sharedMode()
 	local bay = shared and assignBay(player, d)
 	if shared and not bay then return fail("Every garage bay is busy - try again in a moment!") end
+	local target = (bay and bayArrival(bay)) or (arrival and arrival.CFrame)
+	if not target then releaseBay(player); return fail("The garage isn't open yet.") end
 	returnCF[player] = hrp.CFrame
-	pcall(function() player:RequestStreamAroundAsync(arrival.Position) end)
+	pcall(function() player:RequestStreamAroundAsync(target.Position) end)
 	if not char.Parent or hum.Health <= 0 then releaseBay(player); return fail("Try again.") end
 	player:SetAttribute("InGarage", true)
-	-- spread arrivals over the plaza so visitors never land inside each other
-	local spread = shared and CFrame.new((rng:NextNumber() - 0.5) * 10, 0, (rng:NextNumber() - 0.5) * 6) or CFrame.new()
-	char:PivotTo(arrival.CFrame * spread)
-	return {ok = true, msg = bay and ("Welcome to the Garage! Your bay is number " .. bay.index .. ".") or "Welcome to the Garage! Roll parts on the pedestals."}
+	-- a little sideways spread so two arrivals never land inside each other
+	local spread = bay and CFrame.new((rng:NextNumber() - 0.5) * 6, 0, 0) or CFrame.new()
+	char:PivotTo(target * spread)
+	return {ok = true, msg = bay and ("Welcome to your garage: Bay " .. bay.index .. "!") or "Welcome to the Garage! Roll parts on the pedestals."}
 end
 function actions.GoLobby(player, d, p)
 	if not player:GetAttribute("InGarage") then return fail("You're not in the garage.") end
@@ -681,49 +690,79 @@ end
 Players.PlayerAdded:Connect(watchGarage)
 for _, pl in ipairs(Players:GetPlayers()) do watchGarage(pl) end
 Players.PlayerRemoving:Connect(function(pl) releaseBay(pl); returnCF[pl] = nil end)
--- 2026-10-06: the garage is part of the lobby now (west of the TravelPad). Walking in on foot enters it (bay assigned), walking out
--- leaves it after a short grace; GARAGE / TRAVEL "My Garage" still teleport to the arrival plaza.
-local LEAVE_GRACE = 8
+-- 2026-10-09 (hub ring, wiktor: "the lobby became garages and lobby itself"): the bays stand in a ring around the Frostfall lobby.
+-- Walking into a bay enters the garage (you get that bay if it is free, else the first free one); walking out of the bays leaves it
+-- after a short grace. The bay itself is kept RELEASE_AFTER seconds longer, so stepping out to the plaza and back keeps your bay.
+-- GARAGE / TRAVEL "My Garage" teleport you into your bay. Overflow streets/annexes (more than 8 visitors) count as garage too.
+-- (2026-10-06 version: the whole garage island west of the lobby was the garage; Colliders.IslandTop still works as a fallback.)
+local LEAVE_GRACE, RELEASE_AFTER = 2.5, 30
 local outsideSince = {}
+local function bayAt(pos)
+	registerBays()
+	for _, b in pairs(Garage.bays) do
+		local m = b.model
+		if m and m.Parent then
+			local l = m:GetPivot():PointToObjectSpace(pos)
+			if math.abs(l.X) < 25.5 and math.abs(l.Z) < 24 and l.Y > -30 and l.Y < 60 then return b end
+		end
+	end
+	return nil
+end
 local function insideGarage(pos)
+	if bayAt(pos) then return true end
 	local g = garageRoot()
+	local ov = g and g:FindFirstChild("Overflow")
+	if ov then
+		for _, piece in ipairs(ov:GetChildren()) do
+			if piece:IsA("Model") then
+				local cf, size = piece:GetBoundingBox()
+				local l = cf:PointToObjectSpace(pos)
+				if math.abs(l.X) < size.X / 2 and math.abs(l.Z) < size.Z / 2 and l.Y > -30 and l.Y < 60 then return true end
+			end
+		end
+	end
 	local top = g and g:FindFirstChild("Colliders") and g.Colliders:FindFirstChild("IslandTop")
 	if not top then return false end
 	local p = top.CFrame:PointToObjectSpace(pos)
 	return math.abs(p.X) < top.Size.X / 2 and math.abs(p.Z) < top.Size.Z / 2 and p.Y > -30 and p.Y < 60
 end
-local function enterOnFoot(pl)
+local function enterOnFoot(pl, pos)
 	if pl:GetAttribute("InGarage") or pl:GetAttribute("InArenaIsland") or pl:GetAttribute("IntroActive") or Registry.Active[pl] then return end
 	local d = DataService.Get(pl)
 	if not d or not d.Plow then return end
 	local shared = sharedMode()
-	local bay = shared and assignBay(pl, d)
+	local bay = shared and assignBay(pl, d, bayAt(pos))
 	if shared and not bay then return end
 	returnCF[pl] = nil -- LOBBY / the return portal then go to the lobby spawn
 	pl:SetAttribute("InGarage", true)
 end
-task.spawn(function() -- walk-in / walk-out, and a rescue for anyone who falls off the garage island
+task.spawn(function() -- walk-in / walk-out, and a rescue for anyone who falls out of a bay
 	while true do
 		task.wait(0.5)
 		local arrival = garageArrival()
 		for _, pl in ipairs(Players:GetPlayers()) do
 			local hrp = pl.Character and pl.Character:FindFirstChild("HumanoidRootPart")
 			local hum = pl.Character and pl.Character:FindFirstChildOfClass("Humanoid")
-			if arrival and hrp and hum and hum.Health > 0 then
+			if hrp and hum and hum.Health > 0 then
 				local inside = insideGarage(hrp.Position)
+				local bay = Garage.byPlayer[pl]
+				local home = (bay and bay.owner == pl and bayArrival(bay)) or (arrival and arrival.CFrame)
 				if pl:GetAttribute("InGarage") then
 					if inside then
 						outsideSince[pl] = nil
-						if hrp.Position.Y < arrival.Position.Y - 25 then hrp.CFrame = arrival.CFrame end
+						if home and hrp.Position.Y < home.Y - 28 then hrp.CFrame = home end
 					else
 						outsideSince[pl] = outsideSince[pl] or os.clock()
-						if os.clock() - outsideSince[pl] > LEAVE_GRACE or (hrp.Position - arrival.Position).Magnitude > 1500 then
-							outsideSince[pl] = nil
-							pl:SetAttribute("InGarage", false); releaseBay(pl); returnCF[pl] = nil
+						if os.clock() - outsideSince[pl] > LEAVE_GRACE or (home and (hrp.Position - home.Position).Magnitude > 1500) then
+							pl:SetAttribute("InGarage", false); returnCF[pl] = nil
 						end
 					end
 				elseif inside and not hum.SeatPart then
-					enterOnFoot(pl)
+					outsideSince[pl] = nil
+					enterOnFoot(pl, hrp.Position)
+				elseif bay and bay.owner == pl and outsideSince[pl] and os.clock() - outsideSince[pl] > RELEASE_AFTER then
+					outsideSince[pl] = nil
+					releaseBay(pl) -- out of the garage for a while: the bay goes back to the pool
 				end
 			end
 		end

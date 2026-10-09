@@ -844,8 +844,14 @@ S(GARAGE, {id = "Reserved", essential = false, title = "RESERVED!",
 	enter = function() if ctx.reserved then ctx.paused = true else ctx.skipTo = "Return" end end,
 	text = function() local o = ctx.reserved; return "RESERVE saved it on your reserved shelf.\nEarn \u{2744} " .. Format.Abbreviate(math.max(0, (o and o.Price or 0) - snow())) .. " more Snow, then come back to BUY it." end,
 	okButton = true, done = function() return ctx.ok end})
--- 2026-10-06: the garage is part of the lobby now (its east edge joins the lobby at Colliders.LobbyJoin): walk back out east
+-- 2026-10-09 (hub ring): the bays stand in a ring around the lobby, open side toward the lobby centre: step out of your bay.
+-- (2026-10-06 layout: the garage island joined the lobby at Colliders.LobbyJoin - still used if there is no bay.)
 local function lobbyExit()
+	local b = myBay()
+	if b then
+		local p = (b:GetPivot() * CFrame.new(0, 0, -32)).Position -- just outside your bay's open side
+		return Vector3.new(p.X, p.Y + 0.5, p.Z), b
+	end
 	local g = workspace:FindFirstChild("PlowGarage")
 	local cols = g and g:FindFirstChild("Colliders")
 	local j = cols and cols:FindFirstChild("LobbyJoin")
@@ -853,14 +859,19 @@ local function lobbyExit()
 	return g and topOf(g, "ReturnPad")
 end
 S(GARAGE, {id = "Return", essential = true, title = "GARAGE 7: BACK TO THE SNOW",
-	text = function() return "Walk out of the garage, back into the lobby - or tap LOBBY." end,
-	hint = "Follow the marker: the lobby is right next to the garage.",
+	text = function() return "Walk out of your bay into the lobby - or tap LOBBY." end,
+	hint = "Follow the marker: the lobby is right outside your bay.",
 	target = {kind = "world", label = "LOBBY", highlight = false, get = function() return (lobbyExit()) end},
 	done = function()
 		if player:GetAttribute("InGarage") ~= true then return true end
 		local p, j = lobbyExit()
 		local r = hrp()
-		return j ~= nil and r ~= nil and typeof(p) == "Vector3" and r.Position.X > j.Position.X + 4 -- out on the lobby side (InGarage clears after a short grace)
+		if not (j and r) then return false end
+		if j:IsA("Model") then -- your bay: done once you are out past its open side (InGarage clears after a short grace)
+			local l = j:GetPivot():PointToObjectSpace(r.Position)
+			return l.Z < -24 or math.abs(l.X) > 26
+		end
+		return typeof(p) == "Vector3" and r.Position.X > j.Position.X + 4 -- out on the lobby side
 	end})
 S(GARAGE, {id = "Drive", essential = true, title = "GARAGE 8: TRY IT",
 	text = function() return pick("Press F or click DRIVE", "Tap DRIVE", "Press Y") .. " and try your plow!" end,
