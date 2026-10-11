@@ -21,6 +21,11 @@ local PlowConfig = require(ReplicatedStorage:WaitForChild("PlowConfig"))
 local PlowRegistry = require(script.Parent:WaitForChild("PlowRegistry"))
 -- 2026-10-05 (Claude): NPC contract snow = extra personal fields (ContractService); same blade code, no regrowth, no treasures
 local ContractRegistry = require(script.Parent:WaitForChild("ContractRegistry"))
+-- 2026-10-11 (Claude): ability tokens (AbilityService / AbilityConfig). Optional: if it fails to load, clearing works exactly as before.
+local abilityModule = script.Parent:FindFirstChild("AbilityService")
+local okAbilities, Abilities = false, nil
+if abilityModule then okAbilities, Abilities = pcall(require, abilityModule) end
+if not okAbilities then if abilityModule then warn("[SnowFieldService] AbilityService unavailable: " .. tostring(Abilities)) end; Abilities = nil end
 
 local TICK = 0.2
 local TS = SF.TileSize
@@ -151,7 +156,7 @@ local function collect(player, st, now)
 	if dt < 0.02 or dt > 1.2 then return end
 	local move = Vector3.new(cf.X - prevCF.X, 0, cf.Z - prevCF.Z).Magnitude
 	local stats, CL = v.stats, PlowConfig.Clearing
-	if move / dt > stats.MaxSpeed * CL.SpeedTolerance + 8 then v.flags = (v.flags or 0) + 1 return end -- implausible movement: no clearing this tick
+	if move / dt > stats.MaxSpeed * (Abilities and Abilities.SpeedMult(player) or 1) * CL.SpeedTolerance + 8 then v.flags = (v.flags or 0) + 1 return end -- implausible movement: no clearing this tick
 	if not stats.HasBlade or stats.ClearPower <= 0 then return end
 	-- drift check: the client says it is drifting (PlowDriftSignal), and the server only believes it from its own hull samples -
 	-- fast enough (the drift's own start speed, on the field's plowing speed) AND really sliding (heading vs. motion >= BonusMinSlip)
@@ -172,12 +177,15 @@ local function collect(player, st, now)
 	local half, halfD = W / 2 + TS * CL.TileSlack, CL.BladeDepth / 2 + TS * CL.TileSlack
 	local K = math.clamp(math.ceil(move / (TS * 0.5)) + 1, 1, 12)
 	local slice = dt / K
-	local gained, layers = 0, 0
-	local function sweep(f, origin, maxHP, s, tough, contract)
+	local gained, layers, gainedField = 0, 0, 0
+	local function sweep(f, origin, maxHP, s, tough, contract, id)
 		local lx, lz = cf.X - origin.X, cf.Z - origin.Z
 		local m = W + off + 8
 		if lx > -m and lz > -m and lx < f.Width * TS + m and lz < f.Depth * TS + m and math.abs(cf.Y - origin.Y) < 14 then
 			local dmgPerSlice = stats.ClearPower * (stats.Soft + (stats.Hard - stats.Soft) * tough) * slice
+			-- ability tokens: Heated Blade / Aurora Patch raise clearing power on normal fields only (blade width and checks unchanged)
+			if not contract and Abilities then dmgPerSlice *= Abilities.PowerMult(player, cf:PointToWorldSpace(Vector3.new(0, 0, -off)), id) end
+			local before = gained
 			local contact = {}
 			for k = 1, K do
 				local c = prevCF:Lerp(cf, k / K)
@@ -211,22 +219,26 @@ local function collect(player, st, now)
 					if contract then
 						-- each contract tile reports its clearing exactly once (it never regrows), and never drops treasure
 						if s.phases[i] > 0 and contract.onTile then task.spawn(contract.onTile, i) end
-					elseif Treasures then
-						local x, z = (i - 1) % f.Width, math.floor((i - 1) / f.Width)
-						local okT, errT = pcall(Treasures.TileCleared, player, f, SF.TileCenter(f, x, z))
-						if not okT and not treasureWarned then treasureWarned = true; warn("[Treasures] " .. tostring(errT)) end
+					else
+						if Treasures then
+							local x, z = (i - 1) % f.Width, math.floor((i - 1) / f.Width)
+							local okT, errT = pcall(Treasures.TileCleared, player, f, SF.TileCenter(f, x, z))
+							if not okT and not treasureWarned then treasureWarned = true; warn("[Treasures] " .. tostring(errT)) end
+						end
+						if Abilities and s.phases[i] > 0 then pcall(Abilities.TileCleared, player, f, cf) end -- one roll per completed tile
 					end
 				end
 				s.phases[i] = p
 				s.hp[i] = hp
 				s.pending[i] = true
 			end
+			if not contract then gainedField += gained - before end
 		end
 	end
 	for id, d in pairs(defs) do
 		local f = d.def
 		if f.Style and f.Style ~= "Starter" and player:GetAttribute("Stage_" .. f.Style) ~= true then continue end -- stage locked
-		sweep(f, d.origin, d.maxHP, st[id], PlowConfig.ToughnessOf(f.Style, d.maxHP), nil) -- 2026-10-05: explicit per-stage toughness
+		sweep(f, d.origin, d.maxHP, st[id], PlowConfig.ToughnessOf(f.Style, d.maxHP), nil, id) -- 2026-10-05: explicit per-stage toughness
 	end
 	local cfields = ContractRegistry.Fields[player]
 	if cfields then
@@ -240,7 +252,64 @@ local function collect(player, st, now)
 		local m = drifts[player] or {v = 0, t = now, hit = -1e9}; drifts[player] = m
 		m.hit = now
 	end
+	-- Snow Surge token: +15% on the ordinary field part of this tick only (never contract tiles), applied once here before the usual chain
+	if gainedField > 0 and Abilities and player:GetAttribute("AfkPlow") ~= true then
+		local bonus = Abilities.SnowBonus(player)
+		if bonus > 0 then gained += gainedField * bonus; Abilities.NoteSurge(gainedField * bonus) end
+	end
 	if gained > 0 then payoutPlow(player, gained * (stats.SnowEff or 1), layers, now) end -- task 7: body Snow efficiency (once, before pets / boosts / combo)
+end
+
+-- ability tokens (Snowburst / Snow Lane): damage given tiles of one of the player's own normal fields with `seconds` of their normal blade
+-- contact (bounded by the config). Same layer/payout/treasure path as the blade, but never rolls another token. Locked fields refused.
+if Abilities then
+	Abilities.Bind({
+		hit = function(player, fieldId, indices, seconds)
+			local d = defs[fieldId]
+			local st = states[player]
+			local v = PlowRegistry.Active[player]
+			local stats = v and v.stats
+			if not d or not st or not stats or not stats.HasBlade or (stats.ClearPower or 0) <= 0 then return 0 end
+			if player:GetAttribute("AfkPlow") == true then return 0 end
+			local f = d.def
+			if f.Style and f.Style ~= "Starter" and player:GetAttribute("Stage_" .. f.Style) ~= true then return 0 end
+			local s = st[fieldId]
+			local tough = PlowConfig.ToughnessOf(f.Style, d.maxHP)
+			local dmg = stats.ClearPower * (stats.Soft + (stats.Hard - stats.Soft) * tough) * math.clamp(seconds, 0, 2)
+			local gained, layers, hits = 0, 0, 0
+			for _, i in ipairs(indices) do
+				if s.phases[i] and s.phases[i] > 0 then
+					hits += 1
+					local hp, p = s.hp[i] - dmg, s.phases[i]
+					while hp <= 0 and p > 0 do p -= 1; gained += f.SnowPerPhase; layers += 1; hp += d.maxHP end
+					if p == 0 then
+						hp = d.maxHP
+						if Treasures then
+							local x, z = (i - 1) % f.Width, math.floor((i - 1) / f.Width)
+							pcall(Treasures.TileCleared, player, f, SF.TileCenter(f, x, z))
+						end
+					end
+					s.phases[i], s.hp[i], s.pending[i] = p, hp, true
+				end
+			end
+			if gained > 0 then
+				local bonus = Abilities.SnowBonus(player)
+				if bonus > 0 then Abilities.NoteSurge(gained * bonus) end
+				payoutPlow(player, gained * (1 + bonus) * (stats.SnowEff or 1), layers, workspace:GetServerTimeNow())
+			end
+			flushOne(player, fieldId, s, d.maxHP)
+			return hits
+		end,
+		-- Combo Keeper: while active, time spent not clearing doesn't count; the combo neither grows nor fades (no stacks granted)
+		touchCombo = function(player, now)
+			local c = combos[player]
+			if c and c.last > 0 and now - c.last >= 0.4 then
+				local gap = now - c.last
+				c.start += gap
+				c.last = now
+			end
+		end,
+	})
 end
 
 local function regrow(st)

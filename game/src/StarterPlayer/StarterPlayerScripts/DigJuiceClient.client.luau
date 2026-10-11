@@ -135,6 +135,8 @@ end)
 -- the timer bar drains; the meter hides when the combo expires
 RunService.Heartbeat:Connect(function()
 	if not meter.Visible then return end
+	-- 2026-10-11 Combo Keeper token: the server pauses the combo, so the bar stays full until it ends
+	if (player:GetAttribute("ComboKeepUntil") or 0) > workspace:GetServerTimeNow() then lastGain = os.clock() end
 	local left = COMBO_WINDOW - (os.clock() - lastGain)
 	if left <= 0 then
 		meter.Visible = false

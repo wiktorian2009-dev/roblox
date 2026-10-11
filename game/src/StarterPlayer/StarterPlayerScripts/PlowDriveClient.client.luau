@@ -518,6 +518,9 @@ RunService.Heartbeat:Connect(function(dt)
 	local maxSpeed, accel = hull:GetAttribute("MaxSpeed") or 20, hull:GetAttribute("Accel") or 12
 	local traction, turnRate = hull:GetAttribute("Traction") or 0.6, hull:GetAttribute("TurnRate") or 2
 	local pivot, stability = hull:GetAttribute("Pivot") or 0.2, hull:GetAttribute("Stability") or 1
+	-- 2026-10-11 ability tokens (server-set on the hull, AbilityService): Turbo Tracks = speed + a little grip. Same single controller.
+	maxSpeed *= hull:GetAttribute("AbilitySpeed") or 1
+	traction = math.min(1, traction * (hull:GetAttribute("AbilityGrip") or 1))
 	local cf = hull.CFrame
 	-- a sudden jump (teleport, recover, respawn) ends any drift
 	if lastPos and (cf.Position - lastPos).Magnitude > math.max(40, maxSpeed * 2 * dt + 20) then clearDrift() end
@@ -540,6 +543,7 @@ RunService.Heartbeat:Connect(function(dt)
 		if cp and soft and hard then
 			local HS = C.Drive.HardSnow
 			local eff = soft + (hard - soft) * fld.tough
+		cp *= hull:GetAttribute("AbilityPower") or 1 -- Heated Blade: the server breaks layers faster, so the snow cap follows
 			local vBreak = (C.Clearing.BladeDepth + 2 * C.Clearing.TileSlack * fld.ts) * cp * eff / fld.hp * HS.PassShare
 			maxSpeed = math.clamp(vBreak, maxSpeed * HS.Floor, maxSpeed)
 		end
