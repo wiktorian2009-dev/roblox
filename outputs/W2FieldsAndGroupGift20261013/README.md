@@ -44,3 +44,6 @@ non-member (mocked) refused with a message on the card; clicks on the pill / CLA
 still needs checking. Not tested: phones, a real non-member account, the saved record after a real rejoin.
 Undo: delete the 3 new scripts, restore PetConfig/EggModels from the backup (players who claimed keep a pet named Frosty Pal
 that no longer exists in PetConfig, so keep the PetConfig entry if anyone claimed).
+
+## Follow-up 2026-10-13: polish + flat +100% Snow
+wiktor: "polish the ui and also make pet ad +100% snow". Frosty Pal Boost = 1.0 (flat). CommunityRewardClient v2 (old copy in the backup folder as CommunityRewardClient_v1). Screens: screens/gift_card_v2.jpg. Tested by clicks in Play (BalanceTestMode, temp profile).

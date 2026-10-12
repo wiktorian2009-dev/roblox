@@ -7,6 +7,7 @@
 - Tested (Play, BalanceTestMode, temp profile, PC): claim by clicks with the real group check, hatch reveal, Snow + boost, 2nd claim and non-member refused. Not tested: real JOIN prompt tap, phones, real non-member, saved record after rejoin.
 - BalanceTestMode removed, temporary TileHP overrides removed. Not saved or published by me. Noticed: an enabled default Workspace.Script prints "Hello world!" (harmless, not touched).
 - Next: wiktor tries the fields and the gift in Play (and JOIN on a phone), Ctrl+S, publish when happy.
+- Follow-up (wiktor: "polish the ui and also make pet ad +100% snow"): Frosty Pal is now a flat +100% Snow (PetConfig Boost = 1.0, was progress-scaled); card v2 (dim backdrop + pop-in, pet stage with sunburst and gold +100% SNOW badge, prize chips, steps that tick green, pulsing CLAIM GIFT!, two-line pill with a wiggle). Old client: ServerStorage.CommunityRewardBackup_20261013.CommunityRewardClient_v1. Tested in Play by clicks: card, backdrop close/reopen, JOINED state, claim -> reveal shows +100%, payouts use 1 + pet boost. Note: +100% beats the paid Verity pets early in the game.
 
 ## Roblox thumbnails — 2026-10-12, Codex (local promotional artwork)
 - Generated three landscape PNG thumbnails with built-in image_gen, using actual trailer/garage/arena screenshots as visual references: BUILD & PLOW (snow clearing), LEGENDARY?! (cosmic part reveal), BUMP BATTLE! (arena). Suggested main image: BUILD & PLOW.
