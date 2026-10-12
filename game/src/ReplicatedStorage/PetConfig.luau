@@ -138,6 +138,12 @@ PetConfig.Eggs = {
 		{Name = "Lord Verity",    Chance = 7,  Rarity = "Legendary", Scale = 2.6, Look = {Body = c(255, 190, 30), Orb = {Face = "grin", Crown = true}, Belly = c(255, 240, 208), Ears = "round", Size = 1.3, Extras = {"crown", "glow"}, Glow = c(127, 227, 255)}},
 		{Name = "Rainbow Verity", Chance = 1,  Rarity = "Mythic",    Scale = 4.0, Look = {Body = c(255, 90, 160), Orb = {Face = "grin", Rainbow = true, Sparkle = true, Size = 1.15}, Belly = c(255, 243, 251), Ears = "round", Size = 1.35, Extras = {"wings", "halo", "glow"}, Glow = c(255, 232, 138)}},
 	}},
+	-- SUPPORTER GIFT (2026-10-13, Claude): free one-time thank-you for joining the game's group (CommunityRewardService). Never in the
+	-- world, never sold, never Golden (Paid = true keeps it out of eggs stands, the Fuser and pet achievements). Progress-scaled like the
+	-- Verity pets but below them: 1.15 x the best regular Legendary of the eggs this player has unlocked, so it stays useful all game.
+	{Id = "SupporterGift", Name = "Supporter Gift", Cost = 0, Paid = true, Gift = true, Pets = {
+		{Name = "Frosty Pal", Chance = 100, Rarity = "Legendary", Scale = 1.15, Look = {Body = c(240, 248, 255), Belly = c(150, 205, 255), Ears = "long", Size = 1.15, Extras = {"wings", "crown", "glow"}, Accent = c(255, 205, 60), Glow = c(150, 220, 255)}},
+	}},
 }
 
 PetConfig.PetByName, PetConfig.EggById = {}, {}

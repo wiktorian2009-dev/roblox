@@ -7,6 +7,7 @@ local themes={
  CursedEgg={C(55,36,87),C(144,78,213),C(235,117,255)},
  CrystalEgg={C(119,204,242),C(72,136,207),C(206,248,255)},
  VerityEgg={C(255,214,40),C(255,170,20),C(30,26,40)}, -- 2026-10-06 paid shop egg; v2 (wiktor): bright yellow with a big smiley face
+ SupporterGift={C(170,120,255),C(255,205,60),C(255,255,255)}, -- 2026-10-13 group gift reveal: purple shell, gold collar
 }
 local function p(m,n,size,cf,col,shape,mat)
  local a=Instance.new("Part"); a.Name=n; a.Size=size; a.CFrame=cf; a.Color=col
