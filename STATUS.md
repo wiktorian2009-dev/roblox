@@ -1,5 +1,11 @@
 # Current handoff
 
+## Release event (2x Snow, 24 h) — 2026-10-13, Claude (save point 74)
+- wiktor: "give every player 2x snow of 24h its and release event". Details, tests, undo: outputs/ReleaseEvent20261013/README.md.
+- Implemented (Studio + game/src): ReleaseEventConfig / ReleaseEventService / ReleaseEventClient; BoostService gets a release factor that multiplies all other Snow bonuses. One global window: the first published server stores its start in DataStore ReleaseEvent/Launch2026 (or ReleaseEventConfig.StartOverride). Thin banner with time left above the Snow counter.
+- Tested (Play, BalanceTestMode, temp profile, PC): banner + countdown, SnowMult 3 -> 1.5 when a faked window ended, banner gone. Not tested: real DataStore/multi-server, phones. BalanceTestMode and test attribute removed. Not saved or published by me.
+- Next: Ctrl+S, then publish when wiktor wants the 24 h to begin (the clock starts on the first live server).
+
 ## World 2 new fields + Supporter Gift — 2026-10-13, Claude (save points 72-73)
 - wiktor: his new World 2 snow fields did nothing in Play; plus a prize for liking the game and joining the group. Details, tests, undo: outputs/W2FieldsAndGroupGift20261013/README.md.
 - Fields (Studio-only): the 3 boxes were in Workspace root, not SnowFieldZones. Moved in unchanged as Candy_3, Candy_4, Clockwork_3 (backup ServerStorage.NewW2FieldsBackup_20261013). Tested in Play: registered, rendered, cleared, paid Snow, ability token spawned/picked up. New fields must go inside Workspace.SnowFieldZones with unique names.

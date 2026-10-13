@@ -2,6 +2,7 @@
 -- (daily rewards, quests, codes) and permanent achievement bonuses.
 -- UpgradeService.apply() multiplies SnowMult/LuckMult by B.Multipliers(player), so everything that already reads
 -- those attributes (digging, treasures, rolling, the luck HUD) picks the boosts up automatically.
+-- RELEASE EVENT (2026-10-13, Claude): B.SetRelease(x) multiplies Snow for everyone (ReleaseEventService / ReleaseEventConfig).
 -- Profile field: d.Activity (sanitized here). Timed boosts only count down while the player is in the game.
 local Players = game:GetService("Players")
 local RS = game:GetService("ReplicatedStorage")
@@ -11,6 +12,7 @@ local A = require(RS:WaitForChild("ActivityConfig"))
 
 local B = {}
 local event = {Snow = 1, Luck = 1}
+local release = 1 -- RELEASE EVENT Snow factor (ReleaseEventService), multiplies on top of everything
 
 function B.Sanitize(d)
 	if type(d) ~= "table" then return nil end
@@ -64,7 +66,7 @@ function B.Personal(a)
 end
 
 function B.Multipliers(player)
-	local snow, luck = event.Snow, event.Luck
+	local snow, luck = event.Snow * release, event.Luck
 	local _, a = B.Profile(player)
 	if a then
 		local ps, pl = B.Personal(a)
@@ -112,6 +114,14 @@ function B.SetEvent(snow, luck)
 end
 
 function B.EventMultipliers() return event.Snow, event.Luck end
+
+function B.SetRelease(snow)
+	release = (type(snow) == "number" and snow > 0) and snow or 1
+	for _, p in ipairs(Players:GetPlayers()) do
+		if DataService.Get(p) then B.Refresh(p) end
+	end
+end
+function B.ReleaseMultiplier() return release end
 
 -- countdown (only while in the game)
 task.spawn(function()
