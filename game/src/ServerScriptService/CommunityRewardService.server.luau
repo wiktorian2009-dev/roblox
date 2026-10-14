@@ -1,7 +1,8 @@
 -- CommunityRewardService (2026-10-13, Claude): the free one-time SUPPORTER GIFT (CommunityRewardConfig) for joining the game's group.
 -- * Membership is checked here on the server (GroupService:GetGroupsAsync, which is not cached, so a player who joins mid-session
 --   is seen; Player:IsInGroup as the fallback). The client only asks (CommunityRewardRemote) and can never grant anything.
--- * The like is an honor-system reminder only (Roblox exposes no "did this player like the game" API); it never gates the claim.
+-- * The like is honor-system (Roblox exposes no "did this player like the game" API). Since 2026-10-14 (wiktor: players joined but
+--   didn't like) the claim requires the client's like confirmation (card step 1, tap + countdown + confirm); recorded as LikeAck.
 -- * Saved once per profile: d.Community.Claimed = os.time(), written with an immediate save. Profiles that did not come from the
 --   store (Studio with API access off) cannot claim, so a gift can never be given on a profile that will not be saved.
 -- * Prize: the exclusive Frosty Pal pet (auto-equipped when a slot is free) + Snow worth ~10 minutes of clearing + 15 min 2x Snow.
@@ -73,18 +74,19 @@ local function snowAmount(d)
 end
 
 local busy = {}
-local function claim(player)
+local function claim(player, liked)
 	local d = DataService.Get(player)
 	if not d then return {ok = false, msg = "Still loading - try again in a moment."} end
 	local rec = record(d)
 	if rec.Claimed then return {ok = false, msg = "You already got your gift - thank you!", claimed = true} end
 	if not DataService.LoadedFromStore(player) then return {ok = false, msg = "Your save isn't loaded, so the gift can't be kept. Rejoin and try again."} end
 	if not groupId() then return {ok = false, msg = "The gift isn't available right now."} end
+	if liked ~= true then return {ok = false, msg = "Like the game first (step 1), then tap CLAIM!"} end -- honor-system (no Roblox like API), but required
 	if not isMember(player, true) then return {ok = false, msg = "Join the group first, then tap CLAIM!"} end
 	local pet = PetConfig.PetByName[CFG.Pet]
 	if not pet then return {ok = false, msg = "The gift isn't available right now."} end
 
-	rec.Claimed, rec.Group, rec.V = os.time(), groupId(), 1 -- marked first: nothing below can run twice for this profile
+	rec.Claimed, rec.Group, rec.LikeAck, rec.V = os.time(), groupId(), os.time(), 2 -- marked first: nothing below can run twice for this profile
 	local isNew = not d.PetIndex[pet.Name]
 	d.PetIndex[pet.Name] = true
 	d.Pets[pet.Name] = (d.Pets[pet.Name] or 0) + 1
@@ -104,7 +106,7 @@ local function claim(player)
 end
 
 local lastCall = {}
-remote.OnServerInvoke = function(player, action)
+remote.OnServerInvoke = function(player, action, liked)
 	local now = os.clock()
 	if action ~= "State" then
 		if lastCall[player] and now - lastCall[player] < 1.5 then return {ok = false, msg = "Slow down!"} end
@@ -115,7 +117,7 @@ remote.OnServerInvoke = function(player, action)
 	elseif action == "Claim" then
 		if busy[player] then return {ok = false, msg = "One moment..."} end
 		busy[player] = true
-		local ok, res = pcall(claim, player)
+		local ok, res = pcall(claim, player, liked == true)
 		busy[player] = nil
 		if not ok then warn("[CommunityReward] " .. tostring(res)); return {ok = false, msg = "Something went wrong - try again."} end
 		return res
@@ -134,7 +136,7 @@ if TEST then
 	hook.OnInvoke = function(op, player, value)
 		if op == "Mock" then mock[player] = value; cache[player] = nil; return true
 		elseif op == "Data" then local d = DataService.Get(player); return d and table.clone(record(d)) or nil
-		elseif op == "Claim" then lastCall[player] = nil; return claim(player)
+		elseif op == "Claim" then lastCall[player] = nil; return claim(player, value ~= false)
 		elseif op == "Reset" then -- temp test profile only (BalanceTestMode never touches the real store)
 			local d = DataService.Get(player); if d then d.Community = nil end
 			player:SetAttribute("CommunityGiftClaimed", false); return true

@@ -216,7 +216,11 @@ local function stepRow(y, num, title, sub, wide)
 	label(row, sub, {Position = UDim2.fromScale(0.1, 0.56), Size = UDim2.fromScale(wide and 0.86 or 0.6, 0.36), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = ICE}, 18)
 	return row, circle, n
 end
-stepRow(0.665, "1", "Like the game \u{1F44D}", CFG.LikeText, true)
+-- 2026-10-14 (wiktor: "people are joining the group but not liking it"): the like is now its own step with a button. Roblox still can't
+-- tell a game who liked it, so this is honor-system, but CLAIM waits for it: first tap shows how to like and counts down, second
+-- tap confirms. The server refuses a claim without that confirmation.
+local likeRow, likeCircle, likeNum = stepRow(0.665, "1", "Like the game \u{1F44D}", CFG.LikeText)
+local likeBtn = button(likeRow, "I LIKED IT", GOLD, {Name = "Like", AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(0.985, 0.5), Size = UDim2.fromScale(0.26, 0.78)}, 26)
 local joinRow, joinCircle, joinNum = stepRow(0.785, "2", CFG.JoinText, "Get group news, updates and this gift")
 local joinBtn = button(joinRow, "JOIN", BLUE, {Name = "Join", AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(0.985, 0.5), Size = UDim2.fromScale(0.26, 0.78)}, 28)
 local claimBtn, claimLabel = button(card, "CLAIM", GREY, {Name = "Claim", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.95), Size = UDim2.fromScale(0.4, 0.1)}, 34)
@@ -228,6 +232,7 @@ local msg = label(card, "", {Name = "Message", AnchorPoint = Vector2.new(0.5, 0)
 -- state
 --------------------------------------------------
 local member, claimed, busy = false, player:GetAttribute("CommunityGiftClaimed") == true, false
+local liked, likeWait = false, 0 -- likeWait: seconds left on the "go like it" countdown (0 = not started)
 local function setMsg(t, col)
 	msg.Text, msg.TextColor3 = t or "", col or GOLD
 	msg.Size = UDim2.fromScale(0.9, (t and t ~= "") and 0.032 or 0)
@@ -237,8 +242,13 @@ local function render()
 	joinBtn.BackgroundColor3 = member and GREEN or BLUE
 	joinCircle.BackgroundColor3 = member and GREEN or GOLD
 	joinNum.Text = member and "\u{2713}" or "2"
-	claimBtn.BackgroundColor3 = member and GREEN or GREY
-	claimLabel.Text = member and "CLAIM GIFT!" or "JOIN FIRST"
+	likeBtn.Label.Text = liked and "LIKED" or (likeWait > 0 and ("WAIT " .. likeWait)) or (likeWait < 0 and "YES, I DID!") or "I LIKED IT"
+	likeBtn.BackgroundColor3 = liked and GREEN or (likeWait > 0 and GREY) or GOLD
+	likeCircle.BackgroundColor3 = liked and GREEN or GOLD
+	likeNum.Text = liked and "\u{2713}" or "1"
+	local ready = member and liked
+	claimBtn.BackgroundColor3 = ready and GREEN or GREY
+	claimLabel.Text = ready and "CLAIM GIFT!" or (not liked and not member and "LIKE + JOIN FIRST") or (not liked and "LIKE FIRST") or "JOIN FIRST"
 end
 local function apply(res)
 	if type(res) ~= "table" or not res.ok then return end
@@ -272,6 +282,19 @@ local function shut()
 	task.delay(0.15, function() sg.Enabled = false end)
 end
 pill.Activated:Connect(function() if sg.Enabled then shut() else open() end end)
+likeBtn.Activated:Connect(function()
+	if liked or likeWait > 0 then return end
+	if likeWait == 0 then -- first tap: say how, then a short countdown before it can be confirmed
+		setMsg("Tap the \u{1F44D} under the game on its Roblox page, then come back and confirm!", ICE)
+		for s = 4, 1, -1 do likeWait = s; render(); task.wait(1) end
+		likeWait = -1 -- ready to confirm
+		render()
+	else
+		liked = true
+		setMsg(member and "Thank you! Tap CLAIM GIFT \u{1F381}" or "Thank you! Now join the group.", GREEN)
+		render()
+	end
+end)
 close.Activated:Connect(shut)
 backdrop.Activated:Connect(shut)
 
@@ -283,19 +306,22 @@ joinBtn.Activated:Connect(function()
 	if not ok then setMsg("Open the game page and tap the group name to join!", ICE) end
 	task.wait(0.5)
 	apply(remote:InvokeServer("Check"))
-	if member then setMsg("Thanks for joining! Tap CLAIM GIFT \u{1F381}", GREEN) end
+	if member then setMsg(liked and "Thanks for joining! Tap CLAIM GIFT \u{1F381}" or "Thanks for joining! Now like the game (step 1).", GREEN) end
 	busy = false
 end)
 claimBtn.Activated:Connect(function()
 	if busy then return end
 	busy = true
 	if not member then apply(remote:InvokeServer("Check")) end
-	if not member then
+	if not liked then
+		setMsg("Like the game first (step 1), then tap CLAIM!", GOLD)
+		for _, x in ipairs({-0.02, 0.02, -0.01, 0}) do tween(likeRow, 0.06, {Position = UDim2.fromScale(0.05 + x, 0.665)}); task.wait(0.06) end
+	elseif not member then
 		setMsg("Join the group first, then tap CLAIM!", GOLD)
 		for _, x in ipairs({-0.02, 0.02, -0.01, 0}) do tween(joinRow, 0.06, {Position = UDim2.fromScale(0.05 + x, 0.785)}); task.wait(0.06) end
 	else
 		claimLabel.Text = "..."
-		local res = remote:InvokeServer("Claim")
+		local res = remote:InvokeServer("Claim", true)
 		if type(res) == "table" and res.ok then
 			claimed = true
 			shut()
@@ -314,6 +340,22 @@ player:GetAttributeChangedSignal("CommunityGiftClaimed"):Connect(function()
 	refreshHud()
 end)
 player:GetAttributeChangedSignal("PlowTutorialDone"):Connect(refreshHud)
+-- players who already have the gift: one friendly like reminder per session after a while of play (no reward, never repeats)
+task.spawn(function()
+	task.wait(CFG.LikeNudgeAfter or 480)
+	if not claimed or not player.Parent then return end
+	local tg = mk("ScreenGui", {Name = "LikeNudgeGui", ResetOnSpawn = false, DisplayOrder = 98, IgnoreGuiInset = true}, pg)
+	local box = mk("Frame", {AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.new(0.5, 0, 0, -80), Size = UDim2.fromScale(0.34, 0.075), BackgroundColor3 = Color3.fromRGB(40, 80, 160)}, tg)
+	mk("UISizeConstraint", {MinSize = Vector2.new(300, 52), MaxSize = Vector2.new(620, 80)}, box)
+	round(box, 0.3)
+	mk("UIStroke", {Thickness = 3, Color = GOLD, ApplyStrokeMode = Enum.ApplyStrokeMode.Border}, box)
+	label(box, "Enjoying the game? Tap \u{1F44D} on its Roblox page - it really helps!", {Position = UDim2.fromScale(0.05, 0.15), Size = UDim2.fromScale(0.9, 0.7)}, 26)
+	tween(box, 0.4, {Position = UDim2.new(0.5, 0, 0.2, 0)}, Enum.EasingStyle.Back) -- below the top boost / event bars
+	task.wait(7)
+	tween(box, 0.3, {Position = UDim2.new(0.5, 0, 0, -80)}, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
+	task.wait(0.4)
+	tg:Destroy()
+end)
 player:GetAttributeChangedSignal("IntroActive"):Connect(refreshHud)
 player.AttributeChanged:Connect(function(a) if a:sub(1, 6) == "Stage_" then showBoost() end end) -- in case the pet is ever progress-scaled again
 RS:GetAttributeChangedSignal("CommunityGroupId"):Connect(refreshHud)

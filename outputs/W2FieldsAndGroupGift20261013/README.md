@@ -47,3 +47,18 @@ that no longer exists in PetConfig, so keep the PetConfig entry if anyone claime
 
 ## Follow-up 2026-10-13: polish + flat +100% Snow
 wiktor: "polish the ui and also make pet ad +100% snow". Frosty Pal Boost = 1.0 (flat). CommunityRewardClient v2 (old copy in the backup folder as CommunityRewardClient_v1). Screens: screens/gift_card_v2.jpg. Tested by clicks in Play (BalanceTestMode, temp profile).
+
+## Repair 2026-10-14: players joined the group but did not like (sp 75)
+wiktor: "people are joining the group but not liking it". Checked first: the live scripts matched the last version, nothing was broken.
+Cause: by design the like was only a reminder, so the claim needed the group join alone. Roblox still has no API that tells a game
+who liked it, so a real check is impossible; the repair adds friction and a clear separate step instead:
+- Card step 1 now has its own button: tap I LIKED IT -> short how-to message + 4 s countdown -> YES, I DID! -> step ticks green.
+  CLAIM shows LIKE + JOIN FIRST / LIKE FIRST / JOIN FIRST until both steps are done.
+- Server: Claim requires the client's like confirmation (remote arg), records d.Community.LikeAck, V = 2. A claim without it is refused.
+- Players who already claimed keep everything (no data touched); they get one friendly like reminder per session after
+  CommunityRewardConfig.LikeNudgeAfter (480 s) of play, no reward.
+Backups: ServerStorage.CommunityRewardBackup_20261013.*_v2_beforeLikeStep (client, service, config). Undo: swap those back.
+Tested (Play, BalanceTestMode, temp profile, PC, mocked membership): claim without the like refused (hook and raw remote);
+card by clicks: CLAIM -> LIKE FIRST + shake, I LIKED IT -> WAIT 3 countdown -> YES, I DID! -> LIKED, CLAIM GIFT! -> pet + Snow,
+record has LikeAck; nudge shown after a shortened 25 s wait (set back to 480). Not tested: phones, real live players.
+Honest limit: a player can still tap I LIKED IT without liking; no game can verify a like on Roblox.

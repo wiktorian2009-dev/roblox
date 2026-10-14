@@ -1,896 +1,914 @@
 {
-  "default.project.json": {
+  "game/default.project.json": {
     "mtime": 1790746081.7153678,
-    "seen": 1790746734.621901,
+    "seen": 1791974987.9722621,
     "ast_hash": "b6bb37455f19996bf682916f80ae8b16",
     "semantic_hash": "b6bb37455f19996bf682916f80ae8b16"
   },
-  "src/ReplicatedStorage/AdminCommand.model.json": {
-    "mtime": 1790745987.881419,
-    "seen": 1790746734.6219044,
-    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
-    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
-  },
-  "src/ReplicatedStorage/BuyUpgrade.model.json": {
-    "mtime": 1790745987.8608184,
-    "seen": 1790746734.6219065,
-    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
-    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
-  },
-  "src/ReplicatedStorage/DataRefresh.model.json": {
-    "mtime": 1790745987.8794162,
-    "seen": 1790746734.6219072,
-    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
-    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
-  },
-  "src/ReplicatedStorage/EggModels.luau": {
-    "mtime": 1791843940.2229736,
-    "seen": 1791844300.247053,
-    "ast_hash": "66bfabc8ce250d67e4c010bad5d0e6e2",
-    "semantic_hash": "66bfabc8ce250d67e4c010bad5d0e6e2"
-  },
-  "src/ReplicatedStorage/EquipPet.model.json": {
-    "mtime": 1790745987.8728757,
-    "seen": 1790746734.6219084,
-    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
-    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
-  },
-  "src/ReplicatedStorage/GetPets.model.json": {
-    "mtime": 1790745987.8608184,
-    "seen": 1790746734.62191,
-    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
-    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
-  },
-  "src/ReplicatedStorage/MusicConfig.luau": {
-    "mtime": 1790780972.2184184,
-    "seen": 1790782993.6834528,
-    "ast_hash": "85cf3c6462bf3f7e2aa034e327fa68ac",
-    "semantic_hash": "85cf3c6462bf3f7e2aa034e327fa68ac"
-  },
-  "src/ReplicatedStorage/NumberFormat.luau": {
-    "mtime": 1790745987.8557982,
-    "seen": 1790746734.6219118,
-    "ast_hash": "44ba5ded500ba585285c15a505fa05d2",
-    "semantic_hash": "44ba5ded500ba585285c15a505fa05d2"
-  },
-  "src/ReplicatedStorage/PetConfig.luau": {
-    "mtime": 1791844500.3963716,
-    "seen": 1791844860.6748278,
-    "ast_hash": "9b3d1ef1e01e5f746a2a59a0b83ed616",
-    "semantic_hash": "9b3d1ef1e01e5f746a2a59a0b83ed616"
-  },
-  "src/ReplicatedStorage/PetHatched.model.json": {
-    "mtime": 1790745987.881419,
-    "seen": 1790746734.6219132,
-    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
-    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
-  },
-  "src/ReplicatedStorage/PetModels.luau": {
-    "mtime": 1791297857.7772958,
-    "seen": 1791298960.5510533,
-    "ast_hash": "86d8e29817812c4e821a83f73d535543",
-    "semantic_hash": "86d8e29817812c4e821a83f73d535543"
-  },
-  "src/ReplicatedStorage/SetSetting.model.json": {
-    "mtime": 1790745987.8542893,
-    "seen": 1790746734.6219165,
-    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
-    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
-  },
-  "src/ReplicatedStorage/SnowCollected.model.json": {
-    "mtime": 1790745987.8748975,
-    "seen": 1790746734.6219175,
-    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
-    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
-  },
-  "src/ReplicatedStorage/SnowFieldSync.model.json": {
-    "mtime": 1790745987.881419,
-    "seen": 1790746734.621918,
-    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
-    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
-  },
-  "src/ReplicatedStorage/SnowFieldUpdate.model.json": {
-    "mtime": 1790745987.8522844,
-    "seen": 1790746734.6219184,
-    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
-    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
-  },
-  "src/ReplicatedStorage/SnowFields.luau": {
-    "mtime": 1790745987.881419,
-    "seen": 1790746734.621919,
-    "ast_hash": "9c088239c9b9c909ffc40ad5615a1c4b",
-    "semantic_hash": "9c088239c9b9c909ffc40ad5615a1c4b"
-  },
-  "src/ReplicatedStorage/SnowStages/AbsoluteZero/init.meta.json": {
-    "mtime": 1791245291.3424833,
-    "seen": 1791245985.5457933,
-    "ast_hash": "3ba3ea3291c28880961b9a66f4923b30",
-    "semantic_hash": "3ba3ea3291c28880961b9a66f4923b30"
-  },
-  "src/ReplicatedStorage/SnowStages/Crystal/init.meta.json": {
-    "mtime": 1791245291.3409803,
-    "seen": 1791245985.5457942,
-    "ast_hash": "5171b8a10daf6c446a1013f80a12994c",
-    "semantic_hash": "5171b8a10daf6c446a1013f80a12994c"
-  },
-  "src/ReplicatedStorage/SnowStages/Cursed/init.meta.json": {
-    "mtime": 1791245291.3409803,
-    "seen": 1791245985.545795,
-    "ast_hash": "aaf0ef9e2dac5a81c127bb14a68a11ff",
-    "semantic_hash": "aaf0ef9e2dac5a81c127bb14a68a11ff"
-  },
-  "src/ReplicatedStorage/SnowStages/Desert/init.meta.json": {
-    "mtime": 1791245291.3409803,
-    "seen": 1791245985.5457962,
-    "ast_hash": "49e1ce9f1d5e0e93ba8afe59a3a789b8",
-    "semantic_hash": "49e1ce9f1d5e0e93ba8afe59a3a789b8"
-  },
-  "src/ReplicatedStorage/SnowStages/Jungle/init.meta.json": {
-    "mtime": 1791245291.3424833,
-    "seen": 1791245985.5457969,
-    "ast_hash": "0e33344a75a54ba393937b902914edb7",
-    "semantic_hash": "0e33344a75a54ba393937b902914edb7"
-  },
-  "src/ReplicatedStorage/SnowStages/Retro/init.meta.json": {
-    "mtime": 1791245291.3409803,
-    "seen": 1791245985.5457976,
-    "ast_hash": "358bd2426d356b41a479d9f5fd09691f",
-    "semantic_hash": "358bd2426d356b41a479d9f5fd09691f"
-  },
-  "src/ReplicatedStorage/SnowStages/Starter/init.meta.json": {
-    "mtime": 1791245291.3409803,
-    "seen": 1791245985.5457985,
-    "ast_hash": "211c770ca037dc6c30e1c9c3adad6e45",
-    "semantic_hash": "211c770ca037dc6c30e1c9c3adad6e45"
-  },
-  "src/ReplicatedStorage/SnowStages/init.meta.json": {
-    "mtime": 1790958643.8226576,
-    "seen": 1790958647.7853549,
-    "ast_hash": "379dae92d2434740e62fc4811ad0fb89",
-    "semantic_hash": "379dae92d2434740e62fc4811ad0fb89"
-  },
-  "src/ReplicatedStorage/StageConfig.luau": {
-    "mtime": 1791306531.647173,
-    "seen": 1791306749.3183942,
-    "ast_hash": "f6d71332d21eb3e48a4b193d38363d90",
-    "semantic_hash": "f6d71332d21eb3e48a4b193d38363d90"
-  },
-  "src/ReplicatedStorage/UnlockStage.model.json": {
-    "mtime": 1790745987.8567975,
-    "seen": 1790746734.6219256,
-    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
-    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
-  },
-  "src/ReplicatedStorage/UpgradeConfig.luau": {
-    "mtime": 1791306531.649685,
-    "seen": 1791306749.318989,
-    "ast_hash": "6d84583fa9fc70f936b6a41a2466d403",
-    "semantic_hash": "6d84583fa9fc70f936b6a41a2466d403"
-  },
-  "src/ServerScriptService/AdminService.server.luau": {
-    "mtime": 1791304536.0919037,
-    "seen": 1791306749.3191302,
-    "ast_hash": "ab97872f6b889ff4e03ae287b0f404cb",
-    "semantic_hash": "ab97872f6b889ff4e03ae287b0f404cb"
-  },
-  "src/ServerScriptService/DataService.luau": {
-    "mtime": 1791299565.6593354,
-    "seen": 1791306749.3195074,
-    "ast_hash": "1f5a2783cc631f6268f76683203800fb",
-    "semantic_hash": "1f5a2783cc631f6268f76683203800fb"
-  },
-  "src/ServerScriptService/FrostfallTravel.server.luau": {
-    "mtime": 1790745987.8698585,
-    "seen": 1790746734.6219277,
-    "ast_hash": "324e38786c86145bb03cc274ab1a7f22",
-    "semantic_hash": "324e38786c86145bb03cc274ab1a7f22"
-  },
-  "src/ServerScriptService/PetService.server.luau": {
-    "mtime": 1791251890.6485243,
-    "seen": 1791252061.8360157,
-    "ast_hash": "ec21f34a726b642b81b67f7b385a9055",
-    "semantic_hash": "ec21f34a726b642b81b67f7b385a9055"
-  },
-  "src/ServerScriptService/SettingsService.server.luau": {
-    "mtime": 1791213442.036196,
-    "seen": 1791214771.2706287,
-    "ast_hash": "3bd79e278f50ba13685eb4037ac75f7f",
-    "semantic_hash": "3bd79e278f50ba13685eb4037ac75f7f"
-  },
-  "src/ServerScriptService/SnowFieldService.server.luau": {
-    "mtime": 1791702855.2570302,
-    "seen": 1791711659.88107,
-    "ast_hash": "5f9647647afed4fdc7d7ef38e32718e6",
-    "semantic_hash": "5f9647647afed4fdc7d7ef38e32718e6"
-  },
-  "src/ServerScriptService/StageService.server.luau": {
-    "mtime": 1791132894.7419186,
-    "seen": 1791134644.832702,
-    "ast_hash": "060b934171283c4f24becfe9b95bf775",
-    "semantic_hash": "060b934171283c4f24becfe9b95bf775"
-  },
-  "src/ServerScriptService/UpgradeService.server.luau": {
-    "mtime": 1791299565.6896286,
-    "seen": 1791306749.320662,
-    "ast_hash": "ce41191e52e12d70865235b210c1010e",
-    "semantic_hash": "ce41191e52e12d70865235b210c1010e"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/FrostfallClient.client.luau": {
-    "mtime": 1791299565.7082405,
-    "seen": 1791306749.321126,
-    "ast_hash": "478878952adcca693cddec5a2343eae1",
-    "semantic_hash": "478878952adcca693cddec5a2343eae1"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/MusicPlayer.client.luau": {
-    "mtime": 1790780972.2194183,
-    "seen": 1790782993.6861281,
-    "ast_hash": "343386ab6d396a6238abd3dcd1c3fe07",
-    "semantic_hash": "343386ab6d396a6238abd3dcd1c3fe07"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/MuteFootsteps.client.luau": {
-    "mtime": 1790745987.8542893,
-    "seen": 1790746734.6219347,
-    "ast_hash": "3bcd995b4f905e019b837fc1f150e136",
-    "semantic_hash": "3bcd995b4f905e019b837fc1f150e136"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/PetFollow.client.luau": {
-    "mtime": 1790745987.8748975,
-    "seen": 1790746734.6219351,
-    "ast_hash": "feb0e083a649a54927953d8aaed946f2",
-    "semantic_hash": "feb0e083a649a54927953d8aaed946f2"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/SnowFieldClient.client.luau": {
-    "mtime": 1791285999.6034448,
-    "seen": 1791298960.5637543,
-    "ast_hash": "ec7e4c457c268350e5387594aaeca69f",
-    "semantic_hash": "ec7e4c457c268350e5387594aaeca69f"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/StageClient.client.luau": {
-    "mtime": 1791534298.999777,
-    "seen": 1791534304.8931458,
-    "ast_hash": "aa04a267b16b290d3a2423ae788dfe1a",
-    "semantic_hash": "aa04a267b16b290d3a2423ae788dfe1a"
-  },
-  "syncback.project.json": {
-    "mtime": 1790746081.7292492,
-    "seen": 1790746734.6219385,
-    "ast_hash": "8aa8e844f590f524361514baa1eeb2e1",
-    "semantic_hash": "8aa8e844f590f524361514baa1eeb2e1"
-  },
-  "studio-snapshots/StarterGui/RNGGui/PetClient.client.luau": {
-    "mtime": 1791550250.0105276,
-    "seen": 1791550317.9136848,
-    "ast_hash": "12f5c81c60801ba704294b5fb9baa880",
-    "semantic_hash": "12f5c81c60801ba704294b5fb9baa880"
-  },
-  "studio-snapshots/egg-display-snapshot.json": {
-    "mtime": 1790751164.8489113,
-    "seen": 1790751166.3851235,
-    "ast_hash": "e2f55fd1c884c761b31e04a7abd0e54b",
-    "semantic_hash": "e2f55fd1c884c761b31e04a7abd0e54b"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/StageDecorClient.client.luau": {
-    "mtime": 1791204954.482938,
-    "seen": 1791205625.2088137,
-    "ast_hash": "2600140ab8ea32da2719a5984d0a19f9",
-    "semantic_hash": "2600140ab8ea32da2719a5984d0a19f9"
-  },
-  "src/ReplicatedStorage/TreasureConfig.luau": {
-    "mtime": 1790976802.7989507,
-    "seen": 1790976804.4535458,
-    "ast_hash": "75fc2376e04e89f65a44113191522188",
-    "semantic_hash": "75fc2376e04e89f65a44113191522188"
-  },
-  "src/ReplicatedStorage/ActivityConfig.luau": {
-    "mtime": 1791306531.6506858,
-    "seen": 1791306749.3160355,
-    "ast_hash": "c29ccd61d860c4887034fefc3a53c7fc",
-    "semantic_hash": "c29ccd61d860c4887034fefc3a53c7fc"
-  },
-  "src/ReplicatedStorage/TreasureFound.model.json": {
-    "mtime": 1790958643.7990541,
-    "seen": 1790958647.7853577,
-    "ast_hash": "a0da029b62241d5e5d64777f3373541d",
-    "semantic_hash": "a0da029b62241d5e5d64777f3373541d"
-  },
-  "src/ReplicatedStorage/TreasureIcon.luau": {
-    "mtime": 1790958597.688553,
-    "seen": 1790958647.7853587,
-    "ast_hash": "2c9f881cef66a4a902fbc9b4c999464b",
-    "semantic_hash": "2c9f881cef66a4a902fbc9b4c999464b"
-  },
-  "src/ReplicatedStorage/TreasureModels.luau": {
-    "mtime": 1790958597.6930606,
-    "seen": 1790958647.7853591,
-    "ast_hash": "4a02657406fdaa8332b69c26cc11541c",
-    "semantic_hash": "4a02657406fdaa8332b69c26cc11541c"
-  },
-  "src/ReplicatedStorage/TreasureRemote.model.json": {
-    "mtime": 1790958643.7990541,
-    "seen": 1790958647.7853599,
-    "ast_hash": "3c26b343e299585571090143325f969f",
-    "semantic_hash": "3c26b343e299585571090143325f969f"
-  },
-  "src/ServerScriptService/ActivityService.server.luau": {
-    "mtime": 1791251017.1624558,
-    "seen": 1791251419.2129655,
-    "ast_hash": "1b12e098eb98e6e2aa5967acded4aced",
-    "semantic_hash": "1b12e098eb98e6e2aa5967acded4aced"
-  },
-  "src/ServerScriptService/BoostService.luau": {
-    "mtime": 1790958597.710055,
-    "seen": 1790958647.7855153,
-    "ast_hash": "b30e1eb6547c308bc6e924e9a08bd401",
-    "semantic_hash": "b30e1eb6547c308bc6e924e9a08bd401"
-  },
-  "src/ServerScriptService/TreasureService.luau": {
-    "mtime": 1791250857.7572882,
-    "seen": 1791251419.2140708,
-    "ast_hash": "005865bc2daac99d7329363bf0cbe663",
-    "semantic_hash": "005865bc2daac99d7329363bf0cbe663"
-  },
-  "studio-snapshots/ReplicatedFirst/BiomeLighting.client.luau": {
-    "mtime": 1790958597.8302655,
-    "seen": 1790958647.786561,
-    "ast_hash": "2fd617f11ed9b1205277f008ef20ee51",
-    "semantic_hash": "2fd617f11ed9b1205277f008ef20ee51"
-  },
-  "studio-snapshots/ReplicatedFirst/BiomeLighting/Profiles.luau": {
-    "mtime": 1791205015.2391474,
-    "seen": 1791205625.2089908,
-    "ast_hash": "7238210286c7602eed704d71922d2f69",
-    "semantic_hash": "7238210286c7602eed704d71922d2f69"
-  },
-  "studio-snapshots/ReplicatedFirst/LoadingScreen.client.luau": {
-    "mtime": 1791299565.7062368,
-    "seen": 1791306749.322592,
-    "ast_hash": "3360bd39082686a3bca4e3521ae1d029",
-    "semantic_hash": "3360bd39082686a3bca4e3521ae1d029"
-  },
-  "studio-snapshots/ServerStorage/AdminConfig.luau": {
-    "mtime": 1790958597.87652,
-    "seen": 1790958647.7865636,
-    "ast_hash": "415c82f2c4a174c7055ad030d5aaed36",
-    "semantic_hash": "415c82f2c4a174c7055ad030d5aaed36"
-  },
-  "studio-snapshots/ServerStorage/AdminConsole/ConsoleClient.client.luau": {
-    "mtime": 1790958597.8795218,
-    "seen": 1790958647.7865644,
-    "ast_hash": "ea6b07567d5bc8c7eabffbcc2730c681",
-    "semantic_hash": "ea6b07567d5bc8c7eabffbcc2730c681"
-  },
-  "studio-snapshots/ServerStorage/SnowFields.luau": {
-    "mtime": 1790958597.8715117,
-    "seen": 1790958647.7865658,
-    "ast_hash": "bf73a0ae4a6981e6a980d04502fd63b8",
-    "semantic_hash": "bf73a0ae4a6981e6a980d04502fd63b8"
-  },
-  "studio-snapshots/StarterGui/RNGGui/ActivityClient.client.luau": {
-    "mtime": 1791665629.144875,
-    "seen": 1791702280.7132924,
-    "ast_hash": "1964b6de788b1512c6aa82bb7ec7ad6c",
-    "semantic_hash": "1964b6de788b1512c6aa82bb7ec7ad6c"
-  },
-  "studio-snapshots/StarterGui/RNGGui/BottomBarFX.client.luau": {
-    "mtime": 1791158715.103262,
-    "seen": 1791158725.994098,
-    "ast_hash": "68ccec98d4cea6b6f0bc38a030ccbd0d",
-    "semantic_hash": "68ccec98d4cea6b6f0bc38a030ccbd0d"
-  },
-  "studio-snapshots/StarterGui/RNGGui/RNGClient.client.luau": {
-    "mtime": 1791218638.3346875,
-    "seen": 1791218966.4024334,
-    "ast_hash": "a6b27b05e0279e0aefbd918c842e94d5",
-    "semantic_hash": "a6b27b05e0279e0aefbd918c842e94d5"
-  },
-  "studio-snapshots/StarterGui/RNGGui/SaleBadgeAnim.client.luau": {
-    "mtime": 1790958597.8088515,
-    "seen": 1790958647.786649,
-    "ast_hash": "afae5712c85592881a13c27eb6c53e26",
-    "semantic_hash": "afae5712c85592881a13c27eb6c53e26"
-  },
-  "studio-snapshots/StarterGui/RNGGui/TreasureBook.client.luau": {
-    "mtime": 1791665629.1549735,
-    "seen": 1791702280.7340634,
-    "ast_hash": "2e56557d2e6b0a82fc505e81044bd8fe",
-    "semantic_hash": "2e56557d2e6b0a82fc505e81044bd8fe"
-  },
-  "studio-snapshots/StarterGui/RNGGui/TreasureReveal.client.luau": {
-    "mtime": 1791665629.1624837,
-    "seen": 1791702280.7340662,
-    "ast_hash": "1fc68ce16c088a64d8f7ed796c5de3de",
-    "semantic_hash": "1fc68ce16c088a64d8f7ed796c5de3de"
-  },
-  "studio-snapshots/StarterGui/RNGGui/UpgradeTreeClient.client.luau": {
-    "mtime": 1791237180.0297778,
-    "seen": 1791237183.8510795,
-    "ast_hash": "8d5d61196fa1acacab6f0daee61d868c",
-    "semantic_hash": "8d5d61196fa1acacab6f0daee61d868c"
-  },
-  "studio-snapshots/Workspace/AbsoluteZeroPortal/PortalAnimator.server.luau": {
-    "mtime": 1790958597.8495252,
-    "seen": 1790958647.7866518,
-    "ast_hash": "09ac51aaec95c7b3fafea556184fb95b",
-    "semantic_hash": "09ac51aaec95c7b3fafea556184fb95b"
-  },
-  "studio-snapshots/Workspace/FrostfallVillage/EggDisplay/EggFloat.server.luau": {
-    "mtime": 1790958597.8558517,
-    "seen": 1790958647.7866523,
-    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
-    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
-  },
-  "studio-snapshots/Workspace/PropPalette/RemoveAtRuntime.server.luau": {
-    "mtime": 1790958597.8619177,
-    "seen": 1790958647.7866533,
-    "ast_hash": "38eec973b22040612191ee2055c7ae94",
-    "semantic_hash": "38eec973b22040612191ee2055c7ae94"
-  },
-  "studio-snapshots/live-instance-summary.json": {
-    "mtime": 1790958641.6911716,
-    "seen": 1790958647.78672,
-    "ast_hash": "3f99fca95ca8c812e01aacf79c2dca0e",
-    "semantic_hash": "3f99fca95ca8c812e01aacf79c2dca0e"
-  },
-  "src/ServerScriptService/World2Activities.server.luau": {
-    "mtime": 1791250857.7572882,
-    "seen": 1791251419.214147,
-    "ast_hash": "bcf39c8f729f383ed28ccad00a63f259",
-    "semantic_hash": "bcf39c8f729f383ed28ccad00a63f259"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/World2Client.client.luau": {
-    "mtime": 1790964812.2353349,
-    "seen": 1790964813.8588865,
-    "ast_hash": "1120b11346940293e75557ebeed2bf06",
-    "semantic_hash": "1120b11346940293e75557ebeed2bf06"
-  },
-  "src/ReplicatedStorage/SnowUI.luau": {
-    "mtime": 1791150548.5967085,
-    "seen": 1791153598.8224149,
-    "ast_hash": "2dd4d4467ddba468fbcaa0cb2854f9a0",
-    "semantic_hash": "2dd4d4467ddba468fbcaa0cb2854f9a0"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau": {
-    "mtime": 1791528735.0668917,
-    "seen": 1791534304.893145,
-    "ast_hash": "dab5c54bc51a2068aa5a0bd6f0775abd",
-    "semantic_hash": "dab5c54bc51a2068aa5a0bd6f0775abd"
-  },
-  "src/ReplicatedStorage/UniversalVFX/init.luau": {
-    "mtime": 1791065049.3568954,
-    "seen": 1791065066.8411505,
-    "ast_hash": "2408d4e1b517ece949707b26f3beede3",
-    "semantic_hash": "2408d4e1b517ece949707b26f3beede3"
-  },
-  "src/ReplicatedStorage/UniversalVFX/init.meta.json": {
-    "mtime": 1791064847.5000193,
-    "seen": 1791064931.6909344,
-    "ast_hash": "5302f4a1f01027bd33d4406a1e0e2eb2",
-    "semantic_hash": "5302f4a1f01027bd33d4406a1e0e2eb2"
-  },
-  "src/ReplicatedStorage/PlowAssembly.luau": {
-    "mtime": 1791217096.2434542,
-    "seen": 1791217823.7545724,
-    "ast_hash": "cc42f6130221a756d406f3dd9cadcdad",
-    "semantic_hash": "cc42f6130221a756d406f3dd9cadcdad"
-  },
-  "src/ReplicatedStorage/PlowConfig.luau": {
-    "mtime": 1791306531.653188,
-    "seen": 1791306749.317376,
-    "ast_hash": "2d01820d3ea43b8710dafb17c6cc201e",
-    "semantic_hash": "2d01820d3ea43b8710dafb17c6cc201e"
-  },
-  "src/ServerScriptService/PlowRegistry.luau": {
-    "mtime": 1791158715.049348,
-    "seen": 1791158725.9926922,
-    "ast_hash": "8a3d446f2d5f0ed82ef61ba02404cb51",
-    "semantic_hash": "8a3d446f2d5f0ed82ef61ba02404cb51"
-  },
-  "src/ServerScriptService/PlowRules.luau": {
-    "mtime": 1791256941.3824623,
-    "seen": 1791257260.6267147,
-    "ast_hash": "5f6222583720db36e03f9000ecb4ed08",
-    "semantic_hash": "5f6222583720db36e03f9000ecb4ed08"
-  },
-  "src/ServerScriptService/PlowService.server.luau": {
-    "mtime": 1791551542.8406165,
-    "seen": 1791553652.3652072,
-    "ast_hash": "124335de9cab5ea3af891113b64a54a0",
-    "semantic_hash": "124335de9cab5ea3af891113b64a54a0"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau": {
-    "mtime": 1791702871.4353397,
-    "seen": 1791711659.88242,
-    "ast_hash": "7026e9e67dbdda63d0c4482f9cd70cf1",
-    "semantic_hash": "7026e9e67dbdda63d0c4482f9cd70cf1"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau": {
-    "mtime": 1791626853.5646298,
-    "seen": 1791702280.636402,
-    "ast_hash": "81971e902d91e852505a01710c7eb82e",
-    "semantic_hash": "81971e902d91e852505a01710c7eb82e"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau": {
-    "mtime": 1791551727.5078204,
-    "seen": 1791553652.3669872,
-    "ast_hash": "7141ea5a5db1d61cbde877d2468e17ce",
-    "semantic_hash": "7141ea5a5db1d61cbde877d2468e17ce"
-  },
-  "src/ReplicatedStorage/PlowClientApi.luau": {
-    "mtime": 1791535679.1691933,
-    "seen": 1791535732.0519783,
-    "ast_hash": "58149deb570bbdea0faa5cd86c453687",
-    "semantic_hash": "58149deb570bbdea0faa5cd86c453687"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau": {
-    "mtime": 1791536502.0056405,
-    "seen": 1791536897.4307911,
-    "ast_hash": "2d66e940608653131351acd42f8294a9",
-    "semantic_hash": "2d66e940608653131351acd42f8294a9"
-  },
-  "src/ReplicatedStorage/CraftingConfig.luau": {
-    "mtime": 1791158714.9578123,
-    "seen": 1791158725.9897888,
-    "ast_hash": "ba1a9e3e4d0f8469ab2d1a95581a8d38",
-    "semantic_hash": "ba1a9e3e4d0f8469ab2d1a95581a8d38"
-  },
-  "src/ReplicatedStorage/FrostKingConfig.luau": {
-    "mtime": 1791158714.9628341,
-    "seen": 1791158725.9899945,
-    "ast_hash": "8ea00e5c4d2abf9fbc16eebd54ff430a",
-    "semantic_hash": "8ea00e5c4d2abf9fbc16eebd54ff430a"
-  },
-  "src/ReplicatedStorage/GameAudio.luau": {
-    "mtime": 1791158714.9653502,
-    "seen": 1791158725.9899952,
-    "ast_hash": "4d6db7d4d97595cf8be1b0a9d3e44a9f",
-    "semantic_hash": "4d6db7d4d97595cf8be1b0a9d3e44a9f"
-  },
-  "src/ReplicatedStorage/MachineConfig.luau": {
-    "mtime": 1791158714.966853,
-    "seen": 1791158725.990061,
-    "ast_hash": "a4dd34fa706ea12255dba1f8e92ba5f3",
-    "semantic_hash": "a4dd34fa706ea12255dba1f8e92ba5f3"
-  },
-  "src/ServerScriptService/FrostKingService.server.luau": {
-    "mtime": 1791256969.800983,
-    "seen": 1791257260.6263459,
-    "ast_hash": "fab408018fa9980f277f523cf5eb485a",
-    "semantic_hash": "fab408018fa9980f277f523cf5eb485a"
-  },
-  "src/ServerScriptService/MachineService.server.luau": {
-    "mtime": 1791164666.717362,
-    "seen": 1791164793.7215006,
-    "ast_hash": "1cf1d4b97667172522f97e965b2dc6d6",
-    "semantic_hash": "1cf1d4b97667172522f97e965b2dc6d6"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/DigJuiceClient.client.luau": {
-    "mtime": 1791702871.4353397,
-    "seen": 1791711659.8817859,
-    "ast_hash": "df2f7ee5febf6c8785edc3daff508c53",
-    "semantic_hash": "df2f7ee5febf6c8785edc3daff508c53"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau": {
-    "mtime": 1791528735.06134,
-    "seen": 1791534304.8926854,
-    "ast_hash": "56665a02bedd9beff9e472b655d9d1b7",
-    "semantic_hash": "56665a02bedd9beff9e472b655d9d1b7"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/MachineLocksClient.client.luau": {
-    "mtime": 1791158715.1784415,
-    "seen": 1791158725.9929957,
-    "ast_hash": "cb454e2ca38a14bc8f60e95ee1bf3992",
-    "semantic_hash": "cb454e2ca38a14bc8f60e95ee1bf3992"
-  },
-  "studio-snapshots/StarterGui/RNGGui/MachinesClient.client.luau": {
-    "mtime": 1791158715.1253564,
-    "seen": 1791158725.9940996,
-    "ast_hash": "5c5703cf74a6e4877dc43e36fe271145",
-    "semantic_hash": "5c5703cf74a6e4877dc43e36fe271145"
-  },
-  "src/ReplicatedStorage/ContractConfig.luau": {
-    "mtime": 1791210830.3928432,
-    "seen": 1791213005.884464,
-    "ast_hash": "ded314efb79c44567a14e57dbeab4f57",
-    "semantic_hash": "ded314efb79c44567a14e57dbeab4f57"
-  },
-  "src/ServerScriptService/ContractRegistry.luau": {
-    "mtime": 1791196820.66073,
-    "seen": 1791199974.6147895,
-    "ast_hash": "fdb6183b5e7b62ae8e3aea447d00324f",
-    "semantic_hash": "fdb6183b5e7b62ae8e3aea447d00324f"
-  },
-  "src/ServerScriptService/ContractService.server.luau": {
-    "mtime": 1791256969.7994778,
-    "seen": 1791257260.6262076,
-    "ast_hash": "e7d6d5f689ea96c791b8a1f673ba5a02",
-    "semantic_hash": "e7d6d5f689ea96c791b8a1f673ba5a02"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau": {
-    "mtime": 1791528735.06134,
-    "seen": 1791534304.892613,
-    "ast_hash": "5bb1dc04814ff5d065d41a6442f9109f",
-    "semantic_hash": "5bb1dc04814ff5d065d41a6442f9109f"
-  },
-  "src/ReplicatedStorage/ArenaConfig.luau": {
-    "mtime": 1791247372.134799,
-    "seen": 1791247863.8256068,
-    "ast_hash": "3c8ef789a037a9b6fe85bbf8593dfa61",
-    "semantic_hash": "3c8ef789a037a9b6fe85bbf8593dfa61"
-  },
-  "src/ServerScriptService/ArenaService.server.luau": {
-    "mtime": 1791240305.966948,
-    "seen": 1791240398.633289,
-    "ast_hash": "3197759d4e41b3d928032dd068c16836",
-    "semantic_hash": "3197759d4e41b3d928032dd068c16836"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/ArenaDriveClient.client.luau": {
-    "mtime": 1791346448.9610958,
-    "seen": 1791346455.3030417,
-    "ast_hash": "584cb0d5817a8138f278d53a24846d45",
-    "semantic_hash": "584cb0d5817a8138f278d53a24846d45"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau": {
-    "mtime": 1791528735.06134,
-    "seen": 1791534304.8926117,
-    "ast_hash": "cd7a4a52879fa743611b11f830d47b09",
-    "semantic_hash": "cd7a4a52879fa743611b11f830d47b09"
-  },
-  "studio-snapshots/ServerStorage/W1RemasterKit.luau": {
-    "mtime": 1791201434.352305,
-    "seen": 1791205625.2092843,
-    "ast_hash": "9f24d98d663f71339de5fd0dfe3062ca",
-    "semantic_hash": "9f24d98d663f71339de5fd0dfe3062ca"
-  },
-  "src/ReplicatedStorage/TravelConfig.luau": {
-    "mtime": 1791215943.2648053,
-    "seen": 1791216236.4360633,
-    "ast_hash": "11352ab9505b2d6cfd81a69a9cc5e628",
-    "semantic_hash": "11352ab9505b2d6cfd81a69a9cc5e628"
-  },
-  "src/ServerScriptService/TravelService.server.luau": {
-    "mtime": 1791215943.3044813,
-    "seen": 1791216236.437926,
-    "ast_hash": "aab225800739a9fc60cc33f68c2ce464",
-    "semantic_hash": "aab225800739a9fc60cc33f68c2ce464"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/TravelClient.client.luau": {
-    "mtime": 1791528735.0668917,
-    "seen": 1791534304.8932111,
-    "ast_hash": "25b668c4d42ebd5b31c9158ff718f3b5",
-    "semantic_hash": "25b668c4d42ebd5b31c9158ff718f3b5"
-  },
-  "src/ReplicatedStorage/PassConfig.luau": {
-    "mtime": 1791536502.0376887,
-    "seen": 1791536897.4257832,
-    "ast_hash": "ed9211c7e94cad822b81d99f7510261c",
-    "semantic_hash": "ed9211c7e94cad822b81d99f7510261c"
-  },
-  "src/ServerScriptService/PassService.server.luau": {
-    "mtime": 1791536502.0765107,
-    "seen": 1791536897.4289427,
-    "ast_hash": "1c91702a86ddee3f005a55da8b726946",
-    "semantic_hash": "1c91702a86ddee3f005a55da8b726946"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau": {
-    "mtime": 1791528735.063358,
-    "seen": 1791534304.892947,
-    "ast_hash": "81eb93be670da4fb01c617f5a2321ca6",
-    "semantic_hash": "81eb93be670da4fb01c617f5a2321ca6"
-  },
-  "src/ReplicatedStorage/FeatureUIArt.luau": {
-    "mtime": 1791237179.8981297,
-    "seen": 1791237183.8427274,
-    "ast_hash": "c1cb3539d9dda42949fc95351974c849",
-    "semantic_hash": "c1cb3539d9dda42949fc95351974c849"
-  },
-  "src/ReplicatedStorage/UpgradeIconArt.luau": {
-    "mtime": 1791237179.905633,
-    "seen": 1791237183.846021,
-    "ast_hash": "0c0b197385c8e61e8986f4f9bd25c064",
-    "semantic_hash": "0c0b197385c8e61e8986f4f9bd25c064"
-  },
-  "studio-snapshots/StarterGui/RNGGui/WheelClient.client.luau": {
-    "mtime": 1791237180.0076,
-    "seen": 1791237183.8510807,
-    "ast_hash": "5cd75cf87eaff465a13cc9eebff031a4",
-    "semantic_hash": "5cd75cf87eaff465a13cc9eebff031a4"
-  },
-  "src/ServerScriptService/EconomyMigration.luau": {
-    "mtime": 1791245291.3424833,
-    "seen": 1791245985.547025,
-    "ast_hash": "ce14469da7c2700274fa385ecf6d9d3c",
-    "semantic_hash": "ce14469da7c2700274fa385ecf6d9d3c"
-  },
-  "src/ReplicatedStorage/SnowArt.luau": {
-    "mtime": 1791248976.9009678,
-    "seen": 1791250232.7979693,
-    "ast_hash": "f115607d425c892780cb3cb3c8ea1a54",
-    "semantic_hash": "f115607d425c892780cb3cb3c8ea1a54"
-  },
-  "src/ServerScriptService/ProductService.server.luau": {
-    "mtime": 1791251012.1399279,
-    "seen": 1791251419.2137332,
-    "ast_hash": "99ce974ed49196650ce098c3bc4f5c28",
-    "semantic_hash": "99ce974ed49196650ce098c3bc4f5c28"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/VerityEggClient.client.luau": {
-    "mtime": 1791528735.0678918,
-    "seen": 1791534304.8932123,
-    "ast_hash": "1aa5cc94d010dd07e2cc2b842039ad7d",
-    "semantic_hash": "1aa5cc94d010dd07e2cc2b842039ad7d"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/SnowArtPetScreens.client.luau": {
-    "mtime": 1791528735.065892,
-    "seen": 1791534304.8930812,
-    "ast_hash": "dc92ad4f6c053de83cb0ebf096be30cc",
-    "semantic_hash": "dc92ad4f6c053de83cb0ebf096be30cc"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/PopupStack.client.luau": {
-    "mtime": 1791528735.065892,
-    "seen": 1791534304.8930802,
-    "ast_hash": "12180054306ce69fa35c03b1e3e72139",
-    "semantic_hash": "12180054306ce69fa35c03b1e3e72139"
-  },
-  "src/ReplicatedStorage/CleanControls.luau": {
-    "mtime": 1791280076.8277426,
-    "seen": 1791280080.1673205,
-    "ast_hash": "6c9354a5116d5e5e9c01b5a424ebae5f",
-    "semantic_hash": "6c9354a5116d5e5e9c01b5a424ebae5f"
-  },
-  "src/ServerScriptService/AfkService.server.luau": {
-    "mtime": 1791263156.9061594,
-    "seen": 1791280080.1709416,
-    "ast_hash": "6c8fbb28617f5f30ffb1d34f40c30ce7",
-    "semantic_hash": "6c8fbb28617f5f30ffb1d34f40c30ce7"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/AfkDriftClient.client.luau": {
-    "mtime": 1791528735.059837,
-    "seen": 1791534304.8925402,
-    "ast_hash": "53c7b47b579a4b8790de0d78d1abf413",
-    "semantic_hash": "53c7b47b579a4b8790de0d78d1abf413"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/PlowSoundClient.client.luau": {
-    "mtime": 1791288544.8443658,
-    "seen": 1791298960.5633042,
-    "ast_hash": "29335829d4b7827c0a0b9993eed4d4b4",
-    "semantic_hash": "29335829d4b7827c0a0b9993eed4d4b4"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/W2FogClient.client.luau": {
-    "mtime": 1791286370.379306,
-    "seen": 1791298960.564398,
-    "ast_hash": "14f5f3e44fce0333ee44b76809ce2bc5",
-    "semantic_hash": "14f5f3e44fce0333ee44b76809ce2bc5"
-  },
-  "src/ReplicatedStorage/WheelConfig.luau": {
-    "mtime": 1791305794.467237,
-    "seen": 1791306749.3190532,
-    "ast_hash": "44b5efdb3a67bb67432006023fa359d5",
-    "semantic_hash": "44b5efdb3a67bb67432006023fa359d5"
-  },
-  "src/ServerScriptService/MiniPlowService.server.luau": {
-    "mtime": 1791303425.1251633,
-    "seen": 1791306749.319773,
-    "ast_hash": "16126dc92d4f39ff59176051273e0331",
-    "semantic_hash": "16126dc92d4f39ff59176051273e0331"
-  },
-  "src/ServerScriptService/WheelService.server.luau": {
-    "mtime": 1791305806.6653762,
-    "seen": 1791306749.3206635,
-    "ast_hash": "5b7fdbea6f16f5d19db9d6f428f1a957",
-    "semantic_hash": "5b7fdbea6f16f5d19db9d6f428f1a957"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau": {
-    "mtime": 1791528735.0628498,
-    "seen": 1791534304.892818,
-    "ast_hash": "5b6a994f9efb77a86021702ca893095a",
-    "semantic_hash": "5b6a994f9efb77a86021702ca893095a"
-  },
-  "src/ReplicatedStorage/UILayout.luau": {
-    "mtime": 1791528735.059837,
-    "seen": 1791534304.8902748,
-    "ast_hash": "a80eef257212aba72c67e4c0ee21d7fe",
-    "semantic_hash": "a80eef257212aba72c67e4c0ee21d7fe"
-  },
-  "src/ReplicatedStorage/PlowRollReveal.luau": {
-    "mtime": 1791536695.023593,
-    "seen": 1791536897.4261897,
-    "ast_hash": "16df6dea48a6c2bfeb9bf6f26d565f14",
-    "semantic_hash": "16df6dea48a6c2bfeb9bf6f26d565f14"
-  },
-  "src/ReplicatedStorage/LeaderboardConfig.luau": {
-    "mtime": 1791549767.8686943,
-    "seen": 1791550317.9065185,
-    "ast_hash": "447d88ef718e135454f505e86a476f4f",
-    "semantic_hash": "447d88ef718e135454f505e86a476f4f"
-  },
-  "src/ServerScriptService/LeaderboardService.server.luau": {
-    "mtime": 1791549726.3208847,
-    "seen": 1791550317.9100814,
-    "ast_hash": "5dbd984f864f247d590a088247cf4e9b",
-    "semantic_hash": "5dbd984f864f247d590a088247cf4e9b"
-  },
-  "src/StarterPlayer/StarterPlayerScripts/LeaderboardClient.client.luau": {
-    "mtime": 1791549803.3782325,
-    "seen": 1791550317.9116175,
-    "ast_hash": "1a73459e43430464d90b9a780cdf06d0",
-    "semantic_hash": "1a73459e43430464d90b9a780cdf06d0"
-  },
-  "studio-snapshots/ReplicatedStorage/UniversalVFX.luau": {
-    "mtime": 1791665629.1353276,
-    "seen": 1791702280.6981528,
-    "ast_hash": "2408d4e1b517ece949707b26f3beede3",
-    "semantic_hash": "2408d4e1b517ece949707b26f3beede3"
-  },
-  "studio-snapshots/Workspace/StageEggs/StageEggs_AbsoluteZero/EggFloat.server.luau": {
-    "mtime": 1791665629.168992,
-    "seen": 1791702280.7532897,
-    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
-    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
-  },
-  "studio-snapshots/Workspace/StageEggs/StageEggs_Crystal/EggFloat.server.luau": {
-    "mtime": 1791665629.170993,
-    "seen": 1791702280.753292,
-    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
-    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
-  },
-  "studio-snapshots/Workspace/StageEggs/StageEggs_Cursed/EggFloat.server.luau": {
-    "mtime": 1791665629.171993,
-    "seen": 1791702280.7532942,
-    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
-    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
-  },
-  "studio-snapshots/Workspace/StageEggs/StageEggs_Desert/EggFloat.server.luau": {
-    "mtime": 1791665629.173993,
-    "seen": 1791702280.7532964,
-    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
-    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
-  },
-  "studio-snapshots/Workspace/StageEggs/StageEggs_Jungle/EggFloat.server.luau": {
-    "mtime": 1791665629.175073,
-    "seen": 1791702280.7532985,
-    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
-    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
-  },
-  "studio-snapshots/Workspace/StageEggs/StageEggs_Retro/EggFloat.server.luau": {
-    "mtime": 1791665629.175073,
-    "seen": 1791702280.7533,
-    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
-    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
-  },
-  "src/ReplicatedStorage/AbilityConfig.luau": {
+  "game/src/ReplicatedStorage/AbilityConfig.luau": {
     "mtime": 1791710862.4723282,
-    "seen": 1791711659.8751245,
+    "seen": 1791974987.9722621,
     "ast_hash": "640430943088bc7becaf0899cc8ad7b7",
     "semantic_hash": "640430943088bc7becaf0899cc8ad7b7"
   },
-  "src/ServerScriptService/AbilityService.luau": {
+  "game/src/ReplicatedStorage/ActivityConfig.luau": {
+    "mtime": 1791306531.6506858,
+    "seen": 1791974987.9722621,
+    "ast_hash": "c29ccd61d860c4887034fefc3a53c7fc",
+    "semantic_hash": "c29ccd61d860c4887034fefc3a53c7fc"
+  },
+  "game/src/ReplicatedStorage/AdminCommand.model.json": {
+    "mtime": 1790745987.881419,
+    "seen": 1791974987.9722621,
+    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
+    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
+  },
+  "game/src/ReplicatedStorage/ArenaConfig.luau": {
+    "mtime": 1791247372.134799,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3c8ef789a037a9b6fe85bbf8593dfa61",
+    "semantic_hash": "3c8ef789a037a9b6fe85bbf8593dfa61"
+  },
+  "game/src/ReplicatedStorage/BuyUpgrade.model.json": {
+    "mtime": 1790745987.8608184,
+    "seen": 1791974987.9722621,
+    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
+    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
+  },
+  "game/src/ReplicatedStorage/CleanControls.luau": {
+    "mtime": 1791280076.8277426,
+    "seen": 1791974987.9722621,
+    "ast_hash": "6c9354a5116d5e5e9c01b5a424ebae5f",
+    "semantic_hash": "6c9354a5116d5e5e9c01b5a424ebae5f"
+  },
+  "game/src/ReplicatedStorage/CommunityRewardConfig.luau": {
+    "mtime": 1791974782.3612993,
+    "seen": 1791974987.9722621,
+    "ast_hash": "f0d9bb7d277456090ce8bfab41743813",
+    "semantic_hash": "f0d9bb7d277456090ce8bfab41743813"
+  },
+  "game/src/ReplicatedStorage/ContractConfig.luau": {
+    "mtime": 1791210830.3928432,
+    "seen": 1791974987.9722621,
+    "ast_hash": "ded314efb79c44567a14e57dbeab4f57",
+    "semantic_hash": "ded314efb79c44567a14e57dbeab4f57"
+  },
+  "game/src/ReplicatedStorage/CraftingConfig.luau": {
+    "mtime": 1791158714.9578123,
+    "seen": 1791974987.9722621,
+    "ast_hash": "ba1a9e3e4d0f8469ab2d1a95581a8d38",
+    "semantic_hash": "ba1a9e3e4d0f8469ab2d1a95581a8d38"
+  },
+  "game/src/ReplicatedStorage/DataRefresh.model.json": {
+    "mtime": 1790745987.8794162,
+    "seen": 1791974987.9722621,
+    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
+    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
+  },
+  "game/src/ReplicatedStorage/EggModels.luau": {
+    "mtime": 1791843940.2229736,
+    "seen": 1791974987.9722621,
+    "ast_hash": "66bfabc8ce250d67e4c010bad5d0e6e2",
+    "semantic_hash": "66bfabc8ce250d67e4c010bad5d0e6e2"
+  },
+  "game/src/ReplicatedStorage/EquipPet.model.json": {
+    "mtime": 1790745987.8728757,
+    "seen": 1791974987.9722621,
+    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
+    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
+  },
+  "game/src/ReplicatedStorage/FeatureUIArt.luau": {
+    "mtime": 1791237179.8981297,
+    "seen": 1791974987.9722621,
+    "ast_hash": "c1cb3539d9dda42949fc95351974c849",
+    "semantic_hash": "c1cb3539d9dda42949fc95351974c849"
+  },
+  "game/src/ReplicatedStorage/FrostKingConfig.luau": {
+    "mtime": 1791158714.9628341,
+    "seen": 1791974987.9722621,
+    "ast_hash": "8ea00e5c4d2abf9fbc16eebd54ff430a",
+    "semantic_hash": "8ea00e5c4d2abf9fbc16eebd54ff430a"
+  },
+  "game/src/ReplicatedStorage/GameAudio.luau": {
+    "mtime": 1791158714.9653502,
+    "seen": 1791974987.9722621,
+    "ast_hash": "4d6db7d4d97595cf8be1b0a9d3e44a9f",
+    "semantic_hash": "4d6db7d4d97595cf8be1b0a9d3e44a9f"
+  },
+  "game/src/ReplicatedStorage/GetPets.model.json": {
+    "mtime": 1790745987.8608184,
+    "seen": 1791974987.9722621,
+    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
+    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
+  },
+  "game/src/ReplicatedStorage/LeaderboardConfig.luau": {
+    "mtime": 1791549767.8686943,
+    "seen": 1791974987.9722621,
+    "ast_hash": "447d88ef718e135454f505e86a476f4f",
+    "semantic_hash": "447d88ef718e135454f505e86a476f4f"
+  },
+  "game/src/ReplicatedStorage/MachineConfig.luau": {
+    "mtime": 1791158714.966853,
+    "seen": 1791974987.9722621,
+    "ast_hash": "a4dd34fa706ea12255dba1f8e92ba5f3",
+    "semantic_hash": "a4dd34fa706ea12255dba1f8e92ba5f3"
+  },
+  "game/src/ReplicatedStorage/MusicConfig.luau": {
+    "mtime": 1790780972.2184184,
+    "seen": 1791974987.9722621,
+    "ast_hash": "85cf3c6462bf3f7e2aa034e327fa68ac",
+    "semantic_hash": "85cf3c6462bf3f7e2aa034e327fa68ac"
+  },
+  "game/src/ReplicatedStorage/NumberFormat.luau": {
+    "mtime": 1790745987.8557982,
+    "seen": 1791974987.9722621,
+    "ast_hash": "44ba5ded500ba585285c15a505fa05d2",
+    "semantic_hash": "44ba5ded500ba585285c15a505fa05d2"
+  },
+  "game/src/ReplicatedStorage/PassConfig.luau": {
+    "mtime": 1791536502.0376887,
+    "seen": 1791974987.9722621,
+    "ast_hash": "ed9211c7e94cad822b81d99f7510261c",
+    "semantic_hash": "ed9211c7e94cad822b81d99f7510261c"
+  },
+  "game/src/ReplicatedStorage/PetConfig.luau": {
+    "mtime": 1791844500.3963716,
+    "seen": 1791974987.9722621,
+    "ast_hash": "9b3d1ef1e01e5f746a2a59a0b83ed616",
+    "semantic_hash": "9b3d1ef1e01e5f746a2a59a0b83ed616"
+  },
+  "game/src/ReplicatedStorage/PetHatched.model.json": {
+    "mtime": 1790745987.881419,
+    "seen": 1791974987.9722621,
+    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
+    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
+  },
+  "game/src/ReplicatedStorage/PetModels.luau": {
+    "mtime": 1791297857.7772958,
+    "seen": 1791974987.9722621,
+    "ast_hash": "86d8e29817812c4e821a83f73d535543",
+    "semantic_hash": "86d8e29817812c4e821a83f73d535543"
+  },
+  "game/src/ReplicatedStorage/PlowAssembly.luau": {
+    "mtime": 1791217096.2434542,
+    "seen": 1791974987.9722621,
+    "ast_hash": "cc42f6130221a756d406f3dd9cadcdad",
+    "semantic_hash": "cc42f6130221a756d406f3dd9cadcdad"
+  },
+  "game/src/ReplicatedStorage/PlowClientApi.luau": {
+    "mtime": 1791535679.1691933,
+    "seen": 1791974987.9722621,
+    "ast_hash": "58149deb570bbdea0faa5cd86c453687",
+    "semantic_hash": "58149deb570bbdea0faa5cd86c453687"
+  },
+  "game/src/ReplicatedStorage/PlowConfig.luau": {
+    "mtime": 1791306531.653188,
+    "seen": 1791974987.9722621,
+    "ast_hash": "2d01820d3ea43b8710dafb17c6cc201e",
+    "semantic_hash": "2d01820d3ea43b8710dafb17c6cc201e"
+  },
+  "game/src/ReplicatedStorage/PlowRollReveal.luau": {
+    "mtime": 1791536695.023593,
+    "seen": 1791974987.9722621,
+    "ast_hash": "16df6dea48a6c2bfeb9bf6f26d565f14",
+    "semantic_hash": "16df6dea48a6c2bfeb9bf6f26d565f14"
+  },
+  "game/src/ReplicatedStorage/ReleaseEventConfig.luau": {
+    "mtime": 1791888859.423934,
+    "seen": 1791974987.9722621,
+    "ast_hash": "cae78fab4810331676e44f7dd5eeb9e6",
+    "semantic_hash": "cae78fab4810331676e44f7dd5eeb9e6"
+  },
+  "game/src/ReplicatedStorage/SetSetting.model.json": {
+    "mtime": 1790745987.8542893,
+    "seen": 1791974987.9722621,
+    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
+    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
+  },
+  "game/src/ReplicatedStorage/SnowArt.luau": {
+    "mtime": 1791248976.9009678,
+    "seen": 1791974987.9722621,
+    "ast_hash": "f115607d425c892780cb3cb3c8ea1a54",
+    "semantic_hash": "f115607d425c892780cb3cb3c8ea1a54"
+  },
+  "game/src/ReplicatedStorage/SnowCollected.model.json": {
+    "mtime": 1790745987.8748975,
+    "seen": 1791974987.9722621,
+    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
+    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
+  },
+  "game/src/ReplicatedStorage/SnowFieldSync.model.json": {
+    "mtime": 1790745987.881419,
+    "seen": 1791974987.9722621,
+    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
+    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
+  },
+  "game/src/ReplicatedStorage/SnowFieldUpdate.model.json": {
+    "mtime": 1790745987.8522844,
+    "seen": 1791974987.9722621,
+    "ast_hash": "28a981f053b789944fc1642ad197ecd1",
+    "semantic_hash": "28a981f053b789944fc1642ad197ecd1"
+  },
+  "game/src/ReplicatedStorage/SnowFields.luau": {
+    "mtime": 1790745987.881419,
+    "seen": 1791974987.9722621,
+    "ast_hash": "9c088239c9b9c909ffc40ad5615a1c4b",
+    "semantic_hash": "9c088239c9b9c909ffc40ad5615a1c4b"
+  },
+  "game/src/ReplicatedStorage/SnowStages/AbsoluteZero/init.meta.json": {
+    "mtime": 1791245291.3424833,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3ba3ea3291c28880961b9a66f4923b30",
+    "semantic_hash": "3ba3ea3291c28880961b9a66f4923b30"
+  },
+  "game/src/ReplicatedStorage/SnowStages/Crystal/init.meta.json": {
+    "mtime": 1791245291.3409803,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5171b8a10daf6c446a1013f80a12994c",
+    "semantic_hash": "5171b8a10daf6c446a1013f80a12994c"
+  },
+  "game/src/ReplicatedStorage/SnowStages/Cursed/init.meta.json": {
+    "mtime": 1791245291.3409803,
+    "seen": 1791974987.9722621,
+    "ast_hash": "aaf0ef9e2dac5a81c127bb14a68a11ff",
+    "semantic_hash": "aaf0ef9e2dac5a81c127bb14a68a11ff"
+  },
+  "game/src/ReplicatedStorage/SnowStages/Desert/init.meta.json": {
+    "mtime": 1791245291.3409803,
+    "seen": 1791974987.9722621,
+    "ast_hash": "49e1ce9f1d5e0e93ba8afe59a3a789b8",
+    "semantic_hash": "49e1ce9f1d5e0e93ba8afe59a3a789b8"
+  },
+  "game/src/ReplicatedStorage/SnowStages/Jungle/init.meta.json": {
+    "mtime": 1791245291.3424833,
+    "seen": 1791974987.9722621,
+    "ast_hash": "0e33344a75a54ba393937b902914edb7",
+    "semantic_hash": "0e33344a75a54ba393937b902914edb7"
+  },
+  "game/src/ReplicatedStorage/SnowStages/Retro/init.meta.json": {
+    "mtime": 1791245291.3409803,
+    "seen": 1791974987.9722621,
+    "ast_hash": "358bd2426d356b41a479d9f5fd09691f",
+    "semantic_hash": "358bd2426d356b41a479d9f5fd09691f"
+  },
+  "game/src/ReplicatedStorage/SnowStages/Starter/init.meta.json": {
+    "mtime": 1791245291.3409803,
+    "seen": 1791974987.9722621,
+    "ast_hash": "211c770ca037dc6c30e1c9c3adad6e45",
+    "semantic_hash": "211c770ca037dc6c30e1c9c3adad6e45"
+  },
+  "game/src/ReplicatedStorage/SnowStages/init.meta.json": {
+    "mtime": 1790958643.8226576,
+    "seen": 1791974987.9722621,
+    "ast_hash": "379dae92d2434740e62fc4811ad0fb89",
+    "semantic_hash": "379dae92d2434740e62fc4811ad0fb89"
+  },
+  "game/src/ReplicatedStorage/SnowUI.luau": {
+    "mtime": 1791150548.5967085,
+    "seen": 1791974987.9722621,
+    "ast_hash": "2dd4d4467ddba468fbcaa0cb2854f9a0",
+    "semantic_hash": "2dd4d4467ddba468fbcaa0cb2854f9a0"
+  },
+  "game/src/ReplicatedStorage/StageConfig.luau": {
+    "mtime": 1791306531.647173,
+    "seen": 1791974987.9722621,
+    "ast_hash": "f6d71332d21eb3e48a4b193d38363d90",
+    "semantic_hash": "f6d71332d21eb3e48a4b193d38363d90"
+  },
+  "game/src/ReplicatedStorage/TravelConfig.luau": {
+    "mtime": 1791215943.2648053,
+    "seen": 1791974987.9722621,
+    "ast_hash": "11352ab9505b2d6cfd81a69a9cc5e628",
+    "semantic_hash": "11352ab9505b2d6cfd81a69a9cc5e628"
+  },
+  "game/src/ReplicatedStorage/TreasureConfig.luau": {
+    "mtime": 1790976802.7989507,
+    "seen": 1791974987.9722621,
+    "ast_hash": "75fc2376e04e89f65a44113191522188",
+    "semantic_hash": "75fc2376e04e89f65a44113191522188"
+  },
+  "game/src/ReplicatedStorage/TreasureFound.model.json": {
+    "mtime": 1790958643.7990541,
+    "seen": 1791974987.9722621,
+    "ast_hash": "a0da029b62241d5e5d64777f3373541d",
+    "semantic_hash": "a0da029b62241d5e5d64777f3373541d"
+  },
+  "game/src/ReplicatedStorage/TreasureIcon.luau": {
+    "mtime": 1790958597.688553,
+    "seen": 1791974987.9722621,
+    "ast_hash": "2c9f881cef66a4a902fbc9b4c999464b",
+    "semantic_hash": "2c9f881cef66a4a902fbc9b4c999464b"
+  },
+  "game/src/ReplicatedStorage/TreasureModels.luau": {
+    "mtime": 1790958597.6930606,
+    "seen": 1791974987.9722621,
+    "ast_hash": "4a02657406fdaa8332b69c26cc11541c",
+    "semantic_hash": "4a02657406fdaa8332b69c26cc11541c"
+  },
+  "game/src/ReplicatedStorage/TreasureRemote.model.json": {
+    "mtime": 1790958643.7990541,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3c26b343e299585571090143325f969f",
+    "semantic_hash": "3c26b343e299585571090143325f969f"
+  },
+  "game/src/ReplicatedStorage/UILayout.luau": {
+    "mtime": 1791528735.059837,
+    "seen": 1791974987.9722621,
+    "ast_hash": "a80eef257212aba72c67e4c0ee21d7fe",
+    "semantic_hash": "a80eef257212aba72c67e4c0ee21d7fe"
+  },
+  "game/src/ReplicatedStorage/UniversalVFX/init.luau": {
+    "mtime": 1791065049.3568954,
+    "seen": 1791974987.9722621,
+    "ast_hash": "2408d4e1b517ece949707b26f3beede3",
+    "semantic_hash": "2408d4e1b517ece949707b26f3beede3"
+  },
+  "game/src/ReplicatedStorage/UniversalVFX/init.meta.json": {
+    "mtime": 1791064847.5000193,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5302f4a1f01027bd33d4406a1e0e2eb2",
+    "semantic_hash": "5302f4a1f01027bd33d4406a1e0e2eb2"
+  },
+  "game/src/ReplicatedStorage/UnlockStage.model.json": {
+    "mtime": 1790745987.8567975,
+    "seen": 1791974987.9722621,
+    "ast_hash": "070fee837edb5198e5dbd259bc8a19b4",
+    "semantic_hash": "070fee837edb5198e5dbd259bc8a19b4"
+  },
+  "game/src/ReplicatedStorage/UpgradeConfig.luau": {
+    "mtime": 1791306531.649685,
+    "seen": 1791974987.9722621,
+    "ast_hash": "6d84583fa9fc70f936b6a41a2466d403",
+    "semantic_hash": "6d84583fa9fc70f936b6a41a2466d403"
+  },
+  "game/src/ReplicatedStorage/UpgradeIconArt.luau": {
+    "mtime": 1791237179.905633,
+    "seen": 1791974987.9722621,
+    "ast_hash": "0c0b197385c8e61e8986f4f9bd25c064",
+    "semantic_hash": "0c0b197385c8e61e8986f4f9bd25c064"
+  },
+  "game/src/ReplicatedStorage/WheelConfig.luau": {
+    "mtime": 1791305794.467237,
+    "seen": 1791974987.9722621,
+    "ast_hash": "44b5efdb3a67bb67432006023fa359d5",
+    "semantic_hash": "44b5efdb3a67bb67432006023fa359d5"
+  },
+  "game/src/ServerScriptService/AbilityService.luau": {
     "mtime": 1791710054.2789347,
-    "seen": 1791711659.879509,
+    "seen": 1791974987.9722621,
     "ast_hash": "318d520eb7092a79b57f7affea6766fa",
     "semantic_hash": "318d520eb7092a79b57f7affea6766fa"
   },
-  "src/StarterPlayer/StarterPlayerScripts/AbilityTokenClient.client.luau": {
+  "game/src/ServerScriptService/ActivityService.server.luau": {
+    "mtime": 1791251017.1624558,
+    "seen": 1791974987.9722621,
+    "ast_hash": "1b12e098eb98e6e2aa5967acded4aced",
+    "semantic_hash": "1b12e098eb98e6e2aa5967acded4aced"
+  },
+  "game/src/ServerScriptService/AdminService.server.luau": {
+    "mtime": 1791304536.0919037,
+    "seen": 1791974987.9722621,
+    "ast_hash": "ab97872f6b889ff4e03ae287b0f404cb",
+    "semantic_hash": "ab97872f6b889ff4e03ae287b0f404cb"
+  },
+  "game/src/ServerScriptService/AfkService.server.luau": {
+    "mtime": 1791263156.9061594,
+    "seen": 1791974987.9722621,
+    "ast_hash": "6c8fbb28617f5f30ffb1d34f40c30ce7",
+    "semantic_hash": "6c8fbb28617f5f30ffb1d34f40c30ce7"
+  },
+  "game/src/ServerScriptService/ArenaService.server.luau": {
+    "mtime": 1791240305.966948,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3197759d4e41b3d928032dd068c16836",
+    "semantic_hash": "3197759d4e41b3d928032dd068c16836"
+  },
+  "game/src/ServerScriptService/BoostService.luau": {
+    "mtime": 1791888856.3317554,
+    "seen": 1791974987.9722621,
+    "ast_hash": "74d9b76691476597275a2288e4469362",
+    "semantic_hash": "74d9b76691476597275a2288e4469362"
+  },
+  "game/src/ServerScriptService/CommunityRewardService.server.luau": {
+    "mtime": 1791974782.3612993,
+    "seen": 1791974987.9722621,
+    "ast_hash": "085d9d85f29708c21b64adce7b478f97",
+    "semantic_hash": "085d9d85f29708c21b64adce7b478f97"
+  },
+  "game/src/ServerScriptService/ContractRegistry.luau": {
+    "mtime": 1791196820.66073,
+    "seen": 1791974987.9722621,
+    "ast_hash": "fdb6183b5e7b62ae8e3aea447d00324f",
+    "semantic_hash": "fdb6183b5e7b62ae8e3aea447d00324f"
+  },
+  "game/src/ServerScriptService/ContractService.server.luau": {
+    "mtime": 1791256969.7994778,
+    "seen": 1791974987.9722621,
+    "ast_hash": "e7d6d5f689ea96c791b8a1f673ba5a02",
+    "semantic_hash": "e7d6d5f689ea96c791b8a1f673ba5a02"
+  },
+  "game/src/ServerScriptService/DataService.luau": {
+    "mtime": 1791299565.6593354,
+    "seen": 1791974987.9722621,
+    "ast_hash": "1f5a2783cc631f6268f76683203800fb",
+    "semantic_hash": "1f5a2783cc631f6268f76683203800fb"
+  },
+  "game/src/ServerScriptService/EconomyMigration.luau": {
+    "mtime": 1791245291.3424833,
+    "seen": 1791974987.9722621,
+    "ast_hash": "ce14469da7c2700274fa385ecf6d9d3c",
+    "semantic_hash": "ce14469da7c2700274fa385ecf6d9d3c"
+  },
+  "game/src/ServerScriptService/FrostKingService.server.luau": {
+    "mtime": 1791256969.800983,
+    "seen": 1791974987.9722621,
+    "ast_hash": "fab408018fa9980f277f523cf5eb485a",
+    "semantic_hash": "fab408018fa9980f277f523cf5eb485a"
+  },
+  "game/src/ServerScriptService/FrostfallTravel.server.luau": {
+    "mtime": 1790745987.8698585,
+    "seen": 1791974987.9722621,
+    "ast_hash": "324e38786c86145bb03cc274ab1a7f22",
+    "semantic_hash": "324e38786c86145bb03cc274ab1a7f22"
+  },
+  "game/src/ServerScriptService/LeaderboardService.server.luau": {
+    "mtime": 1791549726.3208847,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5dbd984f864f247d590a088247cf4e9b",
+    "semantic_hash": "5dbd984f864f247d590a088247cf4e9b"
+  },
+  "game/src/ServerScriptService/MachineService.server.luau": {
+    "mtime": 1791164666.717362,
+    "seen": 1791974987.9722621,
+    "ast_hash": "1cf1d4b97667172522f97e965b2dc6d6",
+    "semantic_hash": "1cf1d4b97667172522f97e965b2dc6d6"
+  },
+  "game/src/ServerScriptService/MiniPlowService.server.luau": {
+    "mtime": 1791303425.1251633,
+    "seen": 1791974987.9722621,
+    "ast_hash": "16126dc92d4f39ff59176051273e0331",
+    "semantic_hash": "16126dc92d4f39ff59176051273e0331"
+  },
+  "game/src/ServerScriptService/PassService.server.luau": {
+    "mtime": 1791536502.0765107,
+    "seen": 1791974987.9722621,
+    "ast_hash": "1c91702a86ddee3f005a55da8b726946",
+    "semantic_hash": "1c91702a86ddee3f005a55da8b726946"
+  },
+  "game/src/ServerScriptService/PetService.server.luau": {
+    "mtime": 1791251890.6485243,
+    "seen": 1791974987.9722621,
+    "ast_hash": "ec21f34a726b642b81b67f7b385a9055",
+    "semantic_hash": "ec21f34a726b642b81b67f7b385a9055"
+  },
+  "game/src/ServerScriptService/PlowRegistry.luau": {
+    "mtime": 1791158715.049348,
+    "seen": 1791974987.9722621,
+    "ast_hash": "8a3d446f2d5f0ed82ef61ba02404cb51",
+    "semantic_hash": "8a3d446f2d5f0ed82ef61ba02404cb51"
+  },
+  "game/src/ServerScriptService/PlowRules.luau": {
+    "mtime": 1791256941.3824623,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5f6222583720db36e03f9000ecb4ed08",
+    "semantic_hash": "5f6222583720db36e03f9000ecb4ed08"
+  },
+  "game/src/ServerScriptService/PlowService.server.luau": {
+    "mtime": 1791551542.8406165,
+    "seen": 1791974987.9722621,
+    "ast_hash": "124335de9cab5ea3af891113b64a54a0",
+    "semantic_hash": "124335de9cab5ea3af891113b64a54a0"
+  },
+  "game/src/ServerScriptService/ProductService.server.luau": {
+    "mtime": 1791251012.1399279,
+    "seen": 1791974987.9722621,
+    "ast_hash": "99ce974ed49196650ce098c3bc4f5c28",
+    "semantic_hash": "99ce974ed49196650ce098c3bc4f5c28"
+  },
+  "game/src/ServerScriptService/ReleaseEventService.server.luau": {
+    "mtime": 1791888848.490285,
+    "seen": 1791974987.9722621,
+    "ast_hash": "568c750256110405d01e908dd1c27ba8",
+    "semantic_hash": "568c750256110405d01e908dd1c27ba8"
+  },
+  "game/src/ServerScriptService/SettingsService.server.luau": {
+    "mtime": 1791213442.036196,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3bd79e278f50ba13685eb4037ac75f7f",
+    "semantic_hash": "3bd79e278f50ba13685eb4037ac75f7f"
+  },
+  "game/src/ServerScriptService/SnowFieldService.server.luau": {
+    "mtime": 1791702855.2570302,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5f9647647afed4fdc7d7ef38e32718e6",
+    "semantic_hash": "5f9647647afed4fdc7d7ef38e32718e6"
+  },
+  "game/src/ServerScriptService/StageService.server.luau": {
+    "mtime": 1791132894.7419186,
+    "seen": 1791974987.9722621,
+    "ast_hash": "060b934171283c4f24becfe9b95bf775",
+    "semantic_hash": "060b934171283c4f24becfe9b95bf775"
+  },
+  "game/src/ServerScriptService/TravelService.server.luau": {
+    "mtime": 1791215943.3044813,
+    "seen": 1791974987.9722621,
+    "ast_hash": "aab225800739a9fc60cc33f68c2ce464",
+    "semantic_hash": "aab225800739a9fc60cc33f68c2ce464"
+  },
+  "game/src/ServerScriptService/TreasureService.luau": {
+    "mtime": 1791250857.7572882,
+    "seen": 1791974987.9722621,
+    "ast_hash": "005865bc2daac99d7329363bf0cbe663",
+    "semantic_hash": "005865bc2daac99d7329363bf0cbe663"
+  },
+  "game/src/ServerScriptService/UpgradeService.server.luau": {
+    "mtime": 1791299565.6896286,
+    "seen": 1791974987.9722621,
+    "ast_hash": "ce41191e52e12d70865235b210c1010e",
+    "semantic_hash": "ce41191e52e12d70865235b210c1010e"
+  },
+  "game/src/ServerScriptService/WheelService.server.luau": {
+    "mtime": 1791305806.6653762,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5b7fdbea6f16f5d19db9d6f428f1a957",
+    "semantic_hash": "5b7fdbea6f16f5d19db9d6f428f1a957"
+  },
+  "game/src/ServerScriptService/World2Activities.server.luau": {
+    "mtime": 1791250857.7572882,
+    "seen": 1791974987.9722621,
+    "ast_hash": "bcf39c8f729f383ed28ccad00a63f259",
+    "semantic_hash": "bcf39c8f729f383ed28ccad00a63f259"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/AbilityTokenClient.client.luau": {
     "mtime": 1791711310.6771424,
-    "seen": 1791711659.8815072,
+    "seen": 1791974987.9722621,
     "ast_hash": "57afd1575dd2bf854ae5eeab1638bde7",
     "semantic_hash": "57afd1575dd2bf854ae5eeab1638bde7"
   },
-  "src/ReplicatedStorage/CommunityRewardConfig.luau": {
-    "mtime": 1791843728.4075863,
-    "seen": 1791844300.2468526,
-    "ast_hash": "15cd97b7dd88bb3a1934db6bd54621e8",
-    "semantic_hash": "15cd97b7dd88bb3a1934db6bd54621e8"
+  "game/src/StarterPlayer/StarterPlayerScripts/AfkDriftClient.client.luau": {
+    "mtime": 1791528735.059837,
+    "seen": 1791974987.9722621,
+    "ast_hash": "53c7b47b579a4b8790de0d78d1abf413",
+    "semantic_hash": "53c7b47b579a4b8790de0d78d1abf413"
   },
-  "src/ServerScriptService/CommunityRewardService.server.luau": {
-    "mtime": 1791843759.4249792,
-    "seen": 1791844300.2506971,
-    "ast_hash": "ccb481ea274fcbbd3055cebacf42097b",
-    "semantic_hash": "ccb481ea274fcbbd3055cebacf42097b"
+  "game/src/StarterPlayer/StarterPlayerScripts/ArenaDriveClient.client.luau": {
+    "mtime": 1791346448.9610958,
+    "seen": 1791974987.9722621,
+    "ast_hash": "584cb0d5817a8138f278d53a24846d45",
+    "semantic_hash": "584cb0d5817a8138f278d53a24846d45"
   },
-  "src/StarterPlayer/StarterPlayerScripts/CommunityRewardClient.client.luau": {
-    "mtime": 1791844842.7739592,
-    "seen": 1791844860.6795647,
-    "ast_hash": "62320d0f9a57c6306fdd0e8f86ecca18",
-    "semantic_hash": "62320d0f9a57c6306fdd0e8f86ecca18"
+  "game/src/StarterPlayer/StarterPlayerScripts/ArenaHudClient.client.luau": {
+    "mtime": 1791528735.06134,
+    "seen": 1791974987.9722621,
+    "ast_hash": "cd7a4a52879fa743611b11f830d47b09",
+    "semantic_hash": "cd7a4a52879fa743611b11f830d47b09"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/CommunityRewardClient.client.luau": {
+    "mtime": 1791974956.9424188,
+    "seen": 1791974987.9722621,
+    "ast_hash": "adcaeff3e87e1b401be768dc006b3cec",
+    "semantic_hash": "adcaeff3e87e1b401be768dc006b3cec"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/ContractClient.client.luau": {
+    "mtime": 1791528735.06134,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5bb1dc04814ff5d065d41a6442f9109f",
+    "semantic_hash": "5bb1dc04814ff5d065d41a6442f9109f"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/DigJuiceClient.client.luau": {
+    "mtime": 1791702871.4353397,
+    "seen": 1791974987.9722621,
+    "ast_hash": "df2f7ee5febf6c8785edc3daff508c53",
+    "semantic_hash": "df2f7ee5febf6c8785edc3daff508c53"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/FrostKingClient.client.luau": {
+    "mtime": 1791528735.06134,
+    "seen": 1791974987.9722621,
+    "ast_hash": "56665a02bedd9beff9e472b655d9d1b7",
+    "semantic_hash": "56665a02bedd9beff9e472b655d9d1b7"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/FrostfallClient.client.luau": {
+    "mtime": 1791299565.7082405,
+    "seen": 1791974987.9722621,
+    "ast_hash": "478878952adcca693cddec5a2343eae1",
+    "semantic_hash": "478878952adcca693cddec5a2343eae1"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/LeaderboardClient.client.luau": {
+    "mtime": 1791549803.3782325,
+    "seen": 1791974987.9722621,
+    "ast_hash": "1a73459e43430464d90b9a780cdf06d0",
+    "semantic_hash": "1a73459e43430464d90b9a780cdf06d0"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/MachineLocksClient.client.luau": {
+    "mtime": 1791158715.1784415,
+    "seen": 1791974987.9722621,
+    "ast_hash": "cb454e2ca38a14bc8f60e95ee1bf3992",
+    "semantic_hash": "cb454e2ca38a14bc8f60e95ee1bf3992"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/MiniPlowClient.client.luau": {
+    "mtime": 1791528735.0628498,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5b6a994f9efb77a86021702ca893095a",
+    "semantic_hash": "5b6a994f9efb77a86021702ca893095a"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/MusicPlayer.client.luau": {
+    "mtime": 1790780972.2194183,
+    "seen": 1791974987.9722621,
+    "ast_hash": "343386ab6d396a6238abd3dcd1c3fe07",
+    "semantic_hash": "343386ab6d396a6238abd3dcd1c3fe07"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/MuteFootsteps.client.luau": {
+    "mtime": 1790745987.8542893,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3bcd995b4f905e019b837fc1f150e136",
+    "semantic_hash": "3bcd995b4f905e019b837fc1f150e136"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/PassClient.client.luau": {
+    "mtime": 1791528735.063358,
+    "seen": 1791974987.9722621,
+    "ast_hash": "81eb93be670da4fb01c617f5a2321ca6",
+    "semantic_hash": "81eb93be670da4fb01c617f5a2321ca6"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/PetFollow.client.luau": {
+    "mtime": 1790745987.8748975,
+    "seen": 1791974987.9722621,
+    "ast_hash": "feb0e083a649a54927953d8aaed946f2",
+    "semantic_hash": "feb0e083a649a54927953d8aaed946f2"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/PlowDriveClient.client.luau": {
+    "mtime": 1791702871.4353397,
+    "seen": 1791974987.9722621,
+    "ast_hash": "7026e9e67dbdda63d0c4482f9cd70cf1",
+    "semantic_hash": "7026e9e67dbdda63d0c4482f9cd70cf1"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/PlowGarageClient.client.luau": {
+    "mtime": 1791536502.0056405,
+    "seen": 1791974987.9722621,
+    "ast_hash": "2d66e940608653131351acd42f8294a9",
+    "semantic_hash": "2d66e940608653131351acd42f8294a9"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/PlowShopClient.client.luau": {
+    "mtime": 1791626853.5646298,
+    "seen": 1791974987.9722621,
+    "ast_hash": "81971e902d91e852505a01710c7eb82e",
+    "semantic_hash": "81971e902d91e852505a01710c7eb82e"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/PlowSoundClient.client.luau": {
+    "mtime": 1791288544.8443658,
+    "seen": 1791974987.9722621,
+    "ast_hash": "29335829d4b7827c0a0b9993eed4d4b4",
+    "semantic_hash": "29335829d4b7827c0a0b9993eed4d4b4"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/PlowTutorialClient.client.luau": {
+    "mtime": 1791551727.5078204,
+    "seen": 1791974987.9722621,
+    "ast_hash": "7141ea5a5db1d61cbde877d2468e17ce",
+    "semantic_hash": "7141ea5a5db1d61cbde877d2468e17ce"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/PopupStack.client.luau": {
+    "mtime": 1791528735.065892,
+    "seen": 1791974987.9722621,
+    "ast_hash": "12180054306ce69fa35c03b1e3e72139",
+    "semantic_hash": "12180054306ce69fa35c03b1e3e72139"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/ReleaseEventClient.client.luau": {
+    "mtime": 1791889115.4693801,
+    "seen": 1791974987.9722621,
+    "ast_hash": "242f8fed46172f62ff3e6ef1f6c87df2",
+    "semantic_hash": "242f8fed46172f62ff3e6ef1f6c87df2"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/SnowArtPetScreens.client.luau": {
+    "mtime": 1791528735.065892,
+    "seen": 1791974987.9722621,
+    "ast_hash": "dc92ad4f6c053de83cb0ebf096be30cc",
+    "semantic_hash": "dc92ad4f6c053de83cb0ebf096be30cc"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/SnowFieldClient.client.luau": {
+    "mtime": 1791285999.6034448,
+    "seen": 1791974987.9722621,
+    "ast_hash": "ec7e4c457c268350e5387594aaeca69f",
+    "semantic_hash": "ec7e4c457c268350e5387594aaeca69f"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/SnowUIClient.client.luau": {
+    "mtime": 1791528735.0668917,
+    "seen": 1791974987.9722621,
+    "ast_hash": "dab5c54bc51a2068aa5a0bd6f0775abd",
+    "semantic_hash": "dab5c54bc51a2068aa5a0bd6f0775abd"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/StageClient.client.luau": {
+    "mtime": 1791534298.999777,
+    "seen": 1791974987.9722621,
+    "ast_hash": "aa04a267b16b290d3a2423ae788dfe1a",
+    "semantic_hash": "aa04a267b16b290d3a2423ae788dfe1a"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/StageDecorClient.client.luau": {
+    "mtime": 1791204954.482938,
+    "seen": 1791974987.9722621,
+    "ast_hash": "2600140ab8ea32da2719a5984d0a19f9",
+    "semantic_hash": "2600140ab8ea32da2719a5984d0a19f9"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/TravelClient.client.luau": {
+    "mtime": 1791528735.0668917,
+    "seen": 1791974987.9722621,
+    "ast_hash": "25b668c4d42ebd5b31c9158ff718f3b5",
+    "semantic_hash": "25b668c4d42ebd5b31c9158ff718f3b5"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/VerityEggClient.client.luau": {
+    "mtime": 1791528735.0678918,
+    "seen": 1791974987.9722621,
+    "ast_hash": "1aa5cc94d010dd07e2cc2b842039ad7d",
+    "semantic_hash": "1aa5cc94d010dd07e2cc2b842039ad7d"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/W2FogClient.client.luau": {
+    "mtime": 1791286370.379306,
+    "seen": 1791974987.9722621,
+    "ast_hash": "14f5f3e44fce0333ee44b76809ce2bc5",
+    "semantic_hash": "14f5f3e44fce0333ee44b76809ce2bc5"
+  },
+  "game/src/StarterPlayer/StarterPlayerScripts/World2Client.client.luau": {
+    "mtime": 1790964812.2353349,
+    "seen": 1791974987.9722621,
+    "ast_hash": "1120b11346940293e75557ebeed2bf06",
+    "semantic_hash": "1120b11346940293e75557ebeed2bf06"
+  },
+  "game/studio-snapshots/ReplicatedFirst/BiomeLighting.client.luau": {
+    "mtime": 1790958597.8302655,
+    "seen": 1791974987.9722621,
+    "ast_hash": "2fd617f11ed9b1205277f008ef20ee51",
+    "semantic_hash": "2fd617f11ed9b1205277f008ef20ee51"
+  },
+  "game/studio-snapshots/ReplicatedFirst/BiomeLighting/Profiles.luau": {
+    "mtime": 1791205015.2391474,
+    "seen": 1791974987.9722621,
+    "ast_hash": "7238210286c7602eed704d71922d2f69",
+    "semantic_hash": "7238210286c7602eed704d71922d2f69"
+  },
+  "game/studio-snapshots/ReplicatedFirst/LoadingScreen.client.luau": {
+    "mtime": 1791299565.7062368,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3360bd39082686a3bca4e3521ae1d029",
+    "semantic_hash": "3360bd39082686a3bca4e3521ae1d029"
+  },
+  "game/studio-snapshots/ReplicatedStorage/UniversalVFX.luau": {
+    "mtime": 1791665629.1353276,
+    "seen": 1791974987.9722621,
+    "ast_hash": "2408d4e1b517ece949707b26f3beede3",
+    "semantic_hash": "2408d4e1b517ece949707b26f3beede3"
+  },
+  "game/studio-snapshots/ServerStorage/AdminConfig.luau": {
+    "mtime": 1790958597.87652,
+    "seen": 1791974987.9722621,
+    "ast_hash": "415c82f2c4a174c7055ad030d5aaed36",
+    "semantic_hash": "415c82f2c4a174c7055ad030d5aaed36"
+  },
+  "game/studio-snapshots/ServerStorage/AdminConsole/ConsoleClient.client.luau": {
+    "mtime": 1790958597.8795218,
+    "seen": 1791974987.9722621,
+    "ast_hash": "ea6b07567d5bc8c7eabffbcc2730c681",
+    "semantic_hash": "ea6b07567d5bc8c7eabffbcc2730c681"
+  },
+  "game/studio-snapshots/ServerStorage/SnowFields.luau": {
+    "mtime": 1790958597.8715117,
+    "seen": 1791974987.9722621,
+    "ast_hash": "bf73a0ae4a6981e6a980d04502fd63b8",
+    "semantic_hash": "bf73a0ae4a6981e6a980d04502fd63b8"
+  },
+  "game/studio-snapshots/ServerStorage/W1RemasterKit.luau": {
+    "mtime": 1791201434.352305,
+    "seen": 1791974987.9722621,
+    "ast_hash": "9f24d98d663f71339de5fd0dfe3062ca",
+    "semantic_hash": "9f24d98d663f71339de5fd0dfe3062ca"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/ActivityClient.client.luau": {
+    "mtime": 1791665629.144875,
+    "seen": 1791974987.9722621,
+    "ast_hash": "1964b6de788b1512c6aa82bb7ec7ad6c",
+    "semantic_hash": "1964b6de788b1512c6aa82bb7ec7ad6c"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/BottomBarFX.client.luau": {
+    "mtime": 1791158715.103262,
+    "seen": 1791974987.9722621,
+    "ast_hash": "68ccec98d4cea6b6f0bc38a030ccbd0d",
+    "semantic_hash": "68ccec98d4cea6b6f0bc38a030ccbd0d"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/MachinesClient.client.luau": {
+    "mtime": 1791158715.1253564,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5c5703cf74a6e4877dc43e36fe271145",
+    "semantic_hash": "5c5703cf74a6e4877dc43e36fe271145"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/PetClient.client.luau": {
+    "mtime": 1791550250.0105276,
+    "seen": 1791974987.9722621,
+    "ast_hash": "12f5c81c60801ba704294b5fb9baa880",
+    "semantic_hash": "12f5c81c60801ba704294b5fb9baa880"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/RNGClient.client.luau": {
+    "mtime": 1791218638.3346875,
+    "seen": 1791974987.9722621,
+    "ast_hash": "a6b27b05e0279e0aefbd918c842e94d5",
+    "semantic_hash": "a6b27b05e0279e0aefbd918c842e94d5"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/SaleBadgeAnim.client.luau": {
+    "mtime": 1790958597.8088515,
+    "seen": 1791974987.9722621,
+    "ast_hash": "afae5712c85592881a13c27eb6c53e26",
+    "semantic_hash": "afae5712c85592881a13c27eb6c53e26"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/TreasureBook.client.luau": {
+    "mtime": 1791665629.1549735,
+    "seen": 1791974987.9722621,
+    "ast_hash": "2e56557d2e6b0a82fc505e81044bd8fe",
+    "semantic_hash": "2e56557d2e6b0a82fc505e81044bd8fe"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/TreasureReveal.client.luau": {
+    "mtime": 1791665629.1624837,
+    "seen": 1791974987.9722621,
+    "ast_hash": "1fc68ce16c088a64d8f7ed796c5de3de",
+    "semantic_hash": "1fc68ce16c088a64d8f7ed796c5de3de"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/UpgradeTreeClient.client.luau": {
+    "mtime": 1791237180.0297778,
+    "seen": 1791974987.9722621,
+    "ast_hash": "8d5d61196fa1acacab6f0daee61d868c",
+    "semantic_hash": "8d5d61196fa1acacab6f0daee61d868c"
+  },
+  "game/studio-snapshots/StarterGui/RNGGui/WheelClient.client.luau": {
+    "mtime": 1791237180.0076,
+    "seen": 1791974987.9722621,
+    "ast_hash": "5cd75cf87eaff465a13cc9eebff031a4",
+    "semantic_hash": "5cd75cf87eaff465a13cc9eebff031a4"
+  },
+  "game/studio-snapshots/Workspace/AbsoluteZeroPortal/PortalAnimator.server.luau": {
+    "mtime": 1790958597.8495252,
+    "seen": 1791974987.9722621,
+    "ast_hash": "09ac51aaec95c7b3fafea556184fb95b",
+    "semantic_hash": "09ac51aaec95c7b3fafea556184fb95b"
+  },
+  "game/studio-snapshots/Workspace/FrostfallVillage/EggDisplay/EggFloat.server.luau": {
+    "mtime": 1790958597.8558517,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
+    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
+  },
+  "game/studio-snapshots/Workspace/PropPalette/RemoveAtRuntime.server.luau": {
+    "mtime": 1790958597.8619177,
+    "seen": 1791974987.9722621,
+    "ast_hash": "38eec973b22040612191ee2055c7ae94",
+    "semantic_hash": "38eec973b22040612191ee2055c7ae94"
+  },
+  "game/studio-snapshots/Workspace/StageEggs/StageEggs_AbsoluteZero/EggFloat.server.luau": {
+    "mtime": 1791665629.168992,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
+    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
+  },
+  "game/studio-snapshots/Workspace/StageEggs/StageEggs_Crystal/EggFloat.server.luau": {
+    "mtime": 1791665629.170993,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
+    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
+  },
+  "game/studio-snapshots/Workspace/StageEggs/StageEggs_Cursed/EggFloat.server.luau": {
+    "mtime": 1791665629.171993,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
+    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
+  },
+  "game/studio-snapshots/Workspace/StageEggs/StageEggs_Desert/EggFloat.server.luau": {
+    "mtime": 1791665629.173993,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
+    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
+  },
+  "game/studio-snapshots/Workspace/StageEggs/StageEggs_Jungle/EggFloat.server.luau": {
+    "mtime": 1791665629.175073,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
+    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
+  },
+  "game/studio-snapshots/Workspace/StageEggs/StageEggs_Retro/EggFloat.server.luau": {
+    "mtime": 1791665629.175073,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3379e0be211397b9ec512896419fb9d2",
+    "semantic_hash": "3379e0be211397b9ec512896419fb9d2"
+  },
+  "game/studio-snapshots/egg-display-snapshot.json": {
+    "mtime": 1790751164.8489113,
+    "seen": 1791974987.9722621,
+    "ast_hash": "e2f55fd1c884c761b31e04a7abd0e54b",
+    "semantic_hash": "e2f55fd1c884c761b31e04a7abd0e54b"
+  },
+  "game/studio-snapshots/live-instance-summary.json": {
+    "mtime": 1790958641.6911716,
+    "seen": 1791974987.9722621,
+    "ast_hash": "3f99fca95ca8c812e01aacf79c2dca0e",
+    "semantic_hash": "3f99fca95ca8c812e01aacf79c2dca0e"
+  },
+  "game/syncback.project.json": {
+    "mtime": 1790746081.7292492,
+    "seen": 1791974987.9722621,
+    "ast_hash": "8aa8e844f590f524361514baa1eeb2e1",
+    "semantic_hash": "8aa8e844f590f524361514baa1eeb2e1"
   }
 }
