@@ -1,5 +1,10 @@
 # Current handoff
 
+## Help Yard walls undone again — 2026-10-14, Claude (save point 79)
+- wiktor: "undo those walls" (right after the Help Yard walls came back). workspace.HelpYardWalls moved back to ServerStorage.WallsUndoBackup_20261006. The camera zoom cap (60) and the invisible edge walls (W1Edges.EdgeFix20261014) stay.
+- Checked in Edit: World 1 scan still 0 drop-off spots without the visible yard walls (yard rims + edge walls hold), every yard/field/TRAVEL point reachable. Not saved or published by me.
+- Next: wiktor saves and publishes when happy. Prefer invisible colliders over visible walls around Help Yards.
+
 ## Help Yard walls back + camera zoom limit — 2026-10-14, Claude (save point 78)
 - wiktor: "place walls around help yard and limit the scroll out camera so u can not se the shit out of the map". Studio-only, no script changed.
 - workspace.HelpYardWalls restored from ServerStorage.WallsUndoBackup_20261006 (the 2026-10-06 walls around all 14 yards; still aligned, bridge entrances clear). StarterPlayer.CameraMaxZoomDistance 128 -> 60 (driving min stays 24, arena already 60).

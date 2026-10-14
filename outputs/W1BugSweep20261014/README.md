@@ -69,3 +69,5 @@ wiktor: "place walls around help yard and limit the scroll out camera so u can n
   point reachable from the spawn; walk+jump toward the far side of the Retro, Jungle, Starter and Crystal yards stops at the wall;
   walking in over the bridge reaches the pad (Crystal stopped 7.5 studs short of the centre within the 7 s walk); screens
   hub_zoom60.jpg and yard_walls_zoom60.jpg show the view at full zoom-out. No game errors.
+
+Update (same day, sp 79): wiktor "undo those walls" -> workspace.HelpYardWalls moved back to ServerStorage.WallsUndoBackup_20261006. The 60-stud zoom cap stays. Scan without them: 0 leaks, all yards reachable.
