@@ -1,8 +1,10 @@
 -- CommunityRewardService (2026-10-13, Claude): the free one-time SUPPORTER GIFT (CommunityRewardConfig) for joining the game's group.
 -- * Membership is checked here on the server (GroupService:GetGroupsAsync, which is not cached, so a player who joins mid-session
 --   is seen; Player:IsInGroup as the fallback). The client only asks (CommunityRewardRemote) and can never grant anything.
--- * The like is honor-system (Roblox exposes no "did this player like the game" API). Since 2026-10-14 (wiktor: players joined but
---   didn't like) the claim requires the client's like confirmation (card step 1, tap + countdown + confirm); recorded as LikeAck.
+-- * Step 1 is FAVORITE (2026-10-14, wiktor: "we should make maybe favorite not liking bc u can favorite in game"; it replaced an
+--   honor-system like step). Roblox only lets the client check a favorite (AvatarEditorService:GetFavoriteAsync), so the client
+--   reports it ("Fav", saved as FavAck so it survives a rejoin) and the claim requires FavAck or the client's flag. Older records
+--   may also carry LikeAck from the like step; that is kept as history.
 -- * Saved once per profile: d.Community.Claimed = os.time(), written with an immediate save. Profiles that did not come from the
 --   store (Studio with API access off) cannot claim, so a gift can never be given on a profile that will not be saved.
 -- * Prize: the exclusive Frosty Pal pet (auto-equipped when a slot is free) + Snow worth ~10 minutes of clearing + 15 min 2x Snow.
@@ -61,9 +63,10 @@ local function state(player, fresh)
 	local d = DataService.Get(player)
 	if not d then return {ok = false} end
 	local claimed = record(d).Claimed ~= nil
+	local faved = record(d).FavAck ~= nil
 	local member = true
 	if not claimed then member = isMember(player, fresh) end
-	return {ok = true, claimed = claimed, groupId = groupId(), member = member}
+	return {ok = true, claimed = claimed, faved = faved, groupId = groupId(), member = member}
 end
 
 local function snowAmount(d)
@@ -74,19 +77,19 @@ local function snowAmount(d)
 end
 
 local busy = {}
-local function claim(player, liked)
+local function claim(player, faved)
 	local d = DataService.Get(player)
 	if not d then return {ok = false, msg = "Still loading - try again in a moment."} end
 	local rec = record(d)
 	if rec.Claimed then return {ok = false, msg = "You already got your gift - thank you!", claimed = true} end
 	if not DataService.LoadedFromStore(player) then return {ok = false, msg = "Your save isn't loaded, so the gift can't be kept. Rejoin and try again."} end
 	if not groupId() then return {ok = false, msg = "The gift isn't available right now."} end
-	if liked ~= true then return {ok = false, msg = "Like the game first (step 1), then tap CLAIM!"} end -- honor-system (no Roblox like API), but required
+	if faved ~= true and rec.FavAck == nil then return {ok = false, msg = "Favorite the game first (step 1), then tap CLAIM!"} end -- reported by the client (no server-side favorite check)
 	if not isMember(player, true) then return {ok = false, msg = "Join the group first, then tap CLAIM!"} end
 	local pet = PetConfig.PetByName[CFG.Pet]
 	if not pet then return {ok = false, msg = "The gift isn't available right now."} end
 
-	rec.Claimed, rec.Group, rec.LikeAck, rec.V = os.time(), groupId(), os.time(), 2 -- marked first: nothing below can run twice for this profile
+	rec.Claimed, rec.Group, rec.FavAck, rec.V = os.time(), groupId(), rec.FavAck or os.time(), 3 -- marked first: nothing below can run twice for this profile
 	local isNew = not d.PetIndex[pet.Name]
 	d.PetIndex[pet.Name] = true
 	d.Pets[pet.Name] = (d.Pets[pet.Name] or 0) + 1
@@ -106,18 +109,22 @@ local function claim(player, liked)
 end
 
 local lastCall = {}
-remote.OnServerInvoke = function(player, action, liked)
+remote.OnServerInvoke = function(player, action, faved)
 	local now = os.clock()
-	if action ~= "State" then
+	if action ~= "State" and action ~= "Fav" then -- Fav is idempotent and must not eat the CLAIM tap right after it
 		if lastCall[player] and now - lastCall[player] < 1.5 then return {ok = false, msg = "Slow down!"} end
 		lastCall[player] = now
 	end
 	if action == "State" then return state(player, false)
 	elseif action == "Check" then return state(player, true)
+	elseif action == "Fav" then -- the client saw the favorite (prompt Success or GetFavoriteAsync); saved, so it survives a rejoin
+		local d = DataService.Get(player)
+		if d then local rec = record(d); if not rec.FavAck then rec.FavAck = os.time() end end -- also after claiming (stops the favorite nudge)
+		return state(player, false)
 	elseif action == "Claim" then
 		if busy[player] then return {ok = false, msg = "One moment..."} end
 		busy[player] = true
-		local ok, res = pcall(claim, player, liked == true)
+		local ok, res = pcall(claim, player, faved == true)
 		busy[player] = nil
 		if not ok then warn("[CommunityReward] " .. tostring(res)); return {ok = false, msg = "Something went wrong - try again."} end
 		return res
@@ -137,6 +144,8 @@ if TEST then
 		if op == "Mock" then mock[player] = value; cache[player] = nil; return true
 		elseif op == "Data" then local d = DataService.Get(player); return d and table.clone(record(d)) or nil
 		elseif op == "Claim" then lastCall[player] = nil; return claim(player, value ~= false)
+		elseif op == "ClearFav" then -- temp test profile only: look like a player who claimed before the favorite step existed
+			local d = DataService.Get(player); if d then record(d).FavAck = nil end; return true
 		elseif op == "Reset" then -- temp test profile only (BalanceTestMode never touches the real store)
 			local d = DataService.Get(player); if d then d.Community = nil end
 			player:SetAttribute("CommunityGiftClaimed", false); return true

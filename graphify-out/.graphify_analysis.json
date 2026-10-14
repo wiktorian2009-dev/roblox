@@ -157,7 +157,8 @@
       "src_starterplayer_starterplayerscripts_plowshopclient_client_toast",
       "src_starterplayer_starterplayerscripts_plowshopclient_client_updaterollbutton",
       "src_starterplayer_starterplayerscripts_plowshopclient_client_viewport",
-      "src_starterplayer_starterplayerscripts_plowshopclient_client_visible"
+      "src_starterplayer_starterplayerscripts_plowshopclient_client_visible",
+      "src_starterplayer_starterplayerscripts_plowtutorialclient_client_s"
     ],
     "2": [
       "src_replicatedstorage_uilayout_uilayout_istouch",
@@ -204,7 +205,6 @@
       "src_starterplayer_starterplayerscripts_plowtutorialclient_client_releaseselect",
       "src_starterplayer_starterplayerscripts_plowtutorialclient_client_report",
       "src_starterplayer_starterplayerscripts_plowtutorialclient_client_runlesson",
-      "src_starterplayer_starterplayerscripts_plowtutorialclient_client_s",
       "src_starterplayer_starterplayerscripts_plowtutorialclient_client_screenrect",
       "src_starterplayer_starterplayerscripts_plowtutorialclient_client_scrollerof",
       "src_starterplayer_starterplayerscripts_plowtutorialclient_client_scrollintoview",
@@ -439,51 +439,6 @@
       "src_replicatedstorage_plowrollreveal_soundvolume"
     ],
     "7": [
-      "game_getservice",
-      "src_replicatedstorage_activityconfig",
-      "src_replicatedstorage_activityconfig_a_bonustext",
-      "src_replicatedstorage_activityconfig_a_rewardtext",
-      "src_replicatedstorage_numberformat",
-      "src_replicatedstorage_numberformat_numberformat_abbreviate",
-      "src_serverscriptservice_activityservice_server",
-      "src_serverscriptservice_activityservice_server_daily",
-      "src_serverscriptservice_activityservice_server_endevent",
-      "src_serverscriptservice_activityservice_server_grant",
-      "src_serverscriptservice_activityservice_server_newquests",
-      "src_serverscriptservice_activityservice_server_nice",
-      "src_serverscriptservice_activityservice_server_pickevent",
-      "src_serverscriptservice_activityservice_server_questprogress",
-      "src_serverscriptservice_activityservice_server_remote",
-      "src_serverscriptservice_activityservice_server_rewardtext",
-      "src_serverscriptservice_activityservice_server_runevent",
-      "src_serverscriptservice_activityservice_server_shuffled",
-      "src_serverscriptservice_activityservice_server_snapshot",
-      "src_serverscriptservice_activityservice_server_snowfor",
-      "src_serverscriptservice_activityservice_server_stats",
-      "src_serverscriptservice_activityservice_server_tick",
-      "src_serverscriptservice_wheelservice_server",
-      "src_serverscriptservice_wheelservice_server_check",
-      "src_serverscriptservice_wheelservice_server_nice",
-      "src_serverscriptservice_wheelservice_server_pick",
-      "src_serverscriptservice_wheelservice_server_prizeinfo",
-      "src_serverscriptservice_wheelservice_server_prizes",
-      "src_serverscriptservice_wheelservice_server_publish",
-      "src_serverscriptservice_wheelservice_server_snowfor",
-      "src_serverscriptservice_wheelservice_server_wheelof",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_bind",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_build",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_fmt",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_footer",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_label",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_maxtext",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_new",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_read",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_render",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_renderall",
-      "src_starterplayer_starterplayerscripts_leaderboardclient_client_watch"
-    ],
-    "8": [
       "studio_snapshots_replicatedfirst_loadingscreen_client",
       "studio_snapshots_replicatedfirst_loadingscreen_client_hill",
       "studio_snapshots_replicatedfirst_loadingscreen_client_load",
@@ -528,7 +483,7 @@
       "studio_snapshots_startergui_rnggui_petclient_client_watch",
       "vfx"
     ],
-    "9": [
+    "8": [
       "src_replicatedstorage_featureuiart",
       "src_replicatedstorage_featureuiart_afterload",
       "src_replicatedstorage_featureuiart_art_icon",
@@ -572,7 +527,7 @@
       "src_starterplayer_starterplayerscripts_contractclient_client_watchyard",
       "src_starterplayer_starterplayerscripts_plowdriveclient_client_makebutton"
     ],
-    "10": [
+    "9": [
       "src_replicatedstorage_treasuremodels",
       "src_replicatedstorage_treasuremodels_b_bell",
       "src_replicatedstorage_treasuremodels_b_bone",
@@ -614,7 +569,7 @@
       "src_replicatedstorage_treasuremodels_part",
       "src_replicatedstorage_treasuremodels_shade"
     ],
-    "11": [
+    "10": [
       "src_replicatedstorage_upgradeconfig_u_costof",
       "src_replicatedstorage_upgradeconfig_u_distance",
       "studio_snapshots_startergui_rnggui_upgradetreeclient_client",
@@ -655,6 +610,44 @@
       "studio_snapshots_startergui_rnggui_upgradetreeclient_client_tween",
       "studio_snapshots_startergui_rnggui_upgradetreeclient_client_viewof",
       "studio_snapshots_startergui_rnggui_upgradetreeclient_client_visiblepoints"
+    ],
+    "11": [
+      "game_getservice",
+      "src_replicatedstorage_activityconfig",
+      "src_replicatedstorage_activityconfig_a_bonustext",
+      "src_replicatedstorage_activityconfig_a_rewardtext",
+      "src_replicatedstorage_leaderboardconfig",
+      "src_replicatedstorage_leaderboardconfig_l_formattime",
+      "src_replicatedstorage_numberformat",
+      "src_replicatedstorage_numberformat_numberformat_abbreviate",
+      "src_serverscriptservice_activityservice_server",
+      "src_serverscriptservice_activityservice_server_daily",
+      "src_serverscriptservice_activityservice_server_endevent",
+      "src_serverscriptservice_activityservice_server_grant",
+      "src_serverscriptservice_activityservice_server_newquests",
+      "src_serverscriptservice_activityservice_server_nice",
+      "src_serverscriptservice_activityservice_server_pickevent",
+      "src_serverscriptservice_activityservice_server_questprogress",
+      "src_serverscriptservice_activityservice_server_remote",
+      "src_serverscriptservice_activityservice_server_rewardtext",
+      "src_serverscriptservice_activityservice_server_runevent",
+      "src_serverscriptservice_activityservice_server_shuffled",
+      "src_serverscriptservice_activityservice_server_snapshot",
+      "src_serverscriptservice_activityservice_server_snowfor",
+      "src_serverscriptservice_activityservice_server_stats",
+      "src_serverscriptservice_activityservice_server_tick",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_bind",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_build",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_fmt",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_footer",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_label",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_maxtext",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_new",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_read",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_render",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_renderall",
+      "src_starterplayer_starterplayerscripts_leaderboardclient_client_watch"
     ],
     "12": [
       "studio_snapshots_startergui_rnggui_activityclient_client",
@@ -939,6 +932,32 @@
       "studio_snapshots_startergui_rnggui_machinesclient_client_treasurename"
     ],
     "21": [
+      "src_replicatedstorage_stageconfig",
+      "src_replicatedstorage_stageconfig_s_previous",
+      "src_replicatedstorage_travelconfig",
+      "src_replicatedstorage_travelconfig_t_requirement",
+      "src_replicatedstorage_travelconfig_t_unlocked",
+      "src_serverscriptservice_stageservice_server",
+      "src_serverscriptservice_stageservice_server_addprompt",
+      "src_serverscriptservice_stageservice_server_isopen",
+      "src_serverscriptservice_stageservice_server_publish",
+      "src_serverscriptservice_stageservice_server_travel",
+      "src_serverscriptservice_stageservice_server_watch",
+      "src_starterplayer_starterplayerscripts_travelclient_client",
+      "src_starterplayer_starterplayerscripts_travelclient_client_buildpanel",
+      "src_starterplayer_starterplayerscripts_travelclient_client_closeothermenus",
+      "src_starterplayer_starterplayerscripts_travelclient_client_closetravel",
+      "src_starterplayer_starterplayerscripts_travelclient_client_hudvisible",
+      "src_starterplayer_starterplayerscripts_travelclient_client_label",
+      "src_starterplayer_starterplayerscripts_travelclient_client_menubus",
+      "src_starterplayer_starterplayerscripts_travelclient_client_mk",
+      "src_starterplayer_starterplayerscripts_travelclient_client_open",
+      "src_starterplayer_starterplayerscripts_travelclient_client_placebutton",
+      "src_starterplayer_starterplayerscripts_travelclient_client_refresh",
+      "src_starterplayer_starterplayerscripts_travelclient_client_refreshhud",
+      "src_starterplayer_starterplayerscripts_travelclient_client_stroke"
+    ],
+    "22": [
       "src_replicatedstorage_eggmodels",
       "src_replicatedstorage_eggmodels_ball",
       "src_replicatedstorage_eggmodels_gem",
@@ -963,7 +982,7 @@
       "studio_snapshots_startergui_rnggui_wheelclient_client_spin",
       "studio_snapshots_startergui_rnggui_wheelclient_client_text"
     ],
-    "22": [
+    "23": [
       "src_starterplayer_starterplayerscripts_verityeggclient_client",
       "src_starterplayer_starterplayerscripts_verityeggclient_client_applylayout",
       "src_starterplayer_starterplayerscripts_verityeggclient_client_attach",
@@ -988,7 +1007,7 @@
       "src_starterplayer_starterplayerscripts_verityeggclient_client_watchpanel",
       "src_starterplayer_starterplayerscripts_verityeggclient_client_wirepanels"
     ],
-    "23": [
+    "24": [
       "src_starterplayer_starterplayerscripts_abilitytokenclient_client",
       "src_starterplayer_starterplayerscripts_abilitytokenclient_client_attachto",
       "src_starterplayer_starterplayerscripts_abilitytokenclient_client_iconimage",
@@ -1012,7 +1031,30 @@
       "src_starterplayer_starterplayerscripts_abilitytokenclient_client_soundon",
       "src_starterplayer_starterplayerscripts_abilitytokenclient_client_stopbufffx"
     ],
-    "24": [
+    "25": [
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_apply",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_boosttext",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_button",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_glow",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_isfavorited",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_label",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_markfaved",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_mk",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_open",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_petview",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_placepill",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_refreshhud",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_render",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_round",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_setmsg",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_showboost",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_shut",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_steprow",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_sunburst",
+      "src_starterplayer_starterplayerscripts_communityrewardclient_client_tween"
+    ],
+    "26": [
       "src_starterplayer_starterplayerscripts_passclient_client",
       "src_starterplayer_starterplayerscripts_passclient_client_animateflair",
       "src_starterplayer_starterplayerscripts_passclient_client_canbuy",
@@ -1034,7 +1076,7 @@
       "src_starterplayer_starterplayerscripts_passclient_client_stroke",
       "src_starterplayer_starterplayerscripts_passclient_client_unavailabletext"
     ],
-    "25": [
+    "27": [
       "studio_snapshots_startergui_rnggui_treasurebook_client",
       "studio_snapshots_startergui_rnggui_treasurebook_client_card",
       "studio_snapshots_startergui_rnggui_treasurebook_client_fetch",
@@ -1056,7 +1098,7 @@
       "studio_snapshots_startergui_rnggui_treasurebook_client_updatetoggles",
       "studio_snapshots_startergui_rnggui_treasurebook_client_viewport"
     ],
-    "26": [
+    "28": [
       "src_serverscriptservice_frostkingservice_server",
       "src_serverscriptservice_frostkingservice_server_accessible",
       "src_serverscriptservice_frostkingservice_server_estimaterate",
@@ -1077,45 +1119,6 @@
       "src_serverscriptservice_frostkingservice_server_stageattr",
       "src_serverscriptservice_frostkingservice_server_unitflat"
     ],
-    "27": [
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_apply",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_boosttext",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_button",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_glow",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_label",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_mk",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_open",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_petview",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_placepill",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_refreshhud",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_render",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_round",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_setmsg",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_showboost",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_shut",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_steprow",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_sunburst",
-      "src_starterplayer_starterplayerscripts_communityrewardclient_client_tween"
-    ],
-    "28": [
-      "src_replicatedstorage_leaderboardconfig",
-      "src_replicatedstorage_leaderboardconfig_l_decode",
-      "src_replicatedstorage_leaderboardconfig_l_encode",
-      "src_replicatedstorage_leaderboardconfig_l_formattime",
-      "src_serverscriptservice_dataservice_dataservice_get",
-      "src_serverscriptservice_leaderboardservice_server",
-      "src_serverscriptservice_leaderboardservice_server_budget",
-      "src_serverscriptservice_leaderboardservice_server_canpublish",
-      "src_serverscriptservice_leaderboardservice_server_countplaytime",
-      "src_serverscriptservice_leaderboardservice_server_memorystore",
-      "src_serverscriptservice_leaderboardservice_server_playerloop",
-      "src_serverscriptservice_leaderboardservice_server_publish",
-      "src_serverscriptservice_leaderboardservice_server_refresh",
-      "src_serverscriptservice_leaderboardservice_server_resolvenames",
-      "src_serverscriptservice_leaderboardservice_server_scores",
-      "src_serverscriptservice_leaderboardservice_server_showown"
-    ],
     "29": [
       "src_serverscriptservice_dataservice_dataservice_addsnow",
       "src_serverscriptservice_dataservice_dataservice_setstat",
@@ -1135,38 +1138,22 @@
       "src_serverscriptservice_machineservice_server_sparetreasure"
     ],
     "30": [
-      "game_replicatedstorage_waitforchild",
-      "src_serverscriptservice_dataservice",
-      "src_serverscriptservice_dataservice_dataservice_onloaded",
-      "src_serverscriptservice_dataservice_dataservice_save",
-      "src_serverscriptservice_dataservice_dataservice_savenow",
-      "src_serverscriptservice_dataservice_defaults",
-      "src_serverscriptservice_dataservice_instudio",
-      "src_serverscriptservice_dataservice_kick",
-      "src_serverscriptservice_dataservice_load",
-      "src_serverscriptservice_dataservice_save",
-      "src_serverscriptservice_dataservice_stat",
-      "src_serverscriptservice_dataservice_studioapioff",
-      "src_serverscriptservice_dataservice_studionotice",
-      "src_serverscriptservice_productservice_server_save"
+      "src_replicatedstorage_leaderboardconfig_l_decode",
+      "src_replicatedstorage_leaderboardconfig_l_encode",
+      "src_serverscriptservice_dataservice_dataservice_get",
+      "src_serverscriptservice_leaderboardservice_server",
+      "src_serverscriptservice_leaderboardservice_server_budget",
+      "src_serverscriptservice_leaderboardservice_server_canpublish",
+      "src_serverscriptservice_leaderboardservice_server_countplaytime",
+      "src_serverscriptservice_leaderboardservice_server_memorystore",
+      "src_serverscriptservice_leaderboardservice_server_playerloop",
+      "src_serverscriptservice_leaderboardservice_server_publish",
+      "src_serverscriptservice_leaderboardservice_server_refresh",
+      "src_serverscriptservice_leaderboardservice_server_resolvenames",
+      "src_serverscriptservice_leaderboardservice_server_scores",
+      "src_serverscriptservice_leaderboardservice_server_showown"
     ],
     "31": [
-      "src_replicatedstorage_travelconfig_t_unlocked",
-      "src_starterplayer_starterplayerscripts_travelclient_client",
-      "src_starterplayer_starterplayerscripts_travelclient_client_buildpanel",
-      "src_starterplayer_starterplayerscripts_travelclient_client_closeothermenus",
-      "src_starterplayer_starterplayerscripts_travelclient_client_closetravel",
-      "src_starterplayer_starterplayerscripts_travelclient_client_hudvisible",
-      "src_starterplayer_starterplayerscripts_travelclient_client_label",
-      "src_starterplayer_starterplayerscripts_travelclient_client_menubus",
-      "src_starterplayer_starterplayerscripts_travelclient_client_mk",
-      "src_starterplayer_starterplayerscripts_travelclient_client_open",
-      "src_starterplayer_starterplayerscripts_travelclient_client_placebutton",
-      "src_starterplayer_starterplayerscripts_travelclient_client_refresh",
-      "src_starterplayer_starterplayerscripts_travelclient_client_refreshhud",
-      "src_starterplayer_starterplayerscripts_travelclient_client_stroke"
-    ],
-    "32": [
       "studio_snapshots_startergui_rnggui_treasurereveal_client",
       "studio_snapshots_startergui_rnggui_treasurereveal_client_burst",
       "studio_snapshots_startergui_rnggui_treasurereveal_client_fxpart",
@@ -1181,6 +1168,21 @@
       "studio_snapshots_startergui_rnggui_treasurereveal_client_ringburst",
       "studio_snapshots_startergui_rnggui_treasurereveal_client_showtoast",
       "studio_snapshots_startergui_rnggui_treasurereveal_client_text"
+    ],
+    "32": [
+      "game_replicatedstorage_waitforchild",
+      "src_serverscriptservice_dataservice",
+      "src_serverscriptservice_dataservice_dataservice_onloaded",
+      "src_serverscriptservice_dataservice_dataservice_save",
+      "src_serverscriptservice_dataservice_dataservice_savenow",
+      "src_serverscriptservice_dataservice_defaults",
+      "src_serverscriptservice_dataservice_instudio",
+      "src_serverscriptservice_dataservice_kick",
+      "src_serverscriptservice_dataservice_load",
+      "src_serverscriptservice_dataservice_save",
+      "src_serverscriptservice_dataservice_stat",
+      "src_serverscriptservice_dataservice_studioapioff",
+      "src_serverscriptservice_dataservice_studionotice"
     ],
     "33": [
       "src_replicatedstorage_petmodels",
@@ -1228,6 +1230,20 @@
       "studio_snapshots_startergui_rnggui_rngclient_client_tween"
     ],
     "36": [
+      "script_parent_waitforchild",
+      "src_replicatedstorage_plowassembly",
+      "src_replicatedstorage_plowassembly_a_build",
+      "src_replicatedstorage_plowassembly_a_partmodel",
+      "src_serverscriptservice_releaseeventservice_server",
+      "src_serverscriptservice_releaseeventservice_server_findstart",
+      "src_serverscriptservice_releaseeventservice_server_storedstart",
+      "src_serverscriptservice_settingsservice_server",
+      "src_serverscriptservice_world2activities_server",
+      "src_serverscriptservice_world2activities_server_claim",
+      "src_serverscriptservice_world2activities_server_setup",
+      "src_serverscriptservice_world2activities_server_snowfor"
+    ],
+    "37": [
       "script_waitforchild",
       "studio_snapshots_replicatedfirst_biomelighting_client",
       "studio_snapshots_replicatedfirst_biomelighting_client_flatten",
@@ -1241,7 +1257,7 @@
       "studio_snapshots_replicatedfirst_biomelighting_client_write",
       "studio_snapshots_replicatedfirst_biomelighting_client_zoneat"
     ],
-    "37": [
+    "38": [
       "src_starterplayer_starterplayerscripts_arenadriveclient_client",
       "src_starterplayer_starterplayerscripts_arenadriveclient_client_approach",
       "src_starterplayer_starterplayerscripts_arenadriveclient_client_boosting",
@@ -1255,7 +1271,7 @@
       "src_starterplayer_starterplayerscripts_arenadriveclient_client_shielded",
       "src_starterplayer_starterplayerscripts_arenadriveclient_client_useability"
     ],
-    "38": [
+    "39": [
       "studio_snapshots_serverstorage_w1remasterkit",
       "studio_snapshots_serverstorage_w1remasterkit_folder",
       "studio_snapshots_serverstorage_w1remasterkit_k_addcolliders",
@@ -1269,7 +1285,20 @@
       "studio_snapshots_serverstorage_w1remasterkit_k_replacewall",
       "studio_snapshots_serverstorage_w1remasterkit_k_scenery"
     ],
-    "39": [
+    "40": [
+      "rs_waitforchild",
+      "src_serverscriptservice_plowrules",
+      "src_serverscriptservice_plowrules_cleanoffer",
+      "src_serverscriptservice_plowrules_rules_apply",
+      "src_serverscriptservice_travelservice_server",
+      "src_serverscriptservice_travelservice_server_currentid",
+      "src_serverscriptservice_travelservice_server_fail",
+      "src_serverscriptservice_travelservice_server_handle",
+      "src_serverscriptservice_travelservice_server_travel",
+      "src_starterplayer_starterplayerscripts_plowsoundclient_client",
+      "src_starterplayer_starterplayerscripts_plowsoundclient_client_soundon"
+    ],
+    "41": [
       "src_starterplayer_starterplayerscripts_afkdriftclient_client",
       "src_starterplayer_starterplayerscripts_afkdriftclient_client_drawmeter",
       "src_starterplayer_starterplayerscripts_afkdriftclient_client_label",
@@ -1281,38 +1310,16 @@
       "src_starterplayer_starterplayerscripts_afkdriftclient_client_stop",
       "src_starterplayer_starterplayerscripts_afkdriftclient_client_watchbar"
     ],
-    "40": [
-      "rs_waitforchild",
-      "src_serverscriptservice_plowrules",
-      "src_serverscriptservice_plowrules_cleanoffer",
-      "src_serverscriptservice_plowrules_rules_apply",
-      "src_serverscriptservice_releaseeventservice_server",
-      "src_serverscriptservice_releaseeventservice_server_findstart",
-      "src_serverscriptservice_releaseeventservice_server_storedstart",
-      "src_starterplayer_starterplayerscripts_plowsoundclient_client",
-      "src_starterplayer_starterplayerscripts_plowsoundclient_client_soundon"
-    ],
-    "41": [
-      "script_parent_waitforchild",
-      "src_replicatedstorage_plowassembly",
-      "src_replicatedstorage_plowassembly_a_build",
-      "src_replicatedstorage_plowassembly_a_partmodel",
-      "src_serverscriptservice_settingsservice_server",
-      "src_serverscriptservice_world2activities_server",
-      "src_serverscriptservice_world2activities_server_claim",
-      "src_serverscriptservice_world2activities_server_setup",
-      "src_serverscriptservice_world2activities_server_snowfor"
-    ],
     "42": [
-      "src_replicatedstorage_stageconfig",
-      "src_replicatedstorage_stageconfig_s_previous",
-      "src_replicatedstorage_travelconfig",
-      "src_replicatedstorage_travelconfig_t_requirement",
-      "src_serverscriptservice_travelservice_server",
-      "src_serverscriptservice_travelservice_server_currentid",
-      "src_serverscriptservice_travelservice_server_fail",
-      "src_serverscriptservice_travelservice_server_handle",
-      "src_serverscriptservice_travelservice_server_travel"
+      "src_replicatedstorage_petconfig_petconfig_rollpet",
+      "src_serverscriptservice_dataservice_dataservice_loadedfromstore",
+      "src_serverscriptservice_productservice_server",
+      "src_serverscriptservice_productservice_server_cansell",
+      "src_serverscriptservice_productservice_server_checkpolicy",
+      "src_serverscriptservice_productservice_server_grantegg",
+      "src_serverscriptservice_productservice_server_processreceipt",
+      "src_serverscriptservice_productservice_server_productfor",
+      "src_serverscriptservice_productservice_server_save"
     ],
     "43": [
       "src_replicatedstorage_universalvfx_init",
@@ -1326,6 +1333,17 @@
       "src_replicatedstorage_universalvfx_init_scaled"
     ],
     "44": [
+      "src_serverscriptservice_wheelservice_server",
+      "src_serverscriptservice_wheelservice_server_check",
+      "src_serverscriptservice_wheelservice_server_nice",
+      "src_serverscriptservice_wheelservice_server_pick",
+      "src_serverscriptservice_wheelservice_server_prizeinfo",
+      "src_serverscriptservice_wheelservice_server_prizes",
+      "src_serverscriptservice_wheelservice_server_publish",
+      "src_serverscriptservice_wheelservice_server_snowfor",
+      "src_serverscriptservice_wheelservice_server_wheelof"
+    ],
+    "45": [
       "studio_snapshots_replicatedstorage_universalvfx",
       "studio_snapshots_replicatedstorage_universalvfx_colors",
       "studio_snapshots_replicatedstorage_universalvfx_m_attach",
@@ -1335,16 +1353,6 @@
       "studio_snapshots_replicatedstorage_universalvfx_rgb",
       "studio_snapshots_replicatedstorage_universalvfx_ring",
       "studio_snapshots_replicatedstorage_universalvfx_scaled"
-    ],
-    "45": [
-      "src_replicatedstorage_petconfig_petconfig_rollpet",
-      "src_serverscriptservice_dataservice_dataservice_loadedfromstore",
-      "src_serverscriptservice_productservice_server",
-      "src_serverscriptservice_productservice_server_cansell",
-      "src_serverscriptservice_productservice_server_checkpolicy",
-      "src_serverscriptservice_productservice_server_grantegg",
-      "src_serverscriptservice_productservice_server_processreceipt",
-      "src_serverscriptservice_productservice_server_productfor"
     ],
     "46": [
       "src_starterplayer_starterplayerscripts_digjuiceclient_client",
@@ -1383,14 +1391,6 @@
       "src_serverscriptservice_afkservice_server_setoff"
     ],
     "50": [
-      "src_serverscriptservice_stageservice_server",
-      "src_serverscriptservice_stageservice_server_addprompt",
-      "src_serverscriptservice_stageservice_server_isopen",
-      "src_serverscriptservice_stageservice_server_publish",
-      "src_serverscriptservice_stageservice_server_travel",
-      "src_serverscriptservice_stageservice_server_watch"
-    ],
-    "51": [
       "src_starterplayer_starterplayerscripts_snowuiclient_client",
       "src_starterplayer_starterplayerscripts_snowuiclient_client_customprompt",
       "src_starterplayer_starterplayerscripts_snowuiclient_client_label",
@@ -1398,7 +1398,7 @@
       "src_starterplayer_starterplayerscripts_snowuiclient_client_offsetsize",
       "src_starterplayer_starterplayerscripts_snowuiclient_client_release"
     ],
-    "52": [
+    "51": [
       "studio_snapshots_startergui_rnggui_bottombarfx_client",
       "studio_snapshots_startergui_rnggui_bottombarfx_client_setup",
       "studio_snapshots_startergui_rnggui_bottombarfx_client_spark",
@@ -1406,188 +1406,188 @@
       "studio_snapshots_startergui_rnggui_bottombarfx_client_updateaura",
       "studio_snapshots_startergui_rnggui_bottombarfx_client_value"
     ],
-    "53": [
+    "52": [
       "src_replicatedstorage_upgradeconfig_u_calculate",
       "src_serverscriptservice_upgradeservice_server",
       "src_serverscriptservice_upgradeservice_server_apply",
       "src_serverscriptservice_upgradeservice_server_owned",
       "src_serverscriptservice_upgradeservice_server_recountfriends"
     ],
-    "54": [
+    "53": [
       "src_starterplayer_starterplayerscripts_releaseeventclient_client",
       "src_starterplayer_starterplayerscripts_releaseeventclient_client_fmt",
       "src_starterplayer_starterplayerscripts_releaseeventclient_client_mk",
       "src_starterplayer_starterplayerscripts_releaseeventclient_client_part",
       "src_starterplayer_starterplayerscripts_releaseeventclient_client_place"
     ],
-    "55": [
+    "54": [
       "src_replicatedstorage_snowfields",
       "src_replicatedstorage_snowfields_readzones",
       "src_replicatedstorage_snowfields_snowfields_origin",
       "src_replicatedstorage_snowfields_snowfields_tilecenter"
     ],
-    "56": [
+    "55": [
       "src_starterplayer_starterplayerscripts_mutefootsteps_client",
       "src_starterplayer_starterplayerscripts_mutefootsteps_client_mute",
       "src_starterplayer_starterplayerscripts_mutefootsteps_client_onplayer",
       "src_starterplayer_starterplayerscripts_mutefootsteps_client_watch"
     ],
-    "57": [
+    "56": [
       "studio_snapshots_serverstorage_snowfields",
       "studio_snapshots_serverstorage_snowfields_readzones",
       "studio_snapshots_serverstorage_snowfields_snowfields_origin",
       "studio_snapshots_serverstorage_snowfields_snowfields_tilecenter"
     ],
-    "58": [
+    "57": [
       "src_starterplayer_starterplayerscripts_frostfallclient_client",
       "src_starterplayer_starterplayerscripts_frostfallclient_client_message",
       "src_starterplayer_starterplayerscripts_frostfallclient_client_snowburst"
     ],
-    "59": [
+    "58": [
       "src_starterplayer_starterplayerscripts_machinelocksclient_client",
       "src_starterplayer_starterplayerscripts_machinelocksclient_client_apply",
       "src_starterplayer_starterplayerscripts_machinelocksclient_client_setup"
     ],
-    "60": [
+    "59": [
       "src_starterplayer_starterplayerscripts_stagedecorclient_client",
       "src_starterplayer_starterplayerscripts_stagedecorclient_client_inroots",
       "src_starterplayer_starterplayerscripts_stagedecorclient_client_register"
     ],
-    "61": [
+    "60": [
       "studio_snapshots_serverstorage_adminconsole_consoleclient_client",
       "studio_snapshots_serverstorage_adminconsole_consoleclient_client_add",
       "studio_snapshots_serverstorage_adminconsole_consoleclient_client_toggle"
     ],
-    "62": [
+    "61": [
       "studio_snapshots_workspace_frostfallvillage_eggdisplay_eggfloat_server",
       "studio_snapshots_workspace_frostfallvillage_eggdisplay_eggfloat_server_add",
       "studio_snapshots_workspace_frostfallvillage_eggdisplay_eggfloat_server_ease"
     ],
-    "63": [
+    "62": [
       "studio_snapshots_workspace_stageeggs_stageeggs_absolutezero_eggfloat_server",
       "studio_snapshots_workspace_stageeggs_stageeggs_absolutezero_eggfloat_server_add",
       "studio_snapshots_workspace_stageeggs_stageeggs_absolutezero_eggfloat_server_ease"
     ],
-    "64": [
+    "63": [
       "studio_snapshots_workspace_stageeggs_stageeggs_crystal_eggfloat_server",
       "studio_snapshots_workspace_stageeggs_stageeggs_crystal_eggfloat_server_add",
       "studio_snapshots_workspace_stageeggs_stageeggs_crystal_eggfloat_server_ease"
     ],
-    "65": [
+    "64": [
       "studio_snapshots_workspace_stageeggs_stageeggs_cursed_eggfloat_server",
       "studio_snapshots_workspace_stageeggs_stageeggs_cursed_eggfloat_server_add",
       "studio_snapshots_workspace_stageeggs_stageeggs_cursed_eggfloat_server_ease"
     ],
-    "66": [
+    "65": [
       "studio_snapshots_workspace_stageeggs_stageeggs_desert_eggfloat_server",
       "studio_snapshots_workspace_stageeggs_stageeggs_desert_eggfloat_server_add",
       "studio_snapshots_workspace_stageeggs_stageeggs_desert_eggfloat_server_ease"
     ],
-    "67": [
+    "66": [
       "studio_snapshots_workspace_stageeggs_stageeggs_jungle_eggfloat_server",
       "studio_snapshots_workspace_stageeggs_stageeggs_jungle_eggfloat_server_add",
       "studio_snapshots_workspace_stageeggs_stageeggs_jungle_eggfloat_server_ease"
     ],
-    "68": [
+    "67": [
       "studio_snapshots_workspace_stageeggs_stageeggs_retro_eggfloat_server",
       "studio_snapshots_workspace_stageeggs_stageeggs_retro_eggfloat_server_add",
       "studio_snapshots_workspace_stageeggs_stageeggs_retro_eggfloat_server_ease"
     ],
-    "69": [
+    "68": [
       "src_replicatedstorage_cleancontrols",
       "src_replicatedstorage_cleancontrols_m_apply"
     ],
-    "70": [
+    "69": [
       "src_replicatedstorage_contractconfig",
       "src_replicatedstorage_contractconfig_c_zoneworld"
     ],
-    "71": [
+    "70": [
       "src_replicatedstorage_treasureicon",
       "src_replicatedstorage_treasureicon_m_create"
     ],
-    "72": [
+    "71": [
       "src_replicatedstorage_upgradeiconart",
       "src_replicatedstorage_upgradeiconart_art_resolve"
     ],
-    "73": [
+    "72": [
       "src_starterplayer_starterplayerscripts_w2fogclient_client",
       "src_starterplayer_starterplayerscripts_w2fogclient_client_setup"
     ],
-    "74": [
+    "73": [
       "studio_snapshots_startergui_rnggui_salebadgeanim_client",
       "studio_snapshots_startergui_rnggui_salebadgeanim_client_updatetext"
     ],
-    "75": [
+    "74": [
       "src_replicatedstorage_abilityconfig"
     ],
-    "76": [
+    "75": [
       "src_replicatedstorage_communityrewardconfig"
     ],
-    "77": [
+    "76": [
       "src_replicatedstorage_craftingconfig"
     ],
-    "78": [
+    "77": [
       "src_replicatedstorage_frostkingconfig"
     ],
-    "79": [
+    "78": [
       "src_replicatedstorage_gameaudio"
     ],
-    "80": [
+    "79": [
       "src_replicatedstorage_machineconfig"
     ],
-    "81": [
+    "80": [
       "src_replicatedstorage_musicconfig"
     ],
-    "82": [
+    "81": [
       "src_replicatedstorage_passconfig"
     ],
-    "83": [
+    "82": [
       "src_replicatedstorage_plowclientapi"
     ],
-    "84": [
+    "83": [
       "src_replicatedstorage_releaseeventconfig"
     ],
-    "85": [
+    "84": [
       "src_replicatedstorage_wheelconfig"
     ],
-    "86": [
+    "85": [
       "src_serverscriptservice_contractregistry"
     ],
-    "87": [
+    "86": [
       "src_serverscriptservice_frostfalltravel_server"
     ],
-    "88": [
+    "87": [
       "src_serverscriptservice_plowregistry"
     ],
-    "89": [
+    "88": [
       "src_starterplayer_starterplayerscripts_world2client_client"
     ],
-    "90": [
+    "89": [
       "studio_snapshots_replicatedfirst_biomelighting_profiles"
     ],
-    "91": [
+    "90": [
       "studio_snapshots_serverstorage_adminconfig"
     ],
-    "92": [
+    "91": [
       "studio_snapshots_workspace_absolutezeroportal_portalanimator_server"
     ],
-    "93": [
+    "92": [
       "studio_snapshots_workspace_proppalette_removeatruntime_server"
     ]
   },
   "cohesion": {
     "0": 0.07708521529659741,
-    "1": 0.06506849315068493,
-    "2": 0.05300207039337474,
+    "1": 0.06368011847463902,
+    "2": 0.05413469735720375,
     "3": 0.07407407407407407,
     "4": 0.05805515239477504,
     "5": 0.07180851063829788,
     "6": 0.11416490486257928,
-    "7": 0.08527131782945736,
-    "8": 0.10077519379844961,
-    "9": 0.08943089430894309,
-    "10": 0.16923076923076924,
-    "11": 0.1,
+    "7": 0.10077519379844961,
+    "8": 0.08943089430894309,
+    "9": 0.16923076923076924,
+    "10": 0.1,
+    "11": 0.10317460317460317,
     "12": 0.17647058823529413,
     "13": 0.14260249554367202,
     "14": 0.14482758620689656,
@@ -1597,42 +1597,42 @@
     "18": 0.11965811965811966,
     "19": 0.10826210826210826,
     "20": 0.16923076923076924,
-    "21": 0.1976284584980237,
-    "22": 0.18972332015810275,
-    "23": 0.19913419913419914,
-    "24": 0.22105263157894736,
-    "25": 0.20526315789473684,
-    "26": 0.1695906432748538,
-    "27": 0.2046783625730994,
-    "28": 0.21666666666666667,
+    "21": 0.15579710144927536,
+    "22": 0.1976284584980237,
+    "23": 0.18972332015810275,
+    "24": 0.19913419913419914,
+    "25": 0.19047619047619047,
+    "26": 0.22105263157894736,
+    "27": 0.20526315789473684,
+    "28": 0.1695906432748538,
     "29": 0.24166666666666667,
-    "30": 0.21978021978021978,
+    "30": 0.25274725274725274,
     "31": 0.31868131868131866,
-    "32": 0.31868131868131866,
+    "32": 0.24358974358974358,
     "33": 0.46153846153846156,
     "34": 0.2948717948717949,
     "35": 0.32051282051282054,
     "36": 0.21212121212121213,
-    "37": 0.25757575757575757,
-    "38": 0.3939393939393939,
-    "39": 0.35555555555555557,
-    "40": 0.2777777777777778,
-    "41": 0.2777777777777778,
+    "37": 0.21212121212121213,
+    "38": 0.25757575757575757,
+    "39": 0.3939393939393939,
+    "40": 0.2545454545454545,
+    "41": 0.35555555555555557,
     "42": 0.3055555555555556,
     "43": 0.3611111111111111,
     "44": 0.3611111111111111,
-    "45": 0.32142857142857145,
+    "45": 0.3611111111111111,
     "46": 0.35714285714285715,
     "47": 0.6666666666666666,
     "48": 0.5238095238095238,
     "49": 0.5333333333333333,
-    "50": 0.5333333333333333,
-    "51": 0.4,
-    "52": 0.5333333333333333,
-    "53": 0.6,
-    "54": 0.5,
-    "55": 0.6666666666666666,
-    "56": 0.8333333333333334,
+    "50": 0.4,
+    "51": 0.5333333333333333,
+    "52": 0.6,
+    "53": 0.5,
+    "54": 0.6666666666666666,
+    "55": 0.8333333333333334,
+    "56": 0.6666666666666666,
     "57": 0.6666666666666666,
     "58": 0.6666666666666666,
     "59": 0.6666666666666666,
@@ -1644,7 +1644,7 @@
     "65": 0.6666666666666666,
     "66": 0.6666666666666666,
     "67": 0.6666666666666666,
-    "68": 0.6666666666666666,
+    "68": 1.0,
     "69": 1.0,
     "70": 1.0,
     "71": 1.0,
@@ -1668,8 +1668,7 @@
     "89": 1.0,
     "90": 1.0,
     "91": 1.0,
-    "92": 1.0,
-    "93": 1.0
+    "92": 1.0
   },
   "gods": [
     {
@@ -1693,6 +1692,11 @@
       "degree": 20
     },
     {
+      "id": "src_replicatedstorage_numberformat_numberformat_abbreviate",
+      "label": "NumberFormat.Abbreviate()",
+      "degree": 19
+    },
+    {
       "id": "src_replicatedstorage_treasuremodels_block",
       "label": "block()",
       "degree": 19
@@ -1700,11 +1704,6 @@
     {
       "id": "src_replicatedstorage_treasuremodels_cyl",
       "label": "cyl()",
-      "degree": 19
-    },
-    {
-      "id": "src_replicatedstorage_numberformat_numberformat_abbreviate",
-      "label": "NumberFormat.Abbreviate()",
       "degree": 19
     },
     {
@@ -1783,8 +1782,8 @@
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `NumberFormat.Abbreviate()` connect `Community 7` to `Community 32`, `Community 4`, `Community 8`, `Community 41`, `Community 11`, `Community 12`, `Community 47`, `Community 20`, `Community 25`?",
-      "why": "High betweenness centrality (0.042) - this node is a cross-community bridge."
+      "question": "Why does `NumberFormat.Abbreviate()` connect `Community 11` to `Community 4`, `Community 36`, `Community 7`, `Community 10`, `Community 12`, `Community 44`, `Community 47`, `Community 20`, `Community 27`, `Community 31`?",
+      "why": "High betweenness centrality (0.043) - this node is a cross-community bridge."
     },
     {
       "type": "verify_inferred",
@@ -1798,23 +1797,23 @@
     },
     {
       "type": "bridge_node",
-      "question": "Why does `DataService.Get()` connect `Community 28` to `Community 1`, `Community 34`, `Community 3`, `Community 4`, `Community 5`, `Community 7`, `Community 41`, `Community 42`, `Community 13`, `Community 45`, `Community 47`, `Community 48`, `Community 17`, `Community 18`, `Community 50`, `Community 53`, `Community 26`, `Community 30`?",
-      "why": "High betweenness centrality (0.020) - this node is a cross-community bridge."
+      "question": "Why does `DataService.Get()` connect `Community 30` to `Community 32`, `Community 1`, `Community 34`, `Community 3`, `Community 4`, `Community 5`, `Community 36`, `Community 40`, `Community 42`, `Community 44`, `Community 13`, `Community 47`, `Community 48`, `Community 17`, `Community 18`, `Community 52`, `Community 21`, `Community 28`?",
+      "why": "High betweenness centrality (0.018) - this node is a cross-community bridge."
     },
     {
       "type": "low_cohesion",
       "question": "Should `Community 1` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.06506849315068493 - nodes in this community are weakly interconnected."
-    },
-    {
-      "type": "bridge_node",
-      "question": "Why does `makeSign()` connect `Community 8` to `Community 7`?",
-      "why": "High betweenness centrality (0.015) - this node is a cross-community bridge."
+      "why": "Cohesion score 0.06368011847463902 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
       "question": "Should `Community 2` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.05300207039337474 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.05413469735720375 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 3` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected."
     }
   ]
 }

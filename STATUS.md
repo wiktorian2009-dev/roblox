@@ -1,5 +1,10 @@
 # Current handoff
 
+## Group gift: favorite instead of like — 2026-10-14, Claude (save point 76)
+- wiktor: liking needs leaving the game, "we should make maybe favorite not liking bc u can favorite in game". Step 1 of the gift card is now FAVORITE (Roblox's in-game "add to favorites?" box via AvatarEditorService:PromptSetFavorite); a Success is saved as FavAck and CLAIM needs favorite + group. Claimed players get a FAVORITE reminder once per session after 8 min until they favorite. No player data was reset. Details/undo/tests: outputs/W2FieldsAndGroupGift20261013/README.md.
+- Tested in Play (BalanceTestMode, temp profile, PC): refusal without favorite, the real favorite box opens, saved favorite ticks step 1, claim, reminder with FAVORITE button. Not tested: pressing Yes in the real box (my tools can't click Roblox's own boxes), phones. BalanceTestMode removed. Not saved or published by me.
+- Next: wiktor Ctrl+S, publish, and tap FAVORITE once on a real server to see the box finish.
+
 ## Group gift like step — 2026-10-14, Claude (save point 75)
 - wiktor: "people are joining the group but not liking it". Nothing was broken; the like was only a reminder. Roblox has no per-player like API, so: the card's like is now its own required step (tap I LIKED IT, 4 s countdown, confirm), the server refuses a claim without it (records LikeAck), and players who already claimed get one like reminder per session after 8 min. Nobody's data was changed. Details/undo: outputs/W2FieldsAndGroupGift20261013/README.md.
 - Tested (Play, BalanceTestMode, temp profile, PC, mocked membership): refusal without like, full click flow, claim, nudge (shortened wait, restored). BalanceTestMode removed. Not saved or published by me.

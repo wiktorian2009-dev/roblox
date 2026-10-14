@@ -62,3 +62,23 @@ Tested (Play, BalanceTestMode, temp profile, PC, mocked membership): claim witho
 card by clicks: CLAIM -> LIKE FIRST + shake, I LIKED IT -> WAIT 3 countdown -> YES, I DID! -> LIKED, CLAIM GIFT! -> pet + Snow,
 record has LikeAck; nudge shown after a shortened 25 s wait (set back to 480). Not tested: phones, real live players.
 Honest limit: a player can still tap I LIKED IT without liking; no game can verify a like on Roblox.
+
+## Change 2026-10-14: favorite instead of like (sp 76)
+wiktor: "but dont u need to leave the game to like a game?" / "we should make maybe favorite not liking bc u can favorite in game".
+Liking is only on the game page; favoriting has Roblox's own in-game prompt. Step 1 of the card is now FAVORITE:
+- FAVORITE button -> AvatarEditorService:PromptSetFavorite(game.PlaceId, Asset, true) shows Roblox's box "Do you want to add Build And
+  Plow Snow to favorites?". A Success result ticks step 1 and is reported to the server ("Fav", saved as d.Community.FavAck, so it
+  survives a rejoin). CLAIM waits for favorite + group (labels DO STEPS 1 + 2 / FAVORITE FIRST / JOIN FIRST).
+- Checking an existing favorite (GetFavoriteAsync) only works after the player allows inventory reading
+  (PromptAllowInventoryReadAccess); the game does not ask for that, so the prompt's own result decides. The favorite is reported by
+  the client (Roblox has no server-side favorite check), so an exploiter could fake it; normal players cannot skip it.
+- Server: claim needs FavAck or the client flag; records V = 3. Old records keep LikeAck as history; nobody's data was reset.
+- Players who already claimed: the one-per-session reminder after 8 min now shows a FAVORITE button (Roblox prompt) when the game
+  has no FavAck for them; a Success there saves FavAck so it switches to the like text next time.
+- Config: FavText / FavSub replace LikeText. Test hook op ClearFav (BalanceTestMode only).
+Backups: ServerStorage.CommunityRewardBackup_20261013.*_v3_likeStep (client, service, config). Undo: swap those back.
+Tested (Play, BalanceTestMode, temp profile, PC, mocked membership): claim without favorite refused (hook + raw remote); FAVORITE
+click opened Roblox's real favorite box (screens/gift_fav_prompt.jpg; I could not press Yes/No from my test tools, so the Success
+result itself is not tested); after a saved favorite the card shows step 1 DONE and CLAIM GIFT! (screens/gift_card_v4_fav.jpg);
+claim by click gave the pet + 2.5K Snow, record has FavAck + V 3; reminder for an older claimer showed the FAVORITE button (wait
+shortened to 40 s for the test, set back to 480). Not tested: pressing Yes in the real box, phones, live players.

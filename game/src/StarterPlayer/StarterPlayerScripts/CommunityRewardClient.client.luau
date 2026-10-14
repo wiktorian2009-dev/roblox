@@ -1,6 +1,6 @@
 -- CommunityRewardClient (2026-10-13, Claude): the FREE PET pill under the REWARDS / SPIN buttons and the small SUPPORTER GIFT card.
--- * Card: the prize (Frosty Pal + Snow + 2x Snow), step 1 "like the game" (a reminder only - Roblox can't tell a game who liked
---   it, so it never gates anything), step 2 JOIN (GroupService:PromptJoinAsync, then the server re-checks), CLAIM.
+-- * Card: the prize (Frosty Pal + Snow + 2x Snow), step 1 FAVORITE (Roblox's in-game favorite prompt, checked with GetFavoriteAsync;
+--   since 2026-10-14, replacing a like step that could not be checked), step 2 JOIN (GroupService:PromptJoinAsync, server re-checks), CLAIM.
 -- * The server decides everything (CommunityRewardService); this script only shows state and asks. After a claim the usual
 --   hatch reveal plays (PetClient) and the pill goes away for good (attribute CommunityGiftClaimed).
 -- * Hidden until the plow tutorial is done, so new players are not distracted during it.
@@ -11,6 +11,7 @@ local RS = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 local GroupService = game:GetService("GroupService")
+local AvatarEditorService = game:GetService("AvatarEditorService")
 local GuiService = game:GetService("GuiService")
 local UIS = game:GetService("UserInputService")
 local player = Players.LocalPlayer
@@ -216,11 +217,12 @@ local function stepRow(y, num, title, sub, wide)
 	label(row, sub, {Position = UDim2.fromScale(0.1, 0.56), Size = UDim2.fromScale(wide and 0.86 or 0.6, 0.36), TextXAlignment = Enum.TextXAlignment.Left, TextColor3 = ICE}, 18)
 	return row, circle, n
 end
--- 2026-10-14 (wiktor: "people are joining the group but not liking it"): the like is now its own step with a button. Roblox still can't
--- tell a game who liked it, so this is honor-system, but CLAIM waits for it: first tap shows how to like and counts down, second
--- tap confirms. The server refuses a claim without that confirmation.
-local likeRow, likeCircle, likeNum = stepRow(0.665, "1", "Like the game \u{1F44D}", CFG.LikeText)
-local likeBtn = button(likeRow, "I LIKED IT", GOLD, {Name = "Like", AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(0.985, 0.5), Size = UDim2.fromScale(0.26, 0.78)}, 26)
+-- 2026-10-14 (wiktor: "we should make maybe favorite not liking bc u can favorite in game"): step 1 is FAVORITE. Liking needs the
+-- game page (players had to leave the game); favoriting has Roblox's own in-game prompt (AvatarEditorService:PromptSetFavorite with
+-- the place id) and can be checked (GetFavoriteAsync). Roblox only offers that check on the client, so the server trusts the result
+-- this script reports; it is saved (FavAck), so it survives a rejoin.
+local favRow, favCircle, favNum = stepRow(0.665, "1", CFG.FavText, CFG.FavSub)
+local favBtn = button(favRow, "FAVORITE", GOLD, {Name = "Favorite", AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(0.985, 0.5), Size = UDim2.fromScale(0.26, 0.78)}, 26)
 local joinRow, joinCircle, joinNum = stepRow(0.785, "2", CFG.JoinText, "Get group news, updates and this gift")
 local joinBtn = button(joinRow, "JOIN", BLUE, {Name = "Join", AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(0.985, 0.5), Size = UDim2.fromScale(0.26, 0.78)}, 28)
 local claimBtn, claimLabel = button(card, "CLAIM", GREY, {Name = "Claim", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.95), Size = UDim2.fromScale(0.4, 0.1)}, 34)
@@ -232,7 +234,7 @@ local msg = label(card, "", {Name = "Message", AnchorPoint = Vector2.new(0.5, 0)
 -- state
 --------------------------------------------------
 local member, claimed, busy = false, player:GetAttribute("CommunityGiftClaimed") == true, false
-local liked, likeWait = false, 0 -- likeWait: seconds left on the "go like it" countdown (0 = not started)
+local faved, favBusy = false, false
 local function setMsg(t, col)
 	msg.Text, msg.TextColor3 = t or "", col or GOLD
 	msg.Size = UDim2.fromScale(0.9, (t and t ~= "") and 0.032 or 0)
@@ -242,17 +244,18 @@ local function render()
 	joinBtn.BackgroundColor3 = member and GREEN or BLUE
 	joinCircle.BackgroundColor3 = member and GREEN or GOLD
 	joinNum.Text = member and "\u{2713}" or "2"
-	likeBtn.Label.Text = liked and "LIKED" or (likeWait > 0 and ("WAIT " .. likeWait)) or (likeWait < 0 and "YES, I DID!") or "I LIKED IT"
-	likeBtn.BackgroundColor3 = liked and GREEN or (likeWait > 0 and GREY) or GOLD
-	likeCircle.BackgroundColor3 = liked and GREEN or GOLD
-	likeNum.Text = liked and "\u{2713}" or "1"
-	local ready = member and liked
+	favBtn.Label.Text = faved and "DONE" or (favBusy and "...") or "FAVORITE"
+	favBtn.BackgroundColor3 = faved and GREEN or GOLD
+	favCircle.BackgroundColor3 = faved and GREEN or GOLD
+	favNum.Text = faved and "\u{2713}" or "1"
+	local ready = member and faved
 	claimBtn.BackgroundColor3 = ready and GREEN or GREY
-	claimLabel.Text = ready and "CLAIM GIFT!" or (not liked and not member and "LIKE + JOIN FIRST") or (not liked and "LIKE FIRST") or "JOIN FIRST"
+	claimLabel.Text = ready and "CLAIM GIFT!" or (not faved and not member and "DO STEPS 1 + 2") or (not faved and "FAVORITE FIRST") or "JOIN FIRST"
 end
 local function apply(res)
 	if type(res) ~= "table" or not res.ok then return end
 	member = res.member == true
+	if res.faved then faved = true end -- saved on the server (FavAck), so it survives a rejoin
 	if res.claimed then claimed = true end
 	render()
 end
@@ -262,6 +265,21 @@ local function refreshHud()
 	hud.Enabled = show
 	if show then placePill() end
 	if claimed then sg.Enabled = false end
+end
+
+-- true / false from Roblox, nil when the check is not available. Roblox only answers after the player allowed inventory reading
+-- (PromptAllowInventoryReadAccess); this game never asks for that, so it is usually nil and the prompt's own result decides.
+local function isFavorited()
+	local ok, res = pcall(function() return AvatarEditorService:GetFavoriteAsync(game.PlaceId, Enum.AvatarItemType.Asset) end)
+	if not ok then ok, res = pcall(function() return AvatarEditorService:GetFavorite(game.PlaceId, Enum.AvatarItemType.Asset) end) end
+	if ok then return res == true end
+	return nil
+end
+local function markFaved()
+	if faved then return end
+	faved = true
+	task.spawn(function() remote:InvokeServer("Fav") end)
+	render()
 end
 
 local function open()
@@ -274,6 +292,7 @@ local function open()
 	tween(backdrop, 0.2, {BackgroundTransparency = 0.45})
 	tween(cardScale, 0.32, {Scale = 1}, Enum.EasingStyle.Back)
 	task.spawn(function() apply(remote:InvokeServer("Check")) end)
+	task.spawn(function() if not faved and isFavorited() == true then markFaved() end end) -- already a favorite: step 1 ticks by itself
 end
 local function shut()
 	if not sg.Enabled then return end
@@ -282,18 +301,31 @@ local function shut()
 	task.delay(0.15, function() sg.Enabled = false end)
 end
 pill.Activated:Connect(function() if sg.Enabled then shut() else open() end end)
-likeBtn.Activated:Connect(function()
-	if liked or likeWait > 0 then return end
-	if likeWait == 0 then -- first tap: say how, then a short countdown before it can be confirmed
-		setMsg("Tap the \u{1F44D} under the game on its Roblox page, then come back and confirm!", ICE)
-		for s = 4, 1, -1 do likeWait = s; render(); task.wait(1) end
-		likeWait = -1 -- ready to confirm
-		render()
-	else
-		liked = true
-		setMsg(member and "Thank you! Tap CLAIM GIFT \u{1F381}" or "Thank you! Now join the group.", GREEN)
-		render()
+favBtn.Activated:Connect(function()
+	if faved or favBusy then return end
+	favBusy = true
+	render()
+	local result
+	local conn = AvatarEditorService.PromptSetFavoriteCompleted:Connect(function(r) result = r end)
+	local ok = isFavorited() == true -- already a favorite: no prompt needed
+	local prompted = false
+	if not ok then
+		prompted = pcall(function() AvatarEditorService:PromptSetFavorite(game.PlaceId, Enum.AvatarItemType.Asset, true) end)
+		local t0 = os.clock()
+		while prompted and result == nil and os.clock() - t0 < 120 and sg.Enabled do task.wait(0.2) end
+		ok = result == Enum.AvatarPromptResult.Success or isFavorited() == true
 	end
+	conn:Disconnect()
+	if ok then
+		markFaved()
+		setMsg(member and "Thank you! Tap CLAIM GIFT \u{1F381}" or "Thank you! Now join the group.", GREEN)
+	elseif not prompted then
+		setMsg("The favorite box didn't open - tap the \u{2B50} on the game page, then come back!", ICE)
+	else
+		setMsg("Tap Favorite in the Roblox box to finish step 1!", GOLD)
+	end
+	favBusy = false
+	render()
 end)
 close.Activated:Connect(shut)
 backdrop.Activated:Connect(shut)
@@ -306,16 +338,16 @@ joinBtn.Activated:Connect(function()
 	if not ok then setMsg("Open the game page and tap the group name to join!", ICE) end
 	task.wait(0.5)
 	apply(remote:InvokeServer("Check"))
-	if member then setMsg(liked and "Thanks for joining! Tap CLAIM GIFT \u{1F381}" or "Thanks for joining! Now like the game (step 1).", GREEN) end
+	if member then setMsg(faved and "Thanks for joining! Tap CLAIM GIFT \u{1F381}" or "Thanks for joining! Now favorite the game (step 1).", GREEN) end
 	busy = false
 end)
 claimBtn.Activated:Connect(function()
 	if busy then return end
 	busy = true
 	if not member then apply(remote:InvokeServer("Check")) end
-	if not liked then
-		setMsg("Like the game first (step 1), then tap CLAIM!", GOLD)
-		for _, x in ipairs({-0.02, 0.02, -0.01, 0}) do tween(likeRow, 0.06, {Position = UDim2.fromScale(0.05 + x, 0.665)}); task.wait(0.06) end
+	if not faved then
+		setMsg("Favorite the game first (step 1), then tap CLAIM!", GOLD)
+		for _, x in ipairs({-0.02, 0.02, -0.01, 0}) do tween(favRow, 0.06, {Position = UDim2.fromScale(0.05 + x, 0.665)}); task.wait(0.06) end
 	elseif not member then
 		setMsg("Join the group first, then tap CLAIM!", GOLD)
 		for _, x in ipairs({-0.02, 0.02, -0.01, 0}) do tween(joinRow, 0.06, {Position = UDim2.fromScale(0.05 + x, 0.785)}); task.wait(0.06) end
@@ -340,18 +372,31 @@ player:GetAttributeChangedSignal("CommunityGiftClaimed"):Connect(function()
 	refreshHud()
 end)
 player:GetAttributeChangedSignal("PlowTutorialDone"):Connect(refreshHud)
--- players who already have the gift: one friendly like reminder per session after a while of play (no reward, never repeats)
+-- players who already have the gift: one friendly reminder per session after a while of play (no reward, never repeats).
+-- Not a favorite yet: a FAVORITE button (Roblox's in-game prompt). Already a favorite (or unknown): a like reminder.
 task.spawn(function()
 	task.wait(CFG.LikeNudgeAfter or 480)
 	if not claimed or not player.Parent then return end
+	local st = remote:InvokeServer("State")
+	local needFav = not (type(st) == "table" and st.faved) and isFavorited() ~= true
 	local tg = mk("ScreenGui", {Name = "LikeNudgeGui", ResetOnSpawn = false, DisplayOrder = 98, IgnoreGuiInset = true}, pg)
 	local box = mk("Frame", {AnchorPoint = Vector2.new(0.5, 0), Position = UDim2.new(0.5, 0, 0, -80), Size = UDim2.fromScale(0.34, 0.075), BackgroundColor3 = Color3.fromRGB(40, 80, 160)}, tg)
 	mk("UISizeConstraint", {MinSize = Vector2.new(300, 52), MaxSize = Vector2.new(620, 80)}, box)
 	round(box, 0.3)
 	mk("UIStroke", {Thickness = 3, Color = GOLD, ApplyStrokeMode = Enum.ApplyStrokeMode.Border}, box)
-	label(box, "Enjoying the game? Tap \u{1F44D} on its Roblox page - it really helps!", {Position = UDim2.fromScale(0.05, 0.15), Size = UDim2.fromScale(0.9, 0.7)}, 26)
+	if needFav then
+		label(box, "Enjoying the game? Add it to your favorites!", {Position = UDim2.fromScale(0.04, 0.15), Size = UDim2.fromScale(0.62, 0.7), TextXAlignment = Enum.TextXAlignment.Left}, 26)
+		local fb = button(box, "\u{2B50} FAVORITE", GOLD, {Name = "Favorite", AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.fromScale(0.97, 0.5), Size = UDim2.fromScale(0.3, 0.72)}, 24)
+		local done = AvatarEditorService.PromptSetFavoriteCompleted:Connect(function(r)
+			if r == Enum.AvatarPromptResult.Success then task.spawn(function() remote:InvokeServer("Fav") end) end -- remembered: no favorite nudge next time
+		end)
+		tg.Destroying:Connect(function() done:Disconnect() end)
+		fb.Activated:Connect(function() pcall(function() AvatarEditorService:PromptSetFavorite(game.PlaceId, Enum.AvatarItemType.Asset, true) end) end)
+	else
+		label(box, "Enjoying the game? Tap \u{1F44D} on its Roblox page - it really helps!", {Position = UDim2.fromScale(0.05, 0.15), Size = UDim2.fromScale(0.9, 0.7)}, 26)
+	end
 	tween(box, 0.4, {Position = UDim2.new(0.5, 0, 0.2, 0)}, Enum.EasingStyle.Back) -- below the top boost / event bars
-	task.wait(7)
+	task.wait(needFav and 10 or 7)
 	tween(box, 0.3, {Position = UDim2.new(0.5, 0, 0, -80)}, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
 	task.wait(0.4)
 	tg:Destroy()
