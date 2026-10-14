@@ -56,3 +56,16 @@ All changes are **Studio-only** (Edit; no script changed). Not saved or publishe
 - Hawk: move ServerStorage.W1BugFixBackup_20261014.Wing_old / Tail_old back into the D_Hawk model (rename to Wing / Tail) and
   delete the new Wing / Tail.
 - Pixel heart collider: move it back to its OrigParent.
+
+## Follow-up 2026-10-14: Help Yard walls back + camera zoom limit (sp 78)
+wiktor: "place walls around help yard and limit the scroll out camera so u can not se the shit out of the map".
+- Walls: workspace.HelpYardWalls is back (the ~8-stud snow-capped walls + 67 invisible colliders around all 14 Help Yards that were
+  removed on wiktor's request on 2026-10-06; they had stayed in ServerStorage.WallsUndoBackup_20261006). Checked first: every wall set
+  still hugs today's pad (within ~3 studs) and no collider overlaps a bridge entrance. W2Edges stays in the backup.
+  Undo: move workspace.HelpYardWalls back to ServerStorage.WallsUndoBackup_20261006.
+- Camera: StarterPlayer.CameraMaxZoomDistance 128 (Roblox default) -> 60 studs (old value in StarterPlayer attribute
+  CameraMaxZoomBefore20261014). Driving still pulls the camera to at least 24 (PlowDriveClient); the arena already uses 60.
+- Tested (Play, BalanceTestMode, temp profile, PC): player CameraMaxZoomDistance = 60; scan 0 leak spots and every yard/field/TRAVEL
+  point reachable from the spawn; walk+jump toward the far side of the Retro, Jungle, Starter and Crystal yards stops at the wall;
+  walking in over the bridge reaches the pad (Crystal stopped 7.5 studs short of the centre within the 7 s walk); screens
+  hub_zoom60.jpg and yard_walls_zoom60.jpg show the view at full zoom-out. No game errors.

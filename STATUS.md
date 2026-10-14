@@ -1,5 +1,11 @@
 # Current handoff
 
+## Help Yard walls back + camera zoom limit — 2026-10-14, Claude (save point 78)
+- wiktor: "place walls around help yard and limit the scroll out camera so u can not se the shit out of the map". Studio-only, no script changed.
+- workspace.HelpYardWalls restored from ServerStorage.WallsUndoBackup_20261006 (the 2026-10-06 walls around all 14 yards; still aligned, bridge entrances clear). StarterPlayer.CameraMaxZoomDistance 128 -> 60 (driving min stays 24, arena already 60).
+- Tested (Play, BalanceTestMode, temp profile, PC): zoom capped at 60; World 1 scan 0 leaks, all yards/fields/TRAVEL points reachable; yard walls stop walking+jumping, bridges still lead in. Not tested: phones, World 2 yards in Play (walls restored there too), yard jobs with walls. Not saved or published by me.
+- Next: wiktor checks the look and the zoom feel; one number to change (StarterPlayer.CameraMaxZoomDistance). Details: outputs/W1BugSweep20261014/README.md.
+
 ## World 1 bug sweep — 2026-10-14, Claude (save point 77)
 - wiktor: "world 1 is having a lot of bugs like. eagle with one wing, holes in map, being able to jump of map, glitched collision". Details, tests, undo: outputs/W1BugSweep20261014/README.md. Studio-only, no script changed.
 - Fixed: Desert hawk had one-sided wing/tail meshes (rebuilt two-sided in Blender, asset 96713600068730); 19 places to walk/jump off World 1 closed with 41 invisible walls + 2 crack fillers (workspace.W1Edges.EdgeFix20261014); 72 walk-through wall/rock/decor parts now collide (attribute CollisionFix20261014, fields untouched); one orphan invisible collider (Retro pixel heart) moved to ServerStorage.W1BugFixBackup_20261014.
