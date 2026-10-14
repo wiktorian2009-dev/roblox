@@ -1,5 +1,12 @@
 # Current handoff
 
+## World 1 bug sweep — 2026-10-14, Claude (save point 77)
+- wiktor: "world 1 is having a lot of bugs like. eagle with one wing, holes in map, being able to jump of map, glitched collision". Details, tests, undo: outputs/W1BugSweep20261014/README.md. Studio-only, no script changed.
+- Fixed: Desert hawk had one-sided wing/tail meshes (rebuilt two-sided in Blender, asset 96713600068730); 19 places to walk/jump off World 1 closed with 41 invisible walls + 2 crack fillers (workspace.W1Edges.EdgeFix20261014); 72 walk-through wall/rock/decor parts now collide (attribute CollisionFix20261014, fields untouched); one orphan invisible collider (Retro pixel heart) moved to ServerStorage.W1BugFixBackup_20261014.
+- Tested (Play, BalanceTestMode, temp profile, PC): scan 0 leaks and every TRAVEL point/yard/field still reachable; walk+jump test at all 19 former spots held (control without walls fell); walls stop players at the surface; hawk shows both wings from below and above; no game errors.
+- Not changed, reported: sinking ~1.4 into Help Yard pads/bridges and ~1 into garage bays (needs a yard-job test), underside rocks poking up at stage seams, a loose Toolbox glass mesh on the Starter field, pine foliage/presents walk-through. Reusable scan: outputs/W1BugSweep20261014/w1_scan.luau.
+- Next: wiktor plays World 1, Ctrl+S, publish when happy; say if the sinking fix is wanted.
+
 ## Group gift: favorite instead of like — 2026-10-14, Claude (save point 76)
 - wiktor: liking needs leaving the game, "we should make maybe favorite not liking bc u can favorite in game". Step 1 of the gift card is now FAVORITE (Roblox's in-game "add to favorites?" box via AvatarEditorService:PromptSetFavorite); a Success is saved as FavAck and CLAIM needs favorite + group. Claimed players get a FAVORITE reminder once per session after 8 min until they favorite. No player data was reset. Details/undo/tests: outputs/W2FieldsAndGroupGift20261013/README.md.
 - Tested in Play (BalanceTestMode, temp profile, PC): refusal without favorite, the real favorite box opens, saved favorite ticks step 1, claim, reminder with FAVORITE button. Not tested: pressing Yes in the real box (my tools can't click Roblox's own boxes), phones. BalanceTestMode removed. Not saved or published by me.
