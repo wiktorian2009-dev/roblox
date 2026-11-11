@@ -1,5 +1,12 @@
 ﻿# Current handoff
 
+## Deltoid supercar (Blender only) — 2026-11-11, Claude
+- wiktor: "zrob mi super samochod deltoid w blenderze". New standalone model in outputs/Deltoid20261111 (deltoid.py → fbx/Deltoid.fbx, blend/Deltoid.blend, renders/Deltoid_sheet.png).
+- Top view is a kite (deltoid): 8.5 × 18.3 × 5.1 studs, 33.1K tris in 29 parts (Body 8.8K, under the 9000 budget).
+  - Each wheel is a separate Tire/Rim/Hub set; the centre seat sits under a glass canopy.
+  - Names follow the w2lib convention, with the Ref__Origin marker included.
+- Not imported into Studio, not uploaded, not drivable. Import: README.md (3D Importer → ServerStorage.W1RemasterImports.Deltoid → W1RemasterKit.postProcess("Deltoid")).
+
 ## Lesson — Studio edit camera (2026-10-06)
 - The Studio MCP tool remembers CameraType and restores it after every execute_luau. If a screenshot or test pass leaves it on Scriptable, wiktor can't move the edit camera, and setting Fixed by script gets reverted.
 - Never leave CameraType on Scriptable. If it happens, stop sending Studio commands and have wiktor set Workspace.Camera.CameraType = Fixed in Properties, or delete the Camera.
